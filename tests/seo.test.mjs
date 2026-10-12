@@ -14,3 +14,5 @@ test('Duplicate host redirects, API is noindex and unknown URLs return a real 40
 test('Spanish pages have reciprocal language links and stable person identity',async()=>{
  for(const path of ['/es/','/es/resources/','/es/about/']){const r=await worker.fetch(new Request('https://sirtraver.com'+path),{},{});assert.equal(r.status,200);const html=await r.text();assert.match(html,/<html lang="es">/);assert.ok(html.includes('<link rel="canonical" href="https://sirtraver.com'+path+'">'));assert.match(html,/hreflang="en"/);assert.match(html,/hreflang="es"/);assert.ok(html.includes('https://sirtraver.com/#javier-traver'));for(const block of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g))assert.doesNotThrow(()=>JSON.parse(block[1]));}
 });
+
+test('Explicit index files consolidate into the canonical URL with one redirect',async()=>{for(const [path,next] of [['/index.html','/'],['/about/index.html','/about/'],['/es/index.html','/es/'],['/portfolio/index.html','/']]){const r=await worker.fetch(new Request('https://sirtraver.com'+path),{},{});assert.equal(r.status,301);assert.equal(r.headers.get('Location'),'https://sirtraver.com'+next)}});

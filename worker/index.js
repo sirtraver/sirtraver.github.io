@@ -9,6 +9,7 @@ export default {
   if(u.hostname==='sirtraver.sirtraver.chatgpt.site'||u.hostname==='www.sirtraver.com'){u.hostname='sirtraver.com';return Response.redirect(u.href,301);}
   if(u.pathname==='/api/catalogo-gumroad'){const r=await catalog(request,env,ctx);r.headers.set('X-Robots-Tag','noindex');return r;}
   let path;try{path=decodeURIComponent(u.pathname)}catch{return new Response('Not found',{status:404,headers:{'X-Robots-Tag':'noindex'}})}
+  if(path.endsWith('/index.html')){const destination=path.slice(0,-10);return Response.redirect(new URL(redirects[destination]||destination,u).href,301);}
   if(redirects[path])return Response.redirect(new URL(redirects[path],u).href,301);
   if(path.includes('..'))return new Response('Not found',{status:404,headers:{'X-Robots-Tag':'noindex'}});
   if(!path.endsWith('/')&&assets[path+'/index.html'])return Response.redirect(new URL(path+'/',u).href,301);

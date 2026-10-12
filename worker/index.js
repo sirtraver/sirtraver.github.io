@@ -1,7 +1,7 @@
 import { catalog } from './catalog.js';
 import { assets } from './assets.js';
 import { renderResources,resourceSchema } from './render.js';
-const redirects={'/recursos':'/resources/','/recursos/':'/resources/','/recursos/brief-claro':'/resources/','/recursos/brief-claro/':'/resources/','/sobre-mi':'/about/','/sobre-mi/':'/about/'};
+const redirects={'/portfolio':'/','/portfolio/':'/','/es/portfolio':'/es/','/es/portfolio/':'/es/','/recursos':'/resources/','/recursos/':'/resources/','/recursos/brief-claro':'/resources/','/recursos/brief-claro/':'/resources/','/sobre-mi':'/about/','/sobre-mi/':'/about/'};
 export default {
  async fetch(request,env,ctx){
   const u=new URL(request.url);

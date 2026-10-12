@@ -1,3 +1,49 @@
 {
-  "projects": []
+  "source": "https://www.behance.net/javiertraver",
+  "importedAt": "2026-10-12",
+  "syncMode": "manual",
+  "projects": [
+    {
+      "title": "sirtraver - Visual Identity",
+      "category": "Identidad visual",
+      "url": "https://www.behance.net/gallery/216560651/sirtraver-Visual-Identity",
+      "image": "/assets/portfolio/sirtraver.webp",
+      "imageAlt": "Portada de sirtraver - Visual Identity"
+    },
+    {
+      "title": "Greens - Visual Identity",
+      "category": "Identidad visual",
+      "url": "https://www.behance.net/gallery/207304547/Greens-Visual-Identity",
+      "image": "/assets/portfolio/greens.webp",
+      "imageAlt": "Portada de Greens - Visual Identity"
+    },
+    {
+      "title": "MORE+",
+      "category": "Proyecto visual",
+      "url": "https://www.behance.net/gallery/83743511/MORE",
+      "image": "/assets/portfolio/more.webp",
+      "imageAlt": "Portada de MORE+"
+    },
+    {
+      "title": "WOBBLE",
+      "category": "Proyecto visual",
+      "url": "https://www.behance.net/gallery/83741433/WOBBLE",
+      "image": "/assets/portfolio/wobble.webp",
+      "imageAlt": "Portada de WOBBLE"
+    },
+    {
+      "title": "Type in motion",
+      "category": "Proyecto visual",
+      "url": "https://www.behance.net/gallery/83740853/Type-in-motion",
+      "image": "/assets/portfolio/type-in-motion.webp",
+      "imageAlt": "Portada de Type in motion"
+    },
+    {
+      "title": "Gigantes",
+      "category": "Proyecto visual",
+      "url": "https://www.behance.net/gallery/83737217/Gigantes",
+      "image": "/assets/portfolio/gigantes.webp",
+      "imageAlt": "Portada de Gigantes"
+    }
+  ]
 }

@@ -13,7 +13,7 @@ export default {
   if(path.includes('..'))return new Response('Not found',{status:404,headers:{'X-Robots-Tag':'noindex'}});
   if(!path.endsWith('/')&&assets[path+'/index.html'])return Response.redirect(new URL(path+'/',u).href,301);
   if(path.endsWith('/'))path+='index.html';
-  const item=assets[path];if(!item)return new Response('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | SIRTRAVER</title><meta name="robots" content="noindex"><link rel="stylesheet" href="/assets/site.css"></head><body><main class="not-found"><h1>404</h1><p>This page could not be found.</p><a href="/">Back to SIRTRAVER</a></main></body></html>',{status:404,headers:{'Content-Type':'text/html; charset=utf-8','X-Robots-Tag':'noindex'}});
+  const item=assets[path];if(!item)return new Response('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | SIRTRAVER</title><link rel="icon" type="image/png" href="/assets/favicon-s.png?v=10"><link rel="shortcut icon" href="/favicon.ico?v=10"><meta name="robots" content="noindex"><link rel="stylesheet" href="/assets/site.css"></head><body><main class="not-found"><h1>404</h1><p>This page could not be found.</p><a href="/">Back to SIRTRAVER</a></main></body></html>',{status:404,headers:{'Content-Type':'text/html; charset=utf-8','X-Robots-Tag':'noindex'}});
   const [type,b64]=item;const bytes=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));let body=bytes;
   if(path==='/resources/index.html'||path==='/es/resources/index.html'){
    const language=path.startsWith('/es/')?'es':'en';

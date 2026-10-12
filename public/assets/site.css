@@ -11,3 +11,5 @@ body{padding-top:108px}.site-header{position:fixed;top:0;left:0;right:0;width:10
 @media(prefers-reduced-motion:reduce){.site-header nav a{transition:none}}
 
 body,h1,h2,h3,h4,h5,h6,button,input,select,textarea{font-family:Arial,Helvetica,sans-serif}h1,h2,h3,h4,h5,h6{font-weight:700}.about-identity{display:flex;justify-content:center;align-items:center;gap:24px}.profile-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #eee}.about-identity h1{text-align:left;font-size:46px;letter-spacing:-1.8px}.about>.overline{margin-bottom:28px}@media(max-width:560px){.about-identity{gap:17px}.profile-photo{width:88px;height:88px}.about-identity h1{font-size:34px;letter-spacing:-1.1px}}
+
+.portfolio-identity{font-size:14px;color:#666;margin:16px 0 0;line-height:1.5}.page-title .count{margin-top:9px}

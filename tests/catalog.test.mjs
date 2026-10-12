@@ -11,5 +11,7 @@ test('Authenticated read returns an allowlisted public response',async()=>{
  assert.equal(options.headers.Authorization,'Bearer test-token');assert.equal(response.status,200);const body=await response.json();assert.equal(body.products.length,1);assert.ok(!JSON.stringify(body).includes('test-token'));assert.ok(!JSON.stringify(body).includes('file_info'));
 });
 test('Upstream failure does not disclose secrets or claim an empty successful catalog',async()=>{
- const response=await catalog(new Request('https://sirtraver.com/api/catalogo-gumroad'),{GUMROAD_ACCESS_TOKEN:'test-token'},{},async()=>{throw Error('test-token')});assert.equal(response.status,503);assert.deepEqual(await response.json(),{status:'unavailable',products:[]});
+ const response=await catalog(new Request('https://sirtraver.com/api/catalogo-gumroad'),{GUMROAD_ACCESS_TOKEN:'failure-token'},{},async()=>{throw Error('failure-token')});assert.equal(response.status,503);assert.deepEqual(await response.json(),{status:'unavailable',products:[]});
 });
+
+test('Works where the default platform cache is forbidden',async()=>{const old=globalThis.caches;globalThis.caches={get default(){throw Error('Forbidden')}};try{const r=await catalog(new Request('https://sirtraver.com/api/catalogo-gumroad'),{GUMROAD_ACCESS_TOKEN:'cache-compat-test'},{},async()=>Response.json({success:true,products:[p]}));assert.equal(r.status,200);}finally{globalThis.caches=old}});

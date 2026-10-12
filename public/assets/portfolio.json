@@ -1,49 +1,415 @@
 {
   "source": "https://www.behance.net/javiertraver",
   "importedAt": "2026-10-12",
-  "syncMode": "manual",
+  "syncMode": "public-profile-with-last-good-cache",
   "projects": [
     {
       "title": "sirtraver - Visual Identity",
       "category": "Visual identity",
       "url": "https://www.behance.net/gallery/216560651/sirtraver-Visual-Identity",
       "image": "/assets/portfolio/sirtraver.webp",
-      "imageAlt": "Cover of sirtraver - Visual Identity"
+      "imageAlt": "Cover of sirtraver - Visual Identity",
+      "id": 216560651,
+      "slug": "sirtraver",
+      "publishedOn": 1736558602,
+      "href": "/projects/216560651/",
+      "media": [
+        {
+          "src": "/assets/portfolio/sirtraver-board-1.webp",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "src": "/assets/portfolio/sirtraver-board-2.webp",
+          "width": 3375,
+          "height": 3375
+        },
+        {
+          "src": "/assets/portfolio/sirtraver-board-3.webp",
+          "width": 2800,
+          "height": 4725
+        }
+      ]
     },
     {
       "title": "Greens - Visual Identity",
       "category": "Visual identity",
       "url": "https://www.behance.net/gallery/207304547/Greens-Visual-Identity",
       "image": "/assets/portfolio/greens.webp",
-      "imageAlt": "Cover of Greens - Visual Identity"
+      "imageAlt": "Cover of Greens - Visual Identity",
+      "id": 207304547,
+      "slug": "greens",
+      "publishedOn": 1725629510,
+      "href": "/projects/207304547/",
+      "media": [
+        {
+          "src": "/assets/portfolio/greens-board-1.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-2.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-3.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-4.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-5.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-6.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-7.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-8.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/greens-board-9.webp",
+          "width": 1400,
+          "height": 1980
+        },
+        {
+          "src": "/assets/portfolio/greens-board-10.webp",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "src": "/assets/portfolio/greens-board-11.webp",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "src": "/assets/portfolio/greens-board-12.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/assets/portfolio/greens-board-13.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/assets/portfolio/greens-board-14.webp",
+          "width": 1400,
+          "height": 1980
+        },
+        {
+          "src": "/assets/portfolio/greens-board-15.webp",
+          "width": 963,
+          "height": 719
+        }
+      ]
     },
     {
       "title": "MORE+",
       "category": "Visual design",
       "url": "https://www.behance.net/gallery/83743511/MORE",
       "image": "/assets/portfolio/more.webp",
-      "imageAlt": "Cover of MORE+"
+      "imageAlt": "Cover of MORE+",
+      "id": 83743511,
+      "slug": "more",
+      "publishedOn": 1564860776,
+      "href": "/projects/83743511/",
+      "media": [
+        {
+          "src": "/assets/portfolio/more-board-1.webp",
+          "width": 1400,
+          "height": 1979
+        },
+        {
+          "src": "/assets/portfolio/more-board-2.webp",
+          "width": 1600,
+          "height": 2262
+        },
+        {
+          "src": "/assets/portfolio/more-board-3.webp",
+          "width": 1600,
+          "height": 2262
+        },
+        {
+          "src": "/assets/portfolio/more-board-4.webp",
+          "width": 1600,
+          "height": 2262
+        },
+        {
+          "src": "/assets/portfolio/more-board-5.webp",
+          "width": 1400,
+          "height": 1979
+        },
+        {
+          "src": "/assets/portfolio/more-board-6.webp",
+          "width": 1400,
+          "height": 1979
+        },
+        {
+          "src": "/assets/portfolio/more-board-7.webp",
+          "width": 1400,
+          "height": 1980
+        },
+        {
+          "src": "/assets/portfolio/more-board-8.webp",
+          "width": 1400,
+          "height": 674
+        },
+        {
+          "src": "/assets/portfolio/more-board-9.webp",
+          "width": 1600,
+          "height": 2262
+        },
+        {
+          "src": "/assets/portfolio/more-board-10.webp",
+          "width": 1600,
+          "height": 2262
+        },
+        {
+          "src": "/assets/portfolio/more-board-11.webp",
+          "width": 1600,
+          "height": 2263
+        },
+        {
+          "src": "/assets/portfolio/more-board-12.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "/assets/portfolio/more-board-13.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "/assets/portfolio/more-board-14.webp",
+          "width": 960,
+          "height": 1280
+        }
+      ]
     },
     {
       "title": "WOBBLE",
       "category": "Visual design",
       "url": "https://www.behance.net/gallery/83741433/WOBBLE",
       "image": "/assets/portfolio/wobble.webp",
-      "imageAlt": "Cover of WOBBLE"
+      "imageAlt": "Cover of WOBBLE",
+      "id": 83741433,
+      "slug": "wobble",
+      "publishedOn": 1564855931,
+      "href": "/projects/83741433/",
+      "media": [
+        {
+          "src": "/assets/portfolio/wobble-board-1.webp",
+          "width": 1400,
+          "height": 991
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-2.webp",
+          "width": 1400,
+          "height": 990
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-3.webp",
+          "width": 1400,
+          "height": 990
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-4.webp",
+          "width": 1400,
+          "height": 991
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-5.webp",
+          "width": 1400,
+          "height": 990
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-6.webp",
+          "width": 1400,
+          "height": 990
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-7.webp",
+          "width": 1400,
+          "height": 991
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-8.webp",
+          "width": 1400,
+          "height": 991
+        },
+        {
+          "src": "/assets/portfolio/wobble-board-9.webp",
+          "width": 1400,
+          "height": 990
+        }
+      ]
     },
     {
       "title": "Type in motion",
       "category": "Visual design",
       "url": "https://www.behance.net/gallery/83740853/Type-in-motion",
       "image": "/assets/portfolio/type-in-motion.webp",
-      "imageAlt": "Cover of Type in motion"
+      "imageAlt": "Cover of Type in motion",
+      "id": 83740853,
+      "slug": "type-in-motion",
+      "publishedOn": 1564854825,
+      "href": "/projects/83740853/",
+      "media": [
+        {
+          "src": "/assets/portfolio/type-in-motion-board-1.webp",
+          "width": 1600,
+          "height": 900
+        }
+      ]
     },
     {
       "title": "Gigantes",
       "category": "Visual design",
       "url": "https://www.behance.net/gallery/83737217/Gigantes",
       "image": "/assets/portfolio/gigantes.webp",
-      "imageAlt": "Cover of Gigantes"
+      "imageAlt": "Cover of Gigantes",
+      "id": 83737217,
+      "slug": "gigantes",
+      "publishedOn": 1564846857,
+      "href": "/projects/83737217/",
+      "media": [
+        {
+          "src": "/assets/portfolio/gigantes-board-1.webp",
+          "width": 1400,
+          "height": 933
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-2.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-3.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-4.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-5.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-6.webp",
+          "width": 1400,
+          "height": 933
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-7.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-8.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-9.webp",
+          "width": 1400,
+          "height": 933
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-10.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-11.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-12.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-13.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-14.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-15.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-16.webp",
+          "width": 1400,
+          "height": 933
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-17.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-18.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-19.webp",
+          "width": 1400,
+          "height": 933
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-20.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-21.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-22.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-23.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/assets/portfolio/gigantes-board-24.webp",
+          "width": 1400,
+          "height": 933
+        }
+      ]
     }
   ]
 }

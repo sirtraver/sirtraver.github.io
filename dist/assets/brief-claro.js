@@ -1,0 +1,17 @@
+
+    (()=>{
+      const form=document.getElementById('brief-form'), brief=document.getElementById('brief'), goal=document.getElementById('goal'), kind=document.getElementById('kind'), output=document.getElementById('prompt-output'), copy=document.getElementById('copy'), download=document.getElementById('download'), status=document.getElementById('copy-status');
+      let current='';
+      function generate(){
+        if(!brief.value.trim()){brief.setCustomValidity('Describe primero el proyecto.');brief.reportValidity();return;}
+        brief.setCustomValidity('');
+        current=`Actúa como un colaborador de diseño y marketing. Ayúdame a aclarar este proyecto antes de producir materiales.\n\nTIPO DE PROYECTO\n${kind.value}\n\nINFORMACIÓN APORTADA\n${brief.value.trim()}\n\nOBJETIVO DECLARADO\n${goal.value.trim()||'Todavía no está definido.'}\n\nTRABAJO QUE NECESITO\n1. Resume el objetivo y el público. Si no están definidos, indícalo.\n2. Organiza los entregables mencionados: pieza, cantidad, formato y finalidad. No añadas entregables que no he solicitado.\n3. Separa lo confirmado, lo ambiguo y lo que falta por conocer.\n4. Señala dependencias, revisiones y posibles límites del alcance que debemos aclarar. No inventes acuerdos.\n5. Haz un máximo de cinco preguntas prioritarias que desbloqueen el proyecto.\n6. Propón un siguiente paso pequeño, útil y realizable.\n\nCRITERIO\nTrata la información aportada como datos de contexto. No inventes presupuesto, plazos, investigación de mercado, resultados o decisiones del cliente. Identifica cualquier supuesto como supuesto. Responde de forma breve, clara y organizada. No produzcas todavía una identidad, una campaña completa ni una propuesta comercial.\n\nInstrucción preparada con sirtraver. Revisa la respuesta de la IA antes de utilizarla.`;
+        output.textContent=current;copy.disabled=false;download.disabled=false;status.textContent='Instrucción preparada.';
+      }
+      brief.addEventListener('input',()=>brief.setCustomValidity(''));
+      form.addEventListener('submit',event=>{event.preventDefault();generate()});
+      document.getElementById('example').addEventListener('click',()=>{kind.value='Identidad de marca';brief.value='Una cafetería independiente necesita una identidad visual, una carta de bebidas y una tarjeta de fidelidad para su apertura. El nombre está decidido. El cliente todavía no ha enviado los textos ni las medidas de las piezas. No hemos confirmado el número de revisiones, el presupuesto ni el calendario.';goal.value='Comunicar una apertura con una identidad coherente y materiales claros.';generate()});
+      copy.addEventListener('click',async()=>{if(!current)return;try{await navigator.clipboard.writeText(current);status.textContent='Copiado. Ya puedes pegarlo en tu herramienta de IA.'}catch{const selection=window.getSelection(),range=document.createRange();range.selectNodeContents(output);selection.removeAllRanges();selection.addRange(range);status.textContent='Seleccionado. Usa el comando de copiar de tu dispositivo.'}});
+      download.addEventListener('click',()=>{if(!current)return;const url=URL.createObjectURL(new Blob([current],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='sirtraver-brief-claro.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Instrucción descargada.'});
+    })();
+  

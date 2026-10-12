@@ -1,96 +1,14 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="sirtraver. Diseño gráfico, marketing e IA aplicada al trabajo creativo. Recursos claros, herramientas útiles y experimentos con criterio.">
-  <meta name="theme-color" content="#f4f5f0">
-  <title>sirtraver — Diseño, marketing e IA aplicada</title>
-  <style>
-    :root { --paper:#f4f5f0; --ink:#22261e; --muted:#60665b; --line:#d9ddd1; --accent:#d5e3b3; --white:#fff; }
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.55}button,input,textarea,select{font:inherit}a{color:inherit;text-underline-offset:4px}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #577930;outline-offset:5px}button:disabled{cursor:default}main,header,footer{width:min(1152px,calc(100% - 80px));margin:auto}.skip{position:absolute;top:-80px;background:var(--ink);color:white;padding:12px;z-index:5}.skip:focus{top:12px}header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}.wordmark{font-weight:700;letter-spacing:-1.2px;font-size:25px;text-decoration:none}.dot{color:#617f3d}nav{display:flex;gap:27px;align-items:center}nav a{font-size:14px;text-decoration:none}nav a:hover{text-decoration:underline}.hero{padding:82px 0 75px;display:grid;grid-template-columns:1.35fr 1fr;gap:68px;align-items:center}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted);margin:0 0 22px}.hero h1{font-size:clamp(48px,6.2vw,80px);font-weight:500;letter-spacing:-4.5px;line-height:1.03;margin:0 0 28px}.intro{font-size:18px;max-width:460px;color:var(--muted);margin:0 0 30px}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.button{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:12px 19px;border-radius:7px;border:1px solid var(--ink);text-decoration:none;min-height:46px;font-size:14px;background:var(--ink);color:white}.button.secondary{background:transparent;color:var(--ink);border-color:var(--line)}.button:hover{opacity:.85}.object{background:#e7ebdf;padding:28px;border-radius:12px;position:relative}.object-title{display:flex;justify-content:space-between;gap:16px;font-size:12px;color:var(--muted);margin-bottom:25px}.sheet{background:var(--white);border:1px solid #e0e4d8;border-radius:5px;padding:28px 25px;box-shadow:0 9px 24px #22261e08;transform:rotate(-3deg)}.sheet .small{font-size:10px;letter-spacing:1.3px;color:var(--muted);text-transform:uppercase}.sheet h2{font-size:25px;line-height:1.15;letter-spacing:-1px;margin:21px 0 23px;font-weight:500}.sheet-row{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:12px 0;border-top:1px solid #e6e9e1;font-size:13px}.sheet-row span:first-child{color:var(--muted);font-size:11px}.sheet-row strong{font-weight:500;display:block}.sheet-row small{color:var(--muted);font-size:11px}.sheet-tag{display:inline-block;background:var(--accent);padding:5px 9px;font-size:10px;border-radius:3px;margin-top:15px}.caption{font-size:11px;color:var(--muted);margin-top:25px;text-align:right}.section{border-top:1px solid var(--line);padding:44px 0 58px;scroll-margin-top:24px}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:30px;margin-bottom:28px}.section-head h2{font-size:32px;font-weight:500;letter-spacing:-1.2px;line-height:1.1;margin:0}.section-head p{max-width:410px;color:var(--muted);font-size:14px;margin:0}.resource{display:grid;grid-template-columns:1fr 1fr;gap:32px;background:#ecefe6;border:1px solid var(--line);border-radius:12px;padding:28px}.resource h3{font-size:22px;font-weight:500;letter-spacing:-.7px;margin:4px 0 8px}.resource p{font-size:14px;color:var(--muted);margin:0 0 18px}.badge{display:inline-block;background:var(--accent);padding:4px 9px;border-radius:4px;font-size:11px}.field{margin-top:18px}label{display:block;font-size:13px;margin-bottom:6px}textarea,input,select{width:100%;border:1px solid #c7cebc;border-radius:6px;padding:11px;background:var(--white);color:var(--ink)}textarea{min-height:130px;resize:vertical}#goal{min-height:54px}textarea::placeholder,input::placeholder{color:#747b6b}.result{background:var(--white);border:1px solid #dfe3d7;border-radius:8px;padding:23px;display:flex;flex-direction:column;min-width:0}.result-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;margin-bottom:18px}.result-top span{color:var(--muted)}#prompt-output{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;min-height:290px;margin:0;flex:1}.result-bottom{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:20px}.notice{font-size:11px!important;margin:16px 0 0!important}.status{font-size:12px;color:var(--muted)}.profile{display:grid;grid-template-columns:1fr 1.4fr;gap:70px}.profile h2{font-size:32px;font-weight:500;letter-spacing:-1px;line-height:1.1;margin:0 0 13px}.profile .body p{font-size:17px;color:var(--muted);margin:0 0 17px}.profile .body strong{font-weight:500;color:var(--ink)}.signature{font-size:14px;color:var(--ink)}footer{border-top:1px solid var(--line);padding:24px 0 32px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}footer div{display:flex;gap:22px}footer a{text-decoration:none}footer a:hover{text-decoration:underline}.privacy-note{font-size:11px;color:var(--muted);max-width:700px}
-    @media(max-width:900px){main,header,footer{width:calc(100% - 48px)}.hero{gap:32px;padding:60px 0}.hero h1{letter-spacing:-3px}.resource{gap:20px;padding:22px}.section-head{align-items:flex-start}.profile{gap:40px}}
-    @media(max-width:650px){main,header,footer{width:calc(100% - 36px)}header{padding:20px 0;gap:16px}nav{gap:17px}nav a{font-size:12px}nav .nav-social{display:none}.hero{grid-template-columns:1fr;gap:34px;padding:45px 0 42px}.hero h1{font-size:54px;letter-spacing:-3px}.intro{font-size:16px;max-width:100%}.object{padding:24px 30px}.sheet{max-width:360px;margin:auto;padding:24px}.section{padding:32px 0 38px}.section-head{display:block}.section-head h2{font-size:28px;margin-bottom:12px}.resource,.profile{grid-template-columns:1fr;gap:25px}.result{padding:19px}.profile .body p{font-size:16px}.profile h2{font-size:28px}#prompt-output{min-height:220px}.resource{padding:20px}.result-top{flex-wrap:wrap}.button{padding:12px 16px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
-</head>
-<body>
-  <a class="skip" href="#contenido">Saltar al contenido</a>
-  <header>
-    <a class="wordmark" href="#" aria-label="sirtraver, inicio">sirtraver<span class="dot">.</span></a>
-    <nav aria-label="Principal"><a href="#recurso">Recurso abierto</a><a href="#sobre">Sobre mí</a><a class="nav-social" href="https://www.threads.com/@sirtraver" target="_blank" rel="noopener noreferrer">Threads ↗</a></nav>
-  </header>
-  <main id="contenido">
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <p class="eyebrow">Diseñador gráfico · Marketing e IA aplicada</p>
-        <h1 id="hero-title">Diseño, marketing<br>&amp; IA aplicada.</h1>
-        <p class="intro">Creo recursos y exploro herramientas para hacer más claro el trabajo creativo de cada día.</p>
-        <div class="actions"><a class="button" href="#recurso">Probar el primer recurso <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://www.threads.com/@sirtraver" target="_blank" rel="noopener noreferrer">Seguir el proceso</a></div>
-      </div>
-      <div class="object" aria-label="Ejemplo editorial: objetivo, entregables y decisiones pendientes de un proyecto">
-        <div class="object-title"><span>Un proyecto empieza aquí.</span><span>01 / Brief</span></div>
-        <div class="sheet">
-          <div class="small">sirtraver / herramientas de trabajo</div>
-          <h2>De una idea<br>a un brief claro.</h2>
-          <div class="sheet-row"><span>01</span><div><strong>Qué queremos conseguir</strong><small>Un objetivo antes de diseñar.</small></div></div>
-          <div class="sheet-row"><span>02</span><div><strong>Qué hay que entregar</strong><small>Formatos, piezas y límites.</small></div></div>
-          <div class="sheet-row"><span>03</span><div><strong>Qué falta por decidir</strong><small>Preguntas antes de suposiciones.</small></div></div>
-          <span class="sheet-tag">El criterio dirige. La IA ayuda.</span>
-        </div>
-        <div class="caption">Un ejemplo del enfoque de sirtraver.</div>
-      </div>
-    </section>
-    <section class="section" id="recurso" aria-labelledby="resource-title">
-      <div class="section-head"><h2 id="resource-title">Un punto de partida útil.</h2><p>Una herramienta pequeña para empezar a ordenar un proyecto de diseño o marketing con ayuda de la IA.</p></div>
-      <div class="resource">
-        <form id="brief-form">
-          <span class="badge">Gratis · Sin registro</span>
-          <h3>Del brief a un proyecto claro</h3>
-          <p>Describe lo que sabes. Obtendrás una instrucción preparada para organizarlo en tu herramienta de IA habitual.</p>
-          <div class="field"><label for="kind">Tipo de proyecto</label><select id="kind"><option>Identidad de marca</option><option>Campaña de marketing</option><option>Contenido para redes</option><option>Presentación comercial</option><option>Otro proyecto creativo</option></select></div>
-          <div class="field"><label for="brief">Lo que sabes del proyecto</label><textarea id="brief" maxlength="6000" required placeholder="Por ejemplo: una cafetería necesita una identidad y materiales para su apertura. Tenemos el nombre, pero faltan los textos de la carta..."></textarea></div>
-          <div class="field"><label for="goal">Objetivo principal <span class="status">· opcional</span></label><input id="goal" maxlength="500" placeholder="Qué debería conseguir el proyecto"></div>
-          <div class="actions" style="margin-top:20px"><button class="button" type="submit">Preparar instrucción <span aria-hidden="true">↗</span></button><button class="button secondary" type="button" id="example">Probar un ejemplo</button></div>
-          <p class="notice">El texto se procesa en esta página y no se envía a una IA. Revisa los datos antes de copiarlos a otra herramienta.</p>
-        </form>
-        <div class="result">
-          <div class="result-top"><strong>Tu instrucción de trabajo</strong><span>Copiar → Usar → Revisar</span></div>
-          <pre id="prompt-output">Aquí aparecerá una instrucción para convertir la información del proyecto en:
-
-01 · Objetivo y público
-02 · Entregables y límites
-03 · Información confirmada
-04 · Preguntas pendientes
-05 · Siguiente paso
-
-La IA organiza. Tú revisas las decisiones.</pre>
-          <div class="result-bottom"><button class="button secondary" id="copy" type="button" disabled>Copiar</button><button class="button secondary" id="download" type="button" disabled>Descargar .txt</button><span class="status" id="copy-status" role="status" aria-live="polite"></span></div>
-        </div>
-      </div>
-    </section>
-    <section class="section profile" id="sobre" aria-labelledby="about-title">
-      <div><p class="eyebrow">La persona detrás</p><h2 id="about-title">Soy sirtraver.</h2><span class="signature">Diseño gráfico, marketing y curiosidad.</span></div>
-      <div class="body"><p>Me interesa la relación entre una buena idea, su diseño y la forma de comunicarla. También cómo la inteligencia artificial puede ayudarnos en el trabajo del día a día.</p><p>Estoy construyendo una colección pequeña de <strong>recursos y herramientas para el trabajo creativo</strong>. Quiero que cada producto tenga una utilidad clara, un diseño cuidado y una forma sencilla de empezar a usarlo.</p><a href="https://www.threads.com/@sirtraver" target="_blank" rel="noopener noreferrer">Comparto el proceso en Threads ↗</a></div>
-    </section>
-  </main>
-  <footer><span>© 2026 sirtraver.</span><div><a href="https://www.threads.com/@sirtraver" target="_blank" rel="noopener noreferrer">Threads ↗</a><a href="https://www.instagram.com/sirtraver/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div><span class="privacy-note">Este recurso no solicita cuentas ni almacena el texto que escribes. La conexión al alojamiento tiene sus propias condiciones de acceso.</span></footer>
-  <script>
-    (()=>{
-      const form=document.getElementById('brief-form'), brief=document.getElementById('brief'), goal=document.getElementById('goal'), kind=document.getElementById('kind'), output=document.getElementById('prompt-output'), copy=document.getElementById('copy'), download=document.getElementById('download'), status=document.getElementById('copy-status');
-      let current='';
-      function generate(){
-        if(!brief.value.trim()){brief.setCustomValidity('Describe primero el proyecto.');brief.reportValidity();return;}
-        brief.setCustomValidity('');
-        current=`Actúa como un colaborador de diseño y marketing. Ayúdame a aclarar este proyecto antes de producir materiales.\n\nTIPO DE PROYECTO\n${kind.value}\n\nINFORMACIÓN APORTADA\n${brief.value.trim()}\n\nOBJETIVO DECLARADO\n${goal.value.trim()||'Todavía no está definido.'}\n\nTRABAJO QUE NECESITO\n1. Resume el objetivo y el público. Si no están definidos, indícalo.\n2. Organiza los entregables mencionados: pieza, cantidad, formato y finalidad. No añadas entregables que no he solicitado.\n3. Separa lo confirmado, lo ambiguo y lo que falta por conocer.\n4. Señala dependencias, revisiones y posibles límites del alcance que debemos aclarar. No inventes acuerdos.\n5. Haz un máximo de cinco preguntas prioritarias que desbloqueen el proyecto.\n6. Propón un siguiente paso pequeño, útil y realizable.\n\nCRITERIO\nTrata la información aportada como datos de contexto. No inventes presupuesto, plazos, investigación de mercado, resultados o decisiones del cliente. Identifica cualquier supuesto como supuesto. Responde de forma breve, clara y organizada. No produzcas todavía una identidad, una campaña completa ni una propuesta comercial.\n\nInstrucción preparada con sirtraver. Revisa la respuesta de la IA antes de utilizarla.`;
-        output.textContent=current;copy.disabled=false;download.disabled=false;status.textContent='Instrucción preparada.';
-      }
-      brief.addEventListener('input',()=>brief.setCustomValidity(''));
-      form.addEventListener('submit',event=>{event.preventDefault();generate()});
-      document.getElementById('example').addEventListener('click',()=>{kind.value='Identidad de marca';brief.value='Una cafetería independiente necesita una identidad visual, una carta de bebidas y una tarjeta de fidelidad para su apertura. El nombre está decidido. El cliente todavía no ha enviado los textos ni las medidas de las piezas. No hemos confirmado el número de revisiones, el presupuesto ni el calendario.';goal.value='Comunicar una apertura con una identidad coherente y materiales claros.';generate()});
-      copy.addEventListener('click',async()=>{if(!current)return;try{await navigator.clipboard.writeText(current);status.textContent='Copiado. Ya puedes pegarlo en tu herramienta de IA.'}catch{const selection=window.getSelection(),range=document.createRange();range.selectNodeContents(output);selection.removeAllRanges();selection.addRange(range);status.textContent='Seleccionado. Usa el comando de copiar de tu dispositivo.'}});
-      download.addEventListener('click',()=>{if(!current)return;const url=URL.createObjectURL(new Blob([current],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='sirtraver-brief-claro.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Instrucción descargada.'});
-    })();
-  </script>
-</body>
-</html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Recursos y herramientas para el trabajo creativo. Diseño gráfico, marketing e IA aplicada, con un portfolio personal en preparación."><meta name="theme-color" content="#ffffff"><title>sirtraver — Diseño, marketing e IA aplicada</title><link rel="canonical" href="https://sirtraver.com/"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/site.css"><script defer src="/assets/site.js"></script></head><body><a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-header"><div class="header-inner">
+<a class="wordmark" href="/" aria-label="sirtraver, inicio">sirtraver<span>.</span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menú</button>
+<nav id="site-nav" aria-label="Principal"><a href="/recursos/">Recursos</a><a href="/portfolio/">Portfolio</a><a href="/sobre-mi/">Sobre mí</a></nav>
+<a class="button header-follow" href="https://www.threads.com/@sirtraver" target="_blank" rel="noopener noreferrer">Seguir en Threads <span aria-hidden="true">↗</span></a>
+</div></header><main id="contenido"><section class="home-hero"><div class="preview-deck" role="img" aria-label="Vista del enfoque de Brief claro: contexto, entregables y preguntas pendientes">
+<div class="preview-card card-left"><span class="mini-label">01 / Contexto</span><h3>Una idea<br>para empezar.</h3><div class="mock-label">Tipo de proyecto</div><div class="mock-field">Identidad de marca</div><div class="mock-label">Objetivo</div><div class="mock-line"></div><div class="mock-line short"></div><span class="mini-chip">Información aportada</span></div>
+<div class="preview-card card-center"><span class="mini-label">sirtraver / Brief claro</span><h3>De una idea<br>a un proyecto claro.</h3><div class="mock-row"><span>01</span>Objetivo y público</div><div class="mock-row"><span>02</span>Entregables y límites</div><div class="mock-row"><span>03</span>Preguntas pendientes</div><span class="mini-chip">Gratis · Sin registro</span></div>
+<div class="preview-card card-right"><span class="mini-label">03 / Criterio</span><h3>Preguntar<br>antes de asumir.</h3><div class="mock-row">¿Qué está confirmado?</div><div class="mock-row">¿Qué falta por decidir?</div><div class="mock-row">¿Cuál es el siguiente paso?</div><span class="mini-chip">Tú revisas las decisiones</span></div>
+</div><p class="eyebrow">Diseño gráfico · Marketing · IA aplicada</p><h1>Recursos para crear<br>con más claridad.</h1><p class="lead">Herramientas prácticas y diseño cuidado para el trabajo creativo de cada día.</p><div class="actions centered"><a class="button" href="/recursos/">Explorar recursos <span aria-hidden="true">↗</span></a><a class="text-link" href="/portfolio/">Ver portfolio <span aria-hidden="true">↗</span></a></div></section>
+<section class="feature-section" id="recurso"><div class="feature-visual"><div class="brief-preview"><span class="mini-label">sirtraver / Recurso abierto</span><h3>Brief claro.</h3><p>Contexto → Preguntas → Siguiente paso</p><div class="preview-question">¿Qué queremos conseguir?</div><div class="preview-question">¿Qué hay que entregar?</div><div class="preview-question">¿Qué falta por decidir?</div><div class="preview-bottom"><span>Diseño + Marketing</span><span>IA aplicada ↗</span></div></div></div><div class="feature-copy"><span class="badge">Disponible · Gratis</span><h2>De un brief ambiguo<br>a un punto de partida.</h2><p>Organiza lo que sabes del proyecto y prepara una instrucción para aclararlo con tu herramienta de IA. Sin inventar objetivos, entregables ni acuerdos.</p><a class="button" href="/recursos/brief-claro/">Probar Brief claro <span aria-hidden="true">↗</span></a></div></section>
+<section class="portfolio-feature"><div><p class="eyebrow">El trabajo detrás</p><h2>Diseño que se puede<br>mirar. Y explicar.</h2><p>Mi portfolio reunirá proyectos de diseño gráfico, marketing y publicidad: el contexto, las decisiones y las piezas finales.</p><a class="button secondary" href="/portfolio/">Entrar al portfolio <span aria-hidden="true">↗</span></a></div><div class="portfolio-outline"><div class="outline-head"><span>sirtraver / Portfolio</span><span class="badge">En preparación</span></div><div class="outline-title">Cada proyecto,<br>con su historia.</div><div class="outline-row"><span>01</span><strong>Contexto y objetivo</strong></div><div class="outline-row"><span>02</span><strong>Proceso y decisiones</strong></div><div class="outline-row"><span>03</span><strong>Resultado visual</strong></div></div></section>
+<section class="about-strip" id="sobre"><div><p class="eyebrow">Sobre mí</p><h2>Diseño, curiosidad<br>y criterio.</h2></div><div><p>Me interesa cómo una idea se convierte en algo útil, cómo se comunica y dónde puede ayudar la inteligencia artificial.</p><a class="text-link" href="/sobre-mi/">Conocer mi enfoque ↗</a></div></section></main><footer class="site-footer"><div class="footer-grid"><div><a class="wordmark" href="/">sirtraver.</a><p>Diseño, marketing e IA aplicada.<br>El criterio dirige. La IA ayuda.</p></div><div><span class="footer-label">Explorar</span><a href="/recursos/">Recursos</a><a href="/portfolio/">Portfolio</a><a href="/sobre-mi/">Sobre mí</a></div><div><span class="footer-label">Seguir el proceso</span><a href="https://www.threads.com/@sirtraver" target="_blank" rel="noopener noreferrer">Threads ↗</a><a href="https://www.instagram.com/sirtraver/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div><div class="footer-bottom"><span>© 2026 sirtraver.</span><span>Ideas claras. Trabajo cuidado.</span></div></footer></body></html>

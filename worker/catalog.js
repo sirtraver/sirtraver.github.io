@@ -6,7 +6,7 @@ export function publicProducts(items,demoId='') {
   let url;try{url=new URL(p.short_url);}catch{return []}
   if(url.protocol!=='https:'||url.hostname!=='sirtraver.gumroad.com'||!url.pathname.startsWith('/l/'))return [];
   let image='';try{const u=new URL(p.thumbnail_url);if(u.protocol==='https:'&&['public-files.gumroad.com','gumroad-public-storage.s3.amazonaws.com'].includes(u.hostname))image=u.href}catch{}
-  return [{id:p.id,title:String(p.name||'Recurso').slice(0,180),summary:String(p.custom_summary||'').slice(0,260),url:url.href,image,price:p.price===0?'Gratis · 0 €':String(p.formatted_price||''),published:p.published===true,demo:p.id===demoId}];
+  return [{id:p.id,title:String(p.name||'Recurso').slice(0,180),summary:String(p.custom_summary||'').slice(0,260),url:url.href,image,price:p.price===0?'Free · €0':String(p.formatted_price||''),published:p.published===true,demo:p.id===demoId}];
  });
 }
 export async function catalog(request,env,ctx,fetcher=fetch) {

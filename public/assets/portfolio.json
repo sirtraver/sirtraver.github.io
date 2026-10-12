@@ -5,45 +5,45 @@
   "projects": [
     {
       "title": "sirtraver - Visual Identity",
-      "category": "Identidad visual",
+      "category": "Visual identity",
       "url": "https://www.behance.net/gallery/216560651/sirtraver-Visual-Identity",
       "image": "/assets/portfolio/sirtraver.webp",
-      "imageAlt": "Portada de sirtraver - Visual Identity"
+      "imageAlt": "Cover of sirtraver - Visual Identity"
     },
     {
       "title": "Greens - Visual Identity",
-      "category": "Identidad visual",
+      "category": "Visual identity",
       "url": "https://www.behance.net/gallery/207304547/Greens-Visual-Identity",
       "image": "/assets/portfolio/greens.webp",
-      "imageAlt": "Portada de Greens - Visual Identity"
+      "imageAlt": "Cover of Greens - Visual Identity"
     },
     {
       "title": "MORE+",
-      "category": "Proyecto visual",
+      "category": "Visual design",
       "url": "https://www.behance.net/gallery/83743511/MORE",
       "image": "/assets/portfolio/more.webp",
-      "imageAlt": "Portada de MORE+"
+      "imageAlt": "Cover of MORE+"
     },
     {
       "title": "WOBBLE",
-      "category": "Proyecto visual",
+      "category": "Visual design",
       "url": "https://www.behance.net/gallery/83741433/WOBBLE",
       "image": "/assets/portfolio/wobble.webp",
-      "imageAlt": "Portada de WOBBLE"
+      "imageAlt": "Cover of WOBBLE"
     },
     {
       "title": "Type in motion",
-      "category": "Proyecto visual",
+      "category": "Visual design",
       "url": "https://www.behance.net/gallery/83740853/Type-in-motion",
       "image": "/assets/portfolio/type-in-motion.webp",
-      "imageAlt": "Portada de Type in motion"
+      "imageAlt": "Cover of Type in motion"
     },
     {
       "title": "Gigantes",
-      "category": "Proyecto visual",
+      "category": "Visual design",
       "url": "https://www.behance.net/gallery/83737217/Gigantes",
       "image": "/assets/portfolio/gigantes.webp",
-      "imageAlt": "Portada de Gigantes"
+      "imageAlt": "Cover of Gigantes"
     }
   ]
 }

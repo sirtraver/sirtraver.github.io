@@ -1,0 +1,7 @@
+const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function renderResources(products,language='en'){
+ const es=language==='es';
+ if(!products.length)return '<p class="catalog-status">'+(es?'Todavía no hay productos disponibles.':'No products available yet.')+'</p>';
+ return products.map(p=>'<article class="project-card product-card">'+(p.image?'<img src="'+escape(p.image)+'" alt="Cover of '+escape(p.title)+'" width="600" height="600" loading="lazy">':'')+'<div class="card-caption"><h2>'+escape(p.title)+'</h2></div><p class="product-summary">'+escape(p.summary)+'</p><div class="product-bottom"><span>'+escape(es?p.price.replace('Free · €0','Gratis · 0 €'):p.price)+'</span>'+(p.published?'<a href="'+escape(p.url)+'" target="_blank" rel="noopener noreferrer">'+(es?'Ver en Gumroad ↗':'View on Gumroad ↗')+'</a>':'<span class="product-state">'+(es?'Demo / En preparación':'Demo / Coming soon')+'</span>')+'</div></article>').join('');
+}
+export function resourceSchema(products){return JSON.stringify({'@context':'https://schema.org','@type':'ItemList','name':'SIRTRAVER digital resources','itemListElement':products.filter(p=>p.published).map((p,i)=>({'@type':'ListItem','position':i+1,'item':{'@type':'CreativeWork','name':p.title,'url':p.url,'image':p.image,'creator':{'@id':'https://sirtraver.com/#javier-traver'}}}))}).replace(/</g,'\\u003c');}

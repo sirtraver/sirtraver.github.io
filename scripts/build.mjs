@@ -4,6 +4,6 @@ const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8'
 const assets={};async function walk(dir){for(const e of (await fs.readdir(dir,{withFileTypes:true})).sort((a,b)=>a.name.localeCompare(b.name))){const p=path.join(dir,e.name);if(e.isDirectory())await walk(p);else{const route='/'+path.relative('public',p).split(path.sep).join('/');assets[route]=[types[path.extname(p)]||'application/octet-stream',(await fs.readFile(p)).toString('base64')];}}}
 await walk('public');await fs.writeFile('worker/assets.js','export const assets='+JSON.stringify(assets)+';\n');
 let index=await fs.readFile('worker/index.js','utf8');index=index.replace(/^import .*;\n/gm,'');
-const catalog=await fs.readFile('worker/catalog.js','utf8');
+const catalog=await fs.readFile('worker/catalog.js','utf8');const render=await fs.readFile('worker/render.js','utf8');
 await fs.rm('dist',{recursive:true,force:true});await fs.mkdir('dist/server',{recursive:true});await fs.mkdir('dist/.openai',{recursive:true});
-await fs.writeFile('dist/server/index.js',(await fs.readFile('worker/assets.js','utf8'))+catalog+index);await fs.copyFile('.openai/hosting.json','dist/.openai/hosting.json');console.log('Servidor y '+Object.keys(assets).length+' recursos preparados.');
+await fs.writeFile('dist/server/index.js',(await fs.readFile('worker/assets.js','utf8'))+catalog+render+index);await fs.copyFile('.openai/hosting.json','dist/.openai/hosting.json');console.log('Servidor y '+Object.keys(assets).length+' recursos preparados.');

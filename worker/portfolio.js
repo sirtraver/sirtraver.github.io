@@ -18,6 +18,7 @@ export function publicBehanceProjects(html){
 export async function portfolio(env,ctx={},fetcher=fetch){
  if(portfolioMemo&&portfolioMemo.expires>Date.now())return portfolioMemo;
  let saved;try{const object=await env.BUCKET?.get('catalog/behance.json');saved=object?await object.json():null}catch{}
+ if(saved&&Date.parse(saved.updatedAt)<Date.parse(assetJson('/assets/portfolio.json').importedAt))saved=null;
  if(saved?.projects?.length&&saved.expires>Date.now()){portfolioMemo=saved;return saved}
  const refresh=async()=>{
   const response=await fetcher('https://www.behance.net/javiertraver',{headers:{'User-Agent':'Mozilla/5.0',Accept:'text/html'},signal:AbortSignal.timeout(7000)});
@@ -27,9 +28,9 @@ export async function portfolio(env,ctx={},fetcher=fetch){
   await env.BUCKET?.put('catalog/behance.json',JSON.stringify(result),{httpMetadata:{contentType:'application/json'}});portfolioMemo=result;return result;
  };
  if(saved?.projects?.length&&ctx.waitUntil){ctx.waitUntil(refresh().catch(()=>{}));return saved}
- try{return await refresh()}catch{portfolioMemo={projects:portfolioFallback(),source:'last-confirmed-import',updatedAt:'2026-10-12',expires:Date.now()+60000};return portfolioMemo}
+ try{return await refresh()}catch{portfolioMemo={projects:portfolioFallback(),source:'last-confirmed-import',updatedAt:assetJson('/assets/portfolio.json').importedAt,expires:Date.now()+60000};return portfolioMemo}
 }
-export function projectTitle(project,es){return es?project.title.replace(/\s*[-–—]\s*Visual Identity/gi,' — Identidad visual').replace(/^Type in motion$/,'Tipografía en movimiento'):project.title}
+export function projectTitle(project,es){return es?project.title.replace(/\s*[-–—]\s*Visual Identity/gi,' — Identidad visual').replace(/Brand Identity/gi,'Identidad de marca').replace(/^Type in motion$/,'Tipografía en movimiento'):project.title}
 export function renderPortfolio(projects,es){return '<section class="project-grid" aria-label="'+(es?'Proyectos de diseño':'Design projects')+'">'+projects.map(p=>'<a class="project-card" href="'+(es?'/es':'')+p.href+'"><img src="'+escape(p.image)+'" alt="'+escape(projectTitle(p,es))+'" width="808" height="632" loading="lazy"><div class="card-caption"><h3>'+escape(projectTitle(p,es))+'</h3><span aria-hidden="true">→</span></div><p>'+(es?(p.category==='Visual identity'?'Identidad visual':'Diseño visual'):p.category)+'</p></a>').join('')+'</section>'}
 export async function projectMedia(project,env){
  if(project.media?.length)return project.media;

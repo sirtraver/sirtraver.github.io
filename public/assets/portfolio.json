@@ -1,8 +1,184 @@
 {
   "source": "https://www.behance.net/javiertraver",
-  "importedAt": "2026-10-12",
+  "importedAt": "2026-10-12T20:41:11.817300+00:00",
   "syncMode": "public-profile-with-last-good-cache",
   "projects": [
+    {
+      "id": 257014407,
+      "slug": "kudake",
+      "title": "KUDAKE! Japan Burgers · Brand Identity",
+      "url": "https://www.behance.net/gallery/257014407/KUDAKE-Japan-Burgers-Brand-Identity",
+      "href": "/projects/257014407/",
+      "category": "Visual identity",
+      "image": "/assets/portfolio/kudake.webp",
+      "imageAlt": "KUDAKE! Japan Burgers · Brand Identity",
+      "publishedOn": 1791837436,
+      "media": [
+        {
+          "src": "/assets/portfolio/kudake-board-1.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-2.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-3.webp",
+          "width": 1600,
+          "height": 1133
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-4.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-5.webp",
+          "width": 1400,
+          "height": 788
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-6.webp",
+          "width": 1400,
+          "height": 1050
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-7.webp",
+          "width": 1400,
+          "height": 1167
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-8.webp",
+          "width": 1400,
+          "height": 1021
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-9.webp",
+          "width": 1400,
+          "height": 1021
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-10.webp",
+          "width": 1400,
+          "height": 788
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-11.webp",
+          "width": 1400,
+          "height": 904
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-12.webp",
+          "width": 1400,
+          "height": 1050
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-13.webp",
+          "width": 1400,
+          "height": 1050
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-14.webp",
+          "width": 1400,
+          "height": 904
+        },
+        {
+          "src": "/assets/portfolio/kudake-board-15.webp",
+          "width": 1400,
+          "height": 788
+        }
+      ]
+    },
+    {
+      "id": 257013973,
+      "slug": "flamenco-urbano",
+      "title": "Flamenco Urbano · Brand Identity",
+      "url": "https://www.behance.net/gallery/257013973/Flamenco-Urbano-Brand-Identity",
+      "href": "/projects/257013973/",
+      "category": "Visual identity",
+      "image": "/assets/portfolio/flamenco-urbano.webp",
+      "imageAlt": "Flamenco Urbano · Brand Identity",
+      "publishedOn": 1791836934,
+      "media": [
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-1.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-2.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-3.webp",
+          "width": 1600,
+          "height": 1133
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-4.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-5.webp",
+          "width": 1400,
+          "height": 788
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-6.webp",
+          "width": 1400,
+          "height": 788
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-7.webp",
+          "width": 1400,
+          "height": 788
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-8.webp",
+          "width": 1400,
+          "height": 992
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-9.webp",
+          "width": 1400,
+          "height": 788
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-10.webp",
+          "width": 1400,
+          "height": 788
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-11.webp",
+          "width": 1400,
+          "height": 904
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-12.webp",
+          "width": 1400,
+          "height": 904
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-13.webp",
+          "width": 1400,
+          "height": 904
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-14.webp",
+          "width": 1400,
+          "height": 904
+        },
+        {
+          "src": "/assets/portfolio/flamenco-urbano-board-15.webp",
+          "width": 1400,
+          "height": 788
+        }
+      ]
+    },
     {
       "title": "sirtraver - Visual Identity",
       "category": "Visual identity",

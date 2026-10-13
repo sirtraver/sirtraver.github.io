@@ -1,5 +1,4 @@
 (()=>{
- if(new URL(location.href).searchParams.get('viewer')!=='1')return;
  const es=document.documentElement.lang==='es';let catalog,active,opener,oldOverflow;const dialog=document.createElement('dialog');dialog.className='project-viewer';dialog.setAttribute('aria-labelledby','viewer-title');
  dialog.innerHTML='<header class="viewer-bar"><div><span class="viewer-brand">sirtraver</span><h2 id="viewer-title"></h2></div><div><a class="viewer-original" target="_blank" rel="noopener noreferrer">'+(es?'Ver en Behance':'View on Behance')+' ↗</a><button class="viewer-close" aria-label="'+(es?'Cerrar proyecto':'Close project')+'">×</button></div></header><div class="viewer-scroll"><div class="viewer-images"></div><p class="viewer-error" hidden></p><a class="viewer-end" target="_blank" rel="noopener noreferrer">'+(es?'Descripción, comentarios y valoraciones en Behance':'Description, comments & appreciations on Behance')+' ↗</a></div>';
  document.body.append(dialog);const scroll=dialog.querySelector('.viewer-scroll'),images=dialog.querySelector('.viewer-images'),error=dialog.querySelector('.viewer-error');
@@ -7,7 +6,7 @@
  document.addEventListener('click',async e=>{
  const card=e.target.closest('.project-card');if(!card||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
  const match=new URL(card.href).pathname.match(/^\/gallery\/(\d+)\//);if(!match)return;e.preventDefault();
- if(!catalog){try{const r=await fetch('/assets/viewer-projects.json');if(!r.ok)throw Error();catalog=await r.json()}catch{window.open(card.href,'_blank','noopener');return}}
+ if(!catalog){try{const r=await fetch('/assets/viewer-projects.json',{cache:'no-store'});if(!r.ok)throw Error();catalog=await r.json()}catch{window.open(card.href,'_blank','noopener');return}}
  const project=catalog[match[1]];if(!project){window.open(card.href,'_blank','noopener');return}
  opener=card;active=project;error.hidden=true;dialog.querySelector('h2').textContent=project.title;
  for(const a of dialog.querySelectorAll('a'))a.href=project.url;

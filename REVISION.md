@@ -11,6 +11,7 @@ Se ha integrado la evolución recuperada de Claude en el repositorio del mismo s
 - Cabecera translúcida y contacto social preservados; eliminadas llamadas de contacto repetidas al final de las páginas.
 - Sobre mí conserva Qué aporto/Cómo trabajo; retirado un bloque de servicios que repetía el contenido.
 - Recursos simplifica su encabezado y las categorías de lanzamiento. El catálogo sigue siendo real y conectado a Gumroad.
+- Retirada la transición automática entre páginas tras observar un estado visual en blanco en el navegador integrado. La navegación vuelve al render nativo.
 - Contraste y tamaño de párrafos mejorados, controles táctiles ampliados, scroll estable y respeto por movimiento reducido.
 - Visor con URLs originales de Behance y dimensiones conocidas, navegación entre proyectos, URL compartible, X/Escape y retorno de foco sin desplazar el portfolio.
 - Páginas indexables de proyecto, rutas antiguas redirigidas, canonical/hreflang, JSON-LD y sitemap.

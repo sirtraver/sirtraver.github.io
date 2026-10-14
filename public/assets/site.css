@@ -1968,16 +1968,7 @@ a:hover .card-media img {
   .work-heading > span { display: none; }
 }
 
-/* Smooth cross-page transitions in browsers that support them (progressive enhancement). */
-@view-transition {
-  navigation: auto;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  @view-transition {
-    navigation: none;
-  }
-
   .card-media img {
     transition: none;
   }

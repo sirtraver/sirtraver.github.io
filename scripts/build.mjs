@@ -1,14 +1,138 @@
+// Build:
+//  1. processes project images (scripts/images.mjs) into public/media/,
+//  2. reads content/ into src/generated/content.js,
+//  3. embeds the small static files of public/ (not media/) into src/generated/assets.js,
+//  4. bundles src/ into one ES module, dist/server/index.js, exporting default.fetch.
+import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {createHash} from 'node:crypto';
-const cssVersion=createHash('sha256').update(await fs.readFile('public/assets/site.css')).digest('hex').slice(0,12);
-const scriptVersions={};for(const file of await fs.readdir('public/assets'))if(file.endsWith('.js'))scriptVersions[file]=createHash('sha256').update(await fs.readFile('public/assets/'+file)).digest('hex').slice(0,12);
-const jsVersion=createHash('sha256').update(await fs.readFile('public/assets/site.js')).digest('hex').slice(0,12);
-const types={'.gif':'image/gif','.ico':'image/x-icon','.jpg':'image/jpeg','.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8'};
-const assets={};async function walk(dir){for(const e of (await fs.readdir(dir,{withFileTypes:true})).sort((a,b)=>a.name.localeCompare(b.name))){const p=path.join(dir,e.name);if(e.isDirectory())await walk(p);else{if(/-board-/.test(e.name))continue;const route='/'+path.relative('public',p).split(path.sep).join('/');let payload=await fs.readFile(p);if(path.extname(p)==='.html')payload=Buffer.from(payload.toString().replaceAll('href="/assets/site.css"','href="/assets/site.css?v='+cssVersion+'"').replace(/src="\/assets\/([^"]+\.js)(?:\?[^"]*)?"/g,(match,file)=>'src="/assets/'+file+'?v='+scriptVersions[file]+'"'));assets[route]=[types[path.extname(p)]||'application/octet-stream',payload.toString('base64')];}}}
-await walk('public');await fs.writeFile('worker/assets.js','export const assets='+JSON.stringify(assets)+';\n');
-let index=await fs.readFile('worker/index.js','utf8');index=index.replace(/^import .*;\n/gm,'');
-const portfolioCode=await fs.readFile('worker/portfolio.js','utf8');const waitlistCode=await fs.readFile('worker/waitlist.js','utf8');
-const catalog=await fs.readFile('worker/catalog.js','utf8');const render=await fs.readFile('worker/render.js','utf8');
-await fs.rm('dist',{recursive:true,force:true});await fs.mkdir('dist/server',{recursive:true});await fs.mkdir('dist/.openai',{recursive:true});
-await fs.writeFile('dist/server/index.js',(await fs.readFile('worker/assets.js','utf8'))+catalog+render+portfolioCode.replace(/^import .*;\n/gm,'')+waitlistCode+index);await fs.copyFile('.openai/hosting.json','dist/.openai/hosting.json');console.log('Servidor y '+Object.keys(assets).length+' recursos preparados.');
+import { fileURLToPath } from 'node:url';
+import { loadContent } from './content.mjs';
+import { buildMedia } from './images.mjs';
+
+const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
+const PUBLIC_DIR = path.join(ROOT, 'public');
+const ENTRY = path.join(ROOT, 'src/worker.js');
+const GENERATED = path.join(ROOT, 'src/generated/assets.js');
+const GENERATED_CONTENT = path.join(ROOT, 'src/generated/content.js');
+// Large media is served from disk by the server (server/node.mjs), not embedded.
+const NOT_EMBEDDED = new Set();
+const DIST = path.join(ROOT, 'dist');
+
+const TYPES = {
+  '.css': 'text/css; charset=utf-8',
+  '.avif': 'image/avif',
+  '.ico': 'image/x-icon',
+  '.jpg': 'image/jpeg',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.txt': 'text/plain; charset=utf-8',
+  '.webp': 'image/webp',
+  '.woff2': 'font/woff2',
+  '.xml': 'application/xml; charset=utf-8',
+};
+
+async function listFiles(dir) {
+  const entries = (await fs.readdir(dir, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name));
+  const files = [];
+  for (const entry of entries) {
+    if (entry.name.startsWith('.') || (dir === PUBLIC_DIR && NOT_EMBEDDED.has(entry.name))) continue;
+    const full = path.join(dir, entry.name);
+    files.push(...(entry.isDirectory() ? await listFiles(full) : [full]));
+  }
+  return files;
+}
+
+async function generateAssets() {
+  const assets = {};
+  for (const file of await listFiles(PUBLIC_DIR)) {
+    const route = '/' + path.relative(PUBLIC_DIR, file).split(path.sep).join('/');
+    const type = TYPES[path.extname(file)];
+    if (!type) throw new Error(`No content type for ${route}`);
+    const bytes = await fs.readFile(file);
+    assets[route] = { type, hash: createHash('sha256').update(bytes).digest('hex').slice(0, 12), base64: bytes.toString('base64') };
+  }
+  // SOURCE_DATE (YYYY-MM-DD) makes builds reproducible; it defaults to today.
+  const buildDate = (process.env.SOURCE_DATE || new Date().toISOString()).slice(0, 10);
+  await fs.mkdir(path.dirname(GENERATED), { recursive: true });
+  await fs.writeFile(
+    GENERATED,
+    `// Generated by scripts/build.mjs from public/. Do not edit.\nexport const buildDate = ${JSON.stringify(buildDate)};\nexport const assets = ${JSON.stringify(assets)};\n`,
+  );
+  return assets;
+}
+
+// --- Minimal ES module bundler for this codebase's conventions -------------------------
+// Supports: `import { a, b as c } from './x.js';`, `import x from './y.json' with { type: 'json' };`
+// and `export function|async function|const|let|class name`. Anything else fails loudly.
+
+const IMPORT = /^import\s+(?:(\w+)|\{([^}]*)\})\s+from\s+'([^']+)'(?:\s+with\s+\{[^}]*\})?;[ \t]*$/gm;
+const EXPORT = /^export\s+(async\s+function|function|const|let|class)\s+(\w+)/gm;
+
+async function bundle(entry) {
+  const modules = new Map(); // file -> { id, code }
+  const visiting = new Set();
+
+  async function visit(file) {
+    if (modules.has(file)) return modules.get(file).id;
+    if (visiting.has(file)) throw new Error(`Circular import: ${path.relative(ROOT, file)}`);
+    visiting.add(file);
+
+    let code = await fs.readFile(file, 'utf8');
+    if (file.endsWith('.json')) {
+      code = `const __default = ${code.trim()};\nreturn { default: __default };`;
+    } else {
+      const imports = [...code.matchAll(IMPORT)];
+      for (const [statement, defaultName, names, specifier] of imports) {
+        if (!specifier.startsWith('.')) throw new Error(`Only relative imports are supported: ${specifier}`);
+        const id = await visit(path.resolve(path.dirname(file), specifier));
+        const binding = defaultName ? `${defaultName} = ${id}.default` : `{ ${names.replace(/\s+as\s+/g, ': ').trim()} } = ${id}`;
+        code = code.replace(statement, `const ${binding};`);
+      }
+      if (file !== entry) {
+        const exported = [...code.matchAll(EXPORT)].map((match) => match[2]);
+        code = code.replace(EXPORT, '$1 $2');
+        code = `${code}\nreturn { ${exported.join(', ')} };`;
+      }
+      const leftover = file === entry ? /^(import|export(?! default))\s/m : /^(import|export)\s/m;
+      if (leftover.test(code)) throw new Error(`Unsupported import/export syntax in ${path.relative(ROOT, file)}`);
+    }
+
+    visiting.delete(file);
+    const id = `__module${modules.size}`;
+    modules.set(file, { id, code });
+    return id;
+  }
+
+  await visit(entry);
+  const { code: entryCode } = modules.get(entry);
+  const dependencies = [...modules]
+    .filter(([file]) => file !== entry)
+    .map(([file, { id, code }]) => `// ${path.relative(ROOT, file)}\nconst ${id} = (() => {\n${code}\n})();`);
+  return `// sirtraver — generated by scripts/build.mjs from src/. Do not edit.\n\n${dependencies.join('\n\n')}\n\n// src/worker.js\n${entryCode}`;
+}
+
+const media = await buildMedia();
+const content = await loadContent(media);
+const contentHash = createHash('sha256').update(JSON.stringify(content)).digest('hex').slice(0, 12);
+await fs.mkdir(path.dirname(GENERATED_CONTENT), { recursive: true });
+await fs.writeFile(
+  GENERATED_CONTENT,
+  `// Generated by scripts/build.mjs from content/. Do not edit.\nexport const contentHash = ${JSON.stringify(contentHash)};\nexport const projects = ${JSON.stringify(content.projects)};\nexport const about = ${JSON.stringify(content.about)};\n`,
+);
+const assets = await generateAssets();
+const output = await bundle(ENTRY);
+
+await fs.rm(DIST, { recursive: true, force: true });
+await fs.mkdir(path.join(DIST, 'server'), { recursive: true });
+await fs.mkdir(path.join(DIST, '.openai'), { recursive: true });
+await fs.writeFile(path.join(DIST, 'server/index.js'), output);
+await fs.copyFile(path.join(ROOT, '.openai/hosting.json'), path.join(DIST, '.openai/hosting.json'));
+
+// The bundle must load as a standalone ES module and expose the Worker interface.
+const worker = await import(`data:text/javascript;base64,${Buffer.from(output).toString('base64')}`);
+if (typeof worker.default?.fetch !== 'function') throw new Error('dist/server/index.js must export default.fetch');
+
+console.log(`Build OK: ${content.projects.length} projects, ${Object.keys(assets).length} assets, dist/server/index.js (${(output.length / 1024).toFixed(0)} KB)`);

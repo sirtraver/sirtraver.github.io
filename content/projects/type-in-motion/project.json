@@ -1,0 +1,39 @@
+{
+  "id": 83740853,
+  "name": "Type in Motion",
+  "nameEs": "Tipografía en movimiento",
+  "category": "Visual design",
+  "date": "2019-08-03",
+  "behance": "https://www.behance.net/gallery/83740853/Type-in-motion",
+  "behanceTitle": "Type in motion",
+  "client": "",
+  "role": {
+    "en": "",
+    "es": ""
+  },
+  "deliverables": {
+    "en": [],
+    "es": []
+  },
+  "intro": {
+    "en": "",
+    "es": ""
+  },
+  "result": {
+    "en": "",
+    "es": ""
+  },
+  "cover": "cover.jpg",
+  "featured": false,
+  "archived": false,
+  "order": 3,
+  "images": [
+    {
+      "file": "01.png",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    }
+  ]
+}

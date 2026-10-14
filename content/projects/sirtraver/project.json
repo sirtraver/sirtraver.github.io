@@ -1,0 +1,51 @@
+{
+  "id": 216560651,
+  "name": "sirtraver",
+  "category": "Visual identity",
+  "date": "2025-01-11",
+  "behance": "https://www.behance.net/gallery/216560651/sirtraver-Visual-Identity",
+  "behanceTitle": "sirtraver - Visual Identity",
+  "client": "",
+  "role": {
+    "en": "",
+    "es": ""
+  },
+  "deliverables": {
+    "en": [],
+    "es": []
+  },
+  "intro": {
+    "en": "",
+    "es": ""
+  },
+  "result": {
+    "en": "",
+    "es": ""
+  },
+  "cover": "cover.jpg",
+  "images": [
+    {
+      "file": "01.png",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "02.png",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "03.png",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    }
+  ],
+  "featured": false,
+  "archived": false
+}

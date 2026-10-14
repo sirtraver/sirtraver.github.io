@@ -1,0 +1,129 @@
+{
+  "id": 83743511,
+  "name": "MORE+",
+  "category": "Visual design",
+  "date": "2019-08-03",
+  "behance": "https://www.behance.net/gallery/83743511/MORE",
+  "behanceTitle": "MORE+",
+  "client": "",
+  "role": {
+    "en": "",
+    "es": ""
+  },
+  "deliverables": {
+    "en": [],
+    "es": []
+  },
+  "intro": {
+    "en": "",
+    "es": ""
+  },
+  "result": {
+    "en": "",
+    "es": ""
+  },
+  "cover": "cover.webp",
+  "featured": false,
+  "archived": false,
+  "order": 1,
+  "images": [
+    {
+      "file": "01.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "02.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "03.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "04.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "05.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "06.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "07.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "08.png",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "09.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "10.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "11.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "12.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "13.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "file": "14.jpg",
+      "caption": {
+        "en": "",
+        "es": ""
+      }
+    }
+  ]
+}

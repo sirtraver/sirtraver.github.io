@@ -1,0 +1,7 @@
+# HTTPS reverse proxy. The site itself redirects www to the bare domain.
+sirtraver.com, www.sirtraver.com {
+	encode zstd gzip
+	reverse_proxy web:4173 {
+		header_up X-Forwarded-For {remote_host}
+	}
+}

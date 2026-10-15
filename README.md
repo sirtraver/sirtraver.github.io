@@ -11,19 +11,28 @@ npm run build
 
 ## Contenido y assets
 
-- `content/projects/<slug>/project.json`: título, orden, categoría, datos y textos opcionales. No introducir clientes, resultados o métricas no confirmados.
-- `content/projects/<slug>/originals/cover.webp`: portada maestra. El build crea variantes AVIF/WebP y JPEG social y las incluye en el Worker.
-- `content/remote-media.json`: originales remotos de Behance, en orden, con dimensiones y color de fondo. El visor y las páginas de proyecto sirven esas mismas URLs. No hay sincronización automática de galerías.
-- `content/behance-galleries.json`: referencia recuperada de las 96 URLs originales para comprobar identidad y orden.
-- `content/about.json`: clientes y testimonios; actualmente vacío. No rellenar con ejemplos ficticios.
-- `src/content.js`: interfaz y textos en inglés y español.
-- `public/assets/site.css`: sistema visual, responsive y movimiento reducido.
+El acceso directo `../PORTFOLIO/` abre `content/projects/`. Cada carpeta de proyecto contiene todos sus datos y recursos:
 
-Los originales locales de las galerías permanecen en `../site/content/projects/`; no se duplican en hosting. Para incorporar un proyecto hay que añadir su portada, datos y URLs/dimensiones a ambos registros de galerías y actualizar las pruebas de catálogo correspondientes.
+```
+mi-proyecto/
+  project.json        Nombre, fecha, estado y textos opcionales
+  portada.webp        Portada JPG, PNG, WebP o AVIF
+  imagenes/           Galería local: 01.jpg, 02.jpg…
+  galeria.json        Opcional: orden, pies o URLs de Behance
+  recursos/           Originales y documentos privados, fuera de hosting y Git
+```
+
+Duplica `_PLANTILLA/` y sigue `COMO-ANADIR-PROYECTOS.md`. No hay que editar registros globales: el build descubre las carpetas, excluye borradores (`draft: true`) y genera las tarjetas, páginas, metadatos y galerías. La publicación en Sites se hace después de la generación.
+
+En los ocho proyectos recuperados, `galeria.json` conserva las 96 URLs originales de Behance y sus dimensiones. Los originales locales se reúnen en `recursos/originales/` de cada proyecto; esas copias de trabajo no se publican. Si existe `galeria.json`, esa lista tiene prioridad sobre la detección de `imagenes/`. Los proyectos nuevos pueden utilizar solo imágenes locales y no necesitan cuenta ni enlaces de Behance.
+
+El build crea variantes AVIF/WebP y JPEG social, nunca amplía las imágenes y conserva sus dimensiones para evitar saltos de carga. La interfaz y las galerías locales optimizadas se sirven desde el propio Worker.
+
+`content/about.json` conserva clientes y testimonios; no rellenar con ejemplos ficticios. `src/content.js` contiene el texto de interfaz EN/ES y `public/assets/site.css` el sistema visual.
 
 ## Hosting
 
-`src/worker.js` es la entrada. `scripts/build.mjs` genera `dist/server/index.js` y copia `.openai/hosting.json`. Las portadas y assets pequeños se sirven desde el propio Worker: el hosting no necesita un servidor Node ni archivos de media externos. El adaptador `src/lib/storage.js` usa el binding R2 `BUCKET` existente y conserva las claves de la lista de espera. Node emplea una interfaz equivalente de almacenamiento.
+`src/worker.js` es la entrada. `scripts/build.mjs` genera `dist/server/index.js` y copia `.openai/hosting.json`. Las imágenes locales optimizadas y los assets se sirven desde el propio Worker: el hosting no necesita un servidor Node ni archivos de media externos. El adaptador `src/lib/storage.js` usa el binding R2 `BUCKET` existente y conserva las claves de la lista de espera. Node emplea una interfaz equivalente de almacenamiento.
 
 Publicar mediante el flujo nativo de Sites: abrir/sincronizar el repositorio del mismo proyecto, ejecutar checks/build, crear el archivo desde el commit enviado, guardar versión y desplegarla manteniendo su audiencia. Nunca crear un proyecto duplicado para actualizar esta web.
 

@@ -3,33 +3,16 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readProjectDefinition } from './project-files.mjs';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const CONTENT = path.join(ROOT, 'content');
-const CATEGORIES = ['Visual identity', 'Visual design'];
 
 const bilingual = (value) => ({ en: String(value?.en ?? ''), es: String(value?.es ?? '') });
 const list = (value) => ({ en: Array.isArray(value?.en) ? value.en.map(String) : [], es: Array.isArray(value?.es) ? value.es.map(String) : [] });
 
-function fail(file, message) {
-  throw new Error(`${path.relative(ROOT, file)}: ${message}`);
-}
-
-async function readProject(slug, media) {
-  const file = path.join(CONTENT, 'projects', slug, 'project.json');
-  let data;
-  try {
-    data = JSON.parse(await fs.readFile(file, 'utf8'));
-  } catch (error) {
-    fail(file, `invalid JSON (${error.message})`);
-  }
-
-  if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) fail(file, 'the folder name must be lowercase-with-dashes');
-  if (!data.name) fail(file, '"name" is required');
-  if (!CATEGORIES.includes(data.category)) fail(file, `"category" must be one of: ${CATEGORIES.join(', ')}`);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(data.date ?? '')) fail(file, '"date" must look like 2026-10-14');
-  if (!data.cover) fail(file, '"cover" is required (an image file in originals/)');
-  if (!Array.isArray(data.images) || !data.images.length) fail(file, '"images" must list at least one image');
+async function readProject(slug, media, projectsDir) {
+  const data = await readProjectDefinition(slug, projectsDir);
 
   return {
     slug,
@@ -65,9 +48,9 @@ async function readAbout() {
 }
 
 /** @param {Record<string, {cover: object, images: object[]}>} media output of buildMedia() */
-export async function loadContent(media) {
+export async function loadContent(media, { projectsDir } = {}) {
   const slugs = Object.keys(media);
-  const projects = await Promise.all(slugs.map((slug) => readProject(slug, media[slug])));
+  const projects = await Promise.all(slugs.map((slug) => readProject(slug, media[slug], projectsDir)));
   projects.sort((a, b) => b.date.localeCompare(a.date) || a.order - b.order || a.name.localeCompare(b.name));
   return { projects, about: await readAbout() };
 }

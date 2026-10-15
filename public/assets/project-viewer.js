@@ -83,9 +83,17 @@
   };
 
   function galleryImage(item, index) {
-    let remote;
-    try { remote = new URL(item.src); } catch { return []; }
-    if (remote.protocol !== 'https:' || remote.hostname !== 'mir-s3-cdn-cf.behance.net') return [];
+    const local = !item.src;
+    if (local) {
+      if (!item.avif?.length || !item.webp?.length) return [];
+      if (![...item.avif, ...item.webp].every(([url]) => typeof url === 'string' && url.startsWith('/media/'))) return [];
+    } else {
+      let remote;
+      try { remote = new URL(item.src); } catch { return []; }
+      if (remote.protocol !== 'https:' || remote.hostname !== 'mir-s3-cdn-cf.behance.net') return [];
+    }
+    const sizes = '(max-width: 700px) 100vw, min(1120px, calc(100vw - 96px))';
+    const srcset = (sources) => sources.map(([url, width]) => `${url} ${width}w`).join(', ');
     // src goes last so the loading attributes apply to the very first request.
     const image = el('img', {
       alt: `${title.textContent} · ${index + 1}`,
@@ -93,11 +101,12 @@
       height: item.height,
       loading: index === 0 ? 'eager' : 'lazy',
       decoding: 'async',
-      src: item.src,
+      ...(local ? { srcset: srcset(item.webp), sizes } : {}),
+      src: local ? item.webp.at(-1)[0] : item.src,
     });
     image.style.backgroundColor = item.color;
     image.addEventListener('error', showError, { once: true });
-    return [image];
+    return [local ? el('picture', {}, el('source', { type: 'image/avif', srcset: srcset(item.avif), sizes }), image) : image];
   }
 
   function show(card) {

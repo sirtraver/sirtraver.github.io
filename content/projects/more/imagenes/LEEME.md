@@ -1,0 +1,1 @@
+Este proyecto conserva su galería original de Behance en ../galeria.json. Para cambiar la presentación, edita esa lista. Para usar una imagen local, añade aquí el archivo e inclúyelo como {"file":"imagenes/01.jpg"} en galeria.json. Los originales recuperados están en ../recursos/originales/.

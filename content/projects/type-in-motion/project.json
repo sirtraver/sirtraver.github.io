@@ -23,17 +23,8 @@
     "en": "",
     "es": ""
   },
-  "cover": "cover.jpg",
   "featured": false,
   "archived": false,
   "order": 3,
-  "images": [
-    {
-      "file": "01.png",
-      "caption": {
-        "en": "",
-        "es": ""
-      }
-    }
-  ]
+  "draft": false
 }

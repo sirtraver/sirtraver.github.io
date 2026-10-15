@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { beforeEach, test } from 'node:test';
 import { ORIGIN, get, offline, resetCaches, withFetch } from './helpers.mjs';
+import { activeProjects, allProjects, archivedProjects } from '../src/projects.js';
 
 beforeEach(resetCaches);
 
@@ -46,7 +47,7 @@ test('structured data parses, identifies the person and contains no HTML entitie
   }
   const home = JSON.parse(jsonLdBlocks(await render('/'))[0]);
   const list = home['@graph'].find((node) => node['@type'] === 'ItemList');
-  assert.equal(list.itemListElement.length, 8);
+  assert.equal(list.itemListElement.length, activeProjects.length);
 });
 
 test('descriptions do not start with the uppercase overline', async () => {
@@ -62,12 +63,12 @@ test('the sitemap lists pages and project pages with alternates and all gallery 
   assert.equal(response.headers.get('Content-Type'), 'application/xml; charset=utf-8');
   const xml = await response.text();
   for (const path of [...ROUTES.en, ...ROUTES.es]) assert.ok(xml.includes(`<loc>${ORIGIN}${path}</loc>`), path);
-  assert.equal((xml.match(/<url>/g) || []).length, 6 + 16);
+  assert.equal((xml.match(/<url>/g) || []).length, 6 + allProjects.length * 2 + (archivedProjects.length ? 2 : 0));
   assert.ok(xml.includes(`<loc>${ORIGIN}/es/projects/kudake/</loc>`));
   assert.ok(xml.includes('https://mir-s3-cdn-cf.behance.net/'), 'original gallery sources are discoverable');
   assert.ok(xml.includes(`${ORIGIN}/media/kudake/`));
   // 8 covers + 1 portrait per language on the main pages, 96 gallery images per language.
-  assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (8 + 1 + 96));
+  assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (activeProjects.length + 1 + allProjects.reduce((sum, p) => sum + p.images.length, 0)));
   assert.ok(xml.includes('hreflang="x-default"'));
   assert.match(xml, /\/media\/gigantes\/cover-2400\.[0-9a-f]+\.webp/, 'largest cover is listed');
 });

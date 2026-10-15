@@ -39,3 +39,14 @@ No se ha comprobado un lector de pantalla ni un dispositivo físico. Las pruebas
 - Textos del portfolio centrados, incluidos introducción, cabecera de selección y pies de proyectos.
 - Portfolio, Resources y el encabezado de About usan la misma escala del About anterior: 39 px en escritorio, 34 px hasta 900 px y 33 px hasta 700 px, peso 700 y línea 1.12.
 - 57 tests pasan; se verificó también en navegador un proyecto local temporal de dos imágenes, sin Behance. Se retiró después de la prueba. Los tres encabezados se midieron a 1440, 872, 390 y 320 px: coinciden y no hay desbordamientos horizontales.
+
+## Selector de navegación arrastrable
+
+- La cápsula de selección puede arrastrarse horizontalmente entre Portfolio, Resources y About. La vista cambia al soltar, con ajuste de posición y ancho y una deformación discreta durante el gesto.
+- Se mantienen los enlaces nativos: clic normal, clic con modificadores y activación con teclado. Flechas izquierda/derecha y Home/End permiten mover el foco; Enter abre el enlace.
+- Desplazamientos verticales, salida de la barra, Escape, cancelación de puntero y pérdida de foco restauran la selección sin abrir otra página.
+- Respeta movimiento reducido y colores forzados. Sin JavaScript o sin Pointer Events conserva la barra estática original.
+- 64 tests pasan, incluidos siete del contrato de eventos para ratón, eventos táctiles simulados, teclado, cancelación y almacenamiento bloqueado.
+- Arrastre verificado en navegador entre las tres secciones, también en español a 390 px y en ambos sentidos. A 320 px, sin desbordamiento y cápsula alineada con su opción (error geométrico 0 px). Sin errores/advertencias de consola. No se ha probado un iPhone físico.
+
+Referencia de interacción: https://developer.apple.com/documentation/technologyoverviews/adopting-liquid-glass

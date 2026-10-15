@@ -110,7 +110,7 @@ ${page === 'home' && !alternates
   : ''}
 ${schema ? jsonLd(schema) : ''}
 ${runtime().analytics ? html`<script defer src="${runtime().analytics.src}" data-website-id="${runtime().analytics.websiteId}"></script>` : ''}
-${[{ src: '/assets/site.js' }, ...scripts].map(
+${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map(
   ({ src, data = {} }) =>
     html`<script defer src="${assetUrl(src)}"${Object.entries(data).map(([key, value]) => html` data-${key}="${value}"`)}></script>\n`,
 )}</head>

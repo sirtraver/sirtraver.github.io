@@ -484,6 +484,8 @@ a:hover .card-media img {
 }
 
 .featured-project .card-media img { aspect-ratio: 16 / 10; }
+/* Keep all four paint tins visible in this wide cover, including on phones. */
+.featured-project[data-project="colorsplash"] .card-media img { aspect-ratio: 16 / 9; }
 .featured-text {
   display: flex;
   flex-direction: column;

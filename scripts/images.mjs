@@ -16,6 +16,9 @@ const OUTPUT = path.join(ROOT, 'public/media');
 const CACHE = path.join(ROOT, 'src/generated/media-cache.json');
 
 export const WIDTHS = [800, 1600, 2400];
+// Galleries render at up to 1120 CSS pixels. Keep 2400px masters in the project
+// folder and ship up to 1600px for a sharp gallery without duplicating heavy media.
+const GALLERY_WIDTHS = [800, 1600];
 const SETTINGS = 'v2|avif:q52e3|webp:q80';
 const exists = (file) => fs.access(file).then(() => true, () => false);
 
@@ -23,7 +26,7 @@ const exists = (file) => fs.access(file).then(() => true, () => false);
 async function processImage(slug, file, cache, { og = false, projectsDir, outputDir } = {}) {
   const source = projectFile(path.join(projectsDir, slug), file);
   const bytes = await fs.readFile(source);
-  const hash = createHash('sha256').update(bytes).update(SETTINGS + (og ? '|og' : '')).digest('hex').slice(0, 10);
+  const hash = createHash('sha256').update(bytes).update(SETTINGS + (og ? '|og' : '|gallery:max1600')).digest('hex').slice(0, 10);
   const key = `${slug}/${file}`;
 
   const cached = cache[key];
@@ -35,7 +38,8 @@ async function processImage(slug, file, cache, { og = false, projectsDir, output
   const { width, height } = await image.metadata().then((m) => (m.orientation >= 5 ? { width: m.height, height: m.width } : m));
   const { dominant } = await image.clone().stats();
   // Standard widths that are clearly smaller than the original, plus the largest useful size.
-  const widths = [...new Set([...WIDTHS.filter((w) => w <= width * 0.9), Math.min(width, WIDTHS.at(-1))])].sort((a, b) => a - b);
+  const targetWidths = og ? WIDTHS : GALLERY_WIDTHS;
+  const widths = [...new Set([...targetWidths.filter((w) => w <= width * 0.9), Math.min(width, targetWidths.at(-1))])].sort((a, b) => a - b);
   const stem = og ? 'cover' : (path.parse(file).name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z0-9_-]/g, '-').replace(/-+/g, '-').toLowerCase() || 'image');
   const files = [];
   const sources = { avif: [], webp: [] };

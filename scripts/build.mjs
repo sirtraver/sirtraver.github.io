@@ -1,7 +1,7 @@
 // Build:
 //  1. processes project images (scripts/images.mjs) into public/media/,
 //  2. reads content/ into src/generated/content.js,
-//  3. embeds the small static files of public/ (not media/) into src/generated/assets.js,
+//  3. embeds public/ files, including optimized media, into src/generated/assets.js,
 //  4. bundles src/ into one ES module, dist/server/index.js, exporting default.fetch.
 import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
@@ -15,7 +15,7 @@ const PUBLIC_DIR = path.join(ROOT, 'public');
 const ENTRY = path.join(ROOT, 'src/worker.js');
 const GENERATED = path.join(ROOT, 'src/generated/assets.js');
 const GENERATED_CONTENT = path.join(ROOT, 'src/generated/content.js');
-// Large media is served from disk by the server (server/node.mjs), not embedded.
+// The standalone Sites Worker needs all media embedded; Node also serves it from disk.
 const NOT_EMBEDDED = new Set();
 const DIST = path.join(ROOT, 'dist');
 

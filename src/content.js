@@ -134,6 +134,7 @@ export const CONTENT = {
 
     project: {
       back: '← All projects',
+      conceptual: 'Concept project',
       original: 'View on Behance ↗',
       intro: (category, year) =>
         `${category} project by Javier Traver, visual designer and marketer based in Madrid, ${year}.`,
@@ -304,6 +305,7 @@ export const CONTENT = {
 
     project: {
       back: '← Todos los proyectos',
+      conceptual: 'Proyecto conceptual',
       original: 'Ver en Behance ↗',
       intro: (category, year) =>
         `Proyecto de ${category.toLowerCase()} de Javier Traver, diseñador visual y de marketing en Madrid, ${year}.`,

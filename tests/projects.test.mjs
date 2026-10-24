@@ -109,6 +109,28 @@ test('viewer gallery data is versioned and accepts remote or local project image
   }
 });
 
+test('the three PDF projects are labelled as concepts on cards, pages and viewer data', async () => {
+  const slugs = ['colorsplash', 'olmedo-clasico', 'autoescuela-oasis'];
+  for (const [lang, prefix, label] of [['en', '', 'Concept project'], ['es', '/es', 'Proyecto conceptual']]) {
+    const home = await withFetch(offline, async () => (await get(`${prefix}/`)).text());
+    const galleries = await (await get(home.match(/data-gallery="([^"]+)"/)[1])).json();
+    for (const slug of slugs) {
+      const project = findProject(slug);
+      assert.equal(project.conceptual, true, slug);
+      assert.equal(project.client, '', 'independent concepts have no commissioned client');
+      assert.equal(project.behance, '', 'local projects must not point to an invented Behance page');
+      assert.equal(project.images.length, 6, 'all six source pages are retained');
+      assert.equal(galleries[slug].conceptual, true);
+      const card = home.match(new RegExp(`<a class="(?:featured-project|project-card)"[^>]*data-project="${slug}"[\\s\\S]*?</a>`))[0];
+      assert.ok(card.includes(label), `${lang}: ${slug} card`);
+      const page = await (await get(`${prefix}/projects/${slug}/`)).text();
+      assert.ok(page.includes(label), `${lang}: ${slug} page`);
+      const work = JSON.parse(page.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph'].find(node => node['@type'] === 'CreativeWork');
+      assert.equal(work.creativeWorkStatus, label);
+    }
+  }
+});
+
 test('the archive page only exists when projects are archived', async () => {
   assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
   assert.equal((await get('/archive/')).status, archivedProjects.length ? 200 : 404);

@@ -36,6 +36,7 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) fail('usa un nombre de carpeta en minúsculas y con guiones');
   if (typeof data.name !== 'string' || !data.name.trim()) fail('falta name (nombre del proyecto)');
   if (!CATEGORIES.includes(data.category)) fail(`category debe ser ${CATEGORIES.join(' o ')}`);
+  if (data.conceptual !== undefined && typeof data.conceptual !== 'boolean') fail('conceptual debe ser true o false');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(data.date ?? '') || !Number.isFinite(Date.parse(data.date)) || new Date(data.date).toISOString().slice(0, 10) !== data.date) {
     fail('date debe ser una fecha real con formato AAAA-MM-DD');
   }

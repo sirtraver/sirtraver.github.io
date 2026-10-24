@@ -1,0 +1,40 @@
+{
+  "name": "Autoescuela OASIS",
+  "date": "2026-10-19",
+  "order": 2,
+  "intro": {
+    "es": "Proyecto conceptual de identidad y comunicación para una autoescuela. Verde menta, azul eléctrico y tipografía expresiva dan forma a una propuesta cercana y dinámica.",
+    "en": "A concept identity and communication system for a driving school. Mint green, electric blue and expressive typography shape an approachable, dynamic brand."
+  },
+  "deliverables": {
+    "es": [
+      "Identidad visual",
+      "Rotulación de vehículo",
+      "Redes sociales",
+      "Material impreso",
+      "Propuesta web"
+    ],
+    "en": [
+      "Visual identity",
+      "Vehicle graphics",
+      "Social media",
+      "Print materials",
+      "Website concept"
+    ]
+  },
+  "category": "Visual identity",
+  "conceptual": true,
+  "draft": false,
+  "client": "",
+  "role": {
+    "en": "",
+    "es": ""
+  },
+  "result": {
+    "en": "",
+    "es": ""
+  },
+  "behance": "",
+  "featured": false,
+  "archived": false
+}

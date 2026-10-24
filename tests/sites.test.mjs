@@ -17,6 +17,19 @@ test('every responsive cover and social JPEG is served by the Sites Worker itsel
   }
 });
 
+test('local galleries are served by the production Worker without the disk preview fallback', async () => {
+  for (const project of activeProjects) {
+    for (const image of project.images.filter(image => !image.src)) {
+      for (const [url] of [...image.avif, ...image.webp]) {
+        const response = await get(url);
+        assert.equal(response.status, 200, url);
+        assert.match(response.headers.get('Content-Type'), /^image\//);
+        assert.ok((await response.arrayBuffer()).byteLength > 1000, url);
+      }
+    }
+  }
+});
+
 function bucketFixture() {
   const records = new Map();
   return {

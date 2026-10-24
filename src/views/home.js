@@ -12,7 +12,7 @@ const imageId = (project) => `${absoluteUrl('/')}#project-image-${project.slug}`
 const FEATURED_SIZES = '(max-width: 700px) calc(100vw - 40px), (max-width: 1360px) calc(100vw - 96px), 1264px';
 const CARD_SIZES = '(max-width: 560px) calc(100vw - 40px), (max-width: 1360px) calc(50vw - 64px), 616px';
 
-export const categoryLine = (project, lang) => `${CONTENT[lang].categories[project.category] ?? project.category} · ${project.year}`;
+export const categoryLine = (project, lang) => `${CONTENT[lang].categories[project.category] ?? project.category} · ${project.year}${project.conceptual ? ` · ${CONTENT[lang].project.conceptual}` : ''}`;
 
 function featured(project, lang) {
   const t = CONTENT[lang].home;

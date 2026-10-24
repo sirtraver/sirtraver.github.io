@@ -1,0 +1,38 @@
+{
+  "name": "Olmedo Clásico",
+  "date": "2026-10-19",
+  "order": 1,
+  "intro": {
+    "es": "Propuesta conceptual independiente de identidad para un festival de teatro clásico. Tipografía condensada, burdeos y marfil articulan cartelería, señalética y entradas.",
+    "en": "An independent concept identity for a classical theatre festival. Condensed typography, burgundy and ivory connect posters, signage and tickets."
+  },
+  "deliverables": {
+    "es": [
+      "Identidad visual",
+      "Cartelería",
+      "Señalética",
+      "Entradas"
+    ],
+    "en": [
+      "Visual identity",
+      "Posters",
+      "Signage",
+      "Tickets"
+    ]
+  },
+  "category": "Visual identity",
+  "conceptual": true,
+  "draft": false,
+  "client": "",
+  "role": {
+    "en": "",
+    "es": ""
+  },
+  "result": {
+    "en": "",
+    "es": ""
+  },
+  "behance": "",
+  "featured": false,
+  "archived": false
+}

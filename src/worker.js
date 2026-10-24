@@ -43,7 +43,7 @@ const GALLERIES_PATH = '/assets/galleries.json';
 const galleriesUrl = `${GALLERIES_PATH}?v=${contentHash}`;
 // (The viewer takes each project's title from its card, already in the page language.)
 const galleries = () =>
-  Object.fromEntries(activeProjects.map((p) => [p.slug, { behance: p.behance, images: p.images.map(({ caption, ...image }) => image) }]));
+  Object.fromEntries(activeProjects.map((p) => [p.slug, { behance: p.behance, conceptual: p.conceptual, images: p.images.map(({ caption, ...image }) => image) }]));
 
 const withSlash = (path) => (path.endsWith('/') ? path : `${path}/`);
 

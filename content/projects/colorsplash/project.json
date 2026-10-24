@@ -1,0 +1,38 @@
+{
+  "name": "COLORSPLASH",
+  "date": "2026-10-21",
+  "order": 1,
+  "intro": {
+    "es": "Proyecto conceptual de identidad para una marca de pintura: un monograma geométrico, cuatro colores y un sistema que conecta envases, comunicación y espacio comercial.",
+    "en": "A concept identity for a paint brand: a geometric monogram, four colours and a system connecting packaging, communication and retail space."
+  },
+  "deliverables": {
+    "es": [
+      "Identidad visual",
+      "Packaging",
+      "Comunicación de marca",
+      "Aplicación en punto de venta"
+    ],
+    "en": [
+      "Visual identity",
+      "Packaging",
+      "Brand communication",
+      "Retail application"
+    ]
+  },
+  "category": "Visual identity",
+  "conceptual": true,
+  "draft": false,
+  "client": "",
+  "role": {
+    "en": "",
+    "es": ""
+  },
+  "result": {
+    "en": "",
+    "es": ""
+  },
+  "behance": "",
+  "featured": false,
+  "archived": false
+}

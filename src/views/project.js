@@ -65,6 +65,7 @@ function schema(project, lang, path, name, description) {
       '@id': `${pageUrl}#work`,
       name,
       genre: t.categories[project.category] ?? project.category,
+      ...(project.conceptual ? { creativeWorkStatus: t.project.conceptual } : {}),
       creator: { '@id': PERSON_ID },
       dateCreated: project.date,
       ...(project.client ? { sourceOrganization: { '@type': 'Organization', name: project.client } } : {}),
@@ -105,7 +106,7 @@ export function projectPage(project, siblings, lang) {
     body: html`<article class="project-page">
   <a class="back-link" href="${PAGES.home[lang]}">${t.project.back}</a>
   <header class="project-header">
-    <p class="overline">${category} · ${project.year}</p>
+    <p class="overline">${category} · ${project.year}${project.conceptual ? ` · ${t.project.conceptual}` : ''}</p>
     <h1>${name}</h1>
     <p class="project-intro">${intro || t.project.intro(category, project.year)}</p>
   </header>

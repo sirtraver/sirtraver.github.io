@@ -13,6 +13,7 @@
     document.documentElement.lang === 'es'
       ? {
           original: 'Ver en Behance',
+          conceptual: 'Proyecto conceptual',
           close: 'Cerrar proyecto',
           previous: 'Proyecto anterior',
           next: 'Proyecto siguiente',
@@ -21,6 +22,7 @@
         }
       : {
           original: 'View on Behance',
+          conceptual: 'Concept project',
           close: 'Close project',
           previous: 'Previous project',
           next: 'Next project',
@@ -46,6 +48,7 @@
     .then((data) => (galleries = data));
 
   const title = el('h2', { id: 'viewer-title' });
+  const projectKind = el('span', { class: 'viewer-kind', hidden: '' }, text.conceptual);
   const original = el('a', { class: 'viewer-original', target: '_blank', rel: 'noopener noreferrer' }, `${text.original} ↗`);
   const previousButton = el('button', { class: 'viewer-step', type: 'button', 'aria-label': text.previous }, '←');
   const nextButton = el('button', { class: 'viewer-step', type: 'button', 'aria-label': text.next }, '→');
@@ -60,7 +63,7 @@
     el(
       'header',
       { class: 'viewer-bar' },
-      el('div', {}, el('span', { class: 'viewer-brand' }, 'sirtraver'), title),
+      el('div', {}, el('span', { class: 'viewer-brand' }, 'sirtraver'), el('div', { class: 'viewer-heading' }, title, projectKind)),
       el('div', {}, original, previousButton, nextButton, closeButton),
     ),
     scroller,
@@ -113,6 +116,7 @@
     const project = galleries[card.dataset.project];
     current = card;
     title.textContent = card.querySelector('h3')?.textContent ?? '';
+    projectKind.hidden = !project.conceptual;
     original.hidden = end.hidden = !project.behance;
     original.href = end.href = project.behance || '#';
     error.hidden = true;

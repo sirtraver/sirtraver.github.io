@@ -20,6 +20,7 @@ async function readProject(slug, media, projectsDir) {
     name: String(data.name),
     nameEs: data.nameEs ? String(data.nameEs) : '',
     category: data.category,
+    conceptual: data.conceptual === true,
     date: data.date,
     order: Number(data.order ?? 0), // tie-break for projects published on the same day (lower first)
     year: Number(data.date.slice(0, 4)),

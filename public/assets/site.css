@@ -1509,6 +1509,10 @@ a:hover .card-media img {
   letter-spacing: -1px;
 }
 
+.viewer-heading { min-width: 0; }
+.viewer-kind { display: block; margin-top: 3px; color: #c6c6c6; font-size: 10px; line-height: 1.4; }
+.viewer-kind[hidden] { display: none; }
+
 .viewer-bar h2 {
   margin: 0;
   font-size: 14px;

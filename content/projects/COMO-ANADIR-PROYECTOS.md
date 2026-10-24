@@ -8,6 +8,8 @@
 
 `draft: true` mantiene la carpeta fuera de la web mientras preparas el proyecto. El nombre de carpeta se convierte en su URL: `/projects/nombre-del-proyecto/`.
 
+Usa `"conceptual": true` en `project.json` para identificar una propuesta propia como **Proyecto conceptual** (o **Concept project** en inglés), tanto en la tarjeta como en el visor y la página del proyecto. Deja `client` vacío si no es un encargo real.
+
 `recursos/` es para originales editables, briefing y documentación. No se publica ni se sube al repositorio de Sites. Usa `imagenes/` solo para los archivos que quieras mostrar.
 
 No hace falta crear `galeria.json` para proyectos nuevos: las imágenes de `imagenes/` se ordenan solas. Si necesitas pies de foto u otro orden, puedes crear `galeria.json` con entradas como:

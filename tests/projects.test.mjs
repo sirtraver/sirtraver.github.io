@@ -40,7 +40,7 @@ test('each gallery follows its own project folder definition', async () => {
   }
 });
 
-test('home: selected projects have equal cards in editorial order', async () => {
+test('home: all projects share one complete grid with lazy images', async () => {
   await withFetch(offline, async () => {
     for (const [path, prefix] of [['/', ''], ['/es/', '/es']]) {
       const html = await (await get(path)).text();
@@ -54,11 +54,11 @@ test('home: selected projects have equal cards in editorial order', async () => 
     const english = await (await get('/')).text();
     assert.ok(english.includes('<p>Visual identity · 2025</p>'));
     const spanish = await (await get('/es/')).text();
-    assert.ok(!spanish.includes('<h3>Tipografía en movimiento</h3>'));
-    const archive = await (await get('/es/archive/')).text();
-    assert.ok(archive.includes('<h3>Tipografía en movimiento</h3>'));
-    assert.deepEqual(activeProjects.map(p => p.slug), ['kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver', 'greens', 'more']);
-    assert.equal(archivedProjects.length, 3);
+    assert.ok(spanish.includes('<h3>Tipografía en movimiento</h3>'));
+    assert.deepEqual(new Set(activeProjects.map(p => p.slug)), new Set(allProjects.map(p => p.slug)));
+    assert.equal(archivedProjects.length, 0);
+    assert.ok(!spanish.includes('class="archive-link"'));
+    assert.equal((spanish.match(/loading="lazy"/g) || []).length, allProjects.length - 1);
     assert.ok(!spanish.includes('Último proyecto'));
   });
 });
@@ -134,9 +134,13 @@ test('the three PDF projects are labelled as concepts on cards, pages and viewer
   }
 });
 
-test('the archive page only exists when projects are archived', async () => {
+test('old archive links reach the complete portfolio when the archive is empty', async () => {
   assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
-  assert.equal((await get('/archive/')).status, archivedProjects.length ? 200 : 404);
+  for (const [path, target] of [['/archive/', '/'], ['/es/archive/', '/es/']]) {
+    const response = await get(path);
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get('Location'), ORIGIN + target);
+  }
   const source = await readFile(new URL('../src/projects.js', import.meta.url), 'utf8');
   assert.ok(source.includes('archived'));
 });

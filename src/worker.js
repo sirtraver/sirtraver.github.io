@@ -53,10 +53,10 @@ async function renderPage({ page, lang }, request, url, env, ctx) {
     case 'home':
       return htmlResponse(
         request,
-        homePage(lang, { projects: activeProjects, hasArchive: archivedProjects.length > 0, galleriesUrl }),
+        homePage(lang, { projects: activeProjects, galleriesUrl }),
       );
     case 'archive':
-      return archivedProjects.length ? htmlResponse(request, archivePage(lang, archivedProjects)) : notFound(request, url.pathname);
+      return archivedProjects.length ? htmlResponse(request, archivePage(lang, archivedProjects)) : redirect(new URL(PAGES.home[lang], url).href);
     case 'resources':
       return htmlResponse(request, resourcesPage(lang, await getCatalog(env), url.searchParams.get('subscription')));
     case 'about':

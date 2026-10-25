@@ -27,7 +27,7 @@ Si existe `galeria.json`, esa lista determina qué imágenes aparecen y en qué 
 
 ## Selección y explicación del proyecto
 
-La portada tiene una selección editorial. `portfolioOrder` fija su posición (1 primero). Los proyectos nuevos sin ese campo aparecen después de la selección, por fecha. `archived: true` conserva el proyecto y su URL en «Trabajos anteriores», fuera de la portada. No borres una carpeta para retirarla de la selección.
+Todos los proyectos publicados aparecen en la portada, con imágenes de carga progresiva al hacer scroll. `portfolioOrder` fija su posición (1 primero). Los proyectos nuevos sin ese campo aparecen después de la selección, por fecha. Mantén `archived: false` para que aparezca en la portada; no hace falta un enlace a otra página para verlos todos.
 
 Puedes añadir `caseStudy` con secciones bilingües para explicar el concepto, sistema y aplicaciones. Se muestra en la página propia y en el visor:
 

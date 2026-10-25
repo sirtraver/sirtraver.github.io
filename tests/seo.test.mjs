@@ -26,8 +26,8 @@ test('every page has its own title, one h1, canonical, reciprocal hreflang and s
       assert.equal((html.match(/<h1\b/g) || []).length, 1, path);
       assert.match(html, /<meta property="og:image" content="https:\/\/sirtraver\.com\/assets\/share-sirtraver\.png">/);
       assert.match(html, /<meta name="description" content="[^"]{50,}">/);
-      assert.equal((html.match(/https:\/\/www\.threads\.com\/@sirtraver/g) || []).length, 2, 'header link + JSON-LD sameAs');
-      assert.equal((html.match(/https:\/\/www\.instagram\.com\/sirtraver\//g) || []).length, 2);
+      assert.equal((html.match(/https:\/\/www\.threads\.com\/@sirtraver/g) || []).length, index === 2 ? 3 : 2, 'header, profile card when present, and JSON-LD sameAs');
+      assert.equal((html.match(/https:\/\/www\.instagram\.com\/sirtraver\//g) || []).length, index === 2 ? 3 : 2);
       assert.ok(html.includes('mailto:javier.traver.v@me.com'));
       assert.ok(html.includes('aria-current="page"'), 'active navigation is rendered server-side');
       titles.add(html.match(/<title>(.*?)<\/title>/)[1]);

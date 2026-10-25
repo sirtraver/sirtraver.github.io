@@ -30,7 +30,7 @@ export const CONTENT = {
     socialLabel: 'Social profiles',
     emailLabel: 'Email sirtraver',
     contactLabel: 'Contact',
-    networksLabel: 'Socials',
+    networksLabel: 'Social',
     footerRole: `Javier Traver · ${ROLE}`,
     switchToThisLanguage: 'View this page in English',
     shareImageAlt: 'SIRTRAVER visual identity by Javier Traver',
@@ -78,7 +78,7 @@ export const CONTENT = {
         upcoming: 'Coming soon',
         categories: ['Canva templates', 'Notion templates', 'Design resources'],
         consent: 'I’d like an email when the resources launch.',
-        privacy: 'Your email will only be used for this notification. To remove it, use the Contact link in the header.',
+        privacy: 'Your email will only be used for this notification. To remove it, use the email icon in the Social menu.',
         saving: 'Saving…',
         success: 'You’re on the list. I’ll let you know when the resources launch.',
         confirm: 'Almost there: check your inbox and confirm your email.',
@@ -89,50 +89,29 @@ export const CONTENT = {
     },
 
     about: {
-      title: 'Javier Traver — Visual Designer & Marketing | sirtraver',
-      description:
-        'Visual identity. Strategic thinking. I connect design and marketing to help brands communicate with clarity, character and consistency. I’m Javier Traver, a visual designer based in Madrid. My focus is identity and brand communication: turning an idea into a visual language that works across the places where a brand meets its audience.',
-      breadcrumb: 'About',
-      overline: 'ABOUT / SIRTRAVER',
-      portraitAlt: 'Javier Traver — visual designer and founder of sirtraver',
-      role: ROLE,
-      location: 'Madrid, Spain',
-      positionTitle: ['Visual identity.', 'Strategic thinking.'],
-      lead: 'I connect design and marketing to help brands communicate with clarity, character and consistency.',
-      bio: 'I’m Javier Traver, a visual designer based in Madrid. My focus is identity and brand communication: turning an idea into a visual language that works across the places where a brand meets its audience.',
-      services: {
-        kicker: 'SERVICES',
-        title: 'How I can help your brand.',
-        items: [
-          ['Brand identity', 'New brands: from the first idea to a complete visual system.'],
-          ['Rebranding', 'Established brands: a renewed identity that keeps what already works.'],
-          ['Communication & campaigns', 'Posters, graphic pieces and campaigns that carry the brand further.'],
-        ],
-      },
-      clients: 'CLIENTS',
-      testimonials: 'WHAT CLIENTS SAY',
-      bring: {
-        kicker: 'WHAT I BRING',
-        title: 'Design, communication & direction.',
-        items: [
-          ['Brand identity', 'Logotypes, typography, colour and visual systems with a clear point of view.'],
-          ['Visual communication', 'Brand applications and graphic pieces that keep the message and identity consistent.'],
-          ['Marketing perspective', 'A creative direction grounded in context, audience and what the brand needs to communicate.'],
-        ],
-      },
-      method: {
-        kicker: 'HOW I WORK',
-        title: 'From context to a coherent visual system.',
-        items: [
-          ['Understand', 'Start with the brand, its context and the people it wants to reach.'],
-          ['Define', 'Find the central idea and translate it into a coherent creative direction.'],
-          ['Build', 'Develop a visual system and apply it with attention to detail.'],
-        ],
-      },
-      tools: {
-        kicker: 'TOOLS & CURIOSITY',
-        text: 'I explore practical uses of AI to organise information and develop ideas. It supports the work; the creative judgement remains mine.',
-      },
+      "title": "Javier Traver — Design, experience & education | sirtraver",
+      "description": "Freelance graphic designer since 2017 and a Design graduate from Universidad Complutense de Madrid. Experience in visual identity, communication and product photography. Currently studying Marketing & Advertising.",
+      "breadcrumb": "About",
+      "overline": "ABOUT / SIRTRAVER",
+      "portraitAlt": "Javier Traver — visual designer",
+      "role": "Visual designer",
+      "location": "Madrid, Spain",
+      "positionTitle": [
+        "Visual design.",
+        "Brand communication."
+      ],
+      "lead": "I’m Javier Traver, a freelance graphic designer since 2017 and a Design graduate from Universidad Complutense de Madrid.",
+      "bio": "I work on visual identity and brand communication, from logos to their digital and printed applications. My experience also includes product photography and visual content editing.",
+      "currentStudy": "I’m currently studying Marketing & Advertising, expanding my understanding of brands, their audiences and how they communicate.",
+      "studyLabel": "Marketing & Advertising · In progress",
+      "experience": "Professional experience",
+      "otherExperience": "Other experience",
+      "education": "Education",
+      "skills": "Skills",
+      "tools": "Tools",
+      "languages": "Languages",
+      "clients": "CLIENTS",
+      "testimonials": "WHAT CLIENTS SAY"
     },
 
     project: {
@@ -207,7 +186,7 @@ export const CONTENT = {
     socialLabel: 'Perfiles sociales',
     emailLabel: 'Enviar un email a sirtraver',
     contactLabel: 'Contacto',
-    networksLabel: 'Redes',
+    networksLabel: 'Social',
     footerRole: `Javier Traver · ${ROLE}`,
     switchToThisLanguage: 'Ver esta página en español',
     shareImageAlt: 'SIRTRAVER visual identity by Javier Traver',
@@ -255,7 +234,7 @@ export const CONTENT = {
         upcoming: 'Próximamente',
         categories: ['Plantillas de Canva', 'Plantillas de Notion', 'Recursos de diseño'],
         consent: 'Quiero recibir un email cuando se publiquen los recursos.',
-        privacy: 'Tu email se usará solo para este aviso. Puedes pedir su eliminación mediante el enlace Contacto de la cabecera.',
+        privacy: 'Tu email se usará solo para este aviso. Puedes pedir su eliminación mediante el icono de correo del menú Social.',
         saving: 'Guardando…',
         success: 'Ya estás en la lista. Te avisaré cuando estén disponibles.',
         confirm: 'Casi listo: revisa tu correo y confirma tu email.',
@@ -266,50 +245,29 @@ export const CONTENT = {
     },
 
     about: {
-      title: 'Javier Traver — Diseño visual y marketing | sirtraver',
-      description:
-        'Identidad visual. Criterio estratégico. Conecto diseño y marketing para que las marcas comuniquen con claridad, personalidad y coherencia. Soy Javier Traver, diseñador visual en Madrid. Mi enfoque es la identidad y la comunicación de marca: convertir una idea en un lenguaje visual que funcione en los distintos puntos de contacto con su público.',
-      breadcrumb: 'Sobre mí',
-      overline: 'SOBRE MÍ / SIRTRAVER',
-      portraitAlt: 'Javier Traver — diseñador visual y creador de sirtraver',
-      role: ROLE,
-      location: 'Madrid, España',
-      positionTitle: ['Identidad visual.', 'Criterio estratégico.'],
-      lead: 'Conecto diseño y marketing para que las marcas comuniquen con claridad, personalidad y coherencia.',
-      bio: 'Soy Javier Traver, diseñador visual en Madrid. Mi enfoque es la identidad y la comunicación de marca: convertir una idea en un lenguaje visual que funcione en los distintos puntos de contacto con su público.',
-      services: {
-        kicker: 'SERVICIOS',
-        title: 'Cómo puedo ayudar a tu marca.',
-        items: [
-          ['Identidad de marca', 'Marcas nuevas: de la primera idea a un sistema visual completo.'],
-          ['Rebranding', 'Marcas con recorrido: una identidad renovada que conserva lo que ya funciona.'],
-          ['Comunicación y campañas', 'Carteles, piezas gráficas y campañas que llevan la marca más lejos.'],
-        ],
-      },
-      clients: 'CLIENTES',
-      testimonials: 'LO QUE DICEN LOS CLIENTES',
-      bring: {
-        kicker: 'QUÉ APORTO',
-        title: 'Diseño, comunicación y dirección.',
-        items: [
-          ['Identidad de marca', 'Logotipos, tipografía, color y sistemas visuales con una dirección clara.'],
-          ['Comunicación visual', 'Aplicaciones de marca y piezas gráficas que mantengan la coherencia del mensaje y la identidad.'],
-          ['Perspectiva de marketing', 'Una dirección creativa conectada con el contexto, el público y lo que la marca necesita comunicar.'],
-        ],
-      },
-      method: {
-        kicker: 'CÓMO TRABAJO',
-        title: 'Del contexto a un sistema visual coherente.',
-        items: [
-          ['Entender', 'Partir de la marca, su contexto y las personas a las que quiere llegar.'],
-          ['Definir', 'Encontrar la idea central y traducirla en una dirección creativa coherente.'],
-          ['Construir', 'Desarrollar un sistema visual y aplicarlo con atención al detalle.'],
-        ],
-      },
-      tools: {
-        kicker: 'HERRAMIENTAS Y CURIOSIDAD',
-        text: 'Exploro usos prácticos de la IA para ordenar información y desarrollar ideas. Apoya el trabajo; el criterio creativo sigue siendo mío.',
-      },
+      "title": "Javier Traver — Diseño, experiencia y formación | sirtraver",
+      "description": "Diseñador gráfico freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid. Experiencia en identidad visual, comunicación y fotografía de producto. Actualmente estudio Marketing y Publicidad.",
+      "breadcrumb": "Sobre mí",
+      "overline": "SOBRE MÍ / SIRTRAVER",
+      "portraitAlt": "Javier Traver — diseñador visual",
+      "role": "Diseñador visual",
+      "location": "Madrid, España",
+      "positionTitle": [
+        "Diseño visual.",
+        "Comunicación de marca."
+      ],
+      "lead": "Soy Javier Traver, diseñador gráfico freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid.",
+      "bio": "Trabajo en identidad visual y comunicación de marca, desde el logotipo hasta sus aplicaciones digitales e impresas. Mi experiencia también abarca la fotografía de producto y la edición de contenidos visuales.",
+      "currentStudy": "Actualmente estudio Marketing y Publicidad. Una formación que amplía mi perspectiva sobre las marcas, sus públicos y cómo comunicar.",
+      "studyLabel": "Marketing y Publicidad · En curso",
+      "experience": "Experiencia profesional",
+      "otherExperience": "Otras experiencias",
+      "education": "Formación",
+      "skills": "Competencias",
+      "tools": "Herramientas",
+      "languages": "Idiomas",
+      "clients": "CLIENTES",
+      "testimonials": "LO QUE DICEN LOS CLIENTES"
     },
 
     project: {

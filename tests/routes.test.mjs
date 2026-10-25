@@ -160,13 +160,17 @@ test('the launch page lists the upcoming resource types', async () => {
 });
 
 
-test('header gives contact a native link, groups social links and keeps Resources in the footer', async () => {
+test('header restores Resources and groups the original icons and mail in one Social menu', async () => {
   const html = await (await get('/es/')).text();
   const header = html.match(/<header class="site-header">([\s\S]*?)<\/header>/)[1];
   const nav = header.match(/<nav[^>]*>([\s\S]*?)<\/nav>/)[1];
-  assert.equal((nav.match(/<a /g) || []).length, 2);
-  assert.ok(header.includes('class="header-contact" href="mailto:javier.traver.v@me.com"'));
+  assert.equal((nav.match(/<a /g) || []).length, 3);
+  assert.ok(!header.includes('class="header-contact"'));
+  const social = header.match(/<details class="social-menu">([\s\S]*?)<\/details>/)[1];
+  assert.equal((social.match(/<a /g) || []).length, 4);
+  assert.ok(social.includes('href="mailto:javier.traver.v@me.com"'));
+  assert.equal((social.match(/<svg /g) || []).length, 4);
   assert.ok(header.includes('<details class="social-menu">'));
-  assert.ok(!nav.includes('/resources/'));
+  assert.ok(nav.includes('/es/resources/'));
   assert.ok(html.match(/<footer[\s\S]*href="\/es\/resources\/"/));
 });

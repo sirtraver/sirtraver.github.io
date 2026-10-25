@@ -42,7 +42,17 @@ async function readProject(slug, media, projectsDir) {
 async function readAbout() {
   const file = path.join(CONTENT, 'about.json');
   const data = JSON.parse(await fs.readFile(file, 'utf8').catch(() => '{}'));
+  const resume = data.resume ?? {};
+  const experience = items => (items ?? []).map(item => ({ period: bilingual(item.period), role: bilingual(item.role), organization: String(item.organization ?? ''), description: bilingual(item.description) }));
   return {
+    resume: {
+      experience: experience(resume.experience),
+      otherExperience: experience(resume.otherExperience),
+      education: (resume.education ?? []).map(item => ({ period: bilingual(item.period), title: bilingual(item.title), institution: String(item.institution ?? ''), current: item.current === true })),
+      skills: list(resume.skills),
+      tools: (resume.tools ?? []).map(String),
+      languages: (resume.languages ?? []).map(item => ({ name: bilingual(item.name), level: String(item.level ?? ''), institution: String(item.institution ?? ''), year: String(item.year ?? '') })),
+    },
     clients: (data.clients ?? []).filter((c) => c?.name).map((c) => ({ name: String(c.name), url: String(c.url ?? '') })),
     testimonials: (data.testimonials ?? [])
       .filter((t) => t?.quote && t?.author)

@@ -24,7 +24,8 @@
     "es": ""
   },
   "featured": false,
-  "archived": true,
+  "archived": false,
   "order": 3,
-  "draft": false
+  "draft": false,
+  "portfolioOrder": 10
 }

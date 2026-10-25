@@ -23,7 +23,8 @@
     "es": ""
   },
   "featured": false,
-  "archived": true,
+  "archived": false,
   "order": 2,
-  "draft": false
+  "draft": false,
+  "portfolioOrder": 9
 }

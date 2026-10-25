@@ -1,38 +1,26 @@
 // Document shell shared by all pages: <head> metadata, header, footer.
-import { ORIGIN, SHARE_IMAGE, SITE_VERIFICATION, SOCIAL } from '../config.js';
+import { ORIGIN, SHARE_IMAGE, SITE_VERIFICATION } from '../config.js';
 import { CONTENT, LANGUAGES, PAGES } from '../content.js';
 import { assetUrl } from '../lib/assets.js';
 import { html, jsonLd } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { runtime } from '../lib/runtime.js';
-import { ICONS } from './icons.js';
-
-const SOCIAL_LINKS = [
-  { key: 'threads', label: 'Threads' },
-  { key: 'instagram', label: 'Instagram' },
-  { key: 'linkedin', label: 'LinkedIn' },
-];
+import { socialIcons } from './social.js';
 
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
   <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="wordmark">sirtraver</span></a>
   <nav aria-label="${t.mainNavLabel}">
-    ${['home', 'about'].map(
+    ${['home', 'resources', 'about'].map(
       (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
     )}
   </nav>
   <div class="header-actions">
     <details class="social-menu">
-      <summary aria-label="${t.socialLabel}"><span class="networks-label">${t.networksLabel}</span><span class="networks-icon" aria-hidden="true">•••</span></summary>
-      <div class="social-links" role="group" aria-label="${t.socialLabel}">
-    ${SOCIAL_LINKS.map(
-      ({ key, label }) =>
-        html`<a class="social-${key}" aria-label="${label}" href="${SOCIAL[key]}" target="_blank" rel="noopener noreferrer">${ICONS[key]}<span class="social-label">${label}</span></a>`,
-    )}
-      </div>
+      <summary aria-label="${t.networksLabel}"><span>${t.networksLabel}</span><span class="social-chevron" aria-hidden="true">⌄</span></summary>
+      ${socialIcons(lang)}
     </details>
-    <a class="header-contact" href="${SOCIAL.email}" aria-label="${t.emailLabel}">${t.contactLabel}<span aria-hidden="true"> ↗</span></a>
   </div>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
     ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}?lang=${code}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}

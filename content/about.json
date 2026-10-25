@@ -1,4 +1,139 @@
 {
   "clients": [],
-  "testimonials": []
+  "testimonials": [],
+  "resume": {
+    "experience": [
+      {
+        "period": {
+          "es": "2017 — actualidad",
+          "en": "2017 — present"
+        },
+        "role": {
+          "es": "Diseñador gráfico",
+          "en": "Graphic designer"
+        },
+        "organization": "Freelance",
+        "description": {
+          "es": "Identidad de marca, logotipos y aplicaciones para soportes digitales e impresos. Desarrollo de piezas para redes sociales, cartelería y packaging, además de fotografía de producto y edición de imágenes para catálogos online.",
+          "en": "Brand identity, logos and applications for digital and print. Design for social media, posters and packaging, alongside product photography and image editing for online catalogues."
+        }
+      }
+    ],
+    "otherExperience": [
+      {
+        "period": {
+          "es": "2019 — actualidad",
+          "en": "2019 — present"
+        },
+        "role": {
+          "es": "Profesor de tenis",
+          "en": "Tennis instructor"
+        },
+        "organization": "Ciudad de la Raqueta",
+        "description": {
+          "es": "Clases grupales e individuales y preparación de sesiones adaptadas a diferentes niveles y edades.",
+          "en": "Group and individual lessons, with sessions adapted to different levels and ages."
+        }
+      },
+      {
+        "period": {
+          "es": "2009 — 2016",
+          "en": "2009 — 2016"
+        },
+        "role": {
+          "es": "Profesor de tenis",
+          "en": "Tennis instructor"
+        },
+        "organization": "El Tejar de Somontes",
+        "description": {
+          "es": "Experiencia docente en tenis.",
+          "en": "Tennis teaching experience."
+        }
+      }
+    ],
+    "education": [
+      {
+        "period": {
+          "es": "En curso",
+          "en": "In progress"
+        },
+        "title": {
+          "es": "Marketing y Publicidad",
+          "en": "Marketing & Advertising"
+        },
+        "institution": "",
+        "current": true
+      },
+      {
+        "period": {
+          "es": "2025",
+          "en": "2025"
+        },
+        "title": {
+          "es": "Másteres en IA para Creativos e IA Innovación",
+          "en": "Master’s programmes in AI for Creatives and AI Innovation"
+        },
+        "institution": "Founderz"
+      },
+      {
+        "period": {
+          "es": "2024",
+          "en": "2024"
+        },
+        "title": {
+          "es": "Curso en Diseño UX",
+          "en": "UX Design course"
+        },
+        "institution": "Google Certificates"
+      },
+      {
+        "period": {
+          "es": "2019",
+          "en": "2019"
+        },
+        "title": {
+          "es": "Grado en Diseño",
+          "en": "Degree in Design"
+        },
+        "institution": "Universidad Complutense de Madrid"
+      }
+    ],
+    "skills": {
+      "es": [
+        "Identidad de marca",
+        "Diseño digital e impreso",
+        "Fotografía de producto",
+        "Motion graphics y edición de vídeo",
+        "UI/UX y diseño web",
+        "Modelado 3D"
+      ],
+      "en": [
+        "Brand identity",
+        "Digital & print design",
+        "Product photography",
+        "Motion graphics & video editing",
+        "UI/UX & web design",
+        "3D modelling"
+      ]
+    },
+    "tools": [
+      "Adobe CC",
+      "Affinity",
+      "Figma",
+      "Blender",
+      "ChatGPT · Midjourney · Copilot",
+      "Microsoft 365"
+    ],
+    "languages": [
+      {
+        "name": {
+          "es": "Inglés",
+          "en": "English"
+        },
+        "level": "C1 · Advanced",
+        "institution": "Escuela Oficial de Idiomas",
+        "year": "2021"
+      }
+    ]
+  }
 }

@@ -25,5 +25,6 @@
   "featured": false,
   "archived": false,
   "order": 1,
-  "draft": false
+  "draft": false,
+  "portfolioOrder": 1
 }

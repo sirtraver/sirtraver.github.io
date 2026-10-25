@@ -24,3 +24,20 @@ No hace falta crear `galeria.json` para proyectos nuevos: las imágenes de `imag
 Si existe `galeria.json`, esa lista determina qué imágenes aparecen y en qué orden.
 
 **Copiar una carpeta en el Mac no publica por sí solo:** la web se actualiza después de generar y desplegar en Sites. Para revisar en local, ejecuta `npm run dev` desde `recovered-sites/`.
+
+## Selección y explicación del proyecto
+
+La portada tiene una selección editorial. `portfolioOrder` fija su posición (1 primero). Los proyectos nuevos sin ese campo aparecen después de la selección, por fecha. `archived: true` conserva el proyecto y su URL en «Trabajos anteriores», fuera de la portada. No borres una carpeta para retirarla de la selección.
+
+Puedes añadir `caseStudy` con secciones bilingües para explicar el concepto, sistema y aplicaciones. Se muestra en la página propia y en el visor:
+
+```json
+"caseStudy": [
+  {
+    "title": { "es": "El proyecto", "en": "The project" },
+    "text": { "es": "Descripción verificada del proyecto.", "en": "Verified project description." }
+  }
+]
+```
+
+Describe solo información confirmada. Deja vacíos el cliente, rol o resultado cuando no estén documentados; los proyectos conceptuales no deben atribuirse a un encargo real.

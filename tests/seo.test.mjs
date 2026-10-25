@@ -70,7 +70,7 @@ test('the sitemap lists pages and project pages with alternates and all gallery 
   // 8 covers + 1 portrait per language on the main pages, 96 gallery images per language.
   assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (activeProjects.length + 1 + allProjects.reduce((sum, p) => sum + p.images.length, 0)));
   assert.ok(xml.includes('hreflang="x-default"'));
-  assert.match(xml, /\/media\/gigantes\/cover-2400\.[0-9a-f]+\.webp/, 'largest cover is listed');
+  assert.match(xml, /\/media\/colorsplash\/cover-2400\.[0-9a-f]+\.webp/, 'largest cover is listed');
 });
 
 test('preview hosts are kept out of search results', async () => {

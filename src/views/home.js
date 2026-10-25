@@ -73,7 +73,7 @@ export function homePage(lang, { projects, hasArchive, galleriesUrl }) {
     title: t.title,
     description: t.description,
     schema: schema(lang, projects),
-    scripts: [{ src: '/assets/project-viewer.js', data: { gallery: galleriesUrl } }],
+    scripts: [{ src: '/assets/image-zoom.js' }, { src: '/assets/project-viewer.js', data: { gallery: galleriesUrl } }],
     body: html`<section class="value-hero">
   <p class="overline">${t.overline}</p>
   <h1>${t.heading}</h1>

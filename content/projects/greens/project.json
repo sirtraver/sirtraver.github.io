@@ -24,5 +24,6 @@
   },
   "featured": false,
   "archived": false,
-  "draft": false
+  "draft": false,
+  "portfolioOrder": 7
 }

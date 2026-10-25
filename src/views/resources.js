@@ -22,7 +22,7 @@ function launchState(lang, subscription) {
   <span class="launch-badge">${t.badge}</span>
   <h2>${t.title}</h2>
   <p>${t.text}</p>
-  <ul class="launch-categories">${t.categories.map((name) => html`<li>${name}<span>${t.upcoming}</span></li>`)}</ul>
+  <ul class="launch-categories launch-categories--compact">${t.categories.map((name) => html`<li>${name}</li>`)}</ul>
   <form class="launch-form" method="post" action="/api/subscribe" data-enhance data-sending="${t.saving}" data-success="${t.success}" data-confirm="${t.confirm}" data-error="${t.error}" data-limited="${t.limited}">
     <input type="hidden" name="language" value="${lang}">
     <label for="launch-email">${t.emailLabel}</label>

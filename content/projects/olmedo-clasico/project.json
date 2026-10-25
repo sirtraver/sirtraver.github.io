@@ -34,5 +34,38 @@
   },
   "behance": "",
   "featured": false,
-  "archived": false
+  "archived": false,
+  "portfolioOrder": 3,
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "Una propuesta conceptual independiente para un festival de teatro clásico. El conjunto incluye identidad, carteles, una simulación del espacio del festival y entradas.",
+        "en": "An independent concept identity for a classical theatre festival. The presentation includes branding, posters, a simulated festival setting and tickets."
+      }
+    },
+    {
+      "title": {
+        "es": "Sistema visual",
+        "en": "Visual system"
+      },
+      "text": {
+        "es": "El burdeos y el marfil unifican la presentación. Una tipografía alta y condensada organiza los títulos, mientras las iniciales OC forman un motivo que se repite en los márgenes y en las entradas.",
+        "en": "Burgundy and ivory unify the presentation. Tall, condensed typography structures the titles, while the initials OC form a repeating motif on the margins and tickets."
+      }
+    },
+    {
+      "title": {
+        "es": "Aplicaciones",
+        "en": "Applications"
+      },
+      "text": {
+        "es": "La ilustración de tratamiento grabado y la composición tipográfica se trasladan de la cartelería a los soportes del espacio y a las entradas. Se presentan como aplicaciones conceptuales, sin vinculación a un encargo del festival.",
+        "en": "Engraving-style illustration and typographic composition carry through from the posters to the venue graphics and tickets. These are concept applications, independent of a commission from the festival."
+      }
+    }
+  ]
 }

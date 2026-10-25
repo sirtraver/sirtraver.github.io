@@ -34,5 +34,38 @@
   },
   "behance": "",
   "featured": false,
-  "archived": false
+  "archived": false,
+  "portfolioOrder": 2,
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "Una propuesta conceptual de identidad para una marca de pintura. La presentación recorre la marca, sus envases y su aplicación en comunicación y espacio comercial.",
+        "en": "A concept identity for a paint brand. The presentation follows the brand through its packaging, communication and retail applications."
+      }
+    },
+    {
+      "title": {
+        "es": "Sistema visual",
+        "en": "Visual system"
+      },
+      "text": {
+        "es": "Un monograma construido con las iniciales CS se combina con una paleta de cian, magenta, amarillo y negro. El nombre y los códigos de color mantienen una estructura común en los cuatro envases.",
+        "en": "A monogram built from the initials CS is paired with cyan, magenta, yellow and black. The name and colour codes follow a shared structure across the four paint tins."
+      }
+    },
+    {
+      "title": {
+        "es": "Aplicaciones",
+        "en": "Applications"
+      },
+      "text": {
+        "es": "Latas de pintura, caja de presentación, piezas de comunicación y un expositor de tienda muestran el sistema en distintas escalas. La campaña se articula alrededor del mensaje «Paint it».",
+        "en": "Paint tins, a presentation box, communication pieces and a store display show the system at different scales. The campaign is built around the message “Paint it”."
+      }
+    }
+  ]
 }

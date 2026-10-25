@@ -4,7 +4,7 @@ import { projects } from './generated/content.js';
 /** All projects, newest first. */
 export const allProjects = projects;
 /** Projects shown on the home page. */
-export const activeProjects = projects.filter((p) => !p.archived);
+export const activeProjects = projects.filter((p) => !p.archived).sort((a, b) => (a.portfolioOrder ?? Number.MAX_SAFE_INTEGER) - (b.portfolioOrder ?? Number.MAX_SAFE_INTEGER) || b.date.localeCompare(a.date));
 /** Older projects moved to /archive/ (their pages keep existing). */
 export const archivedProjects = projects.filter((p) => p.archived);
 

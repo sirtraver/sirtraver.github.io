@@ -18,16 +18,21 @@ function header(lang, page, alternates) {
   return html`<header class="site-header">
   <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="wordmark">sirtraver</span></a>
   <nav aria-label="${t.mainNavLabel}">
-    ${Object.keys(PAGES).map(
+    ${['home', 'about'].map(
       (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
     )}
   </nav>
-  <div class="social-links" role="group" aria-label="${t.socialLabel}">
+  <div class="header-actions">
+    <details class="social-menu">
+      <summary aria-label="${t.socialLabel}"><span class="networks-label">${t.networksLabel}</span><span class="networks-icon" aria-hidden="true">•••</span></summary>
+      <div class="social-links" role="group" aria-label="${t.socialLabel}">
     ${SOCIAL_LINKS.map(
       ({ key, label }) =>
         html`<a class="social-${key}" aria-label="${label}" href="${SOCIAL[key]}" target="_blank" rel="noopener noreferrer">${ICONS[key]}<span class="social-label">${label}</span></a>`,
     )}
-    <a class="social-mail" href="${SOCIAL.email}" aria-label="${t.emailLabel}" title="Email">${ICONS.mail}</a>
+      </div>
+    </details>
+    <a class="header-contact" href="${SOCIAL.email}" aria-label="${t.emailLabel}">${t.contactLabel}<span aria-hidden="true"> ↗</span></a>
   </div>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
     ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}?lang=${code}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
@@ -35,11 +40,11 @@ function header(lang, page, alternates) {
 </header>`;
 }
 
-function footer(lang) {
+function footer(lang, page) {
   const t = CONTENT[lang];
   return html`<footer class="site-footer">
   <div class="footer-legal">
-    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
+    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
   </div>
   <span>${t.footerRole}</span>
 </footer>`;
@@ -116,7 +121,7 @@ ${header(lang, page, paths ?? PAGES.home)}
 <main id="main"${mainClass ? html` class="${mainClass}"` : ''}>
 ${body}
 </main>
-${footer(lang)}
+${footer(lang, page)}
 </body>
 </html>
 `;

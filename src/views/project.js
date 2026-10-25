@@ -24,11 +24,11 @@ function facts(project, lang, t) {
 
 function figure(image, index, total, name, lang, t) {
   const caption = image.caption[lang];
-  return html`<figure>${picture(image, {
+  return html`<figure><a class="gallery-zoom" href="${largestUrl(image)}" target="_blank" rel="noopener noreferrer" data-zoom-src="${largestUrl(image)}" aria-label="${t.zoomImage(name, index + 1)}">${picture(image, {
     alt: caption || t.imageAlt(name, index + 1, total),
     sizes: GALLERY_SIZES,
     priority: index === 0,
-  })}${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
+  })}</a>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
 }
 
 function schema(project, lang, path, name, description) {
@@ -103,6 +103,7 @@ export function projectPage(project, siblings, lang) {
     description,
     shareImage: { url: absoluteUrl(cover.og ?? largestUrl(cover)), alt: name },
     schema: schema(project, lang, path, name, description),
+    scripts: [{ src: '/assets/image-zoom.js' }],
     body: html`<article class="project-page">
   <a class="back-link" href="${PAGES.home[lang]}">${t.project.back}</a>
   <header class="project-header">
@@ -114,6 +115,8 @@ export function projectPage(project, siblings, lang) {
     ${facts(project, lang, t.project)}
     ${project.behance ? html`<a class="project-original" href="${project.behance}" target="_blank" rel="noopener noreferrer">${t.project.original}</a>` : ''}
   </div>
+  ${project.caseStudy.length ? html`<section class="project-story" aria-label="${t.project.story}">${project.caseStudy.map(section => html`<div><h2>${section.title[lang]}</h2><p>${section.text[lang]}</p></div>`)}</section>` : ''}
+  <p class="gallery-hint">${t.project.zoomHint}</p>
   <div class="project-gallery">${project.images.map((image, i) => figure(image, i, project.images.length, name, lang, t.project))}</div>
   ${project.result[lang] ? html`<section class="project-result"><h2>${t.project.resultTitle}</h2><p>${project.result[lang]}</p></section>` : ''}
   <nav class="project-pager" aria-label="${t.project.pagerLabel}">${

@@ -5,6 +5,7 @@
 // Modified clicks, projects without a gallery and failures fall back to the regular link:
 // the project page on this site.
 (() => {
+  const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
   const script = document.currentScript;
   const grid = document.querySelector('.project-grid');
   if (!grid || !script?.dataset.gallery || typeof HTMLDialogElement !== 'function') return;
@@ -19,6 +20,9 @@
           next: 'Proyecto siguiente',
           end: 'Descripción, comentarios y valoraciones en Behance',
           error: 'Alguna imagen no se ha podido cargar. Inténtalo de nuevo en unos instantes.',
+          story: 'Concepto y aplicaciones',
+          zoom: 'Pulsa una imagen para explorar los detalles.',
+          enlarge: 'Ampliar imagen',
         }
       : {
           original: 'View on Behance',
@@ -28,6 +32,9 @@
           next: 'Next project',
           end: 'Description, comments & appreciations on Behance',
           error: 'An image could not be loaded. Please try again in a moment.',
+          story: 'Concept & applications',
+          zoom: 'Select an image to explore the details.',
+          enlarge: 'Enlarge image',
         };
 
   const el = (tag, attributes = {}, ...children) => {
@@ -54,9 +61,11 @@
   const nextButton = el('button', { class: 'viewer-step', type: 'button', 'aria-label': text.next }, '→');
   const closeButton = el('button', { class: 'viewer-close', type: 'button', 'aria-label': text.close }, '×');
   const images = el('div', { class: 'viewer-images' });
+  const overview = el('div', { class: 'viewer-overview', hidden: '' });
+  const hint = el('p', { class: 'viewer-hint' }, text.zoom);
   const error = el('p', { class: 'viewer-error', hidden: '' });
   const end = el('a', { class: 'viewer-end', target: '_blank', rel: 'noopener noreferrer' }, `${text.end} ↗`);
-  const scroller = el('div', { class: 'viewer-scroll' }, images, error, end);
+  const scroller = el('div', { class: 'viewer-scroll' }, overview, hint, images, error, end);
   const dialog = el(
     'dialog',
     { class: 'project-viewer', 'aria-labelledby': 'viewer-title' },
@@ -78,6 +87,7 @@
   let opener = null; // card focused again when the viewer closes
   let previousOverflow = '';
   let pageTitle = document.title;
+  let closing = false;
   let active = false; // viewer state applied to the page (title, scroll lock)
 
   const showError = () => {
@@ -109,7 +119,9 @@
     });
     image.style.backgroundColor = item.color;
     image.addEventListener('error', showError, { once: true });
-    return [local ? el('picture', {}, el('source', { type: 'image/avif', srcset: srcset(item.avif), sizes }), image) : image];
+    const source = local ? item.webp.at(-1)[0] : item.src;
+    const anchor = el('a', { class: 'gallery-zoom', href: source, 'data-zoom-src': source, target: '_blank', rel: 'noopener noreferrer', 'aria-label': `${text.enlarge} ${index + 1}: ${title.textContent}` }, local ? el('picture', {}, el('source', { type: 'image/avif', srcset: srcset(item.avif), sizes }), image) : image);
+    return [anchor];
   }
 
   function show(card) {
@@ -120,6 +132,14 @@
     original.hidden = end.hidden = !project.behance;
     original.href = end.href = project.behance || '#';
     error.hidden = true;
+    overview.replaceChildren();
+    const intro = project.intro?.[lang];
+    if (intro) overview.append(el('p', { class: 'viewer-intro' }, intro));
+    if (project.caseStudy?.length) {
+      const sections = project.caseStudy.map(section => el('div', {}, el('h3', {}, section.title[lang]), el('p', {}, section.text[lang])));
+      overview.append(el('details', { class: 'viewer-story' }, el('summary', {}, text.story), el('div', { class: 'viewer-story-body' }, ...sections)));
+    }
+    overview.hidden = !overview.childElementCount;
     images.replaceChildren(...project.images.flatMap(galleryImage));
     scroller.scrollTop = 0;
     document.title = `${title.textContent} — sirtraver`;
@@ -131,6 +151,7 @@
   }
 
   function open(card) {
+    closing = false;
     active = true;
     opener = card;
     pageTitle = document.title;
@@ -165,6 +186,8 @@
 
   // Closing goes back in history, so the home URL is restored and Back/Forward stay consistent.
   const close = () => {
+    if (closing) return;
+    closing = true;
     if (history.state?.viewer) history.back();
     else teardown();
   };

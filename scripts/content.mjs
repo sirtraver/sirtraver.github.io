@@ -23,6 +23,7 @@ async function readProject(slug, media, projectsDir) {
     conceptual: data.conceptual === true,
     date: data.date,
     order: Number(data.order ?? 0), // tie-break for projects published on the same day (lower first)
+    portfolioOrder: data.portfolioOrder ?? null,
     year: Number(data.date.slice(0, 4)),
     behance: data.behance ? String(data.behance) : '',
     client: String(data.client ?? ''),
@@ -30,6 +31,7 @@ async function readProject(slug, media, projectsDir) {
     deliverables: list(data.deliverables),
     intro: bilingual(data.intro),
     result: bilingual(data.result),
+    caseStudy: (data.caseStudy ?? []).map(section => ({ title: bilingual(section.title), text: bilingual(section.text) })),
     featured: data.featured === true,
     archived: data.archived === true,
     cover: media.cover,

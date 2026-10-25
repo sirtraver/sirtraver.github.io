@@ -24,7 +24,7 @@
     "es": ""
   },
   "featured": false,
-  "archived": false,
+  "archived": true,
   "order": 3,
   "draft": false
 }

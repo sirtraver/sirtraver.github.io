@@ -36,5 +36,38 @@
   },
   "behance": "",
   "featured": false,
-  "archived": false
+  "archived": false,
+  "portfolioOrder": 4,
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "Una propuesta conceptual de identidad y comunicación para una autoescuela. El sistema se presenta en un vehículo, piezas para redes, material impreso y una propuesta de página web.",
+        "en": "A concept identity and communication system for a driving school. The presentation applies the brand to a vehicle, social media, printed material and a website concept."
+      }
+    },
+    {
+      "title": {
+        "es": "Sistema visual",
+        "en": "Visual system"
+      },
+      "text": {
+        "es": "El verde menta y el azul eléctrico se apoyan en un tono oscuro. El logotipo de formas redondeadas convive con una tipografía de lectura clara y con el mensaje «Sin drama. Con carnet.».",
+        "en": "Mint green and electric blue are anchored by a dark tone. A rounded logotype is paired with clear, legible typography and the campaign line “Sin drama. Con carnet.”."
+      }
+    },
+    {
+      "title": {
+        "es": "Aplicaciones",
+        "en": "Applications"
+      },
+      "text": {
+        "es": "La rotulación del coche, las historias verticales, la placa de la L y las piezas de escritorio comparten colores y tipografía. La propuesta web reúne esa misma identidad en una interfaz digital.",
+        "en": "The car graphics, vertical stories, learner plate and desk materials share the same colours and typography. The website concept brings that identity into a digital interface."
+      }
+    }
+  ]
 }

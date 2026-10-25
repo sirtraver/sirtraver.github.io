@@ -215,7 +215,7 @@
   });
   dialog.addEventListener('close', () => {
     // A close the page did not start (forced Escape) still leaves the history entry: drop it.
-    if (active && history.state?.viewer) history.back();
+    if (active && history.state?.viewer) close();
     else teardown();
   });
 

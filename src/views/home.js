@@ -8,30 +8,14 @@ import { breadcrumbs, graph, itemList, person, webPage, website } from './schema
 
 const imageId = (project) => `${absoluteUrl('/')}#project-image-${project.slug}`;
 
-// Rendered widths (see .featured-project and .project-grid in site.css).
-const FEATURED_SIZES = '(max-width: 700px) calc(100vw - 40px), (max-width: 1360px) calc(100vw - 96px), 1264px';
+// All portfolio cards share the same frame and responsive widths.
 const CARD_SIZES = '(max-width: 560px) calc(100vw - 40px), (max-width: 1360px) calc(50vw - 64px), 616px';
 
 export const categoryLine = (project, lang) => `${CONTENT[lang].categories[project.category] ?? project.category} · ${project.year}${project.conceptual ? ` · ${CONTENT[lang].project.conceptual}` : ''}`;
 
-function featured(project, lang) {
-  const t = CONTENT[lang].home;
+export function projectCard(project, lang, { priority = false } = {}) {
   const name = projectName(project, lang);
-  return html`<a class="featured-project" href="${projectPath(project, lang)}" data-project="${project.slug}">
-  <div class="card-media">${picture(project.cover, { alt: name, sizes: FEATURED_SIZES, priority: true })}</div>
-  <div class="featured-text">
-    <div><p class="overline">${t.featured}</p>
-    <h3>${name}</h3>
-    <p class="featured-meta">${categoryLine(project, lang)}</p></div>
-    ${project.intro[lang] ? html`<p class="featured-intro">${project.intro[lang]}</p>` : ''}
-    <span class="featured-link">${t.viewProject} →</span>
-  </div>
-</a>`;
-}
-
-export function projectCard(project, lang) {
-  const name = projectName(project, lang);
-  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media">${picture(project.cover, { alt: name, sizes: CARD_SIZES })}</div><div class="card-caption"><h3>${name}</h3><span aria-hidden="true">↗</span></div><p>${categoryLine(project, lang)}</p></a>`;
+  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media">${picture(project.cover, { alt: name, sizes: CARD_SIZES, priority })}</div><div class="card-caption"><h3>${name}</h3><span aria-hidden="true">↗</span></div><p>${categoryLine(project, lang)}</p></a>`;
 }
 
 function schema(lang, projects) {
@@ -78,13 +62,11 @@ function schema(lang, projects) {
  * @param {'en'|'es'} lang
  * @param {object} data
  * @param {object[]} data.projects  Active projects, newest first.
- * @param {object|null} data.featuredProject  Shown large above the grid.
  * @param {boolean} data.hasArchive  Whether to link to /archive/.
  * @param {string} data.galleriesUrl  Versioned URL of the viewer's gallery data.
  */
-export function homePage(lang, { projects, featuredProject, hasArchive, galleriesUrl }) {
+export function homePage(lang, { projects, hasArchive, galleriesUrl }) {
   const t = CONTENT[lang].home;
-  const rest = projects.filter((p) => p !== featuredProject);
   return layout({
     lang,
     page: 'home',
@@ -98,8 +80,7 @@ export function homePage(lang, { projects, featuredProject, hasArchive, gallerie
   <p class="value-description">${t.lead}</p>
 </section>
 <div class="work-heading"><h2>${t.workTitle}<span class="work-count">${String(projects.length).padStart(2, '0')}</span></h2><span>${t.workOrder}</span></div>
-${featuredProject ? featured(featuredProject, lang) : ''}
-<section class="project-grid" aria-label="${t.gridLabel}">${rest.map((p) => projectCard(p, lang))}</section>
+<section class="project-grid" aria-label="${t.gridLabel}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>
 ${hasArchive ? html`<p class="archive-link"><a href="${ARCHIVE_PAGE[lang]}">${t.archive} →</a></p>` : ''}
 `,
   });

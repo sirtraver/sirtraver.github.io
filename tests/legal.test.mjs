@@ -20,7 +20,12 @@ test('legal notice and privacy policy exist in both languages', async () => {
     assert.ok(html.includes('mailto:javier.traver.v@me.com'));
   }
   const privacy = await (await get('/es/privacidad/')).text();
-  assert.ok(privacy.includes('no usa cookies'));
+  assert.ok(privacy.includes('sirtraver_lang'));
+  assert.ok(privacy.includes('seis meses'));
+  assert.ok(!privacy.includes('no usa cookies'));
+  const englishPrivacy = await (await get('/privacy/')).text();
+  assert.ok(englishPrivacy.includes('sirtraver_lang'));
+  assert.ok(englishPrivacy.includes('six months'));
   assert.ok(privacy.includes('https://www.aepd.es/'));
 });
 
@@ -43,5 +48,5 @@ test('the waitlist form links to the privacy policy', async () => {
 
 test('legal pages switch language to their own counterpart', async () => {
   const html = await (await get('/legal/')).text();
-  assert.ok(html.includes('<a href="/es/aviso-legal/" lang="es"'));
+  assert.ok(html.includes('<a href="/es/aviso-legal/?lang=es" lang="es"'));
 });

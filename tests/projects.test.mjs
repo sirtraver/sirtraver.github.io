@@ -1,12 +1,11 @@
 import assert from 'node:assert/strict';
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { test } from 'node:test';
-import { activeProjects, allProjects, archivedProjects, featuredProject, findProject } from '../src/projects.js';
+import { activeProjects, allProjects, archivedProjects, findProject } from '../src/projects.js';
 import { ORIGIN, get, offline, withFetch } from './helpers.mjs';
 
 test('project folders produce a sorted portfolio without a central registry', () => {
   assert.ok(allProjects.length > 0);
-  assert.ok(activeProjects.includes(featuredProject));
   for (let i = 1; i < allProjects.length; i++) assert.ok(allProjects[i - 1].date >= allProjects[i].date);
   assert.equal(findProject('83737217').slug, 'gigantes', 'old Behance IDs still resolve');
 });
@@ -41,14 +40,14 @@ test('each gallery follows its own project folder definition', async () => {
   }
 });
 
-test('home: featured project first, then the grid, all linking to case studies', async () => {
+test('home: every project has an equal card in a single chronological grid', async () => {
   await withFetch(offline, async () => {
     for (const [path, prefix] of [['/', ''], ['/es/', '/es']]) {
       const html = await (await get(path)).text();
-      assert.ok(html.includes(`<a class="featured-project" href="${prefix}/projects/${featuredProject.slug}/" data-project="${featuredProject.slug}">`));
+      assert.ok(!html.includes('class="featured-project"'));
       const cards = [...html.matchAll(/<a class="project-card" href="([^"]+)" data-project="([^"]+)">/g)].map((m) => m[2]);
-      assert.deepEqual(cards, activeProjects.filter(p => p !== featuredProject).map(p => p.slug), path);
-      assert.equal((html.match(/fetchpriority="high"/g) || []).length, 1, 'only the featured cover is high priority');
+      assert.deepEqual(cards, activeProjects.map(p => p.slug), path);
+      assert.equal((html.match(/fetchpriority="high"/g) || []).length, 1, 'only the first card cover is high priority');
       assert.ok(html.includes('<source type="image/avif"'));
       assert.match(html, /style="background-color:#[0-9a-f]{6}"/, 'placeholder colour');
     }
@@ -56,7 +55,7 @@ test('home: featured project first, then the grid, all linking to case studies',
     assert.ok(english.includes('<p>Visual identity · 2025</p>'));
     const spanish = await (await get('/es/')).text();
     assert.ok(spanish.includes('<h3>Tipografía en movimiento</h3>'));
-    assert.ok(spanish.includes('Último proyecto'));
+    assert.ok(!spanish.includes('Último proyecto'));
   });
 });
 

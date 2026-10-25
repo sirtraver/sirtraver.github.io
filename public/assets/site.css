@@ -124,7 +124,7 @@ button:focus-visible {
   left: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 20px;
   width: 100%;
@@ -342,17 +342,33 @@ main {
 
 .language-links {
   display: flex;
-  gap: 14px;
+  grid-column: 4;
+  grid-row: 1;
+  align-items: center;
+  justify-self: end;
+  gap: 2px;
+  padding-left: 10px;
+  border-left: 1px solid #dedede;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .language-links [aria-current] {
   color: var(--ink);
+  background: #efefef;
+  font-weight: 700;
 }
 
 .language-links a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  min-height: 44px;
+  border-radius: 9px;
 }
+
+.language-links a:hover { background: #f4f4f4; }
 
 .page-title {
   padding: 42px 0 38px;
@@ -448,7 +464,7 @@ main {
   min-width: 0;
 }
 
-/* Image frame: rounded, with a slow zoom on hover. */
+/* Equal landscape frames for every portfolio project. */
 .card-media {
   overflow: hidden;
   background: #f8f8f8;
@@ -476,42 +492,6 @@ a:hover .card-media img {
   transform: scale(1.03);
 }
 
-/* ---------- Featured project ---------- */
-
-.featured-project {
-  display: block;
-  margin: 0 0 48px;
-}
-
-.featured-project .card-media img { aspect-ratio: 16 / 10; }
-/* Keep all four paint tins visible in this wide cover, including on phones. */
-.featured-project[data-project="colorsplash"] .card-media img { aspect-ratio: 16 / 9; }
-.featured-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  padding: 20px 0 0;
-  text-align: center;
-}
-.featured-text .overline { margin: 0 0 7px; font-size: 10px; letter-spacing: 1px; }
-.featured-text h3 { margin: 0; font-size: 26px; line-height: 1.2; letter-spacing: -0.8px; }
-.featured-meta { margin: 6px 0 0; color: #626262; font-size: 12px; }
-.featured-intro { max-width: 360px; margin: 0; color: #626262; font-size: 14px; line-height: 1.65; }
-.featured-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  min-height: 44px;
-  padding: 10px 18px;
-  border: 1px solid #d5d5d5;
-  border-radius: 24px;
-  font-size: 13px;
-  transition: background 0.18s;
-}
-.featured-project:hover .featured-link { background: #f4f4f4; }
 .archive-link { margin: -20px 0 60px; font-size: 14px; }
 .archive-link a { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -541,6 +521,8 @@ a:hover .card-media img {
   color: #626262;
   font-size: 12px;
 }
+
+.project-card[data-project] .card-media img { aspect-ratio: 16 / 9; }
 
 .project-card[data-project] .card-caption {
   position: relative;
@@ -1603,6 +1585,9 @@ a:hover .card-media img {
   .social-label {
     display: none;
   }
+
+  .social-links { gap: 4px; }
+  .social-links a { min-width: 36px; }
 }
 
 @media (max-width: 900px) {
@@ -1650,8 +1635,6 @@ a:hover .card-media img {
     width: calc(100% - 48px);
   }
 
-  .featured-text { gap: 18px; }
-  .featured-intro { display: none; }
 
   .project-grid:has(> a.project-card) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1668,12 +1651,12 @@ a:hover .card-media img {
     padding-top: 139px; /* header wraps to two rows */
   }
 
-  /* Header: wordmark and profiles on top, navigation below. */
+  /* Compact contacts and language choices stay above the navigation on phones. */
   .site-header {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
     min-height: 0;
-    padding: 17px 20px 12px;
+    padding: 17px 16px 12px;
     transition: transform 0.25s ease;
   }
 
@@ -1696,13 +1679,17 @@ a:hover .card-media img {
 
   .social-links {
     grid-column: 2;
-    gap: 3px;
+    gap: 2px;
   }
 
+  .site-header .wordmark { font-size: 22px; }
+  .site-header .language-links { grid-column: 3; padding-left: 4px; }
+  .site-header .language-links a { min-width: 28px; }
+
   .social-links a {
-    min-width: 38px;
-    min-height: 40px;
-    padding: 7px;
+    min-width: 24px;
+    min-height: 44px;
+    padding: 3px;
   }
 
   .site-footer > span:nth-child(2) {
@@ -1710,9 +1697,6 @@ a:hover .card-media img {
   }
 
   .value-hero { padding: 34px 0 42px; }
-  .featured-project .card-media img { aspect-ratio: 808 / 632; }
-  .featured-text h3 { font-size: 22px; }
-  .featured-link { font-size: 12px; padding: 9px 12px; }
 
   .value-hero .overline {
     font-size: 11px;
@@ -1980,9 +1964,6 @@ a:hover .card-media img {
     padding: 23px 0 25px;
   }
 
-  .language-links {
-    margin-left: auto;
-  }
 
   .page-title {
     padding: 25px 0 29px;
@@ -2000,8 +1981,6 @@ a:hover .card-media img {
     gap: 32px;
     margin-bottom: 45px;
   }
-  .featured-text { flex-wrap: wrap; }
-  .featured-link { min-width: 120px; }
   .viewer-bar h2 { max-width: 145px; }
   .viewer-bar > div { gap: 8px; }
   .viewer-step, .viewer-close { width: 40px; height: 40px; }

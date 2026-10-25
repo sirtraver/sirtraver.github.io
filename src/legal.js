@@ -1,5 +1,5 @@
 // Legal notice and privacy policy (EN/ES). They describe what the site actually does:
-// no cookies, no analytics, and personal data only from the launch waitlist form.
+// a language preference cookie, optional integrations, and data provided in forms.
 // Template text: have it reviewed before relying on it legally.
 import { LEGAL } from './config.js';
 import { html } from './lib/html.js';
@@ -49,7 +49,7 @@ export const LEGAL_CONTENT = {
     privacy: {
       title: 'Privacy policy | sirtraver',
       heading: 'Privacy policy',
-      description: 'How sirtraver.com handles personal data: only the launch waitlist, no cookies, no analytics.',
+      description: 'How sirtraver.com handles personal data and your language preference.',
       sections: [
         ['Data controller', [html`${LEGAL.holder}. Contact: ${email}.`]],
         [
@@ -57,7 +57,7 @@ export const LEGAL_CONTENT = {
           [
             'If you sign up for the resources launch notice: your email address, the language of the page and the date and time of your consent.',
             'If you use the contact form: your name, email address, the type of project and your message.',
-            'This website does not use cookies or advertising trackers. The server may process technical data (such as IP address and browser) temporarily to deliver the website securely and prevent abuse.',
+            'When you select a language, this website saves the functional cookie sirtraver_lang for up to six months to remember your choice. It contains only es or en and is not used for advertising or tracking. On your first visit, the browser language is used if no choice has been saved. The server may process technical data (such as IP address and browser) temporarily to deliver the website securely and prevent abuse.',
           ],
         ],
         ['Purpose', ['Launch notice: to email you when the sirtraver digital resources launch. Contact form: to answer your enquiry.']],
@@ -119,7 +119,7 @@ export const LEGAL_CONTENT = {
     privacy: {
       title: 'Política de privacidad | sirtraver',
       heading: 'Política de privacidad',
-      description: 'Cómo trata sirtraver.com los datos personales: solo la lista de aviso de lanzamiento, sin cookies ni analítica.',
+      description: 'Cómo trata sirtraver.com los datos personales y tu preferencia de idioma.',
       sections: [
         ['Responsable del tratamiento', [html`${LEGAL.holder}. Contacto: ${email}.`]],
         [
@@ -127,7 +127,7 @@ export const LEGAL_CONTENT = {
           [
             'Si te apuntas al aviso de lanzamiento de recursos: tu email, el idioma de la página y la fecha y hora de tu consentimiento.',
             'Si usas el formulario de contacto: tu nombre, tu email, el tipo de proyecto y tu mensaje.',
-            'Esta web no usa cookies ni rastreadores publicitarios. El servidor puede tratar temporalmente datos técnicos (como la dirección IP y el navegador) para servir la web de forma segura y evitar abusos.',
+            'Al elegir un idioma, esta web guarda la cookie funcional sirtraver_lang durante un máximo de seis meses para recordar tu elección. Solo contiene es o en y no se utiliza para publicidad ni seguimiento. En la primera visita, se utiliza el idioma del navegador si no hay una elección guardada. El servidor puede tratar temporalmente datos técnicos (como la dirección IP y el navegador) para servir la web de forma segura y evitar abusos.',
           ],
         ],
         ['Finalidad', ['Aviso de lanzamiento: enviarte un email cuando se publiquen los recursos digitales de sirtraver. Formulario de contacto: responder a tu consulta.']],

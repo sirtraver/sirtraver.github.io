@@ -46,7 +46,7 @@ test('a new folder creates a complete local-image project without editing a cent
     assert.equal(img.height, 60);
     for (const [url] of [...img.avif, ...img.webp]) assert.ok((await fs.stat(path.join(root, url))).size > 0);
   }
-  const home = String(homePage('en', { projects: content.projects, featuredProject: project, hasArchive: false, galleriesUrl: '/assets/galleries.json' }));
+  const home = String(homePage('en', { projects: content.projects, hasArchive: false, galleriesUrl: '/assets/galleries.json' }));
   assert.ok(home.includes('data-project="local-project"'));
   const page = String(projectPage(project, content.projects, 'es'));
   assert.equal((page.match(/<figure>/g) || []).length, 3);

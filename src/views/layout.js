@@ -13,7 +13,7 @@ const SOCIAL_LINKS = [
   { key: 'linkedin', label: 'LinkedIn' },
 ];
 
-function header(lang, page) {
+function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
   <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="wordmark">sirtraver</span></a>
@@ -29,23 +29,19 @@ function header(lang, page) {
     )}
     <a class="social-mail" href="${SOCIAL.email}" aria-label="${t.emailLabel}" title="Email">${ICONS.mail}</a>
   </div>
+  <div class="language-links" role="group" aria-label="${t.languageLabel}">
+    ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}?lang=${code}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
+  </div>
 </header>`;
 }
 
-function footer(lang, alternates) {
+function footer(lang) {
   const t = CONTENT[lang];
   return html`<footer class="site-footer">
   <div class="footer-legal">
     <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
   </div>
   <span>${t.footerRole}</span>
-  <div class="language-links">
-    ${LANGUAGES.map((code) =>
-      code === lang
-        ? html`<span aria-current="true">${code.toUpperCase()}</span>`
-        : html`<a href="${alternates[code]}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}">${code.toUpperCase()}</a>`,
-    )}
-  </div>
 </footer>`;
 }
 
@@ -116,11 +112,11 @@ ${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map
 )}</head>
 <body>
 <a class="skip" href="#main">${t.skip}</a>
-${header(lang, page)}
+${header(lang, page, paths ?? PAGES.home)}
 <main id="main"${mainClass ? html` class="${mainClass}"` : ''}>
 ${body}
 </main>
-${footer(lang, paths ?? PAGES.home)}
+${footer(lang)}
 </body>
 </html>
 `;

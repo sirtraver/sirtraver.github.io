@@ -6,9 +6,10 @@ import { contentHash } from './generated/content.js';
 import { getAsset } from './lib/assets.js';
 import { configure } from './lib/runtime.js';
 import { storageEnv } from './lib/storage.js';
+import { languagePreferenceResponse } from './lib/language.js';
 import { SECURITY_HEADERS, emptyResponse, htmlResponse, jsonResponse, redirect } from './lib/http.js';
 import { catalogApi, getCatalog, productSlug } from './services/catalog.js';
-import { activeProjects, archivedProjects, featuredProject, findProject } from './projects.js';
+import { activeProjects, archivedProjects, findProject } from './projects.js';
 import { contact } from './services/contact.js';
 import { subscribe, waitlistAdmin } from './services/waitlist.js';
 import { aboutPage } from './views/about.js';
@@ -52,7 +53,7 @@ async function renderPage({ page, lang }, request, url, env, ctx) {
     case 'home':
       return htmlResponse(
         request,
-        homePage(lang, { projects: activeProjects, featuredProject, hasArchive: archivedProjects.length > 0, galleriesUrl }),
+        homePage(lang, { projects: activeProjects, hasArchive: archivedProjects.length > 0, galleriesUrl }),
       );
     case 'archive':
       return archivedProjects.length ? htmlResponse(request, archivePage(lang, archivedProjects)) : notFound(request, url.pathname);
@@ -94,6 +95,9 @@ async function route(request, url, env, ctx) {
 
   if (request.method !== 'GET' && request.method !== 'HEAD') return emptyResponse(405, { Allow: 'GET, HEAD' });
 
+  const languageResponse = languagePreferenceResponse(request, url);
+  if (languageResponse) return languageResponse;
+
   if (url.pathname === '/api/catalogo-gumroad') return catalogApi(env);
   if (url.pathname === GALLERIES_PATH) {
     const cache = url.searchParams.get('v') === contentHash ? 'public, max-age=31536000, immutable' : 'public, max-age=300';
@@ -113,7 +117,11 @@ async function route(request, url, env, ctx) {
   if (target && target !== path) return redirect(new URL(target, url).href);
 
   const route = PAGE_ROUTES.get(path);
-  if (route) return renderPage(route, request, url, env, ctx);
+  if (route) {
+    const response = await renderPage(route, request, url, env, ctx);
+    if (path === '/') response.headers.set('Vary', 'Cookie, Accept-Language');
+    return response;
+  }
 
   // Project pages: /projects/<slug>/. Old numeric URLs redirect to the slug.
   const projectRoute = path.match(/^\/(es\/)?projects\/([^/]+)(\/?)$/);

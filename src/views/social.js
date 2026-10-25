@@ -6,7 +6,7 @@ import { ICONS } from './icons.js';
 const NETWORKS = ['threads', 'instagram', 'linkedin', 'mail'];
 const LABELS = { threads: 'Threads', instagram: 'Instagram', linkedin: 'LinkedIn' };
 
-// The same native icon links are available in Social and in the profile card.
+// Native icon links live in the About profile card.
 export function socialIcons(lang, className = '') {
   return html`<div class="social-links social-icons ${className}" role="group" aria-label="${CONTENT[lang].socialLabel}">${NETWORKS.map(key => {
     const mail = key === 'mail';

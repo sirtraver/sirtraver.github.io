@@ -17,7 +17,7 @@ export const projectPath = (project, lang) => `${lang === 'es' ? '/es' : ''}/pro
 
 export const languageOf = (path) => (path === '/es' || path.startsWith('/es/') ? 'es' : 'en');
 
-const ROLE = 'Visual Designer & Marketing';
+export const ROLE = 'Visual Designer & Marketing';
 
 export const CONTENT = {
   en: {
@@ -29,19 +29,17 @@ export const CONTENT = {
     nav: { home: 'Portfolio', resources: 'Resources', about: 'About' },
     socialLabel: 'Social profiles',
     emailLabel: 'Email sirtraver',
-    contactLabel: 'Contact',
-    networksLabel: 'Social',
     footerRole: `Javier Traver · ${ROLE}`,
     switchToThisLanguage: 'View this page in English',
     shareImageAlt: 'SIRTRAVER visual identity by Javier Traver',
-    personCaption: 'Javier Traver — visual designer based in Madrid',
+    personCaption: `Javier Traver — ${ROLE} · Madrid`,
     categories: { 'Visual identity': 'Visual identity', 'Visual design': 'Visual design' },
 
     home: {
-      title: 'sirtraver — Javier Traver | Visual Design Portfolio',
+      title: `Portfolio — Javier Traver | ${ROLE}`,
       description:
-        'Brand identity, packaging and visual communication by Javier Traver, a visual designer based in Madrid. Explore selected brand systems and their applications.',
-      overline: 'JAVIER TRAVER · VISUAL DESIGN',
+        `Brand identity, packaging and visual communication by Javier Traver, ${ROLE} based in Madrid. Explore selected brand systems and their applications.`,
+      overline: `Javier Traver · ${ROLE}`,
       heading: 'Brand identities with character.',
       lead: 'From the logo to packaging and visual communication.',
       workTitle: 'Selected work',
@@ -78,7 +76,7 @@ export const CONTENT = {
         upcoming: 'Coming soon',
         categories: ['Canva templates', 'Notion templates', 'Design resources'],
         consent: 'I’d like an email when the resources launch.',
-        privacy: 'Your email will only be used for this notification. To remove it, use the email icon in the Social menu.',
+        privacy: 'Your email will only be used for this notification. To remove it, use the email icon on the About page.',
         saving: 'Saving…',
         success: 'You’re on the list. I’ll let you know when the resources launch.',
         confirm: 'Almost there: check your inbox and confirm your email.',
@@ -89,23 +87,22 @@ export const CONTENT = {
     },
 
     about: {
-      "title": "Javier Traver — Design, experience & education | sirtraver",
-      "description": "Freelance graphic designer since 2017 and a Design graduate from Universidad Complutense de Madrid. Experience in visual identity, communication and product photography. Currently studying Marketing & Advertising.",
+      "title": `About — Javier Traver | ${ROLE}`,
+      "description": `${ROLE}, freelance since 2017 and a Design graduate from Universidad Complutense de Madrid. Currently studying an Advanced Vocational Qualification in Marketing & Advertising at UFV.`,
       "breadcrumb": "About",
       "overline": "ABOUT / SIRTRAVER",
-      "portraitAlt": "Javier Traver — visual designer",
-      "role": "Visual designer",
+      "portraitAlt": `Javier Traver — ${ROLE}`,
+      "role": ROLE,
       "location": "Madrid, Spain",
       "positionTitle": [
         "Visual design.",
         "Brand communication."
       ],
-      "lead": "I’m Javier Traver, a freelance graphic designer since 2017 and a Design graduate from Universidad Complutense de Madrid.",
+      "lead": `I’m Javier Traver, ${ROLE}, working freelance since 2017 and a Design graduate from Universidad Complutense de Madrid.`,
       "bio": "I work on visual identity and brand communication, from logos to their digital and printed applications. My experience also includes product photography and visual content editing.",
-      "currentStudy": "I’m currently studying Marketing & Advertising, expanding my understanding of brands, their audiences and how they communicate.",
-      "studyLabel": "Marketing & Advertising · In progress",
+      "currentStudy": "I’m currently studying an Advanced Vocational Qualification in Marketing & Advertising at UFV, expanding my understanding of brands, their audiences and how they communicate.",
       "experience": "Professional experience",
-      "otherExperience": "Other experience",
+      "currentEducation": "CURRENT EDUCATION",
       "education": "Education",
       "skills": "Skills",
       "tools": "Tools",
@@ -122,9 +119,9 @@ export const CONTENT = {
       conceptual: 'Concept project',
       original: 'View on Behance ↗',
       intro: (category, year) =>
-        `${category} project by Javier Traver, visual designer and marketer based in Madrid, ${year}.`,
+        `${category} project by Javier Traver, ${ROLE} based in Madrid, ${year}.`,
       description: (title, category, count, year) =>
-        `${title}: ${category.toLowerCase()} project by Javier Traver, visual designer based in Madrid. ${count} images, ${year}.`,
+        `${title}: ${category.toLowerCase()} project by Javier Traver, ${ROLE} based in Madrid. ${count} images, ${year}.`,
       imageAlt: (title, index, total) => `${title} — image ${index} of ${total}, by Javier Traver`,
       pagerLabel: 'More projects',
       client: 'Client',
@@ -185,19 +182,17 @@ export const CONTENT = {
     nav: { home: 'Proyectos', resources: 'Recursos', about: 'Sobre mí' },
     socialLabel: 'Perfiles sociales',
     emailLabel: 'Enviar un email a sirtraver',
-    contactLabel: 'Contacto',
-    networksLabel: 'Social',
     footerRole: `Javier Traver · ${ROLE}`,
     switchToThisLanguage: 'Ver esta página en español',
     shareImageAlt: 'SIRTRAVER visual identity by Javier Traver',
-    personCaption: 'Javier Traver — diseñador visual en Madrid',
+    personCaption: `Javier Traver — ${ROLE} · Madrid`,
     categories: { 'Visual identity': 'Identidad visual', 'Visual design': 'Diseño visual' },
 
     home: {
-      title: 'sirtraver — Javier Traver | Portfolio de diseño visual',
+      title: `Proyectos — Javier Traver | ${ROLE}`,
       description:
-        'Identidad de marca, packaging y comunicación visual de Javier Traver, diseñador visual en Madrid. Una selección de sistemas de marca y sus aplicaciones.',
-      overline: 'JAVIER TRAVER · DISEÑO VISUAL',
+        `Identidad de marca, packaging y comunicación visual de Javier Traver, ${ROLE} en Madrid. Una selección de sistemas de marca y sus aplicaciones.`,
+      overline: `Javier Traver · ${ROLE}`,
       heading: 'Identidades de marca con carácter.',
       lead: 'Del logotipo al packaging y la comunicación visual.',
       workTitle: 'Proyectos seleccionados',
@@ -234,7 +229,7 @@ export const CONTENT = {
         upcoming: 'Próximamente',
         categories: ['Plantillas de Canva', 'Plantillas de Notion', 'Recursos de diseño'],
         consent: 'Quiero recibir un email cuando se publiquen los recursos.',
-        privacy: 'Tu email se usará solo para este aviso. Puedes pedir su eliminación mediante el icono de correo del menú Social.',
+        privacy: 'Tu email se usará solo para este aviso. Puedes pedir su eliminación mediante el icono de correo de la página Sobre mí.',
         saving: 'Guardando…',
         success: 'Ya estás en la lista. Te avisaré cuando estén disponibles.',
         confirm: 'Casi listo: revisa tu correo y confirma tu email.',
@@ -245,23 +240,22 @@ export const CONTENT = {
     },
 
     about: {
-      "title": "Javier Traver — Diseño, experiencia y formación | sirtraver",
-      "description": "Diseñador gráfico freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid. Experiencia en identidad visual, comunicación y fotografía de producto. Actualmente estudio Marketing y Publicidad.",
+      "title": `Sobre mí — Javier Traver | ${ROLE}`,
+      "description": `${ROLE}, freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid. Actualmente estudio el Grado Superior en Marketing y Publicidad en la UFV.`,
       "breadcrumb": "Sobre mí",
       "overline": "SOBRE MÍ / SIRTRAVER",
-      "portraitAlt": "Javier Traver — diseñador visual",
-      "role": "Diseñador visual",
+      "portraitAlt": `Javier Traver — ${ROLE}`,
+      "role": ROLE,
       "location": "Madrid, España",
       "positionTitle": [
         "Diseño visual.",
         "Comunicación de marca."
       ],
-      "lead": "Soy Javier Traver, diseñador gráfico freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid.",
+      "lead": `Soy Javier Traver, ${ROLE}, freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid.`,
       "bio": "Trabajo en identidad visual y comunicación de marca, desde el logotipo hasta sus aplicaciones digitales e impresas. Mi experiencia también abarca la fotografía de producto y la edición de contenidos visuales.",
-      "currentStudy": "Actualmente estudio Marketing y Publicidad. Una formación que amplía mi perspectiva sobre las marcas, sus públicos y cómo comunicar.",
-      "studyLabel": "Marketing y Publicidad · En curso",
+      "currentStudy": "Actualmente estudio el Grado Superior en Marketing y Publicidad en la UFV. Una formación que amplía mi perspectiva sobre las marcas, sus públicos y cómo comunicar.",
       "experience": "Experiencia profesional",
-      "otherExperience": "Otras experiencias",
+      "currentEducation": "FORMACIÓN ACTUAL",
       "education": "Formación",
       "skills": "Competencias",
       "tools": "Herramientas",
@@ -278,9 +272,9 @@ export const CONTENT = {
       conceptual: 'Proyecto conceptual',
       original: 'Ver en Behance ↗',
       intro: (category, year) =>
-        `Proyecto de ${category.toLowerCase()} de Javier Traver, diseñador visual y de marketing en Madrid, ${year}.`,
+        `Proyecto de ${category.toLowerCase()} de Javier Traver, ${ROLE} en Madrid, ${year}.`,
       description: (title, category, count, year) =>
-        `${title}: proyecto de ${category.toLowerCase()} de Javier Traver, diseñador visual en Madrid. ${count} imágenes, ${year}.`,
+        `${title}: proyecto de ${category.toLowerCase()} de Javier Traver, ${ROLE} en Madrid. ${count} imágenes, ${year}.`,
       imageAlt: (title, index, total) => `${title} — imagen ${index} de ${total}, de Javier Traver`,
       pagerLabel: 'Más proyectos',
       client: 'Cliente',

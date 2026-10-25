@@ -47,7 +47,6 @@ async function readAbout() {
   return {
     resume: {
       experience: experience(resume.experience),
-      otherExperience: experience(resume.otherExperience),
       education: (resume.education ?? []).map(item => ({ period: bilingual(item.period), title: bilingual(item.title), institution: String(item.institution ?? ''), current: item.current === true })),
       skills: list(resume.skills),
       tools: (resume.tools ?? []).map(String),

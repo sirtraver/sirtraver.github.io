@@ -1,6 +1,6 @@
 // schema.org JSON-LD builders shared by every page.
 import { ORIGIN, PERSON_ID, PORTRAIT, SOCIAL, WEBSITE_ID } from '../config.js';
-import { CONTENT, PAGES } from '../content.js';
+import { CONTENT, PAGES, ROLE } from '../content.js';
 
 const portraitUrl = ORIGIN + PORTRAIT.path;
 
@@ -20,8 +20,8 @@ export const person = (lang) => ({
     height: PORTRAIT.height,
     caption: CONTENT[lang].personCaption,
   },
-  jobTitle: 'Visual Designer & Marketing',
-  description: 'Visual Designer & Marketing · Madrid, Spain. Visual identity, marketing, advertising and practical AI for creative work.',
+  jobTitle: ROLE,
+  description: `${ROLE} · Madrid, Spain. Visual identity, marketing, advertising and practical AI for creative work.`,
   homeLocation: { '@type': 'Place', name: 'Madrid, Spain' },
   knowsAbout: ['Graphic design', 'Visual identity', 'Branding', 'Typography', 'Marketing', 'Advertising', 'Digital resources', 'Artificial intelligence'],
   sameAs: [SOCIAL.behance, SOCIAL.threads, SOCIAL.instagram, SOCIAL.gumroad, SOCIAL.linkedin],

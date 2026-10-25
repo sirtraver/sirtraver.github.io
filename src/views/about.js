@@ -1,5 +1,5 @@
 import { ORIGIN, PERSON_ID, PORTRAIT } from '../config.js';
-import { CONTENT, PAGES } from '../content.js';
+import { CONTENT, PAGES, ROLE } from '../content.js';
 import { assetUrl } from '../lib/assets.js';
 import { about } from '../generated/content.js';
 import { html } from '../lib/html.js';
@@ -36,7 +36,7 @@ function schema(lang) {
       contentUrl: ORIGIN + PORTRAIT.path,
       url: ORIGIN + PORTRAIT.path,
       name: 'Javier Traver',
-      caption: 'Javier Traver — Visual Designer & Marketing',
+      caption: `Javier Traver — ${ROLE}`,
       width: PORTRAIT.width,
       height: PORTRAIT.height,
     },
@@ -46,6 +46,7 @@ function schema(lang) {
 export function aboutPage(lang) {
   const t = CONTENT[lang].about;
   const resume = about.resume;
+  const study = resume.education.find(item => item.current);
   return layout({
     lang,
     page: 'about',
@@ -55,11 +56,17 @@ export function aboutPage(lang) {
     body: html`<article class="about-editorial about-resume">
     <aside class="about-profile">
       <p class="overline">${t.overline}</p>
-      <img class="editorial-portrait" src="${assetUrl(PORTRAIT.path)}" alt="${t.portraitAlt}" width="${PORTRAIT.width}" height="${PORTRAIT.height}" fetchpriority="high">
-      <h1>Javier<br>Traver<span>.</span></h1>
+      <div class="profile-identity">
+        <img class="editorial-portrait" src="${assetUrl(PORTRAIT.path)}" alt="${t.portraitAlt}" width="${PORTRAIT.width}" height="${PORTRAIT.height}" fetchpriority="high">
+        <h1>Javier<br>Traver<span>.</span></h1>
+      </div>
       <p class="profile-role">${t.role}</p>
       <p class="profile-location">${t.location}</p>
-      <p class="profile-study">${t.studyLabel}</p>
+      ${study ? html`<div class="profile-study">
+        <p class="section-kicker">${t.currentEducation}</p>
+        <p>${study.title[lang]}</p>
+        <span>${study.institution} · ${study.period[lang]}</span>
+      </div>` : ''}
       ${socialIcons(lang, 'profile-social')}
     </aside>
   <div class="resume-main">
@@ -72,7 +79,6 @@ export function aboutPage(lang) {
     <section class="resume-section" aria-labelledby="resume-experience">
       <h2 id="resume-experience">${t.experience}</h2>
       ${experienceList(resume.experience, lang)}
-      ${resume.otherExperience.length ? html`<details class="resume-other"><summary>${t.otherExperience}</summary>${experienceList(resume.otherExperience, lang)}</details>` : ''}
     </section>
     <section class="resume-section" aria-labelledby="resume-education">
       <h2 id="resume-education">${t.education}</h2>

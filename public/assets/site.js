@@ -3,18 +3,6 @@
   const header = document.querySelector('.site-header');
   const phone = window.matchMedia('(max-width: 700px)');
   if (!header) return;
-  const socials = header.querySelector('.social-menu');
-  if (socials) {
-    document.addEventListener('click', event => { if (!socials.contains(event.target)) socials.open = false; });
-    socials.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && socials.open) {
-        event.preventDefault();
-        socials.open = false;
-        socials.querySelector('summary').focus({ preventScroll: true });
-      }
-    });
-  }
-
   let lastY = window.scrollY;
   let ticking = false;
 
@@ -23,7 +11,7 @@
     const goingDown = y > lastY + 4;
     const goingUp = y < lastY - 4;
     if (!phone.matches || y < 140 || goingUp) header.classList.remove('is-hidden');
-    else if (goingDown && !socials?.open && !header.contains(document.activeElement)) header.classList.add('is-hidden');
+    else if (goingDown && !header.contains(document.activeElement)) header.classList.add('is-hidden');
     if (goingDown || goingUp) lastY = y;
     ticking = false;
   };

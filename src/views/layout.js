@@ -5,7 +5,6 @@ import { assetUrl } from '../lib/assets.js';
 import { html, jsonLd } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { runtime } from '../lib/runtime.js';
-import { socialIcons } from './social.js';
 
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
@@ -16,12 +15,6 @@ function header(lang, page, alternates) {
       (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
     )}
   </nav>
-  <div class="header-actions">
-    <details class="social-menu">
-      <summary aria-label="${t.networksLabel}"><span>${t.networksLabel}</span><span class="social-chevron" aria-hidden="true">⌄</span></summary>
-      ${socialIcons(lang)}
-    </details>
-  </div>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
     ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}?lang=${code}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
   </div>

@@ -133,14 +133,15 @@ test('the bundled worker behaves like the source', async () => {
   });
 });
 
-test('contact stays in the header without repeated calls to action', async () => {
-  await withFetch(offline, async () => {
-    for (const path of ['/', '/es/projects/kudake/']) {
-      const html = await (await get(path)).text();
-      assert.ok(!html.includes('class="contact-block"'), path);
-      assert.ok(html.includes('mailto:javier.traver.v@me.com'), path);
-    }
-  });
+test('social and email links live in About instead of the header or duplicated calls to action', async () => {
+  for (const path of ['/', '/es/projects/kudake/', '/es/about/']) {
+    const html = await (await get(path)).text();
+    const header = html.match(/<header class="site-header">([\s\S]*?)<\/header>/)[1];
+    assert.ok(!header.includes('social-'), path);
+    assert.ok(!header.includes('mailto:'), path);
+    assert.ok(!html.includes('class="contact-block"'), path);
+    assert.equal(html.includes('mailto:javier.traver.v@me.com'), path.endsWith('/about/'));
+  }
 });
 
 test('the font is self-hosted, preloaded and allowed by the CSP', async () => {
@@ -160,17 +161,13 @@ test('the launch page lists the upcoming resource types', async () => {
 });
 
 
-test('header restores Resources and groups the original icons and mail in one Social menu', async () => {
+test('header keeps the three pages and languages with no Social button', async () => {
   const html = await (await get('/es/')).text();
   const header = html.match(/<header class="site-header">([\s\S]*?)<\/header>/)[1];
   const nav = header.match(/<nav[^>]*>([\s\S]*?)<\/nav>/)[1];
   assert.equal((nav.match(/<a /g) || []).length, 3);
-  assert.ok(!header.includes('class="header-contact"'));
-  const social = header.match(/<details class="social-menu">([\s\S]*?)<\/details>/)[1];
-  assert.equal((social.match(/<a /g) || []).length, 4);
-  assert.ok(social.includes('href="mailto:javier.traver.v@me.com"'));
-  assert.equal((social.match(/<svg /g) || []).length, 4);
-  assert.ok(header.includes('<details class="social-menu">'));
+  assert.ok(!header.includes('header-actions'));
+  assert.ok(!header.includes('social-menu'));
+  assert.ok(header.includes('language-links'));
   assert.ok(nav.includes('/es/resources/'));
-  assert.ok(html.match(/<footer[\s\S]*href="\/es\/resources\/"/));
 });

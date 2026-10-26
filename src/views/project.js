@@ -8,6 +8,7 @@ import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, person, website } from './schema.js';
+import { projectCta, visibleBreadcrumbs } from './journey.js';
 
 const GALLERY_SIZES = '(max-width: 800px) calc(100vw - 48px), 1000px';
 
@@ -105,7 +106,7 @@ export function projectPage(project, siblings, lang) {
     schema: schema(project, lang, path, name, description),
     scripts: [{ src: '/assets/image-zoom.js' }],
     body: html`<article class="project-page">
-  <a class="back-link" href="${PAGES.home[lang]}">${t.project.back}</a>
+  ${visibleBreadcrumbs(lang, name)}
   <header class="project-header">
     <p class="overline">${category} · ${project.year}${project.conceptual ? ` · ${t.project.conceptual}` : ''}</p>
     <h1>${name}</h1>
@@ -119,6 +120,7 @@ export function projectPage(project, siblings, lang) {
   <p class="gallery-hint">${t.project.zoomHint}</p>
   <div class="project-gallery">${project.images.map((image, i) => figure(image, i, project.images.length, name, lang, t.project))}</div>
   ${project.result[lang] ? html`<section class="project-result"><h2>${t.project.resultTitle}</h2><p>${project.result[lang]}</p></section>` : ''}
+  ${projectCta(lang)}
   <nav class="project-pager" aria-label="${t.project.pagerLabel}">${
     previous ? html`<a href="${projectPath(previous, lang)}" rel="prev">${t.project.previous}<span>${projectName(previous, lang)}</span></a>` : html`<span></span>`
   }${next ? html`<a href="${projectPath(next, lang)}" rel="next">${t.project.next}<span>${projectName(next, lang)}</span></a>` : ''}</nav>

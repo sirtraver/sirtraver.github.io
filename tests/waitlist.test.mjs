@@ -42,7 +42,7 @@ test('without JavaScript the form posts and is redirected back with the result',
   });
   const response = await subscribe(request, { KV });
   assert.equal(response.status, 303);
-  assert.equal(response.headers.get('Location'), `${ORIGIN}/es/resources/?subscription=ok`);
+  assert.equal(response.headers.get('Location'), `${ORIGIN}/es/gracias/?notice=resources`);
   assert.equal(KV.store.size, 1);
 });
 

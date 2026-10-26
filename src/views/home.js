@@ -1,10 +1,11 @@
 import { PERSON_ID } from '../config.js';
-import { CONTENT, PAGES, projectName, projectPath } from '../content.js';
+import { CONTACT_PAGE, CONTENT, PAGES, projectName, projectPath } from '../content.js';
 import { absoluteUrl } from '../lib/assets.js';
 import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, itemList, person, webPage, website } from './schema.js';
+import { JOURNEY } from './journey.js';
 
 const imageId = (project) => `${absoluteUrl('/')}#project-image-${project.slug}`;
 
@@ -77,6 +78,7 @@ export function homePage(lang, { projects, galleriesUrl }) {
   <p class="overline">${t.overline}</p>
   <h1>${t.heading}</h1>
   <p class="value-description">${t.lead}</p>
+<!-- journey:hero --><div class="hero-enquiry"><a class="enquiry-button" href="${CONTACT_PAGE[lang]}">${JOURNEY[lang].cta} <span aria-hidden="true">↗</span></a><span>${JOURNEY[lang].response}</span></div><!-- /journey:hero -->
 </section>
 <div class="work-heading"><h2>${t.workTitle}<span class="work-count">${String(projects.length).padStart(2, '0')}</span></h2><span>${t.workOrder}</span></div>
 <section class="project-grid" aria-label="${t.gridLabel}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>

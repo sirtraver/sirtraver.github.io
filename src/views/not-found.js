@@ -13,6 +13,6 @@ export function notFoundPage(lang) {
     mainClass: 'not-found',
     body: html`<h1>404</h1>
 <p>${t.text}</p>
-<a href="${PAGES.home[lang]}">${t.back}</a>`,
+<div class="not-found-links"><a href="${PAGES.home[lang]}">${t.back} →</a><a href="${PAGES.resources[lang]}">${CONTENT[lang].nav.resources}</a><a href="${PAGES.about[lang]}">${CONTENT[lang].nav.about}</a></div>`,
   });
 }

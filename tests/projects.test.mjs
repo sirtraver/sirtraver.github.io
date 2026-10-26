@@ -103,7 +103,11 @@ test('viewer gallery data is versioned and accepts remote or local project image
   assert.equal(response.headers.get('Cache-Control'), 'public, max-age=31536000, immutable');
   const galleries = await response.json();
   assert.deepEqual(Object.keys(galleries).sort(), activeProjects.map(p => p.slug).sort());
-  for (const gallery of Object.values(galleries)) {
+  assert.ok(url.endsWith('-v2'), 'enriched viewer data has a fresh cache version');
+  for (const [slug, gallery] of Object.entries(galleries)) {
+    assert.equal(gallery.category, findProject(slug).category);
+    assert.equal(gallery.year, findProject(slug).year);
+    assert.deepEqual(gallery.deliverables, findProject(slug).deliverables);
     for (const image of gallery.images) {
       if (image.src) assert.equal(new URL(image.src).hostname, 'mir-s3-cdn-cf.behance.net');
       else for (const [url] of [...image.avif, ...image.webp]) assert.ok(url.startsWith('/media/'));

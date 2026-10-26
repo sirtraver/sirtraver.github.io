@@ -1,10 +1,12 @@
 // Document shell shared by all pages: <head> metadata, header, footer.
 import { ORIGIN, SHARE_IMAGE, SITE_VERIFICATION } from '../config.js';
-import { CONTENT, LANGUAGES, PAGES } from '../content.js';
+import { CONTACT_PAGE, CONTENT, LANGUAGES, PAGES } from '../content.js';
 import { assetUrl } from '../lib/assets.js';
 import { html, jsonLd } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { runtime } from '../lib/runtime.js';
+// Keep this small label local to avoid a layout/journey module cycle.
+const mobileCta = { es: 'Cuéntame tu proyecto', en: 'Tell me about your project' };
 
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
@@ -16,7 +18,7 @@ function header(lang, page, alternates) {
     )}
   </nav>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
-    ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}?lang=${code}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
+    ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}${alternates[code].includes('?') ? '&' : '?'}lang=${code}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
   </div>
 </header>`;
 }
@@ -103,6 +105,7 @@ ${header(lang, page, paths ?? PAGES.home)}
 ${body}
 </main>
 ${footer(lang, page)}
+${page && !alternates ? html`<!-- journey:mobile --><a class="mobile-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">↗</span></a><!-- /journey:mobile -->` : ''}
 </body>
 </html>
 `;

@@ -27,3 +27,15 @@
   // Keyboard users tabbing into the header always see it.
   header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
 })();
+
+// The mobile contact shortcut takes over once the main CTA leaves the screen.
+// Native links and a visible fixed fallback remain available without this API.
+(() => {
+  const fixed = document.querySelector('.mobile-enquiry');
+  const hero = document.querySelector('.hero-enquiry');
+  if (!fixed || !hero || typeof IntersectionObserver !== 'function') return;
+  const observer = new IntersectionObserver(([entry]) => {
+    fixed.classList.toggle('is-redundant', entry.isIntersecting);
+  });
+  observer.observe(hero);
+})();

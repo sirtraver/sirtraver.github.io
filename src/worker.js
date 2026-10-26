@@ -23,6 +23,8 @@ import { archivePage } from './views/archive.js';
 import { projectPage } from './views/project.js';
 import { resourcesPage } from './views/resources.js';
 import { sitemap } from './views/sitemap.js';
+import { THANKS_PAGE } from './views/journey.js';
+import { thankYouPage } from './views/thank-you.js';
 
 // URLs from earlier versions of the site.
 const LEGACY_REDIRECTS = {
@@ -34,22 +36,25 @@ const LEGACY_REDIRECTS = {
 };
 
 const PAGE_ROUTES = new Map(
-  Object.entries({ ...PAGES, ...LEGAL_PAGES, archive: ARCHIVE_PAGE, contact: CONTACT_PAGE }).flatMap(([page, paths]) =>
+  Object.entries({ ...PAGES, ...LEGAL_PAGES, archive: ARCHIVE_PAGE, contact: CONTACT_PAGE, thanks: THANKS_PAGE }).flatMap(([page, paths]) =>
     Object.entries(paths).map(([lang, path]) => [path, { page, lang }]),
   ),
 );
 
 // Gallery data for the home page viewer, keyed by project slug.
 const GALLERIES_PATH = '/assets/galleries.json';
-const galleriesUrl = `${GALLERIES_PATH}?v=${contentHash}`;
+const galleryVersion = `${contentHash}-v2`;
+const galleriesUrl = `${GALLERIES_PATH}?v=${galleryVersion}`;
 // (The viewer takes each project's title from its card, already in the page language.)
 const galleries = () =>
-  Object.fromEntries(activeProjects.map((p) => [p.slug, { behance: p.behance, conceptual: p.conceptual, intro: p.intro, caseStudy: p.caseStudy, images: p.images.map(({ caption, ...image }) => image) }]));
+  Object.fromEntries(activeProjects.map((p) => [p.slug, { category: p.category, year: p.year, deliverables: p.deliverables, behance: p.behance, conceptual: p.conceptual, intro: p.intro, caseStudy: p.caseStudy, images: p.images }]));
 
 const withSlash = (path) => (path.endsWith('/') ? path : `${path}/`);
 
 async function renderPage({ page, lang }, request, url, env, ctx) {
   switch (page) {
+    case 'thanks':
+      return htmlResponse(request, thankYouPage(lang, url.searchParams.get('notice') === 'resources'), { noindex: true });
     case 'home':
       return htmlResponse(
         request,
@@ -100,7 +105,7 @@ async function route(request, url, env, ctx) {
 
   if (url.pathname === '/api/catalogo-gumroad') return catalogApi(env);
   if (url.pathname === GALLERIES_PATH) {
-    const cache = url.searchParams.get('v') === contentHash ? 'public, max-age=31536000, immutable' : 'public, max-age=300';
+    const cache = url.searchParams.get('v') === galleryVersion ? 'public, max-age=31536000, immutable' : 'public, max-age=300';
     return jsonResponse(galleries(), { cache });
   }
 

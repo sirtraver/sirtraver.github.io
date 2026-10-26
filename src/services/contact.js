@@ -4,6 +4,7 @@ import { jsonResponse } from '../lib/http.js';
 import { allow } from '../lib/rate-limit.js';
 import { runtime } from '../lib/runtime.js';
 import { sendEmail } from './brevo.js';
+import { THANKS_PAGE } from '../views/journey.js';
 
 const MAX_BODY_LENGTH = 8192;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -78,6 +79,7 @@ export async function contact(request, env, ctx) {
   }
 
   if (isForm) {
+    if (status === 'sent') return Response.redirect(new URL(THANKS_PAGE[data?.language === 'es' ? 'es' : 'en'], request.url).href, 303);
     const target = new URL(CONTACT_PAGE[data?.language === 'es' ? 'es' : 'en'], request.url);
     target.searchParams.set('sent', status === 'sent' ? 'ok' : 'error');
     return Response.redirect(target.href, 303);

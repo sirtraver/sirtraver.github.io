@@ -1,238 +1,220 @@
-// Dark project viewer: a primary click on a portfolio card opens its gallery in a
-// full-screen <dialog>.
-// - The address bar shows the project page URL, so it can be shared; Back closes the viewer.
-// - Previous/next buttons and the arrow keys move between projects in grid order.
-// Modified clicks, projects without a gallery and failures fall back to the regular link:
-// the project page on this site.
+// A continuous, dark gallery. Image controls and project navigation are distinct.
+// Native card/image links, shareable URLs, Back and focus return remain available.
 (() => {
   const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
   const script = document.currentScript;
-  const grid = document.querySelector('.project-grid');
-  if (!grid || !script?.dataset.gallery || typeof HTMLDialogElement !== 'function') return;
-
-  const text =
-    document.documentElement.lang === 'es'
-      ? {
-          original: 'Ver en Behance',
-          conceptual: 'Proyecto conceptual',
-          close: 'Cerrar proyecto',
-          previous: 'Proyecto anterior',
-          next: 'Proyecto siguiente',
-          end: 'Descripción, comentarios y valoraciones en Behance',
-          error: 'Alguna imagen no se ha podido cargar. Inténtalo de nuevo en unos instantes.',
-          story: 'Concepto y aplicaciones',
-          zoom: 'Pulsa una imagen para explorar los detalles.',
-          enlarge: 'Ampliar imagen',
-        }
-      : {
-          original: 'View on Behance',
-          conceptual: 'Concept project',
-          close: 'Close project',
-          previous: 'Previous project',
-          next: 'Next project',
-          end: 'Description, comments & appreciations on Behance',
-          error: 'An image could not be loaded. Please try again in a moment.',
-          story: 'Concept & applications',
-          zoom: 'Select an image to explore the details.',
-          enlarge: 'Enlarge image',
-        };
-
+  const main = document.querySelector('main');
+  if (!main?.querySelector('.project-grid') || !script?.dataset.gallery || typeof HTMLDialogElement !== 'function') return;
+  const text = lang === 'es' ? {
+    project: 'Proyecto', close: 'Cerrar proyecto', closeText: 'Cerrar', previous: 'Proyecto anterior', next: 'Proyecto siguiente',
+    previousImage: 'Imagen anterior', nextImage: 'Imagen siguiente', jump: 'Ir a la imagen', image: 'Imagen',
+    info: 'Información', infoTitle: 'Información del proyecto', closeInfo: 'Cerrar información', original: 'Ver en Behance ↗',
+    conceptual: 'Proyecto conceptual', enlarge: 'Ampliar imagen', discipline: 'Disciplina', year: 'Año', deliverables: 'Entregables',
+    page: 'Ver ficha del proyecto ↗', hint: 'Desplázate para recorrer el proyecto. Pulsa una imagen para ampliarla.',
+    error: 'No se ha podido cargar alguna imagen. Puedes reintentarlo o abrir su enlace original.', retry: 'Reintentar imagen',
+    categories: { 'Visual identity': 'Identidad visual', 'Visual design': 'Diseño visual' },
+  } : {
+    project: 'Project', close: 'Close project', closeText: 'Close', previous: 'Previous project', next: 'Next project',
+    previousImage: 'Previous image', nextImage: 'Next image', jump: 'Go to image', image: 'Image',
+    info: 'Information', infoTitle: 'Project information', closeInfo: 'Close information', original: 'View on Behance ↗',
+    conceptual: 'Concept project', enlarge: 'Enlarge image', discipline: 'Discipline', year: 'Year', deliverables: 'Deliverables',
+    page: 'View project page ↗', hint: 'Scroll to explore the project. Select an image to enlarge it.',
+    error: 'An image could not be loaded. Retry it or open its original link.', retry: 'Retry image',
+    categories: { 'Visual identity': 'Visual identity', 'Visual design': 'Visual design' },
+  };
   const el = (tag, attributes = {}, ...children) => {
     const node = document.createElement(tag);
     for (const [name, value] of Object.entries(attributes)) node.setAttribute(name, value);
     node.append(...children);
     return node;
   };
-
-  // Galleries are small (one JSON file); load them up front so a click can open instantly.
-  let galleries = null;
-  const loaded = fetch(script.dataset.gallery)
-    .then((response) => {
-      if (!response.ok) throw new Error('Gallery data unavailable');
-      return response.json();
-    })
-    .catch(() => ({}))
-    .then((data) => (galleries = data));
-
+  const button = (label, content, className) => el('button', { type: 'button', 'aria-label': label, title: label, class: className }, content);
   const title = el('h2', { id: 'viewer-title' });
-  const projectKind = el('span', { class: 'viewer-kind', hidden: '' }, text.conceptual);
-  const original = el('a', { class: 'viewer-original', target: '_blank', rel: 'noopener noreferrer' }, `${text.original} ↗`);
-  const previousButton = el('button', { class: 'viewer-step', type: 'button', 'aria-label': text.previous }, '←');
-  const nextButton = el('button', { class: 'viewer-step', type: 'button', 'aria-label': text.next }, '→');
-  const closeButton = el('button', { class: 'viewer-close', type: 'button', 'aria-label': text.close }, '×');
+  const position = el('p', { class: 'viewer-position' });
+  const kind = el('span', { class: 'viewer-kind', hidden: '' }, text.conceptual);
+  const closeButton = button(text.close, '', 'viewer-close');
+  closeButton.append(el('span', { class: 'viewer-close-label' }, text.closeText), el('span', { 'aria-hidden': 'true' }, '×'));
+  const previousImage = button(text.previousImage, '↑', 'viewer-image-step');
+  const nextImage = button(text.nextImage, '↓', 'viewer-image-step');
+  const imageSelect = el('select', { class: 'viewer-image-select', 'aria-label': text.jump });
+  const infoButton = button(text.info, text.info, 'viewer-info-button');
+  infoButton.setAttribute('aria-expanded', 'false');
+  infoButton.setAttribute('aria-controls', 'viewer-information');
+  const original = el('a', { class: 'viewer-original', target: '_blank', rel: 'noopener noreferrer', hidden: '' }, text.original);
+  const closeInfo = button(text.closeInfo, '×', 'viewer-info-close');
+  const infoBody = el('div', { class: 'viewer-info-body' });
+  const infoPanel = el('aside', { class: 'viewer-info', id: 'viewer-information', hidden: '', 'aria-labelledby': 'viewer-info-title' },
+    el('div', { class: 'viewer-info-heading' }, el('h3', { id: 'viewer-info-title' }, text.infoTitle), closeInfo), infoBody);
   const images = el('div', { class: 'viewer-images' });
-  const overview = el('div', { class: 'viewer-overview', hidden: '' });
-  const hint = el('p', { class: 'viewer-hint' }, text.zoom);
-  const error = el('p', { class: 'viewer-error', hidden: '' });
-  const end = el('a', { class: 'viewer-end', target: '_blank', rel: 'noopener noreferrer' }, `${text.end} ↗`);
-  const scroller = el('div', { class: 'viewer-scroll' }, overview, hint, images, error, end);
-  const dialog = el(
-    'dialog',
-    { class: 'project-viewer', 'aria-labelledby': 'viewer-title' },
-    el(
-      'header',
-      { class: 'viewer-bar' },
-      el('div', {}, el('span', { class: 'viewer-brand' }, 'sirtraver'), el('div', { class: 'viewer-heading' }, title, projectKind)),
-      el('div', {}, original, previousButton, nextButton, closeButton),
-    ),
-    scroller,
-  );
+  const error = el('p', { class: 'viewer-error', role: 'status', hidden: '' }, text.error);
+  const previousProject = button(text.previous, '', 'viewer-project-link');
+  const nextProject = button(text.next, '', 'viewer-project-link');
+  const projectNav = el('nav', { class: 'viewer-project-nav', 'aria-label': text.project }, previousProject, nextProject);
+  const scroller = el('div', { class: 'viewer-scroll', tabindex: '0', 'aria-label': text.hint }, images, error, projectNav);
+  const dialog = el('dialog', { class: 'project-viewer viewer-refined', 'aria-labelledby': 'viewer-title' },
+    el('header', { class: 'viewer-bar' }, el('div', { class: 'viewer-heading' }, position, title, kind), closeButton),
+    el('div', { class: 'viewer-toolbar' }, el('div', { class: 'viewer-image-nav' }, previousImage, imageSelect, nextImage),
+      el('p', { class: 'viewer-guidance' }, text.hint), el('div', { class: 'viewer-actions' }, infoButton, original)),
+    el('div', { class: 'viewer-layout' }, scroller, infoPanel));
   document.body.append(dialog);
 
-  const main = document.querySelector('main');
+  let galleries = null;
+  const loaded = fetch(script.dataset.gallery).then(response => {
+    if (!response.ok) throw Error('Gallery unavailable');
+    return response.json();
+  }).catch(() => ({})).then(data => (galleries = data));
   const CARD = 'a.project-card[data-project], a.featured-project[data-project]';
-  const cards = () => [...main.querySelectorAll(CARD)].filter((card) => galleries?.[card.dataset.project]);
+  const cards = () => [...main.querySelectorAll(CARD)].filter(card => galleries?.[card.dataset.project]);
+  const name = card => card?.querySelector('h3')?.textContent ?? '';
+  let current, opener, previousOverflow = '', pageTitle = '', active = false, closing = false;
+  let anchors = [], currentImage = 0, frame = false;
 
-  let current = null; // card being shown
-  let opener = null; // card focused again when the viewer closes
-  let previousOverflow = '';
-  let pageTitle = document.title;
-  let closing = false;
-  let active = false; // viewer state applied to the page (title, scroll lock)
-
-  const showError = () => {
-    error.textContent = text.error;
-    error.hidden = false;
+  const safeSource = item => {
+    if (item.src) {
+      try { const u = new URL(item.src); return u.protocol === 'https:' && u.hostname === 'mir-s3-cdn-cf.behance.net' ? item.src : null; } catch { return null; }
+    }
+    if (!item.webp?.length || !item.avif?.length || ![...item.webp, ...item.avif].every(([url]) => typeof url === 'string' && url.startsWith('/media/'))) return null;
+    return item.webp.at(-1)[0];
   };
-
-  function galleryImage(item, index) {
-    const local = !item.src;
-    if (local) {
-      if (!item.avif?.length || !item.webp?.length) return [];
-      if (![...item.avif, ...item.webp].every(([url]) => typeof url === 'string' && url.startsWith('/media/'))) return [];
-    } else {
-      let remote;
-      try { remote = new URL(item.src); } catch { return []; }
-      if (remote.protocol !== 'https:' || remote.hostname !== 'mir-s3-cdn-cf.behance.net') return [];
-    }
-    const sizes = '(max-width: 700px) 100vw, min(1120px, calc(100vw - 96px))';
-    const srcset = (sources) => sources.map(([url, width]) => `${url} ${width}w`).join(', ');
-    // src goes last so the loading attributes apply to the very first request.
-    const image = el('img', {
-      alt: `${title.textContent} · ${index + 1}`,
-      width: item.width,
-      height: item.height,
-      loading: index === 0 ? 'eager' : 'lazy',
-      decoding: 'async',
-      ...(local ? { srcset: srcset(item.webp), sizes } : {}),
-      src: local ? item.webp.at(-1)[0] : item.src,
-    });
+  function imageNode(item, index) {
+    const source = safeSource(item);
+    if (!source) return null;
+    const srcset = values => values.map(([url, width]) => `${url} ${width}w`).join(', ');
+    const sizes = '(max-width: 700px) 100vw, min(1120px, calc(100vw - 48px))';
+    const image = el('img', { alt: item.caption?.[lang] || `${title.textContent} · ${text.image} ${index + 1}`, width: item.width, height: item.height,
+      loading: index === 0 ? 'eager' : 'lazy', decoding: 'async', ...(item.src ? {} : { srcset: srcset(item.webp), sizes }), src: source });
     image.style.backgroundColor = item.color;
-    image.addEventListener('error', showError, { once: true });
-    const source = local ? item.webp.at(-1)[0] : item.src;
-    const anchor = el('a', { class: 'gallery-zoom', href: source, 'data-zoom-src': source, target: '_blank', rel: 'noopener noreferrer', 'aria-label': `${text.enlarge} ${index + 1}: ${title.textContent}` }, local ? el('picture', {}, el('source', { type: 'image/avif', srcset: srcset(item.avif), sizes }), image) : image);
-    return [anchor];
+    const retry = button(`${text.retry} ${index + 1}`, text.retry, 'viewer-retry');
+    retry.hidden = true;
+    image.addEventListener('error', () => { error.hidden = false; retry.hidden = false; });
+    image.addEventListener('load', () => { retry.hidden = true; });
+    retry.addEventListener('click', () => { image.removeAttribute('src'); image.src = source; });
+    const content = item.src ? image : el('picture', {}, el('source', { type: 'image/avif', srcset: srcset(item.avif), sizes }), image);
+    return el('figure', { class: 'viewer-image' }, el('a', { class: 'gallery-zoom', href: source, 'data-zoom-src': source,
+      target: '_blank', rel: 'noopener noreferrer', 'aria-label': `${text.enlarge} ${index + 1}: ${title.textContent}` }, content), retry);
   }
-
+  function setImage(index) {
+    currentImage = Math.max(0, Math.min(anchors.length - 1, index));
+    imageSelect.value = String(currentImage);
+    previousImage.disabled = currentImage <= 0;
+    nextImage.disabled = currentImage >= anchors.length - 1;
+  }
+  function goToImage(index) {
+    if (!anchors[index]) return;
+    const top = anchors[index].getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop;
+    scroller.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+    setImage(index);
+  }
+  function trackImage() {
+    frame = false;
+    if (!active || !anchors.length) return;
+    const threshold = scroller.getBoundingClientRect().top + Math.min(160, scroller.clientHeight * .3);
+    const atEnd = scroller.scrollTop > 1 && scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2;
+    let index = atEnd ? anchors.length - 1 : 0;
+    if (!atEnd) anchors.forEach((anchor, i) => { if (anchor.getBoundingClientRect().top <= threshold) index = i; });
+    if (index !== currentImage) setImage(index);
+  }
+  function toggleInfo(open) {
+    const marker = anchors[currentImage];
+    const rect = marker?.getBoundingClientRect();
+    const relative = rect?.height ? (scroller.getBoundingClientRect().top - rect.top) / rect.height : 0;
+    infoPanel.hidden = !open;
+    scroller.inert = open && window.matchMedia('(max-width: 700px)').matches;
+    dialog.classList.toggle('has-info', open);
+    infoButton.setAttribute('aria-expanded', String(open));
+    if (marker && active) requestAnimationFrame(() => {
+      if (!active || !anchors.includes(marker)) return;
+      const next = marker.getBoundingClientRect();
+      scroller.scrollTop = Math.max(0, next.top - scroller.getBoundingClientRect().top + scroller.scrollTop + relative * next.height);
+    });
+  }
+  function renderInfo(project) {
+    const facts = el('dl', { class: 'viewer-facts' });
+    const fact = (label, value) => { if (value) facts.append(el('div', {}, el('dt', {}, label), el('dd', {}, String(value)))); };
+    fact(text.discipline, text.categories[project.category] ?? project.category);
+    fact(text.year, project.year);
+    fact(text.deliverables, project.deliverables?.[lang]?.join(' · '));
+    infoBody.replaceChildren(el('p', { class: 'viewer-author' }, 'Javier Traver · Visual Designer & Marketing'), facts);
+    if (project.intro?.[lang]) infoBody.append(el('p', { class: 'viewer-info-intro' }, project.intro[lang]));
+    for (const section of project.caseStudy ?? []) infoBody.append(el('section', {}, el('h4', {}, section.title[lang]), el('p', {}, section.text[lang])));
+    const links = el('div', { class: 'viewer-info-links' }, el('a', { href: current.getAttribute('href'), target: '_blank', rel: 'noopener noreferrer' }, text.page));
+    if (project.behance) links.append(el('a', { href: project.behance, target: '_blank', rel: 'noopener noreferrer' }, text.original));
+    infoBody.append(links);
+    infoPanel.scrollTop = 0;
+  }
   function show(card) {
-    const project = galleries[card.dataset.project];
     current = card;
-    title.textContent = card.querySelector('h3')?.textContent ?? '';
-    projectKind.hidden = !project.conceptual;
-    original.hidden = end.hidden = !project.behance;
-    original.href = end.href = project.behance || '#';
+    const project = galleries[card.dataset.project];
+    title.textContent = name(card);
+    kind.hidden = !project.conceptual;
+    original.hidden = !project.behance;
+    original.href = project.behance || '#';
     error.hidden = true;
-    overview.replaceChildren();
-    const intro = project.intro?.[lang];
-    if (intro) overview.append(el('p', { class: 'viewer-intro' }, intro));
-    if (project.caseStudy?.length) {
-      const sections = project.caseStudy.map(section => el('div', {}, el('h3', {}, section.title[lang]), el('p', {}, section.text[lang])));
-      overview.append(el('details', { class: 'viewer-story' }, el('summary', {}, text.story), el('div', { class: 'viewer-story-body' }, ...sections)));
-    }
-    overview.hidden = !overview.childElementCount;
-    images.replaceChildren(...project.images.flatMap(galleryImage));
+    toggleInfo(false);
+    renderInfo(project);
+    images.replaceChildren(...project.images.map(imageNode).filter(Boolean));
+    anchors = [...images.querySelectorAll('a[data-zoom-src]')];
+    imageSelect.replaceChildren(...anchors.map((anchor, index) => el('option', { value: String(index) }, `${String(index + 1).padStart(2, '0')} / ${String(anchors.length).padStart(2, '0')}`)));
+    imageSelect.disabled = !anchors.length;
+    setImage(0);
     scroller.scrollTop = 0;
     document.title = `${title.textContent} — sirtraver`;
-
-    const list = cards();
-    const index = list.indexOf(card);
-    previousButton.disabled = index <= 0;
-    nextButton.disabled = index === -1 || index >= list.length - 1;
+    const list = cards(), index = list.indexOf(card);
+    position.textContent = `${text.project} ${String(index + 1).padStart(2, '0')} / ${String(list.length).padStart(2, '0')}`;
+    for (const [control, target, label] of [[previousProject, list[index - 1], text.previous], [nextProject, list[index + 1], text.next]]) {
+      control.hidden = !target;
+      control.replaceChildren(el('span', {}, label), el('strong', {}, name(target)));
+      control.setAttribute('aria-label', target ? `${label}: ${name(target)}` : label);
+    }
   }
-
   function open(card) {
-    closing = false;
-    active = true;
-    opener = card;
-    pageTitle = document.title;
+    closing = false; active = true; opener = card; pageTitle = document.title;
+    previousOverflow = document.documentElement.style.overflow;
     show(card);
     history.pushState({ viewer: true }, '', card.getAttribute('href'));
-    previousOverflow = document.documentElement.style.overflow;
     document.documentElement.style.overflow = 'hidden';
     dialog.showModal();
     closeButton.focus();
   }
-
   function step(offset) {
-    const list = cards();
-    const target = list[list.indexOf(current) + offset];
+    const list = cards(), target = list[list.indexOf(current) + offset];
     if (!target) return;
     show(target);
-    opener = target;
     history.replaceState({ viewer: true }, '', target.getAttribute('href'));
+    closeButton.focus();
   }
-
-  // Restores the page. Runs synchronously (the dialog's own close event can be delayed in
-  // background tabs) and only once per opening.
   function teardown() {
     if (!active) return;
     active = false;
     if (dialog.open) dialog.close();
     document.title = pageTitle;
     document.documentElement.style.overflow = previousOverflow;
-    images.replaceChildren();
+    toggleInfo(false); images.replaceChildren(); anchors = [];
     opener?.focus({ preventScroll: true });
   }
-
-  // Closing goes back in history, so the home URL is restored and Back/Forward stay consistent.
-  const close = () => {
-    if (closing) return;
-    closing = true;
-    if (history.state?.viewer) history.back();
-    else teardown();
-  };
-
-  window.addEventListener('popstate', () => {
-    if (active) teardown();
-    // Forward into a closed viewer entry: show that URL's real page (the project page).
-    else if (history.state?.viewer) window.location.reload();
-  });
-
+  const close = () => { if (closing) return; closing = true; if (history.state?.viewer) history.back(); else teardown(); };
+  window.addEventListener('popstate', () => { if (active) teardown(); else if (history.state?.viewer) location.reload(); });
   closeButton.addEventListener('click', close);
-  previousButton.addEventListener('click', () => step(-1));
-  nextButton.addEventListener('click', () => step(1));
-  dialog.addEventListener('click', (event) => {
-    if (event.target === dialog || event.target === scroller) close();
+  previousProject.addEventListener('click', () => step(-1)); nextProject.addEventListener('click', () => step(1));
+  previousImage.addEventListener('click', () => goToImage(currentImage - 1)); nextImage.addEventListener('click', () => goToImage(currentImage + 1));
+  imageSelect.addEventListener('change', () => goToImage(Number(imageSelect.value)));
+  infoButton.addEventListener('click', () => toggleInfo(infoPanel.hidden));
+  closeInfo.addEventListener('click', () => { toggleInfo(false); infoButton.focus(); });
+  scroller.addEventListener('scroll', () => { if (!frame) { frame = true; requestAnimationFrame(trackImage); } }, { passive: true });
+  images.addEventListener('sirtraver:zoomchange', event => { const index = anchors.indexOf(event.target); if (index >= 0) goToImage(index); });
+  dialog.addEventListener('cancel', event => { event.preventDefault(); if (!infoPanel.hidden) { toggleInfo(false); infoButton.focus(); } else close(); });
+  dialog.addEventListener('keydown', event => {
+    if (event.target.closest('input,select,textarea,[contenteditable="true"]') || !infoPanel.hidden) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); goToImage(currentImage + (event.key === 'ArrowLeft' ? -1 : 1)); }
   });
-  dialog.addEventListener('cancel', (event) => {
-    // Escape: close through history like the other paths.
-    event.preventDefault();
-    close();
-  });
-  dialog.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') step(-1);
-    if (event.key === 'ArrowRight') step(1);
-  });
-  dialog.addEventListener('close', () => {
-    // A close the page did not start (forced Escape) still leaves the history entry: drop it.
-    if (active && history.state?.viewer) close();
-    else teardown();
-  });
-
-  main.addEventListener('click', (event) => {
+  dialog.addEventListener('close', () => { if (active && history.state?.viewer) close(); else teardown(); });
+  window.addEventListener('resize', () => { scroller.inert = !infoPanel.hidden && window.matchMedia('(max-width: 700px)').matches; });
+  main.addEventListener('click', event => {
     const card = event.target.closest(CARD);
-    if (!card || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (!card || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const id = card.dataset.project;
-
-    if (galleries) {
-      if (galleries[id]) {
-        event.preventDefault();
-        open(card);
-      }
-      return;
-    }
-    // Data still loading (rare): wait for it, then open the viewer or the project page.
+    if (galleries) { if (galleries[id]?.images?.some(safeSource)) { event.preventDefault(); open(card); } return; }
     event.preventDefault();
-    loaded.then(() => (galleries[id] ? open(card) : window.location.assign(card.href)));
+    loaded.then(() => galleries[id]?.images?.some(safeSource) ? open(card) : location.assign(card.href));
   });
 })();

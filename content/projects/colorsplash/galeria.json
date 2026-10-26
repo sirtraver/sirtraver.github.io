@@ -1,0 +1,44 @@
+[
+  {
+    "file": "imagenes/01.webp",
+    "caption": {
+      "es": "Logotipo blanco de COLORSPLASH sobre fondo cian.",
+      "en": "White COLORSPLASH logo on a cyan background."
+    }
+  },
+  {
+    "file": "imagenes/02.webp",
+    "caption": {
+      "es": "Versiones del monograma CS, paleta de cuatro colores y tipografías de la identidad.",
+      "en": "CS monogram variants, four-colour palette and identity typefaces."
+    }
+  },
+  {
+    "file": "imagenes/03.webp",
+    "caption": {
+      "es": "Cuatro botes de pintura COLORSPLASH en amarillo, cian, magenta y negro.",
+      "en": "Four COLORSPLASH paint tins in yellow, cyan, magenta and black."
+    }
+  },
+  {
+    "file": "imagenes/04.webp",
+    "caption": {
+      "es": "Cuatro piezas de la campaña Paint it con interiores en cian, magenta, amarillo y negro.",
+      "en": "Four Paint it campaign visuals with cyan, magenta, yellow and black interiors."
+    }
+  },
+  {
+    "file": "imagenes/05.webp",
+    "caption": {
+      "es": "Caja de presentación con botes de pintura y piezas impresas de COLORSPLASH.",
+      "en": "Presentation box with paint tins and COLORSPLASH printed materials."
+    }
+  },
+  {
+    "file": "imagenes/06.webp",
+    "caption": {
+      "es": "Expositor de tienda con botes organizados por color y el mensaje Paint it.",
+      "en": "Retail display with paint tins grouped by colour and the Paint it message."
+    }
+  }
+]

@@ -16,7 +16,7 @@ const send = (KV, body, options = {}) =>
 
 test('contact page renders in both languages with an accessible form', async () => {
   for (const [path, lang] of [['/contact/', 'en'], ['/es/contacto/', 'es']]) {
-    const response = await get(path);
+    const response = await get(path, { BREVO_API_KEY: 'test-notification', CONTACT_TO: 'local@example.com' });
     assert.equal(response.status, 200, path);
     const html = await response.text();
     assert.ok(html.includes(`<html lang="${lang}">`));
@@ -39,12 +39,14 @@ test('valid messages are stored; invalid, foreign and honeypot ones are not', as
   assert.equal((await send(undefined, message)).status, 503, 'no storage, no false success');
 });
 
-test('without JavaScript the form redirects back with the result', async () => {
+test('without JavaScript only a successful submission redirects to the thank-you page', async () => {
   const response = await send(memoryKv(), message, { form: true });
   assert.equal(response.status, 303);
-  assert.equal(response.headers.get('Location'), `${ORIGIN}/es/contacto/?sent=ok`);
-  const page = await (await get('/es/contacto/?sent=ok')).text();
-  assert.ok(page.includes('Gracias, tu mensaje se ha enviado.'));
+  assert.equal(response.headers.get('Location'), `${ORIGIN}/es/gracias/`);
+  const page = await (await get('/es/gracias/')).text();
+  assert.ok(page.includes('Tu consulta se ha registrado correctamente.'));
+  const failed = await send(memoryKv(), { ...message, email: 'invalid' }, { form: true });
+  assert.equal(failed.headers.get('Location'), `${ORIGIN}/es/contacto/?sent=error`);
 });
 
 test('repeated submissions from one client are limited', async () => {

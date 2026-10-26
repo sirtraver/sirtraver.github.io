@@ -5,6 +5,7 @@ import { html } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, itemList, person, webPage, website } from './schema.js';
+import { THANKS_PAGE } from './journey.js';
 
 function productCard(product, t, lang) {
   return html`<article class="project-card product-card">${
@@ -23,7 +24,7 @@ function launchState(lang, subscription) {
   <h2>${t.title}</h2>
   <p>${t.text}</p>
   <ul class="launch-categories launch-categories--compact">${t.categories.map((name) => html`<li>${name}</li>`)}</ul>
-  <form class="launch-form" method="post" action="/api/subscribe" data-enhance data-sending="${t.saving}" data-success="${t.success}" data-confirm="${t.confirm}" data-error="${t.error}" data-limited="${t.limited}">
+  <form class="launch-form" method="post" action="/api/subscribe" data-enhance data-redirect="${THANKS_PAGE[lang]}?notice=resources" data-sending="${t.saving}" data-success="${t.success}" data-confirm="${t.confirm}" data-error="${t.error}" data-limited="${t.limited}">
     <input type="hidden" name="language" value="${lang}">
     <label for="launch-email">${t.emailLabel}</label>
     <div class="launch-input"><input id="launch-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="${t.placeholder}"><button type="submit">${t.submit}</button></div>

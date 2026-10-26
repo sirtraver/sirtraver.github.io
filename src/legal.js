@@ -71,7 +71,7 @@ export const LEGAL_CONTENT = {
           'Retention',
           ['Launch notice: until it is sent or until you ask for deletion. Contact messages: for as long as needed to handle your enquiry and at most two years.'],
         ],
-        ['Recipients', ['Your data is not sold or shared with third parties. It is stored on the server that hosts this website.']],
+        ['Recipients', ['Your data is not sold. Technical hosting and storage providers process it to operate this website, hosted through Sites on Cloudflare infrastructure. When email delivery is enabled, the email provider also processes the data needed to deliver the message.']],
         [
           'Your rights',
           [
@@ -80,7 +80,7 @@ export const LEGAL_CONTENT = {
         ],
         [
           'External content',
-          ['All images and fonts are served from this website. Product images on the Resources page are loaded from Gumroad. Links to other services (Behance, Gumroad, Instagram, Threads, LinkedIn) are subject to their own privacy policies.'],
+          ['Fonts, portraits, project covers and local project images are served from this website. Some project galleries load original images from the Behance CDN; your browser connects to that provider to request them. Product images on the Resources page are loaded from Gumroad. Links to other services (Behance, Gumroad, Instagram, Threads, LinkedIn) are subject to their own privacy policies.'],
         ],
       ],
     },
@@ -141,7 +141,7 @@ export const LEGAL_CONTENT = {
           'Conservación',
           ['Aviso de lanzamiento: hasta que se envíe o pidas su eliminación. Mensajes de contacto: el tiempo necesario para atender tu consulta y como máximo dos años.'],
         ],
-        ['Destinatarios', ['Tus datos no se venden ni se ceden a terceros. Se guardan en el servidor que aloja esta web.']],
+        ['Destinatarios', ['Tus datos no se venden. Los proveedores técnicos de alojamiento y almacenamiento los tratan para prestar el servicio de esta web, alojada mediante Sites en infraestructura de Cloudflare. Cuando el envío de emails está activado, el proveedor de email también trata los datos necesarios para entregar el mensaje.']],
         [
           'Tus derechos',
           [
@@ -150,7 +150,7 @@ export const LEGAL_CONTENT = {
         ],
         [
           'Contenido externo',
-          ['Todas las imágenes y tipografías se sirven desde esta web. Las imágenes de productos de la página de Recursos se cargan desde Gumroad. Los enlaces a otros servicios (Behance, Gumroad, Instagram, Threads, LinkedIn) se rigen por sus propias políticas de privacidad.'],
+          ['Las tipografías, el retrato, las portadas y las imágenes de los proyectos locales se sirven desde esta web. Algunas galerías cargan imágenes originales desde la CDN de Behance; tu navegador se conecta a ese proveedor para solicitarlas. Las imágenes de productos de la página de Recursos se cargan desde Gumroad. Los enlaces a otros servicios (Behance, Gumroad, Instagram, Threads, LinkedIn) se rigen por sus propias políticas de privacidad.'],
         ],
       ],
     },

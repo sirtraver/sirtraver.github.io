@@ -27,7 +27,11 @@
           body: JSON.stringify(data),
         });
         const body = await response.json();
-        result = MESSAGES[body.status] ?? 'error';
+        result = response.ok ? MESSAGES[body.status] ?? 'error' : 'error';
+        if (result === 'success' && form.dataset.redirect?.startsWith('/') && !form.dataset.redirect.startsWith('//')) {
+          location.assign(form.dataset.redirect);
+          return;
+        }
       } catch {
         result = 'error';
       }

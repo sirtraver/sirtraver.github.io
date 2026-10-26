@@ -4,6 +4,7 @@ import { emptyResponse, jsonResponse } from '../lib/http.js';
 import { allow } from '../lib/rate-limit.js';
 import { runtime } from '../lib/runtime.js';
 import { requestDoubleOptIn } from './brevo.js';
+import { THANKS_PAGE } from '../views/journey.js';
 
 const MAX_BODY_LENGTH = 2048;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -17,6 +18,7 @@ const sha256 = async (value) => {
 
 // Without JavaScript the form posts url-encoded data; reply with a redirect back to the page.
 const formReply = (request, language, status) => {
+  if (status === 'subscribed') return Response.redirect(new URL(`${THANKS_PAGE[language]}?notice=resources`, request.url).href, 303);
   const target = new URL(PAGES.resources[language], request.url);
   target.searchParams.set('subscription', status === 'confirm' ? 'confirm' : status === 'subscribed' ? 'ok' : 'error');
   return Response.redirect(target.href, 303);

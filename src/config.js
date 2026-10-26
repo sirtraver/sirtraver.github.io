@@ -33,5 +33,5 @@ export const LEGAL = {
   taxId: '',
   address: '',
   email: 'javier.traver.v@me.com',
-  updated: { en: '14 October 2026', es: '14 de octubre de 2026' },
+  updated: { en: '26 October 2026', es: '26 de octubre de 2026' },
 };

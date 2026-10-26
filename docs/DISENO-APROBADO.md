@@ -29,4 +29,6 @@ En la misma revisión solicita analizar e implementar mejoras de conversión, na
 
 Las imágenes originales y sus proporciones se conservan. Mantener enlaces nativos, URL compartible, teclado, Escape, botón Atrás y retorno al mismo punto del portfolio. No atribuir información ni resultados comerciales no verificados.
 
-`approved-design-v34.json` y su comprobación automática permiten detectar cambios accidentales en el contenido y estructura de las seis páginas generales o en los estilos previos a esta revisión. El test excluye solo los dos nuevos bloques de CTA y el atributo que redirige el formulario de Recursos tras el registro correcto.
+El 26 de octubre Javier solicita compactar expresamente la presentación del portfolio: título con la jerarquía de las otras secciones, botón a la derecha y sobre en lugar de flecha. Se acorta el titular sin cambiar su significado y se adapta el botón a solo icono en tamaños estrechos, con nombre accesible. Se conserva la cuadrícula y el resto de las secciones. Copia previa: BACKUPS/v35-antes-portada-compacta/.
+
+`approved-design-v34.json` y su comprobación automática permiten detectar cambios accidentales en las páginas generales y estilos previos. En portada se permite revisar únicamente la presentación inicial; se compara por separado el resto de la página con la versión anterior. También se excluyen los CTA solicitados y el atributo de redirección de Recursos.

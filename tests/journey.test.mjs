@@ -10,6 +10,10 @@ test('the home CTA leads to a translated contact form with five native FAQs and 
   for (const [home, contact, phrase] of [['/', '/contact/', '2 business days'], ['/es/', '/es/contacto/', '2 días laborables']]) {
     const html = await (await get(home)).text();
     assert.match(html, new RegExp(`<div class="hero-enquiry"><a class="enquiry-button" href="${contact}"`));
+    assert.match(html, /class="hero-copy"/);
+    assert.match(html, /class="hero-contact-label"/);
+    const cta = html.match(/<div class="hero-enquiry">([\s\S]*?)<\/div>/)[1];
+    assert.ok(cta.includes('<svg') && !cta.includes('↗'));
     assert.ok(html.includes(`class="mobile-enquiry" href="${contact}"`));
     assert.ok(html.indexOf('hero-enquiry') < html.indexOf('class="project-grid"'));
     const page = await (await get(contact)).text();

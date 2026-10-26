@@ -9,11 +9,14 @@ const hash = value => createHash('sha256').update(value).digest('hex');
 // page structure and content must still match the archived approved version.
 const normalize = html => html.match(/<body>([\s\S]*?)<\/body>/)[1].replace(/<!-- journey:(hero|mobile) -->[\s\S]*?<!-- \/journey:\1 -->\n?/g, '').replace(/(<form class="launch-form"[^>]*?) data-redirect="[^"]*"/, '$1').replace(/\?v=[a-zA-Z0-9-]+/g, '?v=VERSION').replace(/© \d{4}/g, '© YEAR');
 
-test('the six approved page bodies stay intact apart from the requested contact CTAs', async () => {
+test('approved pages stay intact apart from the requested home introduction and contact CTAs', async () => {
   await withFetch(offline, async () => {
     for (const [path, expected] of Object.entries(baseline.bodyHashes)) {
       const html = await (await get(path, { GUMROAD_ACCESS_TOKEN: 'approved-design' })).text();
-      assert.equal(hash(normalize(html)), expected, path);
+      if (baseline.homeShellHashes[path]) {
+        const shell = normalize(html).replace(/<section class="value-hero">[\s\S]*?<\/section>\n?/, '');
+        assert.equal(hash(shell), baseline.homeShellHashes[path], path);
+      } else assert.equal(hash(normalize(html)), expected, path);
     }
   });
 });

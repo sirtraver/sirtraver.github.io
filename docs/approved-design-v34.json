@@ -10,5 +10,9 @@
     "/es/resources/": "9cabf85f60ffdc6c3f412b20ddee9a99ff67b307de0dff49d0c5aa36555ba15a"
   },
   "cssPrefixBytes": 43191,
-  "cssPrefixHash": "c03c7721ed8ecfb1415e5d89098a30121d35428b11b6a96013a7391857f16140"
+  "cssPrefixHash": "c03c7721ed8ecfb1415e5d89098a30121d35428b11b6a96013a7391857f16140",
+  "homeShellHashes": {
+    "/": "bae073c6a436162c76270967248596b4874c9ebfec81df43d06bbeb27ccde189",
+    "/es/": "26138cdbd4926fe10ce282ab13e254fc81a9f93bcd3a0b3a01ca9923319a0a49"
+  }
 }

@@ -40,7 +40,7 @@ export const CONTENT = {
       description:
         `Brand identity, packaging and visual communication by Javier Traver, ${ROLE} based in Madrid. Explore selected brand systems and their applications.`,
       overline: `Javier Traver · ${ROLE}`,
-      heading: 'Brand identities with character.',
+      heading: 'Identity with character.',
       lead: 'From the logo to packaging and visual communication.',
       workTitle: 'Selected work',
       workOrder: 'Identity · Packaging · Communication',
@@ -193,7 +193,7 @@ export const CONTENT = {
       description:
         `Identidad de marca, packaging y comunicación visual de Javier Traver, ${ROLE} en Madrid. Una selección de sistemas de marca y sus aplicaciones.`,
       overline: `Javier Traver · ${ROLE}`,
-      heading: 'Identidades de marca con carácter.',
+      heading: 'Identidades con carácter.',
       lead: 'Del logotipo al packaging y la comunicación visual.',
       workTitle: 'Proyectos seleccionados',
       workOrder: 'Identidad · Packaging · Comunicación',

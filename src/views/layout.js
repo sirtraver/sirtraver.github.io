@@ -5,6 +5,7 @@ import { assetUrl } from '../lib/assets.js';
 import { html, jsonLd } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { runtime } from '../lib/runtime.js';
+import { ICONS } from './icons.js';
 // Keep this small label local to avoid a layout/journey module cycle.
 const mobileCta = { es: 'Cuéntame tu proyecto', en: 'Tell me about your project' };
 
@@ -105,7 +106,7 @@ ${header(lang, page, paths ?? PAGES.home)}
 ${body}
 </main>
 ${footer(lang, page)}
-${page && !alternates ? html`<!-- journey:mobile --><a class="mobile-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">↗</span></a><!-- /journey:mobile -->` : ''}
+${page && !alternates ? html`<!-- journey:mobile --><a class="mobile-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} ${ICONS.mail}</a><!-- /journey:mobile -->` : ''}
 </body>
 </html>
 `;

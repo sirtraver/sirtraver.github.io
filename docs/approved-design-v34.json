@@ -14,5 +14,13 @@
   "homeShellHashes": {
     "/": "bae073c6a436162c76270967248596b4874c9ebfec81df43d06bbeb27ccde189",
     "/es/": "26138cdbd4926fe10ce282ab13e254fc81a9f93bcd3a0b3a01ca9923319a0a49"
+  },
+  "resourcesShellHashes": {
+    "/resources/": "4d2153aba4e5a79f588226da3e67f0b52849e3e0e3bf7d1c00d1ce9d01bd49cf",
+    "/es/resources/": "0646794177352e89fb54d5444e88e92306b185947e46f837c9ebf9b02fb658f7"
+  },
+  "resourcesFormHashes": {
+    "/resources/": "7f1b429a6dc8f39b40ceecfbc80559b75925030e23ce3bdceded74b736d01d31",
+    "/es/resources/": "fbbe28f0adbd543b565a40d6dec379fff50f202b394bf57c77fa125e628fc5b5"
   }
 }

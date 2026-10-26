@@ -2311,3 +2311,23 @@ a:hover .card-media img {
   .work-heading > span { display: none; }
   .work-heading h2 { font-size: 15px; }
 }
+
+/* Resources follows the approved portfolio collection hierarchy. */
+#gumroad-products .launch-state { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 32px 56px; max-width: none; margin: 0; padding: 28px; border: 1px solid #e8e8e8; border-radius: 4px; text-align: left; }
+#gumroad-products .launch-state h2 { margin: 16px 0 12px; font-size: 24px; letter-spacing: -.6px; }
+#gumroad-products .launch-copy > p { max-width: 520px; margin: 0 0 18px; color: #626262; font-size: 14px; line-height: 1.75; }
+#gumroad-products .launch-categories--compact { justify-content: flex-start; margin: 0; }
+#gumroad-products .launch-form { width: 100%; max-width: none; margin: 0; }
+#gumroad-products .product-card > img { border-radius: 4px; }
+#gumroad-products .product-card .card-caption { justify-content: center; text-align: center; }
+#gumroad-products .product-card .card-caption h2 { font-size: 18px; font-weight: 700; }
+#gumroad-products .product-card > p { text-align: center; }
+#gumroad-products:has(> .product-card:only-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: normal; }
+@media (max-width: 800px) {
+  #gumroad-products .launch-state { grid-template-columns: minmax(0, 1fr); gap: 26px; padding: 24px; }
+}
+@media (max-width: 560px) {
+  #gumroad-products .launch-state { padding: 20px 16px; }
+  #gumroad-products .launch-state h2 { font-size: 22px; }
+  #gumroad-products:has(> .product-card:only-child) { grid-template-columns: minmax(0, 1fr); }
+}

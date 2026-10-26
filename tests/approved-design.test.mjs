@@ -16,6 +16,10 @@ test('approved pages stay intact apart from the requested home introduction and 
       if (baseline.homeShellHashes[path]) {
         const shell = normalize(html).replace(/<section class="value-hero">[\s\S]*?<\/section>\n?/, '');
         assert.equal(hash(shell), baseline.homeShellHashes[path], path);
+      } else if (baseline.resourcesShellHashes[path]) {
+        const shell = normalize(html).replace(/<main id="main">[\s\S]*?<\/main>/, '');
+        assert.equal(hash(shell), baseline.resourcesShellHashes[path], path);
+        assert.equal(hash(html.match(/<form class="launch-form"[\s\S]*?<\/form>/)[0]), baseline.resourcesFormHashes[path], `${path} form`);
       } else assert.equal(hash(normalize(html)), expected, path);
     }
   });

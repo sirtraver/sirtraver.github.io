@@ -6,6 +6,7 @@ import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, itemList, person, webPage, website } from './schema.js';
 import { THANKS_PAGE } from './journey.js';
+import { sectionIntro } from './section-intro.js';
 
 function productCard(product, t, lang) {
   return html`<article class="project-card product-card">${
@@ -20,10 +21,12 @@ function launchState(lang, subscription) {
   const t = CONTENT[lang].resources.launch;
   const status = { ok: t.success, confirm: t.confirm, confirmed: t.confirmed, error: t.error }[subscription] ?? '';
   return html`<section class="launch-state">
+  <div class="launch-copy">
   <span class="launch-badge">${t.badge}</span>
   <h2>${t.title}</h2>
   <p>${t.text}</p>
   <ul class="launch-categories launch-categories--compact">${t.categories.map((name) => html`<li>${name}</li>`)}</ul>
+  </div>
   <form class="launch-form" method="post" action="/api/subscribe" data-enhance data-redirect="${THANKS_PAGE[lang]}?notice=resources" data-sending="${t.saving}" data-success="${t.success}" data-confirm="${t.confirm}" data-error="${t.error}" data-limited="${t.limited}">
     <input type="hidden" name="language" value="${lang}">
     <label for="launch-email">${t.emailLabel}</label>
@@ -82,7 +85,8 @@ export function resourcesPage(lang, catalog, subscription = null) {
     description: t.description,
     schema: schema(lang, catalog),
     scripts: isLaunch ? [{ src: '/assets/forms.js' }] : [],
-    body: html`<div class="page-title"><h1>${t.heading}</h1></div>
+    body: html`${sectionIntro(lang, t.heading, t.lead)}
+<div class="work-heading"><h2>${t.libraryTitle}${catalog.status === 'ok' && catalog.products.length ? html`<span class="work-count">${String(catalog.products.length).padStart(2, '0')}</span>` : ''}</h2><span>${t.libraryTypes}</span></div>
 <section id="gumroad-products" class="project-grid" aria-label="${t.gridLabel}">${content}</section>`,
   });
 }

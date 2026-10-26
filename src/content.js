@@ -56,6 +56,9 @@ export const CONTENT = {
       description:
         'Coming soon: Canva templates, Notion templates & design resources. Practical resources for better design and clearer work. Leave your email and I’ll let you know when they launch.',
       heading: 'Resources',
+      lead: 'A library of design resources and digital templates.',
+      libraryTitle: 'Resource library',
+      libraryTypes: 'Canva · Notion · Design',
       breadcrumb: 'Resources',
       gridLabel: 'Gumroad products',
       listName: 'SIRTRAVER digital resources',
@@ -209,6 +212,9 @@ export const CONTENT = {
       description:
         'Próximamente: plantillas de Canva, Notion y recursos de diseño. Recursos prácticos para diseñar mejor y trabajar con más claridad. Deja tu email y te avisaré cuando estén disponibles.',
       heading: 'Recursos',
+      lead: 'Una biblioteca de recursos de diseño y plantillas digitales.',
+      libraryTitle: 'Biblioteca de recursos',
+      libraryTypes: 'Canva · Notion · Diseño',
       breadcrumb: 'Recursos',
       gridLabel: 'Productos de Gumroad',
       listName: 'Recursos digitales de SIRTRAVER',

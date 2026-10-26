@@ -1,12 +1,11 @@
 import { PERSON_ID } from '../config.js';
-import { CONTACT_PAGE, CONTENT, PAGES, projectName, projectPath } from '../content.js';
+import { CONTENT, PAGES, projectName, projectPath } from '../content.js';
 import { absoluteUrl } from '../lib/assets.js';
 import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, itemList, person, webPage, website } from './schema.js';
-import { JOURNEY } from './journey.js';
-import { ICONS } from './icons.js';
+import { sectionIntro } from './section-intro.js';
 
 const imageId = (project) => `${absoluteUrl('/')}#project-image-${project.slug}`;
 
@@ -75,14 +74,7 @@ export function homePage(lang, { projects, galleriesUrl }) {
     description: t.description,
     schema: schema(lang, projects),
     scripts: [{ src: '/assets/image-zoom.js' }, { src: '/assets/project-viewer.js', data: { gallery: galleriesUrl } }],
-    body: html`<section class="value-hero">
-  <div class="hero-copy">
-  <p class="overline">${t.overline}</p>
-  <h1>${t.heading}</h1>
-  <p class="value-description">${t.lead}</p>
-  </div>
-<!-- journey:hero --><div class="hero-enquiry"><a class="enquiry-button" href="${CONTACT_PAGE[lang]}" aria-label="${JOURNEY[lang].cta}" title="${JOURNEY[lang].cta}"><span class="hero-contact-label">${JOURNEY[lang].cta}</span>${ICONS.mail}</a><span>${lang === 'es' ? 'Respuesta en 2 días laborables.' : 'Reply within 2 business days.'}</span></div><!-- /journey:hero -->
-</section>
+    body: html`${sectionIntro(lang, t.heading, t.lead)}
 <div class="work-heading"><h2>${t.workTitle}<span class="work-count">${String(projects.length).padStart(2, '0')}</span></h2><span>${t.workOrder}</span></div>
 <section class="project-grid" aria-label="${t.gridLabel}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>
 `,

@@ -6,7 +6,7 @@ import vm from 'node:vm';
 const code = await readFile(new URL('../public/assets/project-viewer.js', import.meta.url), 'utf8');
 
 // Event contracts for the shipped script; visual layout is checked in the browser.
-async function harness({ failed = false } = {}) {
+async function harness({ failed = false, compact = false } = {}) {
   let document;
   const jobs = [];
   class Element {
@@ -35,11 +35,11 @@ async function harness({ failed = false } = {}) {
   const cards = ['one', 'two'].map((slug, i) => create('a', { class: 'project-card', href: `/es/projects/${slug}/`, 'data-project': slug }, create('h3', {}, `Project ${i + 1}`)));
   const grid = create('section', { class: 'project-grid' }, ...cards), main = create('main', {}, grid), body = create('body', {}, main);
   document = { documentElement: { lang: 'es', style: { overflow: '' } }, body, currentScript: { dataset: { gallery: '/galleries.json?v=2' } }, querySelector: selector => selector === 'main' ? main : body.querySelector(selector), createElement: tag => create(tag) };
-  const window = new Element(); window.matchMedia = () => ({ matches: false });
+  const window = new Element(); window.matchMedia = () => ({ matches: compact });
   const history = { state: null, pushes: [], replaces: [], backs: 0, pushState(state, unused, path) { this.state = state; this.pushes.push(path); }, replaceState(state, unused, path) { this.state = state; this.replaces.push(path); }, back() { this.backs++; } };
   const location = { assignments: [], assign(path) { this.assignments.push(path); }, reload() {} };
   const image = { width: 800, height: 450, avif: [['/media/test.avif', 800]], webp: [['/media/test.webp', 800]] };
-  const galleries = Object.fromEntries(['one', 'two'].map(slug => [slug, { category: 'Visual identity', year: 2026, intro: { es: 'Confirmed introduction' }, images: [image, image, image] }]));
+  const galleries = Object.fromEntries(['one', 'two'].map(slug => [slug, { category: 'Visual identity', year: 2026, tools: ['Affinity', 'ChatGPT'], intro: { es: 'Confirmed introduction' }, images: [image, image, image] }]));
   vm.runInNewContext(code, { document, window, history, location, URL, HTMLDialogElement: function () {}, fetch: async () => { if (failed) throw Error('offline'); return { ok: true, json: async () => galleries }; }, requestAnimationFrame: fn => jobs.push(fn) });
   await new Promise(resolve => setImmediate(resolve));
   const dialog = body.querySelector('.project-viewer');
@@ -47,7 +47,8 @@ async function harness({ failed = false } = {}) {
   const open = (card = cards[0], properties = {}) => main.fire('click', { target: card, ...properties });
   const flush = () => { let remaining = 100; while (jobs.length && remaining--) jobs.shift()(); };
   const pop = () => { history.state = null; window.fire('popstate'); flush(); };
-  return { cards, document, dialog, history, location, find, open, pop, flush };
+  const setCompact = value => { compact = value; window.fire('resize'); flush(); };
+  return { cards, document, dialog, history, location, find, open, pop, flush, setCompact };
 }
 
 test('modified card links and unavailable galleries keep their native destination', async () => {
@@ -88,15 +89,48 @@ test('image navigation does not change project history; project navigation reset
 });
 
 test('Escape dismisses project information before closing the gallery', async () => {
-  const h = await harness(); h.open();
+  const h = await harness({ compact: true }); h.open();
+  assert.equal(h.find('.viewer-info').hidden, true);
   h.find('.viewer-info-button').fire('click');
   assert.equal(h.find('.viewer-info').hidden, false);
   assert.equal(h.find('.viewer-info-button').getAttribute('aria-expanded'), 'true');
+  assert.equal(h.find('.viewer-scroll').inert, true);
   h.dialog.fire('cancel');
   assert.equal(h.find('.viewer-info').hidden, true);
+  assert.equal(h.find('.viewer-scroll').inert, false);
   assert.equal(h.history.backs, 0);
   h.dialog.fire('cancel');
   assert.equal(h.history.backs, 1);
+});
+
+test('desktop shows the project card and tools without duplicate or external project links', async () => {
+  const h = await harness(); h.open();
+  assert.equal(h.find('.viewer-info').hidden, false);
+  assert.equal(h.find('.viewer-info-button').hidden, true);
+  assert.ok(h.find('.viewer-card-tools').textContent.includes('AffinityChatGPT'));
+  assert.equal(h.find('.viewer-info').querySelectorAll('a').length, 0);
+  assert.equal(h.find('.viewer-original'), null);
+  h.dialog.fire('keydown', { key: 'ArrowRight', target: h.find('.viewer-scroll') });
+  assert.equal(h.find('.viewer-image-select').value, '1');
+  h.dialog.fire('cancel');
+  assert.equal(h.history.backs, 1, 'the desktop information card does not consume Escape');
+});
+
+test('crossing the layout breakpoint preserves image navigation and restores the card on desktop', async () => {
+  const h = await harness(); h.open();
+  // Geometry represents the second image at the top of the gallery viewport.
+  h.find('.viewer-images').querySelectorAll('a').forEach((anchor, i) => { anchor.top = (i - 1) * 600; });
+  h.find('.viewer-image-select').value = '1'; h.find('.viewer-image-select').fire('change');
+  h.setCompact(true);
+  assert.equal(h.find('.viewer-info').hidden, true);
+  assert.equal(h.find('.viewer-info-button').hidden, false);
+  assert.equal(h.find('.viewer-image-select').value, '1');
+  h.find('.viewer-info-button').fire('click');
+  assert.equal(h.find('.viewer-scroll').inert, true);
+  h.setCompact(false);
+  assert.equal(h.find('.viewer-info').hidden, false);
+  assert.equal(h.find('.viewer-scroll').inert, false);
+  assert.equal(h.find('.viewer-info-button').hidden, true);
 });
 
 

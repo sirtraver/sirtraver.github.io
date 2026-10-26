@@ -67,5 +67,9 @@
         "en": "Paint tins, a presentation box, communication pieces and a store display show the system at different scales. The campaign is built around the message “Paint it”."
       }
     }
+  ],
+  "tools": [
+    "Affinity",
+    "ChatGPT"
   ]
 }

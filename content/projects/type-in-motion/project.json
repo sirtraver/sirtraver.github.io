@@ -27,5 +27,9 @@
   "archived": false,
   "order": 3,
   "draft": false,
-  "portfolioOrder": 10
+  "portfolioOrder": 10,
+  "tools": [
+    "Affinity",
+    "ChatGPT"
+  ]
 }

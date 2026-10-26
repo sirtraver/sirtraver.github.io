@@ -5,12 +5,28 @@
   "date": "",
   "draft": true,
   "conceptual": false,
-  "intro": { "en": "", "es": "" },
+  "intro": {
+    "en": "",
+    "es": ""
+  },
   "client": "",
-  "role": { "en": "", "es": "" },
-  "deliverables": { "en": [], "es": [] },
-  "result": { "en": "", "es": "" },
+  "role": {
+    "en": "",
+    "es": ""
+  },
+  "deliverables": {
+    "en": [],
+    "es": []
+  },
+  "result": {
+    "en": "",
+    "es": ""
+  },
   "behance": "",
   "caseStudy": [],
-  "archived": false
+  "archived": false,
+  "tools": [
+    "Affinity",
+    "ChatGPT"
+  ]
 }

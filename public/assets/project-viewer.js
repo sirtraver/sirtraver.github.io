@@ -8,17 +8,21 @@
   const text = lang === 'es' ? {
     project: 'Proyecto', close: 'Cerrar proyecto', closeText: 'Cerrar', previous: 'Proyecto anterior', next: 'Proyecto siguiente',
     previousImage: 'Imagen anterior', nextImage: 'Imagen siguiente', jump: 'Ir a la imagen', image: 'Imagen',
-    info: 'Información', infoTitle: 'Información del proyecto', closeInfo: 'Cerrar información', original: 'Ver en Behance ↗',
+    info: 'Información', infoTitle: 'Información del proyecto', closeInfo: 'Cerrar información',
     conceptual: 'Proyecto conceptual', enlarge: 'Ampliar imagen', discipline: 'Disciplina', year: 'Año', deliverables: 'Entregables',
-    page: 'Ver ficha del proyecto ↗', hint: 'Desplázate para recorrer el proyecto. Pulsa una imagen para ampliarla.',
+    tools: 'Herramientas', story: 'Concepto y aplicaciones', description: 'Descripción',
+    fallback: category => `Una selección de piezas y aplicaciones de ${category.toLowerCase()}.`,
+    hint: 'Desplázate para recorrer el proyecto. Pulsa una imagen para ampliarla.',
     error: 'No se ha podido cargar alguna imagen. Puedes reintentarlo o abrir su enlace original.', retry: 'Reintentar imagen',
     categories: { 'Visual identity': 'Identidad visual', 'Visual design': 'Diseño visual' },
   } : {
     project: 'Project', close: 'Close project', closeText: 'Close', previous: 'Previous project', next: 'Next project',
     previousImage: 'Previous image', nextImage: 'Next image', jump: 'Go to image', image: 'Image',
-    info: 'Information', infoTitle: 'Project information', closeInfo: 'Close information', original: 'View on Behance ↗',
+    info: 'Information', infoTitle: 'Project information', closeInfo: 'Close information',
     conceptual: 'Concept project', enlarge: 'Enlarge image', discipline: 'Discipline', year: 'Year', deliverables: 'Deliverables',
-    page: 'View project page ↗', hint: 'Scroll to explore the project. Select an image to enlarge it.',
+    tools: 'Tools', story: 'Concept and applications', description: 'Description',
+    fallback: category => `A selection of ${category.toLowerCase()} pieces and applications.`,
+    hint: 'Scroll to explore the project. Select an image to enlarge it.',
     error: 'An image could not be loaded. Retry it or open its original link.', retry: 'Retry image',
     categories: { 'Visual identity': 'Visual identity', 'Visual design': 'Visual design' },
   };
@@ -40,7 +44,6 @@
   const infoButton = button(text.info, text.info, 'viewer-info-button');
   infoButton.setAttribute('aria-expanded', 'false');
   infoButton.setAttribute('aria-controls', 'viewer-information');
-  const original = el('a', { class: 'viewer-original', target: '_blank', rel: 'noopener noreferrer', hidden: '' }, text.original);
   const closeInfo = button(text.closeInfo, '×', 'viewer-info-close');
   const infoBody = el('div', { class: 'viewer-info-body' });
   const infoPanel = el('aside', { class: 'viewer-info', id: 'viewer-information', hidden: '', 'aria-labelledby': 'viewer-info-title' },
@@ -51,10 +54,10 @@
   const nextProject = button(text.next, '', 'viewer-project-link');
   const projectNav = el('nav', { class: 'viewer-project-nav', 'aria-label': text.project }, previousProject, nextProject);
   const scroller = el('div', { class: 'viewer-scroll', tabindex: '0', 'aria-label': text.hint }, images, error, projectNav);
-  const dialog = el('dialog', { class: 'project-viewer viewer-refined', 'aria-labelledby': 'viewer-title' },
+  const dialog = el('dialog', { class: 'project-viewer viewer-refined viewer-with-card', 'aria-labelledby': 'viewer-title' },
     el('header', { class: 'viewer-bar' }, el('div', { class: 'viewer-heading' }, position, title, kind), closeButton),
     el('div', { class: 'viewer-toolbar' }, el('div', { class: 'viewer-image-nav' }, previousImage, imageSelect, nextImage),
-      el('p', { class: 'viewer-guidance' }, text.hint), el('div', { class: 'viewer-actions' }, infoButton, original)),
+      el('p', { class: 'viewer-guidance' }, text.hint), el('div', { class: 'viewer-actions' }, infoButton)),
     el('div', { class: 'viewer-layout' }, scroller, infoPanel));
   document.body.append(dialog);
 
@@ -68,6 +71,8 @@
   const name = card => card?.querySelector('h3')?.textContent ?? '';
   let current, opener, previousOverflow = '', pageTitle = '', active = false, closing = false;
   let anchors = [], currentImage = 0, frame = false;
+  const narrow = () => window.matchMedia('(max-width: 900px)').matches;
+  let mobileInfoOpen = false, wasNarrow = narrow();
 
   const safeSource = item => {
     if (item.src) {
@@ -80,7 +85,7 @@
     const source = safeSource(item);
     if (!source) return null;
     const srcset = values => values.map(([url, width]) => `${url} ${width}w`).join(', ');
-    const sizes = '(max-width: 700px) 100vw, min(1120px, calc(100vw - 48px))';
+    const sizes = '(max-width: 900px) 100vw, calc(100vw - 388px)';
     const image = el('img', { alt: item.caption?.[lang] || `${title.textContent} · ${text.image} ${index + 1}`, width: item.width, height: item.height,
       loading: index === 0 ? 'eager' : 'lazy', decoding: 'async', ...(item.src ? {} : { srcset: srcset(item.webp), sizes }), src: source });
     image.style.backgroundColor = item.color;
@@ -115,31 +120,37 @@
     if (index !== currentImage) setImage(index);
   }
   function toggleInfo(open) {
-    const marker = anchors[currentImage];
-    const rect = marker?.getBoundingClientRect();
-    const relative = rect?.height ? (scroller.getBoundingClientRect().top - rect.top) / rect.height : 0;
-    infoPanel.hidden = !open;
-    scroller.inert = open && window.matchMedia('(max-width: 700px)').matches;
-    dialog.classList.toggle('has-info', open);
-    infoButton.setAttribute('aria-expanded', String(open));
-    if (marker && active) requestAnimationFrame(() => {
-      if (!active || !anchors.includes(marker)) return;
-      const next = marker.getBoundingClientRect();
-      scroller.scrollTop = Math.max(0, next.top - scroller.getBoundingClientRect().top + scroller.scrollTop + relative * next.height);
-    });
+    mobileInfoOpen = open;
+    infoPanel.hidden = narrow() && !open;
+    infoButton.hidden = !narrow();
+    closeInfo.hidden = !narrow();
+    scroller.inert = open && narrow();
+    dialog.classList.toggle('has-info', !infoPanel.hidden);
+    infoButton.setAttribute('aria-expanded', String(!infoPanel.hidden));
   }
   function renderInfo(project) {
+    const category = text.categories[project.category] ?? project.category;
+    const cardTitle = el('h3', { class: 'viewer-card-title' }, title.textContent);
+    const portrait = el('img', { src: '/assets/javier-traver.jpg', alt: '', width: '44', height: '44', class: 'viewer-author-photo' });
+    const author = el('div', { class: 'viewer-card-author' }, portrait,
+      el('div', {}, el('strong', {}, 'Javier Traver'), el('p', {}, 'Visual Designer & Marketing')));
+    const heading = el('div', { class: 'viewer-card-heading' },
+      el('p', { class: 'viewer-card-kicker' }, `${category} · ${project.year}`), cardTitle);
+    if (project.conceptual) heading.append(el('span', { class: 'viewer-card-kind' }, text.conceptual));
+    const description = el('section', { class: 'viewer-card-description' },
+      el('h4', {}, text.description), el('p', {}, project.intro?.[lang] || text.fallback(category)));
     const facts = el('dl', { class: 'viewer-facts' });
     const fact = (label, value) => { if (value) facts.append(el('div', {}, el('dt', {}, label), el('dd', {}, String(value)))); };
-    fact(text.discipline, text.categories[project.category] ?? project.category);
-    fact(text.year, project.year);
     fact(text.deliverables, project.deliverables?.[lang]?.join(' · '));
-    infoBody.replaceChildren(el('p', { class: 'viewer-author' }, 'Javier Traver · Visual Designer & Marketing'), facts);
-    if (project.intro?.[lang]) infoBody.append(el('p', { class: 'viewer-info-intro' }, project.intro[lang]));
-    for (const section of project.caseStudy ?? []) infoBody.append(el('section', {}, el('h4', {}, section.title[lang]), el('p', {}, section.text[lang])));
-    const links = el('div', { class: 'viewer-info-links' }, el('a', { href: current.getAttribute('href'), target: '_blank', rel: 'noopener noreferrer' }, text.page));
-    if (project.behance) links.append(el('a', { href: project.behance, target: '_blank', rel: 'noopener noreferrer' }, text.original));
-    infoBody.append(links);
+    infoBody.replaceChildren(author, heading, description);
+    if (project.tools?.length) infoBody.append(el('section', { class: 'viewer-card-tools' }, el('h4', {}, text.tools),
+      el('ul', {}, ...project.tools.map(tool => el('li', {}, tool)))));
+    if (project.deliverables?.[lang]?.length) infoBody.append(facts);
+    if (project.caseStudy?.length) {
+      const story = el('details', { class: 'viewer-card-story' }, el('summary', {}, text.story));
+      for (const section of project.caseStudy) story.append(el('section', {}, el('h4', {}, section.title[lang]), el('p', {}, section.text[lang])));
+      infoBody.append(story);
+    }
     infoPanel.scrollTop = 0;
   }
   function show(card) {
@@ -147,8 +158,6 @@
     const project = galleries[card.dataset.project];
     title.textContent = name(card);
     kind.hidden = !project.conceptual;
-    original.hidden = !project.behance;
-    original.href = project.behance || '#';
     error.hidden = true;
     toggleInfo(false);
     renderInfo(project);
@@ -202,13 +211,23 @@
   closeInfo.addEventListener('click', () => { toggleInfo(false); infoButton.focus(); });
   scroller.addEventListener('scroll', () => { if (!frame) { frame = true; requestAnimationFrame(trackImage); } }, { passive: true });
   images.addEventListener('sirtraver:zoomchange', event => { const index = anchors.indexOf(event.target); if (index >= 0) goToImage(index); });
-  dialog.addEventListener('cancel', event => { event.preventDefault(); if (!infoPanel.hidden) { toggleInfo(false); infoButton.focus(); } else close(); });
+  dialog.addEventListener('cancel', event => { event.preventDefault(); if (narrow() && !infoPanel.hidden) { toggleInfo(false); infoButton.focus(); } else close(); });
   dialog.addEventListener('keydown', event => {
-    if (event.target.closest('input,select,textarea,[contenteditable="true"]') || !infoPanel.hidden) return;
+    if (event.target.closest('input,select,textarea,[contenteditable="true"],.viewer-info') || (narrow() && !infoPanel.hidden)) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); goToImage(currentImage + (event.key === 'ArrowLeft' ? -1 : 1)); }
   });
   dialog.addEventListener('close', () => { if (active && history.state?.viewer) close(); else teardown(); });
-  window.addEventListener('resize', () => { scroller.inert = !infoPanel.hidden && window.matchMedia('(max-width: 700px)').matches; });
+  window.addEventListener('resize', () => {
+    const changed = wasNarrow !== narrow();
+    const focus = document.activeElement;
+    toggleInfo(mobileInfoOpen);
+    if (active && changed) {
+      goToImage(currentImage);
+      if (infoPanel.hidden && focus?.closest('.viewer-info')) infoButton.focus();
+      else if (infoButton.hidden && focus === infoButton) closeButton.focus();
+    }
+    wasNarrow = narrow();
+  });
   main.addEventListener('click', event => {
     const card = event.target.closest(CARD);
     if (!card || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

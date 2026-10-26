@@ -37,6 +37,7 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
   if (typeof data.name !== 'string' || !data.name.trim()) fail('falta name (nombre del proyecto)');
   if (!CATEGORIES.includes(data.category)) fail(`category debe ser ${CATEGORIES.join(' o ')}`);
   if (data.conceptual !== undefined && typeof data.conceptual !== 'boolean') fail('conceptual debe ser true o false');
+  if (data.tools !== undefined && (!Array.isArray(data.tools) || data.tools.some(tool => typeof tool !== 'string' || !tool.trim()))) fail('tools debe ser una lista de nombres de herramientas');
   if (data.portfolioOrder !== undefined && (!Number.isInteger(data.portfolioOrder) || data.portfolioOrder < 1)) fail('portfolioOrder debe ser un entero positivo');
   if (data.caseStudy !== undefined && (!Array.isArray(data.caseStudy) || data.caseStudy.some(section => !['en', 'es'].every(lang => typeof section?.title?.[lang] === 'string' && typeof section?.text?.[lang] === 'string')))) fail('caseStudy debe contener title y text en español e inglés');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(data.date ?? '') || !Number.isFinite(Date.parse(data.date)) || new Date(data.date).toISOString().slice(0, 10) !== data.date) {

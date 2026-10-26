@@ -41,3 +41,7 @@ Puedes añadir `caseStudy` con secciones bilingües para explicar el concepto, s
 ```
 
 Describe solo información confirmada. Deja vacíos el cliente, rol o resultado cuando no estén documentados; los proyectos conceptuales no deben atribuirse a un encargo real.
+
+## Información y herramientas de la tarjeta
+
+La descripción se edita en `intro.es` e `intro.en`, dentro de cada `project.json`. La lista `"tools": ["Affinity", "ChatGPT"]` es independiente para cada proyecto: cambia, añade o quita sus nombres según corresponda. Si dejas `"tools": []`, no aparecerá ese bloque. Los entregables se editan en `deliverables`; los relatos ampliados, en `caseStudy`. Después de editar, hay que generar y publicar de nuevo la web.

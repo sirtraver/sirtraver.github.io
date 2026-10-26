@@ -19,6 +19,7 @@ function facts(project, lang, t) {
     [t.year, String(project.year)],
     [t.role, project.role[lang]],
     [t.deliverables, project.deliverables[lang].join(', ')],
+    [lang === 'es' ? 'Herramientas' : 'Tools', project.tools.join(' · ')],
   ].filter(([, value]) => value);
   return html`<dl class="project-facts">${rows.map(([label, value]) => html`<div><dt>${label}</dt><dd>${value}</dd></div>`)}</dl>`;
 }
@@ -114,7 +115,6 @@ export function projectPage(project, siblings, lang) {
   </header>
   <div class="project-summary">
     ${facts(project, lang, t.project)}
-    ${project.behance ? html`<a class="project-original" href="${project.behance}" target="_blank" rel="noopener noreferrer">${t.project.original}</a>` : ''}
   </div>
   ${project.caseStudy.length ? html`<section class="project-story" aria-label="${t.project.story}">${project.caseStudy.map(section => html`<div><h2>${section.title[lang]}</h2><p>${section.text[lang]}</p></div>`)}</section>` : ''}
   <p class="gallery-hint">${t.project.zoomHint}</p>

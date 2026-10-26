@@ -2331,3 +2331,46 @@ a:hover .card-media img {
   #gumroad-products .launch-state h2 { font-size: 22px; }
   #gumroad-products:has(> .product-card:only-child) { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Project information card: artwork at the left, persistent context at the right. */
+.project-viewer.viewer-refined.viewer-with-card .viewer-bar { min-height: 64px; padding: 10px 24px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-bar h2 { font-size: 17px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-kind { display: none; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-toolbar { min-height: 56px; padding: 6px 24px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-actions { display: none; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; padding: 16px 24px 20px 16px; overflow: hidden; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-scroll { width: 100%; height: 100%; padding: 0 0 32px; scrollbar-gutter: stable; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-images { width: 100%; max-width: none; margin: 0; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-project-nav { width: 100%; margin: 28px 0 0; padding: 24px 8px 0; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-info { position: static; align-self: start; width: auto; height: auto; max-height: 100%; min-height: 0; padding: 24px; overflow: auto; border: 1px solid #ffffff1c; border-radius: 18px; background: #1e1e1c; scrollbar-color: #555 transparent; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-info-heading { margin-bottom: 20px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-info-heading h3 { color: #aaa; font-size: 10px; line-height: 1.5; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-author { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-author-photo { display: block; flex: 0 0 44px; width: 44px; height: 44px; object-fit: cover; border-radius: 10px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-author strong { font-size: 13px; font-weight: 600; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-author p { margin: 4px 0 0; color: #bcbcbc; font-size: 10px; line-height: 1.6; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-kicker { margin: 0 0 9px; color: #bcbcbc; font-size: 10px; line-height: 1.6; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-title { margin: 0; font-size: 24px; line-height: 1.25; font-weight: 600; letter-spacing: -.6px; overflow-wrap: anywhere; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-kind { display: inline-block; margin-top: 12px; padding: 6px 9px; border: 1px solid #ffffff30; border-radius: 16px; color: #c6c6c6; font-size: 10px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-info-body > section { margin-top: 22px; padding-top: 18px; border-top: 1px solid #ffffff18; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-info-body > section h4 { margin: 0 0 10px; color: #aaa; font-size: 10px; line-height: 1.5; font-weight: 400; text-transform: uppercase; letter-spacing: .8px; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-info-body section p { color: #d2d2d2; font-size: 13px; line-height: 1.75; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-tools ul { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; margin: 0; padding: 0; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-tools li { padding: 7px 10px; border: 1px solid #ffffff24; border-radius: 6px; color: #eee; font-size: 12px; line-height: 1.4; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-facts { display: block; margin: 22px 0 0; padding-top: 18px; border-top: 1px solid #ffffff18; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-story { margin-top: 22px; padding-top: 8px; border-top: 1px solid #ffffff18; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-story summary { display: list-item; min-height: 44px; padding: 13px 0; font-size: 12px; line-height: 1.5; cursor: pointer; }
+.project-viewer.viewer-refined.viewer-with-card .viewer-card-story section { margin-top: 18px; }
+@media (max-width: 900px) {
+  .project-viewer.viewer-refined.viewer-with-card .viewer-bar { min-height: 70px; padding: 10px 16px; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-bar h2 { font-size: 16px; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-kind { display: inline-block; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-toolbar { padding: 6px 12px; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-actions { display: flex; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-guidance { display: none; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-layout { display: block; padding: 0; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-scroll { scrollbar-gutter: auto; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-info { position: absolute; z-index: 1; inset: 8px; max-height: calc(100% - 16px); padding: 20px; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-info-heading { margin-bottom: 16px; }
+  .project-viewer.viewer-refined.viewer-with-card .viewer-project-nav { width: calc(100% - 32px); margin: 28px 16px 0; }
+}

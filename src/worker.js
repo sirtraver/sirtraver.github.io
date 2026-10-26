@@ -43,11 +43,11 @@ const PAGE_ROUTES = new Map(
 
 // Gallery data for the home page viewer, keyed by project slug.
 const GALLERIES_PATH = '/assets/galleries.json';
-const galleryVersion = `${contentHash}-v2`;
+const galleryVersion = `${contentHash}-v3`;
 const galleriesUrl = `${GALLERIES_PATH}?v=${galleryVersion}`;
 // (The viewer takes each project's title from its card, already in the page language.)
 const galleries = () =>
-  Object.fromEntries(activeProjects.map((p) => [p.slug, { category: p.category, year: p.year, deliverables: p.deliverables, behance: p.behance, conceptual: p.conceptual, intro: p.intro, caseStudy: p.caseStudy, images: p.images }]));
+  Object.fromEntries(activeProjects.map((p) => [p.slug, { category: p.category, year: p.year, deliverables: p.deliverables, tools: p.tools, conceptual: p.conceptual, intro: p.intro, caseStudy: p.caseStudy, images: p.images }]));
 
 const withSlash = (path) => (path.endsWith('/') ? path : `${path}/`);
 

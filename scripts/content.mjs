@@ -29,6 +29,7 @@ async function readProject(slug, media, projectsDir) {
     client: String(data.client ?? ''),
     role: bilingual(data.role),
     deliverables: list(data.deliverables),
+    tools: (data.tools ?? []).map(String),
     intro: bilingual(data.intro),
     result: bilingual(data.result),
     caseStudy: (data.caseStudy ?? []).map(section => ({ title: bilingual(section.title), text: bilingual(section.text) })),

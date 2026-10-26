@@ -36,6 +36,21 @@ function figure(image, index, total, name, lang, t) {
 function schema(project, lang, path, name, description) {
   const t = CONTENT[lang];
   const pageUrl = ORIGIN + path;
+  const cover = {
+    '@type': 'ImageObject',
+    '@id': `${pageUrl}#cover`,
+    contentUrl: absoluteUrl(largestUrl(project.cover)),
+    url: absoluteUrl(largestUrl(project.cover)),
+    name,
+    caption: `${name} — Javier Traver`,
+    description,
+    width: project.cover.width,
+    height: project.cover.height,
+    creator: { '@id': PERSON_ID },
+    creditText: 'Javier Traver',
+    copyrightNotice: `© ${project.year} Javier Traver`,
+    isPartOf: { '@id': `${pageUrl}#work` },
+  };
   const imageNodes = project.images.map((image, index) => ({
     '@type': 'ImageObject',
     '@id': `${pageUrl}#image-${index + 1}`,
@@ -60,7 +75,7 @@ function schema(project, lang, path, name, description) {
       inLanguage: lang,
       isPartOf: { '@id': `${ORIGIN}/#website` },
       mainEntity: { '@id': `${pageUrl}#work` },
-      primaryImageOfPage: { '@id': imageNodes[0]['@id'] },
+      primaryImageOfPage: { '@id': cover['@id'] },
     },
     {
       '@type': 'CreativeWork',
@@ -72,11 +87,13 @@ function schema(project, lang, path, name, description) {
       dateCreated: project.date,
       ...(project.client ? { sourceOrganization: { '@type': 'Organization', name: project.client } } : {}),
       ...(project.intro[lang] ? { abstract: project.intro[lang] } : {}),
-      image: imageNodes.map((node) => ({ '@id': node['@id'] })),
+      thumbnailUrl: cover.contentUrl,
+      image: [cover, ...imageNodes].map((node) => ({ '@id': node['@id'] })),
       ...(project.behance ? { sameAs: project.behance } : {}),
       inLanguage: lang,
     },
     breadcrumbs(lang, [[name, path]]),
+    cover,
     ...imageNodes,
   );
 }

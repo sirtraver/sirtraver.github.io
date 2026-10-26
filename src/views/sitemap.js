@@ -30,7 +30,7 @@ export function sitemap(projects, archived, lastModified) {
       entry(
         { en: projectPath(project, 'en'), es: projectPath(project, 'es') },
         lang,
-        project.images.map((image) => absoluteUrl(largestUrl(image))),
+        [...new Set([absoluteUrl(largestUrl(project.cover)), ...project.images.map((image) => absoluteUrl(largestUrl(image)))])],
       ),
     ),
     ...(archived.length ? [entry(ARCHIVE_PAGE, lang, [])] : []),
@@ -41,4 +41,17 @@ export function sitemap(projects, archived, lastModified) {
 ${urls.join('\n')}
 </urlset>
 `;
+}
+
+// A focused image sitemap makes each cover discoverable alongside its own project,
+// instead of identifying all covers only with the portfolio landing page.
+export function coverSitemap(projects, lastModified) {
+  const entries = projects.map(project => {
+    const alternates = LANGUAGES.map(lang => `<xhtml:link rel="alternate" hreflang="${lang}" href="${ORIGIN + projectPath(project, lang)}"/>`).join('');
+    return `<url><loc>${ORIGIN + projectPath(project, 'es')}</loc><lastmod>${lastModified}</lastmod>${alternates}<image:image><image:loc>${escape(absoluteUrl(largestUrl(project.cover)))}</image:loc></image:image></url>`;
+  });
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${entries.join('\n')}
+</urlset>\n`;
 }

@@ -22,7 +22,7 @@ import { LEGAL_PAGES } from './legal.js';
 import { archivePage } from './views/archive.js';
 import { projectPage } from './views/project.js';
 import { resourcesPage } from './views/resources.js';
-import { sitemap } from './views/sitemap.js';
+import { coverSitemap, sitemap } from './views/sitemap.js';
 import { THANKS_PAGE } from './views/journey.js';
 import { thankYouPage } from './views/thank-you.js';
 
@@ -153,8 +153,8 @@ async function route(request, url, env, ctx) {
     }
   }
 
-  if (path === '/sitemap.xml') {
-    const xml = sitemap(activeProjects, archivedProjects, buildDate);
+  if (path === '/sitemap.xml' || path === '/sitemap-portadas.xml') {
+    const xml = path === '/sitemap-portadas.xml' ? coverSitemap([...activeProjects, ...archivedProjects], buildDate) : sitemap(activeProjects, archivedProjects, buildDate);
     return new Response(request.method === 'HEAD' ? null : xml, {
       headers: { ...SECURITY_HEADERS, 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' },
     });

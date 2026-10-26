@@ -24,7 +24,11 @@ test('approved pages stay intact apart from the requested home introduction and 
     }
   });
 });
-test('the approved stylesheet is preserved before the isolated viewer styles', async () => {
+test('approved styles and interactions remain frozen during image SEO work', async () => {
   const css = await readFile(new URL('../public/assets/site.css', import.meta.url));
   assert.equal(hash(css.subarray(0, baseline.cssPrefixBytes)), baseline.cssPrefixHash);
+  const definitive = JSON.parse(await readFile(new URL('../docs/plantilla-definitiva-v38.json', import.meta.url), 'utf8'));
+  for (const [file, expected] of Object.entries(definitive.visualFiles)) {
+    assert.equal(hash(await readFile(new URL(`../${file}`, import.meta.url))), expected, file);
+  }
 });

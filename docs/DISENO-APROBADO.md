@@ -1,4 +1,16 @@
-# Base de diseño aprobada — versión 34
+# Plantilla definitiva — versión 38
+
+El 26 de octubre de 2026 Javier confirma la versión 38 completa como plantilla definitiva, incluido el visor con tarjeta de información. A partir de esta aprobación, cualquier cambio de diseño, estructura, navegación, tipografía, disposición o comportamiento requiere una nueva solicitud expresa. El trabajo autorizado en esta revisión es técnico: mejorar el descubrimiento de las portadas en Google Imágenes sin modificar la apariencia.
+
+- Commit aprobado: bc195dd430d4fc8e421a2a81fe0e3dabdfe89bb0.
+- Versión de Sites: appgprj_6acc232554dc8191b5bb9dba64dfcbea~appgver_031c7acaece08191b6238923c20b2b5c.
+- Copia exacta: BACKUPS/BASE-DEFINITIVA-v38/ (código, paquete publicado, referencia y captura).
+- El visor aprobado conserva imágenes a la izquierda y tarjeta permanente derecha en escritorio, panel Información en móvil, Affinity/ChatGPT editables por proyecto, relatos ampliables y navegación/zoom/foco. No hay enlaces a la ficha duplicada ni a Behance.
+- Las cabeceras compactas de Proyectos y Recursos, la cuadrícula completa y el perfil de Sobre mí quedan aprobados como están.
+
+## Historial de decisiones y revisiones autorizadas
+
+### Base inicial de la versión 34
 
 El 26 de octubre de 2026 Javier aprobó la versión 34 de sirtraver.com como plantilla definitiva de momento. Se conserva el diseño general; los cambios posteriores deben responder a solicitudes expresas.
 

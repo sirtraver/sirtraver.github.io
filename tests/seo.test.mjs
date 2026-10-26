@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { beforeEach, test } from 'node:test';
 import { ORIGIN, get, offline, resetCaches, withFetch } from './helpers.mjs';
 import { activeProjects, allProjects, archivedProjects } from '../src/projects.js';
+import { largestUrl } from '../src/lib/picture.js';
 
 beforeEach(resetCaches);
 
@@ -68,9 +69,45 @@ test('the sitemap lists pages and project pages with alternates and all gallery 
   assert.ok(xml.includes('https://mir-s3-cdn-cf.behance.net/'), 'original gallery sources are discoverable');
   assert.ok(xml.includes(`${ORIGIN}/media/kudake/`));
   // 8 covers + 1 portrait per language on the main pages, 96 gallery images per language.
-  assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (activeProjects.length + 1 + allProjects.reduce((sum, p) => sum + p.images.length, 0)));
+  assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (activeProjects.length + 1 + allProjects.length + allProjects.reduce((sum, p) => sum + p.images.length, 0)));
   assert.ok(xml.includes('hreflang="x-default"'));
   assert.match(xml, /\/media\/colorsplash\/cover-2400\.[0-9a-f]+\.webp/, 'largest cover is listed');
+});
+
+test('the cover sitemap associates each public cover with its own project URL', async () => {
+  const response = await get('/sitemap-portadas.xml');
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('Content-Type'), 'application/xml; charset=utf-8');
+  assert.equal(response.headers.get('X-Robots-Tag'), null);
+  const xml = await response.text();
+  assert.ok(xml.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'));
+  assert.equal((xml.match(/<url>/g) || []).length, allProjects.length);
+  assert.equal((xml.match(/<image:image>/g) || []).length, allProjects.length);
+  for (const project of allProjects) {
+    const entry = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(m => m[1].includes(`<loc>${ORIGIN}/es/projects/${project.slug}/</loc>`))?.[1];
+    assert.ok(entry, project.slug);
+    assert.ok(entry.includes(`<image:loc>${ORIGIN}${largestUrl(project.cover)}</image:loc>`));
+    assert.ok(entry.includes(`hreflang="en" href="${ORIGIN}/projects/${project.slug}/"`));
+  }
+  const robots = await (await get('/robots.txt')).text();
+  assert.ok(robots.includes(`Sitemap: ${ORIGIN}/sitemap-portadas.xml`));
+});
+
+test('project metadata identifies the selected cover as its primary preview', async () => {
+  for (const lang of ['en', 'es']) for (const project of allProjects) {
+    const path = `${lang === 'es' ? '/es' : ''}/projects/${project.slug}/`;
+    const html = await render(path);
+    const nodes = JSON.parse(jsonLdBlocks(html)[0])['@graph'];
+    const page = nodes.find(node => node['@type'] === 'WebPage');
+    const work = nodes.find(node => node['@type'] === 'CreativeWork');
+    const cover = nodes.find(node => node['@id'] === `${ORIGIN}${path}#cover`);
+    assert.equal(cover.contentUrl, ORIGIN + largestUrl(project.cover));
+    assert.equal(page.primaryImageOfPage['@id'], cover['@id']);
+    assert.equal(work.thumbnailUrl, cover.contentUrl);
+    assert.equal(work.image[0]['@id'], cover['@id']);
+    assert.equal(cover.isPartOf['@id'], work['@id']);
+    assert.ok(cover.width > 0 && cover.height > 0);
+  }
 });
 
 test('preview hosts are kept out of search results', async () => {

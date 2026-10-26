@@ -51,6 +51,7 @@ function schema(lang, projects) {
       url: absoluteUrl(largestUrl(p.cover)),
       name: projectName(p, lang),
       caption: `${projectName(p, lang)} — Javier Traver`,
+      isPartOf: { '@id': `${absoluteUrl(projectPath(p, lang))}#work` },
       creator: { '@id': PERSON_ID },
       creditText: 'Javier Traver',
       width: p.cover.width,

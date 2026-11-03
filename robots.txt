@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://sirtraver.com/sitemap.xml
+Sitemap: https://sirtraver.com/sitemap-portadas.xml

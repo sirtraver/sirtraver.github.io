@@ -1,0 +1,48 @@
+# Builds the site, runs the tests, exports static HTML and publishes it on GitHub Pages.
+# Optional automatic deploys: copy to .github/workflows/pages.yml (pushing it needs a token
+# with the `workflow` scope) and set Settings → Pages → Source to "GitHub Actions".
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Sitemap <lastmod> follows the last commit instead of the build day.
+      - run: echo "SOURCE_DATE=$(git log -1 --format=%cs)" >> "$GITHUB_ENV"
+      - run: npm test
+      - run: node scripts/export-static.mjs
+        env:
+          WEB3FORMS_ACCESS_KEY: ${{ vars.WEB3FORMS_ACCESS_KEY }}
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

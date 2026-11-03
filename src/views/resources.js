@@ -6,6 +6,8 @@ import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, itemList, person, webPage, website } from './schema.js';
 import { THANKS_PAGE } from './journey.js';
+import { ORIGIN } from '../config.js';
+import { runtime } from '../lib/runtime.js';
 import { sectionIntro } from './section-intro.js';
 
 function productCard(product, t, lang) {
@@ -20,6 +22,7 @@ function productCard(product, t, lang) {
 function launchState(lang, subscription) {
   const t = CONTENT[lang].resources.launch;
   const status = { ok: t.success, confirm: t.confirm, confirmed: t.confirmed, error: t.error }[subscription] ?? '';
+  const form = runtime().waitlistForm;
   return html`<section class="launch-state">
   <div class="launch-copy">
   <span class="launch-badge">${t.badge}</span>
@@ -27,11 +30,15 @@ function launchState(lang, subscription) {
   <p>${t.text}</p>
   <ul class="launch-categories launch-categories--compact">${t.categories.map((name) => html`<li>${name}</li>`)}</ul>
   </div>
-  <form class="launch-form" method="post" action="/api/subscribe" data-enhance data-redirect="${THANKS_PAGE[lang]}?notice=resources" data-sending="${t.saving}" data-success="${t.success}" data-confirm="${t.confirm}" data-error="${t.error}" data-limited="${t.limited}">
+  <form class="launch-form" method="post" action="${form ? form.action : '/api/subscribe'}" data-enhance data-redirect="${THANKS_PAGE[lang]}?notice=resources" data-sending="${t.saving}" data-success="${t.success}" data-confirm="${t.confirm}" data-error="${t.error}" data-limited="${t.limited}">
     <input type="hidden" name="language" value="${lang}">
-    <label for="launch-email">${t.emailLabel}</label>
+    ${form ? html`<input type="hidden" name="access_key" value="${form.accessKey}">
+    <input type="hidden" name="subject" value="sirtraver.com · Aviso de lanzamiento de Recursos (${lang.toUpperCase()})">
+    <input type="hidden" name="from_name" value="sirtraver.com">
+    <input type="hidden" name="redirect" value="${ORIGIN}${THANKS_PAGE[lang]}">
+    ` : ''}<label for="launch-email">${t.emailLabel}</label>
     <div class="launch-input"><input id="launch-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="${t.placeholder}"><button type="submit">${t.submit}</button></div>
-    <div class="form-trap" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="form-trap" aria-hidden="true"><label>Website<input name="${form ? 'botcheck' : 'website'}" tabindex="-1" autocomplete="off"></label></div>
     <label class="launch-consent"><input name="consent" type="checkbox" required> <span>${t.consent}</span></label>
     <p class="launch-privacy">${t.privacy} <a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].privacy.heading}</a>.</p>
     <p role="status" aria-live="polite">${status}</p>

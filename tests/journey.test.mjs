@@ -34,14 +34,14 @@ test('thank-you pages are translated, private-data free and excluded from indexi
     const html = await response.text();
     assert.ok(html.includes('<meta name="robots" content="noindex">'));
     assert.ok(!html.includes('rel="canonical"'));
-    assert.ok(html.includes(`href="${other}?lang=`));
+    assert.ok(html.includes(`href="${other}" lang=`));
     assert.ok(!html.includes('<form'));
   }
   const sitemap = await (await get('/sitemap.xml')).text();
   assert.ok(!sitemap.includes('/gracias/') && !sitemap.includes('/thank-you/'));
   const resources = await (await get('/es/gracias/?notice=resources')).text();
   assert.ok(resources.includes('Ya estás en la lista.'));
-  assert.ok(resources.includes('href="/thank-you/?notice=resources&amp;lang=en"'));
+  assert.ok(resources.includes('href="/thank-you/?notice=resources" lang="en"'));
   assert.ok(!resources.includes('2 días laborables'), 'launch sign-up does not promise a project reply');
 });
 
@@ -70,7 +70,7 @@ test('project breadcrumbs and study content remain readable on directly shared p
 test('privacy describes remote gallery requests and all rendered main-page images have alt attributes', async () => {
   for (const path of ['/privacy/', '/es/privacidad/']) {
     const html = await (await get(path)).text();
-    assert.ok(html.includes('CDN') && html.includes('Behance') && html.includes('Cloudflare'));
+    assert.ok(html.includes('CDN') && html.includes('Behance') && html.includes('GitHub Pages'));
   }
   await withFetch(offline, async () => {
     for (const path of ['/', '/es/', '/about/', '/es/about/', '/resources/', '/es/resources/', '/es/projects/colorsplash/']) {

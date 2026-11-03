@@ -8,6 +8,8 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
+    "export": "node scripts/build.mjs && node scripts/export-static.mjs",
+    "deploy": "npm test && node --env-file-if-exists=.env scripts/export-static.mjs && node scripts/deploy-gh-pages.mjs",
     "test": "node scripts/build.mjs && node --test \"tests/*.test.mjs\"",
     "dev": "node scripts/build.mjs && node --env-file-if-exists=.env server/node.mjs --offline --memory",
     "start": "node --env-file-if-exists=.env server/node.mjs",

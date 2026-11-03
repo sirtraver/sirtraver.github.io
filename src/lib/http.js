@@ -2,6 +2,7 @@ import { GUMROAD_IMAGE_HOSTS } from '../config.js';
 import { runtime } from './runtime.js';
 
 const imageSources = ["'self'", 'data:', 'https://mir-s3-cdn-cf.behance.net', ...GUMROAD_IMAGE_HOSTS.map((host) => `https://${host}`)];
+const FORM_ENDPOINT = 'https://api.web3forms.com';
 
 /**
  * @param {object} [extra]  Additional sources for pages that embed a third party.
@@ -11,7 +12,7 @@ const imageSources = ["'self'", 'data:', 'https://mir-s3-cdn-cf.behance.net', ..
 export function contentSecurityPolicy({ script = [], frame = [] } = {}) {
   const analytics = runtime().analytics?.origin;
   const scripts = ["'self'", ...script, ...(analytics ? [analytics] : [])];
-  const connect = ["'self'", ...(analytics ? [analytics] : [])];
+  const connect = ["'self'", FORM_ENDPOINT, ...(analytics ? [analytics] : [])];
   return [
     "default-src 'self'",
     `script-src ${scripts.join(' ')}`,
@@ -23,7 +24,7 @@ export function contentSecurityPolicy({ script = [], frame = [] } = {}) {
     ...(frame.length ? [`frame-src ${frame.join(' ')}`] : []),
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self'",
+    `form-action 'self' ${FORM_ENDPOINT}`,
     "frame-ancestors 'none'",
   ].join('; ');
 }

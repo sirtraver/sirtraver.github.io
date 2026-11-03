@@ -1,7 +1,7 @@
 // Optional integrations, switched on by environment variables (see .env.example).
 // The worker calls configure(env) on every request; views read the result.
 
-let settings = { analytics: null, newsletter: null, contactEmail: null };
+let settings = { analytics: null, newsletter: null, contactEmail: null, waitlistForm: null };
 
 const origin = (url) => {
   try {
@@ -23,6 +23,8 @@ export function configure(env = {}) {
       : null,
     // Contact form notifications, sent through Brevo's transactional email API.
     contactEmail: env.BREVO_API_KEY && env.CONTACT_TO ? { apiKey: env.BREVO_API_KEY, to: env.CONTACT_TO, from: env.CONTACT_FROM || env.CONTACT_TO } : null,
+    // Static hosting: the launch notice form posts to Web3Forms, which emails each sign-up.
+    waitlistForm: env.WEB3FORMS_ACCESS_KEY ? { action: 'https://api.web3forms.com/submit', accessKey: String(env.WEB3FORMS_ACCESS_KEY) } : null,
   };
 }
 

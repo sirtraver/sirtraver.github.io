@@ -71,7 +71,7 @@ export const LEGAL_CONTENT = {
           'Retention',
           ['Launch notice: until it is sent or until you ask for deletion. Contact messages: for as long as needed to handle your enquiry and at most two years.'],
         ],
-        ['Recipients', ['Your data is not sold. Technical hosting and storage providers process it to operate this website, hosted through Sites on Cloudflare infrastructure. When email delivery is enabled, the email provider also processes the data needed to deliver the message.']],
+        ['Recipients', ['Your data is not sold. Technical hosting and storage providers process it to operate this website, hosted on GitHub Pages (GitHub, Inc.). When email delivery is enabled, the email provider also processes the data needed to deliver the message.']],
         [
           'Your rights',
           [
@@ -86,6 +86,7 @@ export const LEGAL_CONTENT = {
     },
     optional: {
       email: ['Email provider', ['Confirmation and notification emails are sent through Brevo (Sendinblue SAS, EU), which acts as data processor.']],
+      forms: ['Form provider', ['Launch notice sign-ups are received through Web3Forms, which forwards them by email to the owner and acts as data processor.']],
       analytics: ['Visit statistics', ['Aggregated, anonymous visit statistics are collected with a cookieless tool hosted for this website (Umami). It does not identify you or track you across sites.']],
     },
     updated: `Last updated: ${LEGAL.updated.en}`,
@@ -141,7 +142,7 @@ export const LEGAL_CONTENT = {
           'Conservación',
           ['Aviso de lanzamiento: hasta que se envíe o pidas su eliminación. Mensajes de contacto: el tiempo necesario para atender tu consulta y como máximo dos años.'],
         ],
-        ['Destinatarios', ['Tus datos no se venden. Los proveedores técnicos de alojamiento y almacenamiento los tratan para prestar el servicio de esta web, alojada mediante Sites en infraestructura de Cloudflare. Cuando el envío de emails está activado, el proveedor de email también trata los datos necesarios para entregar el mensaje.']],
+        ['Destinatarios', ['Tus datos no se venden. Los proveedores técnicos de alojamiento y almacenamiento los tratan para prestar el servicio de esta web, alojada en GitHub Pages (GitHub, Inc.). Cuando el envío de emails está activado, el proveedor de email también trata los datos necesarios para entregar el mensaje.']],
         [
           'Tus derechos',
           [
@@ -156,6 +157,7 @@ export const LEGAL_CONTENT = {
     },
     optional: {
       email: ['Proveedor de email', ['Los emails de confirmación y aviso se envían a través de Brevo (Sendinblue SAS, UE), que actúa como encargado del tratamiento.']],
+      forms: ['Proveedor de formularios', ['Las altas en el aviso de lanzamiento se reciben a través de Web3Forms, que las reenvía por email al titular y actúa como encargado del tratamiento.']],
       analytics: ['Estadísticas de visitas', ['Se recogen estadísticas de visitas agregadas y anónimas con una herramienta sin cookies alojada para esta web (Umami). No te identifica ni te sigue por otras webs.']],
     },
     updated: `Última actualización: ${LEGAL.updated.es}`,

@@ -48,5 +48,5 @@ test('the waitlist form links to the privacy policy', async () => {
 
 test('legal pages switch language to their own counterpart', async () => {
   const html = await (await get('/legal/')).text();
-  assert.ok(html.includes('<a href="/es/aviso-legal/?lang=es" lang="es"'));
+  assert.ok(html.includes('<a href="/es/aviso-legal/" lang="es"'));
 });

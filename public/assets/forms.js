@@ -23,11 +23,12 @@
       try {
         const response = await fetch(form.action, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify(data),
         });
         const body = await response.json();
-        result = response.ok ? MESSAGES[body.status] ?? 'error' : 'error';
+        // Own API: {status}; Web3Forms: {success: true}.
+        result = response.ok ? (body.success === true ? 'success' : MESSAGES[body.status]) ?? 'error' : 'error';
         if (result === 'success' && form.dataset.redirect?.startsWith('/') && !form.dataset.redirect.startsWith('//')) {
           location.assign(form.dataset.redirect);
           return;

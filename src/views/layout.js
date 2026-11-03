@@ -19,7 +19,7 @@ function header(lang, page, alternates) {
     )}
   </nav>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
-    ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}${alternates[code].includes('?') ? '&' : '?'}lang=${code}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
+    ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
   </div>
 </header>`;
 }
@@ -96,6 +96,7 @@ ${page === 'home' && !alternates
   : ''}
 ${schema ? jsonLd(schema) : ''}
 ${runtime().analytics ? html`<script defer src="${runtime().analytics.src}" data-website-id="${runtime().analytics.websiteId}"></script>` : ''}
+<script src="${assetUrl('/assets/language.js')}"></script>
 ${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map(
   ({ src, data = {} }) =>
     html`<script defer src="${assetUrl(src)}"${Object.entries(data).map(([key, value]) => html` data-${key}="${value}"`)}></script>\n`,

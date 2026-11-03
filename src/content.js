@@ -11,6 +11,15 @@ export const PAGES = {
 export const ARCHIVE_PAGE = { en: '/archive/', es: '/es/archive/' };
 export const CONTACT_PAGE = { en: '/contact/', es: '/es/contacto/' };
 
+// URLs from earlier versions of the site.
+export const LEGACY_REDIRECTS = {
+  '/portfolio/': '/',
+  '/es/portfolio/': '/es/',
+  '/recursos/': '/resources/',
+  '/recursos/brief-claro/': '/resources/',
+  '/sobre-mi/': '/about/',
+};
+
 export const resourcePath = (slug, lang) => `${lang === 'es' ? '/es' : ''}/resources/${slug}/`;
 
 export const projectPath = (project, lang) => `${lang === 'es' ? '/es' : ''}/projects/${project.slug}/`;

@@ -1,6 +1,6 @@
 // Cloudflare Worker entry: routing, server-rendered pages, redirects and APIs.
 import { ALIAS_HOSTS, CANONICAL_HOST } from './config.js';
-import { ARCHIVE_PAGE, CONTACT_PAGE, PAGES, languageOf, projectPath, resourcePath } from './content.js';
+import { ARCHIVE_PAGE, CONTACT_PAGE, LEGACY_REDIRECTS, PAGES, languageOf, projectPath, resourcePath } from './content.js';
 import { buildDate } from './generated/assets.js';
 import { contentHash } from './generated/content.js';
 import { getAsset } from './lib/assets.js';
@@ -26,15 +26,6 @@ import { resourcesPage } from './views/resources.js';
 import { coverSitemap, sitemap } from './views/sitemap.js';
 import { THANKS_PAGE } from './views/journey.js';
 import { thankYouPage } from './views/thank-you.js';
-
-// URLs from earlier versions of the site.
-const LEGACY_REDIRECTS = {
-  '/portfolio/': '/',
-  '/es/portfolio/': '/es/',
-  '/recursos/': '/resources/',
-  '/recursos/brief-claro/': '/resources/',
-  '/sobre-mi/': '/about/',
-};
 
 const PAGE_ROUTES = new Map(
   Object.entries({ ...PAGES, ...LEGAL_PAGES, archive: ARCHIVE_PAGE, contact: CONTACT_PAGE, thanks: THANKS_PAGE }).flatMap(([page, paths]) =>

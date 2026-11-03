@@ -57,12 +57,13 @@ test('the manual selector saves the choice, cleans the URL and remains on the tr
 
 test('language choices are in the header, with matching translated project and legal links', async () => {
   await withFetch(offline, async () => {
-    for (const [path, target] of [['/es/', '/?lang=en'], ['/projects/colorsplash/', '/es/projects/colorsplash/?lang=es'], ['/legal/', '/es/aviso-legal/?lang=es']]) {
+    for (const [path, target] of [['/es/', '/'], ['/projects/colorsplash/', '/es/projects/colorsplash/'], ['/legal/', '/es/aviso-legal/']]) {
       const html = await (await get(path)).text();
       const header = html.match(/<header class="site-header">([\s\S]*?)<\/header>/)[1];
       const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
       assert.ok(header.includes('class="language-links"'));
       assert.ok(header.includes(`href="${target}"`), path);
+      assert.ok(!header.includes('?lang='), 'static hosting: plain language links');
       assert.ok(header.includes('aria-current="true"'));
       assert.ok(!footer.includes('class="language-links"'));
     }

@@ -32,11 +32,11 @@ test('each gallery follows its own project folder definition', async () => {
     const source = await readProjectDefinition(p.slug);
     assert.equal(p.images.length, source.images.length);
     for (const image of p.images) {
-      if (image.src) assert.equal(new URL(image.src).hostname, 'mir-s3-cdn-cf.behance.net');
-      else assert.ok(image.avif.length && image.webp.length);
+      assert.ok(!image.src, 'gallery images are local');
+      assert.ok(image.avif.length && image.webp.length);
       assert.ok(image.width > 0 && image.height > 0);
     }
-    source.images.forEach((image, i) => { if (image.src) assert.equal(image.src, p.images[i].src); });
+    source.images.forEach((image) => assert.ok(image.file, 'galeria.json lists local files'));
   }
 });
 
@@ -80,7 +80,7 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       const data = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
       const image = data['@graph'].find((node) => node['@type'] === 'ImageObject');
       assert.equal(image.creditText, 'Javier Traver');
-      assert.ok(image.contentUrl.startsWith(`${ORIGIN}/media/`) || new URL(image.contentUrl).hostname === 'mir-s3-cdn-cf.behance.net');
+      assert.ok(image.contentUrl.startsWith(`${ORIGIN}/media/`), image.contentUrl);
     }
   }
 });
@@ -113,8 +113,8 @@ test('viewer gallery data is versioned and accepts remote or local project image
     assert.deepEqual(gallery.tools, findProject(slug).tools);
     assert.ok(!('behance' in gallery), 'the viewer no longer includes external project links');
     for (const image of gallery.images) {
-      if (image.src) assert.equal(new URL(image.src).hostname, 'mir-s3-cdn-cf.behance.net');
-      else for (const [url] of [...image.avif, ...image.webp]) assert.ok(url.startsWith('/media/'));
+      assert.ok(!image.src, 'gallery images are local');
+      for (const [url] of [...image.avif, ...image.webp]) assert.ok(url.startsWith("/media/"));
       assert.ok(image.width > 0 && image.height > 0);
     }
   }

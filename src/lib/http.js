@@ -1,7 +1,7 @@
 import { GUMROAD_IMAGE_HOSTS } from '../config.js';
 import { runtime } from './runtime.js';
 
-const imageSources = ["'self'", 'data:', 'https://mir-s3-cdn-cf.behance.net', ...GUMROAD_IMAGE_HOSTS.map((host) => `https://${host}`)];
+const imageSources = ["'self'", 'data:', ...GUMROAD_IMAGE_HOSTS.map((host) => `https://${host}`)];
 const FORM_ENDPOINT = 'https://api.web3forms.com';
 
 /**

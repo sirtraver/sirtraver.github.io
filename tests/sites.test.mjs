@@ -24,7 +24,8 @@ test('local galleries are served by the production Worker without the disk previ
         const response = await get(url);
         assert.equal(response.status, 200, url);
         assert.match(response.headers.get('Content-Type'), /^image\//);
-        assert.ok((await response.arrayBuffer()).byteLength > 1000, url);
+        // A flat-colour slide (WOBBLE 09) compresses to well under 1 KB; anything real is above 300 bytes.
+        assert.ok((await response.arrayBuffer()).byteLength > 300, url);
       }
     }
   }

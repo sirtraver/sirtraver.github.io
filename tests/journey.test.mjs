@@ -70,7 +70,7 @@ test('project breadcrumbs and study content remain readable on directly shared p
 test('privacy describes remote gallery requests and all rendered main-page images have alt attributes', async () => {
   for (const path of ['/privacy/', '/es/privacidad/']) {
     const html = await (await get(path)).text();
-    assert.ok(html.includes('CDN') && html.includes('Behance') && html.includes('GitHub Pages'));
+    assert.ok(html.includes('GitHub Pages') && !html.includes('CDN'), 'every gallery image is served locally');
   }
   await withFetch(offline, async () => {
     for (const path of ['/', '/es/', '/about/', '/es/about/', '/resources/', '/es/resources/', '/es/projects/colorsplash/']) {

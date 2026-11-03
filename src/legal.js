@@ -80,7 +80,7 @@ export const LEGAL_CONTENT = {
         ],
         [
           'External content',
-          ['Fonts, portraits, project covers and local project images are served from this website. Some project galleries load original images from the Behance CDN; your browser connects to that provider to request them. Product images on the Resources page are loaded from Gumroad. Links to other services (Behance, Gumroad, Instagram, Threads, LinkedIn) are subject to their own privacy policies.'],
+          ['Fonts, portraits, project covers and all project gallery images are served from this website. Product images on the Resources page are loaded from Gumroad. Links to other services (Behance, Gumroad, Instagram, Threads, LinkedIn) are subject to their own privacy policies.'],
         ],
       ],
     },
@@ -151,7 +151,7 @@ export const LEGAL_CONTENT = {
         ],
         [
           'Contenido externo',
-          ['Las tipografías, el retrato, las portadas y las imágenes de los proyectos locales se sirven desde esta web. Algunas galerías cargan imágenes originales desde la CDN de Behance; tu navegador se conecta a ese proveedor para solicitarlas. Las imágenes de productos de la página de Recursos se cargan desde Gumroad. Los enlaces a otros servicios (Behance, Gumroad, Instagram, Threads, LinkedIn) se rigen por sus propias políticas de privacidad.'],
+          ['Las tipografías, el retrato, las portadas y todas las imágenes de las galerías de proyectos se sirven desde esta web. Las imágenes de productos de la página de Recursos se cargan desde Gumroad. Los enlaces a otros servicios (Behance, Gumroad, Instagram, Threads, LinkedIn) se rigen por sus propias políticas de privacidad.'],
         ],
       ],
     },

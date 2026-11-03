@@ -16,7 +16,9 @@ export function sitemap(projects, archived, lastModified) {
     about: [ORIGIN + PORTRAIT.path],
   };
 
+  // Only images hosted on this domain are listed.
   const entry = (paths, lang, pictures) => {
+    pictures = pictures.filter((src) => src.startsWith(`${ORIGIN}/`));
     const alternates = [...LANGUAGES.map((code) => [code, paths[code]]), ['x-default', paths.en]]
       .map(([code, path]) => `<xhtml:link rel="alternate" hreflang="${code}" href="${ORIGIN + path}"/>`)
       .join('');

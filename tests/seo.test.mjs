@@ -66,7 +66,8 @@ test('the sitemap lists pages and project pages with alternates and all gallery 
   for (const path of [...ROUTES.en, ...ROUTES.es]) assert.ok(xml.includes(`<loc>${ORIGIN}${path}</loc>`), path);
   assert.equal((xml.match(/<url>/g) || []).length, 8 + allProjects.length * 2 + (archivedProjects.length ? 2 : 0));
   assert.ok(xml.includes(`<loc>${ORIGIN}/es/projects/kudake/</loc>`));
-  assert.ok(xml.includes('https://mir-s3-cdn-cf.behance.net/'), 'original gallery sources are discoverable');
+  assert.ok(!xml.includes('behance.net'), 'the sitemap only lists images hosted on sirtraver.com');
+  for (const [, loc] of xml.matchAll(/<image:loc>([^<]+)</g)) assert.ok(loc.startsWith(`${ORIGIN}/`), loc);
   assert.ok(xml.includes(`${ORIGIN}/media/kudake/`));
   // 8 covers + 1 portrait per language on the main pages, 96 gallery images per language.
   assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (activeProjects.length + 1 + allProjects.length + allProjects.reduce((sum, p) => sum + p.images.length, 0)));

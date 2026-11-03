@@ -19,13 +19,13 @@ mi-proyecto/
   project.json        Nombre, fecha, estado y textos opcionales
   portada.webp        Portada JPG, PNG, WebP o AVIF
   imagenes/           Galería local: 01.jpg, 02.jpg…
-  galeria.json        Opcional: orden, pies o URLs de Behance
+  galeria.json        Opcional: orden y pies de las imágenes locales
   recursos/           Originales y documentos privados, fuera de hosting y Git
 ```
 
 Duplica `_PLANTILLA/` y sigue `COMO-ANADIR-PROYECTOS.md`. No hay que editar registros globales: el build descubre las carpetas, excluye borradores (`draft: true`) y genera las tarjetas, páginas, metadatos y galerías. Al hacer push a `main`, GitHub Actions genera y publica la web.
 
-En los ocho proyectos recuperados, `galeria.json` conserva las 96 URLs originales de Behance y sus dimensiones. Los originales locales se reúnen en `recursos/originales/` de cada proyecto; esas copias de trabajo no se publican. Si existe `galeria.json`, esa lista tiene prioridad sobre la detección de `imagenes/`. Los proyectos nuevos pueden utilizar solo imágenes locales y no necesitan cuenta ni enlaces de Behance.
+Todas las galerías son locales: desde el 4 de noviembre de 2026 las 96 imágenes que antes se cargaban desde Behance están en `imagenes/` de cada proyecto (WebP, nombres descriptivos como `kudake-japan-burgers-identidad-visual-01.webp`, máx. 2560 px). En `galeria.json`, el campo `behance` guarda solo la URL de procedencia; el build no acepta imágenes remotas. Los originales sin recomprimir están en `recursos/originales-behance/` y no se publican. Si existe `galeria.json`, esa lista tiene prioridad sobre la detección de `imagenes/`. Los proyectos nuevos pueden utilizar solo imágenes locales y no necesitan cuenta ni enlaces de Behance.
 
 El build crea variantes AVIF/WebP y JPEG social, nunca amplía las imágenes y conserva sus dimensiones para evitar saltos de carga. La interfaz y las galerías locales optimizadas se sirven desde el propio Worker.
 

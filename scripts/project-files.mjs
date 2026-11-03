@@ -66,15 +66,10 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
   }
   if (!Array.isArray(images) || !images.length) fail('añade imágenes a imagenes/ o una galería en galeria.json');
   for (const image of images) {
-    if (!image || typeof image !== 'object') fail('cada imagen debe indicar file o src');
-    if (image.file && image.src) fail('una imagen debe tener file o src, no ambos');
-    if (image.file) projectFile(folder, image.file);
-    else {
-      let url;
-      try { url = new URL(image.src); } catch { fail('src debe ser una URL de imagen válida'); }
-      if (url.protocol !== 'https:' || url.hostname !== 'mir-s3-cdn-cf.behance.net') fail('las imágenes remotas deben proceder del CDN de Behance');
-      if (!(image.width > 0 && image.height > 0)) fail('las imágenes remotas necesitan width y height');
-    }
+    if (!image || typeof image !== 'object') fail('cada imagen debe indicar file');
+    // Every gallery image is served from sirtraver.com: remote URLs (src) are not accepted.
+    if (!image.file) fail('cada imagen debe ser un archivo local: {"file": "imagenes/01.webp"}');
+    projectFile(folder, image.file);
   }
   return { ...data, cover, images };
 }

@@ -4,7 +4,8 @@
 //  3. every public/ asset, galleries.json, sitemaps, 404.html and CNAME,
 //  4. a link check: every internal href/src/srcset (and gallery image) must exist in _site/.
 // Run after `npm run build`. Environment: WEB3FORMS_ACCESS_KEY (launch form),
-// GUMROAD_ACCESS_TOKEN (optional; without it the catalog is taken as empty, the current state).
+// GUMROAD_ACCESS_TOKEN (optional; without it the catalog is taken as empty, the current state),
+// PREVIEW=1 (no CNAME: the site stays at https://sirtraver.github.io/ while the DNS still points elsewhere).
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -106,7 +107,7 @@ await write('/sitemap.xml', sitemapXml);
 await write('/sitemap-portadas.xml', await (await get('/sitemap-portadas.xml')).text());
 const notFound = await get('/404-not-found/');
 await fs.writeFile(path.join(OUT, '404.html'), withCsp(await notFound.text(), notFound.headers.get('Content-Security-Policy')));
-await fs.writeFile(path.join(OUT, 'CNAME'), `${CANONICAL_HOST}\n`);
+if (!process.env.PREVIEW) await fs.writeFile(path.join(OUT, 'CNAME'), `${CANONICAL_HOST}\n`);
 await fs.writeFile(path.join(OUT, '.nojekyll'), '');
 
 // 4. Link check

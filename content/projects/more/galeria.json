@@ -1,142 +1,114 @@
 [
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_webp/fae77c83743511.5d45dff29fc78.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-01.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_webp/fae77c83743511.5d45dff29fc78.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/13499c83743511.5d45dff1b27c1.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-02.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/13499c83743511.5d45dff1b27c1.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/1e060783743511.5d45dff1b2c15.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-03.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/1e060783743511.5d45dff1b2c15.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/fb361683743511.5d45dff1b348b.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-04.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/fb361683743511.5d45dff1b348b.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/dc5b3a83743511.5d45dff29e17a.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-05.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/dc5b3a83743511.5d45dff29e17a.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/9208dc83743511.5d45dff29e830.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#383838",
+    "file": "imagenes/more-diseno-visual-06.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/9208dc83743511.5d45dff29e830.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/e7e25583743511.5d45dff29f674.jpg",
-    "width": 3508,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-07.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/e7e25583743511.5d45dff29f674.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/89f51883743511.5d45dff29f1da.png",
-    "width": 1798,
-    "height": 866,
-    "color": "#686858",
+    "file": "imagenes/more-diseno-visual-08.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/89f51883743511.5d45dff29f1da.png"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/25173083743511.5d45dff203e19.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-09.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/25173083743511.5d45dff203e19.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/7cd61383743511.5d45dff204580.jpg",
-    "width": 3509,
-    "height": 4961,
-    "color": "#383838",
+    "file": "imagenes/more-diseno-visual-10.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/7cd61383743511.5d45dff204580.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/7f18ac83743511.5d45dff204c65.jpg",
-    "width": 3508,
-    "height": 4961,
-    "color": "#f8f8f8",
+    "file": "imagenes/more-diseno-visual-11.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/7f18ac83743511.5d45dff204c65.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/18cf4083743511.5d45dff256de3.jpg",
-    "width": 960,
-    "height": 1280,
-    "color": "#080808",
+    "file": "imagenes/more-diseno-visual-12.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/18cf4083743511.5d45dff256de3.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8f91c983743511.5d45dff2567a5.jpg",
-    "width": 960,
-    "height": 1280,
-    "color": "#080808",
+    "file": "imagenes/more-diseno-visual-13.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8f91c983743511.5d45dff2567a5.jpg"
   },
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7d575a83743511.5d45dff25615f.jpg",
-    "width": 960,
-    "height": 1280,
-    "color": "#080808",
+    "file": "imagenes/more-diseno-visual-14.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7d575a83743511.5d45dff25615f.jpg"
   }
 ]

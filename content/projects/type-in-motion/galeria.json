@@ -1,12 +1,10 @@
 [
   {
-    "src": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/cc89ca83740853.5d45ca29276bf.png",
-    "width": 2560,
-    "height": 1440,
-    "color": "#080808",
+    "file": "imagenes/type-in-motion-diseno-visual-01.webp",
     "caption": {
       "en": "",
       "es": ""
-    }
+    },
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/cc89ca83740853.5d45ca29276bf.png"
   }
 ]

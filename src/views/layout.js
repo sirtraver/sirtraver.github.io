@@ -49,7 +49,7 @@ function footer(lang, page) {
  * @param {string} [options.mainClass]
  * @param {*} options.body
  */
-export function layout({ lang, page, alternates, title, description, shareImage, schema, scripts = [], noindex = false, mainClass, body }) {
+export function layout({ lang, page, alternates, title, description, shareImage, schema, scripts = [], styles = [], noindex = false, mainClass, body }) {
   const t = CONTENT[lang];
   const paths = alternates ?? (page ? PAGES[page] : null);
   const canonical = paths && !noindex ? ORIGIN + paths[lang] : null;
@@ -72,6 +72,7 @@ ${LANGUAGES.map((code) => html`<link rel="alternate" hreflang="${code}" href="${
 <link rel="apple-touch-icon" href="${assetUrl('/assets/apple-touch-icon.png')}">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${assetUrl('/assets/site.css')}">
+${styles.map(src => html`<link rel="stylesheet" href="${assetUrl(src)}">`)}
 ${canonical
   ? html`<meta property="og:type" content="${alternates ? 'article' : 'website'}">
 <meta property="og:site_name" content="SIRTRAVER">

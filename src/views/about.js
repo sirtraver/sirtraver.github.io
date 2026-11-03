@@ -50,6 +50,7 @@ export function aboutPage(lang) {
   return layout({
     lang,
     page: 'about',
+    styles: ['/assets/about-cv.css'],
     title: t.title,
     description: t.description,
     schema: schema(lang),
@@ -67,6 +68,7 @@ export function aboutPage(lang) {
         <p>${study.title[lang]}</p>
         <span>${study.institution} · ${study.period[lang]}</span>
       </div>` : ''}
+      <!-- curriculum:access --><a class="profile-cv-link" href="${lang === 'es' ? '/cv/' : '/resume/'}">${t.cvLink}<span aria-hidden="true">↗</span></a><!-- /curriculum:access -->
       ${socialIcons(lang, 'profile-social')}
     </aside>
   <div class="resume-main">

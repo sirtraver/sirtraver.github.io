@@ -13,6 +13,7 @@ import { activeProjects, archivedProjects, findProject } from './projects.js';
 import { contact } from './services/contact.js';
 import { subscribe, waitlistAdmin } from './services/waitlist.js';
 import { aboutPage } from './views/about.js';
+import { cvPage } from './views/cv.js';
 import { contactPage } from './views/contact-page.js';
 import { productPage } from './views/product.js';
 import { homePage } from './views/home.js';
@@ -41,6 +42,10 @@ const PAGE_ROUTES = new Map(
   ),
 );
 
+// Canonical curriculum URLs retain an explicit document language.
+PAGE_ROUTES.set('/cv/', { page: 'cv', lang: 'es' });
+PAGE_ROUTES.set('/resume/', { page: 'cv', lang: 'en' });
+
 // Gallery data for the home page viewer, keyed by project slug.
 const GALLERIES_PATH = '/assets/galleries.json';
 const galleryVersion = `${contentHash}-v3`;
@@ -64,6 +69,8 @@ async function renderPage({ page, lang }, request, url, env, ctx) {
       return archivedProjects.length ? htmlResponse(request, archivePage(lang, archivedProjects)) : redirect(new URL(PAGES.home[lang], url).href);
     case 'resources':
       return htmlResponse(request, resourcesPage(lang, await getCatalog(env), url.searchParams.get('subscription')));
+    case 'cv':
+      return htmlResponse(request, cvPage(lang));
     case 'about':
       return htmlResponse(request, aboutPage(lang));
     case 'contact':
@@ -80,6 +87,7 @@ function serveAsset(request, url, asset) {
     headers: {
       ...SECURITY_HEADERS,
       'Content-Type': asset.type,
+      ...(asset.type === 'application/pdf' ? { 'Content-Disposition': `attachment; filename="${url.pathname.split('/').pop()}"`, 'X-Robots-Tag': 'noindex' } : {}),
       'Cache-Control': versioned ? 'public, max-age=31536000, immutable' : 'public, max-age=3600',
     },
   });

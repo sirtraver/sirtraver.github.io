@@ -5,9 +5,9 @@ import { test } from 'node:test';
 import { get, offline, withFetch } from './helpers.mjs';
 const baseline = JSON.parse(await readFile(new URL('../docs/approved-design-v34.json', import.meta.url), 'utf8'));
 const hash = value => createHash('sha256').update(value).digest('hex');
-// Only the explicitly requested hero/mobile CTA additions are excluded. The original
+// Only the explicitly requested hero/mobile CTAs and About curriculum access are excluded. The original
 // page structure and content must still match the archived approved version.
-const normalize = html => html.match(/<body>([\s\S]*?)<\/body>/)[1].replace(/<!-- journey:(hero|mobile) -->[\s\S]*?<!-- \/journey:\1 -->\n?/g, '').replace(/(<form class="launch-form"[^>]*?) data-redirect="[^"]*"/, '$1').replace(/\?v=[a-zA-Z0-9-]+/g, '?v=VERSION').replace(/© \d{4}/g, '© YEAR');
+const normalize = html => html.match(/<body>([\s\S]*?)<\/body>/)[1].replace(/<!-- journey:(hero|mobile) -->[\s\S]*?<!-- \/journey:\1 -->\n?/g, '').replace(/^[ \t]*<!-- curriculum:access -->[\s\S]*?<!-- \/curriculum:access -->\n?/gm, '').replace(/(<form class="launch-form"[^>]*?) data-redirect="[^"]*"/, '$1').replace(/\?v=[a-zA-Z0-9-]+/g, '?v=VERSION').replace(/© \d{4}/g, '© YEAR');
 
 test('approved pages stay intact apart from the requested home introduction and contact CTAs', async () => {
   await withFetch(offline, async () => {

@@ -64,7 +64,7 @@ test('the sitemap lists pages and project pages with alternates and all gallery 
   assert.equal(response.headers.get('Content-Type'), 'application/xml; charset=utf-8');
   const xml = await response.text();
   for (const path of [...ROUTES.en, ...ROUTES.es]) assert.ok(xml.includes(`<loc>${ORIGIN}${path}</loc>`), path);
-  assert.equal((xml.match(/<url>/g) || []).length, 6 + allProjects.length * 2 + (archivedProjects.length ? 2 : 0));
+  assert.equal((xml.match(/<url>/g) || []).length, 8 + allProjects.length * 2 + (archivedProjects.length ? 2 : 0));
   assert.ok(xml.includes(`<loc>${ORIGIN}/es/projects/kudake/</loc>`));
   assert.ok(xml.includes('https://mir-s3-cdn-cf.behance.net/'), 'original gallery sources are discoverable');
   assert.ok(xml.includes(`${ORIGIN}/media/kudake/`));

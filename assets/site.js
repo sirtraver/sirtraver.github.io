@@ -39,15 +39,3 @@
   });
   observer.observe(hero);
 })();
-
-// Footer clock: local time in Madrid, like a studio signature.
-(() => {
-  const clock = document.querySelector('.mx-clock');
-  if (!clock || typeof Intl !== 'object') return;
-  const city = clock.textContent;
-  const format = new Intl.DateTimeFormat(document.documentElement.lang, { hour: '2-digit', minute: '2-digit', timeZone: clock.dataset.tz });
-  const tick = () => { clock.textContent = `${city} ${format.format(new Date())}`; };
-  tick();
-  setInterval(tick, 30000);
-})();
-

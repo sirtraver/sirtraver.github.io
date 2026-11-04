@@ -11,12 +11,20 @@
     "es": ""
   },
   "deliverables": {
-    "en": [],
-    "es": []
+    "es": [
+      "Identidad visual",
+      "Papelería",
+      "Cartelería"
+    ],
+    "en": [
+      "Visual identity",
+      "Stationery",
+      "Posters"
+    ]
   },
   "intro": {
-    "en": "",
-    "es": ""
+    "es": "Mi propia marca: un bloque tipográfico en tres sílabas, SIR · TRA · VER, en blanco y negro, que funciona como logotipo, sello y firma.",
+    "en": "My own brand: a typographic block in three syllables, SIR · TRA · VER, in black and white, working as logo, stamp and signature."
   },
   "result": {
     "en": "",
@@ -29,5 +37,27 @@
   "tools": [
     "Affinity",
     "ChatGPT"
+  ],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "El nombre se parte en tres sílabas apiladas dentro de un rectángulo redondeado. El resultado es compacto, se lee de un vistazo y aguanta desde un avatar hasta un cartel.",
+        "en": "The name is split into three stacked syllables inside a rounded rectangle. The result is compact, reads at a glance and holds up from an avatar to a poster."
+      }
+    },
+    {
+      "title": {
+        "es": "Sistema",
+        "en": "System"
+      },
+      "text": {
+        "es": "Una sola tipografía, Cubano, y una paleta reducida a negro, blanco y gris (#000000, #FFFFFF, #777777). Las versiones positiva, negativa y gris cubren todos los fondos.",
+        "en": "A single typeface, Cubano, and a palette reduced to black, white and grey (#000000, #FFFFFF, #777777). Positive, negative and grey versions cover every background."
+      }
+    }
   ]
 }

@@ -16,7 +16,7 @@ export function contactPage(lang, sent = null) {
   const formEnabled = Boolean(runtime().contactEmail);
   return layout({
     lang,
-    page: null,
+    page: 'contact',
     alternates: CONTACT_PAGE,
     title: t.title,
     description: t.description,

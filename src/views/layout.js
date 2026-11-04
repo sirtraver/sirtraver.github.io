@@ -14,8 +14,8 @@ function header(lang, page, alternates) {
   return html`<header class="site-header">
   <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="wordmark">sirtraver</span></a>
   <nav aria-label="${t.mainNavLabel}">
-    ${['home', 'resources', 'about'].map(
-      (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
+    ${[['home', PAGES.home], ['about', PAGES.about], ['contact', CONTACT_PAGE]].map(
+      ([key, paths]) => html`<a href="${paths[lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
     )}
   </nav>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
@@ -37,7 +37,7 @@ function footer(lang, page) {
 /**
  * @param {object} options
  * @param {'en'|'es'} options.lang
- * @param {'home'|'resources'|'about'|null} options.page  Navigation section; null for the 404.
+ * @param {'home'|'resources'|'about'|'contact'|null} options.page  Navigation section; null for the 404.
  * @param {{en: string, es: string}} [options.alternates]  Paths of this page per language (defaults to the section).
  * @param {{url: string, width?: number, height?: number, alt: string}} [options.shareImage]  Social preview image.
  * @param {boolean} [options.canonicalPage]  false for pages without a canonical URL (404).

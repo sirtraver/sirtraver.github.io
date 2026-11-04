@@ -11,12 +11,24 @@
     "es": ""
   },
   "deliverables": {
-    "en": [],
-    "es": []
+    "es": [
+      "Identidad visual",
+      "Tienda",
+      "Merchandising",
+      "Moda urbana",
+      "Exterior"
+    ],
+    "en": [
+      "Visual identity",
+      "Retail",
+      "Merchandise",
+      "Streetwear",
+      "Outdoor"
+    ]
   },
   "intro": {
-    "en": "",
-    "es": ""
+    "es": "Raíz española, escena japonesa. Identidad para una marca de moda urbana de inspiración flamenca pensada para el mercado japonés.",
+    "en": "Spanish roots, Japanese scene. An identity for a flamenco-inspired streetwear brand designed for the Japanese market."
   },
   "result": {
     "en": "",
@@ -30,5 +42,37 @@
   "tools": [
     "Affinity",
     "ChatGPT"
+  ],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El reto",
+        "en": "The challenge"
+      },
+      "text": {
+        "es": "Llevar a Japón una marca de moda urbana de inspiración flamenca. Allí la cultura del flamenco tiene un gran arraigo: la identidad tenía que hablar a ese público y funcionar igual en una fachada, una prenda o una valla.",
+        "en": "Take a flamenco-inspired streetwear brand to Japan, where flamenco culture has deep roots. The identity had to speak to that audience and work equally well on a storefront, a garment or a billboard."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "Un monograma FU en serif de alto contraste convive con el nombre en katakana, フラメンコ・ウルバノ. Un punto carmín une las dos partes y se repite por todo el sistema.",
+        "en": "A high-contrast serif FU monogram sits alongside the name in katakana, フラメンコ・ウルバノ. A carmine dot joins both parts and recurs throughout the system."
+      }
+    },
+    {
+      "title": {
+        "es": "Sistema",
+        "en": "System"
+      },
+      "text": {
+        "es": "Cuatro versiones del logotipo, sobre hueso, carbón y carmín, y un monograma para usos reducidos. La misma lógica se aplica a tienda, merchandising, prendas y exterior.",
+        "en": "Four logo versions, on bone, charcoal and carmine, plus a monogram for small sizes. The same logic runs through retail, merchandise, garments and outdoor."
+      }
+    }
   ]
 }

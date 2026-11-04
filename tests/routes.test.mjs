@@ -161,7 +161,7 @@ test('the launch page lists the upcoming resource types', async () => {
 });
 
 
-test('header keeps the three pages and languages with no Social button', async () => {
+test('header shows Projects, About and Contact; Resources moves to the footer', async () => {
   const html = await (await get('/es/')).text();
   const header = html.match(/<header class="site-header">([\s\S]*?)<\/header>/)[1];
   const nav = header.match(/<nav[^>]*>([\s\S]*?)<\/nav>/)[1];
@@ -169,5 +169,9 @@ test('header keeps the three pages and languages with no Social button', async (
   assert.ok(!header.includes('header-actions'));
   assert.ok(!header.includes('social-menu'));
   assert.ok(header.includes('language-links'));
-  assert.ok(nav.includes('/es/resources/'));
+  assert.ok(!nav.includes('/es/resources/'));
+  assert.ok(nav.includes('/es/contacto/'));
+  assert.ok(html.match(/<footer[\s\S]*?<\/footer>/)[0].includes('/es/resources/'));
+  const contact = await (await get('/es/contacto/')).text();
+  assert.match(contact, /<a href="\/es\/contacto\/" aria-current="page">Contacto<\/a>/);
 });

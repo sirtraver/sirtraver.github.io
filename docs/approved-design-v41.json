@@ -1,0 +1,20 @@
+{
+  "version": 41,
+  "approved": "2026-11-03",
+  "basedOnCommit": "0136ddb8e57c34931c67e43c63a71dca4d85e167",
+  "pages": {
+    "/": "cc87ec4aa8d461cee24a0bd27124c4bee35bdd78715c94ffdfc84b7132e5c918",
+    "/es/": "91fd3b33d6f1a6255850a07ab38f029f9d25cce4ab50fee269c9c2f512964685",
+    "/about/": "2c8d087167c666ba4c189e78ad442fcb0b2ccc75564bccaa11ccdac48a79b1e6",
+    "/es/about/": "869f626dd8003f12c4745169566173ec39ae2a2d9e8280a94367981077c7d8f6",
+    "/resources/": "adaaec1af3f5b9ef5374ada2d4d4d832bbc5fb2906ed18ef2ac6a6631d4a7f0e",
+    "/es/resources/": "e6aa0a382dcb85b81b9d0ed075c0e4992901dd709ed71be849c730e851e631b6"
+  },
+  "files": {
+    "public/assets/site.css": "d0c082332796c4786a08771c3a6a4aed8e3ffb9e7408dc9dc76093e8a91ebdb9",
+    "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
+    "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
+    "public/assets/navigation.js": "1de4d77deb5fe97de3b6e0409bce17c30e68cf32f9dc9ec79b4a62afb0b14264",
+    "public/assets/site.js": "11f78a00a9c277d324d5ca2c002e2f51c551c2c6211315c093d566c7df1cb9ad"
+  }
+}

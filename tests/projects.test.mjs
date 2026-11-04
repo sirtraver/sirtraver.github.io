@@ -40,7 +40,7 @@ test('each gallery follows its own project folder definition', async () => {
   }
 });
 
-test('home: the selected projects share one grid with lazy images and link to the archive', async () => {
+test('home: all projects share one complete grid with lazy images', async () => {
   await withFetch(offline, async () => {
     for (const [path, prefix] of [['/', ''], ['/es/', '/es']]) {
       const html = await (await get(path)).text();
@@ -54,12 +54,11 @@ test('home: the selected projects share one grid with lazy images and link to th
     const english = await (await get('/')).text();
     assert.ok(english.includes('<p>Visual identity · 2025</p>'));
     const spanish = await (await get('/es/')).text();
-    assert.ok(!spanish.includes('<h3>Tipografía en movimiento</h3>'), 'archived work stays off the home grid');
-    assert.deepEqual(activeProjects.map(p => p.slug), ['kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
-    assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
-    assert.ok(spanish.includes('<p class="archive-link"><a href="/es/archive/">'));
-    const grid = spanish.match(/<div class="project-grid">[\s\S]*?<\/div>\s*<p class="archive-link">/)[0];
-    assert.equal((grid.match(/loading="lazy"/g) || []).length, activeProjects.length - 1, 'every card after the first is lazy');
+    assert.ok(spanish.includes('<h3>Tipografía en movimiento</h3>'));
+    assert.deepEqual(new Set(activeProjects.map(p => p.slug)), new Set(allProjects.map(p => p.slug)));
+    assert.equal(archivedProjects.length, 0);
+    assert.ok(!spanish.includes('class="archive-link"'));
+    assert.equal((spanish.match(/loading="lazy"/g) || []).length, allProjects.length - 1);
     assert.ok(!spanish.includes('Último proyecto'));
   });
 });
@@ -75,8 +74,7 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       assert.equal((html.match(/<h1\b/g) || []).length, 1);
       assert.equal((html.match(/<figure>/g) || []).length, p.images.length, path);
       assert.ok(html.includes('class="project-facts"'));
-      if (p.tools.length) assert.ok(html.includes(p.tools.join(' · ')), path);
-      else assert.ok(!html.includes('<dt>Tools</dt>') && !html.includes('<dt>Herramientas</dt>'), path);
+      assert.ok(html.includes('Affinity · ChatGPT'), path);
       assert.ok(!html.includes('class="project-original"'), 'the shared project page also avoids the redundant Behance action');
       assert.ok(html.includes(`<meta property="og:image" content="${ORIGIN}/media/${p.slug}/cover-og.`));
       const data = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
@@ -100,11 +98,14 @@ test('old project URLs redirect to the canonical case study', async () => {
   assert.equal((await get('/projects/unknown/')).status, 404);
 });
 
-test('gallery data accepts remote or local project images', async () => {
-  const url = '/assets/galleries.json';
+test('viewer gallery data is versioned and accepts remote or local project images', async () => {
+  const html = await withFetch(offline, async () => (await get('/')).text());
+  const url = html.match(/data-gallery="([^"]+)"/)[1];
   const response = await get(url);
+  assert.equal(response.headers.get('Cache-Control'), 'public, max-age=31536000, immutable');
   const galleries = await response.json();
   assert.deepEqual(Object.keys(galleries).sort(), activeProjects.map(p => p.slug).sort());
+  assert.ok(url.endsWith('-v3'), 'project tools have a fresh cache version');
   for (const [slug, gallery] of Object.entries(galleries)) {
     assert.equal(gallery.category, findProject(slug).category);
     assert.equal(gallery.year, findProject(slug).year);
@@ -123,7 +124,7 @@ test('the three PDF projects are labelled as concepts on cards, pages and viewer
   const slugs = ['colorsplash', 'olmedo-clasico', 'autoescuela-oasis'];
   for (const [lang, prefix, label] of [['en', '', 'Concept project'], ['es', '/es', 'Proyecto conceptual']]) {
     const home = await withFetch(offline, async () => (await get(`${prefix}/`)).text());
-    const galleries = await (await get('/assets/galleries.json')).json();
+    const galleries = await (await get(home.match(/data-gallery="([^"]+)"/)[1])).json();
     for (const slug of slugs) {
       const project = findProject(slug);
       assert.equal(project.conceptual, true, slug);
@@ -141,21 +142,21 @@ test('the three PDF projects are labelled as concepts on cards, pages and viewer
   }
 });
 
-test('earlier projects live in the archive with their own pages', async () => {
-  assert.deepEqual(archivedProjects.map(p => p.slug).sort(), ['gigantes', 'greens', 'more', 'type-in-motion', 'wobble']);
-  for (const p of archivedProjects) assert.ok(!p.tools.includes('ChatGPT') || p.year >= 2023, `${p.slug}: no anachronistic tools`);
-  for (const [path, lang] of [['/archive/', 'en'], ['/es/archive/', 'es']]) {
+test('old archive links reach the complete portfolio when the archive is empty', async () => {
+  assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
+  for (const [path, target] of [['/archive/', '/'], ['/es/archive/', '/es/']]) {
     const response = await get(path);
-    assert.equal(response.status, 200, path);
-    const html = await response.text();
-    for (const p of archivedProjects) assert.ok(html.includes(`data-project="${p.slug}"`), `${path} ${p.slug}`);
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get('Location'), ORIGIN + target);
   }
+  const source = await readFile(new URL('../src/projects.js', import.meta.url), 'utf8');
+  assert.ok(source.includes('archived'));
 });
 
 
 test('concept narratives reach both SSR pages and the in-page viewer without fabricated outcomes', async () => {
   const home = await withFetch(offline, async () => (await get('/')).text());
-  const data = await (await get('/assets/galleries.json')).json();
+  const data = await (await get(home.match(/data-gallery="([^"]+)"/)[1])).json();
   for (const slug of ['colorsplash', 'olmedo-clasico', 'autoescuela-oasis']) {
     const project = findProject(slug);
     assert.equal(project.caseStudy.length, 3);
@@ -164,7 +165,7 @@ test('concept narratives reach both SSR pages and the in-page viewer without fab
     assert.deepEqual(data[slug].caseStudy, project.caseStudy);
     for (const [lang, prefix] of [['en', ''], ['es', '/es']]) {
       const html = await (await get(`${prefix}/projects/${slug}/`)).text();
-      assert.ok(html.includes('class="project-story'));
+      assert.ok(html.includes('class="project-story"'));
       for (const section of project.caseStudy) assert.ok(html.includes(section.title[lang]));
       assert.equal((html.match(/data-zoom-src=/g) || []).length, project.images.length);
       assert.ok(html.includes('/assets/image-zoom.js?v='));

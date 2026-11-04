@@ -54,7 +54,7 @@ async function renderPage({ page, lang }, request, url, env, ctx) {
     case 'home':
       return htmlResponse(
         request,
-        homePage(lang, { projects: activeProjects, archived: archivedProjects.length, since: Math.min(...[...activeProjects, ...archivedProjects].map((p) => p.year)) }),
+        homePage(lang, { projects: activeProjects, galleriesUrl }),
       );
     case 'archive':
       return archivedProjects.length ? htmlResponse(request, archivePage(lang, archivedProjects)) : redirect(new URL(PAGES.home[lang], url).href);

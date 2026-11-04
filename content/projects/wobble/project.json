@@ -23,9 +23,12 @@
     "es": ""
   },
   "featured": false,
-  "archived": true,
+  "archived": false,
   "order": 2,
   "draft": false,
   "portfolioOrder": 9,
-  "tools": []
+  "tools": [
+    "Affinity",
+    "ChatGPT"
+  ]
 }

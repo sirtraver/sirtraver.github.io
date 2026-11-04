@@ -44,4 +44,4 @@ Describe solo información confirmada. Deja vacíos el cliente, rol o resultado 
 
 ## Información y herramientas de la tarjeta
 
-La descripción se edita en `intro.es` e `intro.en`, dentro de cada `project.json`. La lista `"tools"` (por ejemplo `["Affinity", "Figma"]`) es independiente para cada proyecto: cambia, añade o quita sus nombres según corresponda. Si dejas `"tools": []`, no aparecerá ese bloque. Los entregables se editan en `deliverables`; los relatos ampliados, en `caseStudy`. Después de editar, hay que generar y publicar de nuevo la web.
+La descripción se edita en `intro.es` e `intro.en`, dentro de cada `project.json`. La lista `"tools": ["Affinity", "ChatGPT"]` es independiente para cada proyecto: cambia, añade o quita sus nombres según corresponda. Si dejas `"tools": []`, no aparecerá ese bloque. Los entregables se editan en `deliverables`; los relatos ampliados, en `caseStudy`. Después de editar, hay que generar y publicar de nuevo la web.

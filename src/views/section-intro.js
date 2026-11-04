@@ -4,8 +4,8 @@ import { JOURNEY } from './journey.js';
 import { ICONS } from './icons.js';
 
 // Shared typography, spacing and right-hand contact action for the two collections.
-export function sectionIntro(lang, heading, lead, { home = false } = {}) {
-  return html`<section class="value-hero${home ? ' value-hero--home' : ''}">
+export function sectionIntro(lang, heading, lead) {
+  return html`<section class="value-hero">
   <div class="hero-copy">
   <p class="overline">${CONTENT[lang].home.overline}</p>
   <h1>${heading}</h1>

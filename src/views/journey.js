@@ -42,7 +42,7 @@ export const JOURNEY = {
   },
 };
 
-export const projectCta = lang => html`<section class="project-enquiry"><h2>${JOURNEY[lang].cta}</h2><p>${JOURNEY[lang].response}</p><a class="enquiry-button" href="${CONTACT_PAGE[lang]}">${JOURNEY[lang].shortCta} <span aria-hidden="true">→</span></a></section>`;
+export const projectCta = lang => html`<section class="project-enquiry"><h2>${JOURNEY[lang].cta}</h2><p>${JOURNEY[lang].response}</p><a class="enquiry-button" href="${CONTACT_PAGE[lang]}">${JOURNEY[lang].shortCta} <span aria-hidden="true">↗</span></a></section>`;
 
 export const visibleBreadcrumbs = (lang, label) => html`<nav class="breadcrumbs" aria-label="${lang === 'es' ? 'Ruta de navegación' : 'Breadcrumb'}"><ol><li><a href="${PAGES.home[lang]}">${lang === 'es' ? 'Proyectos' : 'Portfolio'}</a></li><li aria-current="page">${label}</li></ol></nav>`;
 

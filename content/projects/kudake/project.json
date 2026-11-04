@@ -11,24 +11,12 @@
     "es": ""
   },
   "deliverables": {
-    "es": [
-      "Identidad visual",
-      "Interiorismo",
-      "Merchandising",
-      "Packaging",
-      "Cartelería"
-    ],
-    "en": [
-      "Visual identity",
-      "Interior",
-      "Merchandise",
-      "Packaging",
-      "Posters"
-    ]
+    "en": [],
+    "es": []
   },
   "intro": {
-    "es": "Smash burgers con alma japonesa. Identidad para una cadena de hamburguesas que lleva el neo-diner americano al formato actual, con el kanji 砕け! («¡aplasta!») como sello.",
-    "en": "Smash burgers with a Japanese soul. An identity for a burger chain that brings the American neo-diner into a contemporary format, with the kanji 砕け! (“smash it!”) as its stamp."
+    "en": "",
+    "es": ""
   },
   "result": {
     "en": "",
@@ -42,37 +30,5 @@
   "tools": [
     "Affinity",
     "ChatGPT"
-  ],
-  "caseStudy": [
-    {
-      "title": {
-        "es": "El reto",
-        "en": "The challenge"
-      },
-      "text": {
-        "es": "Dar identidad a KUDAKE!, una cadena de smash burgers japonesas con vocación de expansión global: una marca tan directa como su nombre y legible en cualquier ciudad.",
-        "en": "Give an identity to KUDAKE!, a Japanese smash burger chain built for global expansion: a brand as direct as its name and legible in any city."
-      }
-    },
-    {
-      "title": {
-        "es": "La idea",
-        "en": "The idea"
-      },
-      "text": {
-        "es": "Kudake significa «¡aplasta!» o «¡hazlo añicos!» en japonés, justo lo que se hace con la carne en la plancha. El kanji 砕け! protagoniza un sello y KUDAKE! JAPAN BURGERS lo traduce para todos.",
-        "en": "Kudake means “smash it!” in Japanese, exactly what happens to the patty on the griddle. The kanji 砕け! leads as a stamp, and KUDAKE! JAPAN BURGERS translates it for everyone."
-      }
-    },
-    {
-      "title": {
-        "es": "Sistema",
-        "en": "System"
-      },
-      "text": {
-        "es": "Azul eléctrico y naranja sobre un fondo crema. Cuatro recursos gráficos sostienen todas las piezas: el sello repetido como patrón, el grito en bloque, el damero de los azulejos del local y la triple línea que nace del logotipo.",
-        "en": "Electric blue and orange on a cream ground. Four graphic devices carry every piece: the repeated stamp as a pattern, the block shout, the checkerboard from the restaurant tiles and the triple rule taken from the logo."
-      }
-    }
   ]
 }

@@ -12,8 +12,8 @@ const mobileCta = { es: 'Cuéntame tu proyecto', en: 'Tell me about your project
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
-  <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="brand-mark" aria-hidden="true"></span><span class="wordmark">sirtraver</span></a>
-  <nav id="site-menu" aria-label="${t.mainNavLabel}">
+  <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="wordmark">sirtraver</span></a>
+  <nav aria-label="${t.mainNavLabel}">
     ${['home', 'resources', 'about'].map(
       (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
     )}
@@ -24,21 +24,13 @@ function header(lang, page, alternates) {
 </header>`;
 }
 
-// Footer copy kept local, like mobileCta, to avoid a layout/journey module cycle.
-const FOOTER = {
-  es: { site: 'Navegación', legal: 'Legal', contact: 'Contacto', city: 'Madrid, ES' },
-  en: { site: 'Navigation', legal: 'Legal', contact: 'Contact', city: 'Madrid, ES' },
-};
-
 function footer(lang, page) {
   const t = CONTENT[lang];
-  const f = FOOTER[lang];
   return html`<footer class="site-footer">
-  <span class="ab-icon ab-icon--small" aria-hidden="true"></span>
-  <p class="footer-name">SIRTRAVER<br><span>${t.footerRole}</span></p>
   <div class="footer-legal">
-    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${CONTACT_PAGE[lang]}">${f.contact}</a><span class="mx-clock" data-tz="Europe/Madrid">${f.city}</span>
+    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
   </div>
+  <span>${t.footerRole}</span>
 </footer>`;
 }
 
@@ -79,7 +71,6 @@ ${LANGUAGES.map((code) => html`<link rel="alternate" hreflang="${code}" href="${
 <link rel="icon" type="image/png" sizes="32x32" href="${assetUrl('/assets/favicon-32.png')}">
 <link rel="apple-touch-icon" href="${assetUrl('/assets/apple-touch-icon.png')}">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/D-DIN-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${assetUrl('/assets/site.css')}">
 ${styles.map(src => html`<link rel="stylesheet" href="${assetUrl(src)}">`)}
 ${canonical
@@ -106,7 +97,7 @@ ${page === 'home' && !alternates
 ${schema ? jsonLd(schema) : ''}
 ${runtime().analytics ? html`<script defer src="${runtime().analytics.src}" data-website-id="${runtime().analytics.websiteId}"></script>` : ''}
 <script src="${assetUrl('/assets/language.js')}"></script>
-${[{ src: '/assets/site.js' }, ...scripts].map(
+${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map(
   ({ src, data = {} }) =>
     html`<script defer src="${assetUrl(src)}"${Object.entries(data).map(([key, value]) => html` data-${key}="${value}"`)}></script>\n`,
 )}</head>

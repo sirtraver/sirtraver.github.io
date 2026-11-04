@@ -50,3 +50,27 @@
   tick();
   setInterval(tick, 30000);
 })();
+
+// Menu: the header links become three panels behind a Menu button.
+// Without JavaScript the links stay visible in the header.
+(() => {
+  const header = document.querySelector('.site-header');
+  const button = header?.querySelector('.menu-toggle');
+  const nav = header?.querySelector('#site-menu');
+  if (!button || !nav) return;
+  button.hidden = false;
+  header.classList.add('menu-ready');
+  requestAnimationFrame(() => requestAnimationFrame(() => header.classList.add('menu-armed')));
+  const set = (open) => {
+    header.classList.toggle('menu-is-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    if (open) nav.querySelector('a')?.focus({ preventScroll: true });
+  };
+  button.addEventListener('click', () => set(!header.classList.contains('menu-is-open')));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && header.classList.contains('menu-is-open')) { set(false); button.focus(); }
+  });
+  document.addEventListener('click', (event) => {
+    if (header.classList.contains('menu-is-open') && !header.contains(event.target)) set(false);
+  });
+})();

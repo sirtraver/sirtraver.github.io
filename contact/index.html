@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=39aa0c8c62e6">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=5fac8dd83cbd">
-
+<link rel="stylesheet" href="/assets/brief.css?v=6c7554aa054b">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SIRTRAVER">
 <meta property="og:locale" content="en_GB">
@@ -37,6 +37,7 @@
 <script src="/assets/language.js?v=91d73e430c05"></script>
 <script defer src="/assets/site.js?v=11f78a00a9c2"></script>
 <script defer src="/assets/navigation.js?v=1de4d77deb5f"></script>
+<script defer src="/assets/brief.js?v=565c4c8b4aab"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -55,8 +56,47 @@
   <h1>Let’s talk about your project</h1>
   <p class="contact-lead">Tell me about your brand and what it needs.</p>
   <p class="response-time">I respond to project enquiries within 2 business days.</p>
-  <p class="contact-brief">Tell me what your brand needs, which deliverables you have in mind and your target date. An indicative budget and references are helpful too.</p>
-  <div class="contact-email-primary"><a class="enquiry-button" href="mailto:javier.traver.v@me.com">Email me <span aria-hidden="true">↗</span></a><p>javier.traver.v@me.com</p></div>
+  
+  <section class="brief" aria-labelledby="brief-title" data-brief="{&quot;email&quot;:&quot;javier.traver.v@me.com&quot;,&quot;subjectBase&quot;:&quot;New project&quot;,&quot;greeting&quot;:&quot;Hi Javier,&quot;,&quot;closing&quot;:&quot;Best,&quot;,&quot;lines&quot;:{&quot;needs&quot;:&quot;I need&quot;,&quot;stage&quot;:&quot;Stage&quot;,&quot;timing&quot;:&quot;Timeline&quot;,&quot;budget&quot;:&quot;Budget&quot;,&quot;brand&quot;:&quot;Brand&quot;,&quot;about&quot;:&quot;About the project&quot;},&quot;empty&quot;:&quot;Pick an option above and your brief will appear here.&quot;,&quot;copied&quot;:&quot;Brief copied. Paste it into an email to&quot;,&quot;progress&quot;:&quot;answered&quot;,&quot;total&quot;:6}">
+  <header class="brief-head">
+    <h2 id="brief-title">Build your brief in 1 minute</h2>
+    <p>Pick what fits and I’ll draft the email for you. Nothing is sent until you choose to.</p>
+    <div class="brief-progress" aria-hidden="true"><span class="brief-progress-bar"><i></i></span><span class="brief-progress-label">0/6 answered</span></div>
+  </header>
+  <ol class="brief-steps">
+    <li><fieldset class="brief-step" data-key="needs">
+      <legend><span class="brief-num">01</span>What do you need? <small>Choose as many as apply.</small></legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Visual identity"><span>Visual identity</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Rebranding"><span>Rebranding</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Packaging"><span>Packaging</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Communication / campaign"><span>Communication / campaign</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Something else"><span>Something else</span></label></div>
+    </fieldset></li><li><fieldset class="brief-step" data-key="stage">
+      <legend><span class="brief-num">02</span>Where is your brand today?</legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="radio" name="brief-stage" value="It’s a new brand"><span>It’s a new brand</span></label><label class="brief-chip"><input type="radio" name="brief-stage" value="It exists and needs a refresh"><span>It exists and needs a refresh</span></label><label class="brief-chip"><input type="radio" name="brief-stage" value="It exists and needs new pieces"><span>It exists and needs new pieces</span></label></div>
+    </fieldset></li><li><fieldset class="brief-step" data-key="timing">
+      <legend><span class="brief-num">03</span>When do you need it?</legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="radio" name="brief-timing" value="As soon as possible"><span>As soon as possible</span></label><label class="brief-chip"><input type="radio" name="brief-timing" value="In 1–2 months"><span>In 1–2 months</span></label><label class="brief-chip"><input type="radio" name="brief-timing" value="In 3+ months"><span>In 3+ months</span></label><label class="brief-chip"><input type="radio" name="brief-timing" value="No fixed date"><span>No fixed date</span></label></div>
+    </fieldset></li><li><fieldset class="brief-step" data-key="budget">
+      <legend><span class="brief-num">04</span>Indicative budget <small>Only to shape the proposal.</small></legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="radio" name="brief-budget" value="Under €1,000"><span>Under €1,000</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="€1,000 – 3,000"><span>€1,000 – 3,000</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="€3,000 – 6,000"><span>€3,000 – 6,000</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="Over €6,000"><span>Over €6,000</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="Not sure yet"><span>Not sure yet</span></label></div>
+    </fieldset></li>
+    <li><fieldset class="brief-step brief-step-text">
+      <legend><span class="brief-num">05</span>Your brand</legend>
+      <label class="brief-field">Brand name<input name="brief-brand" data-key="brand" maxlength="80" autocomplete="organization" placeholder="e.g. KUDAKE! Japan Burgers"></label>
+      <label class="brief-field">Tell me in one sentence<textarea name="brief-about" data-key="about" rows="3" maxlength="600" placeholder="What it does, who it’s for and what you’d like to achieve."></textarea></label>
+    </fieldset></li>
+  </ol>
+  <div class="brief-output">
+    <div class="brief-mail" aria-live="polite">
+      <p class="brief-mail-title">Your brief</p>
+      <dl><div><dt>To</dt><dd>javier.traver.v@me.com</dd></div><div><dt>Subject</dt><dd class="brief-subject">New project</dd></div></dl>
+      <pre class="brief-body">Pick an option above and your brief will appear here.</pre>
+    </div>
+    <div class="brief-actions contact-email-primary">
+      <a class="enquiry-button brief-send" href="mailto:javier.traver.v@me.com">Send by email <span aria-hidden="true">↗</span></a>
+      <button type="button" class="brief-copy" hidden>Copy brief</button>
+    </div>
+    <p class="brief-status" role="status"></p>
+    <p class="brief-fallback">Or email me directly at <a href="mailto:javier.traver.v@me.com">javier.traver.v@me.com</a></p>
+  </div>
+</section>
   
   <section class="contact-faq" aria-labelledby="contact-faq-title"><h2 id="contact-faq-title">Before we start</h2><details><summary>What kinds of projects can I propose?</summary><p>Visual identity, rebranding, packaging and visual communication. Share the context and scope so I can assess how I can help.</p></details><details><summary>What information do you need to get started?</summary><p>Your brand name, what you want to achieve, the deliverables and your target date. Visual references and an indicative budget help define the proposal.</p></details><details><summary>How are budgets and timelines agreed?</summary><p>They depend on scope, deliverables and availability. The first contact is an enquiry: work begins once the proposal and its terms have been agreed.</p></details><details><summary>Is every portfolio project a real commission?</summary><p>The portfolio also includes personal explorations. COLORSPLASH, Olmedo Clásico and Autoescuela OASIS are labelled “Concept project”; their applications show design proposals. <a href="/">Back to the projects →</a></p></details><details><summary>Where can I find your digital resources?</summary><p>In Resources. When products are available, you can explore their details and continue to Gumroad. Until then, you can sign up for the launch notice. <a href="/resources/">Explore resources →</a></p></details></section>
 </section>

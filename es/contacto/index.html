@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=39aa0c8c62e6">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=5fac8dd83cbd">
-
+<link rel="stylesheet" href="/assets/brief.css?v=6c7554aa054b">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SIRTRAVER">
 <meta property="og:locale" content="es_ES">
@@ -37,6 +37,7 @@
 <script src="/assets/language.js?v=91d73e430c05"></script>
 <script defer src="/assets/site.js?v=11f78a00a9c2"></script>
 <script defer src="/assets/navigation.js?v=1de4d77deb5f"></script>
+<script defer src="/assets/brief.js?v=565c4c8b4aab"></script>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -55,8 +56,47 @@
   <h1>Hablemos de tu proyecto</h1>
   <p class="contact-lead">Cuéntame sobre tu marca y lo que necesita.</p>
   <p class="response-time">Respondo a las consultas de proyectos en un máximo de 2 días laborables.</p>
-  <p class="contact-brief">Cuéntame qué necesita tu marca, qué piezas tienes en mente y para cuándo las necesitas. Si tienes un presupuesto orientativo o referencias, inclúyelos también.</p>
-  <div class="contact-email-primary"><a class="enquiry-button" href="mailto:javier.traver.v@me.com">Escríbeme por email <span aria-hidden="true">↗</span></a><p>javier.traver.v@me.com</p></div>
+  
+  <section class="brief" aria-labelledby="brief-title" data-brief="{&quot;email&quot;:&quot;javier.traver.v@me.com&quot;,&quot;subjectBase&quot;:&quot;Nuevo proyecto&quot;,&quot;greeting&quot;:&quot;Hola, Javier:&quot;,&quot;closing&quot;:&quot;Un saludo,&quot;,&quot;lines&quot;:{&quot;needs&quot;:&quot;Necesito&quot;,&quot;stage&quot;:&quot;Situación&quot;,&quot;timing&quot;:&quot;Plazo&quot;,&quot;budget&quot;:&quot;Presupuesto&quot;,&quot;brand&quot;:&quot;Marca&quot;,&quot;about&quot;:&quot;Sobre el proyecto&quot;},&quot;empty&quot;:&quot;Elige una opción arriba y tu brief aparecerá aquí.&quot;,&quot;copied&quot;:&quot;Brief copiado. Pégalo en un email a&quot;,&quot;progress&quot;:&quot;respondidas&quot;,&quot;total&quot;:6}">
+  <header class="brief-head">
+    <h2 id="brief-title">Prepara tu brief en 1 minuto</h2>
+    <p>Elige lo que encaje y te preparo el email. Nada se envía hasta que tú lo decidas.</p>
+    <div class="brief-progress" aria-hidden="true"><span class="brief-progress-bar"><i></i></span><span class="brief-progress-label">0/6 respondidas</span></div>
+  </header>
+  <ol class="brief-steps">
+    <li><fieldset class="brief-step" data-key="needs">
+      <legend><span class="brief-num">01</span>¿Qué necesitas? <small>Puedes elegir varias.</small></legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Identidad visual"><span>Identidad visual</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Rebranding"><span>Rebranding</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Packaging"><span>Packaging</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Comunicación / campaña"><span>Comunicación / campaña</span></label><label class="brief-chip"><input type="checkbox" name="brief-needs" value="Otra cosa"><span>Otra cosa</span></label></div>
+    </fieldset></li><li><fieldset class="brief-step" data-key="stage">
+      <legend><span class="brief-num">02</span>¿En qué punto está tu marca?</legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="radio" name="brief-stage" value="Es una marca nueva"><span>Es una marca nueva</span></label><label class="brief-chip"><input type="radio" name="brief-stage" value="Existe y quiero renovarla"><span>Existe y quiero renovarla</span></label><label class="brief-chip"><input type="radio" name="brief-stage" value="Existe y necesito piezas nuevas"><span>Existe y necesito piezas nuevas</span></label></div>
+    </fieldset></li><li><fieldset class="brief-step" data-key="timing">
+      <legend><span class="brief-num">03</span>¿Para cuándo lo necesitas?</legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="radio" name="brief-timing" value="Lo antes posible"><span>Lo antes posible</span></label><label class="brief-chip"><input type="radio" name="brief-timing" value="En 1–2 meses"><span>En 1–2 meses</span></label><label class="brief-chip"><input type="radio" name="brief-timing" value="En 3 meses o más"><span>En 3 meses o más</span></label><label class="brief-chip"><input type="radio" name="brief-timing" value="Sin fecha fija"><span>Sin fecha fija</span></label></div>
+    </fieldset></li><li><fieldset class="brief-step" data-key="budget">
+      <legend><span class="brief-num">04</span>Presupuesto orientativo <small>Solo para orientar la propuesta.</small></legend>
+      <div class="brief-chips"><label class="brief-chip"><input type="radio" name="brief-budget" value="Menos de 1.000 €"><span>Menos de 1.000 €</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="1.000 – 3.000 €"><span>1.000 – 3.000 €</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="3.000 – 6.000 €"><span>3.000 – 6.000 €</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="Más de 6.000 €"><span>Más de 6.000 €</span></label><label class="brief-chip"><input type="radio" name="brief-budget" value="Aún no lo sé"><span>Aún no lo sé</span></label></div>
+    </fieldset></li>
+    <li><fieldset class="brief-step brief-step-text">
+      <legend><span class="brief-num">05</span>Tu marca</legend>
+      <label class="brief-field">Nombre de la marca<input name="brief-brand" data-key="brand" maxlength="80" autocomplete="organization" placeholder="Ej.: KUDAKE! Japan Burgers"></label>
+      <label class="brief-field">Cuéntamelo en una frase<textarea name="brief-about" data-key="about" rows="3" maxlength="600" placeholder="A qué se dedica, a quién se dirige y qué te gustaría conseguir."></textarea></label>
+    </fieldset></li>
+  </ol>
+  <div class="brief-output">
+    <div class="brief-mail" aria-live="polite">
+      <p class="brief-mail-title">Tu brief</p>
+      <dl><div><dt>Para</dt><dd>javier.traver.v@me.com</dd></div><div><dt>Asunto</dt><dd class="brief-subject">Nuevo proyecto</dd></div></dl>
+      <pre class="brief-body">Elige una opción arriba y tu brief aparecerá aquí.</pre>
+    </div>
+    <div class="brief-actions contact-email-primary">
+      <a class="enquiry-button brief-send" href="mailto:javier.traver.v@me.com">Enviar por email <span aria-hidden="true">↗</span></a>
+      <button type="button" class="brief-copy" hidden>Copiar brief</button>
+    </div>
+    <p class="brief-status" role="status"></p>
+    <p class="brief-fallback">O escríbeme directamente a <a href="mailto:javier.traver.v@me.com">javier.traver.v@me.com</a></p>
+  </div>
+</section>
   
   <section class="contact-faq" aria-labelledby="contact-faq-title"><h2 id="contact-faq-title">Antes de empezar</h2><details><summary>¿Qué tipo de proyectos puedo proponerte?</summary><p>Identidad visual, rediseño de marca, packaging y comunicación visual. Cuéntame el contexto y el alcance para valorar cómo puedo ayudarte.</p></details><details><summary>¿Qué información necesitas para empezar?</summary><p>El nombre de la marca, qué quieres conseguir, las piezas que necesitas y la fecha prevista. Las referencias visuales y un presupuesto orientativo ayudan a concretar la propuesta.</p></details><details><summary>¿Cómo se acuerdan el presupuesto y los plazos?</summary><p>Se valoran según el alcance, los entregables y la disponibilidad. El contacto inicial es una consulta: el trabajo comienza cuando se acuerdan la propuesta y sus condiciones.</p></details><details><summary>¿Todos los proyectos del portfolio son encargos reales?</summary><p>El portfolio también incluye exploraciones personales. COLORSPLASH, Olmedo Clásico y Autoescuela OASIS están identificados como «Proyecto conceptual»; sus aplicaciones muestran propuestas de diseño. <a href="/es/">Volver a los proyectos →</a></p></details><details><summary>¿Dónde encuentro tus recursos digitales?</summary><p>En la sección Recursos. Cuando haya productos disponibles, podrás consultar sus fichas y acceder a Gumroad. Mientras tanto, puedes apuntarte al aviso de lanzamiento. <a href="/es/resources/">Explorar recursos →</a></p></details></section>
 </section>

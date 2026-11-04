@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=aceaa53f319c">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=39aa0c8c62e6">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=b340049e85a0">
+<link rel="stylesheet" href="/assets/site.css?v=e864d9860451">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SIRTRAVER">
@@ -41,7 +41,7 @@
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="site-header">
-  <a class="brand" href="/es/" aria-label="SIRTRAVER — Inicio"><span class="wordmark">sirtraver</span></a>
+  <a class="brand" href="/es/" aria-label="SIRTRAVER — Inicio"><span class="brand-mark" aria-hidden="true"></span><span class="wordmark">sirtraver</span></a>
   <nav aria-label="Navegación principal">
     <a href="/es/">Proyectos</a><a href="/es/resources/">Recursos</a><a href="/es/about/">Sobre mí</a>
   </nav>
@@ -58,10 +58,18 @@
 </article>
 </main>
 <footer class="site-footer">
-  <div class="footer-legal">
-    <span>© 2026 SIRTRAVER</span><a href="/es/resources/">Recursos</a><a href="/es/aviso-legal/">Aviso legal</a><a href="/es/privacidad/">Privacidad</a>
+  
+  <div class="footer-grid">
+    <div class="footer-col"><p class="footer-title">Navega</p><ul><li><a href="/es/">Proyectos</a></li><li><a href="/es/resources/">Recursos</a></li><li><a href="/es/about/">Sobre mí</a></li><li><a href="/es/contacto/">Contacto</a></li></ul></div>
+    <div class="footer-col footer-contact"><p class="footer-title">Contacto</p>
+      <a class="footer-card" href="/es/contacto/"><strong>Formulario de proyecto</strong><span>Cuéntame qué necesita tu marca</span><span class="pill-arrow" aria-hidden="true">→</span></a>
+      <a class="footer-card footer-card--grey" href="/es/about/"><strong>Perfil y redes</strong><span>Trayectoria, email y redes sociales</span><span class="pill-arrow" aria-hidden="true">→</span></a>
+    </div>
   </div>
-  <span>Javier Traver · Visual Designer &amp; Marketing</span>
+  <div class="footer-legal">
+    <span>© 2026 SIRTRAVER</span><a href="/es/aviso-legal/">Aviso legal</a><a href="/es/privacidad/">Privacidad</a>
+  </div>
+  <span class="footer-role">Javier Traver · Visual Designer &amp; Marketing</span>
 </footer>
 
 </body>

@@ -2417,3 +2417,130 @@ a:hover .card-media img {
   .case-gallery { gap: 10px; }
   .case-next-media { aspect-ratio: 4 / 3; }
 }
+
+/* =====================================================================
+   Brand layer v2 — sirtraver identity (Cubano · #000 / #FFF / #777)
+   Rounded blocks, block type and pill buttons, after brandlos.nl's rhythm.
+   ===================================================================== */
+@font-face { font-family: 'Cubano'; src: local('Cubano'), local('Cubano-Regular'); font-display: swap; }
+:root {
+  --black: #000; --white: #fff; --grey: #777; --tint: #f2f2f2; --line: #e2e2e2;
+  --ink: #000; --text: #111; --muted: #777; --paper: #f2f2f2;
+  --r-xl: 32px; --r-lg: 24px; --r-md: 16px;
+  --font-display: 'Cubano', 'Inter', Arial, sans-serif;
+  --page-heading-size: clamp(40px, 5.4vw, 72px); --page-heading-tracking: -0.02em;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+body { background: var(--paper); color: var(--text); }
+h1, h2, .case-next-name, .card-caption h3, .footer-cta-mark { font-family: var(--font-display); }
+h1, .footer-cta h2 { font-weight: 800; text-transform: uppercase; }
+
+/* Chips and pill buttons */
+.chip, .value-hero .overline, .case-hero .overline { display: inline-flex; align-items: center; width: fit-content; min-height: 28px; margin: 0; padding: 6px 14px; border-radius: 999px; background: var(--black); color: var(--white); font-size: 12px; font-weight: 600; letter-spacing: .02em; line-height: 1.2; text-transform: none; }
+.chip--light { background: var(--white); color: var(--black); }
+.pill-button, body .enquiry-button { display: inline-flex; align-items: center; gap: 14px; min-height: 52px; padding: 6px 6px 6px 22px; border: 0; border-radius: 999px; background: var(--black); color: var(--white); font-size: 14px; font-weight: 600; text-decoration: none; transition: transform .3s var(--ease), background .2s; }
+body .enquiry-button:hover, .pill-button:hover { background: #222; transform: translateY(-2px); }
+.pill-button--light { background: var(--white); color: var(--black); }
+.pill-button--light:hover { background: var(--tint); }
+.pill-arrow { display: inline-grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 12px; background: var(--white); color: var(--black); font-size: 16px; transition: transform .3s var(--ease); }
+.pill-button--light .pill-arrow { background: var(--black); color: var(--white); }
+body .enquiry-button svg { box-sizing: content-box; width: 20px; height: 20px; padding: 10px; border-radius: 12px; background: var(--white); color: var(--black); stroke: currentColor; }
+a:hover > .pill-arrow, a:hover .card-link .pill-arrow { transform: translateX(3px); }
+
+/* Header: brand block + pill navigation on a light bar */
+body .site-header { background: rgba(242, 242, 242, .82); border-bottom: 0; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--black); }
+.brand-mark { display: block; width: 34px; height: 42px; background: currentColor; -webkit-mask: url(/assets/sirtraver-mark.png) center / contain no-repeat; mask: url(/assets/sirtraver-mark.png) center / contain no-repeat; transition: transform .4s var(--ease); }
+.brand:hover .brand-mark { transform: rotate(-6deg); }
+body .wordmark { font-family: var(--font-display); font-size: 22px; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
+body .site-header nav { background: var(--white); border-color: transparent; }
+
+/* Home hero */
+body .value-hero--home { padding: 64px 0 88px; gap: 48px; }
+body .value-hero--home h1 { max-width: 12ch; margin-top: 22px; font-size: clamp(56px, 9.6vw, 148px); line-height: .9; letter-spacing: -0.03em; }
+body .value-hero--home .value-description { max-width: 30ch; color: var(--text); font-size: clamp(18px, 1.7vw, 22px); font-weight: 500; }
+body .hero-enquiry > span { color: var(--muted); font-size: 12px; }
+
+/* Work heading and project cards: white rounded tiles */
+body .work-heading { align-items: end; padding-top: 0; border: 0; }
+body .work-heading h2 { font-size: clamp(32px, 4vw, 56px); line-height: 1; text-transform: uppercase; }
+body .project-card[data-project] { display: flex; flex-direction: column; padding: 12px 12px 22px; border-radius: var(--r-xl); background: var(--white); color: var(--text); transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+body .project-card[data-project]:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(0, 0, 0, .35); }
+body .project-card[data-project] .card-media { border: 0; border-radius: var(--r-lg); }
+body .project-card[data-project] .card-caption { order: 2; margin: 20px 10px 0; }
+body .project-card[data-project] .card-caption h3 { font-size: clamp(22px, 2vw, 28px); font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; }
+body .project-card[data-project] .card-caption > span { display: none; }
+body .project-card[data-project] > p:not(.card-intro) { order: 1; margin: 16px 10px 0; color: var(--muted); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.card-intro { order: 3; margin: 10px 10px 0; color: #444; font-size: 15px; line-height: 1.55; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.card-link { order: 4; display: inline-flex; align-items: center; gap: 12px; margin: 18px 10px 0; font-size: 14px; font-weight: 600; }
+.card-link .pill-arrow { width: 34px; height: 34px; border-radius: 10px; background: var(--black); color: var(--white); }
+body .archive-link { margin: 32px 0 0; }
+body .archive-link a { display: inline-flex; padding: 14px 22px; border-radius: 999px; background: var(--white); font-weight: 600; text-decoration: none; }
+
+/* Footer: black CTA block, link columns, contact cards, legal pill */
+body .site-footer { display: block; width: calc(100% - 48px); max-width: 1296px; margin: 96px auto 24px; padding: 0; border: 0; color: var(--text); font-size: 14px; }
+.footer-cta { position: relative; overflow: hidden; display: grid; justify-items: start; gap: 18px; padding: clamp(36px, 6vw, 80px); border-radius: var(--r-xl); background: var(--black); color: var(--white); }
+.footer-cta h2 { position: relative; z-index: 1; max-width: 12ch; margin: 0; font-size: clamp(40px, 6.4vw, 92px); line-height: .92; letter-spacing: -0.02em; }
+.footer-cta-reply { position: relative; z-index: 1; margin: 0 0 8px; color: #bdbdbd; font-size: 16px; }
+.footer-cta .pill-button { position: relative; z-index: 1; }
+.footer-cta-mark { position: absolute; right: -2%; bottom: -14%; color: var(--grey); font-size: clamp(120px, 20vw, 300px); font-weight: 800; line-height: .82; text-align: left; opacity: .35; pointer-events: none; transform: rotate(-8deg); }
+.footer-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; padding: 56px clamp(8px, 3vw, 40px) 40px; }
+.footer-title { margin: 0 0 16px; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.footer-col ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.footer-col ul a { font-weight: 600; }
+.footer-col ul a:hover, .footer-col ul a[aria-current] { color: var(--grey); }
+.footer-contact { display: grid; gap: 12px; align-content: start; }
+.footer-contact .footer-title { margin-bottom: 4px; }
+.footer-card { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 16px; padding: 18px 18px 18px 24px; border: 1.5px solid var(--black); border-radius: var(--r-lg); background: var(--white); }
+.footer-card strong { font-size: 16px; }
+.footer-card span:not(.pill-arrow) { grid-column: 1; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+.footer-card .pill-arrow { grid-column: 2; grid-row: 1 / 3; background: var(--black); color: var(--white); }
+.footer-card--grey { border-color: var(--grey); background: var(--grey); color: var(--white); }
+.footer-card--grey span:not(.pill-arrow) { color: #eee; }
+.footer-card--grey .pill-arrow { background: var(--white); color: var(--black); }
+.footer-card:hover .pill-arrow { transform: translateX(3px); }
+body .footer-legal { align-items: center; gap: 8px 10px; padding: 12px 12px 12px 24px; border: 1.5px solid var(--black); border-radius: 999px; color: var(--text); font-size: 12px; }
+body .footer-legal span { margin-right: auto; }
+body .footer-legal a { padding: 8px 14px; border-radius: 999px; background: var(--tint); font-weight: 600; }
+body .footer-legal a:hover { background: var(--black); color: var(--white); }
+.footer-role { display: block; margin: 14px 24px 0; color: var(--muted); font-size: 12px; }
+
+/* Case pages share the rounded blocks */
+.project-page.case .case-cover, .project-page.case .case-gallery figure, .case-next-media { border-radius: var(--r-xl); }
+.case-hero h1 { font-size: clamp(48px, 8vw, 120px); line-height: .9; letter-spacing: -0.02em; }
+.project-story .case-chapter h2 { font-weight: 800; text-transform: uppercase; }
+.case-chapter .case-index { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--black); color: var(--white); }
+.case-facts { padding: 24px 28px; border: 0; border-radius: var(--r-lg); background: var(--white); margin-top: 16px; }
+.case-next { padding: 28px; border-radius: var(--r-xl); background: var(--black); color: var(--white); }
+.case-next-label { color: #bdbdbd; }
+.case-next-name { font-weight: 800; text-transform: uppercase; }
+.project-page.case .project-enquiry { padding: 48px 24px; border: 0; border-radius: var(--r-xl); background: var(--white); }
+.project-page.case .project-enquiry h2 { font-size: clamp(28px, 3.4vw, 44px); text-transform: uppercase; }
+.case-back { display: inline-flex; padding: 12px 20px; border-radius: 999px; background: var(--white); font-weight: 600; }
+
+/* Scroll entrance (progressive enhancement) */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .project-grid > .project-card, .case-gallery figure, .footer-cta { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+    @keyframes rise { from { opacity: 0; transform: translateY(48px) scale(.98); } to { opacity: 1; transform: none; } }
+  }
+}
+@media (prefers-reduced-motion: reduce) { .pill-button, body .enquiry-button, body .project-card[data-project], .brand-mark { transition: none; } }
+
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+  :root { --r-xl: 24px; --r-lg: 18px; }
+  body .value-hero--home { padding: 32px 0 48px; }
+  body .value-hero--home h1 { font-size: clamp(46px, 14vw, 64px); }
+  body .site-footer { width: calc(100% - 32px); margin-top: 64px; }
+  .footer-cta-mark { font-size: 140px; bottom: -6%; }
+  body .footer-legal { border-radius: var(--r-lg); padding: 16px; }
+  body .footer-legal span { flex-basis: 100%; }
+  .brand-mark { width: 28px; height: 35px; }
+  body .wordmark { font-size: 18px; }
+}
+@media (max-width: 700px) {
+  body .work-heading { flex-direction: row; justify-content: space-between; align-items: end; text-align: left; }
+  body .work-heading h2 { text-align: left; font-size: 34px; }
+  body .mobile-enquiry { border-radius: 999px; background: var(--black); padding-left: 22px; }
+}

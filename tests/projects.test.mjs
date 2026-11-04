@@ -40,7 +40,7 @@ test('each gallery follows its own project folder definition', async () => {
   }
 });
 
-test('home: all projects share one complete grid with lazy images', async () => {
+test('home: the selected projects share one grid with lazy images and link to the archive', async () => {
   await withFetch(offline, async () => {
     for (const [path, prefix] of [['/', ''], ['/es/', '/es']]) {
       const html = await (await get(path)).text();
@@ -54,11 +54,11 @@ test('home: all projects share one complete grid with lazy images', async () => 
     const english = await (await get('/')).text();
     assert.ok(english.includes('<p>Visual identity · 2025</p>'));
     const spanish = await (await get('/es/')).text();
-    assert.ok(spanish.includes('<h3>Tipografía en movimiento</h3>'));
-    assert.deepEqual(new Set(activeProjects.map(p => p.slug)), new Set(allProjects.map(p => p.slug)));
-    assert.equal(archivedProjects.length, 0);
-    assert.ok(!spanish.includes('class="archive-link"'));
-    assert.equal((spanish.match(/loading="lazy"/g) || []).length, allProjects.length - 1);
+    assert.ok(!spanish.includes('<h3>Tipografía en movimiento</h3>'), 'archived work stays off the home grid');
+    assert.deepEqual(activeProjects.map(p => p.slug), ['kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
+    assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
+    assert.ok(spanish.includes('<p class="archive-link"><a href="/es/archive/">'));
+    assert.equal((spanish.match(/loading="lazy"/g) || []).length, activeProjects.length - 1);
     assert.ok(!spanish.includes('Último proyecto'));
   });
 });
@@ -74,7 +74,8 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       assert.equal((html.match(/<h1\b/g) || []).length, 1);
       assert.equal((html.match(/<figure>/g) || []).length, p.images.length, path);
       assert.ok(html.includes('class="project-facts"'));
-      assert.ok(html.includes('Affinity · ChatGPT'), path);
+      if (p.tools.length) assert.ok(html.includes(p.tools.join(' · ')), path);
+      else assert.ok(!html.includes('<dt>Tools</dt>') && !html.includes('<dt>Herramientas</dt>'), path);
       assert.ok(!html.includes('class="project-original"'), 'the shared project page also avoids the redundant Behance action');
       assert.ok(html.includes(`<meta property="og:image" content="${ORIGIN}/media/${p.slug}/cover-og.`));
       const data = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
@@ -142,15 +143,15 @@ test('the three PDF projects are labelled as concepts on cards, pages and viewer
   }
 });
 
-test('old archive links reach the complete portfolio when the archive is empty', async () => {
-  assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
-  for (const [path, target] of [['/archive/', '/'], ['/es/archive/', '/es/']]) {
+test('earlier projects live in the archive with their own pages', async () => {
+  assert.deepEqual(archivedProjects.map(p => p.slug).sort(), ['gigantes', 'greens', 'more', 'type-in-motion', 'wobble']);
+  for (const p of archivedProjects) assert.ok(!p.tools.includes('ChatGPT') || p.year >= 2023, `${p.slug}: no anachronistic tools`);
+  for (const [path, lang] of [['/archive/', 'en'], ['/es/archive/', 'es']]) {
     const response = await get(path);
-    assert.equal(response.status, 301);
-    assert.equal(response.headers.get('Location'), ORIGIN + target);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    for (const p of archivedProjects) assert.ok(html.includes(`data-project="${p.slug}"`), `${path} ${p.slug}`);
   }
-  const source = await readFile(new URL('../src/projects.js', import.meta.url), 'utf8');
-  assert.ok(source.includes('archived'));
 });
 
 

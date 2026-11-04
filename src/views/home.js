@@ -1,5 +1,5 @@
 import { PERSON_ID } from '../config.js';
-import { CONTENT, PAGES, projectName, projectPath } from '../content.js';
+import { ARCHIVE_PAGE, CONTENT, PAGES, projectName, projectPath } from '../content.js';
 import { absoluteUrl } from '../lib/assets.js';
 import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
@@ -65,8 +65,9 @@ function schema(lang, projects) {
  * @param {object} data
  * @param {object[]} data.projects  Active projects, newest first.
  * @param {string} data.galleriesUrl  Versioned URL of the viewer's gallery data.
+ * @param {number} [data.archived]  How many earlier projects live in the archive.
  */
-export function homePage(lang, { projects, galleriesUrl }) {
+export function homePage(lang, { projects, galleriesUrl, archived = 0 }) {
   const t = CONTENT[lang].home;
   return layout({
     lang,
@@ -78,6 +79,7 @@ export function homePage(lang, { projects, galleriesUrl }) {
     body: html`${sectionIntro(lang, t.heading, t.lead)}
 <div class="work-heading"><h2>${t.workTitle}<span class="work-count">${String(projects.length).padStart(2, '0')}</span></h2><span>${t.workOrder}</span></div>
 <section class="project-grid" aria-label="${t.gridLabel}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>
+${archived ? html`<p class="archive-link"><a href="${ARCHIVE_PAGE[lang]}">${t.archive} →</a></p>` : ''}
 `,
   });
 }

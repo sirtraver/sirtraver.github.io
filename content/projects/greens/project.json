@@ -23,7 +23,7 @@
     "es": ""
   },
   "featured": false,
-  "archived": false,
+  "archived": true,
   "draft": false,
   "portfolioOrder": 7,
   "tools": [

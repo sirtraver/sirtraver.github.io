@@ -4,6 +4,7 @@ import { html } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { PROJECT_TYPES } from '../services/contact.js';
 import { layout } from './layout.js';
+import { briefBuilder } from './brief.js';
 import { breadcrumbs, graph, person, webPage, website } from './schema.js';
 import { JOURNEY, THANKS_PAGE, contactFaq, visibleBreadcrumbs } from './journey.js';
 import { runtime } from '../lib/runtime.js';
@@ -26,13 +27,14 @@ export function contactPage(lang, sent = null) {
       webPage({ type: 'ContactPage', path: CONTACT_PAGE[lang], lang, name: t.title, description: t.description }),
       breadcrumbs(lang, [[t.heading, CONTACT_PAGE[lang]]]),
     ),
-    scripts: formEnabled ? [{ src: '/assets/forms.js' }] : [],
+    scripts: formEnabled ? [{ src: '/assets/forms.js' }] : [{ src: '/assets/brief.js' }],
+    styles: formEnabled ? [] : ['/assets/brief.css'],
     body: html`<section class="contact-page">
   ${visibleBreadcrumbs(lang, t.heading)}
   <h1>${t.heading}</h1>
   <p class="contact-lead">${t.lead}</p>
   <p class="response-time">${JOURNEY[lang].response}</p>
-  <p class="contact-brief">${JOURNEY[lang].brief}</p>
+  ${formEnabled ? html`<p class="contact-brief">${JOURNEY[lang].brief}</p>` : ''}
   ${formEnabled ? html`<form class="contact-form" method="post" action="/api/contact" data-enhance data-redirect="${THANKS_PAGE[lang]}" data-sending="${t.sending}" data-success="${t.success}" data-error="${t.error}" data-limited="${t.limited}">
     <input type="hidden" name="language" value="${lang}">
     <div class="field-row">
@@ -47,7 +49,7 @@ export function contactPage(lang, sent = null) {
       <p class="form-privacy">${JOURNEY[lang].privacy} <a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].privacy.heading}</a>.</p>
     </div>
     <p role="status" aria-live="polite">${status}</p>
-  </form>` : html`<div class="contact-email-primary"><a class="enquiry-button" href="${SOCIAL.email}">${lang === 'es' ? 'Escríbeme por email' : 'Email me'} <span aria-hidden="true">↗</span></a><p>${email}</p></div>`}
+  </form>` : briefBuilder(lang)}
   ${formEnabled ? html`<p class="contact-alt">${t.altEmail} <a href="${SOCIAL.email}">${email}</a>.</p>` : ''}
   ${contactFaq(lang)}
 </section>`,

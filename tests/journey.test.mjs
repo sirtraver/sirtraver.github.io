@@ -47,7 +47,7 @@ test('thank-you pages are translated, private-data free and excluded from indexi
 
 test('when email notifications are absent, contact uses direct email rather than a silent inbox', async () => {
   const html = await (await get('/es/contacto/')).text();
-  assert.ok(html.includes('class="contact-email-primary"'));
+  assert.ok(html.includes('contact-email-primary"'));
   assert.ok(html.includes('mailto:javier.traver.v@me.com'));
   assert.ok(!html.includes('<form'));
   const enabled = await (await get('/es/contacto/', { BREVO_API_KEY: 'test', CONTACT_TO: 'local@example.com' })).text();
@@ -99,4 +99,16 @@ test('enhanced contact forms redirect only on HTTP success; failed submissions s
   assert.deepEqual(await submit({ ok: false }), { navigated: undefined, status: 'error', disabled: false });
   assert.equal((await submit({ body: { status: 'invalid' } })).navigated, undefined);
   assert.equal((await submit({ redirect: '//another-site.example/' })).navigated, undefined);
+});
+
+test('static contact page offers the brief builder, with a plain mailto fallback', async () => {
+  for (const [path, title] of [['/es/contacto/', 'Prepara tu brief'], ['/contact/', 'Build your brief']]) {
+    const html = await (await get(path)).text();
+    assert.ok(html.includes('data-brief='), path);
+    assert.ok(html.includes(title), path);
+    assert.ok(html.includes('class="enquiry-button brief-send" href="mailto:javier.traver.v@me.com"'), path);
+    assert.match(html, /<script defer src="\/assets\/brief\.js[^"]*"/);
+  }
+  const enabled = await (await get('/es/contacto/', { BREVO_API_KEY: 'test', CONTACT_TO: 'local@example.com' })).text();
+  assert.ok(!enabled.includes('data-brief='), 'the real form replaces the builder when a backend exists');
 });

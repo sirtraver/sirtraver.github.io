@@ -2,7 +2,7 @@ import { PERSON_ID } from '../config.js';
 import { ARCHIVE_PAGE, CONTACT_PAGE, CONTENT, PAGES, projectName, projectPath } from '../content.js';
 import { absoluteUrl } from '../lib/assets.js';
 import { html } from '../lib/html.js';
-import { imageUrl, largestUrl, picture } from '../lib/picture.js';
+import { largestUrl, picture } from '../lib/picture.js';
 import { ICONS } from './icons.js';
 import { JOURNEY } from './journey.js';
 import { layout } from './layout.js';
@@ -61,73 +61,53 @@ function schema(lang, projects) {
   );
 }
 
-// Thumbnails for the rotating sphere: each cover plus two gallery images per project.
-function sphereTiles(projects) {
-  const tiles = projects.flatMap((p) => [p.cover, ...p.images.slice(1, 3)].map((image) => ({ image, project: p })));
-  const n = tiles.length;
-  return tiles.map(({ image, project }, i) => {
-    // Fibonacci sphere: even spacing on the surface.
-    const y = 1 - (2 * (i + 0.5)) / n;
-    const lat = Math.round(Math.asin(y) * 180 / Math.PI);
-    const lon = Math.round((i * 137.508) % 360);
-    return html`<img class="sphere-tile" src="${imageUrl(image, 800)}" alt="${project.name}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" style="--lat:${lat}deg;--lon:${lon}deg;background-color:${image.color}">`;
-  });
+// Large project panels: cover as background, copy on top (abhaysingh.in rhythm).
+function projectPanel(project, lang, i) {
+  const name = projectName(project, lang);
+  const t = CONTENT[lang];
+  const meta = [t.categories[project.category] ?? project.category, String(project.year), ...(project.conceptual ? [t.project.conceptual] : [])].join(' · ');
+  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media">${picture(project.cover, { alt: name, sizes: '(max-width: 760px) calc(100vw - 32px), 1200px', priority: i === 0 })}</div><div class="card-caption"><h3>${name}</h3>${project.intro?.[lang] ? html`<span class="card-intro">${project.intro[lang]}</span>` : ''}<span class="card-cta" aria-hidden="true">${lang === 'es' ? 'Ver caso' : 'Case study'}</span>${project.deliverables[lang].length ? html`<span class="card-deliv">${project.deliverables[lang].join(' · ')}</span>` : ''}</div><p>${meta}</p></a>`;
 }
-
-// Index rows: every project, newest first, linking to its case.
-const indexRow = (p, lang) => html`<li><a href="${projectPath(p, lang)}"><span class="ix-year">’${String(p.year).slice(2)}</span><span class="ix-name">${projectName(p, lang)}</span><span class="ix-cat">${CONTENT[lang].categories[p.category] ?? p.category}${p.conceptual ? ` · ${CONTENT[lang].project.conceptual}` : ''}</span><span class="ix-deliv">${p.deliverables[lang].join(', ')}</span></a></li>`;
 
 /**
  * @param {'en'|'es'} lang
  * @param {object} data
  * @param {object[]} data.projects  Active projects, newest first.
- * @param {object[]} [data.earlier]  Archived projects, newest first.
  * @param {number} [data.archived]  How many earlier projects live in the archive.
  * @param {number} [data.since]  Year of the earliest project.
  */
-export function homePage(lang, { projects, earlier = [], archived = 0, since }) {
+export function homePage(lang, { projects, archived = 0, since }) {
   const t = CONTENT[lang].home;
+  const a = CONTENT[lang].about;
   const es = lang === 'es';
-  const latest = Math.max(...projects.map((p) => p.year));
-  const span = since ? `${String(since).slice(2)}–${String(latest).slice(2)}` : '';
-  const all = [...projects, ...earlier].sort((a, b) => b.year - a.year);
   return layout({
     lang,
     page: 'home',
     title: t.title,
     description: t.description,
     schema: schema(lang, projects),
-    scripts: [{ src: '/assets/motion.js' }],
-    mainClass: 'bg-home',
-    body: html`<section class="bg-hero">
-  <div class="bg-axis" aria-hidden="true"></div>
-  <span class="bg-avatar" aria-hidden="true"></span>
-  <p class="bg-meta bg-meta--role">Visual Designer<br>&amp; Marketing</p>
-  <p class="bg-meta bg-meta--place">${es ? 'Basado en Madrid' : 'Based in Madrid'}<br>${es ? 'Identidad · Packaging · Comunicación' : 'Identity · Packaging · Communication'}</p>
-  <h1 class="bg-name"><span>Javier</span> <span>Traver</span></h1>
-  <p class="bg-lines"><span class="visually-hidden">${t.heading} ${t.lead}</span>${(es ? [['l', 'Identidades'], ['l', 'con'], ['l', 'carácter.'], ['a', 'Del logotipo'], ['a', 'al packaging'], ['a', 'y la comuni-'], ['f', 'cación visual.']] : [['l', 'Identity'], ['l', 'with'], ['l', 'character.'], ['a', 'From the logo'], ['a', 'to packaging'], ['a', 'and visual'], ['f', 'communication.']]).map(([pos, text]) => html`<span class="bg-line bg-line--${pos}" aria-hidden="true">${text}</span>`)}</p>
-  <div class="bg-hero-foot">
-    <div class="hero-copy"><p class="bg-desc">${t.description}</p></div>
-    <!-- journey:hero --><div class="hero-enquiry"><a class="enquiry-button" href="${CONTACT_PAGE[lang]}" aria-label="${JOURNEY[lang].cta}" title="${JOURNEY[lang].cta}"><span class="hero-contact-label">${JOURNEY[lang].cta}</span>${ICONS.mail}</a></div><!-- /journey:hero -->
-    <p class="bg-year">© ’${String(new Date().getUTCFullYear()).slice(2)}</p>
-  </div>
+    mainClass: 'ab-home',
+    body: html`<section class="ab-hero">
+  <span class="ab-icon" aria-hidden="true"></span>
+  <h1>${t.heading}</h1>
+  <div class="hero-copy"><p class="ab-lead">${t.description}</p></div>
+  <!-- journey:hero --><div class="hero-enquiry"><a class="enquiry-button" href="${CONTACT_PAGE[lang]}" aria-label="${JOURNEY[lang].cta}" title="${JOURNEY[lang].cta}"><span class="hero-contact-label">${JOURNEY[lang].cta}</span>${ICONS.mail}</a></div><!-- /journey:hero -->
+  <a class="ab-see" href="#work">${es ? 'Ver proyectos' : 'See work'} <span aria-hidden="true">↓</span></a>
 </section>
-<section class="bg-sphere-wrap" aria-labelledby="work-title">
-  <div class="bg-sphere-head"><h2 id="work-title">${CONTENT[lang].nav.home}</h2><span aria-hidden="true">${span}</span></div>
-  <div class="bg-sphere" aria-hidden="true"><div class="bg-sphere-rot">${sphereTiles(projects)}</div></div>
+<section class="ab-work" id="work" aria-label="${t.gridLabel}">
+  <h2 class="visually-hidden">${t.workTitle}</h2>
+  <div class="project-grid">${projects.map((p, i) => projectPanel(p, lang, i))}</div>
+  ${archived ? html`<p class="archive-link"><a href="${ARCHIVE_PAGE[lang]}">${t.archive} →</a></p>` : ''}
 </section>
-<section class="bg-work" aria-label="${t.gridLabel}">
-  <div class="project-grid">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</div>
-  ${archived ? html`<p class="archive-link"><a href="${ARCHIVE_PAGE[lang]}">${t.archive}</a></p>` : ''}
+<section class="ab-about" aria-labelledby="about-title">
+  <div class="ab-about-head"><h2 id="about-title">${a.positionTitle.join(' ')}</h2></div>
+  <div class="ab-about-text"><p>${a.lead}</p><p>${a.bio}</p><p class="ab-muted">${a.currentStudy}</p><p><a class="ab-text-link" href="${PAGES.about[lang]}">${es ? 'Más sobre mí' : 'More about me'} →</a></p></div>
 </section>
-<section class="bg-index" aria-labelledby="index-title">
-  <h2 id="index-title" class="bg-index-title"><span>${es ? 'Índice' : 'Index'}</span><span class="bg-amp">&amp;</span><span>${es ? 'Proyec-' : 'Pro-'}</span><span>${es ? 'tos' : 'jects'}</span></h2>
-  <ol class="bg-index-list">${all.map((p) => indexRow(p, lang))}</ol>
-</section>
-<section class="bg-close" aria-labelledby="close-title">
-  <h2 id="close-title" class="bg-close-lines"><span class="bg-line bg-line--l">${es ? 'Hablemos' : 'Let’s talk'}</span><span class="bg-line bg-line--l">${es ? 'de tu' : 'about your'}</span><span class="bg-line bg-line--a">${es ? 'proyecto.' : 'project.'}</span></h2>
-  <p class="bg-clock" aria-hidden="true"><span>(</span><span class="bg-clock-h">--</span><span>:</span><span class="bg-clock-mark"></span><span>:</span><span class="bg-clock-m">--</span><span>)</span></p>
-  <div class="bg-close-info"><p><strong>Javier Traver</strong><br>Madrid, ES</p><p>${JOURNEY[lang].response}</p><a class="bg-link" href="${CONTACT_PAGE[lang]}">${JOURNEY[lang].shortCta} →</a></div>
+<section class="ab-contact" aria-labelledby="contact-title">
+  <span class="ab-icon" aria-hidden="true"></span>
+  <h2 id="contact-title">${JOURNEY[lang].cta}</h2>
+  <a class="ab-pill" href="${CONTACT_PAGE[lang]}">${ICONS.mail}<span>${JOURNEY[lang].shortCta}</span></a>
+  <p class="ab-muted">${JOURNEY[lang].response}</p>
 </section>
 `,
   });

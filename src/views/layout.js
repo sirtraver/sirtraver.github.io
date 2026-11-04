@@ -15,13 +15,12 @@ function header(lang, page, alternates) {
   <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="brand-mark" aria-hidden="true"></span><span class="wordmark">sirtraver</span></a>
   <nav id="site-menu" aria-label="${t.mainNavLabel}">
     ${['home', 'resources', 'about'].map(
-      (key, i) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}><span class="menu-num" aria-hidden="true">${i + 1}</span><span class="menu-label">${t.nav[key]}</span></a>`,
+      (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
     )}
   </nav>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
     ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
   </div>
-  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-open">${lang === 'es' ? 'Menú' : 'Menu'}</span><span class="menu-close">${lang === 'es' ? 'Cerrar' : 'Close'}</span></button>
 </header>`;
 }
 
@@ -35,12 +34,12 @@ function footer(lang, page) {
   const t = CONTENT[lang];
   const f = FOOTER[lang];
   return html`<footer class="site-footer">
-  <p class="footer-name" aria-hidden="true">sirtraver</p>
+  <span class="ab-icon ab-icon--small" aria-hidden="true"></span>
+  <p class="footer-name">SIRTRAVER<br><span>${t.footerRole}</span></p>
   <div class="footer-legal">
     <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${CONTACT_PAGE[lang]}">${f.contact}</a><span class="mx-clock" data-tz="Europe/Madrid">${f.city}</span>
   </div>
-</footer>
-<div class="corner-word" aria-hidden="true"><span>sir</span><span>traver</span></div>`;
+</footer>`;
 }
 
 /**
@@ -80,6 +79,7 @@ ${LANGUAGES.map((code) => html`<link rel="alternate" hreflang="${code}" href="${
 <link rel="icon" type="image/png" sizes="32x32" href="${assetUrl('/assets/favicon-32.png')}">
 <link rel="apple-touch-icon" href="${assetUrl('/assets/apple-touch-icon.png')}">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/D-DIN-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${assetUrl('/assets/site.css')}">
 ${styles.map(src => html`<link rel="stylesheet" href="${assetUrl(src)}">`)}
 ${canonical

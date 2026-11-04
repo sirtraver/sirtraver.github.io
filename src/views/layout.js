@@ -26,32 +26,28 @@ function header(lang, page, alternates) {
 
 // Footer copy kept local, like mobileCta, to avoid a layout/journey module cycle.
 const FOOTER = {
-  es: { kicker: '¿Tienes un proyecto?', cta: 'Hablemos de tu proyecto', reply: 'Respondo en un máximo de 2 días laborables.', button: 'Cuéntame tu proyecto', site: 'Navega', contact: 'Contacto', form: 'Formulario de proyecto', formNote: 'Cuéntame qué necesita tu marca', profile: 'Perfil y redes', profileNote: 'Trayectoria, email y redes sociales' },
-  en: { kicker: 'Got a project?', cta: 'Let’s talk about your project', reply: 'I reply within 2 business days.', button: 'Tell me about your project', site: 'Explore', contact: 'Contact', form: 'Project form', formNote: 'Tell me what your brand needs', profile: 'Profile & social', profileNote: 'Experience, email and social profiles' },
+  es: { cta: 'Hablemos', reply: 'Cuéntame qué necesita tu marca. Respondo en un máximo de 2 días laborables.', button: 'Cuéntame tu proyecto', site: 'Navegación', legal: 'Legal', contact: 'Contacto', city: 'Madrid, ES' },
+  en: { cta: 'Let’s talk', reply: 'Tell me what your brand needs. I reply within 2 business days.', button: 'Tell me about your project', site: 'Navigation', legal: 'Legal', contact: 'Contact', city: 'Madrid, ES' },
 };
 
 function footer(lang, page, cta) {
   const t = CONTENT[lang];
   const f = FOOTER[lang];
+  const year = new Date().getUTCFullYear();
   return html`<footer class="site-footer">
-  ${cta ? html`<section class="footer-cta" aria-labelledby="footer-cta-title">
-    <p class="chip chip--light">${f.kicker}</p>
-    <h2 id="footer-cta-title">${f.cta}</h2>
-    <p class="footer-cta-reply">${f.reply}</p>
-    <a class="pill-button pill-button--light" href="${CONTACT_PAGE[lang]}">${f.button}<span class="pill-arrow" aria-hidden="true">→</span></a>
-    <span class="footer-cta-mark" aria-hidden="true">SIR<br>TRA<br>VER</span>
+  ${cta ? html`<section class="mx-talk" aria-labelledby="talk-title">
+    <h2 id="talk-title">${f.cta}</h2>
+    <div class="mx-talk-row"><p>${f.reply}</p><a class="mx-arrow-link" href="${CONTACT_PAGE[lang]}">${f.button} <span aria-hidden="true">→</span></a></div>
   </section>` : ''}
   <div class="footer-grid">
+    <p class="footer-about">${t.footerRole}. ${f.city}.</p>
     <div class="footer-col"><p class="footer-title">${f.site}</p><ul>${['home', 'resources', 'about'].map((key) => html`<li><a href="${PAGES[key][lang]}"${page === key ? html` aria-current="page"` : ''}>${t.nav[key]}</a></li>`)}<li><a href="${CONTACT_PAGE[lang]}">${f.contact}</a></li></ul></div>
-    <div class="footer-col footer-contact"><p class="footer-title">${f.contact}</p>
-      <a class="footer-card" href="${CONTACT_PAGE[lang]}"><strong>${f.form}</strong><span>${f.formNote}</span><span class="pill-arrow" aria-hidden="true">→</span></a>
-      <a class="footer-card footer-card--grey" href="${PAGES.about[lang]}"><strong>${f.profile}</strong><span>${f.profileNote}</span><span class="pill-arrow" aria-hidden="true">→</span></a>
-    </div>
+    <div class="footer-col"><p class="footer-title">${f.legal}</p><ul><li><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a></li><li><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a></li></ul></div>
   </div>
+  <p class="footer-giant" aria-hidden="true">SIRTRAVER</p>
   <div class="footer-legal">
-    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
+    <span>© ${year} SIRTRAVER</span><span>${t.footerRole}</span><span class="mx-clock" data-tz="Europe/Madrid">${f.city}</span>
   </div>
-  <span class="footer-role">${t.footerRole}</span>
 </footer>`;
 }
 

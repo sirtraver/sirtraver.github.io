@@ -1,19 +1,19 @@
 {
   "version": 41,
   "approved": "2026-11-04",
-  "basedOnCommit": "da54a79be4450a8debafd6d4eaf4a1ff55b677a5",
+  "basedOnCommit": "e0cc9a826275051caf44e243435552150ee4b5c1",
   "pages": {
-    "/": "c928904c3160243e9a211018b5513f1225956043230268bfc68693ebab272377",
-    "/es/": "bb7a85a9e10863f5f08f460c4dc5e19a8f228327c7e3e13efd80496c4a1ba19d",
-    "/about/": "e9452431aef83d993e12ce25d572a026816c8eaed4de5af5192898117da91cea",
-    "/es/about/": "56c5ff81296863659be979b89233c7055e286ed146030c5ad1d953b57bca5c9a",
-    "/resources/": "f380ab19044a6af3c584dde16f702bc4f22f301402d91a3e1c74e97efa358976",
-    "/es/resources/": "164d7a754bcbad5712818afa679bda0e0aad17125861b3e2dd98f13c59e2447b"
+    "/": "c6d9f28b7e032298fea182689fffb5870383b6feaa6919be141ced017ff399ff",
+    "/es/": "6d5ce8909e9f85017dc8c04a9a333c4a48ef14ea4532ce353f2fde0e9b2cfb9e",
+    "/about/": "512075ceb2026b36c4cab8fb436de531e3ad90502cf22c5fb3dcf1d6b920ffe5",
+    "/es/about/": "a0317f1d48565386b186a454a217fdf126915aef0415b3b9bd3754c3a57c3837",
+    "/resources/": "3e10ec6ae8acde0162d77c12a88ceb29200897fe79c93c9c19e5c209014d9737",
+    "/es/resources/": "946053e40200df879fc07e98d0437534e7dc773c2059fee05af9c2c21aa1e05e"
   },
   "files": {
-    "public/assets/site.css": "e864d98604519347ca9cf78b8d2c2f5c625dc8c238b3c0b78815c31b73dac547",
+    "public/assets/site.css": "057392525228de0b54b9e8f3c4a34da34360c108c4fff870bc3482b2cc4a551d",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
     "public/assets/navigation.js": "1de4d77deb5fe97de3b6e0409bce17c30e68cf32f9dc9ec79b4a62afb0b14264",
-    "public/assets/site.js": "11f78a00a9c277d324d5ca2c002e2f51c551c2c6211315c093d566c7df1cb9ad"
+    "public/assets/site.js": "957dadeac58376ca7aa2f9bda84e67b9abb6a7ce2958a2be322faefdcde43441"
   }
 }

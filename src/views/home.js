@@ -16,7 +16,7 @@ export const categoryLine = (project, lang) => `${CONTENT[lang].categories[proje
 
 export function projectCard(project, lang, { priority = false } = {}) {
   const name = projectName(project, lang);
-  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media">${picture(project.cover, { alt: name, sizes: CARD_SIZES, priority })}</div><div class="card-caption"><h3>${name}</h3><span aria-hidden="true">→</span></div><p>${categoryLine(project, lang)}</p></a>`;
+  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media">${picture(project.cover, { alt: name, sizes: CARD_SIZES, priority })}</div><div class="card-caption"><h3>${name}</h3><span aria-hidden="true">→</span></div><p>${categoryLine(project, lang)}</p>${project.intro?.[lang] ? html`<p class="card-intro">${project.intro[lang]}</p>` : ''}<span class="card-link">${CONTENT[lang].home.viewProject}<span class="pill-arrow" aria-hidden="true">→</span></span></a>`;
 }
 
 function schema(lang, projects) {

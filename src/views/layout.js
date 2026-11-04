@@ -12,7 +12,7 @@ const mobileCta = { es: 'Cuéntame tu proyecto', en: 'Tell me about your project
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
-  <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="wordmark">sirtraver</span></a>
+  <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="brand-mark" aria-hidden="true"></span><span class="wordmark">sirtraver</span></a>
   <nav aria-label="${t.mainNavLabel}">
     ${['home', 'resources', 'about'].map(
       (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
@@ -24,13 +24,34 @@ function header(lang, page, alternates) {
 </header>`;
 }
 
-function footer(lang, page) {
+// Footer copy kept local, like mobileCta, to avoid a layout/journey module cycle.
+const FOOTER = {
+  es: { kicker: '¿Tienes un proyecto?', cta: 'Hablemos de tu proyecto', reply: 'Respondo en un máximo de 2 días laborables.', button: 'Cuéntame tu proyecto', site: 'Navega', contact: 'Contacto', form: 'Formulario de proyecto', formNote: 'Cuéntame qué necesita tu marca', profile: 'Perfil y redes', profileNote: 'Trayectoria, email y redes sociales' },
+  en: { kicker: 'Got a project?', cta: 'Let’s talk about your project', reply: 'I reply within 2 business days.', button: 'Tell me about your project', site: 'Explore', contact: 'Contact', form: 'Project form', formNote: 'Tell me what your brand needs', profile: 'Profile & social', profileNote: 'Experience, email and social profiles' },
+};
+
+function footer(lang, page, cta) {
   const t = CONTENT[lang];
+  const f = FOOTER[lang];
   return html`<footer class="site-footer">
-  <div class="footer-legal">
-    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
+  ${cta ? html`<section class="footer-cta" aria-labelledby="footer-cta-title">
+    <p class="chip chip--light">${f.kicker}</p>
+    <h2 id="footer-cta-title">${f.cta}</h2>
+    <p class="footer-cta-reply">${f.reply}</p>
+    <a class="pill-button pill-button--light" href="${CONTACT_PAGE[lang]}">${f.button}<span class="pill-arrow" aria-hidden="true">→</span></a>
+    <span class="footer-cta-mark" aria-hidden="true">SIR<br>TRA<br>VER</span>
+  </section>` : ''}
+  <div class="footer-grid">
+    <div class="footer-col"><p class="footer-title">${f.site}</p><ul>${['home', 'resources', 'about'].map((key) => html`<li><a href="${PAGES[key][lang]}"${page === key ? html` aria-current="page"` : ''}>${t.nav[key]}</a></li>`)}<li><a href="${CONTACT_PAGE[lang]}">${f.contact}</a></li></ul></div>
+    <div class="footer-col footer-contact"><p class="footer-title">${f.contact}</p>
+      <a class="footer-card" href="${CONTACT_PAGE[lang]}"><strong>${f.form}</strong><span>${f.formNote}</span><span class="pill-arrow" aria-hidden="true">→</span></a>
+      <a class="footer-card footer-card--grey" href="${PAGES.about[lang]}"><strong>${f.profile}</strong><span>${f.profileNote}</span><span class="pill-arrow" aria-hidden="true">→</span></a>
+    </div>
   </div>
-  <span>${t.footerRole}</span>
+  <div class="footer-legal">
+    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
+  </div>
+  <span class="footer-role">${t.footerRole}</span>
 </footer>`;
 }
 
@@ -107,7 +128,7 @@ ${header(lang, page, paths ?? PAGES.home)}
 <main id="main"${mainClass ? html` class="${mainClass}"` : ''}>
 ${body}
 </main>
-${footer(lang, page)}
+${footer(lang, page, Boolean(page && !alternates))}
 ${page && !alternates ? html`<!-- journey:mobile --><a class="mobile-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} ${ICONS.mail}</a><!-- /journey:mobile -->` : ''}
 </body>
 </html>

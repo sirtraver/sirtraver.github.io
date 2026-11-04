@@ -1,41 +1,39 @@
-// Home motion: fanned hero covers and word-by-word statement.
+// Home motion: staggered lines rise in, the project sphere turns with scroll, and the closing clock shows Madrid time.
 // Everything is decorative; without JavaScript or with reduced motion the page is static and complete.
 (() => {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.documentElement.classList.add('mx-still');
-    return;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clock = document.querySelector('.bg-clock');
+  if (clock && typeof Intl === 'object') {
+    const parts = () => Object.fromEntries(new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: 'Europe/Madrid' }).formatToParts(new Date()).map((p) => [p.type, p.value]));
+    const tick = () => { const p = parts(); clock.querySelector('.bg-clock-h').textContent = p.hour; clock.querySelector('.bg-clock-m').textContent = p.minute; };
+    tick();
+    setInterval(tick, 15000);
   }
-  const hero = document.querySelector('.mx-hero');
-  const stack = [...document.querySelectorAll('.mx-stack-item')];
-  const statement = document.querySelector('.mx-statement');
-  const words = [...document.querySelectorAll('.mx-w')];
-  document.documentElement.classList.add('mx-live');
-  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
-  let ticking = false;
+  if (still) return;
+  document.documentElement.classList.add('bg-live');
 
-  function frame() {
-    ticking = false;
-    const vh = window.innerHeight;
-    const wide = window.innerWidth > 700;
-    if (hero && stack.length) {
-      const p = clamp(window.scrollY / (hero.offsetHeight * 0.9));
-      const mid = (stack.length - 1) / 2;
-      stack.forEach((img) => {
-        const i = Number(img.style.getPropertyValue('--i'));
-        const d = i - mid;
-        const spread = wide ? 15 : 9;
-        img.style.transform = `translate(calc(-50% + ${d * spread * p}vw), calc(-50% + ${-p * (wide ? 18 : 10) + Math.abs(d) * p * 3}vh)) rotate(${(d * 4) * (1 - p) + d * 6 * p}deg) scale(${1 - p * 0.18})`;
-      });
-    }
-    if (statement && words.length) {
-      const box = statement.getBoundingClientRect();
-      const p = clamp((vh * 0.75 - box.top) / (box.height * 0.8));
-      const lit = p * words.length;
-      words.forEach((w, i) => { w.style.opacity = String(0.14 + 0.86 * clamp(lit - i)); });
-    }
-  }
-  const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
-  window.addEventListener('scroll', request, { passive: true });
-  window.addEventListener('resize', request);
-  frame();
+  const lines = [...document.querySelectorAll('.bg-line, .bg-index-title > span')];
+  if (typeof IntersectionObserver === 'function') {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    lines.forEach((line, i) => { line.style.transitionDelay = `${(i % 7) * 70}ms`; io.observe(line); });
+  } else lines.forEach((line) => line.classList.add('is-in'));
+
+  const wrap = document.querySelector('.bg-sphere-wrap');
+  const rot = document.querySelector('.bg-sphere-rot');
+  if (!wrap || !rot) return;
+  let ticking = false;
+  let spin = 0;
+  let last = performance.now();
+  const frame = (now) => {
+    spin = (spin + (now - last) * 0.006) % 360;
+    last = now;
+    const box = wrap.getBoundingClientRect();
+    const p = Math.max(-1, Math.min(1, (box.top + box.height / 2 - innerHeight / 2) / innerHeight));
+    rot.style.transform = `rotateX(${(-12 + p * 30).toFixed(2)}deg) rotateY(${(spin + p * 120).toFixed(2)}deg)`;
+    if (box.bottom > -200 && box.top < innerHeight + 200) requestAnimationFrame(frame);
+    else ticking = false;
+  };
+  const start = () => { if (!ticking) { ticking = true; last = performance.now(); requestAnimationFrame(frame); } };
+  window.addEventListener('scroll', start, { passive: true });
+  start();
 })();

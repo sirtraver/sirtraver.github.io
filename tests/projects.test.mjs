@@ -47,7 +47,7 @@ test('home: the selected projects share one grid with lazy images and link to th
       assert.ok(!html.includes('class="featured-project"'));
       const cards = [...html.matchAll(/<a class="project-card" href="([^"]+)" data-project="([^"]+)">/g)].map((m) => m[2]);
       assert.deepEqual(cards, activeProjects.map(p => p.slug), path);
-      assert.equal((html.match(/fetchpriority="high"/g) || []).length, 1, 'only the top hero cover is high priority');
+      assert.equal((html.match(/fetchpriority="high"/g) || []).length, 1, 'only the first card cover is high priority');
       assert.ok(html.includes('<source type="image/avif"'));
       assert.match(html, /style="background-color:#[0-9a-f]{6}"/, 'placeholder colour');
     }
@@ -58,7 +58,8 @@ test('home: the selected projects share one grid with lazy images and link to th
     assert.deepEqual(activeProjects.map(p => p.slug), ['kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
     assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
     assert.ok(spanish.includes('<p class="archive-link"><a href="/es/archive/">'));
-    assert.equal((spanish.match(/loading="lazy"/g) || []).length, activeProjects.length, 'hero covers load eagerly; every grid card is lazy');
+    const grid = spanish.match(/<div class="project-grid">[\s\S]*?<\/div>\s*<p class="archive-link">/)[0];
+    assert.equal((grid.match(/loading="lazy"/g) || []).length, activeProjects.length - 1, 'every card after the first is lazy');
     assert.ok(!spanish.includes('Último proyecto'));
   });
 });

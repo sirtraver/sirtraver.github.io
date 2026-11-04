@@ -17,7 +17,7 @@ export const categoryLine = (project, lang) => `${CONTENT[lang].categories[proje
 
 export function projectCard(project, lang, { priority = false } = {}) {
   const name = projectName(project, lang);
-  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media">${picture(project.cover, { alt: name, sizes: CARD_SIZES, priority })}</div><div class="card-caption"><h3>${name}</h3><span aria-hidden="true">→</span></div><p>${categoryLine(project, lang)}</p></a>`;
+  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media">${picture(project.cover, { alt: name, sizes: CARD_SIZES, priority })}</div><div class="card-caption"><span class="card-tag">${lang === 'es' ? 'Caso' : 'Case'}</span><h3>${name}</h3><span aria-hidden="true">→</span></div><p>${categoryLine(project, lang)}</p></a>`;
 }
 
 function schema(lang, projects) {
@@ -61,24 +61,36 @@ function schema(lang, projects) {
   );
 }
 
-// Hero covers: small eager images, fanned out by /assets/motion.js while scrolling.
-const stackImage = (project, lang, i) => {
-  const cover = project.cover;
-  const set = cover.src ? '' : cover.webp.filter(([, w]) => w <= 1600).map(([url, w]) => `${url} ${w}w`).join(', ');
-  return html`<img class="mx-stack-item" src="${imageUrl(cover, 800)}"${set ? html` srcset="${set}" sizes="(max-width: 700px) 62vw, 30vw"` : ''} alt="${projectName(project, lang)}" width="${cover.width}" height="${cover.height}" decoding="async"${i === 0 ? html` fetchpriority="high"` : ''} style="--i:${i};background-color:${cover.color}">`;
-};
+// Thumbnails for the rotating sphere: each cover plus two gallery images per project.
+function sphereTiles(projects) {
+  const tiles = projects.flatMap((p) => [p.cover, ...p.images.slice(1, 3)].map((image) => ({ image, project: p })));
+  const n = tiles.length;
+  return tiles.map(({ image, project }, i) => {
+    // Fibonacci sphere: even spacing on the surface.
+    const y = 1 - (2 * (i + 0.5)) / n;
+    const lat = Math.round(Math.asin(y) * 180 / Math.PI);
+    const lon = Math.round((i * 137.508) % 360);
+    return html`<img class="sphere-tile" src="${imageUrl(image, 800)}" alt="${project.name}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" style="--lat:${lat}deg;--lon:${lon}deg;background-color:${image.color}">`;
+  });
+}
+
+// Index rows: every project, newest first, linking to its case.
+const indexRow = (p, lang) => html`<li><a href="${projectPath(p, lang)}"><span class="ix-year">’${String(p.year).slice(2)}</span><span class="ix-name">${projectName(p, lang)}</span><span class="ix-cat">${CONTENT[lang].categories[p.category] ?? p.category}${p.conceptual ? ` · ${CONTENT[lang].project.conceptual}` : ''}</span><span class="ix-deliv">${p.deliverables[lang].join(', ')}</span></a></li>`;
 
 /**
  * @param {'en'|'es'} lang
  * @param {object} data
  * @param {object[]} data.projects  Active projects, newest first.
+ * @param {object[]} [data.earlier]  Archived projects, newest first.
  * @param {number} [data.archived]  How many earlier projects live in the archive.
  * @param {number} [data.since]  Year of the earliest project.
  */
-export function homePage(lang, { projects, archived = 0, since }) {
+export function homePage(lang, { projects, earlier = [], archived = 0, since }) {
   const t = CONTENT[lang].home;
-  const years = since ? `© ${since}–${String(new Date().getUTCFullYear()).slice(2)}` : '';
-  const words = `${t.heading} ${t.lead}`.split(/\s+/);
+  const es = lang === 'es';
+  const latest = Math.max(...projects.map((p) => p.year));
+  const span = since ? `${String(since).slice(2)}–${String(latest).slice(2)}` : '';
+  const all = [...projects, ...earlier].sort((a, b) => b.year - a.year);
   return layout({
     lang,
     page: 'home',
@@ -86,23 +98,36 @@ export function homePage(lang, { projects, archived = 0, since }) {
     description: t.description,
     schema: schema(lang, projects),
     scripts: [{ src: '/assets/motion.js' }],
-    mainClass: 'mx-home',
-    body: html`<section class="mx-hero">
-  <div class="hero-copy">
-    <p class="mx-intro"><strong>SIRTRAVER</strong> — ${t.description}</p>
+    mainClass: 'bg-home',
+    body: html`<section class="bg-hero">
+  <div class="bg-axis" aria-hidden="true"></div>
+  <span class="bg-avatar" aria-hidden="true"></span>
+  <p class="bg-meta bg-meta--role">Visual Designer<br>&amp; Marketing</p>
+  <p class="bg-meta bg-meta--place">${es ? 'Basado en Madrid' : 'Based in Madrid'}<br>${es ? 'Identidad · Packaging · Comunicación' : 'Identity · Packaging · Communication'}</p>
+  <h1 class="bg-name"><span>Javier</span> <span>Traver</span></h1>
+  <p class="bg-lines"><span class="visually-hidden">${t.heading} ${t.lead}</span>${(es ? [['l', 'Identidades'], ['l', 'con'], ['l', 'carácter.'], ['a', 'Del logotipo'], ['a', 'al packaging'], ['a', 'y la comuni-'], ['f', 'cación visual.']] : [['l', 'Identity'], ['l', 'with'], ['l', 'character.'], ['a', 'From the logo'], ['a', 'to packaging'], ['a', 'and visual'], ['f', 'communication.']]).map(([pos, text]) => html`<span class="bg-line bg-line--${pos}" aria-hidden="true">${text}</span>`)}</p>
+  <div class="bg-hero-foot">
+    <div class="hero-copy"><p class="bg-desc">${t.description}</p></div>
     <!-- journey:hero --><div class="hero-enquiry"><a class="enquiry-button" href="${CONTACT_PAGE[lang]}" aria-label="${JOURNEY[lang].cta}" title="${JOURNEY[lang].cta}"><span class="hero-contact-label">${JOURNEY[lang].cta}</span>${ICONS.mail}</a></div><!-- /journey:hero -->
+    <p class="bg-year">© ’${String(new Date().getUTCFullYear()).slice(2)}</p>
   </div>
-  <div class="mx-stack" aria-hidden="true">${[...projects].reverse().map((p, i) => stackImage(p, lang, projects.length - 1 - i))}</div>
-  ${years ? html`<p class="mx-years">${years}</p>` : ''}
-  <h1 class="mx-giant">SIRTRAVER</h1>
 </section>
-<section class="mx-statement" aria-label="${t.overline}">
-  <p class="mx-words">${words.map((w, i) => html`<span class="mx-w" style="--w:${i}">${w}</span> `)}</p>
+<section class="bg-sphere-wrap" aria-labelledby="work-title">
+  <div class="bg-sphere-head"><h2 id="work-title">${CONTENT[lang].nav.home}</h2><span aria-hidden="true">${span}</span></div>
+  <div class="bg-sphere" aria-hidden="true"><div class="bg-sphere-rot">${sphereTiles(projects)}</div></div>
 </section>
-<section class="mx-work" aria-labelledby="work-title">
-  <div class="mx-work-head"><h2 id="work-title">${t.workTitle}</h2><span>${String(projects.length).padStart(2, '0')}</span></div>
-  <div class="project-grid" aria-label="${t.gridLabel}">${projects.map((p) => projectCard(p, lang))}</div>
-  ${archived ? html`<p class="archive-link"><a href="${ARCHIVE_PAGE[lang]}">${t.archive} →</a></p>` : ''}
+<section class="bg-work" aria-label="${t.gridLabel}">
+  <div class="project-grid">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</div>
+  ${archived ? html`<p class="archive-link"><a href="${ARCHIVE_PAGE[lang]}">${t.archive}</a></p>` : ''}
+</section>
+<section class="bg-index" aria-labelledby="index-title">
+  <h2 id="index-title" class="bg-index-title"><span>${es ? 'Índice' : 'Index'}</span><span class="bg-amp">&amp;</span><span>${es ? 'Proyec-' : 'Pro-'}</span><span>${es ? 'tos' : 'jects'}</span></h2>
+  <ol class="bg-index-list">${all.map((p) => indexRow(p, lang))}</ol>
+</section>
+<section class="bg-close" aria-labelledby="close-title">
+  <h2 id="close-title" class="bg-close-lines"><span class="bg-line bg-line--l">${es ? 'Hablemos' : 'Let’s talk'}</span><span class="bg-line bg-line--l">${es ? 'de tu' : 'about your'}</span><span class="bg-line bg-line--a">${es ? 'proyecto.' : 'project.'}</span></h2>
+  <p class="bg-clock" aria-hidden="true"><span>(</span><span class="bg-clock-h">--</span><span>:</span><span class="bg-clock-mark"></span><span>:</span><span class="bg-clock-m">--</span><span>)</span></p>
+  <div class="bg-close-info"><p><strong>Javier Traver</strong><br>Madrid, ES</p><p>${JOURNEY[lang].response}</p><a class="bg-link" href="${CONTACT_PAGE[lang]}">${JOURNEY[lang].shortCta} →</a></div>
 </section>
 `,
   });

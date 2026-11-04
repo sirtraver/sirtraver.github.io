@@ -13,14 +13,15 @@ function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
   <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="brand-mark" aria-hidden="true"></span><span class="wordmark">sirtraver</span></a>
-  <nav aria-label="${t.mainNavLabel}">
+  <nav id="site-menu" aria-label="${t.mainNavLabel}">
     ${['home', 'resources', 'about'].map(
-      (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
+      (key, i) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}><span class="menu-num" aria-hidden="true">${i + 1}</span><span class="menu-label">${t.nav[key]}</span></a>`,
     )}
   </nav>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
     ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
   </div>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-open">${lang === 'es' ? 'Menú' : 'Menu'}</span><span class="menu-close">${lang === 'es' ? 'Cerrar' : 'Close'}</span></button>
 </header>`;
 }
 
@@ -33,17 +34,13 @@ const FOOTER = {
 function footer(lang, page) {
   const t = CONTENT[lang];
   const f = FOOTER[lang];
-  const year = new Date().getUTCFullYear();
   return html`<footer class="site-footer">
-  <div class="footer-grid">
-    <p class="footer-about">${t.footerRole}. ${f.city}.</p>
-    <div class="footer-col"><p class="footer-title">${f.site}</p><ul>${['home', 'resources', 'about'].map((key) => html`<li><a href="${PAGES[key][lang]}"${page === key ? html` aria-current="page"` : ''}>${t.nav[key]}</a></li>`)}<li><a href="${CONTACT_PAGE[lang]}">${f.contact}</a></li></ul></div>
-    <div class="footer-col"><p class="footer-title">${f.legal}</p><ul><li><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a></li><li><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a></li></ul></div>
-  </div>
+  <p class="footer-name" aria-hidden="true">sirtraver</p>
   <div class="footer-legal">
-    <span>© ${year} SIRTRAVER</span><span>${t.footerRole}</span><span class="mx-clock" data-tz="Europe/Madrid">${f.city}</span>
+    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${CONTACT_PAGE[lang]}">${f.contact}</a><span class="mx-clock" data-tz="Europe/Madrid">${f.city}</span>
   </div>
-</footer>`;
+</footer>
+<div class="corner-word" aria-hidden="true"><span>sir</span><span>traver</span></div>`;
 }
 
 /**
@@ -109,7 +106,7 @@ ${page === 'home' && !alternates
 ${schema ? jsonLd(schema) : ''}
 ${runtime().analytics ? html`<script defer src="${runtime().analytics.src}" data-website-id="${runtime().analytics.websiteId}"></script>` : ''}
 <script src="${assetUrl('/assets/language.js')}"></script>
-${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map(
+${[{ src: '/assets/site.js' }, ...scripts].map(
   ({ src, data = {} }) =>
     html`<script defer src="${assetUrl(src)}"${Object.entries(data).map(([key, value]) => html` data-${key}="${value}"`)}></script>\n`,
 )}</head>

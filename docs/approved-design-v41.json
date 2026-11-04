@@ -1,14 +1,14 @@
 {
   "version": 41,
-  "approved": "2026-11-03",
-  "basedOnCommit": "0136ddb8e57c34931c67e43c63a71dca4d85e167",
+  "approved": "2026-11-04",
+  "basedOnCommit": "c402527d08f27ae7d15570bfe68bc3d57d234774",
   "pages": {
-    "/": "cc87ec4aa8d461cee24a0bd27124c4bee35bdd78715c94ffdfc84b7132e5c918",
-    "/es/": "91fd3b33d6f1a6255850a07ab38f029f9d25cce4ab50fee269c9c2f512964685",
-    "/about/": "2c8d087167c666ba4c189e78ad442fcb0b2ccc75564bccaa11ccdac48a79b1e6",
-    "/es/about/": "869f626dd8003f12c4745169566173ec39ae2a2d9e8280a94367981077c7d8f6",
-    "/resources/": "adaaec1af3f5b9ef5374ada2d4d4d832bbc5fb2906ed18ef2ac6a6631d4a7f0e",
-    "/es/resources/": "e6aa0a382dcb85b81b9d0ed075c0e4992901dd709ed71be849c730e851e631b6"
+    "/": "ecffc74529e374dee5aa5335b7c7a1708a4d69a9b20ae35a4a5171d49892b0ce",
+    "/es/": "c5401c74c48ae9c518b1c6f95b972ef7d173478952f77073c3864a2b9d4ca960",
+    "/about/": "f60f851ab67c7c72237dc537441fac04fdf7cf7e3c77cd76425148be72b881ca",
+    "/es/about/": "0f04d8ed4ae5b870ba3ac1cafff452c149ee98d641b7825dbd34cbe9e391ef63",
+    "/resources/": "f997079a2f00e773126c6fea9311f8487bac27cbb5278e26b193f2943ca02b48",
+    "/es/resources/": "f9dc95141f85a220631e8892a45871d357752aed39b9ba16e27aa028fdd06421"
   },
   "files": {
     "public/assets/site.css": "d0c082332796c4786a08771c3a6a4aed8e3ffb9e7408dc9dc76093e8a91ebdb9",

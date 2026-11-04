@@ -3,8 +3,9 @@
 import { writeFile } from 'node:fs/promises';
 import { execSync } from 'node:child_process';
 import { BASELINE, snapshot } from '../tests/approved-design-lib.mjs';
+import { fileURLToPath } from 'node:url';
 
 const commit = execSync('git rev-parse HEAD').toString().trim();
 const data = { version: 41, approved: new Date().toISOString().slice(0, 10), basedOnCommit: commit, ...(await snapshot()) };
 await writeFile(BASELINE, `${JSON.stringify(data, null, 2)}\n`);
-console.log(`Approved design written to ${BASELINE.pathname}`);
+console.log(`Approved design written to ${fileURLToPath(BASELINE)}`);

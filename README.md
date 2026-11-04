@@ -52,6 +52,6 @@ El exportador ejecuta el mismo Worker (`src/worker.js`) para cada URL y guarda e
 
 ## Criterios de continuidad
 
-Selección de 6 proyectos en la portada (`portfolioOrder`); los anteriores, con `"archived": true`, viven en `/archive/` y la portada enlaza ahí. Navegación principal: Proyectos · Sobre mí · Contacto; Recursos va en el pie hasta que haya productos. EN/ES. Las imágenes aportan el color. El visor oscuro mantiene X/Escape, siguiente/anterior y retorno a la posición del portfolio. No inventar clientes, resultados ni productos de muestra; los textos de los casos salen de las propias presentaciones.
+Selección de 6 proyectos en la portada (`portfolioOrder`); los anteriores, con `"archived": true`, viven en `/archive/` y la portada enlaza ahí. Navegación principal: Proyectos · Recursos · Sobre mí (no tocar esta estructura); Contacto se alcanza desde el botón de la portada y el pie. EN/ES. Las imágenes aportan el color. El visor oscuro mantiene X/Escape, siguiente/anterior y retorno a la posición del portfolio. No inventar clientes, resultados ni productos de muestra; los textos de los casos salen de las propias presentaciones.
 
 Revisar escritorio y móvil después de cambios visuales. El test `approved-design` protege el diseño aprobado: tras un cambio visual intencionado y revisado, ejecuta `node scripts/approve-design.mjs`. Ver `REVISION.md` para el alcance de las verificaciones de esta entrega.

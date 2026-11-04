@@ -2432,7 +2432,7 @@ a:hover .card-media img {
 }
 body { padding-top: 72px; background: var(--white); color: var(--black); }
 main { width: calc(100% - 2 * var(--gutter)); max-width: none; }
-h1, .mx-work-head h2, .mx-talk h2, .footer-giant, .case-next-name { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; }
+h1, .case-next-name { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; }
 .page-title h1, .about-profile h1, .contact-page h1, .resources-page h1, main > h1, .value-hero h1 { font-size: var(--page-heading-size); line-height: .88; }
 
 /* Header: small mark + wordmark left, uppercase links right */
@@ -2472,20 +2472,7 @@ h1.mx-giant { position: relative; z-index: 2; grid-column: 1; grid-row: 2; margi
 
 /* Work: giant sticky title with scattered, parallaxed projects */
 .mx-work { position: relative; padding: 4vh var(--gutter) 12vh; }
-.mx-work-head { position: sticky; top: 30vh; z-index: 0; display: flex; justify-content: center; align-items: start; gap: 12px; height: 0; overflow: visible; pointer-events: none; }
-.mx-work-head h2 { margin: 0; font-size: clamp(64px, 15vw, 280px); line-height: .85; }
-.mx-work-head span { font-size: clamp(14px, 1.4vw, 20px); font-weight: 700; }
-body .mx-work .project-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 var(--gutter); padding-top: 34vh; }
-.mx-slot { will-change: transform; }
-.mx-slot--a { grid-column: 2 / span 4; }
-.mx-slot--b { grid-column: 8 / span 4; margin-top: 22vh; }
-.mx-slot--c { grid-column: 1 / span 5; margin-top: -4vh; }
-.mx-slot--d { grid-column: 7 / span 5; margin-top: 26vh; }
-.mx-slot--e { grid-column: 3 / span 4; margin-top: -2vh; }
-.mx-slot--f { grid-column: 8 / span 4; margin-top: 20vh; }
-body .mx-slot .project-card { display: block; padding: 0; background: none; transform: none; box-shadow: none; }
-body .mx-slot .card-media, body .project-card .card-media { border: 0; border-radius: 0; background: #f2f2f2; }
-body .mx-slot .card-media img { aspect-ratio: 4 / 5; }
+body .project-card .card-media { border: 0; border-radius: 0; background: #f2f2f2; }
 body .project-card .card-caption { margin-top: 12px; }
 body .project-card .card-caption h3 { font-family: var(--font-display); font-size: clamp(16px, 1.4vw, 20px); font-weight: 400; letter-spacing: .01em; text-transform: uppercase; }
 body .project-card .card-caption > span { color: var(--black); }
@@ -2496,17 +2483,12 @@ body .archive-link a:hover, .mx-arrow-link:hover { color: var(--grey); border-co
 
 /* Footer: Let's talk, columns, giant wordmark, clock */
 body .site-footer { display: block; width: calc(100% - 2 * var(--gutter)); max-width: none; margin: 0 auto; padding: 0; border: 0; color: var(--black); font-size: 14px; }
-.mx-talk { padding: 18vh 0 14vh; border-top: 1px solid var(--line); }
-.mx-talk h2 { margin: 0; font-size: clamp(72px, 16vw, 300px); line-height: .85; }
-.mx-talk-row { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-top: 40px; }
-.mx-talk-row p { max-width: 36ch; margin: 0; font-size: clamp(16px, 1.4vw, 20px); font-weight: 500; line-height: 1.5; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; padding: 56px 0 24px; border-top: 1px solid var(--line); }
 .footer-about { max-width: 32ch; margin: 0; color: var(--grey); font-size: 14px; line-height: 1.55; }
 .footer-title { margin: 0 0 14px; color: var(--grey); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .footer-col ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .footer-col ul a { font-size: clamp(18px, 1.6vw, 24px); font-weight: 700; letter-spacing: -0.01em; }
 .footer-col ul a:hover, .footer-col ul a[aria-current] { color: var(--grey); }
-.footer-giant { margin: 0; font-size: clamp(64px, 17.2vw, 330px); line-height: .9; white-space: nowrap; }
 body .footer-legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin: 0; padding: 18px 0 24px; border-top: 1px solid var(--line); color: var(--grey); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .mx-clock { color: var(--black); }
 
@@ -2544,12 +2526,82 @@ body .enquiry-button { border-radius: 0; background: var(--black); border-color:
   h1.mx-giant { grid-row: 3; }
   .mx-words { text-indent: 1.2em; }
   .mx-statement { min-height: 90vh; padding-top: 16vh; }
-  .mx-work-head { top: 24vh; }
-  body .mx-work .project-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 48px; padding-top: 22vh; }
-  .mx-slot--a, .mx-slot--c, .mx-slot--e { grid-column: 1 / span 5; margin-top: 0; }
-  .mx-slot--b, .mx-slot--d, .mx-slot--f { grid-column: 2 / span 5; margin-top: 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-about { grid-column: 1 / -1; }
   body .mobile-enquiry { border-radius: 0; background: var(--black); }
 }
 @media (prefers-reduced-motion: reduce) { .mx-w { transition: none; } }
+
+/* =====================================================================
+   Layer v4 — minimal and consistent: one Cubano type scale on every page.
+   `:not(#_)` lifts these rules above the page-specific heading styles.
+   ===================================================================== */
+:root {
+  --h1: clamp(36px, 4.4vw, 64px);
+  --h2: clamp(24px, 2.4vw, 34px);
+  --h3: clamp(16px, 1.3vw, 19px);
+  --track-1: -0.04em; --track-2: -0.03em; --track-3: -0.015em;
+}
+main h1:not(#_), main h2:not(#_), main h3:not(#_), .case-next-name:not(#_), .wordmark:not(#_) {
+  font-family: var(--font-display); font-weight: 400; font-kerning: normal; font-feature-settings: 'kern' 1; text-transform: uppercase; text-wrap: balance;
+}
+main h1:not(#_) { margin-top: 0; font-size: var(--h1); line-height: .95; letter-spacing: var(--track-1); }
+main h2:not(#_) { font-size: var(--h2); line-height: 1; letter-spacing: var(--track-2); }
+main h3:not(#_) { font-size: var(--h3); line-height: 1.1; letter-spacing: var(--track-3); }
+.wordmark:not(#_) { letter-spacing: -0.02em; }
+main h1 span:not(#_) { font: inherit; letter-spacing: inherit; }
+
+/* Home hero: intro, fanned covers, name at heading size */
+.mx-hero { min-height: min(86svh, 820px); }
+h1.mx-giant:not(#_) { margin: 0 0 32px; font-size: var(--h1); white-space: normal; }
+.mx-years { padding-top: 0; align-self: end; margin-bottom: 40px; font-size: 14px; }
+.mx-stack-item { width: clamp(200px, 22vw, 320px); top: 48%; }
+
+/* Statement: calmer size */
+.mx-statement { min-height: 70vh; padding: 14vh var(--gutter) 10vh; }
+.mx-words { position: sticky; top: 30vh; max-width: 24ch; font-size: clamp(26px, 3.4vw, 48px); line-height: 1.05; letter-spacing: var(--track-2); text-indent: 0; }
+
+/* Work: plain heading, compact two-column grid, nothing overlaps */
+.mx-work { padding: 8vh var(--gutter) 10vh; }
+.mx-work-head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+.mx-work-head h2:not(#_) { margin: 0; font-size: var(--h2); }
+.mx-work-head span { color: var(--grey); font-size: 13px; font-weight: 700; }
+body .mx-work .project-grid, body .project-grid--even:has(> a.project-card) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px var(--gutter); margin: 0; padding: 0; }
+body .project-card .card-media img, body .project-card[data-project] .card-media img { aspect-ratio: 4 / 3; }
+body .archive-link { margin: 56px 0 0; text-align: left; }
+
+/* Footer: quiet, no giant type */
+.footer-grid { padding-top: 40px; }
+body .site-footer { margin-top: 40px; }
+
+/* Inner pages share the same rhythm */
+.page-title, .about-profile, .case-hero, .contact-page > header, .resources-page > header { padding-top: 32px; }
+.case-hero h1:not(#_), .case-next-name:not(#_) { font-size: var(--h1); }
+.case-next-name:not(#_) { letter-spacing: var(--track-1); line-height: .95; }
+.project-story .case-chapter h2:not(#_) { font-size: var(--h2); }
+.case-chapter { padding: 56px 0 36px; }
+.project-page.case .project-enquiry h2:not(#_) { font-size: var(--h2); }
+.case-hero .project-intro, .value-description, .position-lead { font-size: clamp(16px, 1.3vw, 19px); }
+
+@media (max-width: 700px) {
+  body .mx-work .project-grid, body .project-grid--even:has(> a.project-card) { grid-template-columns: 1fr; gap: 32px; }
+  .mx-hero { min-height: 640px; }
+  h1.mx-giant:not(#_) { grid-row: 3; margin-bottom: 20px; }
+  .mx-years { margin-bottom: 8px; }
+  .mx-statement { min-height: 0; padding: 10vh var(--gutter); }
+  .mx-words { position: static; }
+}
+
+/* Same flat, square system on About, Resources, Contact and Thank-you */
+.about-profile:not(#_) { background: none; border: 1px solid var(--line); border-radius: 0; }
+.editorial-portrait:not(#_), .profile-cv-link:not(#_), .social-icons a:not(#_), .launch-state:not(#_), .launch-badge:not(#_), .launch-form input:not([type="checkbox"]):not(#_), .launch-form button:not(#_), main .launch-state li:not(#_), .contact-form input:not(#_), .contact-form textarea:not(#_), .contact-form select:not(#_), .contact-form button:not(#_) { border-radius: 0; }
+.profile-cv-link:not(#_), .launch-form button:not(#_), .contact-form button:not(#_) { background: var(--black); color: var(--white); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.social-icons a:not(#_) { border: 1px solid var(--black); }
+.launch-badge:not(#_) { border-color: var(--black); color: var(--black); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+main .launch-state li:not(#_) { background: none; border: 1px solid var(--line); }
+/* Contact and thank-you pages align left like every other page */
+.contact-page:not(#_), .thank-you-page:not(#_) { max-width: 760px; margin: 0; }
+.contact-page h1:not(#_), .contact-lead:not(#_), .response-time:not(#_), .contact-brief:not(#_), .contact-email-primary:not(#_), .thank-you-page > *:not(#_) { text-align: left; }
+.contact-lead:not(#_) { color: var(--black); font-size: clamp(16px, 1.3vw, 19px); }
+.contact-faq summary:not(#_) { font-family: var(--font-display); font-weight: 400; font-size: 16px; letter-spacing: var(--track-3); text-transform: uppercase; }
+.page-title:not(#_), .page-title h1:not(#_) { text-align: left; margin-left: 0; }

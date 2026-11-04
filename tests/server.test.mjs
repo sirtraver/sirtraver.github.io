@@ -41,7 +41,7 @@ test('pages are served compressed with the security headers', async () => {
   assert.equal(response.status, 200);
   assert.equal(response.headers.get('content-encoding'), 'br');
   assert.match(response.headers.get('content-security-policy'), /frame-ancestors 'none'/);
-  assert.ok((await response.text()).includes('<h1 class="mx-giant">SIRTRAVER</h1>'));
+  assert.ok((await response.text()).includes('Selected work'));
 });
 
 test('media files are served from disk and cached forever', async () => {

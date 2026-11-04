@@ -1,4 +1,4 @@
-// Home motion: fanned hero covers, word-by-word statement and parallax work list.
+// Home motion: fanned hero covers and word-by-word statement.
 // Everything is decorative; without JavaScript or with reduced motion the page is static and complete.
 (() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -9,7 +9,6 @@
   const stack = [...document.querySelectorAll('.mx-stack-item')];
   const statement = document.querySelector('.mx-statement');
   const words = [...document.querySelectorAll('.mx-w')];
-  const slots = [...document.querySelectorAll('[data-speed]')];
   document.documentElement.classList.add('mx-live');
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   let ticking = false;
@@ -34,12 +33,6 @@
       const lit = p * words.length;
       words.forEach((w, i) => { w.style.opacity = String(0.14 + 0.86 * clamp(lit - i)); });
     }
-    slots.forEach((slot) => {
-      const box = slot.getBoundingClientRect();
-      if (box.bottom < -200 || box.top > vh + 200) return;
-      const offset = (box.top + box.height / 2 - vh / 2) * Number(slot.dataset.speed) * (wide ? 1 : 0.4);
-      slot.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
-    });
   }
   const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
   window.addEventListener('scroll', request, { passive: true });

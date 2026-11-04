@@ -68,9 +68,6 @@ const stackImage = (project, lang, i) => {
   return html`<img class="mx-stack-item" src="${imageUrl(cover, 800)}"${set ? html` srcset="${set}" sizes="(max-width: 700px) 62vw, 30vw"` : ''} alt="${projectName(project, lang)}" width="${cover.width}" height="${cover.height}" decoding="async"${i === 0 ? html` fetchpriority="high"` : ''} style="--i:${i};background-color:${cover.color}">`;
 };
 
-// Parallax speeds and columns for the scattered work list.
-const SLOTS = ['a', 'b', 'c', 'd', 'e', 'f'];
-
 /**
  * @param {'en'|'es'} lang
  * @param {object} data
@@ -103,8 +100,8 @@ export function homePage(lang, { projects, archived = 0, since }) {
   <p class="mx-words">${words.map((w, i) => html`<span class="mx-w" style="--w:${i}">${w}</span> `)}</p>
 </section>
 <section class="mx-work" aria-labelledby="work-title">
-  <div class="mx-work-head"><h2 id="work-title">${CONTENT[lang].nav.home}</h2><span>${String(projects.length).padStart(2, '0')}</span></div>
-  <div class="project-grid" aria-label="${t.gridLabel}">${projects.map((p, i) => html`<div class="mx-slot mx-slot--${SLOTS[i % SLOTS.length]}" data-speed="${[0.12, -0.08, 0.06, -0.12, 0.1, -0.05][i % 6]}">${projectCard(p, lang)}</div>`)}</div>
+  <div class="mx-work-head"><h2 id="work-title">${t.workTitle}</h2><span>${String(projects.length).padStart(2, '0')}</span></div>
+  <div class="project-grid" aria-label="${t.gridLabel}">${projects.map((p) => projectCard(p, lang))}</div>
   ${archived ? html`<p class="archive-link"><a href="${ARCHIVE_PAGE[lang]}">${t.archive} →</a></p>` : ''}
 </section>
 `,

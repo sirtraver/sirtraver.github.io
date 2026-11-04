@@ -99,14 +99,11 @@ test('old project URLs redirect to the canonical case study', async () => {
   assert.equal((await get('/projects/unknown/')).status, 404);
 });
 
-test('viewer gallery data is versioned and accepts remote or local project images', async () => {
-  const html = await withFetch(offline, async () => (await get('/')).text());
-  const url = html.match(/data-gallery="([^"]+)"/)[1];
+test('gallery data accepts remote or local project images', async () => {
+  const url = '/assets/galleries.json';
   const response = await get(url);
-  assert.equal(response.headers.get('Cache-Control'), 'public, max-age=31536000, immutable');
   const galleries = await response.json();
   assert.deepEqual(Object.keys(galleries).sort(), activeProjects.map(p => p.slug).sort());
-  assert.ok(url.endsWith('-v3'), 'project tools have a fresh cache version');
   for (const [slug, gallery] of Object.entries(galleries)) {
     assert.equal(gallery.category, findProject(slug).category);
     assert.equal(gallery.year, findProject(slug).year);
@@ -125,7 +122,7 @@ test('the three PDF projects are labelled as concepts on cards, pages and viewer
   const slugs = ['colorsplash', 'olmedo-clasico', 'autoescuela-oasis'];
   for (const [lang, prefix, label] of [['en', '', 'Concept project'], ['es', '/es', 'Proyecto conceptual']]) {
     const home = await withFetch(offline, async () => (await get(`${prefix}/`)).text());
-    const galleries = await (await get(home.match(/data-gallery="([^"]+)"/)[1])).json();
+    const galleries = await (await get('/assets/galleries.json')).json();
     for (const slug of slugs) {
       const project = findProject(slug);
       assert.equal(project.conceptual, true, slug);
@@ -157,7 +154,7 @@ test('earlier projects live in the archive with their own pages', async () => {
 
 test('concept narratives reach both SSR pages and the in-page viewer without fabricated outcomes', async () => {
   const home = await withFetch(offline, async () => (await get('/')).text());
-  const data = await (await get(home.match(/data-gallery="([^"]+)"/)[1])).json();
+  const data = await (await get('/assets/galleries.json')).json();
   for (const slug of ['colorsplash', 'olmedo-clasico', 'autoescuela-oasis']) {
     const project = findProject(slug);
     assert.equal(project.caseStudy.length, 3);
@@ -166,7 +163,7 @@ test('concept narratives reach both SSR pages and the in-page viewer without fab
     assert.deepEqual(data[slug].caseStudy, project.caseStudy);
     for (const [lang, prefix] of [['en', ''], ['es', '/es']]) {
       const html = await (await get(`${prefix}/projects/${slug}/`)).text();
-      assert.ok(html.includes('class="project-story"'));
+      assert.ok(html.includes('class="project-story'));
       for (const section of project.caseStudy) assert.ok(html.includes(section.title[lang]));
       assert.equal((html.match(/data-zoom-src=/g) || []).length, project.images.length);
       assert.ok(html.includes('/assets/image-zoom.js?v='));

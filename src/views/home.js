@@ -74,7 +74,7 @@ export function homePage(lang, { projects, galleriesUrl, archived = 0 }) {
     title: t.title,
     description: t.description,
     schema: schema(lang, projects),
-    scripts: [{ src: '/assets/image-zoom.js' }, { src: '/assets/project-viewer.js', data: { gallery: galleriesUrl } }],
+    scripts: [{ src: '/assets/image-zoom.js' }],
     body: html`${sectionIntro(lang, t.heading, t.lead, { home: true })}
 <div class="work-heading"><h2>${t.workTitle}<span class="work-count">${String(projects.length).padStart(2, '0')}</span></h2><span>${t.workOrder}</span></div>
 <section class="project-grid" aria-label="${t.gridLabel}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>

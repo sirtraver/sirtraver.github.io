@@ -1,7 +1,7 @@
 {
   "version": 41,
   "approved": "2026-11-04",
-  "basedOnCommit": "c402527d08f27ae7d15570bfe68bc3d57d234774",
+  "basedOnCommit": "b5ba76804d714b3142cdee6cff16f72623ff54ba",
   "pages": {
     "/": "ecffc74529e374dee5aa5335b7c7a1708a4d69a9b20ae35a4a5171d49892b0ce",
     "/es/": "c5401c74c48ae9c518b1c6f95b972ef7d173478952f77073c3864a2b9d4ca960",
@@ -11,8 +11,7 @@
     "/es/resources/": "f9dc95141f85a220631e8892a45871d357752aed39b9ba16e27aa028fdd06421"
   },
   "files": {
-    "public/assets/site.css": "d0c082332796c4786a08771c3a6a4aed8e3ffb9e7408dc9dc76093e8a91ebdb9",
-    "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
+    "public/assets/site.css": "b340049e85a06d32f14a8d8ce8a9a10cdbc103f741a49d960842ab4a8ec64e5c",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
     "public/assets/navigation.js": "1de4d77deb5fe97de3b6e0409bce17c30e68cf32f9dc9ec79b4a62afb0b14264",
     "public/assets/site.js": "11f78a00a9c277d324d5ca2c002e2f51c551c2c6211315c093d566c7df1cb9ad"

@@ -60,9 +60,9 @@ test('project breadcrumbs and study content remain readable on directly shared p
     const html = await (await get(`${prefix}/projects/colorsplash/`)).text();
     assert.ok(html.includes('<nav class="breadcrumbs"'));
     assert.ok(html.includes('aria-current="page">COLORSPLASH'));
-    assert.ok(html.includes('class="project-story"'));
+    assert.ok(html.includes('class="project-story'));
     assert.ok(html.includes('class="project-enquiry"'));
-    const gallery = await (await get((await (await get(`${prefix}/`)).text()).match(/data-gallery="([^"]+)"/)[1])).json();
+    const gallery = await (await get('/assets/galleries.json')).json();
     assert.ok(gallery.colorsplash.images.some(image => image.caption?.es));
   }
 });

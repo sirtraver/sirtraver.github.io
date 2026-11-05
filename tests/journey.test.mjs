@@ -13,9 +13,9 @@ test('the home CTA leads to a translated contact form with five native FAQs and 
     assert.match(html, /class="hero-copy"/);
     assert.match(html, /class="hero-contact-label"/);
     const cta = html.match(/<div class="hero-enquiry">([\s\S]*?)<\/div>/)[1];
-    assert.ok(cta.includes('<svg') && !cta.includes('↗'));
+    assert.ok(cta.includes('<span aria-hidden="true">→</span>') && !cta.includes('↗'), 'text CTA with an arrow, no icon-only button');
     assert.ok(html.includes(`class="mobile-enquiry" href="${contact}"`));
-    assert.ok(html.indexOf('hero-enquiry') < html.indexOf('class="project-grid"'));
+    assert.ok(html.indexOf('hero-enquiry') < html.indexOf('class="project-grid'));
     const page = await (await get(contact)).text();
     assert.ok(page.includes(phrase));
     assert.equal((page.match(/<details>/g) || []).length, 5);
@@ -62,8 +62,8 @@ test('project breadcrumbs and study content remain readable on directly shared p
     assert.ok(html.includes('aria-current="page">COLORSPLASH'));
     assert.ok(html.includes('class="project-story"'));
     assert.ok(html.includes('class="project-enquiry"'));
-    const gallery = await (await get((await (await get(`${prefix}/`)).text()).match(/data-gallery="([^"]+)"/)[1])).json();
-    assert.ok(gallery.colorsplash.images.some(image => image.caption?.es));
+    assert.ok(html.includes('class="project-palette"'), 'brand colours are rendered as HTML swatches');
+    assert.ok(html.includes('class="project-hero"'), 'the cover opens the case study');
   }
 });
 
@@ -75,7 +75,10 @@ test('privacy describes remote gallery requests and all rendered main-page image
   await withFetch(offline, async () => {
     for (const path of ['/', '/es/', '/about/', '/es/about/', '/resources/', '/es/resources/', '/es/projects/colorsplash/']) {
       const html = await (await get(path)).text();
-      for (const img of html.match(/<img\b[^>]*>/g) || []) assert.match(img, /\balt="[^"]+"/, path);
+      // Hover previews are decorative (aria-hidden): an empty alt is the correct alternative there.
+      const content = html.replace(/<div class="card-hover" aria-hidden="true">[\s\S]*?<\/div>/g, '');
+      for (const img of content.match(/<img\b[^>]*>/g) || []) assert.match(img, /\balt="[^"]+"/, path);
+      for (const img of html.match(/<div class="card-hover" aria-hidden="true">[\s\S]*?<\/div>/g) || []) assert.match(img, /\balt=""/, path);
       assert.ok(!html.includes('"@type":"LocalBusiness"') && !html.includes('"@type":"AggregateRating"'));
     }
   });

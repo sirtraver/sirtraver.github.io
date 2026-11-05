@@ -9,8 +9,14 @@ import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, person, website } from './schema.js';
 import { projectCta, visibleBreadcrumbs } from './journey.js';
+import { coverTransition } from './home.js';
 
-const GALLERY_SIZES = '(max-width: 800px) calc(100vw - 48px), 1000px';
+// Gallery formats (galeria.json "layout"): default column, "full" edge to edge, "pair" side by side.
+const GALLERY_SIZES = {
+  '': '(max-width: 700px) calc(100vw - 32px), 1120px',
+  full: '100vw',
+  pair: '(max-width: 700px) calc(100vw - 32px), (max-width: 1360px) calc(50vw - 56px), 640px',
+};
 
 function facts(project, lang, t) {
   const rows = [
@@ -19,18 +25,40 @@ function facts(project, lang, t) {
     [t.year, String(project.year)],
     [t.role, project.role[lang]],
     [t.deliverables, project.deliverables[lang].join(', ')],
-    [lang === 'es' ? 'Herramientas' : 'Tools', project.tools.join(' · ')],
+    [t.tools, project.tools.join(' · ')],
   ].filter(([, value]) => value);
   return html`<dl class="project-facts">${rows.map(([label, value]) => html`<div><dt>${label}</dt><dd>${value}</dd></div>`)}</dl>`;
 }
 
 function figure(image, index, total, name, lang, t) {
   const caption = image.caption[lang];
-  return html`<figure><a class="gallery-zoom" href="${largestUrl(image)}" target="_blank" rel="noopener noreferrer" data-zoom-src="${largestUrl(image)}" aria-label="${t.zoomImage(name, index + 1)}">${picture(image, {
+  // In a pair, each figure grows with its aspect ratio so both images share one height.
+  const style = image.layout === 'pair' ? html` style="flex:${(image.width / image.height).toFixed(3)} 1 0"` : '';
+  return html`<figure${image.layout === 'full' ? html` class="is-full"` : ''}${style}><a class="gallery-zoom" href="${largestUrl(image)}" target="_blank" rel="noopener noreferrer" data-zoom-src="${largestUrl(image)}" aria-label="${t.zoomImage(name, index + 1)}">${picture(image, {
     alt: caption || t.imageAlt(name, index + 1, total),
-    sizes: GALLERY_SIZES,
-    priority: index === 0,
+    sizes: GALLERY_SIZES[image.layout] ?? GALLERY_SIZES[''],
   })}</a>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
+}
+
+// Consecutive "pair" images become one diptych row.
+function gallery(images, name, lang, t) {
+  const blocks = [];
+  images.forEach((image, index) => {
+    const node = figure(image, index, images.length, name, lang, t);
+    const last = blocks.at(-1);
+    if (image.layout === 'pair' && Array.isArray(last) && last.length < 2) last.push(node);
+    else blocks.push(image.layout === 'pair' ? [node] : node);
+  });
+  return blocks.map((block) => (Array.isArray(block) ? html`<div class="gallery-pair">${block}</div>` : block));
+}
+
+function palette(project, lang, t) {
+  if (!project.palette.length) return '';
+  const total = project.palette.reduce((sum, swatch) => sum + (swatch.share || 0), 0);
+  return html`<section class="project-palette" aria-labelledby="palette-title"><h2 id="palette-title">${t.palette}</h2><ul>${project.palette.map((swatch) => {
+    const grow = total ? swatch.share : 1;
+    return html`<li style="flex-grow:${grow};--swatch:${swatch.hex}"><span class="swatch-chip" aria-hidden="true"></span><strong>${swatch.name[lang]}</strong><code>${swatch.hex}</code>${swatch.share ? html`<span>${t.paletteShare(swatch.share)}</span>` : ''}</li>`;
+  })}</ul></section>`;
 }
 
 function schema(project, lang, path, name, description) {
@@ -120,7 +148,8 @@ export function projectPage(project, siblings, lang) {
     alternates: { en: projectPath(project, 'en'), es: projectPath(project, 'es') },
     title: `${name} — Javier Traver | sirtraver`,
     description,
-    shareImage: { url: absoluteUrl(cover.og ?? largestUrl(cover)), alt: name },
+    shareImage: { url: absoluteUrl(cover.og ?? largestUrl(cover)), ...(cover.og ? { width: 1200, height: 630 } : {}), alt: name },
+    enquiry: true,
     schema: schema(project, lang, path, name, description),
     scripts: [{ src: '/assets/image-zoom.js' }],
     body: html`<article class="project-page">
@@ -130,12 +159,14 @@ export function projectPage(project, siblings, lang) {
     <h1>${name}</h1>
     <p class="project-intro">${intro || t.project.intro(category, project.year)}</p>
   </header>
+  <div class="project-hero" style="${coverTransition(project)}">${picture(cover, { alt: name, sizes: '100vw', priority: true })}</div>
   <div class="project-summary">
     ${facts(project, lang, t.project)}
   </div>
   ${project.caseStudy.length ? html`<section class="project-story" aria-label="${t.project.story}">${project.caseStudy.map(section => html`<div><h2>${section.title[lang]}</h2><p>${section.text[lang]}</p></div>`)}</section>` : ''}
+  ${palette(project, lang, t.project)}
   <p class="gallery-hint">${t.project.zoomHint}</p>
-  <div class="project-gallery">${project.images.map((image, i) => figure(image, i, project.images.length, name, lang, t.project))}</div>
+  <div class="project-gallery">${gallery(project.images, name, lang, t.project)}</div>
   ${project.result[lang] ? html`<section class="project-result"><h2>${t.project.resultTitle}</h2><p>${project.result[lang]}</p></section>` : ''}
   ${projectCta(lang)}
   <nav class="project-pager" aria-label="${t.project.pagerLabel}">${

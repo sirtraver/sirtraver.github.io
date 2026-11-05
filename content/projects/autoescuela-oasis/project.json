@@ -31,13 +31,41 @@
     "es": ""
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Proyecto conceptual. Plantea una autoescuela con un tono cercano y sin dramatismo: un mensaje claro, «Sin drama. Con carnet.», y un sistema que se mantiene coherente del coche a las redes y la web.",
+    "en": "Concept project. It imagines a driving school with a friendly, drama-free tone: one clear message, “No drama. Just your licence.”, and a system that stays consistent from the car to social media and the website."
   },
   "behance": "",
   "featured": false,
   "archived": false,
   "portfolioOrder": 4,
+  "tools": [
+    "Affinity",
+    "ChatGPT"
+  ],
+  "palette": [
+    {
+      "name": {
+        "es": "Verde menta",
+        "en": "Mint green"
+      },
+      "hex": "#A8F0CC"
+    },
+    {
+      "name": {
+        "es": "Oscuro",
+        "en": "Dark"
+      },
+      "hex": "#18252B"
+    },
+    {
+      "name": {
+        "es": "Azul eléctrico",
+        "en": "Electric blue"
+      },
+      "hex": "#263DD8"
+    }
+  ],
+  "hover": "imagenes/03.webp",
   "caseStudy": [
     {
       "title": {
@@ -69,9 +97,5 @@
         "en": "The car graphics, vertical stories, learner plate and desk materials share the same colours and typography. The website concept brings that identity into a digital interface."
       }
     }
-  ],
-  "tools": [
-    "Affinity",
-    "ChatGPT"
   ]
 }

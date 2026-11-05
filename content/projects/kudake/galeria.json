@@ -1,21 +1,5 @@
 [
   {
-    "file": "imagenes/kudake-japan-burgers-identidad-visual-01.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/88d257257014407.6acd6eb1f1ef7.jpg"
-  },
-  {
-    "file": "imagenes/kudake-japan-burgers-identidad-visual-02.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/64f5f4257014407.6acd6eb200025.jpg"
-  },
-  {
     "file": "imagenes/kudake-japan-burgers-identidad-visual-03.webp",
     "caption": {
       "en": "",
@@ -48,14 +32,6 @@
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/26a58e257014407.6acd6eb1f22bc.jpg"
   },
   {
-    "file": "imagenes/kudake-japan-burgers-identidad-visual-07.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/92d6ea257014407.6acd6eb1f323f.jpg"
-  },
-  {
     "file": "imagenes/kudake-japan-burgers-identidad-visual-08.webp",
     "caption": {
       "en": "",
@@ -82,41 +58,36 @@
   {
     "file": "imagenes/kudake-japan-burgers-identidad-visual-11.webp",
     "caption": {
-      "en": "",
-      "es": ""
+      "es": "El local: el sello preside la barra y el damero viste la planta.",
+      "en": "The restaurant: the stamp presides over the counter and the checkerboard dresses the floor."
     },
+    "layout": "full",
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0e6b95257014407.6acd6eb1f2654.jpg"
   },
   {
     "file": "imagenes/kudake-japan-burgers-identidad-visual-12.webp",
     "caption": {
-      "en": "",
-      "es": ""
+      "es": "Uniforme y merchandising.",
+      "en": "Uniform and merchandise."
     },
+    "layout": "pair",
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/e576b2257014407.6acd6eb1f15ff.jpg"
+  },
+  {
+    "file": "imagenes/kudake-japan-burgers-detalle-packaging.webp",
+    "caption": {
+      "es": "Detalle del packaging: el sello en naranja sobre cartón crudo.",
+      "en": "Packaging detail: the stamp in orange on raw board."
+    },
+    "layout": "pair"
   },
   {
     "file": "imagenes/kudake-japan-burgers-identidad-visual-13.webp",
     "caption": {
-      "en": "",
-      "es": ""
+      "es": "Bandeja, papel y envases: el patrón del sello en todas las piezas.",
+      "en": "Tray, wrap and packaging: the stamp pattern on every piece."
     },
+    "layout": "full",
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/5b7fc4257014407.6acd6eb1f1228.jpg"
-  },
-  {
-    "file": "imagenes/kudake-japan-burgers-identidad-visual-14.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/20464c257014407.6acd6eb200437.jpg"
-  },
-  {
-    "file": "imagenes/kudake-japan-burgers-identidad-visual-15.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/99a144257014407.6acd6eb1f3e7b.jpg"
   }
 ]

@@ -1,5 +1,6 @@
 import { ORIGIN, PERSON_ID, PORTRAIT } from '../config.js';
-import { CONTENT, PAGES, ROLE } from '../content.js';
+import { CONTACT_PAGE, CONTENT, PAGES, ROLE } from '../content.js';
+import { JOURNEY } from './journey.js';
 import { assetUrl } from '../lib/assets.js';
 import { about } from '../generated/content.js';
 import { html } from '../lib/html.js';
@@ -46,7 +47,6 @@ function schema(lang) {
 export function aboutPage(lang) {
   const t = CONTENT[lang].about;
   const resume = about.resume;
-  const study = resume.education.find(item => item.current);
   return layout({
     lang,
     page: 'about',
@@ -55,29 +55,24 @@ export function aboutPage(lang) {
     description: t.description,
     schema: schema(lang),
     body: html`<article class="about-editorial about-resume">
-    <aside class="about-profile">
-      <p class="overline">${t.overline}</p>
-      <div class="profile-identity">
-        <img class="editorial-portrait" src="${assetUrl(PORTRAIT.path)}" alt="${t.portraitAlt}" width="${PORTRAIT.width}" height="${PORTRAIT.height}" fetchpriority="high">
-        <h1>Javier<br>Traver<span>.</span></h1>
+    <header class="about-profile">
+      <div class="about-copy">
+        <p class="overline">${t.overline}</p>
+        <h1>${t.positionTitle[0]}<br>${t.positionTitle[1]}</h1>
+        <p class="position-lead">${t.lead}</p>
+        <p class="position-bio">${t.bio}</p>
+        <div class="about-actions">
+          <a class="enquiry-button" href="${CONTACT_PAGE[lang]}">${JOURNEY[lang].cta} <span aria-hidden="true">→</span></a>
+          <!-- curriculum:access --><a class="profile-cv-link" href="${lang === 'es' ? '/cv/' : '/resume/'}">${t.cvLink}<span aria-hidden="true">↗</span></a><!-- /curriculum:access -->
+        </div>
+        ${socialIcons(lang, 'profile-social')}
       </div>
-      <p class="profile-role">${t.role}</p>
-      <p class="profile-location">${t.location}</p>
-      ${study ? html`<div class="profile-study">
-        <p class="section-kicker">${t.currentEducation}</p>
-        <p>${study.title[lang]}</p>
-        <span>${study.institution} · ${study.period[lang]}</span>
-      </div>` : ''}
-      <!-- curriculum:access --><a class="profile-cv-link" href="${lang === 'es' ? '/cv/' : '/resume/'}">${t.cvLink}<span aria-hidden="true">↗</span></a><!-- /curriculum:access -->
-      ${socialIcons(lang, 'profile-social')}
-    </aside>
+      <figure class="about-portrait">
+        <img class="editorial-portrait" src="${assetUrl(PORTRAIT.path)}" alt="${t.portraitAlt}" width="${PORTRAIT.width}" height="${PORTRAIT.height}" fetchpriority="high">
+        <figcaption><strong>Javier Traver</strong><p class="profile-role">${t.role}</p><span class="profile-location">${t.location}</span></figcaption>
+      </figure>
+    </header>
   <div class="resume-main">
-    <section class="about-position">
-      <h2>${t.positionTitle[0]}<br>${t.positionTitle[1]}</h2>
-      <p class="position-lead">${t.lead}</p>
-      <p class="position-bio">${t.bio}</p>
-      <p class="position-study">${t.currentStudy}</p>
-    </section>
     <section class="resume-section" aria-labelledby="resume-experience">
       <h2 id="resume-experience">${t.experience}</h2>
       ${experienceList(resume.experience, lang)}

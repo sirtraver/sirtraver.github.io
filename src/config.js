@@ -22,7 +22,7 @@ export const SITE_VERIFICATION = {
 };
 
 export const SHARE_IMAGE = { path: '/assets/share-sirtraver.png', width: 1200, height: 630 };
-export const PORTRAIT = { path: '/assets/javier-traver.jpg', width: 150, height: 150 };
+export const PORTRAIT = { path: '/assets/cv-portrait.jpg', width: 600, height: 599 };
 
 // Hosts allowed for remote images (Gumroad product thumbnails).
 export const GUMROAD_IMAGE_HOSTS = ['public-files.gumroad.com', 'gumroad-public-storage.s3.amazonaws.com'];

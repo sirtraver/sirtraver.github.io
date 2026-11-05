@@ -58,6 +58,7 @@ test('unknown URLs return a real, localized, noindex 404', async () => {
     const html = await response.text();
     assert.ok(html.includes(`<html lang="${lang}">`));
     assert.ok(html.includes('<meta name="robots" content="noindex">'));
+    assert.ok(html.includes('<main id="main" class="not-found">'), 'marker used by language.js to swap in /es/404.html');
   }
 });
 

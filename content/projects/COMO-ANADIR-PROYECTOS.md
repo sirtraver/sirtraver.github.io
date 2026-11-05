@@ -45,3 +45,26 @@ Describe solo información confirmada. Deja vacíos el cliente, rol o resultado 
 ## Información y herramientas de la tarjeta
 
 La descripción se edita en `intro.es` e `intro.en`, dentro de cada `project.json`. La lista `"tools"` (por ejemplo `["Affinity", "Figma"]`) es independiente para cada proyecto: cambia, añade o quita sus nombres según corresponda. Si dejas `"tools": []`, no aparecerá ese bloque. Los entregables se editan en `deliverables`; los relatos ampliados, en `caseStudy`. Después de editar, hay que generar y publicar de nuevo la web.
+
+## Composición de la página del proyecto (v43)
+
+La portada (`portada.*`) abre la página del caso a ancho completo, así que no hace falta repetirla en la galería. Usa una imagen de al menos 1920 px de ancho: en la portada de la web el primer proyecto ocupa todo el ancho.
+
+En `galeria.json`, cada imagen puede indicar `"layout"`:
+
+- sin `layout`: lámina en la columna de lectura (brand boards, construcción, tipografía);
+- `"full"`: fotografía a sangre, de borde a borde de la pantalla;
+- `"pair"`: dos imágenes seguidas con `"pair"` forman un díptico a la misma altura.
+
+No incluyas las láminas de portada, de texto o de «Gracias» de la presentación en PDF: el título, el relato y los créditos ya están en HTML. Los recortes de detalle se guardan en `imagenes/` como cualquier otra imagen.
+
+En `project.json`:
+
+- `"palette"`: los colores de la marca como muestras en HTML. `share` (opcional) es el porcentaje de uso y ajusta el ancho de cada muestra:
+  ```json
+  "palette": [{ "name": { "es": "Carmín", "en": "Carmine" }, "hex": "#C61F2E", "share": 15 }]
+  ```
+- `"hover"`: una imagen de la galería que aparece al pasar el ratón por la tarjeta de la portada, p. ej. `"imagenes/11.webp"`.
+- `"result"`: cierre del caso. En los proyectos conceptuales empieza por «Proyecto conceptual.» / «Concept project.» y explica qué demuestra, sin clientes, cifras ni resultados inventados.
+
+Si cambias el diseño de la web (no el contenido), revísalo y fíjalo de nuevo como diseño aprobado con `node scripts/approve-design.mjs vXX "nota"`.

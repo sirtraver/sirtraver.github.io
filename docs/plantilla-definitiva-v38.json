@@ -1,11 +1,11 @@
 {
-  "version": 38,
-  "commit": "bc195dd430d4fc8e421a2a81fe0e3dabdfe89bb0",
+  "version": "v43 — sistema editorial: escala tipográfica, portada asimétrica, casos con galería web, Sobre mí editorial, menú móvil",
+  "commit": "see git log",
   "visualFiles": {
-    "public/assets/site.css": "5fac8dd83cbddad9adff48ceb420805ed165b77688a98b87f33241657e66f7d3",
+    "public/assets/site.css": "f20104390bb26128c12ce5d7630fa6a6ebae52117687025cd31e836fa16d41e0",
     "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
-    "public/assets/navigation.js": "1de4d77deb5fe97de3b6e0409bce17c30e68cf32f9dc9ec79b4a62afb0b14264",
-    "public/assets/site.js": "11f78a00a9c277d324d5ca2c002e2f51c551c2c6211315c093d566c7df1cb9ad"
+    "public/assets/navigation.js": "aa7dd27eed7b009a4295a1b2c1b05a0e7502f080247cfa9370216f8e50f9ecea",
+    "public/assets/site.js": "960db61e15b37311acbb2b66972c18d4a41fd5cfc676f07a6d5871fbb3f6873e"
   }
 }

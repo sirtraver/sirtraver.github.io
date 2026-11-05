@@ -29,13 +29,34 @@
     "es": ""
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Proyecto conceptual. Explora cómo dos colores, una tipografía condensada y una ilustración de grabado pueden dar a un festival de teatro clásico una imagen contemporánea y reconocible, del cartel a la entrada.",
+    "en": "Concept project. It explores how two colours, a condensed typeface and an engraving-style illustration can give a classical theatre festival a contemporary, recognisable image, from poster to ticket."
   },
   "behance": "",
   "featured": false,
   "archived": false,
   "portfolioOrder": 3,
+  "tools": [
+    "Affinity",
+    "ChatGPT"
+  ],
+  "palette": [
+    {
+      "name": {
+        "es": "Burdeos",
+        "en": "Burgundy"
+      },
+      "hex": "#722F43"
+    },
+    {
+      "name": {
+        "es": "Marfil",
+        "en": "Ivory"
+      },
+      "hex": "#F2E8D8"
+    }
+  ],
+  "hover": "imagenes/06.webp",
   "caseStudy": [
     {
       "title": {
@@ -67,9 +88,5 @@
         "en": "Engraving-style illustration and typographic composition carry through from the posters to the venue graphics and tickets. These are concept applications, independent of a commission from the festival."
       }
     }
-  ],
-  "tools": [
-    "Affinity",
-    "ChatGPT"
   ]
 }

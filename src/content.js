@@ -32,7 +32,7 @@ export const CONTENT = {
   en: {
     locale: 'en_GB',
     skip: 'Skip to content',
-    brandLabel: 'SIRTRAVER — Home',
+    brandLabel: 'sirtraver — Home',
     mainNavLabel: 'Main navigation',
     languageLabel: 'Language',
     nav: { home: 'Portfolio', resources: 'Resources', about: 'About' },
@@ -40,12 +40,12 @@ export const CONTENT = {
     emailLabel: 'Email sirtraver',
     footerRole: `Javier Traver · ${ROLE}`,
     switchToThisLanguage: 'View this page in English',
-    shareImageAlt: 'SIRTRAVER visual identity by Javier Traver',
+    shareImageAlt: 'sirtraver visual identity by Javier Traver',
     personCaption: `Javier Traver — ${ROLE} · Madrid`,
     categories: { 'Visual identity': 'Visual identity', 'Visual design': 'Visual design' },
 
     home: {
-      title: `Portfolio — Javier Traver | ${ROLE}`,
+      title: `Javier Traver — ${ROLE} in Madrid | sirtraver`,
       description:
         `Brand identity, packaging and visual communication by Javier Traver, ${ROLE} based in Madrid. Explore selected brand systems and their applications.`,
       overline: `Javier Traver · ${ROLE}`,
@@ -70,7 +70,7 @@ export const CONTENT = {
       libraryTypes: 'Canva · Notion · Design',
       breadcrumb: 'Resources',
       gridLabel: 'Gumroad products',
-      listName: 'SIRTRAVER digital resources',
+      listName: 'sirtraver digital resources',
       unavailable: 'The catalog is temporarily unavailable. Please try again shortly.',
       coverOf: 'Cover of',
       viewProduct: 'View resource',
@@ -99,16 +99,16 @@ export const CONTENT = {
     },
 
     about: {
-      "title": `About — Javier Traver | ${ROLE}`,
+      "title": `About — Javier Traver | sirtraver`,
       "description": `${ROLE}, freelance since 2017 and a Design graduate from Universidad Complutense de Madrid. Currently studying an Advanced Vocational Qualification in Marketing & Advertising at UFV.`,
       "breadcrumb": "About",
-      "overline": "ABOUT / SIRTRAVER",
+      "overline": "About · Madrid",
       "portraitAlt": `Javier Traver — ${ROLE}`,
       "role": ROLE,
       "location": "Madrid, Spain",
       "positionTitle": [
-        "Visual design.",
-        "Brand communication."
+        "I design brands",
+        "you get at a glance."
       ],
       "lead": `I’m Javier Traver, ${ROLE}, working freelance since 2017 and a Design graduate from Universidad Complutense de Madrid.`,
       "bio": "I work on visual identity and brand communication, from logos to their digital and printed applications. My experience also includes product photography and visual content editing.",
@@ -143,6 +143,9 @@ export const CONTENT = {
       role: 'Role',
       deliverables: 'Deliverables',
       resultTitle: 'Result',
+      tools: 'Tools',
+      palette: 'Colour palette',
+      paletteShare: (share) => `${share}% of use`,
       previous: '← Previous',
       next: 'Next →',
     },
@@ -180,16 +183,16 @@ export const CONTENT = {
     },
 
     notFound: {
-      title: 'Page not found | SIRTRAVER',
-      text: 'This page could not be found.',
-      back: 'Back to SIRTRAVER',
+      title: 'Page not found | sirtraver',
+      text: 'This page doesn’t exist or has moved. The projects are still here.',
+      back: 'See the projects',
     },
   },
 
   es: {
     locale: 'es_ES',
     skip: 'Saltar al contenido',
-    brandLabel: 'SIRTRAVER — Inicio',
+    brandLabel: 'sirtraver — Inicio',
     mainNavLabel: 'Navegación principal',
     languageLabel: 'Idioma',
     nav: { home: 'Proyectos', resources: 'Recursos', about: 'Sobre mí' },
@@ -197,12 +200,12 @@ export const CONTENT = {
     emailLabel: 'Enviar un email a sirtraver',
     footerRole: `Javier Traver · ${ROLE}`,
     switchToThisLanguage: 'Ver esta página en español',
-    shareImageAlt: 'SIRTRAVER visual identity by Javier Traver',
+    shareImageAlt: 'Identidad visual de sirtraver, por Javier Traver',
     personCaption: `Javier Traver — ${ROLE} · Madrid`,
     categories: { 'Visual identity': 'Identidad visual', 'Visual design': 'Diseño visual' },
 
     home: {
-      title: `Proyectos — Javier Traver | ${ROLE}`,
+      title: `Javier Traver — ${ROLE} en Madrid | sirtraver`,
       description:
         `Identidad de marca, packaging y comunicación visual de Javier Traver, ${ROLE} en Madrid. Una selección de sistemas de marca y sus aplicaciones.`,
       overline: `Javier Traver · ${ROLE}`,
@@ -227,7 +230,7 @@ export const CONTENT = {
       libraryTypes: 'Canva · Notion · Diseño',
       breadcrumb: 'Recursos',
       gridLabel: 'Productos de Gumroad',
-      listName: 'Recursos digitales de SIRTRAVER',
+      listName: 'Recursos digitales de sirtraver',
       unavailable: 'El catálogo no está disponible temporalmente. Inténtalo de nuevo en unos instantes.',
       coverOf: 'Portada de',
       viewProduct: 'Ver recurso',
@@ -256,16 +259,16 @@ export const CONTENT = {
     },
 
     about: {
-      "title": `Sobre mí — Javier Traver | ${ROLE}`,
+      "title": `Sobre mí — Javier Traver | sirtraver`,
       "description": `${ROLE}, freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid. Actualmente estudio el Grado Superior en Marketing y Publicidad en la UFV.`,
       "breadcrumb": "Sobre mí",
-      "overline": "SOBRE MÍ / SIRTRAVER",
+      "overline": "Sobre mí · Madrid",
       "portraitAlt": `Javier Traver — ${ROLE}`,
       "role": ROLE,
       "location": "Madrid, España",
       "positionTitle": [
-        "Diseño visual.",
-        "Comunicación de marca."
+        "Diseño marcas",
+        "que se entienden de un vistazo."
       ],
       "lead": `Soy Javier Traver, ${ROLE}, freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid.`,
       "bio": "Trabajo en identidad visual y comunicación de marca, desde el logotipo hasta sus aplicaciones digitales e impresas. Mi experiencia también abarca la fotografía de producto y la edición de contenidos visuales.",
@@ -300,6 +303,9 @@ export const CONTENT = {
       role: 'Rol',
       deliverables: 'Entregables',
       resultTitle: 'Resultado',
+      tools: 'Herramientas',
+      palette: 'Paleta de color',
+      paletteShare: (share) => `${share} % de uso`,
       previous: '← Anterior',
       next: 'Siguiente →',
     },
@@ -337,9 +343,9 @@ export const CONTENT = {
     },
 
     notFound: {
-      title: 'Página no encontrada | SIRTRAVER',
-      text: 'No se ha encontrado esta página.',
-      back: 'Volver a SIRTRAVER',
+      title: 'Página no encontrada | sirtraver',
+      text: 'Esta página no existe o ha cambiado de sitio. Los proyectos siguen aquí.',
+      back: 'Ver los proyectos',
     },
   },
 };

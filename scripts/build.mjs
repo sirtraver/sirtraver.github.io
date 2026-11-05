@@ -46,13 +46,17 @@ async function listFiles(dir) {
   return files;
 }
 
+// Conservative minification: comments and layout whitespace only (no selector or value rewriting).
+const minifyCss = (css) => css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').replace(/\s*([{};])\s*/g, '$1').trim();
+
 async function generateAssets() {
   const assets = {};
   for (const file of await listFiles(PUBLIC_DIR)) {
     const route = '/' + path.relative(PUBLIC_DIR, file).split(path.sep).join('/');
     const type = TYPES[path.extname(file)];
     if (!type) throw new Error(`No content type for ${route}`);
-    const bytes = await fs.readFile(file);
+    let bytes = await fs.readFile(file);
+    if (path.extname(file) === '.css') bytes = Buffer.from(minifyCss(bytes.toString('utf8')));
     assets[route] = { type, hash: createHash('sha256').update(bytes).digest('hex').slice(0, 12), base64: bytes.toString('base64') };
   }
   // SOURCE_DATE (YYYY-MM-DD) makes builds reproducible; it defaults to today.

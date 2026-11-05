@@ -89,7 +89,10 @@
     settle(current);
   });
 
+  // In the phone menu the links are a vertical list: plain taps, no draggable thumb.
+  const phoneMenu = window.matchMedia?.('(max-width: 700px)');
   nav.addEventListener('pointerdown', (event) => {
+    if (phoneMenu?.matches && document.documentElement?.classList?.contains('js')) return;
     if (!event.isPrimary || event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
     const link = event.target.closest('a');
     if (!links.includes(link)) return;

@@ -1,23 +1,23 @@
 {
-  "version": 34,
-  "commit": "24e69a7e289068bfa18a0bf149cf107032952702",
+  "version": "v43 — sistema editorial: escala tipográfica, portada asimétrica, casos con galería web, Sobre mí editorial, menú móvil",
+  "commit": "see git log",
   "bodyHashes": {
-    "/": "444d5b092571b7979a0ddfc7a8f90c532e36bc428b6ecc0218b505ef007fc3be",
-    "/es/": "a9c180860e397cb04751fbdbaddf001ab7bcd81fac7cf1bd390550e275ea6a36",
-    "/about/": "8144f96d869b7548917c079d4e339ebc0a703c45c6029c9b8940eaf986e67a4b",
-    "/es/about/": "d4525eaa75febec44dc201ff0d9db3826bedbe8ac310ce81c3efac1d05b6498e",
-    "/resources/": "31ea8d9be4e7dd1cb57c8999e003e7d8b285007de6939687156eb4e404e49f1d",
-    "/es/resources/": "9cabf85f60ffdc6c3f412b20ddee9a99ff67b307de0dff49d0c5aa36555ba15a"
+    "/": "cf562cc6cfbdbac62eba6781f48aa84eef221d1e6556a73a7776a2bfbce3c100",
+    "/es/": "a641d3b6a458da170a8b5b0a0ed288e926caf9840d1854f00bd8ade5ded4b790",
+    "/about/": "bc48ceea08c775eac4509c53bc286bad8d8cf5f7f2cb145eb2dcf9ef7098d364",
+    "/es/about/": "e72da40561e42ceb74480c28fdccb21312966e734b86b1b7b1935dd51468445a",
+    "/resources/": "a6651dbbf08fc8d20eb8566550e78e5dc979cf13d50a150624c358a30a0041ae",
+    "/es/resources/": "b3cd64091a1d65d9e8742d3ef41573dc878a8a7723d6a9a5c4a1eb2ab16bb7bc"
   },
-  "cssPrefixBytes": 43191,
-  "cssPrefixHash": "c03c7721ed8ecfb1415e5d89098a30121d35428b11b6a96013a7391857f16140",
+  "cssPrefixBytes": 67076,
+  "cssPrefixHash": "f20104390bb26128c12ce5d7630fa6a6ebae52117687025cd31e836fa16d41e0",
   "homeShellHashes": {
-    "/": "5d84f7fa28803551e9218e4ab73a329262218655ff6888192b6ab6708ecef0b1",
-    "/es/": "6c7e735f708705f587cee5cae8397d6dfcfdac66929068d31c4710c7b0482a5d"
+    "/": "6c7746f227a1f90b457f95f2180057f73c9b80a1ff7dde7f6fb533747e9bf176",
+    "/es/": "7dc68745fa782ef4554dd14bbd942489ad3b34e61b75292cce98c6f73481ad93"
   },
   "resourcesShellHashes": {
-    "/resources/": "4d2153aba4e5a79f588226da3e67f0b52849e3e0e3bf7d1c00d1ce9d01bd49cf",
-    "/es/resources/": "0646794177352e89fb54d5444e88e92306b185947e46f837c9ebf9b02fb658f7"
+    "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",
+    "/es/resources/": "6d7a8297f360b174bf865335a303943e39637a405fb8c30f14481c49395540c7"
   },
   "resourcesFormHashes": {
     "/resources/": "7f1b429a6dc8f39b40ceecfbc80559b75925030e23ce3bdceded74b736d01d31",

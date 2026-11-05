@@ -29,13 +29,48 @@
     "es": ""
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Proyecto conceptual. Demuestra cómo un monograma y cuatro colores bastan para ordenar una gama de producto entera: el mismo sistema funciona en la lata, en la caja, en la campaña y en el expositor de tienda.",
+    "en": "Concept project. It shows how one monogram and four colours are enough to organise an entire product range: the same system works on the can, the box, the campaign and the in-store display."
   },
   "behance": "",
   "featured": false,
   "archived": false,
   "portfolioOrder": 2,
+  "tools": [
+    "Affinity",
+    "ChatGPT"
+  ],
+  "palette": [
+    {
+      "name": {
+        "es": "Cian",
+        "en": "Cyan"
+      },
+      "hex": "#009FC5"
+    },
+    {
+      "name": {
+        "es": "Magenta",
+        "en": "Magenta"
+      },
+      "hex": "#E51658"
+    },
+    {
+      "name": {
+        "es": "Amarillo",
+        "en": "Yellow"
+      },
+      "hex": "#FFC21F"
+    },
+    {
+      "name": {
+        "es": "Negro",
+        "en": "Black"
+      },
+      "hex": "#141414"
+    }
+  ],
+  "hover": "imagenes/06.webp",
   "caseStudy": [
     {
       "title": {
@@ -67,9 +102,5 @@
         "en": "Paint tins, a presentation box, communication pieces and a store display show the system at different scales. The campaign is built around the message “Paint it”."
       }
     }
-  ],
-  "tools": [
-    "Affinity",
-    "ChatGPT"
   ]
 }

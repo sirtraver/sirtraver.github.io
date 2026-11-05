@@ -4,7 +4,8 @@
     "caption": {
       "es": "Logotipo de Autoescuela OASIS en verde menta sobre fondo oscuro.",
       "en": "Mint-green Autoescuela OASIS logo on a dark background."
-    }
+    },
+    "layout": "full"
   },
   {
     "file": "imagenes/02.webp",
@@ -18,7 +19,8 @@
     "caption": {
       "es": "Propuesta de campaña Sin drama. Con carnet. con un coche rotulado de Autoescuela OASIS.",
       "en": "Sin drama. Con carnet. concept campaign with an OASIS-branded driving-school car."
-    }
+    },
+    "layout": "full"
   },
   {
     "file": "imagenes/04.webp",
@@ -32,13 +34,15 @@
     "caption": {
       "es": "Placa de conductor novel con una L, llaves y material de Autoescuela OASIS sobre una mesa.",
       "en": "Learner-driver L plate, keys and Autoescuela OASIS materials on a table."
-    }
+    },
+    "layout": "pair"
   },
   {
     "file": "imagenes/06.webp",
     "caption": {
       "es": "Propuesta de página web de Autoescuela OASIS presentada en un ordenador portátil.",
       "en": "Autoescuela OASIS website concept displayed on a laptop."
-    }
+    },
+    "layout": "pair"
   }
 ]

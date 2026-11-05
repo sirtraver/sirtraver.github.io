@@ -31,8 +31,8 @@
     "en": "Smash burgers with a Japanese soul. An identity for a burger chain that brings the American neo-diner into a contemporary format, with the kanji 砕け! (“smash it!”) as its stamp."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Un sistema completo y preparado para crecer: sello, logotipo, paleta con proporciones de uso, tipografía y cuatro recursos gráficos que se aplican igual en el local, el packaging, el merchandising y la calle.",
+    "en": "A complete system ready to grow: stamp, logo, a palette with usage proportions, typography and four graphic devices applied the same way across the restaurant, packaging, merchandise and the street."
   },
   "featured": false,
   "archived": false,
@@ -43,6 +43,33 @@
     "Affinity",
     "ChatGPT"
   ],
+  "palette": [
+    {
+      "name": {
+        "es": "Rice Cream",
+        "en": "Rice Cream"
+      },
+      "hex": "#F4EBDD",
+      "share": 60
+    },
+    {
+      "name": {
+        "es": "Electric Cobalt",
+        "en": "Electric Cobalt"
+      },
+      "hex": "#1F4FFF",
+      "share": 30
+    },
+    {
+      "name": {
+        "es": "Chili Orange",
+        "en": "Chili Orange"
+      },
+      "hex": "#FF5A2A",
+      "share": 10
+    }
+  ],
+  "hover": "imagenes/kudake-japan-burgers-identidad-visual-11.webp",
   "caseStudy": [
     {
       "title": {

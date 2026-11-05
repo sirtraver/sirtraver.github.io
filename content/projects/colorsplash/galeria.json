@@ -4,7 +4,8 @@
     "caption": {
       "es": "Logotipo blanco de COLORSPLASH sobre fondo cian.",
       "en": "White COLORSPLASH logo on a cyan background."
-    }
+    },
+    "layout": "full"
   },
   {
     "file": "imagenes/02.webp",
@@ -18,7 +19,8 @@
     "caption": {
       "es": "Cuatro botes de pintura COLORSPLASH en amarillo, cian, magenta y negro.",
       "en": "Four COLORSPLASH paint tins in yellow, cyan, magenta and black."
-    }
+    },
+    "layout": "full"
   },
   {
     "file": "imagenes/04.webp",
@@ -32,13 +34,15 @@
     "caption": {
       "es": "Caja de presentación con botes de pintura y piezas impresas de COLORSPLASH.",
       "en": "Presentation box with paint tins and COLORSPLASH printed materials."
-    }
+    },
+    "layout": "pair"
   },
   {
     "file": "imagenes/06.webp",
     "caption": {
       "es": "Expositor de tienda con botes organizados por color y el mensaje Paint it.",
       "en": "Retail display with paint tins grouped by colour and the Paint it message."
-    }
+    },
+    "layout": "pair"
   }
 ]

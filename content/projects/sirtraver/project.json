@@ -27,8 +27,8 @@
     "en": "My own brand: a typographic block in three syllables, SIR · TRA · VER, in black and white, working as logo, stamp and signature."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Una marca personal que firma todo mi trabajo: un único bloque tipográfico con versiones positiva, negativa y gris, aplicado a tarjetas, papelería y cartelería.",
+    "en": "A personal brand that signs all my work: a single typographic block in positive, negative and grey versions, applied to cards, stationery and posters."
   },
   "featured": false,
   "archived": false,
@@ -38,6 +38,30 @@
     "Affinity",
     "ChatGPT"
   ],
+  "palette": [
+    {
+      "name": {
+        "es": "Negro",
+        "en": "Black"
+      },
+      "hex": "#000000"
+    },
+    {
+      "name": {
+        "es": "Blanco",
+        "en": "White"
+      },
+      "hex": "#FFFFFF"
+    },
+    {
+      "name": {
+        "es": "Gris",
+        "en": "Grey"
+      },
+      "hex": "#777777"
+    }
+  ],
+  "hover": "imagenes/sirtraver-identidad-visual-01.webp",
   "caseStudy": [
     {
       "title": {

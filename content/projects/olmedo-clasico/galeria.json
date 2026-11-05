@@ -4,7 +4,8 @@
     "caption": {
       "es": "Logotipo tipográfico de Olmedo Clásico en marfil sobre burdeos.",
       "en": "Ivory Olmedo Clásico wordmark on burgundy."
-    }
+    },
+    "layout": "full"
   },
   {
     "file": "imagenes/02.webp",
@@ -32,13 +33,15 @@
     "caption": {
       "es": "Simulación de la identidad del festival en carteles y escenario de un teatro al aire libre.",
       "en": "Festival identity mockup on posters and a stage in an open-air theatre."
-    }
+    },
+    "layout": "pair"
   },
   {
     "file": "imagenes/06.webp",
     "caption": {
       "es": "Dos entradas de teatro de Olmedo Clásico, en burdeos y marfil, sobre una mesa.",
       "en": "Two burgundy and ivory Olmedo Clásico theatre tickets on a table."
-    }
+    },
+    "layout": "pair"
   }
 ]

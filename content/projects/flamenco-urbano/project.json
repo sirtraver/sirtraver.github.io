@@ -31,8 +31,8 @@
     "en": "Spanish roots, Japanese scene. An identity for a flamenco-inspired streetwear brand designed for the Japanese market."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Una identidad bilingüe que se entiende en Madrid y en Tokio: monograma, nombre en katakana, cuatro versiones del logotipo y una paleta de tres colores aplicados a tienda, colección, merchandising y campaña exterior.",
+    "en": "A bilingual identity that reads in Madrid and in Tokyo: monogram, katakana name, four logo versions and a three-colour palette applied to the shop, the collection, merchandise and an outdoor campaign."
   },
   "featured": false,
   "archived": false,
@@ -43,6 +43,33 @@
     "Affinity",
     "ChatGPT"
   ],
+  "palette": [
+    {
+      "name": {
+        "es": "Hueso",
+        "en": "Bone"
+      },
+      "hex": "#EDE3D5",
+      "share": 50
+    },
+    {
+      "name": {
+        "es": "Carbón",
+        "en": "Charcoal"
+      },
+      "hex": "#111111",
+      "share": 35
+    },
+    {
+      "name": {
+        "es": "Carmín",
+        "en": "Carmine"
+      },
+      "hex": "#C61F2E",
+      "share": 15
+    }
+  ],
+  "hover": "imagenes/flamenco-urbano-identidad-visual-11.webp",
   "caseStudy": [
     {
       "title": {

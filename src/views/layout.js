@@ -5,14 +5,16 @@ import { assetUrl } from '../lib/assets.js';
 import { html, jsonLd } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { runtime } from '../lib/runtime.js';
-import { ICONS } from './icons.js';
 // Keep this small label local to avoid a layout/journey module cycle.
 const mobileCta = { es: 'Cuéntame tu proyecto', en: 'Tell me about your project' };
+const menuLabel = { es: { open: 'Menú', close: 'Cerrar' }, en: { open: 'Menu', close: 'Close' } };
 
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
   <a class="brand" href="${PAGES.home[lang]}" aria-label="${t.brandLabel}"><span class="wordmark">sirtraver</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-open="${menuLabel[lang].open}" data-close="${menuLabel[lang].close}">${menuLabel[lang].open}</button>
+  <div class="site-menu" id="site-menu">
   <nav aria-label="${t.mainNavLabel}">
     ${['home', 'resources', 'about'].map(
       (key) => html`<a href="${PAGES[key][lang]}"${key === page ? html` aria-current="page"` : ''}>${t.nav[key]}</a>`,
@@ -21,6 +23,8 @@ function header(lang, page, alternates) {
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
     ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
   </div>
+  <a class="enquiry-button menu-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">→</span></a>
+  </div>
 </header>`;
 }
 
@@ -28,7 +32,7 @@ function footer(lang, page) {
   const t = CONTENT[lang];
   return html`<footer class="site-footer">
   <div class="footer-legal">
-    <span>© ${new Date().getUTCFullYear()} SIRTRAVER</span><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
+    <span>© ${new Date().getUTCFullYear()} sirtraver</span><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
   </div>
   <span>${t.footerRole}</span>
 </footer>`;
@@ -47,9 +51,10 @@ function footer(lang, page) {
  * @param {Array<{src: string, data?: object}>} [options.scripts]
  * @param {boolean} [options.noindex]
  * @param {string} [options.mainClass]
+ * @param {boolean} [options.enquiry]  Fixed contact shortcut on phones (default: section pages).
  * @param {*} options.body
  */
-export function layout({ lang, page, alternates, title, description, shareImage, schema, scripts = [], styles = [], noindex = false, mainClass, body }) {
+export function layout({ lang, page, alternates, title, description, shareImage, schema, scripts = [], styles = [], noindex = false, mainClass, enquiry, body }) {
   const t = CONTENT[lang];
   const paths = alternates ?? (page ? PAGES[page] : null);
   const canonical = paths && !noindex ? ORIGIN + paths[lang] : null;
@@ -61,6 +66,7 @@ export function layout({ lang, page, alternates, title, description, shareImage,
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffffff">
+<meta name="view-transition" content="same-origin">
 <title>${title}</title>
 ${description ? html`<meta name="description" content="${description}">` : ''}
 <meta name="robots" content="${noindex ? 'noindex' : 'index,follow,max-image-preview:large'}">
@@ -75,7 +81,7 @@ ${LANGUAGES.map((code) => html`<link rel="alternate" hreflang="${code}" href="${
 ${styles.map(src => html`<link rel="stylesheet" href="${assetUrl(src)}">`)}
 ${canonical
   ? html`<meta property="og:type" content="${alternates ? 'article' : 'website'}">
-<meta property="og:site_name" content="SIRTRAVER">
+<meta property="og:site_name" content="sirtraver">
 <meta property="og:locale" content="${t.locale}">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
@@ -108,7 +114,7 @@ ${header(lang, page, paths ?? PAGES.home)}
 ${body}
 </main>
 ${footer(lang, page)}
-${page && !alternates ? html`<!-- journey:mobile --><a class="mobile-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} ${ICONS.mail}</a><!-- /journey:mobile -->` : ''}
+${enquiry ?? (page && !alternates) ? html`<!-- journey:mobile --><a class="mobile-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">→</span></a><!-- /journey:mobile -->` : ''}
 </body>
 </html>
 `;

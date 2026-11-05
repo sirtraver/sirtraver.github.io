@@ -22,11 +22,11 @@ const GALLERY_WIDTHS = [800, 1600];
 const SETTINGS = 'v2|avif:q52e3|webp:q80';
 const exists = (file) => fs.access(file).then(() => true, () => false);
 
-/** @param {{og?: boolean}} options og: also write a 1200px JPEG for social previews (covers). */
+/** @param {{og?: boolean}} options og: also write a 1200×630 JPEG for social previews (covers). */
 async function processImage(slug, file, cache, { og = false, projectsDir, outputDir } = {}) {
   const source = projectFile(path.join(projectsDir, slug), file);
   const bytes = await fs.readFile(source);
-  const hash = createHash('sha256').update(bytes).update(SETTINGS + (og ? '|og' : '|gallery:max1600')).digest('hex').slice(0, 10);
+  const hash = createHash('sha256').update(bytes).update(SETTINGS + (og ? '|og:1200x630' : '|gallery:max1600')).digest('hex').slice(0, 10);
   const key = `${slug}/${file}`;
 
   const cached = cache[key];
@@ -58,7 +58,8 @@ async function processImage(slug, file, cache, { og = false, projectsDir, output
   let ogUrl = '';
   if (og) {
     const name = `${slug}/${stem}-og.${hash}.jpg`;
-    await image.clone().resize({ width: 1200, withoutEnlargement: true }).toColourspace('srgb').jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(outputDir, name));
+    // Exactly 1200×630, the size every social network expects, centred on the most salient area.
+    await image.clone().resize({ width: 1200, height: 630, fit: 'cover', position: sharp.strategy.attention }).toColourspace('srgb').jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(outputDir, name));
     files.push(name);
     ogUrl = `/media/${name}`;
   }

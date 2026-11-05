@@ -107,6 +107,10 @@ await write('/sitemap.xml', sitemapXml);
 await write('/sitemap-portadas.xml', await (await get('/sitemap-portadas.xml')).text());
 const notFound = await get('/404-not-found/');
 await fs.writeFile(path.join(OUT, '404.html'), withCsp(await notFound.text(), notFound.headers.get('Content-Security-Policy')));
+// GitHub Pages serves one 404.html for every path; language.js swaps in this Spanish version under /es/.
+const notFoundEs = await get('/es/404-not-found/');
+if (notFoundEs.status !== 404 || !(await notFoundEs.clone().text()).includes('<html lang="es"')) throw new Error('/es/ 404 page is not in Spanish');
+await write('/es/404.html', withCsp(await notFoundEs.text(), notFoundEs.headers.get('Content-Security-Policy')));
 if (!process.env.PREVIEW) await fs.writeFile(path.join(OUT, 'CNAME'), `${CANONICAL_HOST}\n`);
 await fs.writeFile(path.join(OUT, '.nojekyll'), '');
 

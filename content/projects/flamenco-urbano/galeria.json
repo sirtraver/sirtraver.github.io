@@ -1,21 +1,5 @@
 [
   {
-    "file": "imagenes/flamenco-urbano-identidad-visual-01.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/dd3de5257013973.6acd6de58cec7.jpg"
-  },
-  {
-    "file": "imagenes/flamenco-urbano-identidad-visual-02.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/4e3d74257013973.6acd6de58e6e6.jpg"
-  },
-  {
     "file": "imagenes/flamenco-urbano-identidad-visual-03.webp",
     "caption": {
       "en": "",
@@ -48,14 +32,6 @@
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/d4904d257013973.6acd6de58fdde.jpg"
   },
   {
-    "file": "imagenes/flamenco-urbano-identidad-visual-07.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/841193257013973.6acd6de58be9a.jpg"
-  },
-  {
     "file": "imagenes/flamenco-urbano-identidad-visual-08.webp",
     "caption": {
       "en": "",
@@ -82,41 +58,36 @@
   {
     "file": "imagenes/flamenco-urbano-identidad-visual-11.webp",
     "caption": {
-      "en": "",
-      "es": ""
+      "es": "Fachada de la tienda.",
+      "en": "Shop front."
     },
+    "layout": "full",
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/119d8d257013973.6acd6de590ac2.jpg"
-  },
-  {
-    "file": "imagenes/flamenco-urbano-identidad-visual-12.webp",
-    "caption": {
-      "en": "",
-      "es": ""
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/48d8c4257013973.6acd6de59042b.jpg"
   },
   {
     "file": "imagenes/flamenco-urbano-identidad-visual-13.webp",
     "caption": {
-      "en": "",
-      "es": ""
+      "es": "La colección en la calle.",
+      "en": "The collection on the street."
     },
+    "layout": "pair",
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/b5ff0d257013973.6acd6de58f5f3.jpg"
   },
   {
-    "file": "imagenes/flamenco-urbano-identidad-visual-14.webp",
+    "file": "imagenes/flamenco-urbano-detalle-merchandising.webp",
     "caption": {
-      "en": "",
-      "es": ""
+      "es": "Detalle: volantes, abanico y monograma.",
+      "en": "Detail: ruffles, fan and monogram."
     },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/4d2205257013973.6acd6de58df58.jpg"
+    "layout": "pair"
   },
   {
-    "file": "imagenes/flamenco-urbano-identidad-visual-15.webp",
+    "file": "imagenes/flamenco-urbano-identidad-visual-12.webp",
     "caption": {
-      "en": "",
-      "es": ""
+      "es": "La colección completa.",
+      "en": "The full collection."
     },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8f26fe257013973.6acd6de58b03b.jpg"
+    "layout": "full",
+    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/48d8c4257013973.6acd6de59042b.jpg"
   }
 ]

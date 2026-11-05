@@ -52,7 +52,7 @@ export const webPage = ({ type, path, lang, name, description, ...extra }) => ({
 /** @param {Array<[name: string, path: string]>} trail */
 export const breadcrumbs = (lang, trail = []) => ({
   '@type': 'BreadcrumbList',
-  itemListElement: [['SIRTRAVER', PAGES.home[lang]], ...trail].map(([name, path], index) => ({
+  itemListElement: [['sirtraver', PAGES.home[lang]], ...trail].map(([name, path], index) => ({
     '@type': 'ListItem',
     position: index + 1,
     name,

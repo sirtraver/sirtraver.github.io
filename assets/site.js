@@ -32,7 +32,7 @@
 // Native links and a visible fixed fallback remain available without this API.
 (() => {
   const fixed = document.querySelector('.mobile-enquiry');
-  const targets = [...document.querySelectorAll('.hero-enquiry, .project-enquiry')];
+  const targets = [...document.querySelectorAll('.hero-enquiry, .project-enquiry, .about-actions')];
   if (!fixed || !targets.length || typeof IntersectionObserver !== 'function') return;
   const visible = new Set();
   const observer = new IntersectionObserver((entries) => {

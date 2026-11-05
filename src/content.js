@@ -56,7 +56,7 @@ export const CONTENT = {
       gridLabel: 'Design projects',
       featured: 'Latest project',
       viewProject: 'View project',
-      archive: 'Explore earlier work',
+      archive: 'See more projects',
       listName: 'Graphic design projects by Javier Traver',
     },
 
@@ -216,7 +216,7 @@ export const CONTENT = {
       gridLabel: 'Proyectos de diseño',
       featured: 'Último proyecto',
       viewProject: 'Ver proyecto',
-      archive: 'Explorar trabajos anteriores',
+      archive: 'Ver más proyectos',
       listName: 'Proyectos de diseño gráfico de Javier Traver',
     },
 

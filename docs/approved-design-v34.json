@@ -1,19 +1,19 @@
 {
-  "version": "v43 — sistema editorial: escala tipográfica, portada asimétrica, casos con galería web, Sobre mí editorial, menú móvil",
+  "version": "v44 — rejilla compacta en pares, encabezados compactos, Sobre mí en columnas",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "cf562cc6cfbdbac62eba6781f48aa84eef221d1e6556a73a7776a2bfbce3c100",
-    "/es/": "a641d3b6a458da170a8b5b0a0ed288e926caf9840d1854f00bd8ade5ded4b790",
+    "/": "bcf13023e6068c8e790cfa29d306af3f48791bef62556424cd6dda10065980d8",
+    "/es/": "1dbb6262f9674f624d390e8614e9934087fe6c64fd82e866df754955942fee3d",
     "/about/": "bc48ceea08c775eac4509c53bc286bad8d8cf5f7f2cb145eb2dcf9ef7098d364",
     "/es/about/": "e72da40561e42ceb74480c28fdccb21312966e734b86b1b7b1935dd51468445a",
     "/resources/": "a6651dbbf08fc8d20eb8566550e78e5dc979cf13d50a150624c358a30a0041ae",
     "/es/resources/": "b3cd64091a1d65d9e8742d3ef41573dc878a8a7723d6a9a5c4a1eb2ab16bb7bc"
   },
-  "cssPrefixBytes": 67076,
-  "cssPrefixHash": "f20104390bb26128c12ce5d7630fa6a6ebae52117687025cd31e836fa16d41e0",
+  "cssPrefixBytes": 67947,
+  "cssPrefixHash": "88596e60110e8cb0c9f0509e187048a0fad01ae14196903f5ce644d63c8b4bfd",
   "homeShellHashes": {
-    "/": "6c7746f227a1f90b457f95f2180057f73c9b80a1ff7dde7f6fb533747e9bf176",
-    "/es/": "7dc68745fa782ef4554dd14bbd942489ad3b34e61b75292cce98c6f73481ad93"
+    "/": "0dc986bf21471d43edcffbc2eb74fb5bfc06412a54a9eaa5e3151428425f484e",
+    "/es/": "8b403740c949315e93095e61a61e1667175b560c4c54d8928b545d698c196686"
   },
   "resourcesShellHashes": {
     "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",

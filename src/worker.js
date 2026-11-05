@@ -9,7 +9,7 @@ import { storageEnv } from './lib/storage.js';
 import { languagePreferenceResponse } from './lib/language.js';
 import { SECURITY_HEADERS, emptyResponse, htmlResponse, jsonResponse, redirect } from './lib/http.js';
 import { catalogApi, getCatalog, productSlug } from './services/catalog.js';
-import { activeProjects, archivedProjects, findProject } from './projects.js';
+import { activeProjects, archivedProjects, findProject, homeProjects, moreProjects } from './projects.js';
 import { contact } from './services/contact.js';
 import { subscribe, waitlistAdmin } from './services/waitlist.js';
 import { aboutPage } from './views/about.js';
@@ -54,10 +54,10 @@ async function renderPage({ page, lang }, request, url, env, ctx) {
     case 'home':
       return htmlResponse(
         request,
-        homePage(lang, { projects: activeProjects, galleriesUrl, archived: archivedProjects.length }),
+        homePage(lang, { projects: homeProjects, galleriesUrl, archived: moreProjects.length }),
       );
     case 'archive':
-      return archivedProjects.length ? htmlResponse(request, archivePage(lang, archivedProjects)) : redirect(new URL(PAGES.home[lang], url).href);
+      return moreProjects.length ? htmlResponse(request, archivePage(lang, moreProjects)) : redirect(new URL(PAGES.home[lang], url).href);
     case 'resources':
       return htmlResponse(request, resourcesPage(lang, await getCatalog(env), url.searchParams.get('subscription')));
     case 'cv':

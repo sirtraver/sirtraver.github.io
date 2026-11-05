@@ -21,9 +21,10 @@
   --fs-s: 15px;
   --fs-base: 16px;
   --fs-m: 18px;
-  --fs-l: clamp(24px, 2.4vw, 30px);
-  --fs-xl: clamp(44px, 6.4vw, 92px);
-  --page-heading-tracking: -0.04em;
+  /* Headings grow gently with the window (about 15% between a laptop and a large screen). */
+  --fs-l: clamp(22px, 1.1vw + 14px, 28px);
+  --fs-xl: clamp(30px, 1.4vw + 22px, 44px);
+  --page-heading-tracking: -0.03em;
   --gutter: 48px;
   --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
@@ -2152,27 +2153,26 @@ summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; bord
 .site-footer { align-items: center; padding: 16px 0 22px; font-size: var(--fs-xs); }
 .footer-legal { align-items: center; gap: 4px 20px; }
 
-/* ---------- Home: hero ---------- */
-.value-hero { display: block; max-width: none; padding: 56px 0 64px; text-align: left; }
-.value-hero .overline { margin: 0 0 20px; font-size: var(--fs-xs); line-height: 1.5; letter-spacing: .12em; }
-.value-hero h1 { max-width: 13ch; font-size: var(--fs-xl); line-height: .98; letter-spacing: var(--page-heading-tracking); }
-.value-hero .value-description { max-width: 36ch; margin: 24px 0 0; color: var(--muted); font-size: var(--fs-m); line-height: 1.55; }
-.value-hero .hero-enquiry { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 12px 20px; margin: 32px 0 0; }
-.value-hero .enquiry-button { width: auto; height: auto; gap: 14px; padding: 14px 22px; font-size: var(--fs-s); }
+/* ---------- Section heroes (Projects, Resources): one compact row ---------- */
+.value-hero { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; max-width: none; padding: 32px 0 28px; text-align: left; }
+.value-hero .hero-copy { flex: 1 1 420px; min-width: 0; }
+.value-hero .overline { margin: 0 0 12px; font-size: var(--fs-xs); line-height: 1.5; letter-spacing: .12em; }
+.value-hero h1 { font-size: var(--fs-xl); line-height: 1.05; letter-spacing: var(--page-heading-tracking); }
+.value-hero .value-description { max-width: 52ch; margin: 10px 0 0; color: var(--muted); font-size: var(--fs-base); line-height: 1.55; }
+.value-hero .hero-enquiry { flex-direction: column; align-items: flex-end; gap: 8px; margin: 0; }
+.value-hero .hero-enquiry > span { text-align: right; }
+.value-hero .enquiry-button { width: auto; height: auto; gap: 14px; padding: 13px 20px; font-size: var(--fs-s); white-space: nowrap; }
 .value-hero .hero-contact-label,
 .value-hero .hero-enquiry > span { display: inline; }
-.value-hero .hero-enquiry > span { color: var(--muted); font-size: var(--fs-xs); text-align: left; }
+.value-hero .hero-enquiry > span { color: var(--muted); font-size: var(--fs-xs); }
 
-/* ---------- Home: editorial grid ---------- */
-.work-heading { flex-direction: row; align-items: baseline; justify-content: space-between; margin-bottom: 28px; padding-top: 18px; border-top: 1px solid var(--ink); text-align: left; }
+/* ---------- Home: two-column grid, always an even number of projects ---------- */
+.work-heading { flex-direction: row; align-items: baseline; justify-content: space-between; margin-bottom: 20px; padding-top: 14px; border-top: 1px solid var(--ink); text-align: left; }
 .work-heading h2 { font-size: var(--fs-m); font-weight: 600; letter-spacing: -.01em; }
 .work-count, .work-heading > span { font-size: var(--fs-xs); font-variant-numeric: tabular-nums; }
 
-.project-grid--editorial:has(> a.project-card) { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 64px 32px; margin-bottom: 72px; }
-.project-grid--editorial > a.project-card.project-card--full { grid-column: 1 / -1; --card-h: clamp(300px, 44vw, 600px); }
-.project-grid--editorial > a.project-card.project-card--wide { grid-column: span 7; --card-h: clamp(240px, 33vw, 470px); }
-.project-grid--editorial > a.project-card.project-card--narrow { grid-column: span 5; --card-h: clamp(240px, 33vw, 470px); }
-.project-grid--editorial .project-card[data-project] .card-media img { height: var(--card-h); aspect-ratio: auto; }
+.project-grid--editorial:has(> a.project-card) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; margin-bottom: 40px; }
+.project-grid .project-card[data-project] .card-media img { height: auto; aspect-ratio: 3 / 2; }
 
 /* Cards: left-aligned caption, year on the right, second image on hover. */
 .project-grid .project-card[data-project] .card-media { position: relative; border: 0; border-radius: 2px; background: #f2f2f0; }
@@ -2184,20 +2184,22 @@ summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; bord
   .project-card:focus-visible .card-hover { opacity: 1; }
 }
 @media (hover: none) { .card-hover { display: none; } }
-.project-grid .project-card[data-project] .card-caption { justify-content: space-between; margin-top: 16px; padding-inline: 0; text-align: left; }
+.project-grid .project-card[data-project] .card-caption { justify-content: space-between; margin-top: 12px; padding-inline: 0; text-align: left; }
 .project-grid .project-card[data-project] .card-caption > span { position: static; }
 .project-card .card-caption h3 { font-size: var(--fs-m); font-weight: 600; letter-spacing: -.01em; }
 .card-year { color: var(--muted); font-size: var(--fs-xs) !important; font-variant-numeric: tabular-nums; }
 .project-grid .project-card[data-project] > p { margin-top: 4px; color: var(--muted); font-size: var(--fs-xs); text-align: left; }
-.archive-link { margin: -24px 0 72px; font-size: var(--fs-s); }
+.archive-link { display: flex; justify-content: center; margin: 0 0 64px; font-size: var(--fs-s); }
+.archive-link .more-button { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; padding: 12px 22px; border: 1px solid var(--ink); border-radius: 6px; color: var(--ink); font-weight: 600; text-decoration: none; }
+.archive-link .more-button:hover { background: var(--ink); color: var(--paper); }
 
 /* ---------- Case study ---------- */
 .project-page { max-width: 1120px; padding: 4px 0 56px; }
-.project-header { max-width: none; margin: 0; padding: 8px 0 40px; text-align: left; }
-.project-header h1 { max-width: 14ch; font-size: var(--fs-xl); line-height: .98; letter-spacing: var(--page-heading-tracking); }
-.project-intro { max-width: 52ch; margin: 24px 0 0; color: var(--muted); font-size: var(--fs-m); line-height: 1.6; }
+.project-header { max-width: none; margin: 0; padding: 4px 0 28px; text-align: left; }
+.project-header h1 { max-width: 24ch; font-size: var(--fs-xl); line-height: 1.05; letter-spacing: var(--page-heading-tracking); }
+.project-intro { max-width: 60ch; margin: 12px 0 0; color: var(--muted); font-size: var(--fs-base); line-height: 1.65; }
 .project-hero { width: 100vw; margin-left: calc(50% - 50vw); background: #f2f2f0; }
-.project-hero img { display: block; width: 100%; height: min(78vh, 56.25vw); object-fit: cover; }
+.project-hero img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 72vh; object-fit: cover; }
 .project-summary { margin: 40px 0 0; padding: 24px 0; border-color: #e6e6e6; }
 .project-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px 32px; width: 100%; }
 .project-facts dt { font-size: var(--fs-xs); letter-spacing: .08em; }
@@ -2232,31 +2234,44 @@ summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; bord
 .project-enquiry p { font-size: var(--fs-s); }
 .project-pager a span { font-size: var(--fs-l); letter-spacing: -.02em; }
 
-/* ---------- About ---------- */
+/* ---------- About: short intro beside a modest portrait, CV in columns ---------- */
 .about-resume { display: block; }
-.about-resume .about-profile { position: static; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; gap: 56px; padding: 40px 0 64px; background: none; border: 0; border-radius: 0; }
-.about-resume .about-profile .overline { margin: 0 0 20px; font-size: var(--fs-xs); letter-spacing: .12em; }
-.about-resume .about-profile h1 { margin: 0; font-size: var(--fs-xl); line-height: .98; letter-spacing: var(--page-heading-tracking); }
-.about-copy .position-lead { max-width: 46ch; margin: 32px 0 12px; color: var(--text); font-size: var(--fs-m); line-height: 1.6; }
-.about-resume .about-copy .position-bio { max-width: 52ch; color: var(--muted); font-size: var(--fs-base); line-height: 1.7; }
-.about-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 28px; }
-.about-actions .enquiry-button { gap: 14px; padding: 14px 22px; font-size: var(--fs-s); }
-.about-actions .profile-cv-link { min-height: 50px; margin: 0; padding: 14px 20px; background: transparent; border-color: #cfcfcf; color: var(--ink); font-size: var(--fs-s); }
+.about-resume .about-profile { position: static; display: grid; grid-template-columns: minmax(0, 1fr) 240px; align-items: start; gap: 48px; padding: 32px 0 36px; background: none; border: 0; border-radius: 0; }
+.about-resume .about-profile .overline { margin: 0 0 12px; font-size: var(--fs-xs); letter-spacing: .12em; }
+.about-resume .about-profile h1 { margin: 0; font-size: var(--fs-xl); line-height: 1.05; letter-spacing: var(--page-heading-tracking); }
+.about-copy .position-lead { max-width: 60ch; margin: 18px 0 8px; color: var(--text); font-size: var(--fs-base); line-height: 1.65; }
+.about-resume .about-copy .position-bio { max-width: 60ch; margin: 0; color: var(--muted); font-size: var(--fs-s); line-height: 1.7; }
+.about-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; }
+.about-actions .enquiry-button { gap: 14px; padding: 12px 20px; font-size: var(--fs-s); }
+.about-actions .profile-cv-link { min-height: 46px; margin: 0; padding: 12px 18px; background: transparent; border-color: #cfcfcf; color: var(--ink); font-size: var(--fs-s); }
 .about-actions .profile-cv-link:hover { background: #f4f4f4; color: var(--ink); }
-.about-resume .profile-social { margin-top: 20px; padding-top: 0; border-top: 0; }
+.about-resume .profile-social { margin-top: 14px; padding-top: 0; border-top: 0; }
 .about-portrait { margin: 0; }
-.about-resume .editorial-portrait { width: 100%; height: auto; flex: none; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
-.about-portrait figcaption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-top: 12px; color: var(--muted); font-size: var(--fs-xs); }
+.about-resume .editorial-portrait { width: 100%; height: auto; flex: none; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+.about-portrait figcaption { display: grid; gap: 2px; margin-top: 10px; color: var(--muted); font-size: var(--fs-xs); line-height: 1.5; }
 .about-portrait figcaption strong { color: var(--ink); font-weight: 600; }
 .about-resume .profile-role { margin: 0; color: var(--muted); font-size: var(--fs-xs); font-weight: 400; letter-spacing: 0; }
 .about-resume .profile-location { font-size: var(--fs-xs); }
+
+/* CV: six-column grid. Experience and education side by side; skills, tools and languages in three. */
+.resume-main { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 40px; border-top: 1px solid var(--ink); }
 .resume-capabilities { display: contents; }
-.resume-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 16px 40px; margin-top: 0; padding: 32px 0; border-top: 1px solid #e6e6e6; }
-.resume-section > h2 { margin: 0; font-size: var(--fs-m); }
-.resume-description { font-size: var(--fs-base); }
-.resume-education h3 { font-size: var(--fs-base); }
+.resume-section { grid-column: span 2; margin: 0; padding: 22px 0 26px; border-top: 0; }
+.resume-section[aria-labelledby="resume-experience"],
+.resume-section[aria-labelledby="resume-education"] { grid-column: span 3; border-bottom: 1px solid #e6e6e6; }
+.resume-section > h2 { margin: 0 0 14px; font-size: var(--fs-m); }
+.resume-experience h3 { font-size: var(--fs-base); }
+.resume-description { font-size: var(--fs-s); line-height: 1.7; }
+.resume-education > li + li { margin-top: 12px; }
+.resume-education h3 { font-size: var(--fs-s); }
 .resume-education p, .resume-list, .resume-languages p { font-size: var(--fs-s); }
-.legal-page h1 { font-size: calc(var(--fs-xl) * .62); }
+.resume-list li + li { margin-top: 4px; }
+.legal-page h1 { font-size: var(--fs-xl); }
+@media (max-width: 1000px) {
+  .resume-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resume-section, .resume-section[aria-labelledby="resume-experience"], .resume-section[aria-labelledby="resume-education"] { grid-column: auto; }
+  .resume-section[aria-labelledby="resume-experience"], .resume-section[aria-labelledby="resume-education"] { grid-column: 1 / -1; }
+}
 
 /* ---------- Phone header: one row, full-screen menu (only with JavaScript) ---------- */
 .menu-toggle, .menu-enquiry { display: none; }
@@ -2280,18 +2295,12 @@ summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; bord
   .js body.menu-open { overflow: hidden; }
   .mobile-enquiry { font-size: var(--fs-s); }
 
-  .value-hero { padding: 28px 0 40px; }
-  .value-hero h1 { line-height: 1.02; }
-  .value-hero .value-description { font-size: var(--fs-base); }
-  .value-hero .hero-enquiry { margin-top: 24px; }
+  .value-hero { padding: 20px 0 24px; }
+  .value-hero .hero-enquiry { width: 100%; align-items: flex-start; }
   .value-hero .enquiry-button { width: 100%; justify-content: space-between; }
-  .project-grid--editorial:has(> a.project-card) { grid-template-columns: minmax(0, 1fr); gap: 44px; }
-  .project-grid--editorial > a.project-card.project-card--full,
-  .project-grid--editorial > a.project-card.project-card--wide,
-  .project-grid--editorial > a.project-card.project-card--narrow { grid-column: 1 / -1; --card-h: auto; }
-  .project-grid--editorial .project-card[data-project] .card-media img { height: auto; aspect-ratio: 4 / 3; }
-  .project-header { padding-bottom: 28px; }
-  .project-hero img { height: auto; aspect-ratio: 4 / 3; }
+  .project-grid--editorial:has(> a.project-card) { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .project-header { padding-bottom: 20px; }
+  .project-hero img { aspect-ratio: 4 / 3; }
   .project-story { gap: 28px; padding: 36px 0; }
   .project-palette ul { flex-direction: column; }
   .project-palette li { flex-grow: 1 !important; grid-template-columns: 56px 1fr; column-gap: 14px; }
@@ -2299,10 +2308,13 @@ summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; bord
   .project-gallery, .gallery-pair { gap: 16px; }
   .gallery-pair { flex-direction: column; }
   .gallery-pair figure { flex: none !important; width: 100%; }
-  .project-result, .resume-section { grid-template-columns: minmax(0, 1fr); }
-  .about-resume .about-profile { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 24px 0 40px; }
-  .about-resume .editorial-portrait { aspect-ratio: 1; }
-  .resume-section { gap: 12px; padding: 24px 0; }
+  .project-result { grid-template-columns: minmax(0, 1fr); }
+  .about-resume .about-profile { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 20px 0 28px; }
+  .about-portrait { order: -1; width: 112px; }
+  .about-portrait figcaption { display: none; }
+  .about-resume .editorial-portrait { aspect-ratio: 1; border-radius: 12px; }
+  .resume-main { grid-template-columns: minmax(0, 1fr); }
+  .resume-section { padding: 20px 0; }
   .site-footer { width: calc(100% - 32px); }
 }
 

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { test } from 'node:test';
-import { activeProjects, allProjects, archivedProjects, findProject } from '../src/projects.js';
+import { activeProjects, allProjects, archivedProjects, findProject, homeProjects } from '../src/projects.js';
 import { ORIGIN, get, offline, withFetch } from './helpers.mjs';
 import { contentHash } from '../src/generated/content.js';
 
@@ -49,10 +49,10 @@ test('home: the selected projects share one grid with lazy images and link to th
     for (const [path, prefix] of [['/', ''], ['/es/', '/es']]) {
       const html = await (await get(path)).text();
       assert.ok(!html.includes('class="featured-project"'));
-      const cards = [...html.matchAll(/<a class="project-card project-card--(full|wide|narrow)" href="([^"]+)" data-project="([^"]+)">/g)];
-      assert.deepEqual(cards.map((m) => m[3]), activeProjects.map(p => p.slug), path);
-      // Editorial rhythm: a full-width opener, then wide/narrow pairs that alternate.
-      assert.deepEqual(cards.map((m) => m[1]), ['full', 'wide', 'narrow', 'narrow', 'wide', 'full'], path);
+      const cards = [...html.matchAll(/<a class="project-card" href="([^"]+)" data-project="([^"]+)">/g)].map((m) => m[2]);
+      assert.deepEqual(cards, homeProjects.map(p => p.slug), path);
+      assert.equal(cards.length % 2, 0, 'two-column grid: an even number of cards, none left alone');
+      assert.ok(html.includes('class="more-button"'), 'a "more projects" button closes the grid');
       assert.ok(!html.includes('<span aria-hidden="true">↗</span></a>'), 'cards drop the corner arrow');
       assert.ok(html.includes('style="view-transition-name:cover-kudake"'), 'card cover morphs into the case hero');
       assert.equal((html.match(/fetchpriority="high"/g) || []).length, 1, 'only the first card cover is high priority');
@@ -65,7 +65,7 @@ test('home: the selected projects share one grid with lazy images and link to th
     assert.ok(!spanish.includes('<h3>Tipografía en movimiento</h3>'), 'archived work stays off the home grid');
     assert.deepEqual(activeProjects.map(p => p.slug), ['kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
     assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
-    assert.ok(spanish.includes('<p class="archive-link"><a href="/es/archive/">'));
+    assert.ok(spanish.includes('<p class="archive-link"><a class="more-button" href="/es/archive/">Ver más proyectos'));
     const hovers = activeProjects.filter(p => p.hover).length;
     assert.equal(hovers, activeProjects.length, 'every selected project has a hover image');
     assert.equal((spanish.match(/loading="lazy"/g) || []).length, activeProjects.length - 1 + hovers);

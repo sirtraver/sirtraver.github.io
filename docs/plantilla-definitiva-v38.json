@@ -1,11 +1,11 @@
 {
-  "version": "v43 — sistema editorial: escala tipográfica, portada asimétrica, casos con galería web, Sobre mí editorial, menú móvil",
+  "version": "v44 — rejilla compacta en pares, encabezados compactos, Sobre mí en columnas",
   "commit": "see git log",
   "visualFiles": {
-    "public/assets/site.css": "f20104390bb26128c12ce5d7630fa6a6ebae52117687025cd31e836fa16d41e0",
+    "public/assets/site.css": "88596e60110e8cb0c9f0509e187048a0fad01ae14196903f5ce644d63c8b4bfd",
     "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
     "public/assets/navigation.js": "aa7dd27eed7b009a4295a1b2c1b05a0e7502f080247cfa9370216f8e50f9ecea",
-    "public/assets/site.js": "960db61e15b37311acbb2b66972c18d4a41fd5cfc676f07a6d5871fbb3f6873e"
+    "public/assets/site.js": "9505b8de51c6643b8772f80ed5474d18e6afecab8bd7c90466afaabcb1de4989"
   }
 }

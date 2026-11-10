@@ -1,11 +1,11 @@
 {
-  "version": "v44 — rejilla compacta en pares, encabezados compactos, Sobre mí en columnas",
+  "version": "v45 — solo contenido: campaign visuals y spots con IA",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "bcf13023e6068c8e790cfa29d306af3f48791bef62556424cd6dda10065980d8",
-    "/es/": "1dbb6262f9674f624d390e8614e9934087fe6c64fd82e866df754955942fee3d",
-    "/about/": "bc48ceea08c775eac4509c53bc286bad8d8cf5f7f2cb145eb2dcf9ef7098d364",
-    "/es/about/": "e72da40561e42ceb74480c28fdccb21312966e734b86b1b7b1935dd51468445a",
+    "/": "826f13dbc72510d9471ed683df0481f2e407f888182f55d0bb9ffb401eeeade6",
+    "/es/": "306022d6a0409c43fc4bcff75d3eebdb038d56bd086941b6deb1e329671372c3",
+    "/about/": "609f6c285c6ba1bcc1a77c6fd667bd204c5cdefa9c7b283d47cf137c09f23ce4",
+    "/es/about/": "e90da2a0811d7dff668b07dac4fe1a90f996185d60f056d60783d8e631ef1f96",
     "/resources/": "a6651dbbf08fc8d20eb8566550e78e5dc979cf13d50a150624c358a30a0041ae",
     "/es/resources/": "b3cd64091a1d65d9e8742d3ef41573dc878a8a7723d6a9a5c4a1eb2ab16bb7bc"
   },

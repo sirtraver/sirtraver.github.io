@@ -47,10 +47,10 @@ export const CONTENT = {
     home: {
       title: `Javier Traver — ${ROLE} in Madrid | sirtraver`,
       description:
-        `Brand identity, packaging and visual communication by Javier Traver, ${ROLE} based in Madrid. Explore selected brand systems and their applications.`,
+        `Campaign visuals, AI product images and spots by Javier Traver, ${ROLE} based in Madrid. Art direction and design for product brands.`,
       overline: `Javier Traver · ${ROLE}`,
-      heading: 'Identity with character.',
-      lead: 'From the logo to packaging and visual communication.',
+      heading: 'Campaign visuals with character.',
+      lead: 'AI product images and spots to launch and advertise your brand.',
       workTitle: 'Selected work',
       workOrder: 'Identity · Packaging · Communication',
       gridLabel: 'Design projects',
@@ -107,11 +107,11 @@ export const CONTENT = {
       "role": ROLE,
       "location": "Madrid, Spain",
       "positionTitle": [
-        "I design brands",
+        "Campaign visuals",
         "you get at a glance."
       ],
       "lead": `I’m Javier Traver, ${ROLE}, working freelance since 2017 and a Design graduate from Universidad Complutense de Madrid.`,
-      "bio": "I work on visual identity and brand communication, from logos to their digital and printed applications. My experience also includes product photography and visual content editing.",
+      "bio": "I work on campaign visuals, product images and AI spots for brands, and on the visual identity that holds them together. My experience also includes product photography and visual content editing.",
       "currentStudy": "I’m currently studying an Advanced Vocational Qualification in Marketing & Advertising at UFV, expanding my understanding of brands, their audiences and how they communicate.",
       "experience": "Professional experience",
       "currentEducation": "CURRENT EDUCATION",
@@ -164,7 +164,7 @@ export const CONTENT = {
 
     contactPage: {
       title: 'Contact | sirtraver',
-      description: 'Contact Javier Traver about a brand identity, rebranding or communication project.',
+      description: 'Contact Javier Traver about campaign visuals, AI product images, a spot or a brand identity project.',
       heading: 'Let’s talk about your project',
       lead: 'Tell me about your brand and what it needs.',
       altEmail: 'Prefer email? Write to',
@@ -207,10 +207,10 @@ export const CONTENT = {
     home: {
       title: `Javier Traver — ${ROLE} en Madrid | sirtraver`,
       description:
-        `Identidad de marca, packaging y comunicación visual de Javier Traver, ${ROLE} en Madrid. Una selección de sistemas de marca y sus aplicaciones.`,
+        `Visuales de campaña, imágenes de producto y spots con IA de Javier Traver, ${ROLE} en Madrid. Dirección de arte y diseño para marcas de producto.`,
       overline: `Javier Traver · ${ROLE}`,
-      heading: 'Identidades con carácter.',
-      lead: 'Del logotipo al packaging y la comunicación visual.',
+      heading: 'Visuales de campaña con carácter.',
+      lead: 'Imágenes de producto y spots con IA para lanzar y anunciar tu marca.',
       workTitle: 'Proyectos seleccionados',
       workOrder: 'Identidad · Packaging · Comunicación',
       gridLabel: 'Proyectos de diseño',
@@ -267,11 +267,11 @@ export const CONTENT = {
       "role": ROLE,
       "location": "Madrid, España",
       "positionTitle": [
-        "Diseño marcas",
+        "Visuales de campaña",
         "que se entienden de un vistazo."
       ],
       "lead": `Soy Javier Traver, ${ROLE}, freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid.`,
-      "bio": "Trabajo en identidad visual y comunicación de marca, desde el logotipo hasta sus aplicaciones digitales e impresas. Mi experiencia también abarca la fotografía de producto y la edición de contenidos visuales.",
+      "bio": "Trabajo en visuales de campaña, imágenes de producto y spots con IA para marcas, y en la identidad visual que los sostiene. Mi experiencia también abarca la fotografía de producto y la edición de contenidos visuales.",
       "currentStudy": "Actualmente estudio el Grado Superior en Marketing y Publicidad en la UFV. Una formación que amplía mi perspectiva sobre las marcas, sus públicos y cómo comunicar.",
       "experience": "Experiencia profesional",
       "currentEducation": "FORMACIÓN ACTUAL",
@@ -324,7 +324,7 @@ export const CONTENT = {
 
     contactPage: {
       title: 'Contacto | sirtraver',
-      description: 'Contacta con Javier Traver para un proyecto de identidad de marca, rebranding o comunicación.',
+      description: 'Contacta con Javier Traver para visuales de campaña, imágenes de producto con IA, un spot o un proyecto de identidad de marca.',
       heading: 'Hablemos de tu proyecto',
       lead: 'Cuéntame sobre tu marca y lo que necesita.',
       altEmail: '¿Prefieres el email? Escribe a',

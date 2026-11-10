@@ -11,7 +11,7 @@ export const BRIEF = {
     intro: 'Elige lo que encaje y te preparo el email. Nada se envía hasta que tú lo decidas.',
     progress: 'respondidas',
     steps: [
-      { key: 'needs', multi: true, label: '¿Qué necesitas?', hint: 'Puedes elegir varias.', options: ['Identidad visual', 'Rebranding', 'Packaging', 'Comunicación / campaña', 'Otra cosa'] },
+      { key: 'needs', multi: true, label: '¿Qué necesitas?', hint: 'Puedes elegir varias.', options: ['Imágenes de producto', 'Visuales de campaña', 'Spot con IA', 'Identidad visual', 'Otra cosa'] },
       { key: 'stage', label: '¿En qué punto está tu marca?', options: ['Es una marca nueva', 'Existe y quiero renovarla', 'Existe y necesito piezas nuevas'] },
       { key: 'timing', label: '¿Para cuándo lo necesitas?', options: ['Lo antes posible', 'En 1–2 meses', 'En 3 meses o más', 'Sin fecha fija'] },
       { key: 'budget', label: 'Presupuesto orientativo', hint: 'Solo para orientar la propuesta.', options: ['Menos de 500 €', '500 – 1.500 €', '1.500 – 3.000 €', 'Más de 3.000 €', 'Aún no lo sé'] },
@@ -38,7 +38,7 @@ export const BRIEF = {
     intro: 'Pick what fits and I’ll draft the email for you. Nothing is sent until you choose to.',
     progress: 'answered',
     steps: [
-      { key: 'needs', multi: true, label: 'What do you need?', hint: 'Choose as many as apply.', options: ['Visual identity', 'Rebranding', 'Packaging', 'Communication / campaign', 'Something else'] },
+      { key: 'needs', multi: true, label: 'What do you need?', hint: 'Choose as many as apply.', options: ['Product images', 'Campaign visuals', 'AI spot', 'Visual identity', 'Something else'] },
       { key: 'stage', label: 'Where is your brand today?', options: ['It’s a new brand', 'It exists and needs a refresh', 'It exists and needs new pieces'] },
       { key: 'timing', label: 'When do you need it?', options: ['As soon as possible', 'In 1–2 months', 'In 3+ months', 'No fixed date'] },
       { key: 'budget', label: 'Indicative budget', hint: 'Only to shape the proposal.', options: ['Under €500', '€500 – 1,500', '€1,500 – 3,000', 'Over €3,000', 'Not sure yet'] },

@@ -13,6 +13,13 @@ const git = (args, cwd = ROOT) => execFileSync('git', args, { cwd, encoding: 'ut
 
 if (git(['status', '--porcelain', '--untracked-files=no'])) throw new Error('Commit your changes before deploying.');
 const source = git(['rev-parse', '--short', 'HEAD']);
+
+// Copy waiting for a decision is marked [PENDIENTE]; it must never be published.
+const pending = [];
+for (const entry of await fs.readdir(SITE, { recursive: true })) {
+  if (entry.endsWith('.html') && (await fs.readFile(path.join(SITE, entry), 'utf8')).includes('[PENDIENTE]')) pending.push(entry);
+}
+if (pending.length) throw new Error(`[PENDIENTE] is still in: ${pending.join(', ')}. Fill it in or remove it before deploying.`);
 const remote = git(['remote', 'get-url', 'origin']);
 
 const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'sirtraver-pages-'));

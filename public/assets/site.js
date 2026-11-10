@@ -86,3 +86,30 @@
     observer.observe(item);
   }
 })();
+
+// Home cards: a small "View project" label follows a mouse pointer. Decorative, so hidden from
+// assistive technology; touch screens and keyboards never see it.
+(() => {
+  const grid = document.querySelector('.project-grid[data-cursor-label]');
+  if (!grid || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const label = document.createElement('span');
+  label.className = 'cursor-label';
+  label.setAttribute('aria-hidden', 'true');
+  label.textContent = grid.dataset.cursorLabel;
+  document.body.append(label);
+  let card = null;
+  const hide = () => { card = null; label.classList.remove('is-on'); };
+  grid.addEventListener('pointermove', (event) => {
+    if (event.pointerType && event.pointerType !== 'mouse') return;
+    const current = event.target.closest('.project-card');
+    if (current !== card) {
+      card = current;
+      label.classList.toggle('is-on', Boolean(card));
+      if (card) label.style.setProperty('--accent', card.style.getPropertyValue('--accent') || 'transparent');
+    }
+    label.style.translate = `${event.clientX + 16}px ${event.clientY + 18}px`;
+  });
+  grid.addEventListener('pointerleave', hide);
+  window.addEventListener('scroll', hide, { passive: true });
+  window.addEventListener('pagehide', hide);
+})();

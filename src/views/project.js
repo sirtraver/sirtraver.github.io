@@ -9,7 +9,7 @@ import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, person, website } from './schema.js';
 import { projectCta, visibleBreadcrumbs } from './journey.js';
-import { coverTransition } from './home.js';
+import { accentStyle, coverTransition } from './home.js';
 
 // Gallery formats (galeria.json "layout"): default column, "full" edge to edge, "pair" side by side.
 const GALLERY_SIZES = {
@@ -152,7 +152,7 @@ export function projectPage(project, siblings, lang) {
     enquiry: true,
     schema: schema(project, lang, path, name, description),
     scripts: [{ src: '/assets/image-zoom.js' }],
-    body: html`<article class="project-page">
+    body: html`<article class="project-page"${accentStyle(project) ? html` style="${accentStyle(project)}"` : ''}>
   ${visibleBreadcrumbs(lang, name)}
   <header class="project-header">
     <p class="overline">${category} · ${project.year}${project.conceptual ? ` · ${t.project.conceptual}` : ''}</p>

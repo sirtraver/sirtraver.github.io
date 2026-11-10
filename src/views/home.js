@@ -15,6 +15,21 @@ const CARD_SIZES = '(max-width: 700px) calc(100vw - 32px), (max-width: 1360px) c
 export const categoryLine = (project, lang) => `${CONTENT[lang].categories[project.category] ?? project.category} · ${project.year}${project.conceptual ? ` · ${CONTENT[lang].project.conceptual}` : ''}`;
 const cardKind = (project, lang) => `${CONTENT[lang].categories[project.category] ?? project.category}${project.conceptual ? ` · ${CONTENT[lang].project.conceptual}` : ''}`;
 
+// Most saturated colour of the project's own palette; tints its card and case study. Empty without a palette.
+export function projectAccent(project) {
+  let best = '';
+  let bestChroma = 0.18;
+  for (const { hex } of project.palette ?? []) {
+    const match = /^#([0-9A-F]{6})$/i.exec(hex);
+    if (!match) continue;
+    const [r, g, b] = [0, 2, 4].map((i) => parseInt(match[1].slice(i, i + 2), 16) / 255);
+    const chroma = Math.max(r, g, b) - Math.min(r, g, b);
+    if (chroma > bestChroma) [best, bestChroma] = [hex, chroma];
+  }
+  return best;
+}
+export const accentStyle = (project) => (projectAccent(project) ? `--accent:${projectAccent(project)}` : '');
+
 // Shared by the card cover and the case-study hero so the View Transition can morph one into the other.
 export const coverTransition = (project) => `view-transition-name:cover-${project.slug}`;
 
@@ -22,7 +37,7 @@ export function projectCard(project, lang, { priority = false } = {}) {
   const name = projectName(project, lang);
   const sizes = CARD_SIZES;
   const hover = project.hover ? html`<div class="card-hover" aria-hidden="true">${picture(project.hover, { alt: '', sizes })}</div>` : '';
-  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"><div class="card-media" style="${coverTransition(project)}">${picture(project.cover, { alt: name, sizes, priority })}${hover}</div><div class="card-caption"><h3>${name}</h3><span class="card-year">${project.year}</span></div><p>${cardKind(project, lang)}</p></a>`;
+  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"${accentStyle(project) ? html` style="${accentStyle(project)}"` : ''}><div class="card-media" style="${coverTransition(project)}">${picture(project.cover, { alt: name, sizes, priority })}${hover}</div><div class="card-caption"><h3>${name}</h3><span class="card-year">${project.year}</span></div><p>${cardKind(project, lang)}</p></a>`;
 }
 
 function schema(lang, projects) {
@@ -83,7 +98,7 @@ export function homePage(lang, { projects, archived = 0 }) {
     // Cards are plain links to the case studies; the transition between them is a View Transition (site.css).
     body: html`${sectionIntro(lang, t.heading, t.lead)}
 <div class="work-heading"><h2>${t.workTitle}<span class="work-count">${String(projects.length).padStart(2, '0')}</span></h2><span>${t.workOrder}</span></div>
-<section class="project-grid project-grid--editorial" aria-label="${t.gridLabel}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>
+<section class="project-grid project-grid--editorial" aria-label="${t.gridLabel}" data-cursor-label="${t.viewProject}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>
 ${archived ? html`<p class="archive-link"><a class="more-button" href="${ARCHIVE_PAGE[lang]}">${t.archive} <span aria-hidden="true">→</span></a></p>` : ''}
 `,
   });

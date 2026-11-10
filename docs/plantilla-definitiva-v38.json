@@ -1,11 +1,11 @@
 {
-  "version": "v45 — solo contenido: campaign visuals y spots con IA",
+  "version": "v46 — fondo cálido, color por proyecto, movimiento, cierre y entrada",
   "commit": "see git log",
   "visualFiles": {
-    "public/assets/site.css": "88596e60110e8cb0c9f0509e187048a0fad01ae14196903f5ce644d63c8b4bfd",
+    "public/assets/site.css": "96578d04d3f3e2fcfa6cd4175cd07c5cb482b08250645a66af3fab7c8377ae2c",
     "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
     "public/assets/navigation.js": "aa7dd27eed7b009a4295a1b2c1b05a0e7502f080247cfa9370216f8e50f9ecea",
-    "public/assets/site.js": "9505b8de51c6643b8772f80ed5474d18e6afecab8bd7c90466afaabcb1de4989"
+    "public/assets/site.js": "5cf79eb96f3a820319c6a161aa29ea34945866294e6f51b02466a6bc5448fe67"
   }
 }

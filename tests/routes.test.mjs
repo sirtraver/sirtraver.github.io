@@ -134,14 +134,16 @@ test('the bundled worker behaves like the source', async () => {
   });
 });
 
-test('social and email links live in About instead of the header or duplicated calls to action', async () => {
+test('social links live in About; the email address closes the section pages, never the header', async () => {
   for (const path of ['/', '/es/projects/kudake/', '/es/about/']) {
     const html = await (await get(path)).text();
     const header = html.match(/<header class="site-header">([\s\S]*?)<\/header>/)[1];
     assert.ok(!header.includes('social-'), path);
     assert.ok(!header.includes('mailto:'), path);
     assert.ok(!html.includes('class="contact-block"'), path);
-    assert.equal(html.includes('mailto:javier.traver.v@me.com'), path.endsWith('/about/'));
+    // v46: section pages end with the closing block (address in large type); case studies keep their own call to action.
+    assert.equal(html.includes('mailto:javier.traver.v@me.com'), !path.includes('/projects/'), path);
+    assert.equal(html.includes('class="footer-closing"'), !path.includes('/projects/'), path);
   }
 });
 

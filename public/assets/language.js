@@ -3,6 +3,16 @@
 // Mirrors the server negotiation in src/lib/language.js; explicit page URLs keep their language.
 document.documentElement.classList.add('js'); // Lets CSS enhance only when scripts run (menu, reveal).
 
+// First page of a visit: a short brand entrance (site.css, html.intro). The visit is marked a moment
+// later, so the redirect from / to /es/ does not use it up. Skipped when motion is reduced.
+try {
+  if (!sessionStorage.getItem('sirtraver_intro') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('intro');
+    setTimeout(() => { try { sessionStorage.setItem('sirtraver_intro', '1'); } catch {} }, 700);
+    setTimeout(() => document.documentElement.classList.remove('intro'), 1800);
+  }
+} catch {}
+
 (() => {
   const KEY = 'sirtraver_lang';
   const LANGUAGES = ['en', 'es'];

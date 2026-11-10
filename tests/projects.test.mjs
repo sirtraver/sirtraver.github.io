@@ -49,7 +49,7 @@ test('home: the selected projects share one grid with lazy images and link to th
     for (const [path, prefix] of [['/', ''], ['/es/', '/es']]) {
       const html = await (await get(path)).text();
       assert.ok(!html.includes('class="featured-project"'));
-      const cards = [...html.matchAll(/<a class="project-card" href="([^"]+)" data-project="([^"]+)">/g)].map((m) => m[2]);
+      const cards = [...html.matchAll(/<a class="project-card" href="([^"]+)" data-project="([^"]+)"(?: style="--accent:#[0-9A-F]{6}")?>/g)].map((m) => m[2]);
       assert.deepEqual(cards, homeProjects.map(p => p.slug), path);
       assert.equal(cards.length % 2, 0, 'two-column grid: an even number of cards, none left alone');
       assert.ok(html.includes('class="more-button"'), 'a "more projects" button closes the grid');

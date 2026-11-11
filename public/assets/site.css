@@ -2375,20 +2375,25 @@ summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; bord
 .cursor-label.is-on { opacity: 1; scale: 1; }
 @media (prefers-reduced-motion: reduce) { .cursor-label { transition: none; } }
 
-/* Closing block above the footer on section pages. */
-.footer-closing { display: grid; justify-items: start; gap: 14px; width: calc(100% - 2 * var(--gutter)); max-width: 1264px; margin: 72px auto 0; padding: 36px 0 44px; border-top: 1px solid var(--ink); }
-.footer-closing h2 { margin: 0; color: var(--muted); font-size: var(--fs-m); font-weight: 500; letter-spacing: -.01em; }
-.footer-email { color: var(--ink); font-size: clamp(26px, 5.2vw, 76px); font-weight: 650; line-height: 1.05; letter-spacing: -.04em; text-decoration: none; overflow-wrap: anywhere; transition: font-weight .35s var(--ease-out); }
-@media (hover: hover) { .footer-email:hover { font-weight: 820; } }
-.footer-email:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
-.footer-closing .enquiry-button { width: auto; height: auto; gap: 14px; margin-top: 8px; padding: 13px 20px; font-size: var(--fs-s); }
-.site-footer { border-top-color: #0000001a; }
-@media (max-width: 700px) { .footer-closing { margin-top: 48px; padding: 28px 0 96px; } }
-
-/* Entrance on the first page of a visit: the SIR·TRA·VER block, then the page (language.js). */
-html.intro body::before { content: 'SIR\A TRA\A VER'; position: fixed; inset: 0; z-index: 1000; display: grid; place-content: center; background: var(--ink); color: var(--paper); font: 900 clamp(64px, 13vw, 168px)/.84 var(--font); letter-spacing: -.055em; white-space: pre; pointer-events: none; animation: intro-type .5s var(--ease-out) both, intro-out .5s cubic-bezier(.7, 0, .2, 1) .5s both; }
-@keyframes intro-type { from { font-weight: 200; letter-spacing: -.02em; } }
+/* Entrance on the first page of a visit: the SIR·TRA·VER block holds for a beat, then lifts (language.js). */
+html.intro body::before { content: 'SIR\A TRA\A VER'; position: fixed; inset: 0; z-index: 1000; display: grid; place-content: center; background: var(--ink); color: var(--paper); font: 900 clamp(84px, 17vw, 230px)/.84 var(--font); letter-spacing: -.055em; white-space: pre; pointer-events: none; animation: intro-type .9s var(--ease-out) both, intro-out .7s cubic-bezier(.7, 0, .2, 1) 1.5s both; }
+@keyframes intro-type { from { font-weight: 100; letter-spacing: .02em; opacity: 0; } 30% { opacity: 1; } }
 @keyframes intro-out { to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
-html.intro .value-hero .hero-copy > *, html.intro .project-header > *, html.intro .about-resume .about-copy > * { animation-delay: .6s; }
+html.intro .value-hero .hero-copy > *, html.intro .project-header > *, html.intro .about-resume .about-copy > * { animation-delay: 1.75s; }
 @media (prefers-reduced-motion: reduce) { html.intro body::before { content: none; } }
 @media print { html.intro body::before { content: none; } }
+
+/* ---------- v47: the project colour reaches the home page and the pager ---------- */
+/* The page takes a tint of the project under the pointer, or of the one in view while scrolling (site.js). */
+body { background-color: color-mix(in srgb, var(--page-tint, var(--paper)) 14%, var(--paper)); transition: background-color .7s var(--ease-out); }
+@media (prefers-reduced-motion: reduce) { body { transition: none; } }
+.project-card[style*="--accent"] .card-caption h3 { background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 3px no-repeat; padding-bottom: 5px; transition: background-size .45s var(--ease-out), font-weight .35s var(--ease-out); }
+@media (hover: hover) { .project-card[style*="--accent"]:hover .card-caption h3, .project-card[style*="--accent"]:focus-visible .card-caption h3 { background-size: 100% 3px; } }
+
+/* Previous and next projects as two panels in their own colour. */
+.project-pager { gap: 16px; border: 0; padding-top: 0; }
+.project-pager a { flex: 1 1 0; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 10px; min-height: 168px; padding: 22px 24px; border-radius: 4px; background: color-mix(in srgb, var(--accent, var(--ink)) 26%, var(--paper)); color: var(--ink); text-decoration: none; transition: background-color .4s var(--ease-out); }
+.project-pager a[rel="next"] { align-items: flex-end; text-align: right; }
+.project-pager a span { font-size: clamp(24px, 3vw, 44px); font-weight: 650; line-height: 1.05; transition: font-weight .35s var(--ease-out); }
+@media (hover: hover) { .project-pager a:hover { background: color-mix(in srgb, var(--accent, var(--ink)) 52%, var(--paper)); } .project-pager a:hover span { font-weight: 820; } }
+@media (max-width: 700px) { .project-pager { flex-direction: column; } .project-pager a { min-height: 120px; } }

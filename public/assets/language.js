@@ -8,8 +8,8 @@ document.documentElement.classList.add('js'); // Lets CSS enhance only when scri
 try {
   if (!sessionStorage.getItem('sirtraver_intro') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.classList.add('intro');
-    setTimeout(() => { try { sessionStorage.setItem('sirtraver_intro', '1'); } catch {} }, 700);
-    setTimeout(() => document.documentElement.classList.remove('intro'), 1800);
+    setTimeout(() => { try { sessionStorage.setItem('sirtraver_intro', '1'); } catch {} }, 1200);
+    setTimeout(() => document.documentElement.classList.remove('intro'), 2600);
   }
 } catch {}
 

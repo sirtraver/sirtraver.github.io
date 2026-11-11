@@ -1,5 +1,5 @@
 // Document shell shared by all pages: <head> metadata, header, footer.
-import { ORIGIN, SHARE_IMAGE, SITE_VERIFICATION, SOCIAL } from '../config.js';
+import { ORIGIN, SHARE_IMAGE, SITE_VERIFICATION } from '../config.js';
 import { CONTACT_PAGE, CONTENT, LANGUAGES, PAGES } from '../content.js';
 import { assetUrl } from '../lib/assets.js';
 import { html, jsonLd } from '../lib/html.js';
@@ -26,17 +26,6 @@ function header(lang, page, alternates) {
   <a class="enquiry-button menu-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">→</span></a>
   </div>
 </header>`;
-}
-
-// Last call on section pages: the question, the address in large type and one button.
-function closing(lang) {
-  const t = CONTENT[lang].contact;
-  const email = SOCIAL.email.replace('mailto:', '');
-  return html`<section class="footer-closing" aria-labelledby="footer-closing-title">
-  <h2 id="footer-closing-title">${t.title}</h2>
-  <a class="footer-email" href="${SOCIAL.email}">${email}</a>
-  <a class="enquiry-button" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">→</span></a>
-</section>`;
 }
 
 function footer(lang, page) {
@@ -124,7 +113,6 @@ ${header(lang, page, paths ?? PAGES.home)}
 <main id="main"${mainClass ? html` class="${mainClass}"` : ''}>
 ${body}
 </main>
-${page && !alternates ? closing(lang) : ''}
 ${footer(lang, page)}
 ${enquiry ?? (page && !alternates) ? html`<!-- journey:mobile --><a class="mobile-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">→</span></a><!-- /journey:mobile -->` : ''}
 </body>

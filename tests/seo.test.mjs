@@ -29,7 +29,7 @@ test('every page has its own title, one h1, canonical, reciprocal hreflang and s
       assert.match(html, /<meta name="description" content="[^"]{50,}">/);
       assert.equal((html.match(/https:\/\/www\.threads\.com\/@sirtraver/g) || []).length, index === 2 ? 2 : 1, 'profile card when present and JSON-LD sameAs');
       assert.equal((html.match(/https:\/\/www\.instagram\.com\/sirtraver\//g) || []).length, index === 2 ? 2 : 1);
-      assert.ok(html.includes('mailto:javier.traver.v@me.com'), 'closing block with the address on section pages');
+      assert.equal(html.includes('mailto:javier.traver.v@me.com'), index === 2);
       assert.ok(html.includes('aria-current="page"'), 'active navigation is rendered server-side');
       titles.add(html.match(/<title>(.*?)<\/title>/)[1]);
     }

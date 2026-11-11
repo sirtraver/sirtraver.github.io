@@ -113,3 +113,40 @@
   window.addEventListener('scroll', hide, { passive: true });
   window.addEventListener('pagehide', hide);
 })();
+
+// Home: the page background takes a tint of the project under the pointer; without a pointer
+// (touch) or while scrolling, of the card nearest the middle of the screen.
+(() => {
+  const grid = document.querySelector('.project-grid[data-cursor-label]');
+  if (!grid) return;
+  const cards = [...grid.querySelectorAll('.project-card')];
+  const accentOf = (card) => card?.style.getPropertyValue('--accent') || '';
+  const paint = (card) => {
+    const accent = accentOf(card);
+    if (accent) document.body.style.setProperty('--page-tint', accent);
+    else document.body.style.removeProperty('--page-tint');
+  };
+  let hovered = null;
+  let ticking = false;
+  const nearest = () => {
+    const middle = window.innerHeight / 2;
+    let best = null;
+    let bestDistance = Infinity;
+    for (const card of cards) {
+      const box = card.getBoundingClientRect();
+      if (box.bottom < 0 || box.top > window.innerHeight) continue;
+      const distance = Math.abs((box.top + box.bottom) / 2 - middle);
+      if (distance < bestDistance) [best, bestDistance] = [card, distance];
+    }
+    return window.scrollY < 80 ? null : best; // the top of the page stays neutral
+  };
+  const update = () => { ticking = false; paint(hovered ?? nearest()); };
+  window.addEventListener('scroll', () => { if (!ticking) requestAnimationFrame(update); ticking = true; }, { passive: true });
+  grid.addEventListener('pointerover', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    hovered = event.target.closest('.project-card');
+    update();
+  });
+  grid.addEventListener('pointerleave', () => { hovered = null; update(); });
+  window.addEventListener('pagehide', () => document.body.style.removeProperty('--page-tint'));
+})();

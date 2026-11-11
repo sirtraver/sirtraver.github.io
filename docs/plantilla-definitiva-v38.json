@@ -1,11 +1,11 @@
 {
-  "version": "v46 — fondo cálido, color por proyecto, movimiento, cierre y entrada",
+  "version": "v47 — sin barra de correo, entrada más larga, color del proyecto en portada y paginador",
   "commit": "see git log",
   "visualFiles": {
-    "public/assets/site.css": "96578d04d3f3e2fcfa6cd4175cd07c5cb482b08250645a66af3fab7c8377ae2c",
+    "public/assets/site.css": "d467a8e46b0110c35a4bb50d49c9973df684f3924ff0e42f206834cc779ecf2d",
     "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
     "public/assets/navigation.js": "aa7dd27eed7b009a4295a1b2c1b05a0e7502f080247cfa9370216f8e50f9ecea",
-    "public/assets/site.js": "5cf79eb96f3a820319c6a161aa29ea34945866294e6f51b02466a6bc5448fe67"
+    "public/assets/site.js": "460d81b4f1c15bef38e15c8af291c8c761decd90e0050018695bfc344bd87682"
   }
 }

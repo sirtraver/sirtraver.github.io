@@ -1,16 +1,16 @@
 {
-  "version": "v50 — titulares más pequeños, cursor de manita, hover de Olmedo y sirtraver",
+  "version": "v51 — encabezados compactos, sin CTA de página ni etiqueta de cargo, CV junto a redes, cursor de flecha",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "51810c7e51ba1b380589e280a6cc9547154bdb71aa55b001bc74a03cd5ae5c58",
-    "/es/": "878a0e6dc85d8e91845653ae4a44435f1205cec486f9b077ae4528b50dcf6238",
-    "/about/": "609f6c285c6ba1bcc1a77c6fd667bd204c5cdefa9c7b283d47cf137c09f23ce4",
-    "/es/about/": "e90da2a0811d7dff668b07dac4fe1a90f996185d60f056d60783d8e631ef1f96",
-    "/resources/": "a6651dbbf08fc8d20eb8566550e78e5dc979cf13d50a150624c358a30a0041ae",
-    "/es/resources/": "b3cd64091a1d65d9e8742d3ef41573dc878a8a7723d6a9a5c4a1eb2ab16bb7bc"
+    "/": "16923f5970315b92c0a73e1ac6fe6f228b73d7524a48e9b3e2459efb4d4be36e",
+    "/es/": "4e2d673e7d856c176dec58fdcd8ee8c05d44a825a940564ef2284c24a00358a4",
+    "/about/": "58247484f6f24c22f5d59750fa2851446ebd9fe22bb7cfc40e959a88009db059",
+    "/es/about/": "abc17890fd761cd249f5f9e980ecc6623e37e5b9c5d60e5c97bc27d2824eb8b4",
+    "/resources/": "bd52659f423564faa5ad5910bf7b928449134903751778c652149a8c2df99e9c",
+    "/es/resources/": "fb50d3b56935ba4a795310b0db63d7ce0d3c3d8470d1cc9a320243f17ed9b415"
   },
-  "cssPrefixBytes": 88212,
-  "cssPrefixHash": "245921b2e23b1156eb6f658be60701a3fa5d441f0bab926ff3b77c9f424526ee",
+  "cssPrefixBytes": 90243,
+  "cssPrefixHash": "a4bd936913082d1f8b762141d777d9ec1b763b73b5532fe7fb5265fa0200cf0e",
   "homeShellHashes": {
     "/": "1587b345e6ac151bd1e77de672343af06f371d8657392542bcb49000139e3135",
     "/es/": "940fb32ae96da6c0ff7f9c17194794fd26a053711c6809e4e86d4521ca62b9d5"

@@ -6,16 +6,15 @@ import { get, offline, resetCaches, withFetch } from './helpers.mjs';
 
 beforeEach(resetCaches);
 
-test('the home CTA leads to a translated contact form with five native FAQs and a real response commitment', async () => {
+test('the header contact button leads to a translated contact form with five native FAQs and a real response commitment', async () => {
   for (const [home, contact, phrase] of [['/', '/contact/', '2 business days'], ['/es/', '/es/contacto/', '2 días laborables']]) {
     const html = await (await get(home)).text();
-    assert.match(html, new RegExp(`<div class="hero-enquiry"><a class="enquiry-button" href="${contact}"`));
+    // v51: the page CTAs were removed at the owner's request; the header button and the phone shortcut remain.
+    const header = html.match(/<header class="site-header">([\s\S]*?)<\/header>/)[1];
+    assert.ok(header.includes(`class="enquiry-button menu-enquiry" href="${contact}"`));
+    assert.ok(!html.includes('class="hero-enquiry"'));
     assert.match(html, /class="hero-copy"/);
-    assert.match(html, /class="hero-contact-label"/);
-    const cta = html.match(/<div class="hero-enquiry">([\s\S]*?)<\/div>/)[1];
-    assert.ok(cta.includes('<span aria-hidden="true">→</span>') && !cta.includes('↗'), 'text CTA with an arrow, no icon-only button');
     assert.ok(html.includes(`class="mobile-enquiry" href="${contact}"`));
-    assert.ok(html.indexOf('hero-enquiry') < html.indexOf('class="project-grid'));
     const page = await (await get(contact)).text();
     assert.ok(page.includes(phrase));
     assert.equal((page.match(/<details>/g) || []).length, 5);
@@ -61,7 +60,7 @@ test('project breadcrumbs and study content remain readable on directly shared p
     assert.ok(html.includes('<nav class="breadcrumbs"'));
     assert.ok(html.includes('aria-current="page">COLORSPLASH'));
     assert.ok(html.includes('class="project-story"'));
-    assert.ok(html.includes('class="project-enquiry"'));
+    assert.ok(!html.includes('class="project-enquiry"'), 'the header carries the contact button');
     assert.ok(html.includes('class="project-palette"'), 'brand colours are rendered as HTML swatches');
     assert.ok(html.includes('class="project-hero"'), 'the cover opens the case study');
   }

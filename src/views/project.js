@@ -8,7 +8,7 @@ import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, person, website } from './schema.js';
-import { projectCta, visibleBreadcrumbs } from './journey.js';
+import { visibleBreadcrumbs } from './journey.js';
 import { accentStyle, coverTransition } from './home.js';
 
 // Gallery formats (galeria.json "layout"): default column, "full" edge to edge, "pair" side by side.
@@ -168,7 +168,6 @@ export function projectPage(project, siblings, lang) {
   <p class="gallery-hint">${t.project.zoomHint}</p>
   <div class="project-gallery">${gallery(project.images, name, lang, t.project)}</div>
   ${project.result[lang] ? html`<section class="project-result"><h2>${t.project.resultTitle}</h2><p>${project.result[lang]}</p></section>` : ''}
-  ${projectCta(lang)}
   <nav class="project-pager" aria-label="${t.project.pagerLabel}">${
     previous ? html`<a href="${projectPath(previous, lang)}" rel="prev"${accentStyle(previous) ? html` style="${accentStyle(previous)}"` : ''}>${t.project.previous}<span>${projectName(previous, lang)}</span></a>` : html`<span></span>`
   }${next ? html`<a href="${projectPath(next, lang)}" rel="next"${accentStyle(next) ? html` style="${accentStyle(next)}"` : ''}>${t.project.next}<span>${projectName(next, lang)}</span></a>` : ''}</nav>

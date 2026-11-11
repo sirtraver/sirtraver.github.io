@@ -1,11 +1,11 @@
 {
-  "version": "v50 — titulares más pequeños, cursor de manita, hover de Olmedo y sirtraver",
+  "version": "v51 — encabezados compactos, sin CTA de página ni etiqueta de cargo, CV junto a redes, cursor de flecha",
   "commit": "see git log",
   "visualFiles": {
-    "public/assets/site.css": "245921b2e23b1156eb6f658be60701a3fa5d441f0bab926ff3b77c9f424526ee",
+    "public/assets/site.css": "a4bd936913082d1f8b762141d777d9ec1b763b73b5532fe7fb5265fa0200cf0e",
     "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
     "public/assets/navigation.js": "aa7dd27eed7b009a4295a1b2c1b05a0e7502f080247cfa9370216f8e50f9ecea",
-    "public/assets/site.js": "290bc09e735c891f259d77c31884b628e9a65ec363e5df404e2640b5d66b2e2b"
+    "public/assets/site.js": "77970363b4d9f7e9662744121c2739d37d985eb63ba2b76bb013cf8091140a07"
   }
 }

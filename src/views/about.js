@@ -1,6 +1,5 @@
 import { ORIGIN, PERSON_ID, PORTRAIT } from '../config.js';
-import { CONTACT_PAGE, CONTENT, PAGES, ROLE } from '../content.js';
-import { JOURNEY } from './journey.js';
+import { CONTENT, PAGES, ROLE } from '../content.js';
 import { assetUrl } from '../lib/assets.js';
 import { about } from '../generated/content.js';
 import { html } from '../lib/html.js';
@@ -62,10 +61,9 @@ export function aboutPage(lang) {
         <p class="position-lead">${t.lead}</p>
         <p class="position-bio">${t.bio}</p>
         <div class="about-actions">
-          <a class="enquiry-button" href="${CONTACT_PAGE[lang]}">${JOURNEY[lang].cta} <span aria-hidden="true">→</span></a>
+          ${socialIcons(lang, 'profile-social')}
           <!-- curriculum:access --><a class="profile-cv-link" href="${lang === 'es' ? '/cv/' : '/resume/'}">${t.cvLink}<span aria-hidden="true">↗</span></a><!-- /curriculum:access -->
         </div>
-        ${socialIcons(lang, 'profile-social')}
       </div>
       <figure class="about-portrait">
         <img class="editorial-portrait" src="${assetUrl(PORTRAIT.path)}" alt="${t.portraitAlt}" width="${PORTRAIT.width}" height="${PORTRAIT.height}" fetchpriority="high">

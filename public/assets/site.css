@@ -2557,13 +2557,38 @@ html:has(dialog[open]) .site-cursor { display: none; }
 .project-pager a { min-height: 140px; }
 .project-pager a span { font-size: clamp(22px, 2.3vw, 34px); }
 
-/* Hand cursor: a white outline drawn under the filled hand, so overlapping parts read as one shape. */
-.site-cursor-body { transform-origin: 12px 1px; }
-.site-cursor svg { width: 30px; height: 34px; }
-.site-cursor-outline rect { fill: #fff; stroke: #fff; stroke-width: 3.2; stroke-linejoin: round; }
-.site-cursor-hand rect { fill: var(--chip, var(--ink)); transition: fill .2s; }
-.site-cursor-crease { fill: none; stroke: color-mix(in srgb, var(--chip-ink, #fff) 55%, transparent); stroke-width: 1.2; stroke-linecap: round; }
-.site-cursor-chip { top: 30px; left: 22px; }
-
 /* A transparent hover image (a logo on its own) sits on white instead of over the cover. */
 .card-hover { background: #fff; }
+
+/* ---------- v51: compact headings — title and one line side by side; contact lives in the header ---------- */
+.value-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 34ch); align-items: end; gap: 8px 40px; padding: 18px 0 22px; text-align: left; }
+.value-hero .hero-copy { display: contents; }
+.value-hero h1 { max-width: none; font-size: clamp(30px, 3.4vw, 48px); line-height: 1; letter-spacing: -.04em; text-wrap: balance; }
+.value-hero .value-description { max-width: 34ch; margin: 0; padding-bottom: 4px; justify-self: end; color: var(--muted); font-size: 15px; line-height: 1.45; text-align: right; text-wrap: pretty; }
+.work-heading { margin-bottom: 16px; padding-top: 14px; border-top: 1px solid #0000001a; }
+
+.breadcrumbs { margin: 0 0 6px; }
+.project-header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 46ch); align-items: end; gap: 10px 40px; padding: 0 0 20px; }
+.project-header .overline { grid-column: 1 / -1; margin: 0 0 4px; justify-self: start; }
+.project-header h1 { max-width: none; font-size: clamp(30px, 3.4vw, 48px); line-height: 1; letter-spacing: -.04em; }
+.project-intro { max-width: 46ch; margin: 0; padding-bottom: 4px; font-size: 15px; line-height: 1.5; }
+
+.about-resume .about-profile { gap: 32px; padding: 14px 0 26px; }
+.about-resume .about-profile .overline { margin-bottom: 10px; }
+.about-copy .position-lead { margin-top: 12px; }
+.about-resume .about-portrait { width: 200px; justify-self: end; }
+.about-resume .about-profile { grid-template-columns: minmax(0, 1fr) 200px; }
+.about-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 16px; }
+.about-resume .about-actions .profile-social { margin: 0; padding: 0; border: 0; }
+.about-actions .profile-cv-link { min-height: 40px; margin: 0; padding: 0 14px; border-width: 1.5px; }
+
+/* The header button replaces the page CTAs down to tablet width; phones keep the floating button. */
+@media (max-width: 1000px) { .site-header .menu-enquiry { display: inline-flex; } .site-header { grid-template-columns: auto 1fr auto auto; } }
+@media (max-width: 700px) {
+  .site-header .menu-enquiry, .js .site-header .menu-enquiry { display: none; }
+  .site-header, .js .site-header { grid-template-columns: auto 1fr auto; }
+  .value-hero, .project-header { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 10px 0 18px; }
+  .value-hero .value-description { justify-self: start; text-align: left; }
+  .about-resume .about-profile { grid-template-columns: minmax(0, 1fr); }
+  .about-resume .about-portrait { width: 96px; justify-self: start; }
+}

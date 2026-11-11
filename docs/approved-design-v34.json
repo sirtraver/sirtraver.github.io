@@ -1,19 +1,19 @@
 {
-  "version": "v49 — sin franja, cabeceras más contenidas, cursor propio y titulares que se desordenan",
+  "version": "v50 — titulares más pequeños, cursor de manita, hover de Olmedo y sirtraver",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "ab05ad0ae077bfcc6bc559567064bf517fbfea8ec80ccbb72b79f5f29f65c1d2",
-    "/es/": "3b999318cd9ff11d7c6b5d0bce6d90528b826ece07cec5963c10cad47871c208",
+    "/": "51810c7e51ba1b380589e280a6cc9547154bdb71aa55b001bc74a03cd5ae5c58",
+    "/es/": "878a0e6dc85d8e91845653ae4a44435f1205cec486f9b077ae4528b50dcf6238",
     "/about/": "609f6c285c6ba1bcc1a77c6fd667bd204c5cdefa9c7b283d47cf137c09f23ce4",
     "/es/about/": "e90da2a0811d7dff668b07dac4fe1a90f996185d60f056d60783d8e631ef1f96",
     "/resources/": "a6651dbbf08fc8d20eb8566550e78e5dc979cf13d50a150624c358a30a0041ae",
     "/es/resources/": "b3cd64091a1d65d9e8742d3ef41573dc878a8a7723d6a9a5c4a1eb2ab16bb7bc"
   },
-  "cssPrefixBytes": 86564,
-  "cssPrefixHash": "83f07b8366ea7735c3f5fd98cb6634e0c0cc1b92b8ae695fb04a07f951742466",
+  "cssPrefixBytes": 88212,
+  "cssPrefixHash": "245921b2e23b1156eb6f658be60701a3fa5d441f0bab926ff3b77c9f424526ee",
   "homeShellHashes": {
-    "/": "f35870dfac40eff390d742e3ef4d29120ab4d807af27cd1dc961e3e8d4ee486c",
-    "/es/": "17c2267b641ea24f4fbb0360599b0b7cbcdee319cc91f4a2c86552b474014681"
+    "/": "1587b345e6ac151bd1e77de672343af06f371d8657392542bcb49000139e3135",
+    "/es/": "940fb32ae96da6c0ff7f9c17194794fd26a053711c6809e4e86d4521ca62b9d5"
   },
   "resourcesShellHashes": {
     "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",

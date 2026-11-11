@@ -36,7 +36,7 @@ async function processImage(slug, file, cache, { og = false, projectsDir, output
 
   const image = sharp(bytes, { limitInputPixels: false }).rotate();
   const { width, height } = await image.metadata().then((m) => (m.orientation >= 5 ? { width: m.height, height: m.width } : m));
-  const { dominant } = await image.clone().stats();
+  const { dominant, isOpaque } = await image.clone().stats();
   // Standard widths that are clearly smaller than the original, plus the largest useful size.
   const targetWidths = og ? WIDTHS : GALLERY_WIDTHS;
   const widths = [...new Set([...targetWidths.filter((w) => w <= width * 0.9), Math.min(width, targetWidths.at(-1))])].sort((a, b) => a - b);
@@ -67,7 +67,8 @@ async function processImage(slug, file, cache, { og = false, projectsDir, output
   const entry = {
     width,
     height,
-    color: `#${[dominant.r, dominant.g, dominant.b].map((c) => c.toString(16).padStart(2, '0')).join('')}`,
+    // Transparent images (a logo on its own) sit on white: their dominant colour would show through.
+    color: isOpaque ? `#${[dominant.r, dominant.g, dominant.b].map((c) => c.toString(16).padStart(2, '0')).join('')}` : '#ffffff',
     avif: sources.avif,
     webp: sources.webp,
     ...(ogUrl ? { og: ogUrl } : {}),

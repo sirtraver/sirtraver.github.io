@@ -87,31 +87,163 @@
   }
 })();
 
-// Home cards: a small "View project" label follows a mouse pointer. Decorative, so hidden from
-// assistive technology; touch screens and keyboards never see it.
+// Own cursor on mouse-driven screens: an arrow with a chip that names what is under it and takes
+// the colour of the project it is over. Decorative: hidden from assistive technology, never shown on
+// touch screens, and the native cursor returns inside dialogs and form fields.
 (() => {
-  const grid = document.querySelector('.project-grid[data-cursor-label]');
-  if (!grid || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  const label = document.createElement('span');
-  label.className = 'cursor-label';
-  label.setAttribute('aria-hidden', 'true');
-  label.textContent = grid.dataset.cursorLabel;
-  document.body.append(label);
-  let card = null;
-  const hide = () => { card = null; label.classList.remove('is-on'); };
-  grid.addEventListener('pointermove', (event) => {
-    if (event.pointerType && event.pointerType !== 'mouse') return;
-    const current = event.target.closest('.project-card');
-    if (current !== card) {
-      card = current;
-      label.classList.toggle('is-on', Boolean(card));
-      if (card) label.style.setProperty('--accent', card.style.getPropertyValue('--accent') || 'transparent');
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const spanish = document.documentElement.lang === 'es';
+  const words = spanish ? { you: 'Tú', open: 'Abrir', zoom: 'Ampliar' } : { you: 'You', open: 'Open', zoom: 'Zoom' };
+  const cardLabel = document.querySelector('.project-grid[data-cursor-label]')?.dataset.cursorLabel ?? words.open;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const cursor = document.createElement('div');
+  cursor.className = 'site-cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+  cursor.innerHTML = '<div class="site-cursor-body"><svg viewBox="0 0 26 28"><path class="site-cursor-arrow" d="M3 3l6.2 20.5 3.6-8.3 8.6-2.7z"/></svg><span class="site-cursor-chip"><span></span><i></i></span></div>';
+  document.body.append(cursor);
+  const body = cursor.firstChild;
+  const [label, mark] = cursor.querySelector('.site-cursor-chip').children;
+
+  // Dark or light chip text, whichever reads on the project colour.
+  const inkOn = (hex) => {
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+    return (r * 299 + g * 587 + b * 114) / 1000 > 150 ? '#1a1a19' : '#fff';
+  };
+  const describe = (target) => {
+    const card = target.closest?.('.project-card');
+    if (card) return { text: cardLabel, mark: '→', accent: card.style.getPropertyValue('--accent') };
+    const pager = target.closest?.('.project-pager a');
+    if (pager) return { text: words.open, mark: '→', accent: pager.style.getPropertyValue('--accent') };
+    if (target.closest?.('.gallery-zoom')) return { text: words.zoom, mark: '+' };
+    if (target.closest?.('a, button, summary, label, [role="button"]')) return { text: words.open, mark: '↗' };
+    return { text: words.you, mark: '' };
+  };
+
+  let x = 0;
+  let lastX = 0;
+  let tilt = 0;
+  let frame = 0;
+  let state = '';
+  const settle = () => {
+    frame = 0;
+    const lean = Math.max(-10, Math.min(10, (x - lastX) * 0.6));
+    lastX = x;
+    tilt += (lean - tilt) * 0.2;
+    body.style.setProperty('--tilt', `${still.matches ? 0 : tilt.toFixed(2)}deg`);
+    if (Math.abs(tilt) > 0.05) frame = requestAnimationFrame(settle);
+  };
+  window.addEventListener('pointermove', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    document.documentElement.classList.add('has-cursor');
+    cursor.classList.add('is-on');
+    x = event.clientX;
+    cursor.style.transform = `translate3d(${event.clientX - 3}px, ${event.clientY - 3}px, 0)`;
+    const next = describe(event.target);
+    const key = `${next.text}|${next.mark}|${next.accent ?? ''}`;
+    if (key !== state) {
+      state = key;
+      label.textContent = next.text;
+      mark.textContent = next.mark;
+      if (next.accent) {
+        cursor.style.setProperty('--chip', next.accent);
+        cursor.style.setProperty('--chip-ink', inkOn(next.accent));
+      } else {
+        cursor.style.removeProperty('--chip');
+        cursor.style.removeProperty('--chip-ink');
+      }
     }
-    label.style.translate = `${event.clientX + 16}px ${event.clientY + 18}px`;
-  });
-  grid.addEventListener('pointerleave', hide);
-  window.addEventListener('scroll', hide, { passive: true });
-  window.addEventListener('pagehide', hide);
+    if (!frame) frame = requestAnimationFrame(settle);
+  }, { passive: true });
+  window.addEventListener('pointerdown', () => cursor.classList.add('is-down'));
+  window.addEventListener('pointerup', () => cursor.classList.remove('is-down'));
+  document.documentElement.addEventListener('pointerleave', () => cursor.classList.remove('is-on'));
+  window.addEventListener('blur', () => cursor.classList.remove('is-on'));
+  window.addEventListener('pagehide', () => cursor.classList.remove('is-on', 'is-down'));
+})();
+
+// Display type scrambles under the pointer: letters near it turn into coloured symbols for a moment
+// and settle back. The heading keeps its text as an accessible name; letters are split only when a
+// mouse first reaches it, so touch screens and search engines see plain text.
+(() => {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const headings = document.querySelectorAll('.value-hero h1, .project-header h1, .about-copy h1, .project-enquiry h2, .project-result p, .project-pager a span');
+  const GLYPHS = '<>*!&%$#@^+=/';
+  // Colours of the work itself: the palette on a case study, the project accents on the home page.
+  const colours = [...new Set([
+    ...[...document.querySelectorAll('.project-palette li')].map((item) => item.style.getPropertyValue('--swatch')),
+    ...[...document.querySelectorAll('.project-card[style], .project-pager a[style]')].map((item) => item.style.getPropertyValue('--accent')),
+  ].filter(Boolean))];
+  if (!colours.length) colours.push('#1F4FFF', '#FF5A2A', '#FFC21F', '#C61F2E');
+
+  const split = (heading) => {
+    const size = parseFloat(getComputedStyle(heading).fontSize);
+    const text = heading.textContent;
+    if (!heading.hasAttribute('aria-label') && /^H\d$/.test(heading.tagName)) heading.setAttribute('aria-label', text.trim());
+    const letters = [];
+    const walk = (node) => {
+      for (const child of [...node.childNodes]) {
+        if (child.nodeType === 1) { walk(child); continue; }
+        if (child.nodeType !== 3) continue;
+        const fragment = document.createDocumentFragment();
+        for (const part of child.textContent.split(/(\s+)/)) {
+          if (!part) continue;
+          if (/^\s+$/.test(part)) { fragment.append(part); continue; }
+          const word = document.createElement('span');
+          word.className = 'scramble-word';
+          for (const char of part) {
+            const letter = document.createElement('span');
+            letter.className = 'scramble-ch';
+            letter.setAttribute('aria-hidden', 'true');
+            letter.textContent = char;
+            word.append(letter);
+            letters.push({ node: letter, char, until: 0 });
+          }
+          fragment.append(word);
+        }
+        child.replaceWith(fragment);
+      }
+    };
+    walk(heading);
+    // Freeze each letter's width (in em, so it follows the fluid type size) before any glyph changes.
+    const widths = letters.map((letter) => letter.node.getBoundingClientRect().width);
+    letters.forEach((letter, index) => { letter.node.style.width = `${(widths[index] / size).toFixed(4)}em`; });
+    return letters;
+  };
+
+  for (const heading of headings) {
+    let letters = null;
+    let pointer = null;
+    let timer = 0;
+    const tick = () => {
+      const now = performance.now();
+      const reach = parseFloat(getComputedStyle(heading).fontSize) * 1.5;
+      let busy = false;
+      for (const letter of letters) {
+        if (pointer) {
+          const box = letter.node.getBoundingClientRect();
+          const distance = Math.hypot(box.left + box.width / 2 - pointer.x, box.top + box.height / 2 - pointer.y);
+          if (distance < reach) letter.until = now + 160 + Math.random() * 260;
+        }
+        if (letter.until > now) {
+          busy = true;
+          letter.node.textContent = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+          letter.node.style.color = colours[Math.floor(Math.random() * colours.length)];
+        } else if (letter.node.textContent !== letter.char || letter.node.style.color) {
+          letter.node.textContent = letter.char;
+          letter.node.style.color = '';
+        }
+      }
+      if (!busy && !pointer) { clearInterval(timer); timer = 0; }
+    };
+    heading.addEventListener('pointermove', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      letters ??= split(heading);
+      pointer = { x: event.clientX, y: event.clientY };
+      if (!timer) timer = setInterval(tick, 55);
+    });
+    heading.addEventListener('pointerleave', () => { pointer = null; });
+  }
 })();
 
 // Home: the page background takes a tint of the project under the pointer; without a pointer

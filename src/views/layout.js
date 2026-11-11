@@ -9,9 +9,6 @@ import { runtime } from '../lib/runtime.js';
 const mobileCta = { es: 'Cuéntame tu proyecto', en: 'Tell me about your project' };
 const menuLabel = { es: { open: 'Menú', close: 'Cerrar' }, en: { open: 'Menu', close: 'Close' } };
 
-// Decorative strip above the header: the services, running. Repeated so the loop has no seam.
-const ticker = (lang) => html`<div class="ticker" aria-hidden="true"><div class="ticker-track">${[0, 1, 2, 3].map(() => CONTENT[lang].ticker.map((item) => html`<span>${item}</span>`))}</div></div>`;
-
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
@@ -112,7 +109,6 @@ ${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map
 )}</head>
 <body>
 <a class="skip" href="#main">${t.skip}</a>
-${ticker(lang)}
 ${header(lang, page, paths ?? PAGES.home)}
 <main id="main"${mainClass ? html` class="${mainClass}"` : ''}>
 ${body}

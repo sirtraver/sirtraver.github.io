@@ -100,7 +100,7 @@
   const cursor = document.createElement('div');
   cursor.className = 'site-cursor';
   cursor.setAttribute('aria-hidden', 'true');
-  cursor.innerHTML = '<div class="site-cursor-body"><svg viewBox="0 0 30 34"><g class="site-cursor-outline"><rect x="9" y="1" width="6" height="18" rx="3"/><rect x="7" y="13" width="19" height="17" rx="6"/><rect x="14.4" y="10.5" width="5.4" height="10" rx="2.7"/><rect x="19.6" y="12" width="5.4" height="10" rx="2.7"/><rect x="1.6" y="15" width="5.6" height="11" rx="2.8" transform="rotate(-38 4.4 20.5)"/></g><g class="site-cursor-hand"><rect x="9" y="1" width="6" height="18" rx="3"/><rect x="7" y="13" width="19" height="17" rx="6"/><rect x="14.4" y="10.5" width="5.4" height="10" rx="2.7"/><rect x="19.6" y="12" width="5.4" height="10" rx="2.7"/><rect x="1.6" y="15" width="5.6" height="11" rx="2.8" transform="rotate(-38 4.4 20.5)"/><path class="site-cursor-crease" d="M15 21.2v-3.4M20.2 22.6v-3.6"/></g></svg><span class="site-cursor-chip"><span></span><i></i></span></div>';
+  cursor.innerHTML = '<div class="site-cursor-body"><svg viewBox="0 0 26 28"><path class="site-cursor-arrow" d="M3 3l6.2 20.5 3.6-8.3 8.6-2.7z"/></svg><span class="site-cursor-chip"><span></span><i></i></span></div>';
   document.body.append(cursor);
   const body = cursor.firstChild;
   const [label, mark] = cursor.querySelector('.site-cursor-chip').children;
@@ -146,7 +146,7 @@
     cursor.classList.add('is-on');
     x = event.clientX;
     pointY = event.clientY;
-    cursor.style.transform = `translate3d(${event.clientX - 12}px, ${event.clientY - 1}px, 0)`; // fingertip on the point
+    cursor.style.transform = `translate3d(${event.clientX - 3}px, ${event.clientY - 3}px, 0)`;
     relabel(event.target);
     if (!frame) frame = requestAnimationFrame(settle);
   }, { passive: true });
@@ -178,7 +178,7 @@
 // mouse first reaches it, so touch screens and search engines see plain text.
 (() => {
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const headings = document.querySelectorAll('.value-hero h1, .project-header h1, .about-copy h1, .project-enquiry h2, .project-result p, .project-pager a span');
+  const headings = document.querySelectorAll('.value-hero h1, .project-header h1, .about-copy h1, .project-result p, .project-pager a span');
   const GLYPHS = '<>*!&%$#@^+=/';
   // Colours of the work itself: the palette on a case study, the project accents on the home page.
   const colours = [...new Set([

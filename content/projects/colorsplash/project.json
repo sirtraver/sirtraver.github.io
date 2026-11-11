@@ -3,8 +3,8 @@
   "date": "2026-10-21",
   "order": 1,
   "intro": {
-    "es": "Proyecto conceptual de identidad para una marca de pintura: un monograma geométrico, cuatro colores y un sistema que conecta envases, comunicación y espacio comercial.",
-    "en": "A concept identity for a paint brand: a geometric monogram, four colours and a system connecting packaging, communication and retail space."
+    "es": "Proyecto conceptual de identidad para una marca de pintura. El color deja de ser solo una característica del producto y se convierte en la estructura de la marca, desde el envase hasta la campaña.",
+    "en": "A concept identity for a paint brand. Colour moves beyond a product characteristic to become the structure of the brand, from packaging to campaign."
   },
   "deliverables": {
     "es": [
@@ -78,18 +78,18 @@
         "en": "The project"
       },
       "text": {
-        "es": "Una propuesta conceptual de identidad para una marca de pintura. La presentación recorre la marca, sus envases y su aplicación en comunicación y espacio comercial.",
-        "en": "A concept identity for a paint brand. The presentation follows the brand through its packaging, communication and retail applications."
+        "es": "La propuesta explora una marca de pintura que pueda reconocerse como conjunto y, al mismo tiempo, distinguir cada color de la gama. El trabajo conecta identidad, packaging y comunicación con una lógica común: una marca estable y un entorno que cambia de color.",
+        "en": "The proposal explores a paint brand that reads as a family while distinguishing each colour in the range. Identity, packaging and communication share a common logic: a stable mark within an environment that changes colour."
       }
     },
     {
       "title": {
-        "es": "Sistema visual",
-        "en": "Visual system"
+        "es": "La idea",
+        "en": "The idea"
       },
       "text": {
-        "es": "Un monograma construido con las iniciales CS se combina con una paleta de cian, magenta, amarillo y negro. El nombre y los códigos de color mantienen una estructura común en los cuatro envases.",
-        "en": "A monogram built from the initials CS is paired with cyan, magenta, yellow and black. The name and colour codes follow a shared structure across the four paint tins."
+        "es": "El monograma CS reduce el nombre a una forma geométrica de gran presencia. La gama de cian, magenta, amarillo y negro aporta variedad sin fragmentar la identidad. El mensaje «Paint it» traslada esa lógica al espacio: el producto no se presenta aislado, sino relacionado con los interiores que puede transformar.",
+        "en": "The CS monogram reduces the name to a bold geometric form. Cyan, magenta, yellow and black introduce variety without fragmenting the identity. The line “Paint it” carries this logic into spaces: the product is shown in relation to the interiors it could transform."
       }
     },
     {
@@ -98,9 +98,45 @@
         "en": "Applications"
       },
       "text": {
-        "es": "Latas de pintura, caja de presentación, piezas de comunicación y un expositor de tienda muestran el sistema en distintas escalas. La campaña se articula alrededor del mensaje «Paint it».",
-        "en": "Paint tins, a presentation box, communication pieces and a store display show the system at different scales. The campaign is built around the message “Paint it”."
+        "es": "Las latas mantienen la posición de la marca, el nombre del color y su código. La caja de presentación reúne la gama y el expositor utiliza el color para ordenar el punto de venta. En la campaña, el mismo esquema se adapta a cuatro escenas y permite reconocer la familia sin repetir exactamente la misma imagen.",
+        "en": "The tins keep the mark, colour name and code in consistent positions. A presentation box brings the range together, while the display uses colour to organise the retail setting. The campaign adapts the same scheme to four scenes, making the family recognisable without repeating the exact same image."
       }
     }
-  ]
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Tipografía",
+        "en": "Typography"
+      },
+      "text": {
+        "es": "La lámina tipográfica combina Alfa Block y Arial Rounded. Los volúmenes densos y las curvas de Alfa Block acompañan el carácter del monograma; las formas más abiertas de Arial Rounded dan continuidad al nombre y a la información de apoyo. La diferencia de peso ayuda a separar los mensajes de campaña de los datos del producto.",
+        "en": "The typography board pairs Alfa Block with Arial Rounded. Alfa Block’s dense volumes and curves echo the monogram, while Arial Rounded’s more open forms support the name and secondary information. The contrast in weight separates campaign messages from product details."
+      }
+    },
+    {
+      "title": {
+        "es": "Geometría y jerarquía",
+        "en": "Geometry and hierarchy"
+      },
+      "text": {
+        "es": "El monograma reúne curvas amplias, cortes rectos y espacios interiores reducidos. Su masa permite que funcione como figura principal sobre fondos de color. Las composiciones distinguen tres niveles: símbolo, mensaje y datos. Mantener esta jerarquía evita que la variedad cromática convierta cada aplicación en una identidad diferente.",
+        "en": "The monogram combines broad curves, straight cuts and compact interior spaces. Its weight lets it lead against coloured backgrounds. Compositions separate three levels: symbol, message and information. Keeping this hierarchy prevents the different colours from turning each application into a different identity."
+      }
+    },
+    {
+      "title": {
+        "es": "Dirección de imagen",
+        "en": "Art direction"
+      },
+      "text": {
+        "es": "Los interiores y las composiciones de producto comparten una iluminación cálida y superficies con textura. Las escenas de campaña cambian de color, pero conservan una relación reconocible entre espacio, tipografía y envase. La dirección de imagen presenta el color como una experiencia del espacio, además de como una característica del envase.",
+        "en": "Interiors and product compositions share warm lighting and textured surfaces. Campaign scenes change colour but retain a recognisable relationship between space, typography and packaging. The art direction presents colour as an experience of space as well as a characteristic of the packaging."
+      }
+    }
+  ],
+  "paletteNote": {
+    "es": "Cian, magenta, amarillo y negro actúan como cuatro familias visuales. El contraste con la marca clara unifica los envases, mientras el color dominante permite diferenciar cada pieza. En comunicación, la paleta se extiende al espacio representado para que producto y escena formen una sola composición.",
+    "en": "Cyan, magenta, yellow and black act as four visual families. The light mark unifies the packaging, while the dominant colour distinguishes each item. In communication, the palette extends into the depicted space so that product and scene form one composition."
+  }
 }

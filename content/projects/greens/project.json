@@ -15,12 +15,12 @@
     "es": []
   },
   "intro": {
-    "en": "",
-    "es": ""
+    "es": "Identidad visual para una marca de café. Un logotipo de formas amables, una hoja y una mascota conectan la marca con el producto y con los pequeños rituales de una cafetería.",
+    "en": "A visual identity for a coffee brand. An approachable wordmark, a leaf and a mascot connect the mark with its product and the small rituals of a coffee shop."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Un sistema de identidad que relaciona nombre, símbolo y personaje. Las aplicaciones exploran cómo conservar una misma personalidad en soportes de producto, servicio y comunicación.",
+    "en": "An identity system connecting name, symbol and character. The applications explore how one personality can carry through product, service and communication surfaces."
   },
   "featured": false,
   "archived": true,
@@ -29,5 +29,69 @@
   "tools": [
     "Affinity",
     "ChatGPT"
+  ],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "Greens desarrolla una identidad que pueda pasar del envase al menú y de la comunicación al espacio de consumo. La presentación reúne logotipo, versiones cromáticas, una mascota y aplicaciones impresas. El interés está en construir una familia reconocible de piezas a partir de pocos recursos.",
+        "en": "Greens develops an identity that moves from packaging to menus and from communication to the coffee-shop setting. The presentation brings together a wordmark, colour variants, a mascot and print applications. A small set of devices connects the different pieces."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "La hoja completa el nombre y hace visible la referencia natural de la marca. La mascota transforma un vaso de café en un personaje, introduciendo un registro más expresivo. Ambos elementos comparten el mismo universo de curvas y permiten alternar una presencia sobria de marca con una comunicación más cercana.",
+        "en": "A leaf completes the name and makes the brand’s natural reference visible. The mascot turns a coffee cup into a character, introducing a more expressive register. Both share a curved visual language, allowing a restrained brand presence to alternate with more approachable communication."
+      }
+    },
+    {
+      "title": {
+        "es": "Aplicaciones",
+        "en": "Applications"
+      },
+      "text": {
+        "es": "Menú, bolsa de café, vaso, camiseta, bolsa de papel y cartelería muestran el sistema en distintas superficies. El nombre suele ocupar una posición limpia y reconocible; la mascota aparece como un recurso complementario. La gama cromática mantiene la continuidad entre las piezas.",
+        "en": "Menus, coffee bags, cups, T-shirts, paper bags and posters show the system on different surfaces. The name usually sits in a clean, recognisable position, with the mascot as a complementary device. The colour range connects the applications."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Tipografía y símbolo",
+        "en": "Typography and symbol"
+      },
+      "text": {
+        "es": "El nombre utiliza formas redondeadas, un peso alto y contraformas abiertas. La hoja prolonga la silueta del logotipo sin introducir un lenguaje separado. La combinación ofrece una lectura compacta y permite que la marca conserve presencia en envases pequeños y en piezas con bastante espacio vacío.",
+        "en": "The name uses rounded shapes, a heavy weight and open counters. The leaf extends the wordmark’s silhouette rather than introducing a separate language. The combination creates a compact reading and keeps the mark visible on small packaging and in compositions with generous empty space."
+      }
+    },
+    {
+      "title": {
+        "es": "Color y materiales",
+        "en": "Colour and materials"
+      },
+      "text": {
+        "es": "Verde, beige y mostaza forman una gama cálida vinculada a la presentación del café. El verde concentra la identificación; los tonos claros y los materiales de papel aportan el fondo. Las versiones de contraste y las inversiones de color muestran distintas posibilidades del sistema sin cambiar la estructura del logotipo.",
+        "en": "Green, beige and mustard create a warm range around the presentation of coffee. Green carries identification, while light tones and paper materials provide the ground. Contrast variants and colour reversals explore the system without changing the wordmark’s structure."
+      }
+    },
+    {
+      "title": {
+        "es": "Mascota y composición",
+        "en": "Mascot and composition"
+      },
+      "text": {
+        "es": "El vaso personificado incorpora ojos, boca y un contorno más gestual. Su carácter contrasta con las composiciones tranquilas de packaging y papelería. Mantener ambos registros dentro de la misma gama permite utilizar la mascota cuando la pieza necesita más expresividad y reservar el logotipo para usos más contenidos.",
+        "en": "The personified cup adds eyes, a mouth and a more gestural outline. It contrasts with the quieter packaging and stationery compositions. A shared colour range allows the mascot to bring expression where needed, while the wordmark handles more restrained applications."
+      }
+    }
   ]
 }

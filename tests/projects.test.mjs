@@ -83,8 +83,14 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       assert.ok(html.includes(`<link rel="canonical" href="${ORIGIN}${path}">`));
       assert.equal((html.match(/<h1\b/g) || []).length, 1);
       assert.equal((html.match(/<figure[\s>]/g) || []).length, p.images.length, path);
-      assert.equal((html.match(/<figure class="is-full">/g) || []).length, p.images.filter(image => image.layout === 'full').length, path);
-      assert.equal((html.match(/<div class="gallery-pair">/g) || []).length * 2, p.images.filter(image => image.layout === 'pair').length, path);
+      assert.equal((html.match(/class="project-image"/g) || []).length, p.images.length, path);
+      assert.ok(!html.includes('class="is-full"') && !html.includes('class="gallery-pair"'), 'every image uses the same page column');
+      assert.ok(!html.includes('data-zoom-src') && !html.includes('gallery-zoom') && !html.includes('image-zoom.js'), 'images do not open a viewer or a separate file');
+      assert.ok(html.includes('class="project-design"'), 'the formal design is explained independently of the concept');
+      for (const section of p.designDetails) {
+        const lang = prefix ? 'es' : 'en';
+        assert.ok(html.includes(section.title[lang]) && html.includes(section.text[lang]));
+      }
       assert.ok(html.includes('class="project-facts"'));
       if (p.tools.length) assert.ok(html.includes(p.tools.join(' · ')), path);
       else assert.ok(!html.includes('<dt>Tools</dt>') && !html.includes('<dt>Herramientas</dt>'), path);
@@ -184,8 +190,7 @@ test('concept narratives reach both SSR pages and the in-page viewer without fab
       const html = await (await get(`${prefix}/projects/${slug}/`)).text();
       assert.ok(html.includes('class="project-story"'));
       for (const section of project.caseStudy) assert.ok(html.includes(section.title[lang]));
-      assert.equal((html.match(/data-zoom-src=/g) || []).length, project.images.length);
-      assert.ok(html.includes('/assets/image-zoom.js?v='));
+      assert.ok(!html.includes('data-zoom-src=') && !html.includes('/assets/image-zoom.js'));
     }
   }
 });

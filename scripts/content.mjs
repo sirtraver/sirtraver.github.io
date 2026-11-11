@@ -33,6 +33,8 @@ async function readProject(slug, media, projectsDir) {
     intro: bilingual(data.intro),
     result: bilingual(data.result),
     caseStudy: (data.caseStudy ?? []).map(section => ({ title: bilingual(section.title), text: bilingual(section.text) })),
+    designDetails: (data.designDetails ?? []).map(section => ({ title: bilingual(section.title), text: bilingual(section.text) })),
+    paletteNote: bilingual(data.paletteNote),
     // Brand colours shown as HTML swatches; share is the usage proportion (%), when documented.
     palette: (data.palette ?? []).map(swatch => ({ name: bilingual(swatch.name), hex: String(swatch.hex).toUpperCase(), share: Number(swatch.share) || 0 })),
     // Second image that fades in when hovering the portfolio card (a gallery file).

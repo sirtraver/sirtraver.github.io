@@ -27,12 +27,12 @@
     ]
   },
   "intro": {
-    "es": "Smash burgers con alma japonesa. Identidad para una cadena de hamburguesas que lleva el neo-diner americano al formato actual, con el kanji 砕け! («¡aplasta!») como sello.",
-    "en": "Smash burgers with a Japanese soul. An identity for a burger chain that brings the American neo-diner into a contemporary format, with the kanji 砕け! (“smash it!”) as its stamp."
+    "es": "Smash burgers con alma japonesa. Una identidad que convierte la energía del nombre KUDAKE! en un sello, un lenguaje gráfico y una experiencia de marca reconocible.",
+    "en": "Smash burgers with a Japanese soul. An identity that turns the energy of the name KUDAKE! into a stamp, a graphic language and a recognisable brand experience."
   },
   "result": {
-    "es": "Un sistema completo y preparado para crecer: sello, logotipo, paleta con proporciones de uso, tipografía y cuatro recursos gráficos que se aplican igual en el local, el packaging, el merchandising y la calle.",
-    "en": "A complete system ready to grow: stamp, logo, a palette with usage proportions, typography and four graphic devices applied the same way across the restaurant, packaging, merchandise and the street."
+    "es": "Una identidad articulada alrededor de un sello y un conjunto reducido de reglas. El mismo lenguaje conecta el producto, el packaging, las prendas y el espacio, y permite reconocer KUDAKE! incluso cuando cambia la escala de la aplicación.",
+    "en": "An identity built around a stamp and a concise set of rules. The same language connects the product, packaging, clothing and interior, making KUDAKE! recognisable as the scale of the application changes."
   },
   "featured": false,
   "archived": false,
@@ -73,12 +73,12 @@
   "caseStudy": [
     {
       "title": {
-        "es": "El reto",
-        "en": "The challenge"
+        "es": "El punto de partida",
+        "en": "The starting point"
       },
       "text": {
-        "es": "Dar identidad a KUDAKE!, una cadena de smash burgers japonesas con vocación de expansión global: una marca tan directa como su nombre y legible en cualquier ciudad.",
-        "en": "Give an identity to KUDAKE!, a Japanese smash burger chain built for global expansion: a brand as direct as its name and legible in any city."
+        "es": "El proyecto reúne dos referencias: la contundencia de una hamburguesería de smash burgers y el carácter visual de la gráfica japonesa. La identidad debía conectar ambas sin depender de una ilustración distinta en cada pieza. El sistema se construye alrededor de una marca compacta, capaz de organizar desde un envase hasta la fachada del local.",
+        "en": "The project brings together two references: the boldness of a smash burger restaurant and the character of Japanese graphics. The identity connects both without relying on a different illustration for every item. A compact mark anchors the system, organising everything from packaging to the restaurant façade."
       }
     },
     {
@@ -87,19 +87,55 @@
         "en": "The idea"
       },
       "text": {
-        "es": "Kudake significa «¡aplasta!» o «¡hazlo añicos!» en japonés, justo lo que se hace con la carne en la plancha. El kanji 砕け! protagoniza un sello y KUDAKE! JAPAN BURGERS lo traduce para todos.",
-        "en": "Kudake means “smash it!” in Japanese, exactly what happens to the patty on the griddle. The kanji 砕け! leads as a stamp, and KUDAKE! JAPAN BURGERS translates it for everyone."
+        "es": "KUDAKE! se plantea como un grito: corto, directo y ligado al gesto de aplastar la hamburguesa en la plancha. La expresión 砕け! ocupa el primer nivel del sello; el nombre latino y el descriptor JAPAN BURGERS completan la lectura. Esa combinación convierte el propio nombre en el principal recurso de comunicación.",
+        "en": "KUDAKE! is treated as a shout: short, direct and connected to pressing the burger onto the griddle. The expression 砕け! takes the first level of the stamp, while the Latin name and JAPAN BURGERS descriptor complete the reading. The name itself becomes the main communication device."
       }
     },
     {
       "title": {
-        "es": "Sistema",
-        "en": "System"
+        "es": "Aplicaciones",
+        "en": "Applications"
       },
       "text": {
-        "es": "Azul eléctrico y naranja sobre un fondo crema. Cuatro recursos gráficos sostienen todas las piezas: el sello repetido como patrón, el grito en bloque, el damero de los azulejos del local y la triple línea que nace del logotipo.",
-        "en": "Electric blue and orange on a cream ground. Four graphic devices carry every piece: the repeated stamp as a pattern, the block shout, the checkerboard from the restaurant tiles and the triple rule taken from the logo."
+        "es": "El sello cambia de escala y se repite en papel, vasos, cajas, prendas y cartelería. En el espacio interior, el damero y la rotulación prolongan el mismo lenguaje. Las aplicaciones muestran cómo una identidad puede acompañar todo el recorrido de la marca sin perder reconocimiento al cambiar de material o de formato.",
+        "en": "The stamp changes scale and repeats across paper, cups, boxes, clothing and posters. Checkerboard surfaces and lettering extend the same language into the interior. The applications show how an identity can accompany the whole brand experience while remaining recognisable across materials and formats."
       }
     }
-  ]
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Tipografía y voz",
+        "en": "Typography and voice"
+      },
+      "text": {
+        "es": "Archivo Black aporta peso y una lectura frontal a los titulares. M PLUS Rounded 1c introduce formas redondeadas y permite relacionar la escritura japonesa con los textos latinos. La jerarquía contrapone mensajes breves y grandes con información secundaria más contenida: primero se reconoce el tono de la marca y después se entra en el detalle.",
+        "en": "Archivo Black gives headlines weight and an immediate presence. M PLUS Rounded 1c introduces rounded forms and connects Japanese lettering with Latin text. The hierarchy contrasts short, large messages with quieter supporting information: the brand’s tone comes first, followed by the detail."
+      }
+    },
+    {
+      "title": {
+        "es": "Sello y composición",
+        "en": "Stamp and composition"
+      },
+      "text": {
+        "es": "Un marco redondeado contiene el nombre y convierte el logotipo en una unidad fácil de colocar y repetir. La línea divisoria ordena los niveles de lectura. Fuera del sello, los bloques tipográficos, el damero y la triple línea aportan ritmo sin competir con la marca. La repetición permite llenar superficies amplias y resolver piezas pequeñas con los mismos elementos.",
+        "en": "A rounded frame contains the name, making the logo a unit that can be placed and repeated easily. A dividing rule organises the reading levels. Outside the stamp, blocks of type, checkerboards and triple rules add rhythm without competing with the mark. Repetition handles both large surfaces and small items with the same elements."
+      }
+    },
+    {
+      "title": {
+        "es": "Imagen y materialidad",
+        "en": "Image and materials"
+      },
+      "text": {
+        "es": "Los mockups sitúan la identidad en una escena de restauración: comida, papel, cartón, uniformes y superficies del local. Las texturas cálidas y la presencia del producto contrastan con la geometría del sello. La imagen no sustituye al sistema gráfico; muestra cómo se comporta cuando entra en contacto con objetos y situaciones cotidianas.",
+        "en": "The mockups place the identity in a restaurant setting: food, paper, cardboard, uniforms and interior surfaces. Warm textures and the presence of the product contrast with the stamp’s geometry. Imagery supports the graphic system by showing how it behaves on everyday objects and in everyday situations."
+      }
+    }
+  ],
+  "paletteNote": {
+    "es": "Rice Cream funciona como fondo y aporta calidez. Electric Cobalt estructura la identidad y Chili Orange concentra los acentos. La relación entre un tono claro y dos colores intensos mantiene el carácter de la marca tanto en una pieza de comunicación como en un envase.",
+    "en": "Rice Cream provides a warm ground. Electric Cobalt structures the identity, while Chili Orange concentrates the accents. One light tone and two vivid colours preserve the brand’s character across communication and packaging."
+  }
 }

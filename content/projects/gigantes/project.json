@@ -15,17 +15,81 @@
     "es": []
   },
   "intro": {
-    "en": "",
-    "es": ""
+    "es": "Serie fotográfica sobre la presencia de la arquitectura en la ciudad. Los edificios se observan desde abajo para transformar fachadas, líneas y reflejos en composiciones de escala y perspectiva.",
+    "en": "A photographic series on the presence of architecture in the city. Buildings are viewed from below, turning façades, lines and reflections into compositions of scale and perspective."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Una serie que transforma la observación arquitectónica en un ejercicio de composición. Perspectiva, luz y repetición conectan edificios diferentes y hacen visible una forma común de mirar la ciudad.",
+    "en": "A series that turns architectural observation into a compositional exercise. Perspective, light and repetition connect different buildings and reveal a shared way of looking at the city."
   },
   "featured": false,
   "archived": true,
   "order": 4,
   "draft": false,
   "portfolioOrder": 11,
-  "tools": []
+  "tools": [],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "Gigantes reúne edificios de apariencia y épocas diferentes bajo una misma forma de mirar. El encuadre parte del nivel de la calle y dirige la atención hacia la altura. La serie relaciona esas arquitecturas mediante la perspectiva, la presencia del cielo y la repetición de líneas.",
+        "en": "Gigantes brings together buildings of different appearances and periods through one way of looking. Framing starts at street level and directs attention upwards. Perspective, sky and repeated lines connect the different architectures."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "La escala del edificio cambia cuando desaparece casi por completo el contexto de la calle. Las fachadas pasan a leerse como planos que convergen, se curvan o se recortan contra el cielo. La fotografía trabaja esa transformación sin necesitar que todos los edificios compartan un mismo estilo.",
+        "en": "The building’s scale changes as the street context almost disappears. Façades become planes that converge, curve or cut into the sky. Photography explores this transformation without requiring the buildings to share a style."
+      }
+    },
+    {
+      "title": {
+        "es": "La serie",
+        "en": "The series"
+      },
+      "text": {
+        "es": "Las imágenes alternan vidrio, piedra, superficies lisas y ornamentación. El punto de vista mantiene la continuidad, mientras los cambios de material y geometría evitan una lectura uniforme. La secuencia propone comparar formas y proporciones antes que recorrer un catálogo de edificios.",
+        "en": "Images alternate glass, stone, smooth surfaces and ornament. The viewpoint maintains continuity, while changes in material and geometry introduce variation. The sequence invites comparisons of shape and proportion rather than a catalogue of buildings."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Encuadre y perspectiva",
+        "en": "Framing and perspective"
+      },
+      "text": {
+        "es": "Los contrapicados hacen converger las líneas verticales y refuerzan la sensación de altura. Algunos encuadres utilizan un eje central; otros desplazan el edificio hacia un lateral o una esquina. La relación entre fachada y borde de la imagen decide cuánto espacio ocupa el cielo y dónde se concentra la tensión.",
+        "en": "Low viewpoints make vertical lines converge and emphasise height. Some frames use a central axis; others shift the building towards a side or corner. The relationship between façade and image edge controls how much sky remains and where tension gathers."
+      }
+    },
+    {
+      "title": {
+        "es": "Luz, color y superficie",
+        "en": "Light, colour and surface"
+      },
+      "text": {
+        "es": "Los azules del cielo y los reflejos relacionan imágenes de materiales distintos. Las nubes introducen variaciones frente a la repetición de ventanas y módulos. En las fachadas más claras, la luz destaca relieves y ornamentación; en el vidrio, mezcla arquitectura y cielo dentro de una misma superficie.",
+        "en": "Blue skies and reflections connect images of different materials. Clouds introduce variation against repeated windows and modules. On lighter façades, light reveals relief and ornament; in glass, it brings architecture and sky together on one surface."
+      }
+    },
+    {
+      "title": {
+        "es": "Secuencia visual",
+        "en": "Visual sequence"
+      },
+      "text": {
+        "es": "La repetición del punto de vista permite leer las fotografías como una serie. Los cambios entre composiciones simétricas y diagonales, edificios claros y oscuros, y superficies curvas o rectas aportan variación. Cada imagen conserva autonomía, pero encuentra relaciones formales con las que la acompañan.",
+        "en": "The repeated viewpoint makes the photographs read as a series. Changes between symmetrical and diagonal compositions, light and dark buildings, and curved or straight surfaces introduce variation. Each image stands on its own while finding formal relationships with its neighbours."
+      }
+    }
+  ]
 }

@@ -52,6 +52,6 @@ El exportador ejecuta el mismo Worker (`src/worker.js`) para cada URL y guarda e
 
 ## Criterios de continuidad
 
-Conservar la identidad tipográfica sirtraver, el sistema claro y monocromo, los ocho proyectos, EN/ES, navegación Portfolio/Resources/About y contacto en cabecera. Las imágenes aportan el color. El visor oscuro mantiene X/Escape, siguiente/anterior y retorno a la posición del portfolio; las páginas de proyecto permiten compartir y abrir directamente los trabajos. No introducir animaciones ornamentales, clientes ficticios o productos de muestra.
+Conservar la identidad tipográfica sirtraver, el sistema claro y monocromo, los proyectos, EN/ES, navegación Portfolio/Resources/About y contacto en cabecera. Las imágenes aportan el color. Las páginas de proyecto se leen en una sola columna de imágenes con ancho uniforme y sin visor al pulsarlas. `caseStudy` explica el concepto y las aplicaciones; `designDetails` desarrolla la tipografía, composición, imagen o forma; `paletteNote` explica la función del color. No introducir clientes ficticios, resultados no documentados ni productos de muestra.
 
 Revisar escritorio y móvil después de cambios visuales. Ver `REVISION.md` para el alcance de las verificaciones de esta entrega.

@@ -16,17 +16,81 @@
     "es": []
   },
   "intro": {
-    "en": "",
-    "es": ""
+    "es": "Estudio tipográfico a partir de «Subterranean Homesick Blues». La composición trabaja el ritmo de las palabras, los saltos de línea y el contraste entre texto blanco y fondo negro.",
+    "en": "A typographic study based on “Subterranean Homesick Blues”. The composition explores the rhythm of words, line breaks and the contrast between white text and a black ground."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Una composición que utiliza la tipografía como materia visual. El contraste, la disposición escalonada y el espacio construyen una lectura con ritmo a partir de un conjunto mínimo de elementos.",
+    "en": "A composition that uses typography as visual material. Contrast, stepped positioning and space create a rhythmic reading from a minimal set of elements."
   },
   "featured": false,
   "archived": true,
   "order": 3,
   "draft": false,
   "portfolioOrder": 10,
-  "tools": []
+  "tools": [],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "El ejercicio reduce los elementos de la composición a palabras y espacio. Sin imagen de apoyo ni una gama de colores amplia, la jerarquía depende de la propia tipografía. La pieza presentada permite observar cómo el tamaño, la posición y la relación entre líneas cambian la lectura de un título.",
+        "en": "The exercise reduces composition to words and space. Without supporting imagery or a broad colour range, hierarchy depends on typography itself. The presented piece shows how size, position and relationships between lines change the reading of a title."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "Las tres palabras se reparten en líneas distintas y con alineaciones desplazadas. La lectura avanza en diagonal y no se apoya en un bloque rectangular uniforme. Ese escalonamiento introduce una sensación de ritmo y hace que el espacio vacío forme parte activa de la composición.",
+        "en": "The three words occupy separate lines with offset alignments. Reading moves diagonally rather than through a uniform rectangular block. This stepped arrangement introduces rhythm and makes empty space an active part of the composition."
+      }
+    },
+    {
+      "title": {
+        "es": "La pieza",
+        "en": "The piece"
+      },
+      "text": {
+        "es": "La presentación concentra la atención en una composición de alto contraste. Los remates, las proporciones de las letras y el espacio entre palabras sostienen el carácter de la pieza. El protagonismo recae en el ritmo del título y en su relación con el espacio.",
+        "en": "The presentation focuses attention on a high-contrast composition. Serifs, letter proportions and spacing between words carry its character. The title’s rhythm and its relationship with space lead the piece."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Carácter tipográfico",
+        "en": "Typographic character"
+      },
+      "text": {
+        "es": "La serif utiliza remates marcados y diferencias de grosor que aportan textura al texto. Las letras mantienen suficiente presencia para funcionar como imagen. El interés está en su silueta y en la relación entre palabras, más que en una composición de lectura continua.",
+        "en": "The serif uses distinct terminals and changes in stroke weight to give the text texture. Letters have enough presence to function as an image. The focus is on their silhouette and the relationships between words rather than continuous reading."
+      }
+    },
+    {
+      "title": {
+        "es": "Jerarquía y ritmo",
+        "en": "Hierarchy and rhythm"
+      },
+      "text": {
+        "es": "Los cambios de longitud de cada palabra y su desplazamiento horizontal producen una secuencia visual. La composición aprovecha esas diferencias en lugar de igualar las líneas. La última palabra concentra el cierre y deja que el ojo recorra el conjunto en varios pasos.",
+        "en": "Changes in word length and horizontal position create a visual sequence. The composition uses these differences rather than equalising the lines. The final word closes the arrangement, allowing the eye to move through the whole in several steps."
+      }
+    },
+    {
+      "title": {
+        "es": "Contraste y espacio",
+        "en": "Contrast and space"
+      },
+      "text": {
+        "es": "Blanco y negro eliminan distracciones cromáticas y separan con claridad la figura del fondo. Los vacíos entre líneas y alrededor del bloque controlan la tensión. La economía de elementos permite que una variación de posición o escala tenga un efecto visible en el conjunto.",
+        "en": "Black and white remove colour distractions and clearly separate figure from ground. Gaps between lines and around the block control the tension. With so few elements, a change in position or scale has a visible effect on the whole."
+      }
+    }
+  ]
 }

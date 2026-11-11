@@ -15,17 +15,81 @@
     "es": []
   },
   "intro": {
-    "en": "",
-    "es": ""
+    "es": "Propuesta de diseño de producto que convierte el acto de sentarse en una experiencia de equilibrio. WOBBLE explora un asiento de base curva, acompañado por una identidad visual de formas inestables y redondeadas.",
+    "en": "A product design proposal that turns sitting into an experience of balance. WOBBLE explores a curved-base seat, accompanied by a visual identity with rounded, unstable forms."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Una propuesta que conecta forma de producto e identidad visual mediante la misma idea de equilibrio. La presentación permite recorrer el concepto desde la silueta y las vistas hasta su traducción tipográfica.",
+    "en": "A proposal connecting product form and visual identity through the same idea of balance. The presentation follows the concept from silhouette and views through to its typographic interpretation."
   },
   "featured": false,
   "archived": true,
   "order": 2,
   "draft": false,
   "portfolioOrder": 9,
-  "tools": []
+  "tools": [],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "El ejercicio parte de un objeto cotidiano, el asiento, y propone introducir una relación más activa con él. Las láminas presentan la idea, la forma, las vistas del producto y su identidad. El foco está en relacionar el comportamiento propuesto con la forma y con la experiencia visual del producto.",
+        "en": "The exercise starts with an everyday object, a seat, and proposes a more active relationship with it. The boards present the idea, form, product views and identity. The focus is on connecting the proposed behaviour with the form and visual experience of the product."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "La referencia del tentetieso lleva el movimiento a la base del objeto. La superficie curva plantea un asiento que puede inclinarse y recuperar su posición. Esa idea de equilibrio también se traslada al nombre: las letras parecen moverse de forma independiente dentro de una palabra que conserva su unidad.",
+        "en": "The roly-poly reference brings movement into the object’s base. Its curved surface proposes a seat that can tilt and return to position. This idea of balance also shapes the name: letters appear to move independently within a word that retains its unity."
+      }
+    },
+    {
+      "title": {
+        "es": "Desarrollo visual",
+        "en": "Visual development"
+      },
+      "text": {
+        "es": "Las vistas, líneas de construcción y secuencias de inclinación explican la propuesta desde distintos ángulos. Los renders introducen variaciones de color y permiten reconocer el volumen. La identidad acompaña la presentación sin sustituir la explicación del producto.",
+        "en": "Views, construction lines and tilting sequences explain the proposal from different angles. Renders introduce colour variations and make the volume recognisable. The identity supports the presentation without replacing the explanation of the product."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Forma y equilibrio",
+        "en": "Form and balance"
+      },
+      "text": {
+        "es": "Las superficies continuas y los bordes redondeados definen la silueta. El contraste entre el respaldo abierto y la base más cerrada permite leer las partes del asiento como un solo volumen. Las láminas de inclinación hacen visible el principio de movimiento que organiza el concepto.",
+        "en": "Continuous surfaces and rounded edges define the silhouette. The contrast between the open back and more enclosed base makes the seat read as one volume. Tilting diagrams make visible the movement principle behind the concept."
+      }
+    },
+    {
+      "title": {
+        "es": "Tipografía",
+        "en": "Typography"
+      },
+      "text": {
+        "es": "Gotham Rounded Book aporta un trazo uniforme y terminales redondeados. En el logotipo, la rotación y el desplazamiento de las letras generan una línea de lectura inestable, relacionada con el nombre y con el objeto. La forma tipográfica acompaña el concepto en lugar de limitarse a identificarlo.",
+        "en": "Gotham Rounded Book brings an even stroke and rounded terminals. Rotated and displaced letters create an unstable reading line in the logo, connecting the name with the object. Typography supports the concept rather than only identifying it."
+      }
+    },
+    {
+      "title": {
+        "es": "Color y presentación",
+        "en": "Colour and presentation"
+      },
+      "text": {
+        "es": "Turquesa y blanco dan continuidad a las láminas, mientras los renders exploran el producto en colores más intensos. Los fondos limpios separan la silueta del entorno. Alternar vistas de volumen y dibujos de línea permite explicar tanto el carácter del objeto como la lógica de su forma.",
+        "en": "Turquoise and white connect the boards, while renders explore the product in brighter colours. Clean backgrounds separate the silhouette from its setting. Alternating volume views and line drawings explains both the object’s character and the logic of its form."
+      }
+    }
+  ]
 }

@@ -31,8 +31,8 @@
     "en": "Spanish roots, Japanese scene. An identity for a flamenco-inspired streetwear brand designed for the Japanese market."
   },
   "result": {
-    "es": "Una identidad bilingüe que se entiende en Madrid y en Tokio: monograma, nombre en katakana, cuatro versiones del logotipo y una paleta de tres colores aplicados a tienda, colección, merchandising y campaña exterior.",
-    "en": "A bilingual identity that reads in Madrid and in Tokyo: monogram, katakana name, four logo versions and a three-colour palette applied to the shop, the collection, merchandise and an outdoor campaign."
+    "es": "Una identidad que combina una firma tipográfica contenida con una dirección de imagen expresiva. Monograma, nombre, punto carmín y paleta conectan las aplicaciones de moda, producto, espacio y comunicación exterior.",
+    "en": "An identity pairing a restrained typographic signature with expressive art direction. The monogram, name, carmine dot and palette connect fashion, product, retail and outdoor applications."
   },
   "featured": false,
   "archived": false,
@@ -73,12 +73,12 @@
   "caseStudy": [
     {
       "title": {
-        "es": "El reto",
-        "en": "The challenge"
+        "es": "El punto de partida",
+        "en": "The starting point"
       },
       "text": {
-        "es": "Llevar a Japón una marca de moda urbana de inspiración flamenca. Allí la cultura del flamenco tiene un gran arraigo: la identidad tenía que hablar a ese público y funcionar igual en una fachada, una prenda o una valla.",
-        "en": "Take a flamenco-inspired streetwear brand to Japan, where flamenco culture has deep roots. The identity had to speak to that audience and work equally well on a storefront, a garment or a billboard."
+        "es": "El proyecto relaciona una marca de moda urbana de inspiración flamenca con una presentación dirigida al contexto japonés. El interés está en construir un lenguaje común entre referencias diferentes: la expresividad de la indumentaria, el carácter editorial de la marca y la presencia del nombre en dos sistemas de escritura.",
+        "en": "The project connects a flamenco-inspired streetwear brand with a presentation aimed at a Japanese context. It seeks a shared language between different references: expressive clothing, an editorial brand character and a name presented in two writing systems."
       }
     },
     {
@@ -87,19 +87,55 @@
         "en": "The idea"
       },
       "text": {
-        "es": "Un monograma FU en serif de alto contraste convive con el nombre en katakana, フラメンコ・ウルバノ. Un punto carmín une las dos partes y se repite por todo el sistema.",
-        "en": "A high-contrast serif FU monogram sits alongside the name in katakana, フラメンコ・ウルバノ. A carmine dot joins both parts and recurs throughout the system."
+        "es": "El monograma FU concentra la identidad y el nombre en katakana acompaña su lectura. Un punto carmín actúa como nexo: aparece junto a la marca y se transforma en un recurso gráfico para el resto de las piezas. La propuesta combina esa síntesis con imágenes de moda de mayor intensidad y detalle.",
+        "en": "The FU monogram concentrates the identity, with the katakana name supporting its reading. A carmine dot acts as a link: it sits beside the mark and becomes a graphic device across the applications. This simplicity is paired with fashion images that bring greater intensity and detail."
       }
     },
     {
       "title": {
-        "es": "Sistema",
-        "en": "System"
+        "es": "Aplicaciones",
+        "en": "Applications"
       },
       "text": {
-        "es": "Cuatro versiones del logotipo, sobre hueso, carbón y carmín, y un monograma para usos reducidos. La misma lógica se aplica a tienda, merchandising, prendas y exterior.",
-        "en": "Four logo versions, on bone, charcoal and carmine, plus a monogram for small sizes. The same logic runs through retail, merchandise, garments and outdoor."
+        "es": "La presentación recorre fachada, prendas, accesorios, composiciones de producto y exterior. El monograma permite una presencia reducida sobre objetos, mientras el nombre completo y la imagen de moda ocupan formatos de mayor escala. Las piezas muestran un mismo universo visual desde una etiqueta hasta una escena urbana.",
+        "en": "The presentation moves through storefronts, garments, accessories, product arrangements and outdoor visuals. The monogram allows a compact presence on objects, while the full name and fashion imagery lead at larger scales. The pieces share one visual world, from a label to an urban scene."
       }
     }
-  ]
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Tipografía",
+        "en": "Typography"
+      },
+      "text": {
+        "es": "Didot Bold aporta contraste entre trazos gruesos y finos y una referencia editorial ligada a la moda. Las variantes Regular e Italic amplían ese registro en textos de apoyo. M PLUS Rounded 1c acompaña el nombre en japonés y los niveles secundarios. El contraste entre familias diferencia la firma de marca y la información sin romper el conjunto.",
+        "en": "Didot Bold brings contrast between thick and thin strokes and an editorial reference associated with fashion. Regular and Italic variants extend that register into supporting text. M PLUS Rounded 1c supports the Japanese name and secondary levels. The contrast separates brand signature from information without breaking the whole."
+      }
+    },
+    {
+      "title": {
+        "es": "Monograma y recursos gráficos",
+        "en": "Monogram and graphic devices"
+      },
+      "text": {
+        "es": "Las iniciales FU se relacionan mediante superposición y diferencia de escala. El punto carmín introduce un contrapunto sólido frente a los trazos finos de la serif. A partir de él aparecen círculos y repeticiones que pueden actuar como fondo, patrón o acento. La identidad alterna superficies muy contenidas con otras de mayor densidad visual.",
+        "en": "The FU initials interact through overlap and changes in scale. The carmine dot provides a solid counterpoint to the serif’s thin strokes. It extends into circles and repetitions that act as backgrounds, patterns or accents. The identity alternates restrained surfaces with more visually dense applications."
+      }
+    },
+    {
+      "title": {
+        "es": "Dirección de imagen",
+        "en": "Art direction"
+      },
+      "text": {
+        "es": "La fotografía de moda representada en los mockups combina prendas de volumen expresivo, luz cálida y escenas urbanas nocturnas. El tratamiento conecta los detalles de la colección con el carácter de la identidad. En las composiciones de producto, accesorios y textiles repiten el universo cromático y material de la marca.",
+        "en": "The fashion imagery shown in the mockups combines expressive garment volumes, warm light and night-time urban scenes. This treatment connects collection details with the character of the identity. Product compositions use accessories and textiles to repeat the brand’s colour and material world."
+      }
+    }
+  ],
+  "paletteNote": {
+    "es": "Hueso y carbón construyen una base clara y oscura que deja respirar a la tipografía. El carmín se reserva para el punto y los acentos de mayor intensidad. Su uso contenido permite que un detalle pequeño mantenga presencia incluso junto a imágenes complejas.",
+    "en": "Bone and charcoal create light and dark grounds that give the typography room. Carmine is reserved for the dot and stronger accents. Used sparingly, a small detail retains its presence even beside complex images."
+  }
 }

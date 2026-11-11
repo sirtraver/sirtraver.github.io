@@ -1,5 +1,13 @@
 # Plantilla definitiva — versión 38
 
+## Revisión de contenido de proyectos — v52
+
+La solicitud actual de Javier autoriza ampliar las páginas de proyecto, explicar su idea y diseño formal, mantener un ancho uniforme para las imágenes y retirar el visor que se abría al pulsarlas. Se conserva el lenguaje visual existente. Esta revisión incluye las once fichas en ES/EN, tipografía y composición documentadas en las láminas, explicación del uso del color y pies descriptivos. La producción de vídeos se deja para una fase posterior.
+
+La portada y la galería de cada ficha comparten la misma columna, con proporciones originales y sin enlaces de ampliación. Los campos de composición históricos se conservan como datos, pero ya no producen imágenes a sangre o dípticos. Se ha retirado de la presentación la última lámina vacía de WOBBLE; el original permanece en su carpeta.
+
+Comprobación visual: 1440 px y 390 px, con ancho compartido de 1120 px y 350 px respectivamente. Los cambios se limitan a las fichas de proyecto y su contenido; la navegación, portada, contacto y CV conservan su estructura.
+
 El 26 de octubre de 2026 Javier confirma la versión 38 completa como plantilla definitiva, incluido el visor con tarjeta de información. A partir de esta aprobación, cualquier cambio de diseño, estructura, navegación, tipografía, disposición o comportamiento requiere una nueva solicitud expresa. El trabajo autorizado en esta revisión es técnico: mejorar el descubrimiento de las portadas en Google Imágenes sin modificar la apariencia.
 
 - Commit aprobado: bc195dd430d4fc8e421a2a81fe0e3dabdfe89bb0.

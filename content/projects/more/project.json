@@ -15,17 +15,81 @@
     "es": []
   },
   "intro": {
-    "en": "",
-    "es": ""
+    "es": "Exploración de realidad aumentada aplicada al diseño gráfico y la cartelería impresa. MORE+ relaciona una composición plana con formas tridimensionales que amplían su lectura a través de una pantalla.",
+    "en": "An exploration of augmented reality in graphic design and printed posters. MORE+ connects a flat composition with three-dimensional forms that extend its reading through a screen."
   },
   "result": {
-    "en": "",
-    "es": ""
+    "es": "Un ejercicio sobre la continuidad entre gráfica impresa y representación digital. La geometría, el color y la repetición permiten seguir la transformación de los elementos del cartel en un espacio tridimensional.",
+    "en": "An exercise in continuity between printed graphics and digital representation. Geometry, colour and repetition make it possible to follow the poster elements as they become three-dimensional."
   },
   "featured": false,
   "archived": true,
   "order": 1,
   "draft": false,
   "portfolioOrder": 8,
-  "tools": []
+  "tools": [],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El proyecto",
+        "en": "The project"
+      },
+      "text": {
+        "es": "El trabajo plantea la cartelería como un punto de partida para una experiencia en otra dimensión. Las piezas impresas deben funcionar por sí mismas y, al mismo tiempo, establecer una relación clara con su representación tridimensional. La presentación reúne identidad, carteles, modelos y capturas de la experiencia.",
+        "en": "The work treats posters as the starting point for an experience in another dimension. Printed pieces work on their own while maintaining a clear relationship with their three-dimensional interpretation. The presentation includes identity, posters, models and captures of the experience."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "El signo «+» del nombre sugiere una capa adicional de lectura. Círculos y rectángulos forman composiciones sencillas que se trasladan a volúmenes. La relación entre plano y objeto es el centro del ejercicio: la experiencia digital no se plantea como una pieza ajena, sino como una continuación de la gráfica impresa.",
+        "en": "The “+” in the name suggests an additional layer of reading. Circles and rectangles form simple compositions that translate into volumes. The relationship between surface and object is central: the digital experience extends the printed graphics rather than acting as a separate piece."
+      }
+    },
+    {
+      "title": {
+        "es": "Presentación",
+        "en": "Presentation"
+      },
+      "text": {
+        "es": "Los carteles muestran las variaciones de la composición y las vistas de los modelos permiten comparar sus elementos. Las capturas con teléfono documentan la relación entre el soporte y la pantalla en la presentación del proyecto.",
+        "en": "Posters show variations of the composition, while model views allow their elements to be compared. Phone captures document the relationship between print and screen in the project presentation."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Forma y volumen",
+        "en": "Shape and volume"
+      },
+      "text": {
+        "es": "Círculos y rectángulos se organizan como módulos de una misma familia. La reducción geométrica facilita reconocer qué elemento del cartel se transforma en cada volumen. Las diferencias de escala, posición y superposición generan variaciones sin perder la relación entre la composición plana y su desarrollo espacial.",
+        "en": "Circles and rectangles act as modules within one family. Simple geometry makes it easier to recognise which poster element becomes each volume. Changes in scale, position and overlap introduce variations while preserving the relationship between the flat composition and its spatial development."
+      }
+    },
+    {
+      "title": {
+        "es": "Tipografía y jerarquía",
+        "en": "Typography and hierarchy"
+      },
+      "text": {
+        "es": "El nombre utiliza una sans serif de gran peso e inclinada, que aporta dirección y energía. En los carteles funciona como firma secundaria frente a la composición geométrica. Las piezas separan así la identificación del proyecto y el contenido que se transforma, evitando que ambos niveles compitan por el mismo espacio.",
+        "en": "The name uses a heavy, slanted sans serif to convey direction and energy. On posters it acts as a secondary signature beside the geometric composition. This separates identification from the content being transformed, preventing both levels from competing for the same space."
+      }
+    },
+    {
+      "title": {
+        "es": "Color y ritmo",
+        "en": "Colour and rhythm"
+      },
+      "text": {
+        "es": "Cian, magenta, negro y blanco ordenan la serie. Las tramas y las superficies de color introducen ritmo alrededor de las figuras principales. En los modelos tridimensionales, conservar la misma gama ayuda a relacionar ambas representaciones aunque cambien el punto de vista y la profundidad.",
+        "en": "Cyan, magenta, black and white organise the series. Patterns and colour fields add rhythm around the main shapes. The three-dimensional models retain the same range, linking both representations as viewpoint and depth change."
+      }
+    }
+  ]
 }

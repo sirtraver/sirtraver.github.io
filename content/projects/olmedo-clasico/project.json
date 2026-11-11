@@ -3,8 +3,8 @@
   "date": "2026-10-19",
   "order": 1,
   "intro": {
-    "es": "Propuesta conceptual independiente de identidad para un festival de teatro clásico. Tipografía condensada, burdeos y marfil articulan cartelería, señalética y entradas.",
-    "en": "An independent concept identity for a classical theatre festival. Condensed typography, burgundy and ivory connect posters, signage and tickets."
+    "es": "Propuesta conceptual independiente para un festival de teatro clásico. Una identidad editorial que relaciona la memoria del grabado con una composición tipográfica contemporánea.",
+    "en": "An independent concept for a classical theatre festival. An editorial identity connecting the visual memory of engraving with contemporary typographic composition."
   },
   "deliverables": {
     "es": [
@@ -64,18 +64,18 @@
         "en": "The project"
       },
       "text": {
-        "es": "Una propuesta conceptual independiente para un festival de teatro clásico. El conjunto incluye identidad, carteles, una simulación del espacio del festival y entradas.",
-        "en": "An independent concept identity for a classical theatre festival. The presentation includes branding, posters, a simulated festival setting and tickets."
+        "es": "La propuesta aborda la identidad de un festival desde sus soportes de lectura más cotidianos: cartel, programa visual, señalética y entrada. El objetivo del ejercicio es que cada obra conserve su protagonismo y que el conjunto se reconozca como parte de una misma programación.",
+        "en": "The proposal approaches a festival identity through its everyday reading surfaces: posters, programme graphics, signage and tickets. The exercise gives each play its own presence while making the programme recognisable as a whole."
       }
     },
     {
       "title": {
-        "es": "Sistema visual",
-        "en": "Visual system"
+        "es": "La idea",
+        "en": "The idea"
       },
       "text": {
-        "es": "El burdeos y el marfil unifican la presentación. Una tipografía alta y condensada organiza los títulos, mientras las iniciales OC forman un motivo que se repite en los márgenes y en las entradas.",
-        "en": "Burgundy and ivory unify the presentation. Tall, condensed typography structures the titles, while the initials OC form a repeating motif on the margins and tickets."
+        "es": "El lenguaje parte del encuentro entre dos tiempos. Las imágenes tratadas como grabados evocan la tradición teatral; la tipografía alta y estrecha introduce una lectura más actual. La identidad no depende de una única ilustración: el nombre, las iniciales OC y la relación entre texto e imagen mantienen un hilo común entre las piezas.",
+        "en": "The language brings together two periods. Engraving-style images evoke theatrical tradition, while tall, narrow typography introduces a contemporary reading. The identity does not rely on a single illustration: the name, OC initials and relationship between text and image connect the different pieces."
       }
     },
     {
@@ -84,9 +84,45 @@
         "en": "Applications"
       },
       "text": {
-        "es": "La ilustración de tratamiento grabado y la composición tipográfica se trasladan de la cartelería a los soportes del espacio y a las entradas. Se presentan como aplicaciones conceptuales, sin vinculación a un encargo del festival.",
-        "en": "Engraving-style illustration and typographic composition carry through from the posters to the venue graphics and tickets. These are concept applications, independent of a commission from the festival."
+        "es": "Los carteles presentan distintos títulos dentro de una estructura compartida. Las entradas reducen esa identidad a un formato pequeño, y la simulación del espacio permite valorar el sistema a otra escala. La presentación permite comparar cómo se adapta la identidad a cada soporte y qué elementos mantienen la continuidad del conjunto.",
+        "en": "Posters present different plays within a shared structure. Tickets reduce the identity to a small format, and the venue mockup explores the system at a larger scale. The presentation shows how the identity adapts to each format and which elements maintain continuity across the whole."
       }
     }
-  ]
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "Tipografía",
+        "en": "Typography"
+      },
+      "text": {
+        "es": "Big Shoulders Extra Thin aporta una silueta vertical y un trazo ligero. Su condensación permite construir titulares de gran altura sin ocupar todo el ancho del soporte. El contraste entre esa verticalidad y las masas de las ilustraciones organiza la lectura. El nombre y las iniciales se tratan como elementos de composición, además de identificar el festival.",
+        "en": "Big Shoulders Extra Thin provides a vertical silhouette and a light stroke. Its condensed proportions allow tall headlines without consuming the full width of the format. This verticality contrasts with the weight of the illustrations. The name and initials act as compositional elements as well as identifiers."
+      }
+    },
+    {
+      "title": {
+        "es": "Composición editorial",
+        "en": "Editorial composition"
+      },
+      "text": {
+        "es": "Los márgenes, las alineaciones y las repeticiones de OC establecen una retícula reconocible. Los títulos se relacionan con imágenes que ocupan gran parte del plano, mientras la información práctica se concentra en niveles secundarios. La estructura permite alternar fondos claros y oscuros sin perder continuidad entre cartel, señal y entrada.",
+        "en": "Margins, alignments and repeated OC initials establish a recognisable grid. Titles sit alongside images that occupy much of the surface, with practical information kept to secondary levels. The structure accommodates light and dark backgrounds while preserving continuity across posters, signs and tickets."
+      }
+    },
+    {
+      "title": {
+        "es": "Ilustración y textura",
+        "en": "Illustration and texture"
+      },
+      "text": {
+        "es": "El tratamiento de grabado se apoya en trama, líneas y contraste tonal para unificar escenas diferentes. Las texturas de papel de los mockups prolongan esa referencia impresa. La imagen tiene una función narrativa, pero su tratamiento común evita que cada título parezca pertenecer a una campaña distinta.",
+        "en": "The engraving treatment uses hatching, line and tonal contrast to unify different scenes. Paper textures in the mockups extend the print reference. Images carry the narrative, while their shared treatment prevents each title from appearing to belong to a separate campaign."
+      }
+    }
+  ],
+  "paletteNote": {
+    "es": "Burdeos y marfil reducen la identidad a una relación de figura y fondo. Invertir ambos colores permite variar las piezas sin añadir nuevas familias cromáticas. La paleta mantiene el vínculo con el papel y la impresión, y deja que la tipografía y la ilustración asuman el protagonismo.",
+    "en": "Burgundy and ivory reduce the identity to a figure–ground relationship. Inverting them introduces variety without adding colour families. The palette maintains a connection with paper and print, leaving typography and illustration to lead."
+  }
 }

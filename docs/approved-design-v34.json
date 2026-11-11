@@ -1,5 +1,5 @@
 {
-  "version": "v51 — encabezados compactos, sin CTA de página ni etiqueta de cargo, CV junto a redes, cursor de flecha",
+  "version": "v52 — contenido de proyectos ampliado, diseño formal, imágenes de ancho uniforme y sin visor",
   "commit": "see git log",
   "bodyHashes": {
     "/": "16923f5970315b92c0a73e1ac6fe6f228b73d7524a48e9b3e2459efb4d4be36e",
@@ -9,8 +9,8 @@
     "/resources/": "bd52659f423564faa5ad5910bf7b928449134903751778c652149a8c2df99e9c",
     "/es/resources/": "fb50d3b56935ba4a795310b0db63d7ce0d3c3d8470d1cc9a320243f17ed9b415"
   },
-  "cssPrefixBytes": 90243,
-  "cssPrefixHash": "a4bd936913082d1f8b762141d777d9ec1b763b73b5532fe7fb5265fa0200cf0e",
+  "cssPrefixBytes": 91481,
+  "cssPrefixHash": "76d075698a7fed8c09c5d41d2d15ddcd555359e4c00c07e59a781b86c15cf4fd",
   "homeShellHashes": {
     "/": "1587b345e6ac151bd1e77de672343af06f371d8657392542bcb49000139e3135",
     "/es/": "940fb32ae96da6c0ff7f9c17194794fd26a053711c6809e4e86d4521ca62b9d5"

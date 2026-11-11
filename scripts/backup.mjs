@@ -18,7 +18,8 @@ if (!process.env.BACKUP_DIR && !existsSync(ICLOUD)) {
 }
 mkdirSync(DESTINATION, { recursive: true });
 
-const EXCLUDE = ['node_modules/', 'site/dist/', 'site/public/media/', 'site/src/generated/', 'capturas/', '.DS_Store', '.env'];
+// Paths are relative to the project folder; the code lives in recovered-sites/.
+const EXCLUDE = ['node_modules/', '/recovered-sites/_site/', '/recovered-sites/dist/', '/recovered-sites/public/media/', '/recovered-sites/src/generated/', 'capturas/', '.DS_Store', '.env'];
 execFileSync('rsync', ['-a', '--delete', ...EXCLUDE.flatMap((p) => ['--exclude', p]), `${PROJECT}/`, `${DESTINATION}/`], { stdio: 'inherit' });
 
 const size = execFileSync('du', ['-sh', DESTINATION]).toString().split('\t')[0];

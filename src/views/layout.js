@@ -9,6 +9,9 @@ import { runtime } from '../lib/runtime.js';
 const mobileCta = { es: 'Cuéntame tu proyecto', en: 'Tell me about your project' };
 const menuLabel = { es: { open: 'Menú', close: 'Cerrar' }, en: { open: 'Menu', close: 'Close' } };
 
+// Decorative strip above the header: the services, running. Repeated so the loop has no seam.
+const ticker = (lang) => html`<div class="ticker" aria-hidden="true"><div class="ticker-track">${[0, 1, 2, 3].map(() => CONTENT[lang].ticker.map((item) => html`<span>${item}</span>`))}</div></div>`;
+
 function header(lang, page, alternates) {
   const t = CONTENT[lang];
   return html`<header class="site-header">
@@ -65,7 +68,7 @@ export function layout({ lang, page, alternates, title, description, shareImage,
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f6f4ef">
+<meta name="theme-color" content="#f8f8f8">
 <meta name="view-transition" content="same-origin">
 <title>${title}</title>
 ${description ? html`<meta name="description" content="${description}">` : ''}
@@ -109,6 +112,7 @@ ${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map
 )}</head>
 <body>
 <a class="skip" href="#main">${t.skip}</a>
+${ticker(lang)}
 ${header(lang, page, paths ?? PAGES.home)}
 <main id="main"${mainClass ? html` class="${mainClass}"` : ''}>
 ${body}

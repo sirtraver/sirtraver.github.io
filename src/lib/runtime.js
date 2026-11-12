@@ -14,8 +14,9 @@ const origin = (url) => {
   }
 };
 
-// Umami Cloud loads the tracker from cloud.umami.is and sends events to its API gateway.
-const UMAMI_CLOUD_API = 'https://api-gateway.umami.dev';
+// Umami Cloud loads the tracker from cloud.umami.is and sends events to its gateway
+// (gateway.umami.is in the current script; api-gateway.umami.dev in older ones).
+const UMAMI_CLOUD_API = ['https://gateway.umami.is', 'https://api-gateway.umami.dev'];
 
 /** Brevo form actions live on <account>.sibforms.com; anything else is ignored. */
 function brevoForm(url) {
@@ -37,7 +38,7 @@ export function configure(env = {}) {
           src: analyticsSrc,
           origin: analyticsOrigin,
           websiteId: String(analyticsId),
-          connect: analyticsOrigin === 'https://cloud.umami.is' ? [analyticsOrigin, UMAMI_CLOUD_API] : [analyticsOrigin],
+          connect: analyticsOrigin === 'https://cloud.umami.is' ? [analyticsOrigin, ...UMAMI_CLOUD_API] : [analyticsOrigin],
         }
       : null,
     // Brevo double opt-in list for the launch newsletter (server hosting only).

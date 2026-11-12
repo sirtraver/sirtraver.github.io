@@ -57,7 +57,7 @@ test('with a Brevo form configured the Resources sign-up posts to Brevo, with CS
       assert.ok(!form.includes('access_key'), 'Brevo replaces Web3Forms');
       const csp = response.headers.get('Content-Security-Policy');
       assert.match(csp, /form-action 'self' https:\/\/api\.web3forms\.com https:\/\/abc123\.sibforms\.com/);
-      assert.match(csp, /connect-src [^;]*https:\/\/cloud\.umami\.is https:\/\/api-gateway\.umami\.dev/);
+      assert.match(csp, /connect-src [^;]*https:\/\/cloud\.umami\.is https:\/\/gateway\.umami\.is https:\/\/api-gateway\.umami\.dev/);
       assert.ok(html.includes('data-website-id="site-id"') && /\/assets\/track\.js/.test(html));
     }
   });

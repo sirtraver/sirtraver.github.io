@@ -1,6 +1,6 @@
 [
   {
-    "file": "imagenes/01.webp",
+    "file": "imagenes/colorsplash-logotipo-blanco-fondo-cian.webp",
     "caption": {
       "es": "Logotipo blanco de COLORSPLASH sobre fondo cian.",
       "en": "White COLORSPLASH logo on a cyan background."
@@ -8,14 +8,14 @@
     "layout": "full"
   },
   {
-    "file": "imagenes/02.webp",
+    "file": "imagenes/colorsplash-versiones-monograma-cs-paleta-colores.webp",
     "caption": {
       "es": "Versiones del monograma CS, paleta de cuatro colores y tipografías de la identidad.",
       "en": "CS monogram variants, four-colour palette and identity typefaces."
     }
   },
   {
-    "file": "imagenes/03.webp",
+    "file": "imagenes/colorsplash-cuatro-botes-pintura-cmyk.webp",
     "caption": {
       "es": "Cuatro botes de pintura COLORSPLASH en amarillo, cian, magenta y negro.",
       "en": "Four COLORSPLASH paint tins in yellow, cyan, magenta and black."
@@ -23,14 +23,14 @@
     "layout": "full"
   },
   {
-    "file": "imagenes/04.webp",
+    "file": "imagenes/colorsplash-piezas-campana-paint-it-interiores.webp",
     "caption": {
       "es": "Cuatro piezas de la campaña Paint it con interiores en cian, magenta, amarillo y negro.",
       "en": "Four Paint it campaign visuals with cyan, magenta, yellow and black interiors."
     }
   },
   {
-    "file": "imagenes/05.webp",
+    "file": "imagenes/colorsplash-caja-presentacion-botes-pintura-piezas.webp",
     "caption": {
       "es": "Caja de presentación con botes de pintura y piezas impresas de COLORSPLASH.",
       "en": "Presentation box with paint tins and COLORSPLASH printed materials."
@@ -38,7 +38,7 @@
     "layout": "pair"
   },
   {
-    "file": "imagenes/06.webp",
+    "file": "imagenes/colorsplash-expositor-tienda-botes-organizados-color.webp",
     "caption": {
       "es": "Expositor de tienda con botes organizados por color y el mensaje Paint it.",
       "en": "Retail display with paint tins grouped by colour and the Paint it message."
@@ -46,35 +46,35 @@
     "layout": "pair"
   },
   {
-    "file": "imagenes/07.webp",
+    "file": "imagenes/colorsplash-packshot-bote-amarillo-sol.webp",
     "caption": {
       "es": "Packshot del bote Amarillo Sol sobre fondo blanco para tienda online.",
       "en": "Amarillo Sol tin packshot on a white background for an online shop."
     }
   },
   {
-    "file": "imagenes/08.webp",
+    "file": "imagenes/colorsplash-banner-paint-it-botes-salpicaduras.webp",
     "caption": {
       "es": "Banner «PAINT IT.»: los cuatro botes con salpicaduras de su color.",
       "en": "“PAINT IT.” banner: the four tins with splashes of their own colour."
     }
   },
   {
-    "file": "imagenes/09.webp",
+    "file": "imagenes/colorsplash-post-paint-it-cyan-gota.webp",
     "caption": {
       "es": "Post «PAINT IT CYAN.»: una gota cae sobre la pintura cian del bote abierto.",
       "en": "“PAINT IT CYAN.” post: a drop falls into the cyan paint of the open tin."
     }
   },
   {
-    "file": "imagenes/10.webp",
+    "file": "imagenes/colorsplash-pieza-paint-it-magenta-pared.webp",
     "caption": {
       "es": "Pieza «PAINT IT MAGENTA.»: una pared a medio pintar con el bote, la bandeja y el rodillo.",
       "en": "“PAINT IT MAGENTA.” piece: a half-painted wall with the tin, tray and roller."
     }
   },
   {
-    "file": "imagenes/11.webp",
+    "file": "imagenes/colorsplash-pieza-paint-it-black-trazo.webp",
     "caption": {
       "es": "Pieza «PAINT IT BLACK.»: un trazo de pintura negra sobre la pared y el bote Negro Profundo.",
       "en": "“PAINT IT BLACK.” piece: a black brushstroke on the wall and the Negro Profundo tin."

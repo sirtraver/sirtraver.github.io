@@ -44,13 +44,14 @@
   "featured": false,
   "archived": false,
   "portfolioOrder": 1,
-  "hover": "imagenes/02.webp",
+  "hover": "imagenes/oye-altavoz-estanteria-roble-salon-nordico.webp",
   "coverPosition": "50% 70%",
   "video": [
     {
       "src": "/video/oye/spot-vertical.mp4",
-      "poster": "imagenes/06.webp",
+      "poster": "imagenes/oye-story-oye-esto-altavoz-roca-lago.webp",
       "aspect": "9:16",
+      "date": "2026-11-12",
       "caption": {
         "es": "Spot vertical de 15 s para Reels y TikTok: el altavoz escondido entre piedras de la playa empieza a sonar, las piedras vibran y las ondas cruzan un lago.",
         "en": "15-second vertical spot for Reels and TikTok: the speaker hidden among beach pebbles starts playing, the stones tremble and ripples cross a lake."
@@ -58,8 +59,9 @@
     },
     {
       "src": "/video/oye/spot-horizontal.mp4",
-      "poster": "imagenes/02.webp",
+      "poster": "imagenes/oye-altavoz-estanteria-roble-salon-nordico.webp",
       "aspect": "16:9",
+      "date": "2026-11-12",
       "caption": {
         "es": "Spot horizontal de 15 s para web y YouTube: del salón a la playa, y cierre con los tres colores.",
         "en": "15-second horizontal spot for web and YouTube: from the living room to the beach, closing on the three colourways."

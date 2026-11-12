@@ -1,9 +1,9 @@
 {
-  "version": "v56 — Extensiones de campaña de KUDAKE! y COLORSPLASH",
+  "version": "v58 — SEO: favicon from the SIR TRA VER logo, VideoObject + video sitemap, image licence and sizes, descriptive image names, project titles with discipline",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "e97d1e93899a858d7381193873088fc1705755c8ae06ec070ee5877e0220b6dc",
-    "/es/": "4125e0c188ca204ebd342d65c4dff5d27a055c90a40f2e0e9d9260273ca929ee",
+    "/": "b77e825bbb28dba8b728f5a3bfbada7f29b014828d2e5ca395702fc3a9c5fb92",
+    "/es/": "773c5add73ea46a129ad8bff904a58de4e501d91c6cbc214edc6d10c0483614e",
     "/about/": "58247484f6f24c22f5d59750fa2851446ebd9fe22bb7cfc40e959a88009db059",
     "/es/about/": "abc17890fd761cd249f5f9e980ecc6623e37e5b9c5d60e5c97bc27d2824eb8b4",
     "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 92795,
   "cssPrefixHash": "0ce687bc425b6021398156263230c90162e61d84d9485b354756e11cf1a1ffc6",
   "homeShellHashes": {
-    "/": "472d89d80bacce6ac63a424d9fc7faa53df3956546df53e362836a0766feec92",
-    "/es/": "b802831fa571b5889172ea7a6c28e0258e80fd07ea0e1690845e5cd9eb80daf1"
+    "/": "fd14776a3a1c800a65baa2a7e0f334b1aff71716fe8faa836d50c68186624474",
+    "/es/": "3005edbb96fe4c65519d15b3c48ae4afb2fcbfe67e5df50ea3803854822b1819"
   },
   "resourcesShellHashes": {
     "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",

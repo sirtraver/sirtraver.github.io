@@ -1,5 +1,5 @@
 import { ORIGIN, PORTRAIT } from '../config.js';
-import { ARCHIVE_PAGE, LANGUAGES, PAGES, projectPath } from '../content.js';
+import { ARCHIVE_PAGE, LANGUAGES, PAGES, projectName, projectPath } from '../content.js';
 import { absoluteUrl } from '../lib/assets.js';
 import { escape } from '../lib/html.js';
 import { largestUrl } from '../lib/picture.js';
@@ -17,13 +17,16 @@ export function sitemap(projects, archived, lastModified) {
   };
 
   // Only images hosted on this domain are listed.
-  const entry = (paths, lang, pictures) => {
+  // Spots of a project, in the language of the page that shows them.
+  const videoTags = (project, lang) => project.videos.map((video) => `<video:video><video:thumbnail_loc>${escape(absoluteUrl(largestUrl(video.poster)))}</video:thumbnail_loc><video:title>${escape(`${projectName(project, lang)} · Spot ${video.aspect}`)}</video:title><video:description>${escape(video.caption[lang])}</video:description><video:content_loc>${escape(absoluteUrl(video.src))}</video:content_loc><video:duration>${video.duration}</video:duration><video:publication_date>${video.date}</video:publication_date></video:video>`).join('');
+
+  const entry = (paths, lang, pictures, videos = '') => {
     pictures = pictures.filter((src) => src.startsWith(`${ORIGIN}/`));
     const alternates = [...LANGUAGES.map((code) => [code, paths[code]]), ['x-default', paths.en]]
       .map(([code, path]) => `<xhtml:link rel="alternate" hreflang="${code}" href="${ORIGIN + path}"/>`)
       .join('');
     const imageTags = pictures.map((src) => `<image:image><image:loc>${escape(src)}</image:loc></image:image>`).join('');
-    return `<url><loc>${ORIGIN + paths[lang]}</loc><lastmod>${lastModified}</lastmod>${alternates}${imageTags}</url>`;
+    return `<url><loc>${ORIGIN + paths[lang]}</loc><lastmod>${lastModified}</lastmod>${alternates}${imageTags}${videos}</url>`;
   };
 
   const urls = LANGUAGES.flatMap((lang) => [
@@ -33,6 +36,7 @@ export function sitemap(projects, archived, lastModified) {
         { en: projectPath(project, 'en'), es: projectPath(project, 'es') },
         lang,
         [...new Set([absoluteUrl(largestUrl(project.cover)), ...project.images.map((image) => absoluteUrl(largestUrl(image)))])],
+        videoTags(project, lang),
       ),
     ),
     ...(archived.length ? [entry(ARCHIVE_PAGE, lang, [])] : []),
@@ -41,7 +45,7 @@ export function sitemap(projects, archived, lastModified) {
   urls.push(...LANGUAGES.map(lang => entry({ en: '/resume/', es: '/cv/' }, lang, [])));
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls.join('\n')}
 </urlset>
 `;

@@ -8,6 +8,17 @@ import { readProjectDefinition } from './project-files.mjs';
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const CONTENT = path.join(ROOT, 'content');
 
+/** Duration in seconds, read from the MP4 movie header (mvhd box). */
+export async function videoDuration(file) {
+  const bytes = await fs.readFile(file);
+  const at = bytes.indexOf('mvhd');
+  if (at < 0) throw new Error(`${file}: no MP4 movie header`);
+  const version = bytes[at + 4];
+  const timescale = version === 1 ? bytes.readUInt32BE(at + 24) : bytes.readUInt32BE(at + 16);
+  const duration = version === 1 ? Number(bytes.readBigUInt64BE(at + 28)) : bytes.readUInt32BE(at + 20);
+  return duration / timescale;
+}
+
 const bilingual = (value) => ({ en: String(value?.en ?? ''), es: String(value?.es ?? '') });
 const list = (value) => ({ en: Array.isArray(value?.en) ? value.en.map(String) : [], es: Array.isArray(value?.es) ? value.es.map(String) : [] });
 
@@ -40,12 +51,14 @@ async function readProject(slug, media, projectsDir) {
     // Second image that fades in when hovering the portfolio card (a gallery file).
     hover: data.hover ? media.images[data.images.findIndex(image => image.file === data.hover)] ?? null : null,
     // Optional spot shown before the gallery (MP4 from public/video/, poster from the gallery).
-    videos: (data.video === undefined ? [] : [data.video].flat()).map((video) => ({
+    videos: await Promise.all((data.video === undefined ? [] : [data.video].flat()).map(async (video) => ({
       src: video.src,
+      date: video.date,
+      duration: Math.round(await videoDuration(path.join(ROOT, 'public', video.src))),
       aspect: video.aspect,
       caption: bilingual(video.caption),
       poster: media.images[data.images.findIndex(image => image.file === video.poster)],
-    })),
+    }))),
     coverPosition: data.coverPosition ? String(data.coverPosition) : '',
     featured: data.featured === true,
     archived: data.archived === true,

@@ -1,7 +1,8 @@
 // Case study page: introduction, project facts, captioned gallery and result.
 // Project images stay in the page at one shared width, without a click-through viewer.
 import { ORIGIN, PERSON_ID } from '../config.js';
-import { CONTENT, PAGES, projectName, projectPath } from '../content.js';
+import { CONTACT_PAGE, CONTENT, PAGES, projectName, projectPath } from '../content.js';
+import { LEGAL_PAGES } from '../legal.js';
 import { absoluteUrl, assetUrl } from '../lib/assets.js';
 import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
@@ -63,9 +64,23 @@ function design(project, lang, t) {
   ${palette(project, lang, t)}</section>`;
 }
 
+/** Pixel size of the largest published version (the URL listed in metadata). */
+function largestSize(image) {
+  const width = image.src ? image.width : image.webp.at(-1)[1];
+  return { width, height: Math.round((image.height * width) / image.width) };
+}
+
 function schema(project, lang, path, name, description) {
   const t = CONTENT[lang];
   const pageUrl = ORIGIN + path;
+  // Rights information: Google Images shows a «Licensable» badge with it.
+  const rights = {
+    creator: { '@id': PERSON_ID },
+    creditText: 'Javier Traver',
+    copyrightNotice: `© ${project.year} Javier Traver`,
+    license: ORIGIN + LEGAL_PAGES.legal[lang],
+    acquireLicensePage: ORIGIN + CONTACT_PAGE[lang],
+  };
   const cover = {
     '@type': 'ImageObject',
     '@id': `${pageUrl}#cover`,
@@ -74,11 +89,8 @@ function schema(project, lang, path, name, description) {
     name,
     caption: `${name} — Javier Traver`,
     description,
-    width: project.cover.width,
-    height: project.cover.height,
-    creator: { '@id': PERSON_ID },
-    creditText: 'Javier Traver',
-    copyrightNotice: `© ${project.year} Javier Traver`,
+    ...largestSize(project.cover),
+    ...rights,
     isPartOf: { '@id': `${pageUrl}#work` },
   };
   const imageNodes = project.images.map((image, index) => ({
@@ -86,12 +98,22 @@ function schema(project, lang, path, name, description) {
     '@id': `${pageUrl}#image-${index + 1}`,
     contentUrl: absoluteUrl(largestUrl(image)),
     url: absoluteUrl(largestUrl(image)),
-    width: image.width,
-    height: image.height,
+    ...largestSize(image),
     caption: image.caption[lang] || t.project.imageAlt(name, index + 1, project.images.length),
+    ...rights,
+  }));
+  const videoNodes = project.videos.map((video, index) => ({
+    '@type': 'VideoObject',
+    '@id': `${pageUrl}#video-${index + 1}`,
+    name: `${name} · Spot ${video.aspect}`,
+    description: video.caption[lang] || description,
+    thumbnailUrl: absoluteUrl(largestUrl(video.poster)),
+    contentUrl: absoluteUrl(video.src),
+    uploadDate: video.date,
+    duration: `PT${video.duration}S`,
+    inLanguage: lang,
     creator: { '@id': PERSON_ID },
-    creditText: 'Javier Traver',
-    copyrightNotice: `© ${project.year} Javier Traver`,
+    isPartOf: { '@id': `${pageUrl}#work` },
   }));
   return graph(
     person(lang),
@@ -119,12 +141,14 @@ function schema(project, lang, path, name, description) {
       ...(project.intro[lang] ? { abstract: project.intro[lang] } : {}),
       thumbnailUrl: cover.contentUrl,
       image: [cover, ...imageNodes].map((node) => ({ '@id': node['@id'] })),
+      ...(videoNodes.length ? { video: videoNodes.map((node) => ({ '@id': node['@id'] })) } : {}),
       ...(project.behance ? { sameAs: project.behance } : {}),
       inLanguage: lang,
     },
     breadcrumbs(lang, [[name, path]]),
     cover,
     ...imageNodes,
+    ...videoNodes,
   );
 }
 
@@ -148,7 +172,7 @@ export function projectPage(project, siblings, lang) {
     lang,
     page: 'home',
     alternates: { en: projectPath(project, 'en'), es: projectPath(project, 'es') },
-    title: `${name} — Javier Traver | sirtraver`,
+    title: `${name} · ${category} — Javier Traver`,
     description,
     shareImage: { url: absoluteUrl(cover.og ?? largestUrl(cover)), ...(cover.og ? { width: 1200, height: 630 } : {}), alt: name },
     enquiry: true,

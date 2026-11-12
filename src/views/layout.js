@@ -74,8 +74,12 @@ ${canonical
   ? html`<link rel="canonical" href="${canonical}">
 ${LANGUAGES.map((code) => html`<link rel="alternate" hreflang="${code}" href="${ORIGIN + paths[code]}">\n`)}<link rel="alternate" hreflang="x-default" href="${ORIGIN + paths.en}">`
   : ''}
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="${assetUrl('/assets/favicon-32.png')}">
-<link rel="apple-touch-icon" href="${assetUrl('/assets/apple-touch-icon.png')}">
+<link rel="icon" type="image/png" sizes="96x96" href="${assetUrl('/assets/favicon-96.png')}">
+<link rel="icon" type="image/png" sizes="192x192" href="${assetUrl('/assets/favicon-192.png')}">
+<link rel="apple-touch-icon" sizes="180x180" href="${assetUrl('/assets/apple-touch-icon.png')}">
+<link rel="manifest" href="${assetUrl('/site.webmanifest')}">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${assetUrl('/assets/site.css')}">
 ${styles.map(src => html`<link rel="stylesheet" href="${assetUrl(src)}">`)}

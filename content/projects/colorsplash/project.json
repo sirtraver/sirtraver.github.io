@@ -81,7 +81,7 @@
       "hex": "#141414"
     }
   ],
-  "hover": "imagenes/06.webp",
+  "hover": "imagenes/colorsplash-expositor-tienda-botes-organizados-color.webp",
   "caseStudy": [
     {
       "title": {
@@ -162,8 +162,9 @@
   },
   "video": {
     "src": "/video/colorsplash/spot.mp4",
-    "poster": "imagenes/08.webp",
+    "poster": "imagenes/colorsplash-banner-paint-it-botes-salpicaduras.webp",
     "aspect": "16:9",
+    "date": "2026-11-12",
     "caption": {
       "es": "Spot de 10 s: un rodillo pinta de magenta una pared blanca y los cuatro colores saltan de sus botes al ritmo de la música.",
       "en": "10-second spot: a roller paints a white wall magenta and the four colours burst out of their tins to the beat."

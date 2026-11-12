@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data: https://public-files.gumroad.com https://gumroad-public-storage.s3.amazonaws.com; connect-src 'self' https://api.web3forms.com https://32489d65.sibforms.com https://cloud.umami.is https://gateway.umami.is https://api-gateway.umami.dev; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com https://32489d65.sibforms.com">
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data: https://public-files.gumroad.com https://gumroad-public-storage.s3.amazonaws.com; connect-src 'self' https://api.web3forms.com https://cloud.umami.is https://gateway.umami.is https://api-gateway.umami.dev; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f8f8f8">
 <meta name="view-transition" content="same-origin">
@@ -71,14 +71,17 @@
   <p>I’m preparing design resources and templates. Leave your email if you’d like to hear when the first one is ready.</p>
   <ul class="launch-categories launch-categories--compact"><li>Canva templates</li><li>Notion templates</li><li>Design resources</li></ul>
   </div>
-  <form class="launch-form" method="post" action="https://32489d65.sibforms.com/serve/MUIFAMbVXOai-5puE6K_F1LqbxhHxTZ5kTRjD42WLiFIn0kRe1VfkWgfXOVHPAAwbVLv9YCIzPboPZVmRNOBS1OGJmdiGnGnepJUXAWuoAEhEsJ0EwYBBTDtMIMMU8E0JDzx3kBKYU3-n83jdDPQIIRkSxSs9DXttLYS5MBnxLX2mxo85eEhv-ZKu2fF7jI26IErS4KTCqLx2VkoxA==" data-enhance data-format="brevo" data-track="newsletter-signup" data-sending="Saving…" data-success="Almost there: check your inbox and confirm your email." data-confirm="Almost there: check your inbox and confirm your email." data-error="Could not save your subscription. Please try again or email me." data-limited="Too many attempts in a short time. Please try again later.">
-    <input type="hidden" name="locale" value="en">
-    <input type="hidden" name="html_type" value="simple">
+  <form class="launch-form" method="post" action="https://api.web3forms.com/submit" data-enhance data-redirect="/thank-you/?notice=resources" data-sending="Saving…" data-success="You’re on the list. I’ll let you know when the resources launch." data-confirm="Almost there: check your inbox and confirm your email." data-error="Could not save your subscription. Please try again or email me." data-limited="Too many attempts in a short time. Please try again later.">
+    <input type="hidden" name="language" value="en">
+    <input type="hidden" name="access_key" value="ce9057b4-4150-4dd9-94af-2b608cf57912">
+    <input type="hidden" name="subject" value="sirtraver.com · Aviso de lanzamiento de Recursos (EN)">
+    <input type="hidden" name="from_name" value="sirtraver.com">
+    <input type="hidden" name="redirect" value="https://sirtraver.com/thank-you/">
     <label for="launch-email">Email</label>
-    <div class="launch-input"><input id="launch-email" name="EMAIL" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"><button type="submit">Subscribe</button></div>
-    <div class="form-trap" aria-hidden="true"><label>Website<input name="email_address_check" tabindex="-1" autocomplete="off"></label></div>
-    <label class="launch-consent"><input type="checkbox" required> <span>I’d like to receive emails with resources and news from sirtraver.</span></label>
-    <p class="launch-privacy">You’ll get an email to confirm your subscription, and every email has a link to unsubscribe. More in the <a href="/privacy/">Privacy policy</a>.</p>
+    <div class="launch-input"><input id="launch-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"><button type="submit">Notify me at launch</button></div>
+    <div class="form-trap" aria-hidden="true"><label>Website<input name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+    <label class="launch-consent"><input name="consent" type="checkbox" required> <span>I’d like an email when the resources launch.</span></label>
+    <p class="launch-privacy">Your email will only be used for this notification. To have it removed, write to javier.traver.v@me.com. <a href="/privacy/">Privacy policy</a>.</p>
     <p role="status" aria-live="polite"></p>
   </form>
 </section></section>

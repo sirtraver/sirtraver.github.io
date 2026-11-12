@@ -79,8 +79,8 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
   // Optional crop of the cover on portfolio cards (CSS object-position, e.g. "50% 85%").
   if (data.coverPosition !== undefined && !/^\d{1,3}% \d{1,3}%$/.test(data.coverPosition)) fail('coverPosition debe tener el formato "50% 85%"');
   // Optional spot: an MP4 in public/video/ (served from sirtraver.com) with a gallery image as poster.
-  if (data.video !== undefined) {
-    const video = data.video;
+  // One spot (object) or several (list), e.g. a vertical and a horizontal cut.
+  for (const video of data.video === undefined ? [] : [data.video].flat()) {
     if (!/^\/video\/[a-z0-9-]+\/[a-z0-9-]+\.mp4$/.test(video?.src ?? '')) fail('video.src debe ser una ruta como /video/proyecto/spot.mp4');
     if (!images.some((image) => image.file === video.poster)) fail('video.poster debe ser una de las imágenes de la galería');
     if (!['en', 'es'].every(lang => typeof video.caption?.[lang] === 'string')) fail('video.caption debe contener texto en español e inglés');

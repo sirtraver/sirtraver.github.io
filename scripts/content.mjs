@@ -40,9 +40,12 @@ async function readProject(slug, media, projectsDir) {
     // Second image that fades in when hovering the portfolio card (a gallery file).
     hover: data.hover ? media.images[data.images.findIndex(image => image.file === data.hover)] ?? null : null,
     // Optional spot shown before the gallery (MP4 from public/video/, poster from the gallery).
-    video: data.video
-      ? { src: data.video.src, aspect: data.video.aspect, caption: bilingual(data.video.caption), poster: media.images[data.images.findIndex(image => image.file === data.video.poster)] }
-      : null,
+    videos: (data.video === undefined ? [] : [data.video].flat()).map((video) => ({
+      src: video.src,
+      aspect: video.aspect,
+      caption: bilingual(video.caption),
+      poster: media.images[data.images.findIndex(image => image.file === video.poster)],
+    })),
     coverPosition: data.coverPosition ? String(data.coverPosition) : '',
     featured: data.featured === true,
     archived: data.archived === true,

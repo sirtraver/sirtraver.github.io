@@ -2630,7 +2630,7 @@ html:has(dialog[open]) .site-cursor { display: none; }
 
 /* Spot inside a case study: centred, as tall as the screen allows, never wider than the column. */
 .project-video { display: grid; justify-items: center; margin: 0; }
-.project-video video { display: block; width: auto; max-width: 100%; height: min(82vh, 860px); aspect-ratio: var(--video-ratio, 16 / 9); background: #111; border-radius: 18px; object-fit: cover; }
+.project-video video { display: block; width: min(100%, calc(min(82vh, 860px) * var(--video-ratio, 16 / 9))); height: auto; aspect-ratio: var(--video-ratio, 16 / 9); background: #111; border-radius: 18px; object-fit: cover; }
 .project-video figcaption { justify-self: stretch; text-align: center; }
 
 /* Per-project crop of the cover on cards (project.json → coverPosition); centred by default. */

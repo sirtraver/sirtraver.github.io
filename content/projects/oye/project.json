@@ -1,0 +1,175 @@
+{
+  "name": "OYE",
+  "date": "2026-11-12",
+  "order": 0,
+  "category": "Visual design",
+  "conceptual": true,
+  "draft": false,
+  "intro": {
+    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento de un altavoz portátil inventado con forma de canto rodado: fotografía de producto, tres colores, piezas para redes, página de producto y dos spots de 15 segundos (vertical y horizontal), todo creado con IA.",
+    "en": "Spec work — not affiliated with any real brand. Launch of an invented pebble-shaped portable speaker: product photography, three colourways, social pieces, a product page and two 15-second spots (vertical and horizontal), all created with AI."
+  },
+  "client": "",
+  "role": {
+    "es": "Diseño de producto conceptual, concepto de campaña, dirección de arte, generación de imagen y vídeo con IA, diseño de piezas y de la página de producto",
+    "en": "Concept product design, campaign concept, art direction, AI image and video generation, layout of the pieces and the product page"
+  },
+  "deliverables": {
+    "es": [
+      "Diseño del producto y sus tres colores",
+      "Packshot para tienda online",
+      "Fotografía lifestyle",
+      "Key visual en ES y EN",
+      "Piezas para redes (1:1, 4:5, 9:16, 16:9)",
+      "Maqueta de página de producto",
+      "Spots de 15 s en 9:16 y 16:9"
+    ],
+    "en": [
+      "Product design and three colourways",
+      "E-commerce packshot",
+      "Lifestyle photography",
+      "Key visual in Spanish and English",
+      "Social pieces (1:1, 4:5, 9:16, 16:9)",
+      "Product page mockup",
+      "15-second spots in 9:16 and 16:9"
+    ]
+  },
+  "tools": [
+    "Higgsfield",
+    "Nano Banana 2",
+    "Seedance 2.0",
+    "Claude"
+  ],
+  "behance": "",
+  "featured": false,
+  "archived": false,
+  "portfolioOrder": 1,
+  "hover": "imagenes/02.webp",
+  "coverPosition": "50% 70%",
+  "video": [
+    {
+      "src": "/video/oye/spot-vertical.mp4",
+      "poster": "imagenes/06.webp",
+      "aspect": "9:16",
+      "caption": {
+        "es": "Spot vertical de 15 s para Reels y TikTok: el altavoz escondido entre piedras de la playa empieza a sonar, las piedras vibran y las ondas cruzan un lago.",
+        "en": "15-second vertical spot for Reels and TikTok: the speaker hidden among beach pebbles starts playing, the stones tremble and ripples cross a lake."
+      }
+    },
+    {
+      "src": "/video/oye/spot-horizontal.mp4",
+      "poster": "imagenes/02.webp",
+      "aspect": "16:9",
+      "caption": {
+        "es": "Spot horizontal de 15 s para web y YouTube: del salón a la playa, y cierre con los tres colores.",
+        "en": "15-second horizontal spot for web and YouTube: from the living room to the beach, closing on the three colourways."
+      }
+    }
+  ],
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El encargo",
+        "en": "The brief"
+      },
+      "text": {
+        "es": "Un altavoz portátil que compite en una categoría llena de cilindros de plástico con luces. El planteamiento es el de un lanzamiento completo: diseñar el objeto, sus colores, la imagen para la tienda online, la campaña en redes, la página de producto y los spots para cada canal.",
+        "en": "A portable speaker competing in a category full of plastic cylinders with lights. The brief is treated as a full launch: designing the object and its colours, the online shop imagery, the social campaign, the product page and a spot for each channel."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "OYE tiene la forma de un canto rodado y se camufla donde lo dejas: en una estantería, entre piedras de la playa, junto a un lago. Pasa desapercibido hasta que suena. El nombre es la propia llamada de atención, y el mensaje sale de él: «Oye esto».",
+        "en": "OYE is shaped like a river pebble and blends in wherever you leave it: on a shelf, among beach stones, by a lake. It goes unnoticed until it plays. The name itself is a call for attention (oye means “hey, listen” in Spanish), and the line comes straight from it: “Hear this”."
+      }
+    },
+    {
+      "title": {
+        "es": "Producción con IA",
+        "en": "AI production"
+      },
+      "text": {
+        "es": "Primero se diseñó el producto en dos variantes y se eligió una como referencia. Todas las imágenes y los dos spots se generaron a partir de ella para que la forma, el tejido y los detalles no cambien de una pieza a otra. Un packshot salió con una peana que no debía estar y se repitió. Los titulares y la página de producto se maquetaron después sobre las imágenes, sin pedir a la IA que escribiera texto.",
+        "en": "The product was first designed in two variants and one was chosen as the reference. Every image and both spots were generated from it, so the shape, fabric and details stay the same from piece to piece. One packshot came out with a plinth it should not have had and was redone. The headlines and the product page were laid out on top of the images afterwards; the AI was never asked to write text."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "El objeto",
+        "en": "The object"
+      },
+      "text": {
+        "es": "Un canto rodado ligeramente asimétrico, forrado de tejido de punto gris piedra. Una banda de silicona azul ultramar en la base y un único botón del mismo azul: todo el color del producto está en esos dos puntos. El logotipo va en minúscula y en relieve, del mismo color que el tejido.",
+        "en": "A slightly asymmetric river pebble wrapped in stone-grey knit fabric. An ultramarine silicone band at the base and a single button in the same blue: all the product’s colour sits in those two places. The wordmark is lowercase and debossed, the same colour as the fabric."
+      }
+    },
+    {
+      "title": {
+        "es": "Tres colores",
+        "en": "Three colourways"
+      },
+      "text": {
+        "es": "La gama repite la misma regla: un tejido neutro y un color vivo en la banda y el botón. Piedra y ultramar, carbón y naranja, arena y salvia. Así cada versión se distingue sin cambiar la forma.",
+        "en": "The range repeats the same rule: a neutral fabric and one bright colour on the band and button. Stone and ultramarine, charcoal and orange, sand and sage. Each version stands apart without changing the shape."
+      }
+    },
+    {
+      "title": {
+        "es": "Tipografía y piezas",
+        "en": "Typography and pieces"
+      },
+      "text": {
+        "es": "Los titulares usan una sans geométrica de remates redondeados, cercana a las formas suaves del producto y de su logotipo. En el key visual el titular va centrado en blanco sobre el azul; en el resto de piezas, arriba a la izquierda en tinta. La página de producto aplica el mismo esquema: titular grande, una frase y un único botón azul.",
+        "en": "Headlines use a geometric sans with rounded details, close to the soft forms of the product and its wordmark. On the key visual the headline is centred in white on blue; on the other pieces it sits top left in ink. The product page follows the same scheme: a large headline, one sentence and a single blue button."
+      }
+    }
+  ],
+  "palette": [
+    {
+      "name": {
+        "es": "Gris piedra",
+        "en": "Stone grey"
+      },
+      "hex": "#9C9890",
+      "share": 45
+    },
+    {
+      "name": {
+        "es": "Azul ultramar",
+        "en": "Ultramarine"
+      },
+      "hex": "#2B3FC4",
+      "share": 25
+    },
+    {
+      "name": {
+        "es": "Blanco roto",
+        "en": "Off-white"
+      },
+      "hex": "#F3F1EC",
+      "share": 20
+    },
+    {
+      "name": {
+        "es": "Tinta",
+        "en": "Ink"
+      },
+      "hex": "#1D1D1D",
+      "share": 10
+    }
+  ],
+  "paletteNote": {
+    "es": "El gris piedra es el producto y el blanco roto, el espacio. El azul ultramar es el único color vivo: marca el botón, la banda y el fondo del key visual. Las otras dos versiones cambian ese azul por naranja o salvia.",
+    "en": "Stone grey is the product and off-white is the space. Ultramarine is the only bright colour: it marks the button, the band and the key visual backdrop. The other two versions swap that blue for orange or sage."
+  },
+  "result": {
+    "es": "Proyecto conceptual. Spec work: OYE es una marca y un producto inventados, sin relación con ninguna empresa real. Demuestra un lanzamiento completo producido con IA, del diseño del producto a los spots, con el mismo objeto en todas las piezas y cada formato adaptado a su canal.",
+    "en": "Concept project. Spec work: OYE is an invented brand and product, not affiliated with any real company. It shows a complete launch produced with AI, from product design to spots, with the same object in every piece and each format adapted to its channel."
+  }
+}

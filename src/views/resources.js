@@ -10,12 +10,13 @@ import { ORIGIN } from '../config.js';
 import { runtime } from '../lib/runtime.js';
 import { sectionIntro } from './section-intro.js';
 
+// Same card as the portfolio (home.js projectCard): cover, name with the price where the year goes, and a tag.
 function productCard(product, t, lang) {
-  return html`<article class="project-card product-card">${
-    product.image
-      ? html`<img src="${product.image}" alt="${t.coverOf} ${product.title}" width="600" height="600" loading="lazy" decoding="async">`
-      : ''
-  }<div class="card-caption"><h2>${product.title}</h2></div><p class="product-summary">${product.summary}</p><div class="product-bottom"><span>${product.free ? t.free : product.price}</span><a href="${resourcePath(productSlug(product), lang)}">${t.viewProduct} →</a></div></article>`;
+  const slug = productSlug(product);
+  const image = product.cover || product.image;
+  return html`<a class="project-card" href="${resourcePath(slug, lang)}" data-project="resource-${slug}"><div class="card-media">${
+    image ? html`<img src="${image}" alt="${t.coverOf} ${product.title}" width="1200" height="800" loading="lazy" decoding="async">` : ''
+  }</div><div class="card-caption"><h3>${product.title}</h3><span class="card-year">${product.free ? t.free : product.price}</span></div><p>${t.cardKind}</p></a>`;
 }
 
 // Shown only when Gumroad answers successfully with an empty catalog.
@@ -94,6 +95,6 @@ export function resourcesPage(lang, catalog, subscription = null) {
     scripts: isLaunch ? [{ src: '/assets/forms.js' }] : [],
     body: html`${sectionIntro(lang, t.heading, t.lead)}
 <div class="work-heading"><h2>${t.libraryTitle}${catalog.status === 'ok' && catalog.products.length ? html`<span class="work-count">${String(catalog.products.length).padStart(2, '0')}</span>` : ''}</h2><span>${t.libraryTypes}</span></div>
-<section id="gumroad-products" class="project-grid" aria-label="${t.gridLabel}">${content}</section>`,
+<section id="gumroad-products" class="${isLaunch || catalog.status !== 'ok' ? 'project-grid' : 'project-grid project-grid--editorial'}" aria-label="${t.gridLabel}"${isLaunch || catalog.status !== 'ok' ? '' : html` data-cursor-label="${t.viewProduct}"`}>${content}</section>`,
   });
 }

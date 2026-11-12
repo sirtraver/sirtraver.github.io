@@ -44,6 +44,8 @@ export function publicProducts(items, hiddenId = '') {
           summary: String(p.custom_summary || '').slice(0, 260),
           url: url.href,
           image: safeImageUrl(p.thumbnail_url),
+          // Wide product cover, used by the resource cards (the thumbnail is square).
+          cover: safeImageUrl(p.preview_url),
           free: p.price === 0,
           price: p.price === 0 ? 'Free · €0' : String(p.formatted_price || ''),
         },

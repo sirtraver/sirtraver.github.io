@@ -95,13 +95,16 @@ test('resources: products, launch form and unavailable state are distinct', asyn
 
   await withFetch(async () => Response.json({ success: true, products: [gumroadProduct(), gumroadProduct({ id: 'draft', published: false, name: 'Private draft' })] }), async () => {
     const html = await (await get('/resources/', env)).text();
-    assert.match(html, /<h2>Live product<\/h2>/);
-    assert.ok(html.includes('Imported summary'));
+    // Same card as the portfolio: a link to the resource page with name, price and tag.
+    assert.match(html, /<a class="project-card" href="\/resources\/live\/" data-project="resource-live">[\s\S]*?<h3>Live product<\/h3>/);
+    assert.ok(html.includes('project-grid--editorial'));
+    assert.ok(html.includes('Imported summary') || (await (await get('/resources/live/', env)).text()).includes('Imported summary'));
     assert.ok(!html.includes('Private draft'));
     assert.ok(!html.includes('class="launch-form"'));
     assert.ok(html.includes('"@type":"ItemList"'));
     const spanish = await (await get('/es/resources/', env)).text();
-    assert.ok(spanish.includes('<a href="/es/resources/live/">Ver recurso →</a>'));
+    assert.ok(spanish.includes('<a class="project-card" href="/es/resources/live/"'));
+    assert.ok(spanish.includes('<p>Recurso digital</p>'));
   });
 
   resetCaches();

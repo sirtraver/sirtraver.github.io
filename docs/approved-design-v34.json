@@ -1,16 +1,16 @@
 {
-  "version": "v52 — contenido de proyectos ampliado, diseño formal, imágenes de ancho uniforme y sin visor",
+  "version": "v52 — Recursos en el menú también en móvil, tarjetas de recursos iguales que las del portfolio, privacidad sin formulario de contacto (sobre las fichas ampliadas)",
   "commit": "see git log",
   "bodyHashes": {
     "/": "16923f5970315b92c0a73e1ac6fe6f228b73d7524a48e9b3e2459efb4d4be36e",
     "/es/": "4e2d673e7d856c176dec58fdcd8ee8c05d44a825a940564ef2284c24a00358a4",
     "/about/": "58247484f6f24c22f5d59750fa2851446ebd9fe22bb7cfc40e959a88009db059",
     "/es/about/": "abc17890fd761cd249f5f9e980ecc6623e37e5b9c5d60e5c97bc27d2824eb8b4",
-    "/resources/": "bd52659f423564faa5ad5910bf7b928449134903751778c652149a8c2df99e9c",
-    "/es/resources/": "fb50d3b56935ba4a795310b0db63d7ce0d3c3d8470d1cc9a320243f17ed9b415"
+    "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
+    "/es/resources/": "8309c71d6fb2bde7c7a44eb22e278c650ede1b9b593db12e02b3cb29be6dc8e3"
   },
-  "cssPrefixBytes": 91481,
-  "cssPrefixHash": "76d075698a7fed8c09c5d41d2d15ddcd555359e4c00c07e59a781b86c15cf4fd",
+  "cssPrefixBytes": 91926,
+  "cssPrefixHash": "a760d545287e22d9d2c6baab5ce403db3c23b8c98a4b85675bcc36752a977b85",
   "homeShellHashes": {
     "/": "1587b345e6ac151bd1e77de672343af06f371d8657392542bcb49000139e3135",
     "/es/": "940fb32ae96da6c0ff7f9c17194794fd26a053711c6809e4e86d4521ca62b9d5"
@@ -20,7 +20,7 @@
     "/es/resources/": "6d7a8297f360b174bf865335a303943e39637a405fb8c30f14481c49395540c7"
   },
   "resourcesFormHashes": {
-    "/resources/": "7f1b429a6dc8f39b40ceecfbc80559b75925030e23ce3bdceded74b736d01d31",
-    "/es/resources/": "fbbe28f0adbd543b565a40d6dec379fff50f202b394bf57c77fa125e628fc5b5"
+    "/resources/": "e19767a861744e4080de6efe0aba4f82e1013f3b6ac605bc793ffa9b02a6c273",
+    "/es/resources/": "6e6d3f676ece2c0d42c646a84bf5171166a42c3b0d3695b2b9c993e89d3662a3"
   }
 }

@@ -74,6 +74,7 @@ export const CONTENT = {
       unavailable: 'The catalog is temporarily unavailable. Please try again shortly.',
       coverOf: 'Cover of',
       viewProduct: 'View resource',
+      cardKind: 'Digital resource',
       buy: 'Get it on Gumroad ↗',
       backToResources: '← All resources',
       productNote: 'Payment and download are handled securely by Gumroad.',
@@ -88,7 +89,7 @@ export const CONTENT = {
         upcoming: 'Coming soon',
         categories: ['Canva templates', 'Notion templates', 'Design resources'],
         consent: 'I’d like an email when the resources launch.',
-        privacy: 'Your email will only be used for this notification. To remove it, use the email icon on the About page.',
+        privacy: 'Your email will only be used for this notification. To have it removed, write to javier.traver.v@me.com.',
         saving: 'Saving…',
         success: 'You’re on the list. I’ll let you know when the resources launch.',
         confirm: 'Almost there: check your inbox and confirm your email.',
@@ -150,6 +151,7 @@ export const CONTENT = {
       previous: '← Previous',
       next: 'Next →',
     },
+
 
     archive: {
       title: 'Earlier projects | sirtraver',
@@ -235,6 +237,7 @@ export const CONTENT = {
       unavailable: 'El catálogo no está disponible temporalmente. Inténtalo de nuevo en unos instantes.',
       coverOf: 'Portada de',
       viewProduct: 'Ver recurso',
+      cardKind: 'Recurso digital',
       buy: 'Conseguirlo en Gumroad ↗',
       backToResources: '← Todos los recursos',
       productNote: 'El pago y la descarga se gestionan de forma segura en Gumroad.',
@@ -249,7 +252,7 @@ export const CONTENT = {
         upcoming: 'Próximamente',
         categories: ['Plantillas de Canva', 'Plantillas de Notion', 'Recursos de diseño'],
         consent: 'Quiero recibir un email cuando se publiquen los recursos.',
-        privacy: 'Tu email se usará solo para este aviso. Puedes pedir su eliminación mediante el icono de correo de la página Sobre mí.',
+        privacy: 'Tu email se usará solo para este aviso. Puedes pedir su eliminación escribiendo a javier.traver.v@me.com.',
         saving: 'Guardando…',
         success: 'Ya estás en la lista. Te avisaré cuando estén disponibles.',
         confirm: 'Casi listo: revisa tu correo y confirma tu email.',
@@ -311,6 +314,7 @@ export const CONTENT = {
       previous: '← Anterior',
       next: 'Siguiente →',
     },
+
 
     archive: {
       title: 'Proyectos anteriores | sirtraver',

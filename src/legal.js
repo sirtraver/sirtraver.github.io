@@ -56,15 +56,15 @@ export const LEGAL_CONTENT = {
           'What data is collected',
           [
             'If you sign up for the resources launch notice: your email address, the language of the page and the date and time of your consent.',
-            'If you use the contact form: your name, email address, the type of project and your message.',
+            'If you write to me by email (directly or with the brief on the Contact page): the data you include in your message, usually your name, email address, brand and project details. The brief is prepared in your browser and nothing is sent until you send the email yourself.',
             'When you select a language, this website saves the functional cookie sirtraver_lang for up to six months to remember your choice. It contains only es or en and is not used for advertising or tracking. On your first visit, the browser language is used if no choice has been saved. The server may process technical data (such as IP address and browser) temporarily to deliver the website securely and prevent abuse.',
           ],
         ],
-        ['Purpose', ['Launch notice: to email you when the sirtraver digital resources launch. Contact form: to answer your enquiry.']],
+        ['Purpose', ['Launch notice: to email you when the sirtraver digital resources launch. Project enquiries: to answer your enquiry and, where applicable, prepare a proposal.']],
         [
           'Legal basis',
           [
-            'Launch notice: your consent, given with the checkbox of the form (art. 6.1.a GDPR); you can withdraw it at any time. Contact form: answering a request you make before a possible agreement (art. 6.1.b GDPR).',
+            'Launch notice: your consent, given with the checkbox of the form (art. 6.1.a GDPR); you can withdraw it at any time. Project enquiries: answering a request you make before a possible agreement (art. 6.1.b GDPR).',
           ],
         ],
         [
@@ -127,15 +127,15 @@ export const LEGAL_CONTENT = {
           'Qué datos se recogen',
           [
             'Si te apuntas al aviso de lanzamiento de recursos: tu email, el idioma de la página y la fecha y hora de tu consentimiento.',
-            'Si usas el formulario de contacto: tu nombre, tu email, el tipo de proyecto y tu mensaje.',
+            'Si me escribes por email (directamente o con el brief de la página de Contacto): los datos que incluyas en tu mensaje, normalmente tu nombre, tu email, tu marca y los detalles del proyecto. El brief se prepara en tu navegador y no se envía nada hasta que tú mandas el email.',
             'Al elegir un idioma, esta web guarda la cookie funcional sirtraver_lang durante un máximo de seis meses para recordar tu elección. Solo contiene es o en y no se utiliza para publicidad ni seguimiento. En la primera visita, se utiliza el idioma del navegador si no hay una elección guardada. El servidor puede tratar temporalmente datos técnicos (como la dirección IP y el navegador) para servir la web de forma segura y evitar abusos.',
           ],
         ],
-        ['Finalidad', ['Aviso de lanzamiento: enviarte un email cuando se publiquen los recursos digitales de sirtraver. Formulario de contacto: responder a tu consulta.']],
+        ['Finalidad', ['Aviso de lanzamiento: enviarte un email cuando se publiquen los recursos digitales de sirtraver. Consultas de proyectos: responder a tu consulta y, en su caso, preparar una propuesta.']],
         [
           'Base legal',
           [
-            'Aviso de lanzamiento: tu consentimiento, que das con la casilla del formulario (art. 6.1.a RGPD); puedes retirarlo en cualquier momento. Formulario de contacto: atender una solicitud tuya previa a un posible encargo (art. 6.1.b RGPD).',
+            'Aviso de lanzamiento: tu consentimiento, que das con la casilla del formulario (art. 6.1.a RGPD); puedes retirarlo en cualquier momento. Consultas de proyectos: atender una solicitud tuya previa a un posible encargo (art. 6.1.b RGPD).',
           ],
         ],
         [

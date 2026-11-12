@@ -2505,8 +2505,17 @@ html { scroll-padding-top: calc(var(--ticker) + 96px); }
   .project-enquiry { padding: 44px 20px; }
   .project-result { margin-top: 56px; }
 }
-/* Three pills do not fit beside the wordmark and the languages on a phone: Resources stays in the footer. */
-@media (max-width: 700px) { .site-header nav a[href$="/resources/"] { display: none; } }
+/* Phones: Projects, Resources and About fit beside the wordmark and the languages with tighter pills. */
+@media (max-width: 420px) {
+  .site-header, .js .site-header { gap: 6px; padding: 8px 10px; }
+  .site-header .wordmark { font-size: 17px; }
+  .site-header nav a, .js .site-menu nav a, .js .site-menu nav.nav-ready a { padding: 0 6px; }
+  .site-header .language-links a, .js .site-menu .language-links a { min-width: 28px; }
+}
+@media (max-width: 340px) {
+  .site-header nav a, .js .site-menu nav a, .js .site-menu nav.nav-ready a { padding: 0 4px; }
+  .site-header .language-links a, .js .site-menu .language-links a { min-width: 24px; }
+}
 .project-pager > span:empty { display: none; }
 
 /* ---------- v49: no running strip, calmer headings, own cursor and scrambling display type ---------- */

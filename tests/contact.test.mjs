@@ -90,6 +90,6 @@ test('privacy policy mentions Brevo and analytics only when they are enabled', a
   const response = await get('/privacy/', env);
   const html = await response.text();
   assert.ok(html.includes('Brevo') && html.includes('Umami'));
-  assert.ok(html.includes('<script defer src="https://stats.example.com/script.js" data-website-id="abc"></script>'));
+  assert.ok(html.includes('<script defer src="https://stats.example.com/script.js" data-website-id="abc" data-domains="sirtraver.com"></script>'));
   assert.match(response.headers.get('Content-Security-Policy'), /script-src 'self' https:\/\/stats\.example\.com/);
 });

@@ -1,5 +1,5 @@
 // Document shell shared by all pages: <head> metadata, header, footer.
-import { ORIGIN, SHARE_IMAGE, SITE_VERIFICATION } from '../config.js';
+import { CANONICAL_HOST, ORIGIN, SHARE_IMAGE, SITE_VERIFICATION } from '../config.js';
 import { CONTACT_PAGE, CONTENT, LANGUAGES, PAGES } from '../content.js';
 import { assetUrl } from '../lib/assets.js';
 import { html, jsonLd } from '../lib/html.js';
@@ -101,7 +101,8 @@ ${page === 'home' && !alternates
 <meta name="msvalidate.01" content="${SITE_VERIFICATION.bing}">`
   : ''}
 ${schema ? jsonLd(schema) : ''}
-${runtime().analytics ? html`<script defer src="${runtime().analytics.src}" data-website-id="${runtime().analytics.websiteId}"></script>` : ''}
+${runtime().analytics ? html`<script defer src="${runtime().analytics.src}" data-website-id="${runtime().analytics.websiteId}" data-domains="${CANONICAL_HOST}"></script>
+<script defer src="${assetUrl('/assets/track.js')}"></script>` : ''}
 <script src="${assetUrl('/assets/language.js')}"></script>
 ${[{ src: '/assets/site.js' }, { src: '/assets/navigation.js' }, ...scripts].map(
   ({ src, data = {} }) =>

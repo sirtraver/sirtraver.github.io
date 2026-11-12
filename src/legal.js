@@ -87,7 +87,8 @@ export const LEGAL_CONTENT = {
     optional: {
       email: ['Email provider', ['Confirmation and notification emails are sent through Brevo (Sendinblue SAS, EU), which acts as data processor.']],
       forms: ['Form provider', ['Launch notice sign-ups are received through Web3Forms, which forwards them by email to the owner and acts as data processor.']],
-      analytics: ['Visit statistics', ['Aggregated, anonymous visit statistics are collected with a cookieless tool hosted for this website (Umami). It does not identify you or track you across sites.']],
+      newsletter: ['Newsletter', ['If you subscribe on the Resources page, your email address and language are stored by Brevo (Sendinblue SAS, France, EU), which acts as data processor and sends the emails. The legal basis is your consent, confirmed by email (double opt-in). Every email includes a link to unsubscribe, and you can also ask for your data to be deleted by writing to the address above. Your data is kept until you unsubscribe.']],
+      analytics: ['Visit statistics', ['Aggregated, anonymous visit statistics (pages viewed, referring site, country, device type and clicks on buttons and links) are collected with Umami Cloud, a cookieless tool. It does not store cookies on your device, does not identify you and does not track you across sites.']],
     },
     updated: `Last updated: ${LEGAL.updated.en}`,
     footer: { legal: 'Legal notice', privacy: 'Privacy' },
@@ -158,7 +159,8 @@ export const LEGAL_CONTENT = {
     optional: {
       email: ['Proveedor de email', ['Los emails de confirmación y aviso se envían a través de Brevo (Sendinblue SAS, UE), que actúa como encargado del tratamiento.']],
       forms: ['Proveedor de formularios', ['Las altas en el aviso de lanzamiento se reciben a través de Web3Forms, que las reenvía por email al titular y actúa como encargado del tratamiento.']],
-      analytics: ['Estadísticas de visitas', ['Se recogen estadísticas de visitas agregadas y anónimas con una herramienta sin cookies alojada para esta web (Umami). No te identifica ni te sigue por otras webs.']],
+      newsletter: ['Newsletter', ['Si te suscribes en la página de Recursos, tu email y tu idioma se guardan en Brevo (Sendinblue SAS, Francia, UE), que actúa como encargado del tratamiento y envía los emails. La base legal es tu consentimiento, confirmado por email (doble confirmación). Cada email incluye un enlace para darte de baja, y también puedes pedir que se borren tus datos escribiendo a la dirección indicada arriba. Tus datos se conservan hasta que te des de baja.']],
+      analytics: ['Estadísticas de visitas', ['Se recogen estadísticas de visitas agregadas y anónimas (páginas vistas, web de procedencia, país, tipo de dispositivo y clics en botones y enlaces) con Umami Cloud, una herramienta sin cookies. No guarda cookies en tu dispositivo, no te identifica y no te sigue por otras webs.']],
     },
     updated: `Última actualización: ${LEGAL.updated.es}`,
     footer: { legal: 'Aviso legal', privacy: 'Privacidad' },

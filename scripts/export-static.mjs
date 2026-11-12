@@ -10,7 +10,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import worker from '../src/worker.js';
-import { CANONICAL_HOST, ORIGIN } from '../src/config.js';
+import { CANONICAL_HOST, NEWSLETTER_FORM, ORIGIN } from '../src/config.js';
 import { ARCHIVE_PAGE, CONTACT_PAGE, LEGACY_REDIRECTS, projectPath } from '../src/content.js';
 import { assets } from '../src/generated/assets.js';
 import { LEGAL_PAGES } from '../src/legal.js';
@@ -21,6 +21,8 @@ const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const OUT = path.join(ROOT, '_site');
 
 const env = { WEB3FORMS_ACCESS_KEY: process.env.WEB3FORMS_ACCESS_KEY ?? '' };
+// Optional overrides of the public identifiers in src/config.js.
+for (const key of ['ANALYTICS_SRC', 'ANALYTICS_WEBSITE_ID', 'NEWSLETTER_FORM_URL']) if (process.env[key]) env[key] = process.env[key];
 if (process.env.GUMROAD_ACCESS_TOKEN) env.GUMROAD_ACCESS_TOKEN = process.env.GUMROAD_ACCESS_TOKEN;
 else {
   env.GUMROAD_ACCESS_TOKEN = 'static-export';
@@ -30,7 +32,7 @@ else {
       ? Response.json({ success: true, products: [] })
       : nativeFetch(input, options);
 }
-if (!env.WEB3FORMS_ACCESS_KEY) console.warn('Warning: WEB3FORMS_ACCESS_KEY is not set; the launch form will post to /api/subscribe, which does not exist on static hosting.');
+if (!env.WEB3FORMS_ACCESS_KEY && !NEWSLETTER_FORM && !env.NEWSLETTER_FORM_URL) console.warn('Warning: WEB3FORMS_ACCESS_KEY is not set; the launch form will post to /api/subscribe, which does not exist on static hosting.');
 
 const get = (urlPath, init) => worker.fetch(new Request(ORIGIN + urlPath, { headers: { 'Accept-Language': 'en' }, ...init }), env, {});
 const fileFor = (urlPath) => path.join(OUT, decodeURIComponent(urlPath.split('?')[0]), urlPath.split('?')[0].endsWith('/') ? 'index.html' : '');

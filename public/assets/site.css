@@ -702,6 +702,14 @@ a:hover .card-media img {
   line-height: 1.6;
 }
 
+/* Newsletter below the resource catalog: the launch block, separated from the grid. */
+.newsletter-block {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding-top: 50px;
+  border-top: 1px solid #e6e6e6;
+}
+
 /* Honeypot field, hidden from people and assistive technology. */
 .form-trap {
   position: absolute;

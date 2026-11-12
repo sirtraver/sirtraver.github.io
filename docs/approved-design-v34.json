@@ -1,5 +1,5 @@
 {
-  "version": "v52 — Recursos en el menú también en móvil, tarjetas de recursos iguales que las del portfolio, privacidad sin formulario de contacto (sobre las fichas ampliadas)",
+  "version": "v53 — Analítica Umami, newsletter de Brevo en Recursos y registro de clics",
   "commit": "see git log",
   "bodyHashes": {
     "/": "16923f5970315b92c0a73e1ac6fe6f228b73d7524a48e9b3e2459efb4d4be36e",
@@ -9,8 +9,8 @@
     "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
     "/es/resources/": "8309c71d6fb2bde7c7a44eb22e278c650ede1b9b593db12e02b3cb29be6dc8e3"
   },
-  "cssPrefixBytes": 91926,
-  "cssPrefixHash": "a760d545287e22d9d2c6baab5ce403db3c23b8c98a4b85675bcc36752a977b85",
+  "cssPrefixBytes": 92134,
+  "cssPrefixHash": "d2523462fd0b834543cbb8da48a03004c3dc015c0e8dbdb855a7d0aa464ed6d7",
   "homeShellHashes": {
     "/": "1587b345e6ac151bd1e77de672343af06f371d8657392542bcb49000139e3135",
     "/es/": "940fb32ae96da6c0ff7f9c17194794fd26a053711c6809e4e86d4521ca62b9d5"

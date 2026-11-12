@@ -10,9 +10,10 @@ const FORM_ENDPOINT = 'https://api.web3forms.com';
  * @param {string[]} [extra.frame]
  */
 export function contentSecurityPolicy({ script = [], frame = [] } = {}) {
-  const analytics = runtime().analytics?.origin;
-  const scripts = ["'self'", ...script, ...(analytics ? [analytics] : [])];
-  const connect = ["'self'", FORM_ENDPOINT, ...(analytics ? [analytics] : [])];
+  const { analytics, newsletterForm } = runtime();
+  const scripts = ["'self'", ...script, ...(analytics ? [analytics.origin] : [])];
+  const forms = [FORM_ENDPOINT, ...(newsletterForm ? [newsletterForm.origin] : [])];
+  const connect = ["'self'", ...forms, ...(analytics ? analytics.connect : [])];
   return [
     "default-src 'self'",
     `script-src ${scripts.join(' ')}`,
@@ -24,7 +25,7 @@ export function contentSecurityPolicy({ script = [], frame = [] } = {}) {
     ...(frame.length ? [`frame-src ${frame.join(' ')}`] : []),
     "object-src 'none'",
     "base-uri 'self'",
-    `form-action 'self' ${FORM_ENDPOINT}`,
+    `form-action 'self' ${forms.join(' ')}`,
     "frame-ancestors 'none'",
   ].join('; ');
 }

@@ -43,3 +43,35 @@ test('the resume pages are served as published', async () => {
     assert.ok((await (await get(path)).text()).includes(`<a class="profile-cv-link" href="${href}">`), path);
   }
 });
+
+test('with a Brevo form configured the Resources sign-up posts to Brevo, with CSP, tracking and privacy text', async () => {
+  resetCaches();
+  const BREVO = { ...STATIC, NEWSLETTER_FORM_URL: 'https://abc123.sibforms.com/serve/TOKEN', ANALYTICS_WEBSITE_ID: 'site-id' };
+  await withFetch(offline, async () => {
+    for (const path of ['/resources/', '/es/resources/']) {
+      const response = await get(path, BREVO);
+      const html = await response.text();
+      const form = html.match(/<form class="launch-form"[\s\S]*?<\/form>/)[0];
+      assert.ok(form.includes('action="https://abc123.sibforms.com/serve/TOKEN"'), path);
+      assert.ok(form.includes('data-format="brevo"') && form.includes('name="EMAIL"') && form.includes('name="email_address_check"'));
+      assert.ok(!form.includes('access_key'), 'Brevo replaces Web3Forms');
+      const csp = response.headers.get('Content-Security-Policy');
+      assert.match(csp, /form-action 'self' https:\/\/api\.web3forms\.com https:\/\/abc123\.sibforms\.com/);
+      assert.match(csp, /connect-src [^;]*https:\/\/cloud\.umami\.is https:\/\/api-gateway\.umami\.dev/);
+      assert.ok(html.includes('data-website-id="site-id"') && /\/assets\/track\.js/.test(html));
+    }
+  });
+  const privacy = await (await get('/es/privacidad/', BREVO)).text();
+  assert.ok(privacy.includes('Brevo') && privacy.includes('Umami Cloud') && !privacy.includes('Web3Forms'));
+  resetCaches();
+});
+
+test('a newsletter form URL outside sibforms.com is ignored', async () => {
+  resetCaches();
+  await withFetch(offline, async () => {
+    const html = await (await get('/resources/', { ...STATIC, NEWSLETTER_FORM_URL: 'https://evil.example.com/serve/x' })).text();
+    assert.ok(!html.includes('evil.example.com'));
+    assert.ok(html.includes('action="https://api.web3forms.com/submit"'));
+  });
+  resetCaches();
+});

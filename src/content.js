@@ -97,6 +97,17 @@ export const CONTENT = {
         limited: 'Too many attempts in a short time. Please try again later.',
         error: 'Could not save your subscription. Please try again or email me.',
       },
+      // Brevo newsletter (static hosting): shown below the catalog, and its wording replaces the launch form's.
+      newsletter: {
+        badge: 'NEWSLETTER',
+        title: 'Free resources in your inbox.',
+        text: 'Prompts, mockups and templates from my projects. One email when there’s something new, no spam.',
+        submit: 'Subscribe',
+        consent: 'I’d like to receive emails with resources and news from sirtraver.',
+        privacy: 'You’ll get an email to confirm your subscription, and every email has a link to unsubscribe. More in the',
+        confirm: 'Almost there: check your inbox and confirm your email.',
+        success: 'Almost there: check your inbox and confirm your email.',
+      },
     },
 
     about: {
@@ -259,6 +270,17 @@ export const CONTENT = {
         confirmed: 'Email confirmado. Ya estás en la lista.',
         limited: 'Demasiados intentos en poco tiempo. Inténtalo más tarde.',
         error: 'No se ha podido guardar. Inténtalo de nuevo o escríbeme por email.',
+      },
+      // Newsletter de Brevo (hosting estático): debajo del catálogo; su texto sustituye al del aviso de lanzamiento.
+      newsletter: {
+        badge: 'NEWSLETTER',
+        title: 'Recursos gratis en tu correo.',
+        text: 'Prompts, mockups y plantillas de mis proyectos. Un email cuando haya algo nuevo, sin spam.',
+        submit: 'Suscribirme',
+        consent: 'Quiero recibir emails con recursos y novedades de sirtraver.',
+        privacy: 'Recibirás un email para confirmar la suscripción, y cada email incluye un enlace para darte de baja. Más información en',
+        confirm: 'Casi listo: revisa tu correo y confirma tu email.',
+        success: 'Casi listo: revisa tu correo y confirma tu email.',
       },
     },
 

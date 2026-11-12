@@ -10,9 +10,9 @@ export function legalPage(kind, lang) {
   const page = t[kind];
   const path = LEGAL_PAGES[kind][lang];
   // Integrations are only described while they are switched on.
-  const { analytics, newsletter, contactEmail, waitlistForm } = runtime();
+  const { analytics, newsletter, newsletterForm, contactEmail, waitlistForm } = runtime();
   const optional = kind === 'privacy'
-    ? [...(newsletter || contactEmail ? [t.optional.email] : []), ...(waitlistForm ? [t.optional.forms] : []), ...(analytics ? [t.optional.analytics] : [])]
+    ? [...(newsletter || contactEmail ? [t.optional.email] : []), ...(newsletterForm ? [t.optional.newsletter] : []), ...(waitlistForm ? [t.optional.forms] : []), ...(analytics ? [t.optional.analytics] : [])]
     : [];
   const sections = [...page.sections.slice(0, -1), ...optional, ...page.sections.slice(-1)];
   return layout({

@@ -27,6 +27,13 @@ export const PORTRAIT = { path: '/assets/cv-portrait.jpg', width: 600, height: 5
 // Hosts allowed for remote images (Gumroad product thumbnails).
 export const GUMROAD_IMAGE_HOSTS = ['public-files.gumroad.com', 'gumroad-public-storage.s3.amazonaws.com'];
 
+// Public identifiers for optional integrations. They are not secrets (they appear in every
+// page), so they live here and reach every deploy without a .env file. Empty = switched off.
+// Umami Cloud: Settings → Websites → Edit → Website ID.
+export const ANALYTICS = { src: 'https://cloud.umami.is/script.js', websiteId: '' };
+// Brevo: Contacts → Forms → (form) → Share → embed code, the <form action="…sibforms.com/serve/…"> URL.
+export const NEWSLETTER_FORM = '';
+
 // Website owner, shown in the legal notice. Empty fields are not displayed.
 export const LEGAL = {
   holder: 'Javier Traver',

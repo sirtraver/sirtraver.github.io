@@ -20,6 +20,22 @@
       }
 
       let result = 'error';
+      // Brevo's hosted form does not allow reading its answer from another site, so the
+      // request is sent as a plain form post and the visitor is asked to confirm by email.
+      if (form.dataset.format === 'brevo') {
+        try {
+          await fetch(form.action, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) });
+          result = 'confirm';
+          form.dispatchEvent(new CustomEvent('sirtraver:submitted', { bubbles: true }));
+        } catch {
+          result = 'error';
+        }
+        status.textContent = form.dataset[result] || form.dataset.error;
+        if (result === 'confirm') form.reset();
+        button.disabled = false;
+        return;
+      }
+
       try {
         const response = await fetch(form.action, {
           method: 'POST',

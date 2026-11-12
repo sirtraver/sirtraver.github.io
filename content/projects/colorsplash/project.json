@@ -11,13 +11,19 @@
       "Identidad visual",
       "Packaging",
       "Comunicación de marca",
-      "Aplicación en punto de venta"
+      "Aplicación en punto de venta",
+      "Packshot para tienda online",
+      "Fotografía de producto con IA",
+      "Piezas para redes"
     ],
     "en": [
       "Visual identity",
       "Packaging",
       "Brand communication",
-      "Retail application"
+      "Retail application",
+      "E-commerce packshot",
+      "AI product photography",
+      "Social pieces"
     ]
   },
   "category": "Visual identity",
@@ -38,7 +44,11 @@
   "portfolioOrder": 4,
   "tools": [
     "Affinity",
-    "ChatGPT"
+    "ChatGPT",
+    "Higgsfield",
+    "Nano Banana 2",
+    "Seedance 2.0",
+    "Claude"
   ],
   "palette": [
     {
@@ -100,6 +110,16 @@
       "text": {
         "es": "Las latas mantienen la posición de la marca, el nombre del color y su código. La caja de presentación reúne la gama y el expositor utiliza el color para ordenar el punto de venta. En la campaña, el mismo esquema se adapta a cuatro escenas y permite reconocer la familia sin repetir exactamente la misma imagen.",
         "en": "The tins keep the mark, colour name and code in consistent positions. A presentation box brings the range together, while the display uses colour to organise the retail setting. The campaign adapts the same scheme to four scenes, making the family recognisable without repeating the exact same image."
+      }
+    },
+    {
+      "title": {
+        "es": "Extensión de campaña",
+        "en": "Campaign extension"
+      },
+      "text": {
+        "es": "En 2026 la campaña «Paint it» se amplió con imagen generada con IA a partir de los propios botes de la marca: el packshot para tienda online, los cuatro colores saltando de sus botes, una gota de cian, una pared a medio pintar en magenta y un trazo negro. Los titulares se maquetaron después siguiendo la campaña original.",
+        "en": "In 2026 the “Paint it” campaign was extended with AI-generated imagery built from the brand’s own tins: the e-commerce packshot, the four colours splashing out of their tins, a drop of cyan, a half-painted magenta wall and a black brushstroke. Headlines were laid out afterwards following the original campaign."
       }
     }
   ],

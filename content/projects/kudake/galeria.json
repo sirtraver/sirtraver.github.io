@@ -89,5 +89,40 @@
     },
     "layout": "full",
     "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/5b7fc4257014407.6acd6eb1f1228.jpg"
+  },
+  {
+    "file": "imagenes/kudake-japan-burgers-campana-01.webp",
+    "caption": {
+      "es": "Pieza de campaña «砕け!»: smash burger doble en su papel impreso sobre la bandeja azul.",
+      "en": "Campaign piece “砕け!”: double smash burger in its printed paper on the blue tray."
+    }
+  },
+  {
+    "file": "imagenes/kudake-japan-burgers-campana-02.webp",
+    "caption": {
+      "es": "Foto cenital para apps de delivery: hamburguesa, patatas, bebida y salsa sobre fondo crema.",
+      "en": "Top-down delivery app photo: burger, fries, drink and sauce on a cream background."
+    }
+  },
+  {
+    "file": "imagenes/kudake-japan-burgers-campana-03.webp",
+    "caption": {
+      "es": "Pieza «Para llevar. Para ya.»: bolsa, caja y vaso de KUDAKE! en un banco de una calle de noche.",
+      "en": "“Para llevar. Para ya.” piece: KUDAKE! bag, box and cup on a bench in a street at night."
+    }
+  },
+  {
+    "file": "imagenes/kudake-japan-burgers-campana-04.webp",
+    "caption": {
+      "es": "Pieza «Bordes que crujen.»: macro de los bordes caramelizados de la carne con queso fundido.",
+      "en": "“Bordes que crujen.” piece: macro of the caramelised patty edges with melted cheese."
+    }
+  },
+  {
+    "file": "imagenes/kudake-japan-burgers-campana-05.webp",
+    "caption": {
+      "es": "Banner «SMASH.»: la prensa aplastando la carne en la plancha.",
+      "en": "“SMASH.” banner: the press smashing the beef on the griddle."
+    }
   }
 ]

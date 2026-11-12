@@ -152,7 +152,7 @@ test('the three PDF projects are labelled as concepts on cards, pages and viewer
       assert.equal(project.conceptual, true, slug);
       assert.equal(project.client, '', 'independent concepts have no commissioned client');
       assert.equal(project.behance, '', 'local projects must not point to an invented Behance page');
-      assert.equal(project.images.length, 6, 'all six source pages are retained');
+      assert.ok(project.images.length >= 6, 'all six source pages are retained');
       assert.ok(project.palette.length >= 2, 'the brand colours are documented as swatches');
       assert.equal(galleries[slug].conceptual, true);
       const card = home.match(new RegExp(`<a class="project-card[^"]*"[^>]*data-project="${slug}"[\\s\\S]*?</a>`))[0];
@@ -182,7 +182,7 @@ test('concept narratives reach both SSR pages and the in-page viewer without fab
   const data = await (await get(GALLERIES_URL)).json();
   for (const slug of ['colorsplash', 'olmedo-clasico', 'autoescuela-oasis']) {
     const project = findProject(slug);
-    assert.equal(project.caseStudy.length, 3);
+    assert.ok(project.caseStudy.length >= 3);
     assert.equal(project.client, '');
     // The result states what the concept demonstrates; it never claims a client, figures or an outcome.
     assert.ok(project.result.es.startsWith('Proyecto conceptual.') && project.result.en.startsWith('Concept project.'), slug);

@@ -44,5 +44,40 @@
       "en": "Retail display with paint tins grouped by colour and the Paint it message."
     },
     "layout": "pair"
+  },
+  {
+    "file": "imagenes/07.webp",
+    "caption": {
+      "es": "Packshot del bote Amarillo Sol sobre fondo blanco para tienda online.",
+      "en": "Amarillo Sol tin packshot on a white background for an online shop."
+    }
+  },
+  {
+    "file": "imagenes/08.webp",
+    "caption": {
+      "es": "Banner «PAINT IT.»: los cuatro botes con salpicaduras de su color.",
+      "en": "“PAINT IT.” banner: the four tins with splashes of their own colour."
+    }
+  },
+  {
+    "file": "imagenes/09.webp",
+    "caption": {
+      "es": "Post «PAINT IT CYAN.»: una gota cae sobre la pintura cian del bote abierto.",
+      "en": "“PAINT IT CYAN.” post: a drop falls into the cyan paint of the open tin."
+    }
+  },
+  {
+    "file": "imagenes/10.webp",
+    "caption": {
+      "es": "Pieza «PAINT IT MAGENTA.»: una pared a medio pintar con el bote, la bandeja y el rodillo.",
+      "en": "“PAINT IT MAGENTA.” piece: a half-painted wall with the tin, tray and roller."
+    }
+  },
+  {
+    "file": "imagenes/11.webp",
+    "caption": {
+      "es": "Pieza «PAINT IT BLACK.»: un trazo de pintura negra sobre la pared y el bote Negro Profundo.",
+      "en": "“PAINT IT BLACK.” piece: a black brushstroke on the wall and the Negro Profundo tin."
+    }
   }
 ]

@@ -16,14 +16,22 @@
       "Interiorismo",
       "Merchandising",
       "Packaging",
-      "Cartelería"
+      "Cartelería",
+      "Fotografía de producto con IA",
+      "Imágenes para apps de delivery",
+      "Piezas para redes",
+      "Spot vertical de 8 s"
     ],
     "en": [
       "Visual identity",
       "Interior",
       "Merchandise",
       "Packaging",
-      "Posters"
+      "Posters",
+      "AI product photography",
+      "Delivery app images",
+      "Social pieces",
+      "8-second vertical spot"
     ]
   },
   "intro": {
@@ -41,7 +49,11 @@
   "portfolioOrder": 3,
   "tools": [
     "Affinity",
-    "ChatGPT"
+    "ChatGPT",
+    "Higgsfield",
+    "Nano Banana 2",
+    "Seedance 2.0",
+    "Claude"
   ],
   "palette": [
     {
@@ -100,6 +112,16 @@
         "es": "El sello cambia de escala y se repite en papel, vasos, cajas, prendas y cartelería. En el espacio interior, el damero y la rotulación prolongan el mismo lenguaje. Las aplicaciones muestran cómo una identidad puede acompañar todo el recorrido de la marca sin perder reconocimiento al cambiar de material o de formato.",
         "en": "The stamp changes scale and repeats across paper, cups, boxes, clothing and posters. Checkerboard surfaces and lettering extend the same language into the interior. The applications show how an identity can accompany the whole brand experience while remaining recognisable across materials and formats."
       }
+    },
+    {
+      "title": {
+        "es": "Extensión de campaña",
+        "en": "Campaign extension"
+      },
+      "text": {
+        "es": "En 2026 la identidad se llevó a campaña con imagen generada con IA a partir del propio packaging de la marca: una hamburguesa protagonista en su papel impreso, la foto cenital para apps de delivery, el pedido para llevar en una calle de noche, un macro de los bordes crujientes, un banner del momento «smash» y un spot vertical de 8 segundos. Los titulares se maquetaron después con la tipografía de la identidad. Estas piezas son spec work, sin relación con ninguna marca real.",
+        "en": "In 2026 the identity was taken into a campaign with AI-generated imagery built from the brand’s own packaging: a hero burger in its printed paper, a top-down shot for delivery apps, the takeaway order on a street at night, a macro of the crispy edges, a banner of the smash moment and an 8-second vertical spot. Headlines were laid out afterwards in the identity’s typefaces. These pieces are spec work, not affiliated with any real brand."
+      }
     }
   ],
   "designDetails": [
@@ -137,5 +159,14 @@
   "paletteNote": {
     "es": "Rice Cream funciona como fondo y aporta calidez. Electric Cobalt estructura la identidad y Chili Orange concentra los acentos. La relación entre un tono claro y dos colores intensos mantiene el carácter de la marca tanto en una pieza de comunicación como en un envase.",
     "en": "Rice Cream provides a warm ground. Electric Cobalt structures the identity, while Chili Orange concentrates the accents. One light tone and two vivid colours preserve the brand’s character across communication and packaging."
+  },
+  "video": {
+    "src": "/video/kudake/spot.mp4",
+    "poster": "imagenes/kudake-japan-burgers-campana-01.webp",
+    "aspect": "9:16",
+    "caption": {
+      "es": "Spot vertical de 8 s para TikTok y Reels: la prensa aplasta la carne en la plancha, se funde el queso y cierra con la bandeja completa de KUDAKE!.",
+      "en": "8-second vertical spot for TikTok and Reels: the press smashes the beef on the griddle, the cheese melts and it closes on the full KUDAKE! tray."
+    }
   }
 }

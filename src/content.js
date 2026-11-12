@@ -47,10 +47,10 @@ export const CONTENT = {
     home: {
       title: `Javier Traver — ${ROLE} in Madrid | sirtraver`,
       description:
-        `Campaign visuals, AI product images and spots by Javier Traver, ${ROLE} based in Madrid. Art direction and design for product brands.`,
+        `Brand identity, product images and spots by Javier Traver, ${ROLE} based in Madrid. Art direction and design for product brands.`,
       overline: `Javier Traver · ${ROLE}`,
-      heading: 'Campaign visuals with character.',
-      lead: 'AI product images and spots to launch and advertise your brand.',
+      heading: 'Visual design & marketing.',
+      lead: 'Brand identity, product images and spots to launch and advertise your brand.',
       workTitle: 'Selected work',
       workOrder: 'Identity · Packaging · Communication',
       gridLabel: 'Design projects',
@@ -119,11 +119,11 @@ export const CONTENT = {
       "role": ROLE,
       "location": "Madrid, Spain",
       "positionTitle": [
-        "Campaign visuals",
-        "you get at a glance."
+        "Identity, imagery and spots",
+        "for product brands."
       ],
       "lead": `I’m Javier Traver, ${ROLE}, working freelance since 2017 and a Design graduate from Universidad Complutense de Madrid.`,
-      "bio": "I work on campaign visuals, product images and AI spots for brands, and on the visual identity that holds them together. My experience also includes product photography and visual content editing.",
+      "bio": "I design brand identities and carry them into product images and spots, ready to launch and advertise. My experience also includes product photography and visual content editing.",
       "currentStudy": "I’m currently studying an Advanced Vocational Qualification in Marketing & Advertising at UFV, expanding my understanding of brands, their audiences and how they communicate.",
       "experience": "Professional experience",
       "currentEducation": "CURRENT EDUCATION",
@@ -221,10 +221,10 @@ export const CONTENT = {
     home: {
       title: `Javier Traver — ${ROLE} en Madrid | sirtraver`,
       description:
-        `Visuales de campaña, imágenes de producto y spots con IA de Javier Traver, ${ROLE} en Madrid. Dirección de arte y diseño para marcas de producto.`,
+        `Identidad de marca, imágenes de producto y spots de Javier Traver, ${ROLE} en Madrid. Dirección de arte y diseño para marcas de producto.`,
       overline: `Javier Traver · ${ROLE}`,
-      heading: 'Visuales de campaña con carácter.',
-      lead: 'Imágenes de producto y spots con IA para lanzar y anunciar tu marca.',
+      heading: 'Diseño visual y marketing.',
+      lead: 'Identidad de marca, imágenes de producto y spots para lanzar y anunciar tu marca.',
       workTitle: 'Proyectos seleccionados',
       workOrder: 'Identidad · Packaging · Comunicación',
       gridLabel: 'Proyectos de diseño',
@@ -293,11 +293,11 @@ export const CONTENT = {
       "role": ROLE,
       "location": "Madrid, España",
       "positionTitle": [
-        "Visuales de campaña",
-        "que se entienden de un vistazo."
+        "Identidad, imagen y spots",
+        "para marcas de producto."
       ],
       "lead": `Soy Javier Traver, ${ROLE}, freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid.`,
-      "bio": "Trabajo en visuales de campaña, imágenes de producto y spots con IA para marcas, y en la identidad visual que los sostiene. Mi experiencia también abarca la fotografía de producto y la edición de contenidos visuales.",
+      "bio": "Diseño identidades de marca y las llevo a imágenes y spots de producto, listos para lanzar y anunciar. Mi experiencia también abarca la fotografía de producto y la edición de contenidos visuales.",
       "currentStudy": "Actualmente estudio el Grado Superior en Marketing y Publicidad en la UFV. Una formación que amplía mi perspectiva sobre las marcas, sus públicos y cómo comunicar.",
       "experience": "Experiencia profesional",
       "currentEducation": "FORMACIÓN ACTUAL",

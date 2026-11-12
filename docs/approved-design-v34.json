@@ -1,11 +1,11 @@
 {
-  "version": "v58 — SEO: favicon from the SIR TRA VER logo, VideoObject + video sitemap, image licence and sizes, descriptive image names, project titles with discipline",
+  "version": "v60 — Home and About copy: Visual design & marketing; brand identity, product images and spots (no AI mention)",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "b77e825bbb28dba8b728f5a3bfbada7f29b014828d2e5ca395702fc3a9c5fb92",
-    "/es/": "773c5add73ea46a129ad8bff904a58de4e501d91c6cbc214edc6d10c0483614e",
-    "/about/": "58247484f6f24c22f5d59750fa2851446ebd9fe22bb7cfc40e959a88009db059",
-    "/es/about/": "abc17890fd761cd249f5f9e980ecc6623e37e5b9c5d60e5c97bc27d2824eb8b4",
+    "/": "bb626e67bb2a889e52d36d20b88a59462f97b2f497ada31058b3303774d1699d",
+    "/es/": "533b518fe8ece309061e771c8b203a8545a916a1592aa40eb004bf7c67958e62",
+    "/about/": "63f19ba3dd9a43e27dce1f2f417d1ef18ba3000802685bba767dde260319f711",
+    "/es/about/": "ea3d832547c735cb1cce3b16329eb276496016aada294fb28083247ee1d829e9",
     "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
     "/es/resources/": "8309c71d6fb2bde7c7a44eb22e278c650ede1b9b593db12e02b3cb29be6dc8e3"
   },

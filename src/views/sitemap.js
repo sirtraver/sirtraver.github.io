@@ -18,7 +18,7 @@ export function sitemap(projects, archived, lastModified) {
 
   // Only images hosted on this domain are listed.
   // Spots of a project, in the language of the page that shows them.
-  const videoTags = (project, lang) => project.videos.map((video) => `<video:video><video:thumbnail_loc>${escape(absoluteUrl(largestUrl(video.poster)))}</video:thumbnail_loc><video:title>${escape(`${projectName(project, lang)} · Spot ${video.aspect}`)}</video:title><video:description>${escape(video.caption[lang])}</video:description><video:content_loc>${escape(absoluteUrl(video.src))}</video:content_loc><video:duration>${video.duration}</video:duration><video:publication_date>${video.date}</video:publication_date></video:video>`).join('');
+  const videoTags = (project, lang) => project.videos.map((video) => `<video:video><video:thumbnail_loc>${escape(absoluteUrl(largestUrl(video.poster)))}</video:thumbnail_loc><video:title>${escape(`${projectName(project, lang)} · ${video.title?.[lang] || `Spot ${video.aspect}`}`)}</video:title><video:description>${escape(video.caption[lang])}</video:description><video:content_loc>${escape(absoluteUrl(video.src))}</video:content_loc><video:duration>${video.duration}</video:duration><video:publication_date>${video.date}</video:publication_date></video:video>`).join('');
 
   const entry = (paths, lang, pictures, videos = '') => {
     pictures = pictures.filter((src) => src.startsWith(`${ORIGIN}/`));

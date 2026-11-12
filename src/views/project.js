@@ -105,7 +105,7 @@ function schema(project, lang, path, name, description) {
   const videoNodes = project.videos.map((video, index) => ({
     '@type': 'VideoObject',
     '@id': `${pageUrl}#video-${index + 1}`,
-    name: `${name} · Spot ${video.aspect}`,
+    name: `${name} · ${video.title?.[lang] || `Spot ${video.aspect}`}`,
     description: video.caption[lang] || description,
     thumbnailUrl: absoluteUrl(largestUrl(video.poster)),
     contentUrl: absoluteUrl(video.src),

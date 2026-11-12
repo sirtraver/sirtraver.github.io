@@ -59,6 +59,16 @@
         "es": "La presentación concentra la atención en una composición de alto contraste. Los remates, las proporciones de las letras y el espacio entre palabras sostienen el carácter de la pieza. El protagonismo recae en el ritmo del título y en su relación con el espacio.",
         "en": "The presentation focuses attention on a high-contrast composition. Serifs, letter proportions and spacing between words carry its character. The title’s rhythm and its relationship with space lead the piece."
       }
+    },
+    {
+      "title": {
+        "es": "La animación",
+        "en": "The animation"
+      },
+      "text": {
+        "es": "La composición fija se completa con una animación de 40 segundos. Cada palabra entra al compás de la canción: crece, gira o cambia de color según su peso en el verso, y algunas frases se apilan o se tuercen para seguir el ritmo de la voz. La tipografía hace a la vez de texto y de imagen.",
+        "en": "The still composition is completed by a 40-second animation. Each word enters on the beat of the song: it grows, turns or changes colour according to its weight in the line, and some phrases stack or bend to follow the rhythm of the voice. Typography works as both text and image."
+      }
     }
   ],
   "designDetails": [
@@ -92,5 +102,19 @@
         "en": "Black and white remove colour distractions and clearly separate figure from ground. Gaps between lines and around the block control the tension. With so few elements, a change in position or scale has a visible effect on the whole."
       }
     }
-  ]
+  ],
+  "video": {
+    "src": "/video/type-in-motion/animacion.mp4",
+    "poster": "imagenes/type-in-motion-diseno-visual-01.webp",
+    "aspect": "16:9",
+    "date": "2019-08-03",
+    "title": {
+      "es": "Animación tipográfica",
+      "en": "Kinetic typography"
+    },
+    "caption": {
+      "es": "Animación de 40 s: la letra de «Subterranean Homesick Blues», de Bob Dylan, avanza al ritmo de la canción con cambios de escala, giros y acentos de color.",
+      "en": "40-second animation: the lyrics of Bob Dylan’s “Subterranean Homesick Blues” move to the rhythm of the song with changes of scale, rotations and colour accents."
+    }
+  }
 }

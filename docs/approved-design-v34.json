@@ -1,19 +1,19 @@
 {
-  "version": "v54.1 — Encuadre de portada por proyecto (coverPosition); SOLFA muestra el nombre entero",
+  "version": "v55 — Caso OYE con dos spots (9:16 y 16:9) y varios vídeos por caso",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "9100669bf1d67b99963482bb126b734e5a25391883f72dcc3f8b80ad6949288e",
-    "/es/": "fe78c9cdffb565bf2d3126644048f8f22673e66ca05f461dd674b0cf4121887e",
+    "/": "e97d1e93899a858d7381193873088fc1705755c8ae06ec070ee5877e0220b6dc",
+    "/es/": "4125e0c188ca204ebd342d65c4dff5d27a055c90a40f2e0e9d9260273ca929ee",
     "/about/": "58247484f6f24c22f5d59750fa2851446ebd9fe22bb7cfc40e959a88009db059",
     "/es/about/": "abc17890fd761cd249f5f9e980ecc6623e37e5b9c5d60e5c97bc27d2824eb8b4",
     "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
     "/es/resources/": "8309c71d6fb2bde7c7a44eb22e278c650ede1b9b593db12e02b3cb29be6dc8e3"
   },
-  "cssPrefixBytes": 92766,
-  "cssPrefixHash": "8bf5452404bd8abe5f9880d286ea2b169fb310ce571a1895422117164603347f",
+  "cssPrefixBytes": 92795,
+  "cssPrefixHash": "0ce687bc425b6021398156263230c90162e61d84d9485b354756e11cf1a1ffc6",
   "homeShellHashes": {
-    "/": "61cae2d60c91029c14f65433a81de160a2bef6b7fd471d733f35592c62a71f16",
-    "/es/": "d56266eee6495cd1980f479e2d6127b4d9df3323a278c5aa6b6ca3f167cf0096"
+    "/": "472d89d80bacce6ac63a424d9fc7faa53df3956546df53e362836a0766feec92",
+    "/es/": "b802831fa571b5889172ea7a6c28e0258e80fd07ea0e1690845e5cd9eb80daf1"
   },
   "resourcesShellHashes": {
     "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",

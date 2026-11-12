@@ -41,6 +41,7 @@
   "archived": false,
   "portfolioOrder": 1,
   "hover": "imagenes/02.webp",
+  "coverPosition": "50% 88%",
   "video": {
     "src": "/video/solfa/spot.mp4",
     "poster": "imagenes/02.webp",

@@ -2632,3 +2632,6 @@ html:has(dialog[open]) .site-cursor { display: none; }
 .project-video { display: grid; justify-items: center; margin: 0; }
 .project-video video { display: block; width: auto; max-width: 100%; height: min(82vh, 860px); aspect-ratio: var(--video-ratio, 16 / 9); background: #111; border-radius: 18px; object-fit: cover; }
 .project-video figcaption { justify-self: stretch; text-align: center; }
+
+/* Per-project crop of the cover on cards (project.json → coverPosition); centred by default. */
+.project-card .card-media > picture img { object-position: var(--cover-position, 50% 50%); }

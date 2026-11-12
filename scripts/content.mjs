@@ -43,6 +43,7 @@ async function readProject(slug, media, projectsDir) {
     video: data.video
       ? { src: data.video.src, aspect: data.video.aspect, caption: bilingual(data.video.caption), poster: media.images[data.images.findIndex(image => image.file === data.video.poster)] }
       : null,
+    coverPosition: data.coverPosition ? String(data.coverPosition) : '',
     featured: data.featured === true,
     archived: data.archived === true,
     cover: media.cover,

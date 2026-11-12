@@ -37,7 +37,7 @@ export function projectCard(project, lang, { priority = false } = {}) {
   const name = projectName(project, lang);
   const sizes = CARD_SIZES;
   const hover = project.hover ? html`<div class="card-hover" aria-hidden="true">${picture(project.hover, { alt: '', sizes })}</div>` : '';
-  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"${accentStyle(project) ? html` style="${accentStyle(project)}"` : ''}><div class="card-media" style="${coverTransition(project)}">${picture(project.cover, { alt: name, sizes, priority })}${hover}</div><div class="card-caption"><h3>${name}</h3><span class="card-year">${project.year}</span></div><p>${cardKind(project, lang)}</p></a>`;
+  return html`<a class="project-card" href="${projectPath(project, lang)}" data-project="${project.slug}"${accentStyle(project) ? html` style="${accentStyle(project)}"` : ''}><div class="card-media" style="${coverTransition(project)}${project.coverPosition ? `;--cover-position:${project.coverPosition}` : ''}">${picture(project.cover, { alt: name, sizes, priority })}${hover}</div><div class="card-caption"><h3>${name}</h3><span class="card-year">${project.year}</span></div><p>${cardKind(project, lang)}</p></a>`;
 }
 
 function schema(lang, projects) {

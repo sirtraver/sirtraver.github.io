@@ -76,6 +76,8 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
     if (image.layout !== undefined && !['full', 'pair'].includes(image.layout)) fail(`${image.file}: layout debe ser "full" o "pair"`);
   }
   if (data.hover !== undefined && !images.some((image) => image.file === data.hover)) fail('hover debe ser una de las imágenes de la galería');
+  // Optional crop of the cover on portfolio cards (CSS object-position, e.g. "50% 85%").
+  if (data.coverPosition !== undefined && !/^\d{1,3}% \d{1,3}%$/.test(data.coverPosition)) fail('coverPosition debe tener el formato "50% 85%"');
   // Optional spot: an MP4 in public/video/ (served from sirtraver.com) with a gallery image as poster.
   if (data.video !== undefined) {
     const video = data.video;

@@ -8,10 +8,14 @@ export const ORIGIN = 'https://sirtraver.com';
 export function resetCaches() {
   clearCatalogCache();
   resetRateLimits();
-  configure({});
+  configure(OFF);
 }
 
-export const get = (path, env = {}, ctx = {}, init = {}) => worker.fetch(new Request(ORIGIN + path, init), env, ctx);
+// Tests start with the optional integrations of config.js switched off; a test turns one on
+// by passing its value in env.
+export const OFF = { ANALYTICS_WEBSITE_ID: '', NEWSLETTER_FORM_URL: '' };
+
+export const get = (path, env = {}, ctx = {}, init = {}) => worker.fetch(new Request(ORIGIN + path, init), { ...OFF, ...env }, ctx);
 
 /** Replaces global fetch for the duration of fn (pages call Behance/Gumroad through it). */
 export async function withFetch(stub, fn) {

@@ -20,16 +20,17 @@
       }
 
       let result = 'error';
-      // Brevo's hosted form does not allow reading its answer from another site, so the
-      // request is sent as a plain form post and the visitor is asked to confirm by email.
+      // Brevo's hosted form takes a plain form post and answers {success: true|false}; the
+      // visitor then confirms by email (double opt-in).
       if (form.dataset.format === 'brevo') {
         try {
-          await fetch(form.action, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) });
-          result = 'confirm';
-          form.dispatchEvent(new CustomEvent('sirtraver:submitted', { bubbles: true }));
+          const response = await fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)) });
+          const body = await response.json();
+          result = response.ok && body.success === true ? 'confirm' : 'error';
         } catch {
           result = 'error';
         }
+        if (result === 'confirm') form.dispatchEvent(new CustomEvent('sirtraver:submitted', { bubbles: true }));
         status.textContent = form.dataset[result] || form.dataset.error;
         if (result === 'confirm') form.reset();
         button.disabled = false;

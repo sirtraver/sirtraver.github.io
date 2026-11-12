@@ -30,9 +30,9 @@ export const GUMROAD_IMAGE_HOSTS = ['public-files.gumroad.com', 'gumroad-public-
 // Public identifiers for optional integrations. They are not secrets (they appear in every
 // page), so they live here and reach every deploy without a .env file. Empty = switched off.
 // Umami Cloud: Settings → Websites → Edit → Website ID.
-export const ANALYTICS = { src: 'https://cloud.umami.is/script.js', websiteId: '' };
+export const ANALYTICS = { src: 'https://cloud.umami.is/script.js', websiteId: '74c5feb9-cae7-4f0b-9873-f3d5b108967d' };
 // Brevo: Contacts → Forms → (form) → Share → embed code, the <form action="…sibforms.com/serve/…"> URL.
-export const NEWSLETTER_FORM = '';
+export const NEWSLETTER_FORM = 'https://32489d65.sibforms.com/serve/MUIFAMbVXOai-5puE6K_F1LqbxhHxTZ5kTRjD42WLiFIn0kRe1VfkWgfXOVHPAAwbVLv9YCIzPboPZVmRNOBS1OGJmdiGnGnepJUXAWuoAEhEsJ0EwYBBTDtMIMMU8E0JDzx3kBKYU3-n83jdDPQIIRkSxSs9DXttLYS5MBnxLX2mxo85eEhv-ZKu2fF7jI26IErS4KTCqLx2VkoxA==';
 
 // Website owner, shown in the legal notice. Empty fields are not displayed.
 export const LEGAL = {

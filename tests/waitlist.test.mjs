@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { beforeEach, test } from 'node:test';
 import { subscribe, waitlistAdmin } from '../src/services/waitlist.js';
-import { ORIGIN, get, memoryKv, resetCaches } from './helpers.mjs';
+import { OFF, ORIGIN, get, memoryKv, resetCaches } from './helpers.mjs';
 
 beforeEach(resetCaches);
 
@@ -67,7 +67,7 @@ test('the export stays private: 404 without the right token, CSV with it', async
 test('with Brevo configured, sign-ups get a double opt-in email', async () => {
   const calls = [];
   const KV = memoryKv();
-  const env = { KV, BREVO_API_KEY: 'k', BREVO_LIST_ID: '7', BREVO_DOI_TEMPLATE_ID: '3' };
+  const env = { ...OFF, KV, BREVO_API_KEY: 'k', BREVO_LIST_ID: '7', BREVO_DOI_TEMPLATE_ID: '3' };
   const { configure } = await import('../src/lib/runtime.js');
   configure(env);
   const original = globalThis.fetch;

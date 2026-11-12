@@ -25,10 +25,11 @@ function brevoForm(url) {
 }
 
 export function configure(env = {}) {
+  // An env value, even an empty one, overrides config.js (empty switches it off).
   const analyticsSrc = env.ANALYTICS_SRC || ANALYTICS.src;
-  const analyticsId = env.ANALYTICS_WEBSITE_ID || ANALYTICS.websiteId;
+  const analyticsId = env.ANALYTICS_WEBSITE_ID ?? ANALYTICS.websiteId;
   const analyticsOrigin = origin(analyticsSrc);
-  const newsletterForm = brevoForm(env.NEWSLETTER_FORM_URL || NEWSLETTER_FORM);
+  const newsletterForm = brevoForm(env.NEWSLETTER_FORM_URL ?? NEWSLETTER_FORM);
   settings = {
     // Umami (or compatible) cookieless analytics.
     analytics: analyticsOrigin && analyticsId

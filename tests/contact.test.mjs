@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { beforeEach, test } from 'node:test';
 import { configure } from '../src/lib/runtime.js';
 import { waitlistAdmin } from '../src/services/waitlist.js';
-import { ORIGIN, get, memoryKv, resetCaches, withFetch } from './helpers.mjs';
+import { OFF, ORIGIN, get, memoryKv, resetCaches, withFetch } from './helpers.mjs';
 
 beforeEach(resetCaches);
 
@@ -85,7 +85,7 @@ test('messages can be exported privately as CSV', async () => {
 test('privacy policy mentions Brevo and analytics only when they are enabled', async () => {
   const plain = await (await get('/privacy/')).text();
   assert.ok(!plain.includes('Brevo') && !plain.includes('Umami'));
-  configure({ BREVO_API_KEY: 'k', CONTACT_TO: 'j@example.com', ANALYTICS_SRC: 'https://stats.example.com/script.js', ANALYTICS_WEBSITE_ID: 'abc' });
+  configure({ ...OFF, BREVO_API_KEY: 'k', CONTACT_TO: 'j@example.com', ANALYTICS_SRC: 'https://stats.example.com/script.js', ANALYTICS_WEBSITE_ID: 'abc' });
   const env = { BREVO_API_KEY: 'k', CONTACT_TO: 'j@example.com', ANALYTICS_SRC: 'https://stats.example.com/script.js', ANALYTICS_WEBSITE_ID: 'abc' };
   const response = await get('/privacy/', env);
   const html = await response.text();

@@ -42,7 +42,7 @@ function subscribeForm(lang, subscription, id) {
     ` : ''}<label for="${id}">${copy.emailLabel}</label>
     <div class="launch-input"><input id="${id}" name="${brevo ? 'EMAIL' : 'email'}" type="email" autocomplete="email" required maxlength="254" placeholder="${copy.placeholder}"><button type="submit">${copy.submit}</button></div>
     <div class="form-trap" aria-hidden="true"><label>Website<input name="${brevo ? 'email_address_check' : form ? 'botcheck' : 'website'}" tabindex="-1" autocomplete="off"></label></div>
-    <label class="launch-consent"><input name="${brevo ? 'OPT_IN' : 'consent'}" type="checkbox"${brevo ? html` value="1"` : ''} required> <span>${copy.consent}</span></label>
+    <label class="launch-consent"><input${brevo ? '' : html` name="consent"`} type="checkbox" required> <span>${copy.consent}</span></label>
     <p class="launch-privacy">${copy.privacy} <a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].privacy.heading}</a>.</p>
     <p role="status" aria-live="polite">${status}</p>
   </form>`;

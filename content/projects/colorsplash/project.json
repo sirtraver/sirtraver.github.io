@@ -47,7 +47,8 @@
     "ChatGPT",
     "Higgsfield",
     "Nano Banana 2",
-    "Seedance 2.0",
+    "Google Flow",
+    "Omni 1.2 Flash",
     "Claude"
   ],
   "palette": [
@@ -118,8 +119,8 @@
         "en": "Campaign extension"
       },
       "text": {
-        "es": "En 2026 la campaña «Paint it» se amplió con imagen generada con IA a partir de los propios botes de la marca: el packshot para tienda online, los cuatro colores saltando de sus botes, una gota de cian, una pared a medio pintar en magenta y un trazo negro. Los titulares se maquetaron después siguiendo la campaña original.",
-        "en": "In 2026 the “Paint it” campaign was extended with AI-generated imagery built from the brand’s own tins: the e-commerce packshot, the four colours splashing out of their tins, a drop of cyan, a half-painted magenta wall and a black brushstroke. Headlines were laid out afterwards following the original campaign."
+        "es": "En 2026 la campaña «Paint it» se amplió con imagen generada con IA a partir de los propios botes de la marca: el packshot para tienda online, los cuatro colores saltando de sus botes, una gota de cian, una pared a medio pintar en magenta y un trazo negro. Los titulares se maquetaron después siguiendo la campaña original. Cierra la extensión un spot de 10 s en 16:9: un rodillo cubre de magenta una pared blanca y los cuatro colores saltan de sus botes.",
+        "en": "In 2026 the “Paint it” campaign was extended with AI-generated imagery built from the brand’s own tins: the e-commerce packshot, the four colours splashing out of their tins, a drop of cyan, a half-painted magenta wall and a black brushstroke. Headlines were laid out afterwards following the original campaign. A 10-second 16:9 spot completes the extension: a roller covers a white wall in magenta and the four colours burst out of their tins."
       }
     }
   ],
@@ -158,5 +159,14 @@
   "paletteNote": {
     "es": "Cian, magenta, amarillo y negro actúan como cuatro familias visuales. El contraste con la marca clara unifica los envases, mientras el color dominante permite diferenciar cada pieza. En comunicación, la paleta se extiende al espacio representado para que producto y escena formen una sola composición.",
     "en": "Cyan, magenta, yellow and black act as four visual families. The light mark unifies the packaging, while the dominant colour distinguishes each item. In communication, the palette extends into the depicted space so that product and scene form one composition."
+  },
+  "video": {
+    "src": "/video/colorsplash/spot.mp4",
+    "poster": "imagenes/08.webp",
+    "aspect": "16:9",
+    "caption": {
+      "es": "Spot de 10 s: un rodillo pinta de magenta una pared blanca y los cuatro colores saltan de sus botes al ritmo de la música.",
+      "en": "10-second spot: a roller paints a white wall magenta and the four colours burst out of their tins to the beat."
+    }
   }
 }

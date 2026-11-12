@@ -1,0 +1,159 @@
+{
+  "name": "SOLFA",
+  "date": "2026-11-12",
+  "order": 1,
+  "category": "Visual design",
+  "conceptual": true,
+  "draft": false,
+  "intro": {
+    "es": "Spec work — sin relación con ninguna marca real. Campaña de lanzamiento para un refresco de limón inventado: imágenes de producto, piezas para redes y un spot de 15 segundos, todo creado con IA y dirigido como una producción de foto y vídeo.",
+    "en": "Spec work — not affiliated with any real brand. A launch campaign for an invented lemon soda: product images, social pieces and a 15-second spot, all created with AI and art-directed like a photo and film production."
+  },
+  "client": "",
+  "role": {
+    "es": "Concepto, dirección de arte, generación de imagen y vídeo con IA, diseño de las piezas",
+    "en": "Concept, art direction, AI image and video generation, layout of the pieces"
+  },
+  "deliverables": {
+    "es": [
+      "Packshot para tienda online",
+      "Fotografía de producto y lifestyle",
+      "Key visual de campaña",
+      "Piezas para redes (1:1, 9:16, 16:9)",
+      "Spot de 15 s"
+    ],
+    "en": [
+      "E-commerce packshot",
+      "Product and lifestyle photography",
+      "Campaign key visual",
+      "Social pieces (1:1, 9:16, 16:9)",
+      "15-second spot"
+    ]
+  },
+  "tools": [
+    "Higgsfield",
+    "Nano Banana 2",
+    "Seedance 2.0",
+    "Claude"
+  ],
+  "behance": "",
+  "featured": false,
+  "archived": false,
+  "portfolioOrder": 1,
+  "hover": "imagenes/02.webp",
+  "video": {
+    "src": "/video/solfa/spot.mp4",
+    "poster": "imagenes/02.webp",
+    "aspect": "9:16",
+    "caption": {
+      "es": "Spot de 15 segundos «Sube el sol»: la lata se abre y la luz de la tarde va subiendo hasta que el sol rojo aparece detrás del producto.",
+      "en": "15-second spot “Turn up the sun”: the can opens and the afternoon light rises until the red sun appears behind the product."
+    }
+  },
+  "caseStudy": [
+    {
+      "title": {
+        "es": "El encargo",
+        "en": "The brief"
+      },
+      "text": {
+        "es": "Un refresco de limón con gas que llega a un lineal saturado de marcas de limón. El planteamiento es el de un lanzamiento real: una lata que se reconozca de lejos, una imagen de producto que funcione en la tienda online y una campaña que se pueda adaptar a cualquier formato de redes sin perder la idea.",
+        "en": "A sparkling lemon soda entering a shelf crowded with lemon brands. The brief is treated like a real launch: a can that reads from a distance, product images that work in an online shop, and a campaign that adapts to any social format without losing the idea."
+      }
+    },
+    {
+      "title": {
+        "es": "La idea",
+        "en": "The idea"
+      },
+      "text": {
+        "es": "SOLFA juega con dos lecturas: el sol y el solfeo. El círculo rojo de la lata es a la vez el sol de las seis de la tarde y una nota musical. De ahí sale el mensaje «Sube el sol»: abrir la lata es subir el volumen de la tarde. Las latas sobre peanas de distinta altura lo convierten en una escala, do, re, mi.",
+        "en": "SOLFA plays on two readings: sol, the sun, and solfa, the musical scale. The red circle on the can is both the six o’clock sun and a musical note. That leads to the line “Turn up the sun”: opening the can turns up the volume of the afternoon. Cans on plinths of rising height turn it into a scale, do, re, mi."
+      }
+    },
+    {
+      "title": {
+        "es": "Producción con IA",
+        "en": "AI production"
+      },
+      "text": {
+        "es": "Primero se fijó una imagen de referencia de la lata. Todas las demás imágenes y el spot se generaron a partir de ella, para que la etiqueta, el color y las proporciones no cambien de una pieza a otra. Los textos de campaña se maquetaron después sobre las imágenes, sin pedir a la IA que escribiera nada aparte de la propia etiqueta.",
+        "en": "A reference image of the can was fixed first. Every other image and the spot were generated from it, so the label, colour and proportions stay the same from piece to piece. The campaign copy was laid out on top of the images afterwards; the AI was never asked to write anything except the label itself."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": {
+        "es": "La lata",
+        "en": "The can"
+      },
+      "text": {
+        "es": "Una lata slim de 330 ml en amarillo mantequilla mate. El nombre va en vertical, en una sans geométrica muy pesada, y ocupa casi toda la altura: se lee de lejos y deja libre la parte superior para el círculo rojo y el sabor.",
+        "en": "A slim 330 ml can in matte butter yellow. The name runs vertically in a very heavy geometric sans and fills almost the full height: it reads from a distance and leaves the top free for the red circle and the flavour."
+      }
+    },
+    {
+      "title": {
+        "es": "Dirección de imagen",
+        "en": "Art direction"
+      },
+      "text": {
+        "es": "Luz dura de última hora de la tarde, sombras largas y nítidas y fondos de un solo color. El packshot sobre blanco cumple las normas de una tienda online; las escenas de terraza y azotea llevan la misma luz al contexto mediterráneo.",
+        "en": "Hard late-afternoon light, long crisp shadows and single-colour backdrops. The packshot on white meets online shop standards; the terrace and rooftop scenes carry the same light into a Mediterranean setting."
+      }
+    },
+    {
+      "title": {
+        "es": "Sistema de piezas",
+        "en": "System of pieces"
+      },
+      "text": {
+        "es": "Un mismo esquema para todos los formatos: titular en negro arriba a la izquierda, línea de marca debajo y el producto como protagonista. En la story el titular pasa a blanco sobre el cielo.",
+        "en": "One layout for every format: black headline top left, brand line below it and the product as the hero. On the story the headline turns white against the sky."
+      }
+    }
+  ],
+  "palette": [
+    {
+      "name": {
+        "es": "Amarillo mantequilla",
+        "en": "Butter yellow"
+      },
+      "hex": "#E9D27F",
+      "share": 55
+    },
+    {
+      "name": {
+        "es": "Rojo tomate",
+        "en": "Tomato red"
+      },
+      "hex": "#E03A24",
+      "share": 20
+    },
+    {
+      "name": {
+        "es": "Negro",
+        "en": "Black"
+      },
+      "hex": "#141414",
+      "share": 15
+    },
+    {
+      "name": {
+        "es": "Crema",
+        "en": "Cream"
+      },
+      "hex": "#F6E9C2",
+      "share": 10
+    }
+  ],
+  "paletteNote": {
+    "es": "El amarillo es el producto y el fondo; el rojo, el sol, y solo aparece una vez por pieza; el negro lleva el nombre y los titulares.",
+    "en": "Yellow is both the product and the backdrop; red is the sun and appears only once per piece; black carries the name and the headlines."
+  },
+  "result": {
+    "es": "Proyecto conceptual. Spec work: SOLFA es una marca inventada, sin relación con ninguna empresa real. Demuestra cómo se puede producir con IA una campaña de producto completa (packshot, fotografía, piezas de redes y spot) manteniendo el producto idéntico en todas las piezas.",
+    "en": "Concept project. Spec work: SOLFA is an invented brand, not affiliated with any real company. It shows how a complete product campaign (packshot, photography, social pieces and a spot) can be produced with AI while keeping the product identical across every piece."
+  }
+}

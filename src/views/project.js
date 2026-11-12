@@ -2,7 +2,7 @@
 // Project images stay in the page at one shared width, without a click-through viewer.
 import { ORIGIN, PERSON_ID } from '../config.js';
 import { CONTENT, PAGES, projectName, projectPath } from '../content.js';
-import { absoluteUrl } from '../lib/assets.js';
+import { absoluteUrl, assetUrl } from '../lib/assets.js';
 import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
@@ -30,6 +30,15 @@ function figure(image, index, total, name, lang, t) {
     alt: caption || t.imageAlt(name, index + 1, total),
     sizes: PROJECT_IMAGE_SIZES,
   })}</div>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
+}
+
+// The spot plays only when the visitor presses play (preload="none"): nothing heavy loads before.
+function spot(project, lang) {
+  const video = project.video;
+  if (!video) return '';
+  const [w, h] = video.aspect.split(':');
+  const caption = video.caption[lang];
+  return html`<figure class="project-video" style="--video-ratio: ${w} / ${h}"><video controls playsinline preload="none" poster="${largestUrl(video.poster)}" aria-label="${caption}"><source src="${assetUrl(video.src)}" type="video/mp4"></video>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
 }
 
 function gallery(images, name, lang, t) {
@@ -155,7 +164,7 @@ export function projectPage(project, siblings, lang) {
   </div>
   ${project.caseStudy.length ? html`<section class="project-story" aria-label="${t.project.story}">${project.caseStudy.map(section => html`<div><h2>${section.title[lang]}</h2><p>${section.text[lang]}</p></div>`)}</section>` : ''}
   ${design(project, lang, t.project)}
-  <div class="project-gallery">${gallery(project.images, name, lang, t.project)}</div>
+  <div class="project-gallery">${spot(project, lang)}${gallery(project.images, name, lang, t.project)}</div>
   ${project.result[lang] ? html`<section class="project-result"><h2>${t.project.resultTitle}</h2><p>${project.result[lang]}</p></section>` : ''}
   <nav class="project-pager" aria-label="${t.project.pagerLabel}">${
     previous ? html`<a href="${projectPath(previous, lang)}" rel="prev"${accentStyle(previous) ? html` style="${accentStyle(previous)}"` : ''}>${t.project.previous}<span>${projectName(previous, lang)}</span></a>` : html`<span></span>`

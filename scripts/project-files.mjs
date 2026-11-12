@@ -76,5 +76,13 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
     if (image.layout !== undefined && !['full', 'pair'].includes(image.layout)) fail(`${image.file}: layout debe ser "full" o "pair"`);
   }
   if (data.hover !== undefined && !images.some((image) => image.file === data.hover)) fail('hover debe ser una de las imágenes de la galería');
+  // Optional spot: an MP4 in public/video/ (served from sirtraver.com) with a gallery image as poster.
+  if (data.video !== undefined) {
+    const video = data.video;
+    if (!/^\/video\/[a-z0-9-]+\/[a-z0-9-]+\.mp4$/.test(video?.src ?? '')) fail('video.src debe ser una ruta como /video/proyecto/spot.mp4');
+    if (!images.some((image) => image.file === video.poster)) fail('video.poster debe ser una de las imágenes de la galería');
+    if (!['en', 'es'].every(lang => typeof video.caption?.[lang] === 'string')) fail('video.caption debe contener texto en español e inglés');
+    if (!/^\d+:\d+$/.test(video.aspect ?? '')) fail('video.aspect debe tener el formato 9:16');
+  }
   return { ...data, cover, images };
 }

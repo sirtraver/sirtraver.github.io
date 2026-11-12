@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { beforeEach, test } from 'node:test';
 import { ORIGIN, get, offline, resetCaches, withFetch } from './helpers.mjs';
-import { activeProjects, allProjects, archivedProjects } from '../src/projects.js';
+import { activeProjects, allProjects, archivedProjects, homeProjects } from '../src/projects.js';
 import { largestUrl } from '../src/lib/picture.js';
 
 beforeEach(resetCaches);
@@ -48,7 +48,7 @@ test('structured data parses, identifies the person and contains no HTML entitie
   }
   const home = JSON.parse(jsonLdBlocks(await render('/'))[0]);
   const list = home['@graph'].find((node) => node['@type'] === 'ItemList');
-  assert.equal(list.itemListElement.length, activeProjects.length);
+  assert.equal(list.itemListElement.length, homeProjects.length);
 });
 
 test('descriptions do not start with the uppercase overline', async () => {

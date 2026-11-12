@@ -60,15 +60,16 @@ test('home: the selected projects share one grid with lazy images and link to th
       assert.match(html, /style="background-color:#[0-9a-f]{6}"/, 'placeholder colour');
     }
     const english = await (await get('/')).text();
-    assert.ok(english.includes('<h3>sirtraver</h3><span class="card-year">2025</span></div><p>Visual identity</p>'));
+    assert.ok(english.includes('<h3>SOLFA</h3><span class="card-year">2026</span>'));
+    assert.ok(!english.includes('<h3>sirtraver</h3>'), 'the seventh project moves to "more projects" so the grid stays even');
     const spanish = await (await get('/es/')).text();
     assert.ok(!spanish.includes('<h3>Tipografía en movimiento</h3>'), 'archived work stays off the home grid');
-    assert.deepEqual(activeProjects.map(p => p.slug), ['kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
+    assert.deepEqual(activeProjects.map(p => p.slug), ['solfa', 'kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
     assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
     assert.ok(spanish.includes('<p class="archive-link"><a class="more-button" href="/es/archive/">Ver más proyectos'));
     const hovers = activeProjects.filter(p => p.hover).length;
     assert.equal(hovers, activeProjects.length, 'every selected project has a hover image');
-    assert.equal((spanish.match(/loading="lazy"/g) || []).length, activeProjects.length - 1 + hovers);
+    assert.equal((spanish.match(/loading="lazy"/g) || []).length, homeProjects.length - 1 + homeProjects.filter(p => p.hover).length);
     assert.ok(!spanish.includes('Último proyecto'));
   });
 });
@@ -82,7 +83,8 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       const html = await response.text();
       assert.ok(html.includes(`<link rel="canonical" href="${ORIGIN}${path}">`));
       assert.equal((html.match(/<h1\b/g) || []).length, 1);
-      assert.equal((html.match(/<figure[\s>]/g) || []).length, p.images.length, path);
+      assert.equal((html.match(/<figure[\s>]/g) || []).length, p.images.length + (p.video ? 1 : 0), path);
+      if (p.video) assert.ok(html.includes('<video controls playsinline preload="none"') && html.includes(`<source src="${p.video.src}`), 'the spot loads only on play');
       assert.equal((html.match(/class="project-image"/g) || []).length, p.images.length, path);
       assert.ok(!html.includes('class="is-full"') && !html.includes('class="gallery-pair"'), 'every image uses the same page column');
       assert.ok(!html.includes('data-zoom-src') && !html.includes('gallery-zoom') && !html.includes('image-zoom.js'), 'images do not open a viewer or a separate file');

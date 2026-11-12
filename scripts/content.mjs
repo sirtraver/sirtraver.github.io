@@ -39,6 +39,10 @@ async function readProject(slug, media, projectsDir) {
     palette: (data.palette ?? []).map(swatch => ({ name: bilingual(swatch.name), hex: String(swatch.hex).toUpperCase(), share: Number(swatch.share) || 0 })),
     // Second image that fades in when hovering the portfolio card (a gallery file).
     hover: data.hover ? media.images[data.images.findIndex(image => image.file === data.hover)] ?? null : null,
+    // Optional spot shown before the gallery (MP4 from public/video/, poster from the gallery).
+    video: data.video
+      ? { src: data.video.src, aspect: data.video.aspect, caption: bilingual(data.video.caption), poster: media.images[data.images.findIndex(image => image.file === data.video.poster)] }
+      : null,
     featured: data.featured === true,
     archived: data.archived === true,
     cover: media.cover,

@@ -1,19 +1,19 @@
 {
-  "version": "v53 — Analítica Umami, newsletter de Brevo en Recursos y registro de clics",
+  "version": "v54 — Caso SOLFA con spot en vídeo dentro del caso",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "16923f5970315b92c0a73e1ac6fe6f228b73d7524a48e9b3e2459efb4d4be36e",
-    "/es/": "4e2d673e7d856c176dec58fdcd8ee8c05d44a825a940564ef2284c24a00358a4",
+    "/": "628665982da1eb7dfd6c6d1c463f41154b8c30fd89db3b448ce6f13a6ffa65d7",
+    "/es/": "11c9273a663b65922338d2bf2191584ad58f8d2139fa6db4f8e85240d48ee347",
     "/about/": "58247484f6f24c22f5d59750fa2851446ebd9fe22bb7cfc40e959a88009db059",
     "/es/about/": "abc17890fd761cd249f5f9e980ecc6623e37e5b9c5d60e5c97bc27d2824eb8b4",
     "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
     "/es/resources/": "8309c71d6fb2bde7c7a44eb22e278c650ede1b9b593db12e02b3cb29be6dc8e3"
   },
-  "cssPrefixBytes": 92134,
-  "cssPrefixHash": "d2523462fd0b834543cbb8da48a03004c3dc015c0e8dbdb855a7d0aa464ed6d7",
+  "cssPrefixBytes": 92573,
+  "cssPrefixHash": "08a74a798340afca555946d6ed2f8efcd58e353b2cebfca30a5f36b249581680",
   "homeShellHashes": {
-    "/": "1587b345e6ac151bd1e77de672343af06f371d8657392542bcb49000139e3135",
-    "/es/": "940fb32ae96da6c0ff7f9c17194794fd26a053711c6809e4e86d4521ca62b9d5"
+    "/": "d15994f1d483deb4ce4fbf50156a464c9142b3c453a4e122fa3ba93443065286",
+    "/es/": "f5b48ad5af0ae92d26171721769c75d66ca05bf8fa82729f4d750fee9b444d50"
   },
   "resourcesShellHashes": {
     "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",

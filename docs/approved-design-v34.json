@@ -1,9 +1,9 @@
 {
-  "version": "v60 — Home and About copy: Visual design & marketing; brand identity, product images and spots (no AI mention)",
+  "version": "v61 — Caso BRASA: salsas picantes en tres niveles",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "bb626e67bb2a889e52d36d20b88a59462f97b2f497ada31058b3303774d1699d",
-    "/es/": "533b518fe8ece309061e771c8b203a8545a916a1592aa40eb004bf7c67958e62",
+    "/": "8c21956c77688efbe95e30b86d48119e02b5eee91ca5eec8500a79220c0d47e5",
+    "/es/": "5ef3d678b9933c841a5dea86b3d564fd22e318c220082961eec35dfcaa1297bf",
     "/about/": "63f19ba3dd9a43e27dce1f2f417d1ef18ba3000802685bba767dde260319f711",
     "/es/about/": "ea3d832547c735cb1cce3b16329eb276496016aada294fb28083247ee1d829e9",
     "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 92795,
   "cssPrefixHash": "0ce687bc425b6021398156263230c90162e61d84d9485b354756e11cf1a1ffc6",
   "homeShellHashes": {
-    "/": "fd14776a3a1c800a65baa2a7e0f334b1aff71716fe8faa836d50c68186624474",
-    "/es/": "3005edbb96fe4c65519d15b3c48ae4afb2fcbfe67e5df50ea3803854822b1819"
+    "/": "4d29bbc032c9202f5b7e56742a3fc230d563902e7c6ca5362e6dfb7b888bf829",
+    "/es/": "6c581814e22571aff3c9ac269c5ad79af43cf880bfffa4313df29f495c19032f"
   },
   "resourcesShellHashes": {
     "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",

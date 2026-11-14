@@ -64,7 +64,7 @@ test('home: the selected projects share one grid with lazy images and link to th
     assert.ok(english.includes('<h3>OYE</h3><span class="card-year">2026</span>'));
     const spanish = await (await get('/es/')).text();
     assert.ok(!spanish.includes('<h3>Tipografía en movimiento</h3>'), 'archived work stays off the home grid');
-    assert.deepEqual(activeProjects.map(p => p.slug), ['oye', 'solfa', 'kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
+    assert.deepEqual(activeProjects.map(p => p.slug), ['brasa', 'oye', 'solfa', 'kudake', 'colorsplash', 'olmedo-clasico', 'autoescuela-oasis', 'flamenco-urbano', 'sirtraver']);
     assert.equal(activeProjects.length + archivedProjects.length, allProjects.length);
     assert.ok(spanish.includes('<p class="archive-link"><a class="more-button" href="/es/archive/">Ver más proyectos'));
     const hovers = activeProjects.filter(p => p.hover).length;

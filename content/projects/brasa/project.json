@@ -1,0 +1,133 @@
+{
+  "name": "BRASA",
+  "date": "2026-11-13",
+  "order": 0,
+  "category": "Visual design",
+  "conceptual": true,
+  "draft": false,
+  "intro": {
+    "es": "Spec work — sin relación con ninguna marca real. Marca inventada de salsas picantes en tres niveles: nombre, logotipo, sistema de etiquetas, fotografía de producto, tres carteles, piezas para redes, cartelería de calle y dos spots de 10 segundos (vertical y horizontal).",
+    "en": "Spec work — not affiliated with any real brand. An invented hot sauce brand in three heat levels: naming, wordmark, label system, product photography, three posters, social pieces, street posters and two 10-second spots (vertical and horizontal)."
+  },
+  "client": "",
+  "role": {
+    "es": "Naming, identidad y diseño de etiquetas, concepto de campaña y redacción, dirección de arte, generación de imagen y vídeo con IA, diseño de las piezas",
+    "en": "Naming, identity and label design, campaign concept and copywriting, art direction, AI image and video generation, layout of the pieces"
+  },
+  "deliverables": {
+    "es": [
+      "Nombre, logotipo y sistema de niveles",
+      "Tres etiquetas en serie",
+      "Packshot para tienda online",
+      "Tres carteles en ES y EN",
+      "Fotografía de mesa y caja regalo",
+      "Piezas para redes (1:1, 9:16, 16:9)",
+      "Cartelería de calle",
+      "Spots de 10 s en 9:16 y 16:9"
+    ],
+    "en": [
+      "Name, wordmark and heat-level system",
+      "Three labels as a series",
+      "E-commerce packshot",
+      "Three posters in Spanish and English",
+      "Table photography and gift box",
+      "Social pieces (1:1, 9:16, 16:9)",
+      "Street posters",
+      "10-second spots in 9:16 and 16:9"
+    ]
+  },
+  "tools": [
+    "Google Flow",
+    "Nano Banana 2.1",
+    "Omni 1.2 Flash",
+    "Claude"
+  ],
+  "behance": "",
+  "featured": false,
+  "archived": false,
+  "portfolioOrder": 1,
+  "hover": "imagenes/brasa-mesa-tacos-huevos-fritos-tres-salsas.webp",
+  "coverPosition": "50% 90%",
+  "video": [
+    {
+      "src": "/video/brasa/spot-vertical.mp4",
+      "poster": "imagenes/brasa-story-pica-punto-incendio.webp",
+      "aspect": "9:16",
+      "date": "2026-11-13",
+      "caption": {
+        "es": "Spot vertical de 10 s para Reels y TikTok: una mano agita la botella, cae una gota sobre un huevo frito, la salsa llega al taco y al final rueda una lágrima. «Luego no llores».",
+        "en": "10-second vertical spot for Reels and TikTok: a hand shakes the bottle, a drop lands on a fried egg, the sauce reaches the taco and a tear rolls at the end. “You were warned”."
+      }
+    },
+    {
+      "src": "/video/brasa/spot-horizontal.mp4",
+      "poster": "imagenes/brasa-gama-tres-salsas-picantes-chispa-llama-incendio.webp",
+      "aspect": "16:9",
+      "date": "2026-11-13",
+      "caption": {
+        "es": "Spot horizontal de 10 s para web y YouTube: los tres niveles en escalada. Una chispa junto a CHISPA, una llama detrás de LLAMA, un incendio detrás de INCENDIO, y cierre con las tres botellas.",
+        "en": "10-second horizontal spot for web and YouTube: the three levels escalate. A spark next to CHISPA, a flame behind LLAMA, a blaze behind INCENDIO, closing on the three bottles."
+      }
+    }
+  ],
+  "caseStudy": [
+    {
+      "title": { "es": "El encargo", "en": "The brief" },
+      "text": {
+        "es": "Una gama de tres salsas picantes artesanas que tiene que distinguirse en un lineal lleno de calaveras, llamas dibujadas y nombres de amenaza. El planteamiento es el de un lanzamiento completo: nombre, etiquetas, imagen para la tienda online, carteles, redes y un spot para cada canal.",
+        "en": "A range of three craft hot sauces that has to stand out on a shelf full of skulls, cartoon flames and threatening names. The brief is treated as a full launch: name, labels, online shop imagery, posters, social pieces and a spot for each channel."
+      }
+    },
+    {
+      "title": { "es": "La idea", "en": "The idea" },
+      "text": {
+        "es": "El picante se explica solo, sin dibujos: tres nombres que suben de intensidad (CHISPA, LLAMA, INCENDIO), tres puntos que se van rellenando y tres colores. La campaña habla con la misma franqueza: «Pica, pero poco», «Pica, pero bien», «Pica. Punto». Y un aviso que firma todas las piezas: «Luego no llores».",
+        "en": "The heat explains itself, with no drawings: three names that climb in intensity (CHISPA, LLAMA, INCENDIO: spark, flame, blaze), three dots that fill up and three colours. The campaign speaks just as plainly: “Hot, just a bit”, “Hot, properly”, “Hot. Full stop”. One warning signs off every piece: “You were warned”."
+      }
+    },
+    {
+      "title": { "es": "Producción con IA", "en": "AI production" },
+      "text": {
+        "es": "Las etiquetas se diseñaron primero como arte final vectorial y se entregaron a la IA como referencia, de modo que las botellas llevan la etiqueta real y no una inventada por el modelo. Todas las fotografías y los dos spots parten de esa misma imagen de gama. La IA no escribe bien el texto pequeño: en el packshot las dos líneas finas se corrigieron a mano. Los titulares, los carteles y el montaje en el muro se maquetaron después sobre las imágenes.",
+        "en": "The labels were designed first as vector artwork and given to the AI as a reference, so the bottles wear the real label rather than one made up by the model. Every photograph and both spots start from that same range image. AI does not write small text well: on the packshot the two thin lines were corrected by hand. Headlines, posters and the wall mock-up were laid out on top of the images afterwards."
+      }
+    }
+  ],
+  "designDetails": [
+    {
+      "title": { "es": "El logotipo", "en": "The wordmark" },
+      "text": {
+        "es": "BRASA va en una sans condensada extranegra, girada y a toda la altura de la etiqueta. En una botella estrecha, ponerlo en vertical es la manera de que el nombre sea lo más grande del lineal.",
+        "en": "BRASA is set in an extra-bold condensed sans, rotated and running the full height of the label. On a narrow bottle, setting it vertically is how the name becomes the biggest thing on the shelf."
+      }
+    },
+    {
+      "title": { "es": "Tres niveles", "en": "Three levels" },
+      "text": {
+        "es": "Cada salsa tiene su color de etiqueta, de tapón y de fondo: amarillo para CHISPA, rojo para LLAMA, negro para INCENDIO. Los tres puntos de la esquina se rellenan según el nivel, así que el picante se lee de lejos y sin leer.",
+        "en": "Each sauce has its own colour for label, cap and backdrop: yellow for CHISPA, red for LLAMA, black for INCENDIO. The three dots in the corner fill up with the level, so the heat reads from a distance, without reading."
+      }
+    },
+    {
+      "title": { "es": "Carteles y piezas", "en": "Posters and pieces" },
+      "text": {
+        "es": "Los tres carteles son tono sobre tono: cada botella sobre su propio color, con los ingredientes al lado y el titular arriba en la misma tipografía del logotipo. Juntos funcionan como tríptico; por separado, cada uno presenta un nivel. El aviso «Luego no llores» cierra abajo a la derecha en todas las piezas.",
+        "en": "The three posters are tone on tone: each bottle on its own colour, its ingredients beside it and the headline above in the wordmark’s typeface. Together they work as a triptych; apart, each one introduces a level. The warning “You were warned” closes every piece at the bottom right."
+      }
+    }
+  ],
+  "palette": [
+    { "name": { "es": "Rojo fuego", "en": "Fire red" }, "hex": "#E3321C", "share": 40 },
+    { "name": { "es": "Amarillo chispa", "en": "Spark yellow" }, "hex": "#F5B83A", "share": 20 },
+    { "name": { "es": "Carbón", "en": "Charcoal" }, "hex": "#1A1614", "share": 20 },
+    { "name": { "es": "Crema", "en": "Cream" }, "hex": "#F6ECD6", "share": 20 }
+  ],
+  "paletteNote": {
+    "es": "El rojo es el color de la marca: el logotipo, los titulares y la salsa central. Amarillo y carbón marcan los otros dos niveles. La crema es el papel: fondo de la gama, texto sobre rojo e interior de la caja.",
+    "en": "Red is the brand colour: the wordmark, the headlines and the middle sauce. Yellow and charcoal mark the other two levels. Cream is the paper: the backdrop for the range, the text on red and the inside of the box."
+  },
+  "result": {
+    "es": "Proyecto conceptual. Spec work: BRASA es una marca y un producto inventados, sin relación con ninguna empresa real. Demuestra un lanzamiento completo, del nombre y la etiqueta a los spots, con el mismo producto en todas las piezas y un sistema de tres niveles que se entiende sin explicación.",
+    "en": "Concept project. Spec work: BRASA is an invented brand and product, not affiliated with any real company. It shows a complete launch, from the name and the label to the spots, with the same product in every piece and a three-level system that needs no explanation."
+  }
+}

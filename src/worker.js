@@ -23,6 +23,7 @@ import { LEGAL_PAGES } from './legal.js';
 import { archivePage } from './views/archive.js';
 import { projectPage } from './views/project.js';
 import { resourcesPage } from './views/resources.js';
+import { servicesPage } from './views/services.js';
 import { coverSitemap, sitemap } from './views/sitemap.js';
 import { THANKS_PAGE } from './views/journey.js';
 import { thankYouPage } from './views/thank-you.js';
@@ -60,6 +61,8 @@ async function renderPage({ page, lang }, request, url, env, ctx) {
       return moreProjects.length ? htmlResponse(request, archivePage(lang, moreProjects)) : redirect(new URL(PAGES.home[lang], url).href);
     case 'resources':
       return htmlResponse(request, resourcesPage(lang, await getCatalog(env), url.searchParams.get('subscription')));
+    case 'services':
+      return htmlResponse(request, servicesPage(lang, activeProjects));
     case 'cv':
       return htmlResponse(request, cvPage(lang));
     case 'about':

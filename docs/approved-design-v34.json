@@ -1,23 +1,23 @@
 {
-  "version": "v66 — KUDAKE! and Flamenco Urbano marked as concept projects",
+  "version": "v67 — Services page without prices (three offers), linked from footer and About",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "0cee3c4e96d330414c64813a161fd55624b79c5c39494b77ba8a4deae253106b",
-    "/es/": "27129342f535b29cef1f46fc7d71265e58f90a4fbc14d303d6527b416d5b9880",
-    "/about/": "b060cf994e0f40d9aae56567fca73a7f3dcff0c2d48a06cf66e3d421b59e0add",
-    "/es/about/": "58c76ddd086fcfb03e1484d1ee0347f2c3d1be309571b30a1ae276ee9da864c8",
-    "/resources/": "12d43ee10e59b5200f33b69df85068d19b5287c60cf3678cb0b7f0bb30aa44e8",
-    "/es/resources/": "5dae778b77e7b11d2e25286b08633f30830cb8645f17fa3a116d0a3c1cb62509"
+    "/": "49d7aae9710352693021fb0382118dcd92949b1f9de7f8c4091f8d01127460b3",
+    "/es/": "8fa2ca4d595daa87f7fcf88120244a2b2fa6dc35aa0f5ce033402930b0f8f644",
+    "/about/": "60fe005692629b889258d379ab85285a45332e39fb3e4e49a6f85ab300b89ce0",
+    "/es/about/": "cc64014249705da025b2274fe5c95e208f39408babfe7ba01de93f27bf7ba747",
+    "/resources/": "a88929121a694696d418e4f3317b9806d0296691e5a6b304d0faa7481400ac6f",
+    "/es/resources/": "39d08d9dbf36a915f0a0ba50f8c58501d30a82d0a4956a0a36c5362c8e2d6a58"
   },
-  "cssPrefixBytes": 95207,
-  "cssPrefixHash": "a60e61f3420ccde873b475d484744304f01dcd163cb068dadfd0d557df0243c5",
+  "cssPrefixBytes": 96524,
+  "cssPrefixHash": "865d828d276bc479b9ad6d947ac7801525a238b45dba3d48f150e563400f7d6e",
   "homeShellHashes": {
-    "/": "1682408b6fa3a3193db80a6f830a70ae7baafdc1b63cff32242f912447674826",
-    "/es/": "8d4bccf1631d9794fabfdc1eaaaeefeff8a231ce8132a3da0f7770cca9f5f72c"
+    "/": "1b97ae04ceb9dec9454a0932e9a40cc7ccc00f5f64c3aef6782cb3683a6c98f4",
+    "/es/": "24ca61f519fef067229843717a4b27a7561337330882fc0869cb88bc4bf59e7d"
   },
   "resourcesShellHashes": {
-    "/resources/": "34c985a0e332f68472f39ea6b17c2c5937a132b575872b9f0b0aeddc41ba38f6",
-    "/es/resources/": "9a077769959ca3db421fea740b8d6787c43e5e00c3562e3b2ae7cc7ea604475e"
+    "/resources/": "09d41fb6da867a8b5e2d67d01dfff283976d072cb6ea1a6b313181b9cb3a00f9",
+    "/es/resources/": "043042e12589a2c4c43a8d2dcfdad118a2f7e940827ad0cf3b3fb383bd517ffa"
   },
   "resourcesFormHashes": {
     "/resources/": "e19767a861744e4080de6efe0aba4f82e1013f3b6ac605bc793ffa9b02a6c273",

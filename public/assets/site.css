@@ -2666,3 +2666,18 @@ html:has(dialog[open]) .site-cursor { display: none; }
   .contact-page .trust-strip { justify-content: center; }
   .trust-strip li + li::before { content: none; }
 }
+
+/* Services: three offers in columns, then the shared process. */
+.services { padding-bottom: 48px; }
+.service-offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 40px; margin: 0 0 8px; padding: 28px 0 40px; border-top: 1px solid var(--ink); list-style: none; }
+.service-offer h2 { margin: 0 0 18px; font-size: var(--fs-l); font-weight: 600; line-height: 1.15; letter-spacing: -.5px; }
+.service-offer dl { display: grid; gap: 16px; margin: 0; }
+.service-offer dt { margin-bottom: 4px; color: var(--muted); font-size: var(--fs-xs); }
+.service-offer dd { margin: 0; font-size: var(--fs-s); line-height: 1.6; }
+.service-offer dd ul { margin: 0; padding: 0; list-style: none; }
+.service-offer dd li + li { margin-top: 2px; }
+.service-examples { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.service-examples a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.service-cta { margin: 8px 0 0; text-align: center; }
+.method-link { display: inline-block; margin-top: 12px; color: var(--ink); font-size: var(--fs-s); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1000px) { .service-offers { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 0; } .service-offer { padding: 24px 0; border-bottom: 1px solid #e6e6e6; } }

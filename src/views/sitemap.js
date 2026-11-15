@@ -13,6 +13,7 @@ export function sitemap(projects, archived, lastModified) {
   const images = {
     home: projects.map((p) => absoluteUrl(largestUrl(p.cover))),
     resources: [],
+    services: [],
     about: [ORIGIN + PORTRAIT.path],
   };
 

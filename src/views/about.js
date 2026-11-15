@@ -71,7 +71,7 @@ export function aboutPage(lang) {
       </figure>
     </header>
   <section class="about-method" aria-labelledby="about-method">
-    <div class="about-method-intro"><h2 id="about-method">${t.method.heading}</h2><p>${t.method.lead}</p></div>
+    <div class="about-method-intro"><h2 id="about-method">${t.method.heading}</h2><p>${t.method.lead}</p><a class="method-link" href="${PAGES.services[lang]}">${t.method.link} <span aria-hidden="true">→</span></a></div>
     <ol class="method-steps">${t.method.steps.map(([name, text], i) => html`<li><span class="method-index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><h3>${name}</h3><p>${text}</p></li>`)}</ol>
   </section>
   <div class="resume-main">

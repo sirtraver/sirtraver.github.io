@@ -5,6 +5,7 @@ export const LANGUAGES = ['en', 'es'];
 export const PAGES = {
   home: { en: '/', es: '/es/' },
   resources: { en: '/resources/', es: '/es/resources/' },
+  services: { en: '/services/', es: '/es/servicios/' },
   about: { en: '/about/', es: '/es/about/' },
 };
 
@@ -35,7 +36,7 @@ export const CONTENT = {
     brandLabel: 'sirtraver — Home',
     mainNavLabel: 'Main navigation',
     languageLabel: 'Language',
-    nav: { home: 'Portfolio', resources: 'Resources', about: 'About' },
+    nav: { home: 'Portfolio', services: 'Services', resources: 'Resources', about: 'About' },
     socialLabel: 'Social profiles',
     emailLabel: 'Email sirtraver',
     footerRole: `Javier Traver · ${ROLE}`,
@@ -133,6 +134,7 @@ export const CONTENT = {
       "skills": "Also",
       "method": {
         "heading": "How I work",
+        "link": "See services",
         "lead": "One line from the logo to the spot, so the brand looks the same wherever it appears.",
         "steps": [
           ["Identity", "Logo, colour and type: the base everything else is built on."],
@@ -174,6 +176,46 @@ export const CONTENT = {
       next: 'Next →',
     },
 
+
+    services: {
+      title: `Services — brand identity, packaging and campaigns | sirtraver`,
+      description: `Three ways to work with Javier Traver, ${ROLE} in Madrid: brand identity, packaging and product images, and campaigns with spots. No fixed packs: every proposal is built from your brief.`,
+      heading: 'Services',
+      lead: 'Three ways to work together, from the logo to the spot. Each proposal is built from your brief.',
+      labels: { who: 'For', problem: 'What it solves', deliverables: 'Usual deliverables', examples: 'Examples' },
+      offers: [
+        {
+          name: 'Brand identity',
+          who: 'New brands, or brands that are changing before a launch.',
+          problem: 'Every piece is improvised and the brand looks different in each place.',
+          deliverables: ['Logo and its versions', 'Colour palette and typefaces', 'Graphic system: patterns, stamps, rules', 'Usage guide'],
+          examples: ['kudake', 'colorsplash', 'olmedo-clasico'],
+        },
+        {
+          name: 'Packaging and product',
+          who: 'Brands with a product or a range to launch.',
+          problem: 'The products don’t read as one family, on the shelf or in the online shop.',
+          deliverables: ['Labels and packaging', 'Variants of the range', 'Packshots for the online shop', 'Product and lifestyle photography'],
+          examples: ['brasa', 'oye'],
+        },
+        {
+          name: 'Campaign and spots',
+          who: 'Brands launching or advertising a product.',
+          problem: 'They need pieces ready to publish that keep the same identity in every format.',
+          deliverables: ['Key visual', 'Adaptations for social media (1:1, 4:5, 9:16, 16:9)', 'Posters', 'Short spots in 9:16 and 16:9'],
+          examples: ['solfa', 'brasa', 'oye'],
+        },
+      ],
+      processTitle: 'How it works',
+      process: [
+        ['Brief', 'You tell me about the brand, the product and what you need. The brief on the Contact page takes a minute.'],
+        ['Proposal', 'I reply with a proposal: scope, deliverables, timeline and terms. Work begins once you accept it.'],
+        ['Production', 'I share progress at the agreed points so you can review it before the final pieces.'],
+        ['Delivery', 'You receive the final files in the agreed formats, ready to use.'],
+      ],
+      cta: 'Tell me about your project',
+      ctaNote: 'Budgets depend on scope: tell me what you need and I’ll send you a proposal.',
+    },
 
     archive: {
       title: 'Earlier projects | sirtraver',
@@ -220,7 +262,7 @@ export const CONTENT = {
     brandLabel: 'sirtraver — Inicio',
     mainNavLabel: 'Navegación principal',
     languageLabel: 'Idioma',
-    nav: { home: 'Proyectos', resources: 'Recursos', about: 'Sobre mí' },
+    nav: { home: 'Proyectos', services: 'Servicios', resources: 'Recursos', about: 'Sobre mí' },
     socialLabel: 'Perfiles sociales',
     emailLabel: 'Enviar un email a sirtraver',
     footerRole: `Javier Traver · ${ROLE}`,
@@ -318,6 +360,7 @@ export const CONTENT = {
       "skills": "También",
       "method": {
         "heading": "Cómo trabajo",
+        "link": "Ver servicios",
         "lead": "Una sola línea del logotipo al spot, para que la marca se vea igual dondequiera que aparezca.",
         "steps": [
           ["Identidad", "Logotipo, color y tipografía: la base sobre la que se construye todo lo demás."],
@@ -359,6 +402,46 @@ export const CONTENT = {
       next: 'Siguiente →',
     },
 
+
+    services: {
+      title: `Servicios — identidad de marca, packaging y campañas | sirtraver`,
+      description: `Tres formas de trabajar con Javier Traver, ${ROLE} en Madrid: identidad de marca, packaging e imágenes de producto, y campañas con spots. Sin packs cerrados: cada propuesta parte de tu brief.`,
+      heading: 'Servicios',
+      lead: 'Tres formas de trabajar juntos, del logotipo al spot. Cada propuesta parte de tu brief.',
+      labels: { who: 'Para', problem: 'Qué resuelve', deliverables: 'Entregables habituales', examples: 'Ejemplos' },
+      offers: [
+        {
+          name: 'Identidad de marca',
+          who: 'Marcas nuevas, o marcas que cambian antes de un lanzamiento.',
+          problem: 'Cada pieza se improvisa y la marca se ve distinta en cada sitio.',
+          deliverables: ['Logotipo y sus versiones', 'Paleta de color y tipografías', 'Sistema gráfico: patrones, sellos, reglas', 'Guía de uso'],
+          examples: ['kudake', 'colorsplash', 'olmedo-clasico'],
+        },
+        {
+          name: 'Packaging y producto',
+          who: 'Marcas con un producto o una gama que lanzar.',
+          problem: 'Los productos no se reconocen como familia, ni en el lineal ni en la tienda online.',
+          deliverables: ['Etiquetas y packaging', 'Variantes de la gama', 'Packshots para tienda online', 'Fotografía de producto y lifestyle'],
+          examples: ['brasa', 'oye'],
+        },
+        {
+          name: 'Campaña y spots',
+          who: 'Marcas que lanzan o anuncian un producto.',
+          problem: 'Necesitan piezas listas para publicar que mantengan la misma identidad en cada formato.',
+          deliverables: ['Key visual', 'Adaptaciones para redes (1:1, 4:5, 9:16, 16:9)', 'Cartelería', 'Spots breves en 9:16 y 16:9'],
+          examples: ['solfa', 'brasa', 'oye'],
+        },
+      ],
+      processTitle: 'Cómo trabajo',
+      process: [
+        ['Brief', 'Me cuentas la marca, el producto y lo que necesitas. El brief de la página de Contacto se prepara en un minuto.'],
+        ['Propuesta', 'Te respondo con una propuesta: alcance, entregables, plazos y condiciones. El trabajo empieza cuando la aceptas.'],
+        ['Producción', 'Te enseño avances en los puntos acordados para que los revises antes de las piezas finales.'],
+        ['Entrega', 'Recibes los archivos finales en los formatos acordados, listos para usar.'],
+      ],
+      cta: 'Cuéntame tu proyecto',
+      ctaNote: 'El presupuesto depende del alcance: cuéntame qué necesitas y te envío una propuesta.',
+    },
 
     archive: {
       title: 'Proyectos anteriores | sirtraver',

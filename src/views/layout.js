@@ -32,7 +32,7 @@ function footer(lang, page) {
   const t = CONTENT[lang];
   return html`<footer class="site-footer">
   <div class="footer-legal">
-    <span>© ${new Date().getUTCFullYear()} sirtraver</span><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
+    <span>© ${new Date().getUTCFullYear()} sirtraver</span><a href="${PAGES.services[lang]}"${page === 'services' ? html` aria-current="page"` : ''}>${t.nav.services}</a><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
   </div>
   <span>${t.footerRole}</span>
 </footer>`;
@@ -41,7 +41,7 @@ function footer(lang, page) {
 /**
  * @param {object} options
  * @param {'en'|'es'} options.lang
- * @param {'home'|'resources'|'about'|null} options.page  Navigation section; null for the 404.
+ * @param {'home'|'resources'|'about'|null} options.page  Navigation section ('services' is linked from the footer); null for the 404.
  * @param {{en: string, es: string}} [options.alternates]  Paths of this page per language (defaults to the section).
  * @param {{url: string, width?: number, height?: number, alt: string}} [options.shareImage]  Social preview image.
  * @param {boolean} [options.canonicalPage]  false for pages without a canonical URL (404).

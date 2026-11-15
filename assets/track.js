@@ -1,6 +1,8 @@
 // Click events for Umami (cookieless). Only loaded when analytics is switched on.
 // Explicit: any element with data-track="event-name" (and optional data-track-* properties).
-// Inferred: email links, Gumroad links, CV downloads, project and resource cards, social icons.
+// Inferred: links to Contact (with where they were clicked), language switches, email links,
+// Gumroad links, CV downloads, project and resource cards, social icons.
+// The contact brief reports brief-started / brief-completed itself (see brief.js).
 (() => {
   const send = (name, data) => {
     try {
@@ -18,6 +20,13 @@
         if (key.startsWith('track') && key !== 'track') data[key.slice(5).toLowerCase()] = value;
       }
       return [link.dataset.track, data];
+    }
+    if (link.closest('.language-links')) {
+      return link.getAttribute('aria-current') ? null : ['language-change', { to: link.getAttribute('lang') || '' }];
+    }
+    if (/^\/(es\/contacto|contact)\/?$/.test(link.pathname || '') && link.host === location.host) {
+      const from = link.closest('.site-header') ? 'header' : link.matches('.mobile-enquiry') ? 'mobile-button' : link.closest('.project-enquiry') ? 'project' : 'inline';
+      return ['contact-click', { from }];
     }
     if (href.startsWith('mailto:')) return ['email-click', {}];
     if (/\.pdf($|\?)/i.test(href)) return ['cv-download', { file: href.split('/').pop().split('?')[0] }];

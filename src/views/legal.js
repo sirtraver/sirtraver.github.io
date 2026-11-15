@@ -23,6 +23,8 @@ export function legalPage(kind, lang) {
     lang,
     page: null,
     alternates: LEGAL_PAGES[kind],
+    // Kept out of search results: they carry the NIF and postal address (LSSI art. 10), still linked from every footer.
+    noindex: true,
     title: page.title,
     description: page.description,
     schema: graph(

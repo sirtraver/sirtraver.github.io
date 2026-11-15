@@ -39,8 +39,8 @@ export const NEWSLETTER_FORM = '';
 // Website owner, shown in the legal notice. Empty fields are not displayed.
 export const LEGAL = {
   holder: 'Javier Traver',
-  taxId: '',
-  address: '',
+  taxId: '51114178J',
+  address: 'Calle de Claudio Coello 24, 28001 Madrid',
   email: 'javier.traver.v@me.com',
   updated: { en: '15 November 2026', es: '15 de noviembre de 2026' },
 };

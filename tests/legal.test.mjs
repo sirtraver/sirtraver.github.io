@@ -16,7 +16,9 @@ test('legal notice and privacy policy exist in both languages', async () => {
     const html = await response.text();
     assert.ok(html.includes(`<html lang="${lang}">`));
     assert.ok(html.includes(`<h1>${heading}</h1>`));
-    assert.ok(html.includes(`<link rel="canonical" href="${ORIGIN}${path}">`));
+    // They carry the NIF and postal address, so they stay out of search results.
+    assert.ok(html.includes('<meta name="robots" content="noindex">'), path);
+    assert.ok(!html.includes('rel="canonical"'), path);
     assert.ok(html.includes('mailto:javier.traver.v@me.com'));
   }
   const privacy = await (await get('/es/privacidad/')).text();

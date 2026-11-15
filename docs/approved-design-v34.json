@@ -1,23 +1,23 @@
 {
-  "version": "v61 — Caso BRASA: salsas picantes en tres niveles",
+  "version": "v63 — Auditoría: hero ratio reserved (CLS), WCAG AA contrast, language link names, underlined email link",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "8c21956c77688efbe95e30b86d48119e02b5eee91ca5eec8500a79220c0d47e5",
-    "/es/": "5ef3d678b9933c841a5dea86b3d564fd22e318c220082961eec35dfcaa1297bf",
-    "/about/": "63f19ba3dd9a43e27dce1f2f417d1ef18ba3000802685bba767dde260319f711",
-    "/es/about/": "ea3d832547c735cb1cce3b16329eb276496016aada294fb28083247ee1d829e9",
-    "/resources/": "285b8efca7ee3b1bb1de20bee6b6fd5e803c3ae49bd4c879910a6959b72d9665",
-    "/es/resources/": "8309c71d6fb2bde7c7a44eb22e278c650ede1b9b593db12e02b3cb29be6dc8e3"
+    "/": "7f27045ff21cf68237d2666ee13c4a2dcb9cabad15c428bb87e1ad82626687e2",
+    "/es/": "ede7a35c0b05d02cfa53587c0cc83e3ff1aa9c70fd945d360451f6d67318f029",
+    "/about/": "1ad29bd0c2c9ae9ba2faa045cfa1f4b7c91897cb8482c48e48b5f0f7cced9e02",
+    "/es/about/": "6e717ed662a0f201f8e64895d165bb5b3b7812d4f03c95b51c0b9bf6342996b2",
+    "/resources/": "945e675d6c5b30ca7e216254f1b20030a28ca64998f3d402966aeb94479b27b2",
+    "/es/resources/": "7e9124d5f86b8e22a7c436c6bf3adde29fbac100846d8ea962f7d3080ede9487"
   },
-  "cssPrefixBytes": 92795,
-  "cssPrefixHash": "0ce687bc425b6021398156263230c90162e61d84d9485b354756e11cf1a1ffc6",
+  "cssPrefixBytes": 92912,
+  "cssPrefixHash": "986e2d1205c0e6bc71ce4d37abe81199124db3c830af0370ba41adade4536dd5",
   "homeShellHashes": {
-    "/": "4d29bbc032c9202f5b7e56742a3fc230d563902e7c6ca5362e6dfb7b888bf829",
-    "/es/": "6c581814e22571aff3c9ac269c5ad79af43cf880bfffa4313df29f495c19032f"
+    "/": "72c9522b343f1c97bbe74a8278ac57701e0264c02d8be911f8730000d515d7da",
+    "/es/": "2deb259fd293176860d49cd4073324be0e651be6619ad80d6109852bf1ea9a48"
   },
   "resourcesShellHashes": {
-    "/resources/": "d0e777d0aab501e1ce6f7b2338a5b1004ced1240d4d43b1b700577f45ccb7e2b",
-    "/es/resources/": "6d7a8297f360b174bf865335a303943e39637a405fb8c30f14481c49395540c7"
+    "/resources/": "34c985a0e332f68472f39ea6b17c2c5937a132b575872b9f0b0aeddc41ba38f6",
+    "/es/resources/": "9a077769959ca3db421fea740b8d6787c43e5e00c3562e3b2ae7cc7ea604475e"
   },
   "resourcesFormHashes": {
     "/resources/": "e19767a861744e4080de6efe0aba4f82e1013f3b6ac605bc793ffa9b02a6c273",

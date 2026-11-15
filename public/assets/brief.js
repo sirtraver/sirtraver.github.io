@@ -16,6 +16,15 @@
   const steps = [...root.querySelectorAll('.brief-step[data-key]')];
   const fields = [...root.querySelectorAll('[data-key="brand"], [data-key="about"]')];
 
+  // Funnel events for Umami (only present when analytics is on; see track.js for clicks).
+  const track = (name, data = {}) => {
+    try { window.umami?.track(name, { page: location.pathname, ...data }); } catch { /* never break the brief */ }
+  };
+  let started = false;
+  let completed = false;
+  send.dataset.track = 'brief-send';
+  copy.dataset.track = 'brief-copy';
+
   root.classList.add('is-enhanced');
   if (navigator.clipboard) copy.hidden = false;
 
@@ -40,12 +49,16 @@
     return [config.greeting, '', ...lines, '', config.closing].join('\n');
   };
 
-  const update = () => {
+  const update = (event) => {
     const data = answers();
     const count = Object.keys(data).length;
     bar.style.width = `${Math.round((count / config.total) * 100)}%`;
     label.textContent = `${count}/${config.total} ${config.progress}`;
     root.classList.toggle('has-answers', count > 0);
+    send.dataset.trackAnswers = String(count);
+    copy.dataset.trackAnswers = String(count);
+    if (count && !started && event) { started = true; track('brief-started'); }
+    if (count >= config.total && !completed && event) { completed = true; track('brief-completed'); }
     const title = [config.subjectBase, data.brand].filter(Boolean).join(' · ');
     subject.textContent = title;
     if (!count) {
@@ -66,7 +79,7 @@
   root.addEventListener('click', (event) => {
     const input = event.target.closest('.brief-chip')?.querySelector('input[type="radio"]');
     if (!input || event.target !== input) return;
-    if (input.dataset.was === 'on') { input.checked = false; update(); }
+    if (input.dataset.was === 'on') { input.checked = false; update(event); }
     for (const other of root.querySelectorAll(`input[name="${input.name}"]`)) other.dataset.was = other.checked ? 'on' : '';
   });
 

@@ -521,7 +521,7 @@ a:hover .card-media img {
 
 .card-caption > span {
   flex-shrink: 0;
-  color: #828282;
+  color: #6e6e6e;
   font-size: var(--fs-base);
 }
 
@@ -811,7 +811,7 @@ a:hover .card-media img {
 
 .section-kicker {
   margin: 0 0 17px;
-  color: #767676;
+  color: #6e6e6e;
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 1.3px;
@@ -2401,7 +2401,7 @@ body { background-color: color-mix(in srgb, var(--page-tint, var(--paper)) 14%, 
 @media (max-width: 700px) { .project-pager { flex-direction: column; } .project-pager a { min-height: 120px; } }
 
 /* ---------- v48: a bolder system — running strip, pill navigation on every screen, large display type, rounded panels ---------- */
-:root { --paper: #f8f8f8; --ink: #1a1a19; --text: #1a1a19; --muted: #6c6962; --pill: #e6e3dc; --panel: #ffffffb8; --r-s: 10px; --r-m: 14px; --r-l: 22px; --ticker: 0px; --display-tracking: -.04em; }
+:root { --paper: #f8f8f8; --ink: #1a1a19; --text: #1a1a19; --muted: #625f59; --pill: #e6e3dc; --panel: #ffffffb8; --r-s: 10px; --r-m: 14px; --r-l: 22px; --ticker: 0px; --display-tracking: -.04em; }
 
 /* Header: wordmark and pill navigation on the left, languages and one dark action on the right. */
 body { padding-top: calc(var(--ticker) + 72px); }
@@ -2611,7 +2611,8 @@ html:has(dialog[open]) .site-cursor { display: none; }
 }
 
 /* Project reading: one image column and a fuller explanation of the design. */
-.project-hero img { aspect-ratio: auto; max-height: none; object-fit: contain; }
+/* --ar (set on every image from its width and height) keeps the hero's space reserved while it loads. */
+.project-hero img { aspect-ratio: var(--ar, auto); max-height: none; object-fit: contain; }
 .project-gallery figure { width: 100%; min-width: 0; margin: 0; }
 .project-image { overflow: hidden; border-radius: var(--r-m); }
 .project-image picture, .project-image img { display: block; width: 100%; height: auto; }

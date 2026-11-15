@@ -57,7 +57,7 @@ test('home: the selected projects share one grid with lazy images and link to th
       assert.ok(html.includes('style="view-transition-name:cover-kudake"'), 'card cover morphs into the case hero');
       assert.equal((html.match(/fetchpriority="high"/g) || []).length, 1, 'only the first card cover is high priority');
       assert.ok(html.includes('<source type="image/avif"'));
-      assert.match(html, /style="background-color:#[0-9a-f]{6}"/, 'placeholder colour');
+      assert.match(html, /style="background-color:#[0-9a-f]{6};--ar:\d+\/\d+"/, 'placeholder colour and reserved ratio');
     }
     const english = await (await get('/')).text();
     assert.ok(english.includes('<h3>SOLFA</h3><span class="card-year">2026</span>'));

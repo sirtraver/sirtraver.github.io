@@ -21,7 +21,7 @@ function header(lang, page, alternates) {
     )}
   </nav>
   <div class="language-links" role="group" aria-label="${t.languageLabel}">
-    ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}" lang="${code}" hreflang="${code}" aria-label="${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
+    ${[...LANGUAGES].reverse().map((code) => html`<a href="${alternates[code]}" lang="${code}" hreflang="${code}" aria-label="${code.toUpperCase()} · ${CONTENT[code].switchToThisLanguage}"${code === lang ? html` aria-current="true"` : ''}>${code.toUpperCase()}</a>`)}
   </div>
   <a class="enquiry-button menu-enquiry" href="${CONTACT_PAGE[lang]}">${mobileCta[lang]} <span aria-hidden="true">→</span></a>
   </div>

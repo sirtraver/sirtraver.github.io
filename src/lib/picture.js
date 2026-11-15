@@ -19,6 +19,6 @@ export const largestUrl = (image) => image.src ?? image.webp.at(-1)[0];
  */
 export function picture(image, { alt, sizes, priority = false }) {
   const loading = priority ? html`fetchpriority="high"` : html`loading="lazy"`;
-  if (image.src) return html`<img src="${image.src}" alt="${alt}" width="${image.width}" height="${image.height}" ${loading} decoding="async" style="background-color:${image.color}">`;
-  return html`<picture><source type="image/avif" srcset="${srcset(image.avif)}" sizes="${sizes}"><img src="${imageUrl(image)}" srcset="${srcset(image.webp)}" sizes="${sizes}" alt="${alt}" width="${image.width}" height="${image.height}" ${loading} decoding="async" style="background-color:${image.color}"></picture>`;
+  if (image.src) return html`<img src="${image.src}" alt="${alt}" width="${image.width}" height="${image.height}" ${loading} decoding="async" style="background-color:${image.color};--ar:${image.width}/${image.height}">`;
+  return html`<picture><source type="image/avif" srcset="${srcset(image.avif)}" sizes="${sizes}"><img src="${imageUrl(image)}" srcset="${srcset(image.webp)}" sizes="${sizes}" alt="${alt}" width="${image.width}" height="${image.height}" ${loading} decoding="async" style="background-color:${image.color};--ar:${image.width}/${image.height}"></picture>`;
 }

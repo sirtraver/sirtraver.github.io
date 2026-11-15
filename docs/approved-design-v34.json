@@ -1,9 +1,9 @@
 {
-  "version": "v64 — Audit: method block and secondary skills on About, trust strip on home and Contact",
+  "version": "v66 — KUDAKE! and Flamenco Urbano marked as concept projects",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "79c96adf7bf7d136af850c96dbbfe23404195ffe6413fdbedd170dcd7e5e2d98",
-    "/es/": "b4660cc173cf3bdac51bb6db5c5be594b7c64d533d8acf1826f783f174535748",
+    "/": "0cee3c4e96d330414c64813a161fd55624b79c5c39494b77ba8a4deae253106b",
+    "/es/": "27129342f535b29cef1f46fc7d71265e58f90a4fbc14d303d6527b416d5b9880",
     "/about/": "b060cf994e0f40d9aae56567fca73a7f3dcff0c2d48a06cf66e3d421b59e0add",
     "/es/about/": "58c76ddd086fcfb03e1484d1ee0347f2c3d1be309571b30a1ae276ee9da864c8",
     "/resources/": "12d43ee10e59b5200f33b69df85068d19b5287c60cf3678cb0b7f0bb30aa44e8",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 95207,
   "cssPrefixHash": "a60e61f3420ccde873b475d484744304f01dcd163cb068dadfd0d557df0243c5",
   "homeShellHashes": {
-    "/": "72c9522b343f1c97bbe74a8278ac57701e0264c02d8be911f8730000d515d7da",
-    "/es/": "2deb259fd293176860d49cd4073324be0e651be6619ad80d6109852bf1ea9a48"
+    "/": "1682408b6fa3a3193db80a6f830a70ae7baafdc1b63cff32242f912447674826",
+    "/es/": "8d4bccf1631d9794fabfdc1eaaaeefeff8a231ce8132a3da0f7770cca9f5f72c"
   },
   "resourcesShellHashes": {
     "/resources/": "34c985a0e332f68472f39ea6b17c2c5937a132b575872b9f0b0aeddc41ba38f6",

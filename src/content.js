@@ -117,7 +117,7 @@ export const CONTENT = {
       "description": `${ROLE}, freelance since 2017 and a Design graduate from Universidad Complutense de Madrid. Currently studying an Advanced Vocational Qualification in Marketing & Advertising at UFV.`,
       "breadcrumb": "About",
       "overline": "About · Madrid",
-      "portraitAlt": `Javier Traver — ${ROLE}`,
+      "portraitAlt": `Javier Traver (sirtraver), ${ROLE} in Madrid`,
       "role": ROLE,
       "location": "Madrid, Spain",
       "positionTitle": [
@@ -343,7 +343,7 @@ export const CONTENT = {
       "description": `${ROLE}, freelance desde 2017 y graduado en Diseño por la Universidad Complutense de Madrid. Actualmente estudio el Grado Superior en Marketing y Publicidad en la UFV.`,
       "breadcrumb": "Sobre mí",
       "overline": "Sobre mí · Madrid",
-      "portraitAlt": `Javier Traver — ${ROLE}`,
+      "portraitAlt": `Javier Traver (sirtraver), ${ROLE} en Madrid`,
       "role": ROLE,
       "location": "Madrid, España",
       "positionTitle": [

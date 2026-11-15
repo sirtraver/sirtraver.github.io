@@ -22,7 +22,8 @@ export const SITE_VERIFICATION = {
 };
 
 export const SHARE_IMAGE = { path: '/assets/share-sirtraver.png', width: 1200, height: 630 };
-export const PORTRAIT = { path: '/assets/cv-portrait.jpg', width: 600, height: 599 };
+// Profile photo: the large file is the one search engines and social previews get; the page shows the small one on narrow screens.
+export const PORTRAIT = { path: '/assets/javier-traver-sirtraver.jpg', width: 1200, height: 1200, small: '/assets/javier-traver-sirtraver-600.jpg', smallWidth: 600 };
 
 // Hosts allowed for remote images (Gumroad product thumbnails).
 export const GUMROAD_IMAGE_HOSTS = ['public-files.gumroad.com', 'gumroad-public-storage.s3.amazonaws.com'];

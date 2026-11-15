@@ -25,7 +25,8 @@ test('every page has its own title, one h1, canonical, reciprocal hreflang and s
       assert.ok(html.includes(`<link rel="alternate" hreflang="es" href="${ORIGIN}${ROUTES.es[index]}">`), path);
       assert.ok(html.includes(`<link rel="alternate" hreflang="x-default" href="${ORIGIN}${ROUTES.en[index]}">`), path);
       assert.equal((html.match(/<h1\b/g) || []).length, 1, path);
-      assert.match(html, /<meta property="og:image" content="https:\/\/sirtraver\.com\/assets\/share-sirtraver\.png">/);
+      // About shares the profile photo (also its image for search); the other pages share the brand image.
+      assert.match(html, index === 2 ? /<meta property="og:image" content="https:\/\/sirtraver\.com\/assets\/javier-traver-sirtraver\.jpg">/ : /<meta property="og:image" content="https:\/\/sirtraver\.com\/assets\/share-sirtraver\.png">/, path);
       assert.match(html, /<meta name="description" content="[^"]{50,}">/);
       assert.equal((html.match(/https:\/\/www\.threads\.com\/@sirtraver/g) || []).length, index === 2 ? 2 : 1, 'profile card when present and JSON-LD sameAs');
       assert.equal((html.match(/https:\/\/www\.instagram\.com\/sirtraver\//g) || []).length, index === 2 ? 2 : 1);

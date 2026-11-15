@@ -1,11 +1,11 @@
 {
-  "version": "v68 — Articles section with two method articles, linked from footer",
+  "version": "v69 — Profile photo 1200 px renamed javier-traver-sirtraver, srcset, alt and og:image on About",
   "commit": "see git log",
   "bodyHashes": {
     "/": "404eab334e7adf2a26897ff93885dcdb9c1c5970885108fa48016fe8f5082a9c",
     "/es/": "bc21323e3ace2f4b9282be2f5097afca849cfa7bf57f8f236e5ad6ac9a32474f",
-    "/about/": "62b8fbd79b7d9dcac1e0257d0ca975c1b02f19497ffad3cdb101121bbce5501c",
-    "/es/about/": "d12a927c81581535cfe15f03b2f1c4f713d9d50901332bbac1b59f04a7bb5fdc",
+    "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
+    "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
     "/es/resources/": "b16bcb204c720cd7b9b8ab98d3915d637d6abf4b103fa1d24f7d2985d1fcb81f"
   },

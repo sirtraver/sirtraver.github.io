@@ -35,10 +35,15 @@ function schema(lang) {
       '@id': PORTRAIT_ID,
       contentUrl: ORIGIN + PORTRAIT.path,
       url: ORIGIN + PORTRAIT.path,
-      name: 'Javier Traver',
-      caption: `Javier Traver — ${ROLE}`,
+      name: 'Javier Traver (sirtraver)',
+      caption: t.portraitAlt,
       width: PORTRAIT.width,
       height: PORTRAIT.height,
+      representativeOfPage: true,
+      about: { '@id': PERSON_ID },
+      creator: { '@id': PERSON_ID },
+      creditText: 'Javier Traver',
+      copyrightNotice: '© Javier Traver',
     },
   );
 }
@@ -52,6 +57,7 @@ export function aboutPage(lang) {
     styles: ['/assets/about-cv.css'],
     title: t.title,
     description: t.description,
+    shareImage: { url: ORIGIN + PORTRAIT.path, width: PORTRAIT.width, height: PORTRAIT.height, alt: t.portraitAlt },
     schema: schema(lang),
     body: html`<article class="about-editorial about-resume">
     <header class="about-profile">
@@ -66,7 +72,7 @@ export function aboutPage(lang) {
         </div>
       </div>
       <figure class="about-portrait">
-        <img class="editorial-portrait" src="${assetUrl(PORTRAIT.path)}" alt="${t.portraitAlt}" width="${PORTRAIT.width}" height="${PORTRAIT.height}" fetchpriority="high">
+        <img class="editorial-portrait" src="${assetUrl(PORTRAIT.small)}" srcset="${assetUrl(PORTRAIT.small)} ${PORTRAIT.smallWidth}w, ${assetUrl(PORTRAIT.path)} ${PORTRAIT.width}w" sizes="(max-width: 700px) 112px, 300px" alt="${t.portraitAlt}" width="${PORTRAIT.width}" height="${PORTRAIT.height}" fetchpriority="high">
         <figcaption><strong>Javier Traver</strong><p class="profile-role">${t.role}</p><span class="profile-location">${t.location}</span></figcaption>
       </figure>
     </header>

@@ -24,15 +24,19 @@ import { archivePage } from './views/archive.js';
 import { projectPage } from './views/project.js';
 import { resourcesPage } from './views/resources.js';
 import { servicesPage } from './views/services.js';
+import { articlePage, articlesIndex } from './views/articles.js';
+import { ARTICLES, ARTICLES_PAGE, articlePath } from './articles.js';
 import { coverSitemap, sitemap } from './views/sitemap.js';
 import { THANKS_PAGE } from './views/journey.js';
 import { thankYouPage } from './views/thank-you.js';
 
 const PAGE_ROUTES = new Map(
-  Object.entries({ ...PAGES, ...LEGAL_PAGES, archive: ARCHIVE_PAGE, contact: CONTACT_PAGE, thanks: THANKS_PAGE }).flatMap(([page, paths]) =>
+  Object.entries({ ...PAGES, ...LEGAL_PAGES, articles: ARTICLES_PAGE, archive: ARCHIVE_PAGE, contact: CONTACT_PAGE, thanks: THANKS_PAGE }).flatMap(([page, paths]) =>
     Object.entries(paths).map(([lang, path]) => [path, { page, lang }]),
   ),
 );
+
+for (const article of ARTICLES) for (const lang of ['en', 'es']) PAGE_ROUTES.set(articlePath(article, lang), { page: 'article', lang, article });
 
 // Canonical curriculum URLs retain an explicit document language.
 PAGE_ROUTES.set('/cv/', { page: 'cv', lang: 'es' });
@@ -48,7 +52,7 @@ const galleries = () =>
 
 const withSlash = (path) => (path.endsWith('/') ? path : `${path}/`);
 
-async function renderPage({ page, lang }, request, url, env, ctx) {
+async function renderPage({ page, lang, article }, request, url, env, ctx) {
   switch (page) {
     case 'thanks':
       return htmlResponse(request, thankYouPage(lang, url.searchParams.get('notice') === 'resources'), { noindex: true });
@@ -61,6 +65,10 @@ async function renderPage({ page, lang }, request, url, env, ctx) {
       return moreProjects.length ? htmlResponse(request, archivePage(lang, moreProjects)) : redirect(new URL(PAGES.home[lang], url).href);
     case 'resources':
       return htmlResponse(request, resourcesPage(lang, await getCatalog(env), url.searchParams.get('subscription')));
+    case 'articles':
+      return htmlResponse(request, articlesIndex(lang));
+    case 'article':
+      return htmlResponse(request, articlePage(article, lang, activeProjects));
     case 'services':
       return htmlResponse(request, servicesPage(lang, activeProjects));
     case 'cv':

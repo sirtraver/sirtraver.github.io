@@ -1,4 +1,5 @@
 // Document shell shared by all pages: <head> metadata, header, footer.
+import { ARTICLES_PAGE } from '../articles.js';
 import { CANONICAL_HOST, ORIGIN, SHARE_IMAGE, SITE_VERIFICATION } from '../config.js';
 import { CONTACT_PAGE, CONTENT, LANGUAGES, PAGES } from '../content.js';
 import { assetUrl } from '../lib/assets.js';
@@ -32,7 +33,7 @@ function footer(lang, page) {
   const t = CONTENT[lang];
   return html`<footer class="site-footer">
   <div class="footer-legal">
-    <span>© ${new Date().getUTCFullYear()} sirtraver</span><a href="${PAGES.services[lang]}"${page === 'services' ? html` aria-current="page"` : ''}>${t.nav.services}</a><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
+    <span>© ${new Date().getUTCFullYear()} sirtraver</span><a href="${PAGES.services[lang]}"${page === 'services' ? html` aria-current="page"` : ''}>${t.nav.services}</a><a href="${ARTICLES_PAGE[lang]}"${page === 'articles' ? html` aria-current="page"` : ''}>${t.nav.articles}</a><a href="${PAGES.resources[lang]}"${page === 'resources' ? html` aria-current="page"` : ''}>${t.nav.resources}</a><a href="${LEGAL_PAGES.legal[lang]}">${LEGAL_CONTENT[lang].footer.legal}</a><a href="${LEGAL_PAGES.privacy[lang]}">${LEGAL_CONTENT[lang].footer.privacy}</a>
   </div>
   <span>${t.footerRole}</span>
 </footer>`;

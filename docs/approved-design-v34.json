@@ -1,23 +1,23 @@
 {
-  "version": "v67 — Services page without prices (three offers), linked from footer and About",
+  "version": "v68 — Articles section with two method articles, linked from footer",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "49d7aae9710352693021fb0382118dcd92949b1f9de7f8c4091f8d01127460b3",
-    "/es/": "8fa2ca4d595daa87f7fcf88120244a2b2fa6dc35aa0f5ce033402930b0f8f644",
-    "/about/": "60fe005692629b889258d379ab85285a45332e39fb3e4e49a6f85ab300b89ce0",
-    "/es/about/": "cc64014249705da025b2274fe5c95e208f39408babfe7ba01de93f27bf7ba747",
-    "/resources/": "a88929121a694696d418e4f3317b9806d0296691e5a6b304d0faa7481400ac6f",
-    "/es/resources/": "39d08d9dbf36a915f0a0ba50f8c58501d30a82d0a4956a0a36c5362c8e2d6a58"
+    "/": "404eab334e7adf2a26897ff93885dcdb9c1c5970885108fa48016fe8f5082a9c",
+    "/es/": "bc21323e3ace2f4b9282be2f5097afca849cfa7bf57f8f236e5ad6ac9a32474f",
+    "/about/": "62b8fbd79b7d9dcac1e0257d0ca975c1b02f19497ffad3cdb101121bbce5501c",
+    "/es/about/": "d12a927c81581535cfe15f03b2f1c4f713d9d50901332bbac1b59f04a7bb5fdc",
+    "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
+    "/es/resources/": "b16bcb204c720cd7b9b8ab98d3915d637d6abf4b103fa1d24f7d2985d1fcb81f"
   },
-  "cssPrefixBytes": 96524,
-  "cssPrefixHash": "865d828d276bc479b9ad6d947ac7801525a238b45dba3d48f150e563400f7d6e",
+  "cssPrefixBytes": 98516,
+  "cssPrefixHash": "8e6cc333e169d5819003d8fd91b262d24214c0960a042e6f57948ed3509eb931",
   "homeShellHashes": {
-    "/": "1b97ae04ceb9dec9454a0932e9a40cc7ccc00f5f64c3aef6782cb3683a6c98f4",
-    "/es/": "24ca61f519fef067229843717a4b27a7561337330882fc0869cb88bc4bf59e7d"
+    "/": "8b22178202ff2ab268297382ec9cc800bb69ff700cca7dd770b5a8972e494865",
+    "/es/": "977b1d9d322abe4f7aa8f85b3121ba54baa63f1f0efb2cdb35b4c3a846646a29"
   },
   "resourcesShellHashes": {
-    "/resources/": "09d41fb6da867a8b5e2d67d01dfff283976d072cb6ea1a6b313181b9cb3a00f9",
-    "/es/resources/": "043042e12589a2c4c43a8d2dcfdad118a2f7e940827ad0cf3b3fb383bd517ffa"
+    "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",
+    "/es/resources/": "8c03f43588790488d3565b9d5bd37c6504e1809f7349515c23f861327a3b4c2c"
   },
   "resourcesFormHashes": {
     "/resources/": "e19767a861744e4080de6efe0aba4f82e1013f3b6ac605bc793ffa9b02a6c273",

@@ -3,6 +3,7 @@ import { ARCHIVE_PAGE, LANGUAGES, PAGES, projectName, projectPath } from '../con
 import { absoluteUrl } from '../lib/assets.js';
 import { escape } from '../lib/html.js';
 import { largestUrl } from '../lib/picture.js';
+import { ARTICLES, ARTICLES_PAGE, articlePaths } from '../articles.js';
 
 /**
  * @param {object[]} projects  Active projects (covers listed on the home pages).
@@ -32,6 +33,8 @@ export function sitemap(projects, archived, lastModified) {
 
   const urls = LANGUAGES.flatMap((lang) => [
     ...Object.keys(PAGES).map((page) => entry(PAGES[page], lang, images[page])),
+    entry(ARTICLES_PAGE, lang, []),
+    ...ARTICLES.map((article) => entry(articlePaths(article), lang, [])),
     ...[...projects, ...archived].map((project) =>
       entry(
         { en: projectPath(project, 'en'), es: projectPath(project, 'es') },

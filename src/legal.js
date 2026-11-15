@@ -51,7 +51,7 @@ export const LEGAL_CONTENT = {
       heading: 'Privacy policy',
       description: 'How sirtraver.com handles personal data and your language preference.',
       sections: [
-        ['Data controller', [html`${LEGAL.holder}. Contact: ${email}.`]],
+        ['Data controller', [LEGAL.address ? html`${LEGAL.holder}. Postal address: ${LEGAL.address}. Contact: ${email}.` : html`${LEGAL.holder}. Contact: ${email}.`]],
         [
           'What data is collected',
           [
@@ -90,6 +90,9 @@ export const LEGAL_CONTENT = {
       newsletter: ['Newsletter', ['If you subscribe on the Resources page, your email address and language are stored by Brevo (Sendinblue SAS, France, EU), which acts as data processor and sends the emails. The legal basis is your consent, confirmed by email (double opt-in). Every email includes a link to unsubscribe, and you can also ask for your data to be deleted by writing to the address above. Your data is kept until you unsubscribe.']],
       analytics: ['Visit statistics', ['Aggregated, anonymous visit statistics (pages viewed, referring site, country, device type and clicks on buttons and links) are collected with Umami Cloud, a cookieless tool. It does not store cookies on your device, does not identify you and does not track you across sites.']],
     },
+    // Built from the providers that are switched on (see views/legal.js).
+    transfers: (providers) => ['International transfers', [html`Some technical providers of this website are companies based in the United States or use infrastructure there: ${providers.join(', ')}. When their services involve processing data outside the European Economic Area, the transfer relies on the EU-U.S. Data Privacy Framework, where the provider is certified, or on the standard contractual clauses approved by the European Commission. You can ask for more information by writing to ${email}.`]],
+    providers: { github: 'GitHub, Inc. (hosting)', umami: 'Umami Software, Inc. (visit statistics, recorded in its EU region)', web3forms: 'Web3Forms (Resources form)' },
     updated: `Last updated: ${LEGAL.updated.en}`,
     footer: { legal: 'Legal notice', privacy: 'Privacy' },
   },
@@ -123,7 +126,7 @@ export const LEGAL_CONTENT = {
       heading: 'Política de privacidad',
       description: 'Cómo trata sirtraver.com los datos personales y tu preferencia de idioma.',
       sections: [
-        ['Responsable del tratamiento', [html`${LEGAL.holder}. Contacto: ${email}.`]],
+        ['Responsable del tratamiento', [LEGAL.address ? html`${LEGAL.holder}. Dirección postal: ${LEGAL.address}. Contacto: ${email}.` : html`${LEGAL.holder}. Contacto: ${email}.`]],
         [
           'Qué datos se recogen',
           [
@@ -162,6 +165,8 @@ export const LEGAL_CONTENT = {
       newsletter: ['Newsletter', ['Si te suscribes en la página de Recursos, tu email y tu idioma se guardan en Brevo (Sendinblue SAS, Francia, UE), que actúa como encargado del tratamiento y envía los emails. La base legal es tu consentimiento, confirmado por email (doble confirmación). Cada email incluye un enlace para darte de baja, y también puedes pedir que se borren tus datos escribiendo a la dirección indicada arriba. Tus datos se conservan hasta que te des de baja.']],
       analytics: ['Estadísticas de visitas', ['Se recogen estadísticas de visitas agregadas y anónimas (páginas vistas, web de procedencia, país, tipo de dispositivo y clics en botones y enlaces) con Umami Cloud, una herramienta sin cookies. No guarda cookies en tu dispositivo, no te identifica y no te sigue por otras webs.']],
     },
+    transfers: (providers) => ['Transferencias internacionales', [html`Algunos proveedores técnicos de esta web son empresas con sede en Estados Unidos o usan infraestructura allí: ${providers.join(', ')}. Cuando sus servicios implican tratar datos fuera del Espacio Económico Europeo, la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU., si el proveedor está adherido, o en las cláusulas contractuales tipo aprobadas por la Comisión Europea. Puedes pedir más información escribiendo a ${email}.`]],
+    providers: { github: 'GitHub, Inc. (alojamiento)', umami: 'Umami Software, Inc. (estadísticas de visitas, registradas en su región de la UE)', web3forms: 'Web3Forms (formulario de Recursos)' },
     updated: `Última actualización: ${LEGAL.updated.es}`,
     footer: { legal: 'Aviso legal', privacy: 'Privacidad' },
   },

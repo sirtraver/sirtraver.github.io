@@ -14,6 +14,10 @@ export function legalPage(kind, lang) {
   const optional = kind === 'privacy'
     ? [...(newsletter || contactEmail ? [t.optional.email] : []), ...(newsletterForm ? [t.optional.newsletter] : []), ...(waitlistForm ? [t.optional.forms] : []), ...(analytics ? [t.optional.analytics] : [])]
     : [];
+  if (kind === 'privacy') {
+    const providers = [t.providers.github, ...(analytics ? [t.providers.umami] : []), ...(waitlistForm ? [t.providers.web3forms] : [])];
+    optional.push(t.transfers(providers));
+  }
   const sections = [...page.sections.slice(0, -1), ...optional, ...page.sections.slice(-1)];
   return layout({
     lang,

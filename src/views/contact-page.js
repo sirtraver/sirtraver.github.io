@@ -4,6 +4,7 @@ import { html } from '../lib/html.js';
 import { LEGAL_CONTENT, LEGAL_PAGES } from '../legal.js';
 import { PROJECT_TYPES } from '../services/contact.js';
 import { layout } from './layout.js';
+import { trustStrip } from './section-intro.js';
 import { briefBuilder } from './brief.js';
 import { breadcrumbs, graph, person, webPage, website } from './schema.js';
 import { JOURNEY, THANKS_PAGE, contactFaq, visibleBreadcrumbs } from './journey.js';
@@ -34,6 +35,7 @@ export function contactPage(lang, sent = null) {
   <h1>${t.heading}</h1>
   <p class="contact-lead">${t.lead}</p>
   <p class="response-time">${JOURNEY[lang].response}</p>
+  ${trustStrip(lang)}
   ${formEnabled ? html`<p class="contact-brief">${JOURNEY[lang].brief}</p>` : ''}
   ${formEnabled ? html`<form class="contact-form" method="post" action="/api/contact" data-enhance data-redirect="${THANKS_PAGE[lang]}" data-sending="${t.sending}" data-success="${t.success}" data-error="${t.error}" data-limited="${t.limited}">
     <input type="hidden" name="language" value="${lang}">

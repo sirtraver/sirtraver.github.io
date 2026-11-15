@@ -1,16 +1,16 @@
 {
-  "version": "v63 — Auditoría: hero ratio reserved (CLS), WCAG AA contrast, language link names, underlined email link",
+  "version": "v64 — Audit: method block and secondary skills on About, trust strip on home and Contact",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "7f27045ff21cf68237d2666ee13c4a2dcb9cabad15c428bb87e1ad82626687e2",
-    "/es/": "ede7a35c0b05d02cfa53587c0cc83e3ff1aa9c70fd945d360451f6d67318f029",
-    "/about/": "1ad29bd0c2c9ae9ba2faa045cfa1f4b7c91897cb8482c48e48b5f0f7cced9e02",
-    "/es/about/": "6e717ed662a0f201f8e64895d165bb5b3b7812d4f03c95b51c0b9bf6342996b2",
-    "/resources/": "945e675d6c5b30ca7e216254f1b20030a28ca64998f3d402966aeb94479b27b2",
-    "/es/resources/": "7e9124d5f86b8e22a7c436c6bf3adde29fbac100846d8ea962f7d3080ede9487"
+    "/": "79c96adf7bf7d136af850c96dbbfe23404195ffe6413fdbedd170dcd7e5e2d98",
+    "/es/": "b4660cc173cf3bdac51bb6db5c5be594b7c64d533d8acf1826f783f174535748",
+    "/about/": "b060cf994e0f40d9aae56567fca73a7f3dcff0c2d48a06cf66e3d421b59e0add",
+    "/es/about/": "58c76ddd086fcfb03e1484d1ee0347f2c3d1be309571b30a1ae276ee9da864c8",
+    "/resources/": "12d43ee10e59b5200f33b69df85068d19b5287c60cf3678cb0b7f0bb30aa44e8",
+    "/es/resources/": "5dae778b77e7b11d2e25286b08633f30830cb8645f17fa3a116d0a3c1cb62509"
   },
-  "cssPrefixBytes": 92912,
-  "cssPrefixHash": "986e2d1205c0e6bc71ce4d37abe81199124db3c830af0370ba41adade4536dd5",
+  "cssPrefixBytes": 95207,
+  "cssPrefixHash": "a60e61f3420ccde873b475d484744304f01dcd163cb068dadfd0d557df0243c5",
   "homeShellHashes": {
     "/": "72c9522b343f1c97bbe74a8278ac57701e0264c02d8be911f8730000d515d7da",
     "/es/": "2deb259fd293176860d49cd4073324be0e651be6619ad80d6109852bf1ea9a48"

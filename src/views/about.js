@@ -70,6 +70,10 @@ export function aboutPage(lang) {
         <figcaption><strong>Javier Traver</strong><p class="profile-role">${t.role}</p><span class="profile-location">${t.location}</span></figcaption>
       </figure>
     </header>
+  <section class="about-method" aria-labelledby="about-method">
+    <div class="about-method-intro"><h2 id="about-method">${t.method.heading}</h2><p>${t.method.lead}</p></div>
+    <ol class="method-steps">${t.method.steps.map(([name, text], i) => html`<li><span class="method-index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><h3>${name}</h3><p>${text}</p></li>`)}</ol>
+  </section>
   <div class="resume-main">
     <section class="resume-section" aria-labelledby="resume-experience">
       <h2 id="resume-experience">${t.experience}</h2>

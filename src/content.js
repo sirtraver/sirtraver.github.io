@@ -42,6 +42,7 @@ export const CONTENT = {
     switchToThisLanguage: 'View this page in English',
     shareImageAlt: 'sirtraver visual identity by Javier Traver',
     personCaption: `Javier Traver — ${ROLE} · Madrid`,
+    trust: { label: 'At a glance', items: ['Freelance since 2017', 'Design degree (UCM)', 'Madrid', 'Spanish · English C1'] },
     categories: { 'Visual identity': 'Visual identity', 'Visual design': 'Visual design' },
 
     home: {
@@ -129,7 +130,17 @@ export const CONTENT = {
       "currentEducation": "CURRENT EDUCATION",
       "cvLink": "View Resume",
       "education": "Education",
-      "skills": "Skills",
+      "skills": "Also",
+      "method": {
+        "heading": "How I work",
+        "lead": "One line from the logo to the spot, so the brand looks the same wherever it appears.",
+        "steps": [
+          ["Identity", "Logo, colour and type: the base everything else is built on."],
+          ["Product system", "Packaging, labels and applications that keep the brand recognisable in every format."],
+          ["Campaign", "Product images and pieces for social media and print, ready to launch."],
+          ["Motion", "Spots and animated pieces that carry the same identity into video."]
+        ]
+      },
       "tools": "Tools",
       "languages": "Languages",
       "clients": "CLIENTS",
@@ -216,6 +227,7 @@ export const CONTENT = {
     switchToThisLanguage: 'Ver esta página en español',
     shareImageAlt: 'Identidad visual de sirtraver, por Javier Traver',
     personCaption: `Javier Traver — ${ROLE} · Madrid`,
+    trust: { label: 'En pocas palabras', items: ['Freelance desde 2017', 'Grado en Diseño (UCM)', 'Madrid', 'Español · Inglés C1'] },
     categories: { 'Visual identity': 'Identidad visual', 'Visual design': 'Diseño visual' },
 
     home: {
@@ -303,7 +315,17 @@ export const CONTENT = {
       "currentEducation": "FORMACIÓN ACTUAL",
       "cvLink": "Ver CV",
       "education": "Formación",
-      "skills": "Competencias",
+      "skills": "También",
+      "method": {
+        "heading": "Cómo trabajo",
+        "lead": "Una sola línea del logotipo al spot, para que la marca se vea igual dondequiera que aparezca.",
+        "steps": [
+          ["Identidad", "Logotipo, color y tipografía: la base sobre la que se construye todo lo demás."],
+          ["Sistema de producto", "Packaging, etiquetas y aplicaciones que mantienen la marca reconocible en cada formato."],
+          ["Campaña", "Imágenes de producto y piezas para redes y cartelería, listas para lanzar."],
+          ["Motion", "Spots y piezas animadas que llevan la misma identidad al vídeo."]
+        ]
+      },
       "tools": "Herramientas",
       "languages": "Idiomas",
       "clients": "CLIENTES",

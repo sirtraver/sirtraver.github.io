@@ -5,7 +5,7 @@ import { html } from '../lib/html.js';
 import { largestUrl, picture } from '../lib/picture.js';
 import { layout } from './layout.js';
 import { breadcrumbs, graph, itemList, person, webPage, website } from './schema.js';
-import { sectionIntro } from './section-intro.js';
+import { sectionIntro, trustStrip } from './section-intro.js';
 
 const imageId = (project) => `${absoluteUrl('/')}#project-image-${project.slug}`;
 
@@ -96,7 +96,7 @@ export function homePage(lang, { projects, archived = 0 }) {
     description: t.description,
     schema: schema(lang, projects),
     // Cards are plain links to the case studies; the transition between them is a View Transition (site.css).
-    body: html`${sectionIntro(lang, t.heading, t.lead)}
+    body: html`${sectionIntro(lang, t.heading, t.lead, trustStrip(lang))}
 <div class="work-heading"><h2>${t.workTitle}<span class="work-count">${String(projects.length).padStart(2, '0')}</span></h2><span>${t.workOrder}</span></div>
 <section class="project-grid project-grid--editorial" aria-label="${t.gridLabel}" data-cursor-label="${t.viewProject}">${projects.map((p, i) => projectCard(p, lang, { priority: i === 0 }))}</section>
 ${archived ? html`<p class="archive-link"><a class="more-button" href="${ARCHIVE_PAGE[lang]}">${t.archive} <span aria-hidden="true">→</span></a></p>` : ''}

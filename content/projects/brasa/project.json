@@ -6,38 +6,30 @@
   "conceptual": true,
   "draft": false,
   "intro": {
-    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento completo de una marca inventada de salsas picantes en tres niveles: estrategia, naming de la gama, identidad y manual de marca, etiquetas, caja regalo, campaña en calle y redes, página de producto, email, banners y dos spots de 10 segundos.",
-    "en": "Spec work — not affiliated with any real brand. A full launch for an invented hot sauce brand in three heat levels: strategy, range naming, identity and brand guidelines, labels, gift box, street and social campaign, product page, email, banners and two 10-second spots."
+    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento completo de una marca inventada de salsas picantes en tres niveles: de la estrategia y el nombre a las etiquetas, la campaña, la web y dos spots.",
+    "en": "Spec work — not affiliated with any real brand. A full launch for an invented hot sauce brand in three heat levels: from strategy and naming to labels, campaign, website and two spots."
   },
   "client": "",
   "role": {
-    "es": "Estrategia de marca, naming, identidad y diseño de etiquetas, concepto de campaña y redacción, plan de canales, dirección de arte, generación de imagen y vídeo con IA, diseño de piezas, web y email",
-    "en": "Brand strategy, naming, identity and label design, campaign concept and copywriting, channel plan, art direction, AI image and video generation, layout of the pieces, web and email"
+    "es": "Estrategia, naming, identidad, campaña y dirección de arte",
+    "en": "Strategy, naming, identity, campaign and art direction"
   },
   "deliverables": {
     "es": [
-      "Estrategia: categoría, posicionamiento e insight",
-      "Naming de la gama y sistema de niveles",
-      "Logotipo y manual de marca",
-      "Tres etiquetas en arte final y caja regalo",
-      "Packshot y fotografía de producto",
-      "Tríptico de carteles y mupis en ES y EN",
-      "Piezas para redes (1:1, 9:16, 16:9)",
-      "Página de producto, email y banners display",
-      "Spots de 10 s en 9:16 y 16:9",
-      "Plan de canales y de medición"
+      "Estrategia y naming",
+      "Identidad y manual",
+      "Etiquetas y caja",
+      "Campaña: carteles, mupis y redes",
+      "Web, email y banners",
+      "Dos spots de 10 s"
     ],
     "en": [
-      "Strategy: category, positioning and insight",
-      "Range naming and heat-level system",
-      "Wordmark and brand guidelines",
-      "Three labels as final artwork, and a gift box",
-      "Packshot and product photography",
-      "Poster triptych and street panels in Spanish and English",
-      "Social pieces (1:1, 9:16, 16:9)",
-      "Product page, email and display banners",
-      "10-second spots in 9:16 and 16:9",
-      "Channel and measurement plan"
+      "Strategy and naming",
+      "Identity and guidelines",
+      "Labels and box",
+      "Campaign: posters, street panels and social",
+      "Web, email and banners",
+      "Two 10-second spots"
     ]
   },
   "tools": [
@@ -81,48 +73,8 @@
         "en": "The challenge"
       },
       "text": {
-        "es": "Un obrador pequeño de salsas picantes que vende en mercados de productores, sin marca, quiere entrar en tiendas gourmet y abrir tienda online. Quien prueba sus salsas repite, pero en un lineal o en una web no hay nadie que explique cuál elegir ni cuánto pica cada una.",
-        "en": "A small hot sauce kitchen that sells unbranded at farmers’ markets wants to get into delis and open an online shop. People who try the sauces come back, but on a shelf or a website there is no one to explain which one to pick or how hot each one is."
-      }
-    },
-    {
-      "title": {
-        "es": "Descubrimiento",
-        "en": "Discovery"
-      },
-      "text": {
-        "es": "El lineal está partido en dos: salsas tradicionales, con etiquetas densas que dan por hecho que ya las conoces, y salsas «extremas», con calaveras, llamas y cifras Scoville, todas muy parecidas. El nivel de picante es la primera pregunta del comprador y casi nunca se responde bien.",
-        "en": "The shelf is split in two: traditional sauces, with dense labels that assume you already know them, and “extreme” sauces with skulls, flames and Scoville numbers, all very alike. Heat level is the buyer’s first question and it is rarely answered well."
-      }
-    },
-    {
-      "title": {
-        "es": "Insight",
-        "en": "Insight"
-      },
-      "text": {
-        "es": "«Me gusta el picante, pero no quiero hacerme el valiente: quiero saber cuánto pica antes de echarlo.» La categoría habla de valentía; el comprador habla de control.",
-        "en": "“I like heat, but I don’t want to prove anything: I want to know how hot it is before I pour it.” The category talks about bravery; the buyer talks about control."
-      }
-    },
-    {
-      "title": {
-        "es": "Estrategia",
-        "en": "Strategy"
-      },
-      "text": {
-        "es": "BRASA se coloca en el hueco libre del mapa: franca pero no amenazante, y con el picor explicado sin leer. La promesa es una sola frase: BRASA te dice cuánto pica, sin rodeos. La personalidad es directa y con humor seco, nunca chulesca.",
-        "en": "BRASA sits in the empty spot on the map: frank but not threatening, with the heat explained without reading. The promise is one sentence: BRASA tells you how hot it is, no nonsense. The personality is direct with a dry sense of humour, never cocky."
-      }
-    },
-    {
-      "title": {
-        "es": "Gama e identidad",
-        "en": "Range and identity"
-      },
-      "text": {
-        "es": "Tres niveles con nombre propio que ya dicen la intensidad (CHISPA, LLAMA, INCENDIO), tres colores y tres puntos que se rellenan. Se exploraron tres rutas; se eligió «Escala» porque es la única que responde a «¿cuánto pica?» sin leer y se imprime a una tinta. Todo queda recogido en un manual de marca.",
-        "en": "Three levels whose names already state the intensity (CHISPA, LLAMA, INCENDIO: spark, flame, blaze), three colours and three dots that fill up. Three routes were explored; “Scale” was chosen because it is the only one that answers “how hot?” without reading, and it prints in one ink. Everything is set out in brand guidelines."
+        "es": "Un obrador de salsas picantes quiere salir del mercado de productores. En el lineal, las salsas o son tradicionales y no explican nada, o son extremas y asustan. Y nadie dice lo que el comprador quiere saber: cuánto pica.",
+        "en": "A small hot sauce kitchen wants to move beyond farmers’ markets. On the shelf, sauces are either traditional and explain nothing, or extreme and scary. None of them says what the buyer wants to know: how hot it is."
       }
     },
     {
@@ -131,38 +83,18 @@
         "en": "The idea"
       },
       "text": {
-        "es": "«Pica, sin rodeos.» Cada nivel se presenta con una frase que dice exactamente cuánto pica: «Pica, pero poco», «Pica, pero bien», «Pica. Punto». La marca avisa una sola vez, al final de cada pieza: «Luego no llores».",
-        "en": "“Hot, no nonsense.” Each level is introduced with a line that says exactly how hot it is: “Hot, just a bit”, “Hot, properly”, “Hot. Full stop”. The brand warns you once, at the end of every piece: “You were warned”."
+        "es": "Hacer del picante el sistema de la marca: tres nombres que suben (CHISPA, LLAMA, INCENDIO), tres puntos y tres colores. La campaña habla igual de claro: «Pica, pero poco», «Pica, pero bien», «Pica. Punto». Y avisa una vez: «Luego no llores».",
+        "en": "Make heat the brand system: three names that climb (CHISPA, LLAMA, INCENDIO: spark, flame, blaze), three dots and three colours. The campaign is just as plain: “Hot, just a bit”, “Hot, properly”, “Hot. Full stop”. And it warns once: “You were warned”."
       }
     },
     {
       "title": {
-        "es": "Campaña y canales",
-        "en": "Campaign and channels"
+        "es": "Qué se hizo",
+        "en": "What was made"
       },
       "text": {
-        "es": "Tres fases: teaser en redes, lanzamiento en calle (tríptico y mupis que se leen como una escala al pasar), redes con un nivel por semana, display y email; y mantenimiento en tienda online con la caja «La escala completa». La página de producto repite la misma lógica: elige tu nivel.",
-        "en": "Three phases: a social teaser; a launch in the street (a triptych and panels that read as a scale as you walk by), social with one level per week, display and email; then an always-on phase in the online shop with “The full scale” gift box. The product page follows the same logic: pick your level."
-      }
-    },
-    {
-      "title": {
-        "es": "Objetivos y medición",
-        "en": "Objectives and measurement"
-      },
-      "text": {
-        "es": "Al ser un proyecto spec no hay resultados de mercado, y no se inventan. El plan fija metas medibles: que al menos el 80 % elija el nivel correcto sin leer en un test de 5 segundos antes de imprimir, que la caja suponga el 30 % de los pedidos online y entrar en 15 tiendas gourmet en seis meses.",
-        "en": "As a spec project there are no market results, and none are made up. The plan sets measurable targets: at least 80% picking the right level without reading in a 5-second test before printing, the gift box making up 30% of online orders, and 15 delis in six months."
-      }
-    },
-    {
-      "title": {
-        "es": "Producción con IA",
-        "en": "AI production"
-      },
-      "text": {
-        "es": "Las etiquetas se diseñaron primero como arte final vectorial y se dieron a la IA como referencia, así que las botellas llevan la etiqueta real. Todas las fotos y los dos spots parten de una misma imagen de gama, con dos tomas por pieza. El texto pequeño se corrigió a mano y los titulares se maquetaron después, nunca generados.",
-        "en": "The labels were designed first as vector artwork and given to the AI as a reference, so the bottles wear the real label. Every photo and both spots start from one range image, with two takes per piece. Small text was corrected by hand and headlines were laid out afterwards, never generated."
+        "es": "Estrategia, naming de la gama, identidad y manual, etiquetas, caja regalo, carteles y mupis, redes, web, email, banners y dos spots de 10 segundos. Las etiquetas se diseñaron primero y la IA las usó como referencia, así que el producto es el mismo en todas las piezas.",
+        "en": "Strategy, range naming, identity and guidelines, labels, gift box, posters and street panels, social, web, email, banners and two 10-second spots. The labels were designed first and used as the AI reference, so the product is identical in every piece."
       }
     }
   ],
@@ -173,8 +105,8 @@
         "en": "The wordmark"
       },
       "text": {
-        "es": "BRASA va en una sans condensada extranegra, girada y a toda la altura de la etiqueta. En una botella estrecha, ponerlo en vertical es la manera de que el nombre sea lo más grande del lineal.",
-        "en": "BRASA is set in an extra-bold condensed sans, rotated and running the full height of the label. On a narrow bottle, setting it vertically is how the name becomes the biggest thing on the shelf."
+        "es": "BRASA en vertical, a toda la altura de la etiqueta: en una botella estrecha es la forma de que el nombre sea lo más grande del lineal.",
+        "en": "BRASA runs vertically, full height: on a narrow bottle it is how the name becomes the biggest thing on the shelf."
       }
     },
     {
@@ -183,8 +115,8 @@
         "en": "Three levels"
       },
       "text": {
-        "es": "Cada salsa tiene su color de etiqueta, de tapón y de fondo: amarillo para CHISPA, rojo para LLAMA, negro para INCENDIO. Los tres puntos de la esquina se rellenan según el nivel, así que el picante se lee de lejos y sin leer.",
-        "en": "Each sauce has its own colour for label, cap and backdrop: yellow for CHISPA, red for LLAMA, black for INCENDIO. The three dots in the corner fill up with the level, so the heat reads from a distance, without reading."
+        "es": "Un color de fondo y tres puntos que se rellenan según el nivel: el picante se lee de lejos, sin leer.",
+        "en": "One background colour and three dots that fill with the level: the heat reads from a distance, without reading."
       }
     },
     {
@@ -193,8 +125,8 @@
         "en": "Campaign system"
       },
       "text": {
-        "es": "Todas las piezas comparten la misma retícula: cabecera con el número y los puntos, titular de dos líneas arriba a la izquierda, el producto sobre el color de su nivel y la firma «Luego no llores» abajo a la derecha. Funciona igual en cartel, mupi, story, banner y página de producto.",
-        "en": "Every piece shares the same grid: a header with the number and the dots, a two-line headline at the top left, the product on its level’s colour and the “You were warned” sign-off at the bottom right. It works the same on a poster, street panel, story, banner and product page."
+        "es": "Misma retícula en todo: frase arriba, producto sobre su color y «Luego no llores» abajo a la derecha.",
+        "en": "The same grid everywhere: the line on top, the product on its colour and “You were warned” bottom right."
       }
     }
   ],
@@ -233,11 +165,11 @@
     }
   ],
   "paletteNote": {
-    "es": "El rojo es el color de la marca: el logotipo, los titulares y la salsa central. Amarillo y carbón marcan los otros dos niveles. La crema es el papel: fondo de la gama, texto sobre rojo e interior de la caja.",
-    "en": "Red is the brand colour: the wordmark, the headlines and the middle sauce. Yellow and charcoal mark the other two levels. Cream is the paper: the backdrop for the range, the text on red and the inside of the box."
+    "es": "Rojo para la marca; amarillo y carbón para los otros dos niveles; crema como papel.",
+    "en": "Red for the brand; yellow and charcoal for the other two levels; cream as the paper."
   },
   "result": {
-    "es": "Proyecto conceptual. Spec work: BRASA es una marca y un producto inventados, sin relación con ninguna empresa real. Demuestra un lanzamiento completo trabajado como un encargo real, de la estrategia y el nombre a la web y los spots, con un sistema de tres niveles que se entiende sin explicación y el mismo producto en todas las piezas.",
-    "en": "Concept project. Spec work: BRASA is an invented brand and product, not affiliated with any real company. It shows a complete launch handled like a real commission, from strategy and naming to the website and the spots, with a three-level system that needs no explanation and the same product in every piece."
+    "es": "Proyecto conceptual. Spec work: BRASA es una marca inventada. El caso completo, con la estrategia, el manual y el plan de campaña, está disponible bajo petición.",
+    "en": "Concept project. Spec work: BRASA is an invented brand. The full case, with strategy, guidelines and campaign plan, is available on request."
   }
 }

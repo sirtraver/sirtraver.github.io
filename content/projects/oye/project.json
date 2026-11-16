@@ -6,40 +6,30 @@
   "conceptual": true,
   "draft": false,
   "intro": {
-    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento completo de un altavoz portátil inventado con forma de canto rodado: estrategia, naming, diseño del objeto y sus tres colores, identidad y manual de marca, caja, campaña en calle y redes, página de producto, email, banners y dos spots de 15 segundos.",
-    "en": "Spec work — not affiliated with any real brand. A full launch for an invented pebble-shaped portable speaker: strategy, naming, object design and three colourways, identity and brand guidelines, box, street and social campaign, product page, email, banners and two 15-second spots."
+    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento completo de un altavoz portátil inventado con forma de canto rodado: del objeto y el nombre a la caja, la campaña, la web y dos spots.",
+    "en": "Spec work — not affiliated with any real brand. A full launch for an invented pebble-shaped portable speaker: from the object and name to the box, campaign, website and two spots."
   },
   "client": "",
   "role": {
-    "es": "Estrategia de marca, naming, diseño conceptual del producto, identidad y packaging, concepto de campaña y redacción, plan de canales, dirección de arte, generación de imagen y vídeo con IA, diseño de piezas, web y email",
-    "en": "Brand strategy, naming, concept product design, identity and packaging, campaign concept and copywriting, channel plan, art direction, AI image and video generation, layout of the pieces, web and email"
+    "es": "Estrategia, naming, diseño del objeto, identidad, campaña y dirección de arte",
+    "en": "Strategy, naming, object design, identity, campaign and art direction"
   },
   "deliverables": {
     "es": [
-      "Estrategia: categoría, posicionamiento e insight",
-      "Naming",
-      "Diseño del objeto y sus tres colores",
-      "Logotipo y manual de marca",
-      "Caja con faja y troquel",
-      "Packshot y fotografía lifestyle",
-      "Key visual y piezas para redes en ES y EN",
-      "Serie de mupis y montaje en calle",
-      "Página de producto, email y banners display",
-      "Spots de 15 s en 9:16 y 16:9",
-      "Plan de canales y de medición"
+      "Estrategia y naming",
+      "Objeto y tres colores",
+      "Identidad y manual",
+      "Caja con faja",
+      "Campaña: KV, mupis y redes",
+      "Web, email, banners y dos spots"
     ],
     "en": [
-      "Strategy: category, positioning and insight",
-      "Naming",
-      "Object design and three colourways",
-      "Wordmark and brand guidelines",
-      "Box with sleeve and dieline",
-      "Packshot and lifestyle photography",
-      "Key visual and social pieces in Spanish and English",
-      "Street panel series and street mock-up",
-      "Product page, email and display banners",
-      "15-second spots in 9:16 and 16:9",
-      "Channel and measurement plan"
+      "Strategy and naming",
+      "Object and three colourways",
+      "Identity and guidelines",
+      "Box with sleeve",
+      "Campaign: KV, street panels and social",
+      "Web, email, banners and two spots"
     ]
   },
   "tools": [
@@ -83,48 +73,8 @@
         "en": "The challenge"
       },
       "text": {
-        "es": "Una startup de audio tiene resuelto el sonido de un altavoz portátil, pero le falta todo lo demás: el objeto, el nombre, la marca y el lanzamiento. La categoría compite en potencia y graves; con un altavoz pequeño esa guerra no se gana. El cliente quiere un altavoz que la gente quiera dejar a la vista.",
-        "en": "An audio start-up has the sound of a portable speaker worked out, but nothing else: the object, the name, the brand and the launch. The category competes on power and bass; a small speaker cannot win that fight. The client wants a speaker people actually want to leave out in view."
-      }
-    },
-    {
-      "title": {
-        "es": "Descubrimiento",
-        "en": "Discovery"
-      },
-      "text": {
-        "es": "Los portátiles parecen equipamiento deportivo: cilindros de plástico, luces y cifras. Los altavoces bonitos son fijos, caros y con cable. Nadie cuida las muchas horas al día en que el altavoz está apagado en una estantería.",
-        "en": "Portable speakers look like sports gear: plastic cylinders, lights and numbers. The good-looking ones are fixed, expensive and wired. No one designs for the many hours a day the speaker sits switched off on a shelf."
-      }
-    },
-    {
-      "title": {
-        "es": "Insight",
-        "en": "Insight"
-      },
-      "text": {
-        "es": "«Un altavoz se pasa mucho más tiempo a la vista que sonando.» Lo que de verdad se compra es cómo queda en casa las horas en que está apagado.",
-        "en": "“A speaker spends far more time being looked at than being heard.” What people really buy is how it looks at home during the hours it is off."
-      }
-    },
-    {
-      "title": {
-        "es": "Estrategia",
-        "en": "Strategy"
-      },
-      "text": {
-        "es": "OYE ocupa el hueco entre el aparato y el mueble: portátil y objeto a la vez. La promesa cabe en una frase: OYE pasa desapercibido hasta que suena. El nombre es la llamada de atención que hace cualquiera cuando quiere que escuches algo, y de él sale el claim: «Oye esto».",
-        "en": "OYE takes the gap between gadget and furniture: portable and an object at once. The promise fits in one line: OYE goes unnoticed until it plays. The name is what anyone says in Spanish when they want you to listen to something (“hey, listen”), and the line comes straight from it: “Hear this”."
-      }
-    },
-    {
-      "title": {
-        "es": "Objeto e identidad",
-        "en": "Object and identity"
-      },
-      "text": {
-        "es": "Se diseñaron dos variantes del objeto y se eligió un canto rodado con el color solo en el botón y en la banda de la base. De las tres rutas de identidad se eligió «Canto»: un logotipo de trazo único, el mismo que va en relieve sobre el tejido. Tres colores con una regla: un neutro y un acento. Todo queda en un manual de marca.",
-        "en": "Two versions of the object were designed and a river pebble was chosen, with colour only on the button and the base band. Of three identity routes, “Pebble” was chosen: a single-stroke wordmark, the same line that is debossed on the fabric. Three colourways with one rule: a neutral and an accent. Everything is set out in brand guidelines."
+        "es": "Una startup de audio tiene el sonido de un altavoz portátil, pero no el objeto ni la marca. La categoría compite en potencia y todo parece un aparato. Y un altavoz se pasa mucho más tiempo a la vista que sonando.",
+        "en": "An audio start-up has the sound of a portable speaker, but not the object or the brand. The category competes on power and everything looks like a gadget. And a speaker spends far more time being looked at than being heard."
       }
     },
     {
@@ -133,38 +83,18 @@
         "en": "The idea"
       },
       "text": {
-        "es": "El altavoz que se esconde. OYE se camufla en cada imagen como una piedra más, en la playa, en una estantería o junto a un lago, y la campaña invita a encontrarlo: «Una de estas piedras suena». Hasta que suena: «Oye esto».",
-        "en": "The speaker that hides. OYE blends into every image as one more stone, on a beach, on a shelf or by a lake, and the campaign invites you to find it: “One of these stones plays music”. Until it plays: “Hear this”."
+        "es": "Un altavoz con forma de canto rodado que se camufla donde lo dejas, en casa o en la playa, hasta que suena. El nombre es la llamada de atención y la campaña lo dice: «Oye esto».",
+        "en": "A pebble-shaped speaker that blends in wherever you leave it, at home or on the beach, until it plays. The name is the call for attention (oye: “hey, listen”), and the campaign says it: “Hear this”."
       }
     },
     {
       "title": {
-        "es": "Campaña y canales",
-        "en": "Campaign and channels"
+        "es": "Qué se hizo",
+        "en": "What was made"
       },
       "text": {
-        "es": "Teaser en redes sin explicación, lanzamiento con mupis en barrios de diseño, spots, display, prensa de diseño y un email a la lista de espera, y mantenimiento en tienda online y tiendas de decoración con «Elige tu piedra». La caja repite la regla del producto: faja neutra y caja del color del acento.",
-        "en": "A social teaser with no explanation; a launch with street panels in design districts, spots, display, design press and an email to the waiting list; then an always-on phase in the online shop and homeware stores with “Pick your stone”. The box repeats the product rule: a neutral sleeve over a box in the accent colour."
-      }
-    },
-    {
-      "title": {
-        "es": "Objetivos y medición",
-        "en": "Objectives and measurement"
-      },
-      "text": {
-        "es": "Como proyecto spec no hay resultados de mercado, y no se inventan. El plan fija metas medibles: que al menos la mitad no identifique el altavoz como tal en un test de 5 segundos con la foto del salón, que Carbón y Arena sumen el 35 % de las ventas y entrar en 40 tiendas de diseño el primer año.",
-        "en": "As a spec project there are no market results, and none are made up. The plan sets measurable targets: at least half of people not recognising it as a speaker in a 5-second test with the living-room photo, Charcoal and Sand making up 35% of sales, and 40 design stores in the first year."
-      }
-    },
-    {
-      "title": {
-        "es": "Producción con IA",
-        "en": "AI production"
-      },
-      "text": {
-        "es": "El objeto se fijó primero en una imagen de referencia y todas las fotos y los dos spots salen de ella, así que la forma, el tejido y el botón no cambian. Un packshot con una peana no pedida se repitió. La caja y la calle se generaron a partir del arte final real de la faja; titulares, mupis, web y piezas se maquetaron después.",
-        "en": "The object was fixed first in one reference image and every photo and both spots come from it, so the shape, fabric and button never change. A packshot with an unrequested plinth was redone. The box and street shots were generated from the real sleeve artwork; headlines, panels, web and pieces were laid out afterwards."
+        "es": "Estrategia, naming, el objeto y sus tres colores, identidad y manual, caja con faja, KV, redes, mupis, web, email, banners y dos spots de 15 segundos. El objeto se fijó en una imagen de referencia, así que es el mismo en todas las piezas.",
+        "en": "Strategy, naming, the object and its three colourways, identity and guidelines, a sleeved box, KV, social, street panels, web, email, banners and two 15-second spots. The object was fixed in one reference image, so it is identical in every piece."
       }
     }
   ],
@@ -175,8 +105,8 @@
         "en": "The object"
       },
       "text": {
-        "es": "Un canto rodado ligeramente asimétrico, forrado de tejido de punto gris piedra. Una banda de silicona azul ultramar en la base y un único botón del mismo azul: todo el color del producto está en esos dos puntos. El logotipo va en minúscula y en relieve, del mismo color que el tejido.",
-        "en": "A slightly asymmetric river pebble wrapped in stone-grey knit fabric. An ultramarine silicone band at the base and a single button in the same blue: all the product’s colour sits in those two places. The wordmark is lowercase and debossed, the same colour as the fabric."
+        "es": "Un canto rodado de tejido color piedra; el color, solo en el botón y en la banda de la base.",
+        "en": "A pebble in stone-coloured fabric; colour only on the button and the base band."
       }
     },
     {
@@ -185,8 +115,8 @@
         "en": "Three colourways"
       },
       "text": {
-        "es": "La gama repite la misma regla: un tejido neutro y un color vivo en la banda y el botón. Piedra y ultramar, carbón y naranja, arena y salvia. Así cada versión se distingue sin cambiar la forma.",
-        "en": "The range repeats the same rule: a neutral fabric and one bright colour on the band and button. Stone and ultramarine, charcoal and orange, sand and sage. Each version stands apart without changing the shape."
+        "es": "Un neutro y un acento: piedra y ultramar, carbón y naranja, arena y salvia.",
+        "en": "One neutral and one accent: stone and ultramarine, charcoal and orange, sand and sage."
       }
     },
     {
@@ -195,8 +125,8 @@
         "en": "Box and pieces"
       },
       "text": {
-        "es": "La caja es rígida, del color del acento, con una faja de papel blanco roto impresa a una tinta: neutro por fuera y color en los bordes, como el altavoz. En las piezas la frase va arriba a la izquierda sobre la zona tranquila de la imagen y la firma abajo; solo el key visual centra el titular en blanco sobre ultramar.",
-        "en": "The box is rigid, in the accent colour, with an off-white paper sleeve printed in one ink: neutral outside and colour at the edges, like the speaker. On the pieces the line sits top left over the quiet part of the image and the sign-off at the bottom; only the key visual centres the headline in white on ultramarine."
+        "es": "Caja del color del acento con faja neutra; en las piezas, la frase arriba y la firma abajo.",
+        "en": "A box in the accent colour with a neutral sleeve; on the pieces, the line on top and the sign-off below."
       }
     }
   ],
@@ -235,11 +165,11 @@
     }
   ],
   "paletteNote": {
-    "es": "El gris piedra es el producto y el blanco roto, el espacio. El azul ultramar es el único color vivo: marca el botón, la banda y el fondo del key visual. Las otras dos versiones cambian ese azul por naranja o salvia.",
-    "en": "Stone grey is the product and off-white is the space. Ultramarine is the only bright colour: it marks the button, the band and the key visual backdrop. The other two versions swap that blue for orange or sage."
+    "es": "Gris piedra para el producto, blanco roto para el espacio y un solo azul vivo.",
+    "en": "Stone grey for the product, off-white for space and one bright blue."
   },
   "result": {
-    "es": "Proyecto conceptual. Spec work: OYE es una marca y un producto inventados, sin relación con ninguna empresa real. Demuestra un lanzamiento completo trabajado como un encargo real, de la estrategia y el diseño del objeto a la caja, la web y los spots, con el mismo producto en todas las piezas.",
-    "en": "Concept project. Spec work: OYE is an invented brand and product, not affiliated with any real company. It shows a complete launch handled like a real commission, from strategy and object design to the box, the website and the spots, with the same product in every piece."
+    "es": "Proyecto conceptual. Spec work: OYE es una marca y un producto inventados. El caso completo, con la estrategia, el manual y el plan de campaña, está disponible bajo petición.",
+    "en": "Concept project. Spec work: OYE is an invented brand and product. The full case, with strategy, guidelines and campaign plan, is available on request."
   }
 }

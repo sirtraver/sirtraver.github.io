@@ -6,28 +6,40 @@
   "conceptual": true,
   "draft": false,
   "intro": {
-    "es": "Spec work — sin relación con ninguna marca real. Campaña de lanzamiento para un refresco de limón inventado: imágenes de producto, piezas para redes y un spot de 15 segundos, todo creado con IA y dirigido como una producción de foto y vídeo.",
-    "en": "Spec work — not affiliated with any real brand. A launch campaign for an invented lemon soda: product images, social pieces and a 15-second spot, all created with AI and art-directed like a photo and film production."
+    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento completo de un refresco de limón con gas inventado: estrategia, naming, identidad y manual de marca, lata y gama de tres sabores, campaña de verano en calle y redes, material para terrazas, página de producto, email, banners y un spot de 15 segundos.",
+    "en": "Spec work — not affiliated with any real brand. A full launch for an invented sparkling lemon soda: strategy, naming, identity and brand guidelines, can and a three-flavour range, a summer campaign in the street and on social, terrace materials, product page, email, banners and a 15-second spot."
   },
   "client": "",
   "role": {
-    "es": "Concepto, dirección de arte, generación de imagen y vídeo con IA, diseño de las piezas",
-    "en": "Concept, art direction, AI image and video generation, layout of the pieces"
+    "es": "Estrategia de marca, naming, identidad y diseño de la lata y la gama, concepto de campaña y redacción, plan de canales, dirección de arte, generación de imagen y vídeo con IA, diseño de piezas, material de punto de venta, web y email",
+    "en": "Brand strategy, naming, identity, can and range design, campaign concept and copywriting, channel plan, art direction, AI image and video generation, layout of the pieces, point-of-sale materials, web and email"
   },
   "deliverables": {
     "es": [
-      "Packshot para tienda online",
-      "Fotografía de producto y lifestyle",
-      "Key visual de campaña",
-      "Piezas para redes (1:1, 9:16, 16:9)",
-      "Spot de 15 s"
+      "Estrategia: categoría, posicionamiento e insight",
+      "Naming",
+      "Logotipo y manual de marca",
+      "Lata y gama de tres sabores",
+      "Packshots y fotografía de terraza",
+      "Key visual y piezas para redes en ES y EN",
+      "Serie de mupis y montaje en calle",
+      "Posavasos y cartel de mesa para terrazas",
+      "Página de producto, email y banners display",
+      "Spot de 15 s en 9:16",
+      "Plan de canales y de medición"
     ],
     "en": [
-      "E-commerce packshot",
-      "Product and lifestyle photography",
-      "Campaign key visual",
-      "Social pieces (1:1, 9:16, 16:9)",
-      "15-second spot"
+      "Strategy: category, positioning and insight",
+      "Naming",
+      "Wordmark and brand guidelines",
+      "Can and three-flavour range",
+      "Packshots and terrace photography",
+      "Key visual and social pieces in Spanish and English",
+      "Street panel series and street mock-up",
+      "Coasters and table card for terraces",
+      "Product page, email and display banners",
+      "15-second 9:16 spot",
+      "Channel and measurement plan"
     ]
   },
   "tools": [
@@ -55,12 +67,52 @@
   "caseStudy": [
     {
       "title": {
-        "es": "El encargo",
-        "en": "The brief"
+        "es": "El reto",
+        "en": "The challenge"
       },
       "text": {
-        "es": "Un refresco de limón con gas que llega a un lineal saturado de marcas de limón. El planteamiento es el de un lanzamiento real: una lata que se reconozca de lejos, una imagen de producto que funcione en la tienda online y una campaña que se pueda adaptar a cualquier formato de redes sin perder la idea.",
-        "en": "A sparkling lemon soda entering a shelf crowded with lemon brands. The brief is treated like a real launch: a can that reads from a distance, product images that work in an online shop, and a campaign that adapts to any social format without losing the idea."
+        "es": "Un fabricante pequeño de la costa mediterránea tiene una buena receta de limón con gas, con zumo real y poco azúcar, y la vende a granel a unos pocos bares. En la nevera de cualquier terraza hay cinco refrescos de limón casi iguales y nadie pide uno por su nombre: se pide «uno de limón».",
+        "en": "A small soft-drink maker on the Mediterranean coast has a good sparkling lemon recipe, with real juice and little sugar, and sells it unbranded to a few bars. Every terrace fridge holds five near-identical lemon sodas, and nobody asks for one by name: they ask for “a lemon one”."
+      }
+    },
+    {
+      "title": {
+        "es": "Descubrimiento",
+        "en": "Discovery"
+      },
+      "text": {
+        "es": "Todos los refrescos de limón enseñan limones, gotas y salpicaduras, y se venden para la sed del mediodía. Ninguno es dueño de un momento. Pero el consumo real es social y de tarde: terrazas, azoteas y música.",
+        "en": "Every lemon soda shows lemons, droplets and splashes, and sells itself for midday thirst. None of them owns a moment. Yet real consumption is social and happens in the evening: terraces, rooftops and music."
+      }
+    },
+    {
+      "title": {
+        "es": "Insight",
+        "en": "Insight"
+      },
+      "text": {
+        "es": "«A las seis de la tarde no tienes sed: tienes ganas de que la tarde no se acabe.» Un refresco de tarde no quita la sed: alarga el rato.",
+        "en": "“At six in the evening you are not thirsty: you just want the afternoon to last.” An evening soda does not quench thirst; it makes the moment longer."
+      }
+    },
+    {
+      "title": {
+        "es": "Estrategia",
+        "en": "Strategy"
+      },
+      "text": {
+        "es": "SOLFA se coloca como el refresco de la hora dorada: esencial y dueño de un momento. La promesa: abrir una SOLFA es subir el sol de la tarde. El nombre une sol y solfa (el solfeo), y de ahí salen el claim, «Sube el sol», y la gama como una escala: do, re, mi.",
+        "en": "SOLFA is positioned as the golden-hour soda: simple, and owning a moment. The promise: opening a SOLFA turns up the evening sun. The name joins sol (sun) and solfa (sol-fa, the musical scale), which gives the line “Turn up the sun” and a range that works as a scale: do, re, mi."
+      }
+    },
+    {
+      "title": {
+        "es": "Identidad y gama",
+        "en": "Identity and range"
+      },
+      "text": {
+        "es": "De tres rutas (Sol, Limonar y Partitura) se eligió la más esencial: una lata de un solo color, un círculo rojo que es a la vez el sol y una nota, y el nombre en vertical. La gama crece sin cambiar nada más que el color: Limón, Pomelo y Mandarina. Todo queda en un manual de marca.",
+        "en": "Of three routes (Sun, Lemon grove and Score), the simplest was chosen: a single-colour can, a red circle that is both the sun and a musical note, and the name standing upright. The range grows by changing only the colour: Lemon, Grapefruit and Tangerine. Everything is set out in brand guidelines."
       }
     },
     {
@@ -69,8 +121,28 @@
         "en": "The idea"
       },
       "text": {
-        "es": "SOLFA juega con dos lecturas: el sol y el solfeo. El círculo rojo de la lata es a la vez el sol de las seis de la tarde y una nota musical. De ahí sale el mensaje «Sube el sol»: abrir la lata es subir el volumen de la tarde. Las latas sobre peanas de distinta altura lo convierten en una escala, do, re, mi.",
-        "en": "SOLFA plays on two readings: sol, the sun, and solfa, the musical scale. The red circle on the can is both the six o’clock sun and a musical note. That leads to the line “Turn up the sun”: opening the can turns up the volume of the afternoon. Cans on plinths of rising height turn it into a scale, do, re, mi."
+        "es": "«Sube el sol.» Abrir la lata es subir el volumen de la tarde. La campaña funciona como una escala: en la calle, tres mupis seguidos en los que el sol sube de uno a otro, «Sube el sol», «Un poco más», «Así».",
+        "en": "“Turn up the sun.” Opening the can turns up the volume of the evening. The campaign works like a scale: in the street, three panels in a row where the sun rises from one to the next: “Turn up the sun”, “A little more”, “That’s it”."
+      }
+    },
+    {
+      "title": {
+        "es": "Campaña y terrazas",
+        "en": "Campaign and terraces"
+      },
+      "text": {
+        "es": "La hostelería es el canal principal, así que la campaña llega a la mesa: posavasos que son el propio sol y un cartel de mesa con la escala, para que el cliente pida «la del sol». Teaser en redes, mupis en zonas de terrazas, display, email y página de producto completan el verano.",
+        "en": "Bars and restaurants are the main channel, so the campaign reaches the table: coasters that are the sun itself and a table card with the scale, so customers ask for “the sun one”. A social teaser, street panels in terrace areas, display, email and a product page complete the summer."
+      }
+    },
+    {
+      "title": {
+        "es": "Objetivos y medición",
+        "en": "Objectives and measurement"
+      },
+      "text": {
+        "es": "Como proyecto spec no hay resultados de mercado, y no se inventan. El plan fija metas medibles: 150 terrazas el primer verano, que Pomelo y Mandarina sumen el 25 % de las ventas y que al menos el 60 % asocie la lata a «sol» o «tarde» en un test de 5 segundos.",
+        "en": "As a spec project there are no market results, and none are made up. The plan sets measurable targets: 150 terraces in the first summer, Grapefruit and Tangerine making up 25% of sales, and at least 60% linking the can to “sun” or “evening” in a 5-second test."
       }
     },
     {
@@ -79,8 +151,8 @@
         "en": "AI production"
       },
       "text": {
-        "es": "Primero se fijó una imagen de referencia de la lata. Todas las demás imágenes y el spot se generaron a partir de ella, para que la etiqueta, el color y las proporciones no cambien de una pieza a otra. Los textos de campaña se maquetaron después sobre las imágenes, sin pedir a la IA que escribiera nada aparte de la propia etiqueta.",
-        "en": "A reference image of the can was fixed first. Every other image and the spot were generated from it, so the label, colour and proportions stay the same from piece to piece. The campaign copy was laid out on top of the images afterwards; the AI was never asked to write anything except the label itself."
+        "es": "Una imagen de referencia fijó la lata y todas las piezas salen de ella. Los dos sabores nuevos se diseñaron primero como arte plano y se dieron a la IA junto a la lata, así que la gama, la terraza y la calle llevan la etiqueta real. Los titulares, los mupis, el kit de terraza y la web se maquetaron después, nunca generados.",
+        "en": "One reference image fixed the can and every piece comes from it. The two new flavours were first designed as flat artwork and given to the AI together with the can, so the range, terrace and street shots wear the real label. Headlines, panels, terrace kit and web were laid out afterwards, never generated."
       }
     }
   ],
@@ -111,8 +183,8 @@
         "en": "System of pieces"
       },
       "text": {
-        "es": "Un mismo esquema para todos los formatos: titular en negro arriba a la izquierda, línea de marca debajo y el producto como protagonista. En la story el titular pasa a blanco sobre el cielo.",
-        "en": "One layout for every format: black headline top left, brand line below it and the product as the hero. On the story the headline turns white against the sky."
+        "es": "Un mismo esquema para todos los formatos: titular negro arriba a la izquierda, línea de marca debajo y un único sol rojo por pieza, sea el de la lata o uno grande detrás. En los mupis el sol se convierte en el protagonista y sube de uno a otro; en la story el titular pasa a blanco sobre el cielo.",
+        "en": "One layout for every format: black headline top left, brand line below and a single red sun per piece, either the can’s or a large one behind it. On the street panels the sun becomes the hero and rises from one to the next; on the story the headline turns white against the sky."
       }
     }
   ],
@@ -123,7 +195,7 @@
         "en": "Butter yellow"
       },
       "hex": "#E9D27F",
-      "share": 55
+      "share": 45
     },
     {
       "name": {
@@ -148,14 +220,30 @@
       },
       "hex": "#F6E9C2",
       "share": 10
+    },
+    {
+      "name": {
+        "es": "Rosa pomelo",
+        "en": "Grapefruit pink"
+      },
+      "hex": "#EFB0A1",
+      "share": 5
+    },
+    {
+      "name": {
+        "es": "Mandarina",
+        "en": "Tangerine"
+      },
+      "hex": "#F2A65A",
+      "share": 5
     }
   ],
   "paletteNote": {
-    "es": "El amarillo es el producto y el fondo; el rojo, el sol, y solo aparece una vez por pieza; el negro lleva el nombre y los titulares.",
-    "en": "Yellow is both the product and the backdrop; red is the sun and appears only once per piece; black carries the name and the headlines."
+    "es": "El amarillo es el producto y el fondo; el rojo, el sol, y solo aparece una vez por pieza; el negro lleva el nombre y los titulares. Pomelo y mandarina son los colores de lata de los otros dos sabores.",
+    "en": "Yellow is both the product and the backdrop; red is the sun and appears only once per piece; black carries the name and the headlines. Grapefruit and tangerine are the can colours of the other two flavours."
   },
   "result": {
-    "es": "Proyecto conceptual. Spec work: SOLFA es una marca inventada, sin relación con ninguna empresa real. Demuestra cómo se puede producir con IA una campaña de producto completa (packshot, fotografía, piezas de redes y spot) manteniendo el producto idéntico en todas las piezas.",
-    "en": "Concept project. Spec work: SOLFA is an invented brand, not affiliated with any real company. It shows how a complete product campaign (packshot, photography, social pieces and a spot) can be produced with AI while keeping the product identical across every piece."
+    "es": "Proyecto conceptual. Spec work: SOLFA es una marca inventada, sin relación con ninguna empresa real. Demuestra un lanzamiento completo trabajado como un encargo real, de la estrategia y el nombre a la gama, las terrazas, la web y el spot, con la misma lata en todas las piezas.",
+    "en": "Concept project. Spec work: SOLFA is an invented brand, not affiliated with any real company. It shows a complete launch handled like a real commission, from strategy and naming to the range, the terraces, the website and the spot, with the same can in every piece."
   }
 }

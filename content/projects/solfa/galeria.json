@@ -1,65 +1,177 @@
 [
-  {
-    "file": "imagenes/solfa-packshot-lata-fondo-blanco-tienda.webp",
-    "caption": {
-      "es": "Packshot de la lata SOLFA sobre fondo blanco para tienda online.",
-      "en": "SOLFA can packshot on a white background for an online shop."
-    }
-  },
-  {
-    "file": "imagenes/solfa-identidad-construccion-logotipo-colores-tipografia.webp",
-    "caption": {
-      "es": "Identidad de SOLFA: logotipo con su zona de seguridad, el círculo rojo del mismo alto que las letras, versión vertical de la lata, colores y tipografías.",
-      "en": "SOLFA identity: wordmark with its clear space, the red circle as tall as the letters, the vertical version used on the can, colours and typefaces."
-    }
-  },
-  {
-    "file": "imagenes/solfa-lata-mesa-marmol-terraza-mediterranea.webp",
-    "caption": {
-      "es": "Lata SOLFA en una mesa de mármol de una terraza mediterránea, con un vaso con hielo y medio limón, bajo las sombras de una persiana.",
-      "en": "SOLFA can on a marble table on a Mediterranean terrace, with a glass of ice and half a lemon, under shutter shadows."
-    }
-  },
-  {
-    "file": "imagenes/solfa-detalle-parte-superior-lata-gotas.webp",
-    "caption": {
-      "es": "Detalle de la parte superior de la lata con gotas de condensación sobre el círculo rojo.",
-      "en": "Detail of the top of the can with condensation drops on the red circle."
-    }
-  },
-  {
-    "file": "imagenes/solfa-banner-sube-el-sol-latas-peanas.webp",
-    "caption": {
-      "es": "Banner horizontal «Sube el sol»: tres latas sobre peanas rojas de altura creciente, como una escala musical.",
-      "en": "Horizontal banner “Sube el sol”: three cans on red plinths of rising height, like a musical scale."
-    }
-  },
-  {
-    "file": "imagenes/solfa-story-sube-el-sol-lata-azotea.webp",
-    "caption": {
-      "es": "Story vertical «Sube el sol»: la lata sobre el muro de una azotea con el cielo azul detrás.",
-      "en": "Vertical story “Sube el sol”: the can on a rooftop wall against a blue sky."
-    }
-  },
-  {
-    "file": "imagenes/solfa-post-frio-luego-sube-el-sol.webp",
-    "caption": {
-      "es": "Post cuadrado «Frío. Luego, sube el sol.» con el detalle de la lata fría.",
-      "en": "Square post “Frío. Luego, sube el sol.” with the cold can detail."
-    }
-  },
-  {
-    "file": "imagenes/solfa-key-visual-turn-up-the-sun.webp",
-    "caption": {
-      "es": "Key visual en inglés, «Turn up the sun», con la lata delante del sol rojo.",
-      "en": "English key visual, “Turn up the sun”, with the can in front of the red sun."
-    }
-  },
-  {
-    "file": "imagenes/solfa-referencia-lata-fondo-crema.webp",
-    "caption": {
-      "es": "Imagen de referencia de la lata sobre fondo crema, base de todas las demás piezas.",
-      "en": "Reference image of the can on a cream background, the basis for every other piece."
-    }
+ {
+  "file": "imagenes/solfa-mapa-posicionamiento-refrescos-limon.webp",
+  "caption": {
+   "es": "Mapa de posicionamiento: todos los refrescos de limón hablan del producto. SOLFA ocupa el hueco de lo esencial y de un momento: las seis de la tarde.",
+   "en": "Positioning map: every lemon soda talks about the product. SOLFA takes the gap that is simple and owns a moment: six in the evening."
   }
+ },
+ {
+  "file": "imagenes/solfa-insight-seis-de-la-tarde.webp",
+  "caption": {
+   "es": "El insight: «A las seis de la tarde no tienes sed: tienes ganas de que la tarde no se acabe».",
+   "en": "The insight: “At six in the evening you are not thirsty: you just want the afternoon to last”."
+  }
+ },
+ {
+  "file": "imagenes/solfa-rutas-identidad-sol-limonar-partitura.webp",
+  "caption": {
+   "es": "Tres rutas de identidad: Sol (elegida), Limonar y Partitura, con el motivo de cada decisión.",
+   "en": "Three identity routes: Sun (chosen), Lemon grove and Score, with the reason behind each decision."
+  }
+ },
+ {
+  "file": "imagenes/solfa-identidad-construccion-logotipo-colores-tipografia.webp",
+  "caption": {
+   "es": "Identidad de SOLFA: logotipo con su zona de seguridad, el círculo rojo del mismo alto que las letras, versión vertical de la lata, colores y tipografías.",
+   "en": "SOLFA identity: wordmark with its clear space, the red circle as tall as the letters, the vertical version used on the can, colours and typefaces."
+  }
+ },
+ {
+  "file": "imagenes/solfa-manual-marca-logotipo-sol.webp",
+  "caption": {
+   "es": "Manual de marca: el logotipo, sol + solfa, con su área de respeto y la versión vertical de la lata.",
+   "en": "Brand guidelines: the wordmark, sun + sol-fa, with its clear space and the vertical can version."
+  }
+ },
+ {
+  "file": "imagenes/solfa-manual-marca-tono-de-voz.webp",
+  "caption": {
+   "es": "Manual de marca: tono de voz, tres palabras y un punto.",
+   "en": "Brand guidelines: tone of voice, three words and a full stop."
+  }
+ },
+ {
+  "file": "imagenes/solfa-referencia-lata-fondo-crema.webp",
+  "caption": {
+   "es": "Imagen de referencia de la lata sobre fondo crema, base de todas las demás piezas.",
+   "en": "Reference image of the can on a cream background, the basis for every other piece."
+  }
+ },
+ {
+  "file": "imagenes/solfa-packshot-lata-fondo-blanco-tienda.webp",
+  "caption": {
+   "es": "Packshot de la lata SOLFA sobre fondo blanco para tienda online.",
+   "en": "SOLFA can packshot on a white background for an online shop."
+  }
+ },
+ {
+  "file": "imagenes/solfa-gama-tres-sabores-limon-pomelo-mandarina-escala.webp",
+  "caption": {
+   "es": "La gama como una escala: Limón, Pomelo y Mandarina sobre peanas rojas de altura creciente. Do, re, mi.",
+   "en": "The range as a scale: Lemon, Grapefruit and Tangerine on red plinths of rising height. Do, re, mi."
+  }
+ },
+ {
+  "file": "imagenes/solfa-packshot-gama-tres-latas-fondo-blanco.webp",
+  "caption": {
+   "es": "Packshot de los tres sabores sobre fondo blanco para tienda online.",
+   "en": "Packshot of the three flavours on a white background for an online shop."
+  }
+ },
+ {
+  "file": "imagenes/solfa-lata-mesa-marmol-terraza-mediterranea.webp",
+  "caption": {
+   "es": "Lata SOLFA en una mesa de mármol de una terraza mediterránea, con un vaso con hielo y medio limón, bajo las sombras de una persiana.",
+   "en": "SOLFA can on a marble table on a Mediterranean terrace, with a glass of ice and half a lemon, under shutter shadows."
+  }
+ },
+ {
+  "file": "imagenes/solfa-lata-pomelo-terraza-posavasos.webp",
+  "caption": {
+   "es": "SOLFA Pomelo en una terraza encalada a la hora dorada, sobre el posavasos rojo.",
+   "en": "SOLFA Grapefruit on a whitewashed terrace at golden hour, on the red coaster."
+  }
+ },
+ {
+  "file": "imagenes/solfa-detalle-parte-superior-lata-gotas.webp",
+  "caption": {
+   "es": "Detalle de la parte superior de la lata con gotas de condensación sobre el círculo rojo.",
+   "en": "Detail of the top of the can with condensation drops on the red circle."
+  }
+ },
+ {
+  "file": "imagenes/solfa-key-visual-turn-up-the-sun.webp",
+  "caption": {
+   "es": "Key visual en inglés, «Turn up the sun», con la lata delante del sol rojo.",
+   "en": "English key visual, “Turn up the sun”, with the can in front of the red sun."
+  }
+ },
+ {
+  "file": "imagenes/solfa-post-frio-luego-sube-el-sol.webp",
+  "caption": {
+   "es": "Post cuadrado «Frío. Luego, sube el sol.» con el detalle de la lata fría.",
+   "en": "Square post “Frío. Luego, sube el sol.” with the cold can detail."
+  }
+ },
+ {
+  "file": "imagenes/solfa-story-sube-el-sol-lata-azotea.webp",
+  "caption": {
+   "es": "Story vertical «Sube el sol»: la lata sobre el muro de una azotea con el cielo azul detrás.",
+   "en": "Vertical story “Sube el sol”: the can on a rooftop wall against a blue sky."
+  }
+ },
+ {
+  "file": "imagenes/solfa-banner-sube-el-sol-latas-peanas.webp",
+  "caption": {
+   "es": "Banner horizontal «Sube el sol»: tres latas sobre peanas rojas de altura creciente, como una escala musical.",
+   "en": "Horizontal banner “Sube el sol”: three cans on red plinths of rising height, like a musical scale."
+  }
+ },
+ {
+  "file": "imagenes/solfa-banner-do-re-mi-gama.webp",
+  "caption": {
+   "es": "Banner «Do, re, mi.» con los tres sabores.",
+   "en": "“Do, re, mi.” banner with the three flavours."
+  }
+ },
+ {
+  "file": "imagenes/solfa-mupis-el-sol-sube-serie.webp",
+  "caption": {
+   "es": "Serie de tres mupis en la que el sol sube de uno a otro: «Sube el sol», «Un poco más», «Así».",
+   "en": "A series of three street panels where the sun rises from one to the next: “Turn up the sun”, “A little more”, “That’s it”."
+  }
+ },
+ {
+  "file": "imagenes/solfa-mupis-paseo-maritimo-sube-el-sol.webp",
+  "caption": {
+   "es": "Los tres mupis en un paseo marítimo al atardecer.",
+   "en": "The three panels on a seafront promenade at sunset."
+  }
+ },
+ {
+  "file": "imagenes/solfa-kit-terraza-posavasos-cartel-mesa.webp",
+  "caption": {
+   "es": "Kit de terraza: posavasos que es el sol (anverso y reverso) y cartel de mesa A6 con la escala.",
+   "en": "Terrace kit: a coaster that is the sun (front and back) and an A6 table card with the scale."
+  }
+ },
+ {
+  "file": "imagenes/solfa-plan-canales-verano.webp",
+  "caption": {
+   "es": "Plan de canales para un verano en tres tiempos: teaser, lanzamiento y verano.",
+   "en": "Channel plan for a summer in three phases: teaser, launch and summer."
+  }
+ },
+ {
+  "file": "imagenes/solfa-pagina-producto-web-elige-tu-nota.webp",
+  "caption": {
+   "es": "Página de producto en escritorio y móvil: «Sube el sol» y «Do, re, mi».",
+   "en": "Product page on desktop and mobile: “Turn up the sun” and “Do, re, mi”."
+  }
+ },
+ {
+  "file": "imagenes/solfa-email-banners-display.webp",
+  "caption": {
+   "es": "Email «Do, re, mi.» y banners display «Sube el sol» en cuatro formatos.",
+   "en": "“Do, re, mi.” email and “Turn up the sun” display banners in four sizes."
+  }
+ },
+ {
+  "file": "imagenes/solfa-storyboard-spot-sube-el-sol.webp",
+  "caption": {
+   "es": "Storyboard del spot de 15 segundos «Sube el sol».",
+   "en": "Storyboard of the 15-second “Turn up the sun” spot."
+  }
+ }
 ]

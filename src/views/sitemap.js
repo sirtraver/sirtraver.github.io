@@ -39,7 +39,7 @@ export function sitemap(projects, archived, lastModified) {
       entry(
         { en: projectPath(project, 'en'), es: projectPath(project, 'es') },
         lang,
-        [...new Set([absoluteUrl(largestUrl(project.cover)), ...project.images.map((image) => absoluteUrl(largestUrl(image)))])],
+        [...new Set([absoluteUrl(largestUrl(project.cover)), ...project.images.filter((image) => !image.lang || image.lang === lang).map((image) => absoluteUrl(largestUrl(image)))])],
         videoTags(project, lang),
       ),
     ),

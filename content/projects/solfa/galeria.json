@@ -4,6 +4,15 @@
   "caption": {
    "es": "Mapa de posicionamiento: todos los refrescos de limón hablan del producto. SOLFA ocupa el hueco de lo esencial y de un momento: las seis de la tarde.",
    "en": "Positioning map: every lemon soda talks about the product. SOLFA takes the gap that is simple and owns a moment: six in the evening."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-mapa-posicionamiento-refrescos-limon-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Mapa de posicionamiento: todos los refrescos de limón hablan del producto. SOLFA ocupa el hueco de lo esencial y de un momento: las seis de la tarde.",
+   "en": "Positioning map: every lemon soda talks about the product. SOLFA takes the gap that is simple and owns a moment: six in the evening."
   }
  },
  {
@@ -11,10 +20,28 @@
   "caption": {
    "es": "El insight: «A las seis de la tarde no tienes sed: tienes ganas de que la tarde no se acabe».",
    "en": "The insight: “At six in the evening you are not thirsty: you just want the afternoon to last”."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-insight-seis-de-la-tarde-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "El insight: «A las seis de la tarde no tienes sed: tienes ganas de que la tarde no se acabe».",
+   "en": "The insight: “At six in the evening you are not thirsty: you just want the afternoon to last”."
   }
  },
  {
   "file": "imagenes/solfa-rutas-identidad-sol-limonar-partitura.webp",
+  "caption": {
+   "es": "Tres rutas de identidad: Sol (elegida), Limonar y Partitura, con el motivo de cada decisión.",
+   "en": "Three identity routes: Sun (chosen), Lemon grove and Score, with the reason behind each decision."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-rutas-identidad-sol-limonar-partitura-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Tres rutas de identidad: Sol (elegida), Limonar y Partitura, con el motivo de cada decisión.",
    "en": "Three identity routes: Sun (chosen), Lemon grove and Score, with the reason behind each decision."
@@ -32,10 +59,28 @@
   "caption": {
    "es": "Manual de marca: el logotipo, sol + solfa, con su área de respeto y la versión vertical de la lata.",
    "en": "Brand guidelines: the wordmark, sun + sol-fa, with its clear space and the vertical can version."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-manual-marca-logotipo-sol-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Manual de marca: el logotipo, sol + solfa, con su área de respeto y la versión vertical de la lata.",
+   "en": "Brand guidelines: the wordmark, sun + sol-fa, with its clear space and the vertical can version."
   }
  },
  {
   "file": "imagenes/solfa-manual-marca-tono-de-voz.webp",
+  "caption": {
+   "es": "Manual de marca: tono de voz, tres palabras y un punto.",
+   "en": "Brand guidelines: tone of voice, three words and a full stop."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-manual-marca-tono-de-voz-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Manual de marca: tono de voz, tres palabras y un punto.",
    "en": "Brand guidelines: tone of voice, three words and a full stop."
@@ -151,6 +196,15 @@
   "caption": {
    "es": "Plan de canales para un verano en tres tiempos: teaser, lanzamiento y verano.",
    "en": "Channel plan for a summer in three phases: teaser, launch and summer."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-plan-canales-verano-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Plan de canales para un verano en tres tiempos: teaser, lanzamiento y verano.",
+   "en": "Channel plan for a summer in three phases: teaser, launch and summer."
   }
  },
  {
@@ -169,6 +223,15 @@
  },
  {
   "file": "imagenes/solfa-storyboard-spot-sube-el-sol.webp",
+  "caption": {
+   "es": "Storyboard del spot de 15 segundos «Sube el sol».",
+   "en": "Storyboard of the 15-second “Turn up the sun” spot."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-storyboard-spot-sube-el-sol-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Storyboard del spot de 15 segundos «Sube el sol».",
    "en": "Storyboard of the 15-second “Turn up the sun” spot."

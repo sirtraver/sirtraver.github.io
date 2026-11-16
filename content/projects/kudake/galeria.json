@@ -95,10 +95,28 @@
   "caption": {
    "es": "Estrategia de la campaña de apertura en una página: reto, insight, idea «砕け! ¡Aplástala!» y metas del plan.",
    "en": "Opening campaign strategy on one page: challenge, insight, the “砕け! Smash it!” idea and the plan’s targets."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/kudake-japan-burgers-estrategia-campana-insight-objetivos-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Estrategia de la campaña de apertura en una página: reto, insight, idea «砕け! ¡Aplástala!» y metas del plan.",
+   "en": "Opening campaign strategy on one page: challenge, insight, the “砕け! Smash it!” idea and the plan’s targets."
   }
  },
  {
   "file": "imagenes/kudake-japan-burgers-matriz-campana-canales.webp",
+  "caption": {
+   "es": "Matriz de campaña: una pieza para cada canal (delivery, redes, vídeo y local).",
+   "en": "Campaign matrix: one piece per channel (delivery, social, video and restaurant)."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/kudake-japan-burgers-matriz-campana-canales-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Matriz de campaña: una pieza para cada canal (delivery, redes, vídeo y local).",
    "en": "Campaign matrix: one piece per channel (delivery, social, video and restaurant)."

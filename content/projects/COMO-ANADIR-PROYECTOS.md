@@ -23,6 +23,13 @@ No hace falta crear `galeria.json` para proyectos nuevos: las imágenes de `imag
 
 Si existe `galeria.json`, esa lista determina qué imágenes aparecen y en qué orden.
 
+Una imagen con texto en un idioma (por ejemplo una lámina de estrategia) puede llevar `"lang": "es"` o `"lang": "en"`: solo aparece en la página de ese idioma (y en su entrada del sitemap). Lo habitual es poner la versión en español y, justo después, la misma lámina en inglés con el sufijo `-en`:
+
+```json
+{ "file": "imagenes/brasa-insight-saber-cuanto-pica.webp", "lang": "es", "caption": { "es": "…", "en": "…" } },
+{ "file": "imagenes/brasa-insight-saber-cuanto-pica-en.webp", "lang": "en", "caption": { "es": "…", "en": "…" } }
+```
+
 **Copiar una carpeta en el Mac no publica por sí solo:** la web se actualiza después de generar y desplegar en GitHub Pages. Para revisar en local, ejecuta `npm run dev` desde la raíz del repositorio.
 
 ## Selección y explicación del proyecto

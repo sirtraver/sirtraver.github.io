@@ -74,6 +74,8 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
     if (!image.file) fail('cada imagen debe ser un archivo local: {"file": "imagenes/01.webp"}');
     projectFile(folder, image.file);
     if (image.layout !== undefined && !['full', 'pair'].includes(image.layout)) fail(`${image.file}: layout debe ser "full" o "pair"`);
+    // Optional: an image shown only on the Spanish or English page (e.g. a board with text in that language).
+    if (image.lang !== undefined && !['es', 'en'].includes(image.lang)) fail(`${image.file}: lang debe ser "es" o "en"`);
   }
   if (data.hover !== undefined && !images.some((image) => image.file === data.hover)) fail('hover debe ser una de las imágenes de la galería');
   // Optional crop of the cover on portfolio cards (CSS object-position, e.g. "50% 85%").

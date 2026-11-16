@@ -44,6 +44,9 @@ function spot(video, lang) {
   return html`<figure class="project-video" style="--video-ratio: ${w} / ${h}"><video controls playsinline preload="none" poster="${largestUrl(video.poster)}" aria-label="${caption}"><source src="${assetUrl(video.src)}" type="video/mp4"></video>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
 }
 
+// Images marked with a language (lang: 'es' | 'en') only appear on that language's page.
+export const forLang = (images, lang) => images.filter((image) => !image.lang || image.lang === lang);
+
 function gallery(images, name, lang, t) {
   return images.map((image, index) => figure(image, index, images.length, name, lang, t));
 }
@@ -93,13 +96,13 @@ function schema(project, lang, path, name, description) {
     ...rights,
     isPartOf: { '@id': `${pageUrl}#work` },
   };
-  const imageNodes = project.images.map((image, index) => ({
+  const imageNodes = forLang(project.images, lang).map((image, index) => ({
     '@type': 'ImageObject',
     '@id': `${pageUrl}#image-${index + 1}`,
     contentUrl: absoluteUrl(largestUrl(image)),
     url: absoluteUrl(largestUrl(image)),
     ...largestSize(image),
-    caption: image.caption[lang] || t.project.imageAlt(name, index + 1, project.images.length),
+    caption: image.caption[lang] || t.project.imageAlt(name, index + 1, forLang(project.images, lang).length),
     ...rights,
   }));
   const videoNodes = project.videos.map((video, index) => ({
@@ -161,7 +164,7 @@ export function projectPage(project, siblings, lang) {
   const name = projectName(project, lang);
   const category = t.categories[project.category] ?? project.category;
   const intro = project.intro[lang];
-  const description = intro || t.project.description(name, category, project.images.length, project.year);
+  const description = intro || t.project.description(name, category, forLang(project.images, lang).length, project.year);
   const path = projectPath(project, lang);
   const index = siblings.indexOf(project);
   const previous = index > 0 ? siblings[index - 1] : null;
@@ -190,7 +193,7 @@ export function projectPage(project, siblings, lang) {
   </div>
   ${project.caseStudy.length ? html`<section class="project-story" aria-label="${t.project.story}">${project.caseStudy.map(section => html`<div><h2>${section.title[lang]}</h2><p>${section.text[lang]}</p></div>`)}</section>` : ''}
   ${design(project, lang, t.project)}
-  <div class="project-gallery">${spots(project, lang)}${gallery(project.images, name, lang, t.project)}</div>
+  <div class="project-gallery">${spots(project, lang)}${gallery(forLang(project.images, lang), name, lang, t.project)}</div>
   ${project.result[lang] ? html`<section class="project-result"><h2>${t.project.resultTitle}</h2><p>${project.result[lang]}</p></section>` : ''}
   <nav class="project-pager" aria-label="${t.project.pagerLabel}">${
     previous ? html`<a href="${projectPath(previous, lang)}" rel="prev"${accentStyle(previous) ? html` style="${accentStyle(previous)}"` : ''}>${t.project.previous}<span>${projectName(previous, lang)}</span></a>` : html`<span></span>`

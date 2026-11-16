@@ -4,6 +4,15 @@
   "caption": {
    "es": "Mapa de posicionamiento: las salsas extremas amenazan, las tradicionales no explican el picor. BRASA ocupa el hueco de arriba en el centro.",
    "en": "Positioning map: extreme sauces threaten, traditional ones do not explain the heat. BRASA takes the empty spot at the top centre."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-mapa-posicionamiento-categoria-salsas-picantes-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Mapa de posicionamiento: las salsas extremas amenazan, las tradicionales no explican el picor. BRASA ocupa el hueco de arriba en el centro.",
+   "en": "Positioning map: extreme sauces threaten, traditional ones do not explain the heat. BRASA takes the empty spot at the top centre."
   }
  },
  {
@@ -11,10 +20,28 @@
   "caption": {
    "es": "El insight: «Me gusta el picante, pero no quiero hacerme el valiente: quiero saber cuánto pica antes de echarlo».",
    "en": "The insight: “I like heat, but I don’t want to prove anything: I want to know how hot it is before I pour it”."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-insight-saber-cuanto-pica-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "El insight: «Me gusta el picante, pero no quiero hacerme el valiente: quiero saber cuánto pica antes de echarlo».",
+   "en": "The insight: “I like heat, but I don’t want to prove anything: I want to know how hot it is before I pour it”."
   }
  },
  {
   "file": "imagenes/brasa-rutas-creativas-escala-rescoldo-recetario.webp",
+  "caption": {
+   "es": "Tres rutas creativas: Escala (elegida), Rescoldo y Recetario, con el motivo de cada decisión.",
+   "en": "Three creative routes: Scale (chosen), Ember and Recipe book, with the reason behind each decision."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-rutas-creativas-escala-rescoldo-recetario-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Tres rutas creativas: Escala (elegida), Rescoldo y Recetario, con el motivo de cada decisión.",
    "en": "Three creative routes: Scale (chosen), Ember and Recipe book, with the reason behind each decision."
@@ -32,10 +59,28 @@
   "caption": {
    "es": "Manual de marca: logotipo en trazados, área de respeto, tamaño mínimo y versión vertical.",
    "en": "Brand guidelines: outlined wordmark, clear space, minimum size and vertical version."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-manual-marca-logotipo-area-respeto-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Manual de marca: logotipo en trazados, área de respeto, tamaño mínimo y versión vertical.",
+   "en": "Brand guidelines: outlined wordmark, clear space, minimum size and vertical version."
   }
  },
  {
   "file": "imagenes/brasa-manual-marca-sistema-niveles-puntos.webp",
+  "caption": {
+   "es": "Manual de marca: el sistema de niveles con puntos, nombre, receta, colores y frase de cada salsa.",
+   "en": "Brand guidelines: the dot level system with each sauce’s name, recipe, colours and line."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-manual-marca-sistema-niveles-puntos-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Manual de marca: el sistema de niveles con puntos, nombre, receta, colores y frase de cada salsa.",
    "en": "Brand guidelines: the dot level system with each sauce’s name, recipe, colours and line."
@@ -50,6 +95,15 @@
  },
  {
   "file": "imagenes/brasa-manual-marca-tono-de-voz.webp",
+  "caption": {
+   "es": "Manual de marca: tono de voz, con ejemplos de cómo habla BRASA y cómo no.",
+   "en": "Brand guidelines: tone of voice, with examples of how BRASA talks and how it does not."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-manual-marca-tono-de-voz-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Manual de marca: tono de voz, con ejemplos de cómo habla BRASA y cómo no.",
    "en": "Brand guidelines: tone of voice, with examples of how BRASA talks and how it does not."
@@ -137,6 +191,15 @@
   "caption": {
    "es": "Plan de canales en tres fases: teaser, lanzamiento y mantenimiento.",
    "en": "Three-phase channel plan: teaser, launch and always-on."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-plan-canales-teaser-lanzamiento-mantenimiento-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Plan de canales en tres fases: teaser, lanzamiento y mantenimiento.",
+   "en": "Three-phase channel plan: teaser, launch and always-on."
   }
  },
  {
@@ -155,6 +218,15 @@
  },
  {
   "file": "imagenes/brasa-storyboard-spots-escala-lagrima.webp",
+  "caption": {
+   "es": "Storyboard de los dos spots: «La escala» (16:9) y «La lágrima» (9:16).",
+   "en": "Storyboard of both spots: “The scale” (16:9) and “The tear” (9:16)."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/brasa-storyboard-spots-escala-lagrima-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Storyboard de los dos spots: «La escala» (16:9) y «La lágrima» (9:16).",
    "en": "Storyboard of both spots: “The scale” (16:9) and “The tear” (9:16)."

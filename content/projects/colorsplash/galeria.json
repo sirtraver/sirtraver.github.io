@@ -27,10 +27,28 @@
   "caption": {
    "es": "Estrategia de la campaña de lanzamiento en una página: reto, insight, idea «Paint it» y metas del plan.",
    "en": "Launch campaign strategy on one page: challenge, insight, the “Paint it” idea and the plan’s targets."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/colorsplash-estrategia-campana-insight-objetivos-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Estrategia de la campaña de lanzamiento en una página: reto, insight, idea «Paint it» y metas del plan.",
+   "en": "Launch campaign strategy on one page: challenge, insight, the “Paint it” idea and the plan’s targets."
   }
  },
  {
   "file": "imagenes/colorsplash-matriz-campana-canales.webp",
+  "caption": {
+   "es": "Matriz de campaña: tienda, e-commerce, redes y vídeo, un color por canal.",
+   "en": "Campaign matrix: store, e-commerce, social and video, one colour per channel."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/colorsplash-matriz-campana-canales-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Matriz de campaña: tienda, e-commerce, redes y vídeo, un color por canal.",
    "en": "Campaign matrix: store, e-commerce, social and video, one colour per channel."

@@ -64,7 +64,7 @@ async function readProject(slug, media, projectsDir) {
     featured: data.featured === true,
     archived: data.archived === true,
     cover: media.cover,
-    images: data.images.map((image, index) => ({ ...media.images[index], caption: bilingual(image.caption), layout: image.layout ?? '' })),
+    images: data.images.map((image, index) => ({ ...media.images[index], caption: bilingual(image.caption), layout: image.layout ?? '', lang: image.lang ?? '' })),
   };
 }
 

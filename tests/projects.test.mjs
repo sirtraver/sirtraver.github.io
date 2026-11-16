@@ -83,9 +83,11 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       const html = await response.text();
       assert.ok(html.includes(`<link rel="canonical" href="${ORIGIN}${path}">`));
       assert.equal((html.match(/<h1\b/g) || []).length, 1);
-      assert.equal((html.match(/<figure[\s>]/g) || []).length, p.images.length + p.videos.length, path);
+      // Images tagged with a language (boards with text) only appear on that language's page.
+      const shown = p.images.filter((image) => !image.lang || image.lang === (prefix ? 'es' : 'en'));
+      assert.equal((html.match(/<figure[\s>]/g) || []).length, shown.length + p.videos.length, path);
       for (const video of p.videos) assert.ok(html.includes('<video controls playsinline preload="none"') && html.includes(`<source src="${video.src}`), 'each spot loads only on play');
-      assert.equal((html.match(/class="project-image"/g) || []).length, p.images.length, path);
+      assert.equal((html.match(/class="project-image"/g) || []).length, shown.length, path);
       assert.ok(!html.includes('class="is-full"') && !html.includes('class="gallery-pair"'), 'every image uses the same page column');
       assert.ok(!html.includes('data-zoom-src') && !html.includes('gallery-zoom') && !html.includes('image-zoom.js'), 'images do not open a viewer or a separate file');
       assert.ok(html.includes('class="project-design"'), 'the formal design is explained independently of the concept');

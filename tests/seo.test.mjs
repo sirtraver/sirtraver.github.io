@@ -73,7 +73,9 @@ test('the sitemap lists pages and project pages with alternates and all gallery 
   for (const [, loc] of xml.matchAll(/<image:loc>([^<]+)</g)) assert.ok(loc.startsWith(`${ORIGIN}/`), loc);
   assert.ok(xml.includes(`${ORIGIN}/media/kudake/`));
   // 8 covers + 1 portrait per language on the main pages, 96 gallery images per language.
-  assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (activeProjects.length + 1 + allProjects.length + allProjects.reduce((sum, p) => sum + p.images.length, 0)));
+  // Language-tagged images are listed only under their own language's URL.
+  const perLang = (lang) => allProjects.reduce((sum, p) => sum + p.images.filter((image) => !image.lang || image.lang === lang).length, 0);
+  assert.equal((xml.match(/<image:image>/g) || []).length, 2 * (activeProjects.length + 1 + allProjects.length) + perLang('en') + perLang('es'));
   assert.ok(xml.includes('hreflang="x-default"'));
   assert.match(xml, /\/media\/colorsplash\/cover-2400\.[0-9a-f]+\.webp/, 'largest cover is listed');
 });

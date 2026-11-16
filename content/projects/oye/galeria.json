@@ -4,6 +4,15 @@
   "caption": {
    "es": "Mapa de posicionamiento: los portátiles parecen aparatos y los altavoces bonitos no salen de casa. OYE ocupa el hueco: portátil y objeto a la vez.",
    "en": "Positioning map: portable speakers look like gadgets and good-looking speakers stay at home. OYE takes the gap: portable and an object at once."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-mapa-posicionamiento-altavoces-portatiles-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Mapa de posicionamiento: los portátiles parecen aparatos y los altavoces bonitos no salen de casa. OYE ocupa el hueco: portátil y objeto a la vez.",
+   "en": "Positioning map: portable speakers look like gadgets and good-looking speakers stay at home. OYE takes the gap: portable and an object at once."
   }
  },
  {
@@ -11,10 +20,28 @@
   "caption": {
    "es": "El insight: «Un altavoz se pasa mucho más tiempo a la vista que sonando».",
    "en": "The insight: “A speaker spends far more time being looked at than being heard”."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-insight-altavoz-a-la-vista-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "El insight: «Un altavoz se pasa mucho más tiempo a la vista que sonando».",
+   "en": "The insight: “A speaker spends far more time being looked at than being heard”."
   }
  },
  {
   "file": "imagenes/oye-diseno-objeto-dos-variantes-canto-rodado.webp",
+  "caption": {
+   "es": "Diseño del objeto: dos variantes de canto rodado y la elegida como referencia de todas las piezas.",
+   "en": "Object design: two pebble variants and the one chosen as the reference for every piece."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-diseno-objeto-dos-variantes-canto-rodado-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Diseño del objeto: dos variantes de canto rodado y la elegida como referencia de todas las piezas.",
    "en": "Object design: two pebble variants and the one chosen as the reference for every piece."
@@ -32,6 +59,15 @@
   "caption": {
    "es": "Tres rutas de identidad: Canto (elegida), Onda y Cerámica, con el motivo de cada decisión.",
    "en": "Three identity routes: Pebble (chosen), Wave and Ceramic, with the reason behind each decision."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-rutas-identidad-canto-onda-ceramica-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Tres rutas de identidad: Canto (elegida), Onda y Cerámica, con el motivo de cada decisión.",
+   "en": "Three identity routes: Pebble (chosen), Wave and Ceramic, with the reason behind each decision."
   }
  },
  {
@@ -46,10 +82,28 @@
   "caption": {
    "es": "Manual de marca: logotipo de trazo único, área de respeto y tamaños mínimos.",
    "en": "Brand guidelines: single-stroke wordmark, clear space and minimum sizes."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-manual-marca-logotipo-trazo-unico-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Manual de marca: logotipo de trazo único, área de respeto y tamaños mínimos.",
+   "en": "Brand guidelines: single-stroke wordmark, clear space and minimum sizes."
   }
  },
  {
   "file": "imagenes/oye-manual-marca-tono-de-voz.webp",
+  "caption": {
+   "es": "Manual de marca: tono de voz, con ejemplos de cómo habla OYE y cómo no.",
+   "en": "Brand guidelines: tone of voice, with examples of how OYE talks and how it does not."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-manual-marca-tono-de-voz-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Manual de marca: tono de voz, con ejemplos de cómo habla OYE y cómo no.",
    "en": "Brand guidelines: tone of voice, with examples of how OYE talks and how it does not."
@@ -78,6 +132,15 @@
  },
  {
   "file": "imagenes/oye-packaging-caja-faja-troquel.webp",
+  "caption": {
+   "es": "Packaging: medidas de la caja, troquel de la faja y especificaciones de impresión.",
+   "en": "Packaging: box dimensions, sleeve dieline and print specs."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-packaging-caja-faja-troquel-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Packaging: medidas de la caja, troquel de la faja y especificaciones de impresión.",
    "en": "Packaging: box dimensions, sleeve dieline and print specs."
@@ -130,6 +193,15 @@
   "caption": {
    "es": "Plan de canales en tres fases: teaser, lanzamiento y mantenimiento.",
    "en": "Three-phase channel plan: teaser, launch and always-on."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-plan-canales-lanzamiento-en.webp",
+  "lang": "en",
+  "caption": {
+   "es": "Plan de canales en tres fases: teaser, lanzamiento y mantenimiento.",
+   "en": "Three-phase channel plan: teaser, launch and always-on."
   }
  },
  {
@@ -155,6 +227,15 @@
  },
  {
   "file": "imagenes/oye-storyboard-spots-camuflaje.webp",
+  "caption": {
+   "es": "Storyboard de los dos spots: «Camuflaje» (9:16) y «Donde lo dejes» (16:9).",
+   "en": "Storyboard of both spots: “Camouflage” (9:16) and “Wherever you leave it” (16:9)."
+  },
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-storyboard-spots-camuflaje-en.webp",
+  "lang": "en",
   "caption": {
    "es": "Storyboard de los dos spots: «Camuflaje» (9:16) y «Donde lo dejes» (16:9).",
    "en": "Storyboard of both spots: “Camouflage” (9:16) and “Wherever you leave it” (16:9)."

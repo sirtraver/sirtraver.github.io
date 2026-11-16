@@ -14,7 +14,9 @@
       "Aplicación en punto de venta",
       "Packshot para tienda online",
       "Fotografía de producto con IA",
-      "Piezas para redes"
+      "Piezas para redes",
+      "Spot de 10 s en 16:9",
+      "Estrategia y matriz de la campaña de lanzamiento"
     ],
     "en": [
       "Visual identity",
@@ -23,7 +25,9 @@
       "Retail application",
       "E-commerce packshot",
       "AI product photography",
-      "Social pieces"
+      "Social pieces",
+      "10-second 16:9 spot",
+      "Launch campaign strategy and channel matrix"
     ]
   },
   "category": "Visual identity",
@@ -31,8 +35,8 @@
   "draft": false,
   "client": "",
   "role": {
-    "en": "",
-    "es": ""
+    "es": "Identidad visual, packaging y punto de venta; estrategia y concepto de la campaña de lanzamiento, plan de canales, dirección de arte, generación de imagen y vídeo con IA, diseño de piezas",
+    "en": "Visual identity, packaging and retail; strategy and concept for the launch campaign, channel plan, art direction, AI image and video generation, layout of the pieces"
   },
   "result": {
     "es": "Proyecto conceptual. Demuestra cómo un monograma y cuatro colores bastan para ordenar una gama de producto entera: el mismo sistema funciona en la lata, en la caja, en la campaña y en el expositor de tienda.",
@@ -115,12 +119,32 @@
     },
     {
       "title": {
-        "es": "Extensión de campaña",
-        "en": "Campaign extension"
+        "es": "El reto del lanzamiento",
+        "en": "The launch challenge"
       },
       "text": {
-        "es": "En 2026 la campaña «Paint it» se amplió con imagen generada con IA a partir de los propios botes de la marca: el packshot para tienda online, los cuatro colores saltando de sus botes, una gota de cian, una pared a medio pintar en magenta y un trazo negro. Los titulares se maquetaron después siguiendo la campaña original. Cierra la extensión un spot de 10 s en 16:9: un rodillo cubre de magenta una pared blanca y los cuatro colores saltan de sus botes.",
-        "en": "In 2026 the “Paint it” campaign was extended with AI-generated imagery built from the brand’s own tins: the e-commerce packshot, the four colours splashing out of their tins, a drop of cyan, a half-painted magenta wall and a black brushstroke. Headlines were laid out afterwards following the original campaign. A 10-second 16:9 spot completes the extension: a roller covers a white wall in magenta and the four colours burst out of their tins."
+        "es": "El lineal de pintura es un muro de latas iguales con fotos de salones beis, y el público joven de bricolaje no se atreve con el color: acaba pintando de blanco. El insight que guía la campaña: «Elegir el color da más miedo que pintar».",
+        "en": "The paint aisle is a wall of identical tins with photos of beige living rooms, and young DIY buyers do not dare to use colour: they end up painting white. The insight behind the campaign: “Choosing the colour is scarier than painting”."
+      }
+    },
+    {
+      "title": {
+        "es": "Campaña y canales",
+        "en": "Campaign and channels"
+      },
+      "text": {
+        "es": "«Paint it» convierte la duda en una orden alegre: un color y una frase por pieza. El expositor ordena la tienda por color, el e-commerce usa un packshot por bote, las redes dedican una semana a cada color y un spot de 10 s en 16:9 cierra con los cuatro colores saltando de sus botes. Imágenes generadas con IA a partir de los botes reales; titulares maquetados después.",
+        "en": "“Paint it” turns hesitation into a cheerful command: one colour and one line per piece. The display orders the store by colour, e-commerce uses one packshot per tin, social gives each colour its own week, and a 10-second 16:9 spot ends with the four colours bursting out of their tins. Images generated with AI from the real tins; headlines laid out afterwards."
+      }
+    },
+    {
+      "title": {
+        "es": "Objetivos y medición",
+        "en": "Objectives and measurement"
+      },
+      "text": {
+        "es": "Proyecto spec: no hay resultados y no se inventan. Las metas del plan: que el color suponga al menos el 30 % de las ventas frente al blanco en la tienda piloto, 2.000 botes de muestra en 8 semanas y que el 75 % encuentre la marca en una foto del lineal en 3 segundos.",
+        "en": "Spec project: there are no results and none are made up. The plan’s targets: colour making up at least 30% of sales against white in the pilot store, 2,000 sample tins in 8 weeks, and 75% finding the brand in a photo of the aisle within 3 seconds."
       }
     }
   ],

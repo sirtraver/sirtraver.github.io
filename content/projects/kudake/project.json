@@ -8,8 +8,8 @@
   "behanceTitle": "KUDAKE! Japan Burgers · Brand Identity",
   "client": "",
   "role": {
-    "en": "",
-    "es": ""
+    "es": "Identidad visual, packaging y aplicaciones; estrategia y concepto de la campaña de apertura, plan de canales, dirección de arte, generación de imagen y vídeo con IA, diseño de piezas",
+    "en": "Visual identity, packaging and applications; strategy and concept for the opening campaign, channel plan, art direction, AI image and video generation, layout of the pieces"
   },
   "deliverables": {
     "es": [
@@ -21,7 +21,8 @@
       "Fotografía de producto con IA",
       "Imágenes para apps de delivery",
       "Piezas para redes",
-      "Spot vertical de 8 s"
+      "Spot vertical de 8 s",
+      "Estrategia y matriz de la campaña de apertura"
     ],
     "en": [
       "Visual identity",
@@ -32,7 +33,8 @@
       "AI product photography",
       "Delivery app images",
       "Social pieces",
-      "8-second vertical spot"
+      "8-second vertical spot",
+      "Opening campaign strategy and channel matrix"
     ]
   },
   "intro": {
@@ -116,12 +118,32 @@
     },
     {
       "title": {
-        "es": "Extensión de campaña",
-        "en": "Campaign extension"
+        "es": "El reto de la apertura",
+        "en": "The opening challenge"
       },
       "text": {
-        "es": "En 2026 la identidad se llevó a campaña con imagen generada con IA a partir del propio packaging de la marca: una hamburguesa protagonista en su papel impreso, la foto cenital para apps de delivery, el pedido para llevar en una calle de noche, un macro de los bordes crujientes, un banner del momento «smash» y un spot vertical de 8 segundos. Los titulares se maquetaron después con la tipografía de la identidad. Estas piezas son spec work, sin relación con ninguna marca real.",
-        "en": "In 2026 the identity was taken into a campaign with AI-generated imagery built from the brand’s own packaging: a hero burger in its printed paper, a top-down shot for delivery apps, the takeaway order on a street at night, a macro of the crispy edges, a banner of the smash moment and an 8-second vertical spot. Headlines were laid out afterwards in the identity’s typefaces. These pieces are spec work, not affiliated with any real brand."
+        "es": "Para la campaña de apertura, el problema era otro: la ciudad está llena de smash burgers nuevas y en las apps de delivery todas las fotos son el mismo primer plano sobre fondo oscuro. El insight: «En la app todas parecen la misma: pido la que reconozco antes de leer el nombre».",
+        "en": "For the opening campaign the problem was different: the city is full of new smash burger places, and on delivery apps every photo is the same close-up on a dark background. The insight: “On the app they all look the same: I order the one I recognise before reading the name”."
+      }
+    },
+    {
+      "title": {
+        "es": "Campaña y canales",
+        "en": "Campaign and channels"
+      },
+      "text": {
+        "es": "La idea es el propio grito, 砕け! (¡aplástala!), convertido en el momento «smash». Una pieza para cada canal: la foto cenital sobre crema y el sello azul para leerse en la miniatura de la app, el gesto smash en redes y en un spot vertical de 8 s, el pedido para llevar en la calle y el packaging como medio en el local. Imágenes generadas con IA a partir del packaging real; titulares maquetados después.",
+        "en": "The idea is the shout itself, 砕け! (smash it!), turned into the smash moment. One piece per channel: the overhead shot on cream with the blue stamp, built to read as an app thumbnail; the smash gesture on social and in an 8-second vertical spot; the takeaway order in the street; and the packaging as media in the restaurant. Images generated with AI from the real packaging; headlines laid out afterwards."
+      }
+    },
+    {
+      "title": {
+        "es": "Objetivos y medición",
+        "en": "Objectives and measurement"
+      },
+      "text": {
+        "es": "Proyecto spec: no hay resultados y no se inventan. Las metas del plan: 120 pedidos al día en apps a los 90 días, un 20 % más de clic en la ficha que la media de la categoría y que al menos el 70 % localice KUDAKE! en una cuadrícula de 12 miniaturas en 3 segundos, un pre-test que se puede hacer antes de abrir.",
+        "en": "Spec project: there are no results and none are made up. The plan’s targets: 120 app orders a day after 90 days, a 20% higher click rate on the listing than the category average, and at least 70% finding KUDAKE! in a grid of 12 thumbnails within 3 seconds, a pre-test that can be run before opening."
       }
     }
   ],

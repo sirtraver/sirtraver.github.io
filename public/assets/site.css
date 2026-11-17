@@ -2713,3 +2713,20 @@ html:has(dialog[open]) .site-cursor { display: none; }
   .gallery-row { flex-direction: column; gap: 16px; }
   .gallery-row > figure { flex: none; width: 100%; }
 }
+
+/* About: «Cómo trabajo» as one even block (heading row, four equal steps). */
+.about-resume .about-method { display: block; margin-top: 8px; padding: 28px 0 0; }
+.about-resume .about-method-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 32px; flex-wrap: wrap; margin-bottom: 24px; }
+.about-resume .about-method-intro p { max-width: none; }
+.about-resume .about-method-intro .method-link { margin-top: 0; white-space: nowrap; }
+.about-resume .method-steps { gap: 0; }
+.about-resume .method-steps li { padding: 20px 24px 4px 0; border-top: 1px solid #d9d9d9; }
+.about-resume .method-steps li + li { padding-left: 24px; border-left: 1px solid #d9d9d9; }
+@media (max-width: 1000px) {
+  .about-resume .method-steps li { padding: 18px 16px 18px 0; }
+  .about-resume .method-steps li:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .about-resume .method-steps li:nth-child(even) { padding-left: 16px; }
+}
+@media (max-width: 480px) {
+  .about-resume .method-steps li, .about-resume .method-steps li:nth-child(even) { padding: 16px 0; border-left: 0; }
+}

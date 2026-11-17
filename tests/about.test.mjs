@@ -2,30 +2,22 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { get } from './helpers.mjs';
 
-test('the professional profile has a translated CV summary and clearly marks current study', async () => {
-  for (const [path, study, status, experience] of [
-    ['/es/about/', 'Marketing y Publicidad', 'En curso', 'Experiencia profesional'],
-    ['/about/', 'Marketing &amp; Advertising', 'In progress', 'Professional experience'],
+test('About is a short profile plus «How I work»; the CV details live on the CV page', async () => {
+  for (const [path, cv, method, experience] of [
+    ['/es/about/', '/cv/', 'Cómo trabajo', 'Experiencia profesional'],
+    ['/about/', '/resume/', 'How I work', 'Professional experience'],
   ]) {
     const html = await (await get(path)).text();
     assert.ok(html.includes('class="about-profile"'));
     assert.ok(html.includes('profile-social'));
-    assert.ok(html.includes(experience));
+    assert.ok(html.includes(`href="${cv}"`), 'About links to the CV');
+    assert.ok(html.includes('class="about-method"'));
+    assert.ok(html.includes(method));
     assert.ok(html.includes('2017'));
     assert.ok(html.includes('Universidad Complutense de Madrid'));
-    assert.ok(html.includes('Founderz'));
-    assert.ok(html.includes('Google Certificates'));
-    assert.ok(html.includes('C1 · Advanced'));
-    const current = html.match(/<li class="is-current">([\s\S]*?)<\/li>/)[1];
-    assert.ok(current.includes(study));
-    assert.ok(current.includes(status));
-    assert.ok(!current.includes('2019'), 'no invented date for current studies');
-    assert.ok(!html.includes('resume-other'), 'unrelated experience is removed');
-    assert.ok(!html.includes('Ciudad de la Raqueta'));
-    assert.ok(!html.includes('Somontes'));
-    assert.ok(current.includes('UFV'));
     assert.ok(html.includes('Visual Designer &amp; Marketing'));
-    assert.ok(current.includes(path.startsWith('/es/') ? 'Grado Superior' : 'Advanced Vocational Qualification'));
+    assert.ok(!html.includes('resume-main'), 'the CV sections are not repeated on About');
+    assert.ok(!html.includes(experience));
     assert.ok(!html.includes('tel:'), 'the private CV phone is not turned into a public contact link');
     assert.ok(!html.includes('.pdf'), 'the full private CV is not uploaded as a public download');
   }

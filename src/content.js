@@ -138,9 +138,9 @@ export const CONTENT = {
         "lead": "One line from the logo to the spot, so the brand looks the same wherever it appears.",
         "steps": [
           ["Identity", "Logo, colour and type: the base everything else is built on."],
-          ["Product system", "Packaging, labels and applications that keep the brand recognisable in every format."],
-          ["Campaign", "Product images and pieces for social media and print, ready to launch."],
-          ["Motion", "Spots and animated pieces that carry the same identity into video."]
+          ["Product", "Packaging and labels that keep the brand recognisable in every format."],
+          ["Campaign", "Product images, social posts and posters, ready to launch."],
+          ["Motion", "Spots and animated pieces that carry the identity into video."]
         ]
       },
       "tools": "Tools",
@@ -363,10 +363,10 @@ export const CONTENT = {
         "link": "Ver servicios",
         "lead": "Una sola línea del logotipo al spot, para que la marca se vea igual dondequiera que aparezca.",
         "steps": [
-          ["Identidad", "Logotipo, color y tipografía: la base sobre la que se construye todo lo demás."],
-          ["Sistema de producto", "Packaging, etiquetas y aplicaciones que mantienen la marca reconocible en cada formato."],
-          ["Campaña", "Imágenes de producto y piezas para redes y cartelería, listas para lanzar."],
-          ["Motion", "Spots y piezas animadas que llevan la misma identidad al vídeo."]
+          ["Identidad", "Logotipo, color y tipografía: la base sobre la que se construye todo."],
+          ["Producto", "Packaging y etiquetas que mantienen la marca reconocible en cada formato."],
+          ["Campaña", "Imágenes de producto, piezas para redes y carteles, listos para lanzar."],
+          ["Motion", "Spots y piezas animadas que llevan la identidad al vídeo."]
         ]
       },
       "tools": "Herramientas",

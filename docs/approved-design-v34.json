@@ -1,16 +1,16 @@
 {
-  "version": "v90 — Portadas nuevas de Flamenco, Olmedo, Greens y sirtraver; Gigantes en rejilla v2",
+  "version": "v87-sobre-mi-cmy — Glitch CMY, sin franja freelance en portada, Sobre mí solo con Cómo trabajo",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "167d57ac644d2934ba0142ddba438dbe8b7ebec6f1175c342c89ca6513093356",
-    "/es/": "064c4e6d86793d0e58eb6cb34992e5aff4cd2966aabad9c40cbad134fe2f81f3",
-    "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
-    "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
+    "/": "48a294cc0c070da22dc11a57fbd12db77d10fff13699601697826b81999b8698",
+    "/es/": "3734f5e1fc03a3d9a1c58531207840a09b6a8ddf18fac70d4602fb419938d3cf",
+    "/about/": "bf117e6e344990415ce76a99b35577c1d7d0bfd120a5fc93f92f24529bc430d1",
+    "/es/about/": "2ae1c616e4b79b5f4675d19470ad84e870ea9eb4798380cbd9c5ac63941ece1d",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
     "/es/resources/": "b16bcb204c720cd7b9b8ab98d3915d637d6abf4b103fa1d24f7d2985d1fcb81f"
   },
-  "cssPrefixBytes": 99009,
-  "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
+  "cssPrefixBytes": 100107,
+  "cssPrefixHash": "710da01b5e8096db5ab596448f44c3fe43f3941374f3e92d6e517b063a83b27b",
   "homeShellHashes": {
     "/": "86423b958a3654f6cefaea16273c029bbaffc7997c552ae0b3b93c039af372a2",
     "/es/": "7952e643dd015d19b9960c961d66334fc67a56b8d38c5e64ab79212565b3eb10"

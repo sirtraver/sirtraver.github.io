@@ -1,11 +1,11 @@
 {
-  "version": "v90 — Portadas nuevas de Flamenco, Olmedo, Greens y sirtraver; Gigantes en rejilla v2",
+  "version": "v87-sobre-mi-cmy — Glitch CMY, sin franja freelance en portada, Sobre mí solo con Cómo trabajo",
   "commit": "see git log",
   "visualFiles": {
-    "public/assets/site.css": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
+    "public/assets/site.css": "710da01b5e8096db5ab596448f44c3fe43f3941374f3e92d6e517b063a83b27b",
     "public/assets/project-viewer.js": "80ee3ef34158f8fc21dd577848e748531644c55f8a0373d9ecaba9c24b57d3e8",
     "public/assets/image-zoom.js": "8f736e81031290bebaf982109a45766019e63a43ad8b96e947c5f6e83c9f1a26",
     "public/assets/navigation.js": "aa7dd27eed7b009a4295a1b2c1b05a0e7502f080247cfa9370216f8e50f9ecea",
-    "public/assets/site.js": "2725c5aff33aeeb85b1482ef28d94fbf5cf287f769a79cb05271b42ee9d81e0b"
+    "public/assets/site.js": "d0bfe6186dc01915d77fa68816a90f34d5253dfc45e7a9034dbcb2c76e5c25db"
   }
 }

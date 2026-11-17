@@ -3,8 +3,8 @@
   "date": "2026-10-19",
   "order": 2,
   "intro": {
-    "es": "Proyecto conceptual de identidad y comunicación para una autoescuela. «Sin drama. Con carnet.» convierte la idea de aprender a conducir en una promesa cercana, directa y visualmente reconocible.",
-    "en": "A concept identity and communication system for a driving school. “Sin drama. Con carnet.” turns learning to drive into an approachable, direct and visually recognisable promise."
+    "es": "Spec work. Identidad y campaña para una autoescuela: «Sin drama. Con carnet.»",
+    "en": "Spec work. Identity and campaign for a driving school: “Sin drama. Con carnet.”"
   },
   "deliverables": {
     "es": [
@@ -31,8 +31,8 @@
     "es": ""
   },
   "result": {
-    "es": "Proyecto conceptual. Plantea una autoescuela con un tono cercano y sin dramatismo: un mensaje claro, «Sin drama. Con carnet.», y un sistema que se mantiene coherente del coche a las redes y la web.",
-    "en": "Concept project. It imagines a driving school with a friendly, drama-free tone: one clear message, “No drama. Just your licence.”, and a system that stays consistent from the car to social media and the website."
+    "es": "Proyecto conceptual. El caso completo está disponible bajo petición.",
+    "en": "Concept project. The full case is available on request."
   },
   "behance": "",
   "featured": false,
@@ -69,12 +69,12 @@
   "caseStudy": [
     {
       "title": {
-        "es": "El proyecto",
-        "en": "The project"
+        "es": "El reto",
+        "en": "The challenge"
       },
       "text": {
-        "es": "La propuesta explora cómo dar a una autoescuela una voz propia en soportes muy diferentes: un coche en movimiento, una historia de redes, material de clase o una web. En lugar de basarse únicamente en símbolos de tráfico, la identidad toma como punto de partida la sensación que quiere transmitir: acompañamiento y menos tensión al aprender.",
-        "en": "The proposal explores a distinctive voice for a driving school across very different surfaces: a moving car, a social story, course materials and a website. Rather than relying only on traffic symbols, the identity starts with the feeling it aims to communicate: support and less tension while learning."
+        "es": "Aprender a conducir da nervios, y casi todas las autoescuelas hablan con señales de tráfico.",
+        "en": "Learning to drive is stressful, and most driving schools speak in traffic signs."
       }
     },
     {
@@ -83,55 +83,24 @@
         "en": "The idea"
       },
       "text": {
-        "es": "El nombre OASIS y el mensaje «Sin drama. Con carnet.» comparten un tono tranquilo, pero no pasivo. La marca habla de conducir con una frase breve y fácil de recordar. La comunicación combina esa cercanía con titulares de gran presencia, para que la propuesta conserve energía en el coche, en la calle y en pantalla.",
-        "en": "The name OASIS and the line “Sin drama. Con carnet.” share a calm but active tone. A short, memorable phrase connects the brand with learning to drive. Communication combines this approachability with bold headlines, giving the proposal energy on the car, in the street and on screen."
+        "es": "Una marca que quita tensión: OASIS, verde menta y una frase corta. «Sin drama. Con carnet.»",
+        "en": "A brand that takes the tension out: OASIS, mint green and one short line. “Sin drama. Con carnet.” (No drama. Just your licence.)"
       }
     },
     {
       "title": {
-        "es": "Aplicaciones",
-        "en": "Applications"
+        "es": "Qué se hizo",
+        "en": "What was made"
       },
       "text": {
-        "es": "El coche rotulado lleva la identidad a un soporte que forma parte del propio servicio. La campaña se adapta a cartelería y formatos verticales; la placa de la L y el material impreso acercan la marca a situaciones de uso. La propuesta web reúne esos elementos en una presentación digital.",
-        "en": "The branded car takes the identity onto a surface that is part of the service itself. The campaign adapts to posters and vertical formats; the learner plate and print materials place the brand in everyday use. The website concept brings these elements into a digital presentation."
+        "es": "Identidad, coche rotulado, carteles, mupi y redes, material de clase y propuesta web.",
+        "en": "Identity, branded car, posters, street panel and social, course materials and website concept."
       }
     }
   ],
-  "designDetails": [
-    {
-      "title": {
-        "es": "Tipografía",
-        "en": "Typography"
-      },
-      "text": {
-        "es": "Tilt Warp aporta volumen, curvas y una ligera deformación a los mensajes de mayor tamaño. Atkinson Hyperlegible introduce un registro más sobrio para los textos de apoyo. La combinación separa la voz expresiva de la información: una atrae la atención y la otra ayuda a recorrer el contenido con claridad.",
-        "en": "Tilt Warp gives large messages volume, curves and a slight distortion. Atkinson Hyperlegible provides a quieter register for supporting text. The pairing separates the expressive voice from information: one attracts attention, while the other helps readers move clearly through the content."
-      }
-    },
-    {
-      "title": {
-        "es": "Marca y jerarquía",
-        "en": "Mark and hierarchy"
-      },
-      "text": {
-        "es": "OASIS ocupa el nivel principal del logotipo y «Autoescuela» aclara la actividad con menor peso. Las composiciones se construyen con bloques amplios de texto y cambios de escala, evitando repartir la atención entre demasiados elementos. En las piezas de campaña, el mensaje y el coche comparten protagonismo; la marca los conecta.",
-        "en": "OASIS leads the logo, with the smaller “Autoescuela” descriptor clarifying the activity. Broad text blocks and changes in scale organise the compositions without dividing attention between too many elements. In campaign visuals, the message and car share the lead, connected by the mark."
-      }
-    },
-    {
-      "title": {
-        "es": "Imagen y formatos",
-        "en": "Imagery and formats"
-      },
-      "text": {
-        "es": "Las escenas de coche y los mockups muestran la identidad en contextos próximos al aprendizaje y a la movilidad. Los formatos verticales conservan el titular, el vehículo y el contraste cromático, adaptando su relación al espacio disponible. La propuesta de interfaz utiliza esos mismos recursos para mantener continuidad con la campaña.",
-        "en": "Car scenes and mockups place the identity in contexts related to learning and mobility. Vertical formats retain the headline, vehicle and colour contrast while adapting their relationship to the available space. The interface concept uses the same resources to maintain continuity with the campaign."
-      }
-    }
-  ],
+  "designDetails": [],
   "paletteNote": {
-    "es": "El verde menta sostiene el tono cercano de la propuesta; el oscuro aporta estructura y lectura. El azul eléctrico introduce un acento más activo en titulares y detalles. La distribución evita que el carácter amable del conjunto se convierta en una identidad visualmente débil.",
-    "en": "Mint green supports the proposal’s approachable tone; the dark shade provides structure and legibility. Electric blue adds a more active accent to headlines and details. Their distribution keeps the friendly character from becoming visually weak."
+    "es": "",
+    "en": ""
   }
 }

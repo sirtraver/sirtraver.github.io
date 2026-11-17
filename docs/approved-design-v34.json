@@ -1,9 +1,9 @@
 {
-  "version": "v80 — SOLFA: fotos de ChatGPT y plantilla v2",
+  "version": "v81 — OASIS y COLORSPLASH: fotos de ChatGPT y plantilla v2",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "3028606060ee14cbb7e1bacea513b804574826560337ee1b9c3186b8b804916b",
-    "/es/": "15c0238cac696ba1476ab3803c91bc8e776485b0a75c9f7a58f9d81eab64a45b",
+    "/": "566dbf03afb3c5a33f188a07294d14f944c8ddf190d7551fa6b713db5580f294",
+    "/es/": "0642311f46456b350c62a2f0575f99e70bab40b7068c8380769c7298130b1518",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 99009,
   "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "0b433d9fa482a15ea62e8ffa93be85eef492ff634de0aa03de1a5442c16c55fd",
-    "/es/": "cac1045f58bd2b41eacf7853cd12e878b7d6cf87e74029fc7121f72cf3df0f98"
+    "/": "4189d7fb6055e1009270f4e255da9886cfc1907c80f46d1fa252fdf2444e96f0",
+    "/es/": "4c1fa0b8a670f4783d98859d14128f601b7895071e374c4dd2f892c4c687e9ed"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

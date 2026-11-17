@@ -1,9 +1,9 @@
 {
-  "version": "v85 — SOLFA: spot junto a identidad, sin serie ni kit, paseo fotográfico",
+  "version": "v87 — KUDAKE! v2 con fotos de ChatGPT; Greens mockups reales",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "54f053d540b7652da78475890f93c4e33c73d09f8cdfe588201e3a65ba872057",
-    "/es/": "f4d1853a187074b65439de1e1c68c703d9a441627bac863d689fdaf2038a13a4",
+    "/": "ad837376a55a06b36bddb6b70803f940d33b1ff2905f81363c71e44f930d030b",
+    "/es/": "23b7316b097bdceee147ad602ffaba394a64976af62905c2a97b4cb9c916683b",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 99009,
   "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "9b3e6f57cb44c10148bc753b504eb1440b705fe24db30f525fdd7218159b428e",
-    "/es/": "d84a9762678a7961e684a766f10202a1a875fa7e848e3c295d9705d54d47ef13"
+    "/": "634fb816db207f42a9aa01f0004acd87ebc2f9d0ec4c31fd273d881e915a4d20",
+    "/es/": "f4ca0199e77fc894a491961a8af16425c406b0ffd774cf2062d55e7cf118829b"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

@@ -13,37 +13,27 @@
   },
   "deliverables": {
     "es": [
-      "Identidad visual",
-      "Interiorismo",
-      "Merchandising",
+      "Identidad y sello",
       "Packaging",
-      "Cartelería",
-      "Fotografía de producto con IA",
-      "Imágenes para apps de delivery",
-      "Piezas para redes",
-      "Spot vertical de 8 s",
-      "Estrategia y matriz de la campaña de apertura"
+      "Local y merchandising",
+      "Campaña «砕け!»",
+      "Spot de 8 s"
     ],
     "en": [
-      "Visual identity",
-      "Interior",
-      "Merchandise",
+      "Identity and stamp",
       "Packaging",
-      "Posters",
-      "AI product photography",
-      "Delivery app images",
-      "Social pieces",
-      "8-second vertical spot",
-      "Opening campaign strategy and channel matrix"
+      "Restaurant and merchandise",
+      "“砕け!” campaign",
+      "8-second spot"
     ]
   },
   "intro": {
-    "es": "Smash burgers con alma japonesa. Una identidad que convierte la energía del nombre KUDAKE! en un sello, un lenguaje gráfico y una experiencia de marca reconocible.",
-    "en": "Smash burgers with a Japanese soul. An identity that turns the energy of the name KUDAKE! into a stamp, a graphic language and a recognisable brand experience."
+    "es": "Spec work. Identidad, packaging y campaña de apertura para una hamburguesería de smash burgers con alma japonesa.",
+    "en": "Spec work. Identity, packaging and opening campaign for a smash burger restaurant with a Japanese soul."
   },
   "result": {
-    "es": "Proyecto conceptual: KUDAKE! es una marca inventada, sin relación con ningún restaurante real. Una identidad articulada alrededor de un sello y un conjunto reducido de reglas. El mismo lenguaje conecta el producto, el packaging, las prendas y el espacio, y permite reconocer KUDAKE! incluso cuando cambia la escala de la aplicación.",
-    "en": "Concept project: KUDAKE! is an invented brand, not affiliated with any real restaurant. An identity built around a stamp and a concise set of rules. The same language connects the product, packaging, clothing and interior, making KUDAKE! recognisable as the scale of the application changes."
+    "es": "Proyecto conceptual. KUDAKE! es una marca inventada. El caso completo está disponible bajo petición.",
+    "en": "Concept project. KUDAKE! is an invented brand. The full case is available on request."
   },
   "featured": false,
   "archived": false,
@@ -88,12 +78,12 @@
   "caseStudy": [
     {
       "title": {
-        "es": "El punto de partida",
-        "en": "The starting point"
+        "es": "El reto",
+        "en": "The challenge"
       },
       "text": {
-        "es": "El proyecto reúne dos referencias: la contundencia de una hamburguesería de smash burgers y el carácter visual de la gráfica japonesa. La identidad debía conectar ambas sin depender de una ilustración distinta en cada pieza. El sistema se construye alrededor de una marca compacta, capaz de organizar desde un envase hasta la fachada del local.",
-        "en": "The project brings together two references: the boldness of a smash burger restaurant and the character of Japanese graphics. The identity connects both without relying on a different illustration for every item. A compact mark anchors the system, organising everything from packaging to the restaurant façade."
+        "es": "La ciudad está llena de smash burgers nuevas y, en las apps de delivery, todas las fotos parecen la misma.",
+        "en": "The city is full of new smash burger places, and on delivery apps every photo looks the same."
       }
     },
     {
@@ -102,95 +92,35 @@
         "en": "The idea"
       },
       "text": {
-        "es": "KUDAKE! se plantea como un grito: corto, directo y ligado al gesto de aplastar la hamburguesa en la plancha. La expresión 砕け! ocupa el primer nivel del sello; el nombre latino y el descriptor JAPAN BURGERS completan la lectura. Esa combinación convierte el propio nombre en el principal recurso de comunicación.",
-        "en": "KUDAKE! is treated as a shout: short, direct and connected to pressing the burger onto the griddle. The expression 砕け! takes the first level of the stamp, while the Latin name and JAPAN BURGERS descriptor complete the reading. The name itself becomes the main communication device."
+        "es": "El nombre es un grito: 砕け! (¡aplástala!). Un sello azul y naranja lo convierte en marca y en el momento «smash» de la campaña.",
+        "en": "The name is a shout: 砕け! (smash it!). A blue and orange stamp turns it into the brand and into the campaign’s smash moment."
       }
     },
     {
       "title": {
-        "es": "Aplicaciones",
-        "en": "Applications"
+        "es": "Qué se hizo",
+        "en": "What was made"
       },
       "text": {
-        "es": "El sello cambia de escala y se repite en papel, vasos, cajas, prendas y cartelería. En el espacio interior, el damero y la rotulación prolongan el mismo lenguaje. Las aplicaciones muestran cómo una identidad puede acompañar todo el recorrido de la marca sin perder reconocimiento al cambiar de material o de formato.",
-        "en": "The stamp changes scale and repeats across paper, cups, boxes, clothing and posters. Checkerboard surfaces and lettering extend the same language into the interior. The applications show how an identity can accompany the whole brand experience while remaining recognisable across materials and formats."
-      }
-    },
-    {
-      "title": {
-        "es": "El reto de la apertura",
-        "en": "The opening challenge"
-      },
-      "text": {
-        "es": "Para la campaña de apertura, el problema era otro: la ciudad está llena de smash burgers nuevas y en las apps de delivery todas las fotos son el mismo primer plano sobre fondo oscuro. El insight: «En la app todas parecen la misma: pido la que reconozco antes de leer el nombre».",
-        "en": "For the opening campaign the problem was different: the city is full of new smash burger places, and on delivery apps every photo is the same close-up on a dark background. The insight: “On the app they all look the same: I order the one I recognise before reading the name”."
-      }
-    },
-    {
-      "title": {
-        "es": "Campaña y canales",
-        "en": "Campaign and channels"
-      },
-      "text": {
-        "es": "La idea es el propio grito, 砕け! (¡aplástala!), convertido en el momento «smash». Una pieza para cada canal: la foto cenital sobre crema y el sello azul para leerse en la miniatura de la app, el gesto smash en redes y en un spot vertical de 8 s, el pedido para llevar en la calle y el packaging como medio en el local. Imágenes generadas con IA a partir del packaging real; titulares maquetados después.",
-        "en": "The idea is the shout itself, 砕け! (smash it!), turned into the smash moment. One piece per channel: the overhead shot on cream with the blue stamp, built to read as an app thumbnail; the smash gesture on social and in an 8-second vertical spot; the takeaway order in the street; and the packaging as media in the restaurant. Images generated with AI from the real packaging; headlines laid out afterwards."
-      }
-    },
-    {
-      "title": {
-        "es": "Objetivos y medición",
-        "en": "Objectives and measurement"
-      },
-      "text": {
-        "es": "Proyecto spec: no hay resultados y no se inventan. Las metas del plan: 120 pedidos al día en apps a los 90 días, un 20 % más de clic en la ficha que la media de la categoría y que al menos el 70 % localice KUDAKE! en una cuadrícula de 12 miniaturas en 3 segundos, un pre-test que se puede hacer antes de abrir.",
-        "en": "Spec project: there are no results and none are made up. The plan’s targets: 120 app orders a day after 90 days, a 20% higher click rate on the listing than the category average, and at least 70% finding KUDAKE! in a grid of 12 thumbnails within 3 seconds, a pre-test that can be run before opening."
+        "es": "Sello e identidad, packaging, local y merchandising, piezas para redes y delivery, banner «SMASH.» y un spot vertical de 8 segundos.",
+        "en": "Stamp and identity, packaging, restaurant and merchandise, social and delivery pieces, a “SMASH.” banner and an 8-second vertical spot."
       }
     }
   ],
-  "designDetails": [
-    {
-      "title": {
-        "es": "Tipografía y voz",
-        "en": "Typography and voice"
-      },
-      "text": {
-        "es": "Archivo Black aporta peso y una lectura frontal a los titulares. M PLUS Rounded 1c introduce formas redondeadas y permite relacionar la escritura japonesa con los textos latinos. La jerarquía contrapone mensajes breves y grandes con información secundaria más contenida: primero se reconoce el tono de la marca y después se entra en el detalle.",
-        "en": "Archivo Black gives headlines weight and an immediate presence. M PLUS Rounded 1c introduces rounded forms and connects Japanese lettering with Latin text. The hierarchy contrasts short, large messages with quieter supporting information: the brand’s tone comes first, followed by the detail."
-      }
-    },
-    {
-      "title": {
-        "es": "Sello y composición",
-        "en": "Stamp and composition"
-      },
-      "text": {
-        "es": "Un marco redondeado contiene el nombre y convierte el logotipo en una unidad fácil de colocar y repetir. La línea divisoria ordena los niveles de lectura. Fuera del sello, los bloques tipográficos, el damero y la triple línea aportan ritmo sin competir con la marca. La repetición permite llenar superficies amplias y resolver piezas pequeñas con los mismos elementos.",
-        "en": "A rounded frame contains the name, making the logo a unit that can be placed and repeated easily. A dividing rule organises the reading levels. Outside the stamp, blocks of type, checkerboards and triple rules add rhythm without competing with the mark. Repetition handles both large surfaces and small items with the same elements."
-      }
-    },
-    {
-      "title": {
-        "es": "Imagen y materialidad",
-        "en": "Image and materials"
-      },
-      "text": {
-        "es": "Los mockups sitúan la identidad en una escena de restauración: comida, papel, cartón, uniformes y superficies del local. Las texturas cálidas y la presencia del producto contrastan con la geometría del sello. La imagen no sustituye al sistema gráfico; muestra cómo se comporta cuando entra en contacto con objetos y situaciones cotidianas.",
-        "en": "The mockups place the identity in a restaurant setting: food, paper, cardboard, uniforms and interior surfaces. Warm textures and the presence of the product contrast with the stamp’s geometry. Imagery supports the graphic system by showing how it behaves on everyday objects and in everyday situations."
-      }
-    }
-  ],
+  "designDetails": [],
   "paletteNote": {
-    "es": "Rice Cream funciona como fondo y aporta calidez. Electric Cobalt estructura la identidad y Chili Orange concentra los acentos. La relación entre un tono claro y dos colores intensos mantiene el carácter de la marca tanto en una pieza de comunicación como en un envase.",
-    "en": "Rice Cream provides a warm ground. Electric Cobalt structures the identity, while Chili Orange concentrates the accents. One light tone and two vivid colours preserve the brand’s character across communication and packaging."
+    "es": "",
+    "en": ""
   },
   "video": {
     "src": "/video/kudake/spot.mp4",
-    "poster": "imagenes/kudake-japan-burgers-campana-01.webp",
+    "poster": "imagenes/kudake-japan-burgers-identidad-visual-13.webp",
     "aspect": "9:16",
     "date": "2026-11-12",
     "caption": {
-      "es": "Spot vertical de 8 s para TikTok y Reels: la prensa aplasta la carne en la plancha, se funde el queso y cierra con la bandeja completa de KUDAKE!.",
-      "en": "8-second vertical spot for TikTok and Reels: the press smashes the beef on the griddle, the cheese melts and it closes on the full KUDAKE! tray."
-    }
+      "es": "Spot vertical · 8 s",
+      "en": "Vertical spot · 8 s"
+    },
+    "row": "smash"
   }
 }

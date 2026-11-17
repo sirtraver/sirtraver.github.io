@@ -1,9 +1,9 @@
 {
-  "version": "v82 — Flamenco Urbano: fotos de ChatGPT y plantilla v2",
+  "version": "v83 — Flamenco Urbano: valla de portada rehecha",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "2088d83732b9dc72b1c73dd03dea99f6d0e6c3816db7e01ce75c1106d268cd2a",
-    "/es/": "a67438f9a7bde6aabe393e7a164e56c354ab9c8eebc488ca80e0dc5fd377541e",
+    "/": "e3fc81eb31e1b0c3d552b3fea399caf2bdd9541fa424d215b711015d4f1e619e",
+    "/es/": "be04afa5260e4d1c5e1157df313ec1bd92bb7755683e61ff735ecce2a9f9cad8",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 99009,
   "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "c1240ba0508868df3a8953109acd08eb06fffa7c9bf5821da9d655d143c4aaed",
-    "/es/": "4f66694dcec0d8a8b620a0a285fec9194af9df051fe63f6bb5ed8d47594e6bc3"
+    "/": "a9af4bf2d5180457d41a818483075c048ba24a83f6645217daffbe8665d1937b",
+    "/es/": "786bd6e4f7d9a2fc469b2feb9a03ae054f58dfaaa810deedaa00d4a1832a61c3"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

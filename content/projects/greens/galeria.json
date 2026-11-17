@@ -32,13 +32,6 @@
     "row": "color"
   },
   {
-    "file": "imagenes/greens-identidad-visual-09.webp",
-    "caption": {
-      "es": "Menú impreso en la barra de la cafetería.",
-      "en": "Printed menu on the café counter."
-    }
-  },
-  {
     "file": "imagenes/greens-identidad-visual-10.webp",
     "caption": {
       "es": "Bolsa de café en grano con el logotipo Greens.",
@@ -77,5 +70,12 @@
       "en": "Poster with the Greens mascot in the metro."
     },
     "row": "equipo"
+  },
+  {
+    "file": "imagenes/greens-identidad-visual-15.webp",
+    "caption": {
+      "es": "Tarjetas en verde y beige, solo con el logotipo.",
+      "en": "Cards in green and beige, with the wordmark only."
+    }
   }
 ]

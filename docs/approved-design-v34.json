@@ -1,9 +1,9 @@
 {
-  "version": "v89 — WOBBLE en plantilla v2 con fotos de ChatGPT",
+  "version": "v90 — Portadas nuevas de Flamenco, Olmedo, Greens y sirtraver; Gigantes en rejilla v2",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "ad837376a55a06b36bddb6b70803f940d33b1ff2905f81363c71e44f930d030b",
-    "/es/": "23b7316b097bdceee147ad602ffaba394a64976af62905c2a97b4cb9c916683b",
+    "/": "167d57ac644d2934ba0142ddba438dbe8b7ebec6f1175c342c89ca6513093356",
+    "/es/": "064c4e6d86793d0e58eb6cb34992e5aff4cd2966aabad9c40cbad134fe2f81f3",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 99009,
   "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "634fb816db207f42a9aa01f0004acd87ebc2f9d0ec4c31fd273d881e915a4d20",
-    "/es/": "f4ca0199e77fc894a491961a8af16425c406b0ffd774cf2062d55e7cf118829b"
+    "/": "86423b958a3654f6cefaea16273c029bbaffc7997c552ae0b3b93c039af372a2",
+    "/es/": "7952e643dd015d19b9960c961d66334fc67a56b8d38c5e64ab79212565b3eb10"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

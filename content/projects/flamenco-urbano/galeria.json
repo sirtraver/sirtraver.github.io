@@ -1,90 +1,74 @@
 [
- {
-  "file": "imagenes/flamenco-urbano-identidad-visual-03.webp",
-  "caption": {
-   "es": "FU, punto y katakana.",
-   "en": "FU, dot and katakana."
+  {
+    "file": "imagenes/flamenco-urbano-identidad-visual-03.webp",
+    "caption": {
+      "es": "FU, punto y katakana.",
+      "en": "FU, dot and katakana."
+    },
+    "row": "identidad"
   },
-  "row": "identidad"
- },
- {
-  "file": "imagenes/flamenco-urbano-identidad-visual-09.webp",
-  "caption": {
-   "es": "El punto como sistema.",
-   "en": "The dot as a system."
+  {
+    "file": "imagenes/flamenco-urbano-identidad-visual-09.webp",
+    "caption": {
+      "es": "El punto como sistema.",
+      "en": "The dot as a system."
+    },
+    "row": "identidad"
   },
-  "row": "identidad"
- },
- {
-  "file": "imagenes/flamenco-urbano-lookbook-estudio-volante.webp",
-  "caption": {
-   "es": "El volante.",
-   "en": "The ruffle."
+  {
+    "file": "imagenes/flamenco-urbano-lookbook-estudio-volante.webp",
+    "caption": {
+      "es": "El volante.",
+      "en": "The ruffle."
+    },
+    "row": "lookbook"
   },
-  "row": "lookbook"
- },
- {
-  "file": "imagenes/flamenco-urbano-lookbook-harajuku-abanico.webp",
-  "caption": {
-   "es": "Harajuku.",
-   "en": "Harajuku."
+  {
+    "file": "imagenes/flamenco-urbano-lookbook-harajuku-abanico.webp",
+    "caption": {
+      "es": "Harajuku.",
+      "en": "Harajuku."
+    },
+    "row": "lookbook"
   },
-  "row": "lookbook"
- },
- {
-  "file": "imagenes/flamenco-urbano-detalle-gorra-abanico.webp",
-  "caption": {
-   "es": "Gorra y abanico.",
-   "en": "Cap and fan."
+  {
+    "file": "imagenes/flamenco-urbano-detalle-gorra-abanico.webp",
+    "caption": {
+      "es": "Gorra y abanico.",
+      "en": "Cap and fan."
+    },
+    "row": "lookbook"
   },
-  "row": "lookbook"
- },
- {
-  "file": "imagenes/flamenco-urbano-detalle-merchandising.webp",
-  "caption": {
-   "es": "Drop 01.",
-   "en": "Drop 01."
+  {
+    "file": "imagenes/flamenco-urbano-detalle-merchandising.webp",
+    "caption": {
+      "es": "Drop 01.",
+      "en": "Drop 01."
+    },
+    "row": "drop"
   },
-  "row": "drop"
- },
- {
-  "file": "imagenes/flamenco-urbano-packaging-etiqueta-bolsa.webp",
-  "caption": {
-   "es": "Etiqueta y bolsa.",
-   "en": "Label and bag."
+  {
+    "file": "imagenes/flamenco-urbano-packaging-etiqueta-bolsa.webp",
+    "caption": {
+      "es": "Etiqueta y bolsa.",
+      "en": "Label and bag."
+    },
+    "row": "drop"
   },
-  "row": "drop"
- },
- {
-  "file": "imagenes/flamenco-urbano-carteles-metro-tokio.webp",
-  "caption": {
-   "es": "Carteles B1 en el metro.",
-   "en": "B1 posters in the subway."
+  {
+    "file": "imagenes/flamenco-urbano-identidad-visual-11.webp",
+    "caption": {
+      "es": "El pop-up.",
+      "en": "The pop-up."
+    },
+    "row": "tienda"
   },
-  "lang": "es"
- },
- {
-  "file": "imagenes/flamenco-urbano-carteles-metro-tokio-en.webp",
-  "caption": {
-   "es": "Carteles B1 en el metro.",
-   "en": "B1 posters in the subway."
-  },
-  "lang": "en"
- },
- {
-  "file": "imagenes/flamenco-urbano-identidad-visual-11.webp",
-  "caption": {
-   "es": "El pop-up.",
-   "en": "The pop-up."
-  },
-  "row": "tienda"
- },
- {
-  "file": "imagenes/flamenco-urbano-pagina-producto-drop-01.webp",
-  "caption": {
-   "es": "Página de producto.",
-   "en": "Product page."
-  },
-  "row": "tienda"
- }
+  {
+    "file": "imagenes/flamenco-urbano-pagina-producto-drop-01.webp",
+    "caption": {
+      "es": "Página de producto.",
+      "en": "Product page."
+    },
+    "row": "tienda"
+  }
 ]

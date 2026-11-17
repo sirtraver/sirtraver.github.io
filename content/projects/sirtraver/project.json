@@ -61,7 +61,7 @@
       "hex": "#777777"
     }
   ],
-  "hover": "imagenes/sirtraver-identidad-visual-01.webp",
+  "hover": "imagenes/sirtraver-papeleria-carta-sobre-tarjetas.webp",
   "caseStudy": [
     {
       "title": {
@@ -69,8 +69,8 @@
         "en": "The project"
       },
       "text": {
-        "es": "Una identidad para firmar mi propio trabajo y relacionar piezas que pueden pertenecer a disciplinas distintas. La marca necesita funcionar junto a proyectos con mucho color y con lenguajes diferentes. Por eso se apoya en una forma compacta y una paleta neutral, capaz de acompañar las imágenes sin competir con ellas.",
-        "en": "An identity for signing my own work and connecting pieces across different disciplines. The mark needs to sit beside colourful projects with different visual languages. A compact form and a neutral palette allow it to accompany the work without competing with it."
+        "es": "Una marca para firmar mi trabajo, que convive con proyectos de mucho color sin competir con ellos.",
+        "en": "A brand to sign my work, sitting next to very colourful projects without competing with them."
       }
     },
     {
@@ -79,55 +79,24 @@
         "en": "The idea"
       },
       "text": {
-        "es": "SIR · TRA · VER divide el nombre en tres unidades apiladas. Esa lectura transforma una palabra larga en un bloque reconocible y relaciona el nombre con un gesto gráfico sencillo. El contenedor redondeado reúne las tres líneas y permite utilizar la marca como sello, avatar o firma.",
-        "en": "SIR · TRA · VER divides the name into three stacked units. This turns a long word into a recognisable block and links the name with a simple graphic gesture. A rounded container holds the three lines together, allowing the mark to act as a stamp, avatar or signature."
+        "es": "SIR · TRA · VER: el nombre en tres sílabas apiladas dentro de un bloque redondeado que sirve de logotipo, sello y avatar.",
+        "en": "SIR · TRA · VER: the name in three stacked syllables inside a rounded block that works as logo, stamp and avatar."
       }
     },
     {
       "title": {
-        "es": "Aplicaciones",
-        "en": "Applications"
+        "es": "Qué se hizo",
+        "en": "What was made"
       },
       "text": {
-        "es": "Las tarjetas, la papelería y las composiciones de cartelería mantienen el mismo bloque como punto de identificación. La información personal se organiza a su alrededor con una jerarquía secundaria. El sistema busca continuidad entre soportes pequeños y piezas de mayor escala sin necesitar un logotipo diferente para cada uso.",
-        "en": "Business cards, stationery and poster compositions use the same block as their identifying element. Personal information follows a secondary hierarchy around it. The system connects small formats with larger pieces without needing a different logo for each use."
+        "es": "Logotipo y versiones, tipografía Cubano, paleta en blanco, negro y gris, tarjetas y papelería.",
+        "en": "Logo and versions, the Cubano typeface, a black, white and grey palette, cards and stationery."
       }
     }
   ],
-  "designDetails": [
-    {
-      "title": {
-        "es": "Tipografía",
-        "en": "Typography"
-      },
-      "text": {
-        "es": "Cubano Regular da forma al bloque principal. Sus trazos gruesos, curvas abiertas y terminales redondeados aportan una silueta compacta. La elección permite trabajar el nombre como una figura, además de como texto, y mantener una relación clara entre las tres líneas apiladas.",
-        "en": "Cubano Regular forms the main block. Thick strokes, open curves and rounded terminals create a compact silhouette. The name works as a shape as well as text, with a clear relationship between its three stacked lines."
-      }
-    },
-    {
-      "title": {
-        "es": "Composición y escala",
-        "en": "Composition and scale"
-      },
-      "text": {
-        "es": "El rectángulo redondeado contiene el ritmo de las tres sílabas. Los márgenes interiores separan las letras del borde y evitan que el bloque se cierre en exceso. En las aplicaciones, el contraste entre el sello y el espacio vacío permite dar presencia a la marca sin llenar todo el soporte.",
-        "en": "The rounded rectangle contains the rhythm of the three syllables. Inner margins separate the letters from the edge and keep the block from becoming too dense. Across applications, the contrast between stamp and empty space gives the mark presence without filling the whole surface."
-      }
-    },
-    {
-      "title": {
-        "es": "Sistema de versiones",
-        "en": "Identity variants"
-      },
-      "text": {
-        "es": "Las versiones positiva, negativa y gris conservan la misma estructura. El cambio se produce en la relación entre figura y fondo, no en la forma de la marca. Esta reducción ayuda a que la identidad conviva con imágenes de proyectos diferentes y mantiene un criterio común en papelería, pantalla y cartelería.",
-        "en": "Positive, negative and grey versions retain the same structure. What changes is the figure–ground relationship, rather than the shape of the mark. This restraint helps the identity coexist with different project images and maintains consistency across stationery, screen and posters."
-      }
-    }
-  ],
+  "designDetails": [],
   "paletteNote": {
-    "es": "Negro y blanco construyen el contraste principal. El gris funciona como una versión intermedia y un fondo de apoyo. Al reducir la identidad a estos tonos, el color puede proceder de cada proyecto y la firma mantiene continuidad entre trabajos distintos.",
-    "en": "Black and white provide the main contrast. Grey acts as an intermediate version and a supporting ground. By limiting the identity to these tones, colour can come from each project while the signature connects different pieces of work."
+    "es": "",
+    "en": ""
   }
 }

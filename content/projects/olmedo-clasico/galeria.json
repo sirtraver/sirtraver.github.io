@@ -5,13 +5,21 @@
       "es": "Logotipo tipográfico de Olmedo Clásico en marfil sobre burdeos.",
       "en": "Ivory Olmedo Clásico wordmark on burgundy."
     },
-    "layout": "full"
+    "row": "identidad"
   },
   {
     "file": "imagenes/olmedo-clasico-variantes-logotipo-monograma-oc-colores.webp",
     "caption": {
       "es": "Variantes del logotipo, monograma OC, colores burdeos y marfil y tipografía condensada.",
       "en": "Logo variants, OC monogram, burgundy and ivory palette and condensed typography."
+    },
+    "row": "identidad"
+  },
+  {
+    "file": "imagenes/olmedo-clasico-carteles-calle-muro-piedra.webp",
+    "caption": {
+      "es": "Los cuatro carteles pegados en un muro de piedra.",
+      "en": "The four posters pasted on a stone wall."
     }
   },
   {
@@ -19,29 +27,29 @@
     "caption": {
       "es": "Carteles conceptuales de Timón de Atenas y El caballero de Olmedo.",
       "en": "Concept posters for Timon of Athens and The Knight from Olmedo."
-    }
+    },
+    "row": "carteles"
   },
   {
     "file": "imagenes/olmedo-clasico-carteles-conceptuales-vengadora-mujeres-retablo.webp",
     "caption": {
       "es": "Carteles conceptuales de La vengadora de las mujeres y El retablo de las maravillas.",
       "en": "Concept posters for La vengadora de las mujeres and El retablo de las maravillas."
-    }
+    },
+    "row": "carteles"
   },
   {
     "file": "imagenes/olmedo-clasico-simulacion-identidad-festival-carteles-escenario.webp",
     "caption": {
       "es": "Simulación de la identidad del festival en carteles y escenario de un teatro al aire libre.",
       "en": "Festival identity mockup on posters and a stage in an open-air theatre."
-    },
-    "layout": "pair"
+    }
   },
   {
-    "file": "imagenes/olmedo-clasico-entradas-teatro-burdeos-marfil-mesa.webp",
+    "file": "imagenes/olmedo-clasico-programa-mano-butaca.webp",
     "caption": {
-      "es": "Dos entradas de teatro de Olmedo Clásico, en burdeos y marfil, sobre una mesa.",
-      "en": "Two burgundy and ivory Olmedo Clásico theatre tickets on a table."
-    },
-    "layout": "pair"
+      "es": "Programa de mano en burdeos sobre una silla del patio de butacas.",
+      "en": "Burgundy programme on a chair in the open-air auditorium."
+    }
   }
 ]

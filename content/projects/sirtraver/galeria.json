@@ -5,17 +5,15 @@
       "es": "Logotipo sirtraver: tres sílabas apiladas dentro de un rectángulo redondeado.",
       "en": "sirtraver logo: three stacked syllables inside a rounded rectangle."
     },
-    "layout": "pair",
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/166ea3216560651.6781c6cb7f8e5.png"
+    "row": "marca"
   },
   {
     "file": "imagenes/sirtraver-identidad-visual-02.webp",
     "caption": {
-      "es": "Mockup de tarjeta con el sello, nombre y datos de contacto.",
-      "en": "Business-card mockup with stamp, name and contact information."
+      "es": "Tarjeta con el sello y la web, sin datos personales.",
+      "en": "Card with the stamp and the website, without personal details."
     },
-    "layout": "pair",
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/d66cd3216560651.6781c6cb80110.png"
+    "row": "marca"
   },
   {
     "file": "imagenes/sirtraver-identidad-visual-03.webp",
@@ -23,6 +21,13 @@
       "es": "Sistema de identidad: versiones de la marca, Cubano Regular, paleta y aplicaciones.",
       "en": "Identity system: mark variants, Cubano Regular, palette and applications."
     },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_webp/6ed67e216560651.6781c6cc0553a.png"
+    "row": "marca"
+  },
+  {
+    "file": "imagenes/sirtraver-papeleria-carta-sobre-tarjetas.webp",
+    "caption": {
+      "es": "Papelería en blanco y negro: carta, sobre y tarjetas.",
+      "en": "Black and white stationery: letterhead, envelope and cards."
+    }
   }
 ]

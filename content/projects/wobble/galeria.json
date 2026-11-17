@@ -5,31 +5,7 @@
       "es": "Presentación del nombre WOBBLE con letras desplazadas sobre fondo turquesa.",
       "en": "WOBBLE name with displaced letters on a turquoise background."
     },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_webp/3f94eb83741433.5d45cd5795d05.jpg"
-  },
-  {
-    "file": "imagenes/wobble-diseno-visual-02.webp",
-    "caption": {
-      "es": "Lámina del concepto de asiento, con texto y formas curvas.",
-      "en": "Seat concept board with text and curved forms."
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_webp/30295d83741433.5d45cd57947b9.jpg"
-  },
-  {
-    "file": "imagenes/wobble-diseno-visual-03.webp",
-    "caption": {
-      "es": "Render del asiento verde con respaldo abierto y base curva.",
-      "en": "Render of the green seat with an open back and curved base."
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_webp/29dd3f83741433.5d45cd5794145.jpg"
-  },
-  {
-    "file": "imagenes/wobble-diseno-visual-04.webp",
-    "caption": {
-      "es": "Vistas de línea que describen la forma del asiento y su base.",
-      "en": "Line views describing the seat and its base."
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/65e32383741433.5d45cd57951d0.jpg"
+    "row": "identidad"
   },
   {
     "file": "imagenes/wobble-diseno-visual-05.webp",
@@ -37,7 +13,22 @@
       "es": "Identidad de WOBBLE: logotipo, Gotham Rounded Book y gama turquesa y blanca.",
       "en": "WOBBLE identity: logo, Gotham Rounded Book and turquoise and white range."
     },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/b3ea3e83741433.5d45cd5793b8d.jpg"
+    "row": "identidad"
+  },
+  {
+    "file": "imagenes/wobble-diseno-visual-03.webp",
+    "caption": {
+      "es": "El asiento en verde lima, con respaldo abierto y base curva.",
+      "en": "The seat in lime green, with an open back and a curved base."
+    }
+  },
+  {
+    "file": "imagenes/wobble-diseno-visual-04.webp",
+    "caption": {
+      "es": "Vistas de línea que describen la forma del asiento y su base.",
+      "en": "Line views describing the seat and its base."
+    },
+    "row": "forma"
   },
   {
     "file": "imagenes/wobble-diseno-visual-06.webp",
@@ -45,22 +36,20 @@
       "es": "Diagrama de inclinación y recuperación de la posición del asiento propuesto.",
       "en": "Diagram of the proposed seat tilting and returning to position."
     },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/1af61683741433.5d45cd5794cd3.jpg"
+    "row": "forma"
   },
   {
     "file": "imagenes/wobble-diseno-visual-07.webp",
     "caption": {
-      "es": "Renders de dos asientos en azul y rojo.",
-      "en": "Renders of two seats in blue and red."
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/05a92083741433.5d45cd579576e.jpg"
+      "es": "Pareja de asientos en cian y rojo.",
+      "en": "A pair of seats in cyan and red."
+    }
   },
   {
     "file": "imagenes/wobble-diseno-visual-08.webp",
     "caption": {
-      "es": "Renders del asiento en amarillo y magenta desde distintos ángulos.",
-      "en": "Renders of the seat in yellow and magenta from different angles."
-    },
-    "behance": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/5162a783741433.5d45cd57930b1.jpg"
+      "es": "Asientos en amarillo y magenta en un salón con luz natural.",
+      "en": "Seats in yellow and magenta in a living room with natural light."
+    }
   }
 ]

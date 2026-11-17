@@ -1,9 +1,9 @@
 {
-  "version": "v79 — OYE: fotos nuevas y plantilla v2",
+  "version": "v80 — SOLFA: fotos de ChatGPT y plantilla v2",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "54625fdda201f0e76810aa1b931f0c018b746a4cae78fa81563e4b4a036dbe95",
-    "/es/": "50dd4617f79321276dd6a77e732dd04bf56fff275823b56ed46d8003114da63a",
+    "/": "3028606060ee14cbb7e1bacea513b804574826560337ee1b9c3186b8b804916b",
+    "/es/": "15c0238cac696ba1476ab3803c91bc8e776485b0a75c9f7a58f9d81eab64a45b",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 99009,
   "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "8ef6900dd6eb31ffe19b0c03db9f2cf5fc556a42d1d1770320c719278a3c892c",
-    "/es/": "838dedf433d39505e85644ca812c22447dcdd45c5ec021027b1daa13a8acf5df"
+    "/": "0b433d9fa482a15ea62e8ffa93be85eef492ff634de0aa03de1a5442c16c55fd",
+    "/es/": "cac1045f58bd2b41eacf7853cd12e878b7d6cf87e74029fc7121f72cf3df0f98"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

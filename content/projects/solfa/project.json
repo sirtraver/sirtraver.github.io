@@ -6,8 +6,8 @@
   "conceptual": true,
   "draft": false,
   "intro": {
-    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento completo de un refresco de limón inventado: del nombre y la lata a una gama de tres sabores, la campaña, las terrazas, la web y el spot.",
-    "en": "Spec work — not affiliated with any real brand. A full launch for an invented lemon soda: from the name and can to a three-flavour range, the campaign, terraces, website and spot."
+    "es": "Spec work. Un refresco de limón inventado en tres sabores, de la lata al lanzamiento.",
+    "en": "Spec work. An invented sparkling lemon soda in three flavours, from the can to the launch."
   },
   "client": "",
   "role": {
@@ -16,18 +16,16 @@
   },
   "deliverables": {
     "es": [
-      "Estrategia y naming",
-      "Identidad y manual",
+      "Naming e identidad",
       "Lata y tres sabores",
-      "Campaña: KV, mupis y redes",
+      "Campaña, mupis y redes",
       "Kit de terraza",
       "Web, email, banners y spot"
     ],
     "en": [
-      "Strategy and naming",
-      "Identity and guidelines",
+      "Naming and identity",
       "Can and three flavours",
-      "Campaign: KV, street panels and social",
+      "Campaign, street panels and social",
       "Terrace kit",
       "Web, email, banners and spot"
     ]
@@ -42,16 +40,16 @@
   "featured": false,
   "archived": false,
   "portfolioOrder": 2,
-  "hover": "imagenes/solfa-lata-mesa-marmol-terraza-mediterranea.webp",
+  "hover": "imagenes/solfa-lata-pomelo-terraza-posavasos.webp",
   "coverPosition": "50% 88%",
   "video": {
     "src": "/video/solfa/spot.mp4",
-    "poster": "imagenes/solfa-lata-mesa-marmol-terraza-mediterranea.webp",
+    "poster": "imagenes/solfa-story-sube-el-sol-lata-azotea.webp",
     "aspect": "9:16",
     "date": "2026-11-12",
     "caption": {
-      "es": "Spot de 15 segundos «Sube el sol»: la lata se abre y la luz de la tarde va subiendo hasta que el sol rojo aparece detrás del producto.",
-      "en": "15-second spot “Turn up the sun”: the can opens and the afternoon light rises until the red sun appears behind the product."
+      "es": "Spot vertical · 15 s",
+      "en": "Vertical spot · 15 s"
     }
   },
   "caseStudy": [
@@ -61,8 +59,8 @@
         "en": "The challenge"
       },
       "text": {
-        "es": "Un pequeño fabricante mediterráneo tiene un buen limón con gas, pero en la nevera de cualquier terraza hay cinco refrescos de limón casi iguales. Nadie pide uno por su nombre.",
-        "en": "A small Mediterranean maker has a good sparkling lemon, but every terrace fridge holds five near-identical lemon sodas. Nobody asks for one by name."
+        "es": "En la nevera de cualquier terraza hay cinco refrescos de limón casi iguales. Nadie pide uno por su nombre.",
+        "en": "Every terrace fridge holds five near-identical lemon sodas. Nobody asks for one by name."
       }
     },
     {
@@ -71,8 +69,8 @@
         "en": "The idea"
       },
       "text": {
-        "es": "SOLFA, sol y solfeo: la lata es el sol de las seis de la tarde y abrirla es subir el volumen de la tarde. «Sube el sol.» La gama suena como una escala: do, re, mi.",
-        "en": "SOLFA, sun and sol-fa: the can is the six o’clock sun and opening it turns up the evening. “Turn up the sun.” The range plays like a scale: do, re, mi."
+        "es": "SOLFA, sol y solfeo: abrir la lata es subir el sol de la tarde. «Sube el sol.» La gama suena como una escala: do, re, mi.",
+        "en": "SOLFA, sun and sol-fa: opening the can turns up the evening sun. “Turn up the sun.” The range plays like a scale: do, re, mi."
       }
     },
     {
@@ -81,43 +79,12 @@
         "en": "What was made"
       },
       "text": {
-        "es": "Estrategia, naming, identidad y manual, la lata y tres sabores, KV, redes, mupis en los que el sol sube, posavasos y cartel de mesa, web, email, banners y un spot de 15 segundos. Todas las piezas parten de una misma lata de referencia.",
-        "en": "Strategy, naming, identity and guidelines, the can and three flavours, KV, social, street panels where the sun rises, coasters and a table card, web, email, banners and a 15-second spot. Every piece starts from one reference can."
+        "es": "Naming, identidad, la lata en tres sabores, mupis en los que el sol sube, redes, kit de terraza, web, email, banners y un spot.",
+        "en": "Naming, identity, the can in three flavours, street panels where the sun rises, social, terrace kit, web, email, banners and a spot."
       }
     }
   ],
-  "designDetails": [
-    {
-      "title": {
-        "es": "La lata",
-        "en": "The can"
-      },
-      "text": {
-        "es": "Una lata de un solo color, el nombre en vertical y un círculo rojo: el sol y una nota.",
-        "en": "A single-colour can, the name upright and a red circle: the sun and a musical note."
-      }
-    },
-    {
-      "title": {
-        "es": "Dirección de imagen",
-        "en": "Art direction"
-      },
-      "text": {
-        "es": "Luz dura de las seis, sombras largas y fondos de un solo color o cielo.",
-        "en": "Hard six o’clock light, long shadows and single-colour or sky backdrops."
-      }
-    },
-    {
-      "title": {
-        "es": "Sistema de piezas",
-        "en": "System of pieces"
-      },
-      "text": {
-        "es": "Titular negro arriba a la izquierda y un único sol rojo por pieza.",
-        "en": "Black headline top left and a single red sun per piece."
-      }
-    }
-  ],
+  "designDetails": [],
   "palette": [
     {
       "name": {
@@ -169,11 +136,11 @@
     }
   ],
   "paletteNote": {
-    "es": "Un color de lata por sabor; el rojo es siempre el sol.",
-    "en": "One can colour per flavour; red is always the sun."
+    "es": "",
+    "en": ""
   },
   "result": {
-    "es": "Proyecto conceptual. Spec work: SOLFA es una marca inventada. El caso completo, con la estrategia, el manual y el plan de campaña, está disponible bajo petición.",
-    "en": "Concept project. Spec work: SOLFA is an invented brand. The full case, with strategy, guidelines and campaign plan, is available on request."
+    "es": "Proyecto conceptual: SOLFA es una marca inventada. El caso completo está disponible bajo petición.",
+    "en": "Concept project: SOLFA is an invented brand. The full case is available on request."
   }
 }

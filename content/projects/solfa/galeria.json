@@ -1,109 +1,153 @@
 [
  {
+  "file": "imagenes/solfa-identidad-construccion-logotipo-colores-tipografia.webp",
+  "caption": {
+   "es": "Logotipo y color.",
+   "en": "Wordmark and colour."
+  }
+ },
+ {
   "file": "imagenes/solfa-packshot-lata-fondo-blanco-tienda.webp",
   "caption": {
    "es": "La lata.",
    "en": "The can."
-  }
+  },
+  "row": "producto"
  },
  {
-  "file": "imagenes/solfa-identidad-construccion-logotipo-colores-tipografia.webp",
+  "file": "imagenes/solfa-packshot-gama-tres-latas-fondo-blanco.webp",
   "caption": {
-   "es": "Logotipo, color y tipografía.",
-   "en": "Wordmark, colour and type."
-  }
+   "es": "Tres sabores.",
+   "en": "Three flavours."
+  },
+  "row": "producto"
  },
  {
-  "file": "imagenes/solfa-insight-seis-de-la-tarde.webp",
+  "file": "imagenes/solfa-banner-do-re-mi-gama.webp",
   "caption": {
-   "es": "El insight.",
-   "en": "The insight."
+   "es": "Do, re, mi.",
+   "en": "Do, re, mi."
   },
   "lang": "es"
  },
  {
-  "file": "imagenes/solfa-insight-seis-de-la-tarde-en.webp",
+  "file": "imagenes/solfa-banner-do-re-mi-gama-en.webp",
   "caption": {
-   "es": "El insight.",
-   "en": "The insight."
+   "es": "Do, re, mi.",
+   "en": "Do, re, mi."
   },
   "lang": "en"
  },
  {
-  "file": "imagenes/solfa-gama-tres-sabores-limon-pomelo-mandarina-escala.webp",
+  "file": "imagenes/solfa-key-visual-sube-el-sol.webp",
   "caption": {
-   "es": "Do, re, mi: Limón, Pomelo, Mandarina.",
-   "en": "Do, re, mi: Lemon, Grapefruit, Tangerine."
-  }
- },
- {
-  "file": "imagenes/solfa-lata-mesa-marmol-terraza-mediterranea.webp",
-  "caption": {
-   "es": "En la terraza.",
-   "en": "On the terrace."
-  }
+   "es": "Key visual.",
+   "en": "Key visual."
+  },
+  "row": "campana",
+  "lang": "es"
  },
  {
   "file": "imagenes/solfa-key-visual-turn-up-the-sun.webp",
   "caption": {
-   "es": "Key visual «Turn up the sun».",
-   "en": "“Turn up the sun” key visual."
-  }
- },
- {
-  "file": "imagenes/solfa-detalle-parte-superior-lata-gotas.webp",
-  "caption": {
-   "es": "Fría.",
-   "en": "Cold."
-  }
+   "es": "Key visual.",
+   "en": "Key visual."
+  },
+  "row": "campana",
+  "lang": "en"
  },
  {
   "file": "imagenes/solfa-story-sube-el-sol-lata-azotea.webp",
   "caption": {
-   "es": "Story «Sube el sol.»",
-   "en": "“Turn up the sun” story."
-  }
+   "es": "Story.",
+   "en": "Story."
+  },
+  "row": "campana",
+  "lang": "es"
  },
  {
-  "file": "imagenes/solfa-mupis-el-sol-sube-serie.webp",
+  "file": "imagenes/solfa-story-turn-up-the-sun-rooftop.webp",
   "caption": {
-   "es": "Mupis: el sol sube.",
-   "en": "Street panels: the sun rises."
-  }
+   "es": "Story.",
+   "en": "Story."
+  },
+  "row": "campana",
+  "lang": "en"
+ },
+ {
+  "file": "imagenes/solfa-lata-pomelo-terraza-posavasos.webp",
+  "caption": {
+   "es": "En la terraza.",
+   "en": "On the terrace."
+  },
+  "row": "campana"
  },
  {
   "file": "imagenes/solfa-mupis-paseo-maritimo-sube-el-sol.webp",
   "caption": {
    "es": "En el paseo.",
    "en": "On the promenade."
-  }
+  },
+  "lang": "es"
  },
  {
-  "file": "imagenes/solfa-lata-pomelo-terraza-posavasos.webp",
+  "file": "imagenes/solfa-mupis-paseo-maritimo-turn-up-the-sun.webp",
   "caption": {
-   "es": "Pomelo, sobre el posavasos.",
-   "en": "Grapefruit, on the coaster."
-  }
+   "es": "En el paseo.",
+   "en": "On the promenade."
+  },
+  "lang": "en"
+ },
+ {
+  "file": "imagenes/solfa-mupis-el-sol-sube-serie.webp",
+  "caption": {
+   "es": "El sol sube.",
+   "en": "The sun rises."
+  },
+  "row": "piezas",
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-mupis-el-sol-sube-serie-en.webp",
+  "caption": {
+   "es": "El sol sube.",
+   "en": "The sun rises."
+  },
+  "row": "piezas",
+  "lang": "en"
  },
  {
   "file": "imagenes/solfa-kit-terraza-posavasos-cartel-mesa.webp",
   "caption": {
    "es": "Kit de terraza.",
    "en": "Terrace kit."
-  }
+  },
+  "row": "piezas",
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/solfa-kit-terraza-posavasos-cartel-mesa-en.webp",
+  "caption": {
+   "es": "Kit de terraza.",
+   "en": "Terrace kit."
+  },
+  "row": "piezas",
+  "lang": "en"
  },
  {
   "file": "imagenes/solfa-pagina-producto-web-elige-tu-nota.webp",
   "caption": {
    "es": "Página de producto.",
    "en": "Product page."
-  }
+  },
+  "row": "web"
  },
  {
   "file": "imagenes/solfa-email-banners-display.webp",
   "caption": {
    "es": "Email y banners.",
    "en": "Email and banners."
-  }
+  },
+  "row": "web"
  }
 ]

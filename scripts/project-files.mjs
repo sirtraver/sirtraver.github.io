@@ -89,6 +89,7 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
     if (!images.some((image) => image.file === video.poster)) fail('video.poster debe ser una de las imágenes de la galería');
     if (!['en', 'es'].every(lang => typeof video.caption?.[lang] === 'string')) fail('video.caption debe contener texto en español e inglés');
     if (!/^\d+:\d+$/.test(video.aspect ?? '')) fail('video.aspect debe tener el formato 9:16');
+    if (video.row !== undefined && !/^[a-z0-9-]{1,30}$/.test(video.row)) fail('video.row debe ser un nombre corto (a-z, 0-9, -) que comparta fila con imágenes de la galería');
     if (!/^\d{4}-\d{2}-\d{2}$/.test(video.date ?? '')) fail('video.date debe ser la fecha de publicación del spot (AAAA-MM-DD)');
   }
   return { ...data, cover, images };

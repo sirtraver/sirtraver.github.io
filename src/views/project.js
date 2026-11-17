@@ -35,8 +35,11 @@ function figure(image, index, total, name, lang, t, inRow = false) {
 
 // The spot plays only when the visitor presses play (preload="none"): nothing heavy loads before.
 // Several spots share one row (a vertical and a horizontal cut sit side by side at the same height).
-function spots(project, lang) {
-  const items = project.videos.map((video) => spot(video, lang, project.videos.length > 1));
+// A spot with "row" goes inside the gallery row of the images that share that name instead.
+function spots(project, lang, images) {
+  const rows = new Set(images.map((image) => image.row).filter(Boolean));
+  const free = project.videos.filter((video) => !rows.has(video.row));
+  const items = free.map((video) => spot(video, lang, free.length > 1));
   return items.length > 1 ? html`<div class="gallery-row">${items}</div>` : items;
 }
 
@@ -50,14 +53,16 @@ function spot(video, lang, inRow = false) {
 export const forLang = (images, lang) => images.filter((image) => !image.lang || image.lang === lang);
 
 // Consecutive images with the same "row" share one line at the same height (horizontal reading on desktop).
-function gallery(images, name, lang, t) {
+function gallery(images, name, lang, t, videos = []) {
   const out = [];
   for (let i = 0; i < images.length;) {
     const row = images[i].row;
     let j = i + 1;
     while (row && j < images.length && images[j].row === row) j++;
-    const group = images.slice(i, j).map((image, k) => figure(image, i + k, images.length, name, lang, t, j - i > 1));
-    out.push(j - i > 1 ? html`<div class="gallery-row">${group}</div>` : group[0]);
+    const clips = row ? videos.filter((video) => video.row === row) : [];
+    const inRow = j - i + clips.length > 1;
+    const group = [...images.slice(i, j).map((image, k) => figure(image, i + k, images.length, name, lang, t, inRow)), ...clips.map((video) => spot(video, lang, inRow))];
+    out.push(inRow ? html`<div class="gallery-row">${group}</div>` : group[0]);
     i = j;
   }
   return out;
@@ -205,7 +210,7 @@ export function projectPage(project, siblings, lang) {
   </div>
   ${project.caseStudy.length ? html`<section class="project-story" aria-label="${t.project.story}">${project.caseStudy.map(section => html`<div><h2>${section.title[lang]}</h2><p>${section.text[lang]}</p></div>`)}</section>` : ''}
   ${design(project, lang, t.project)}
-  <div class="project-gallery">${spots(project, lang)}${gallery(forLang(project.images, lang), name, lang, t.project)}</div>
+  <div class="project-gallery">${spots(project, lang, forLang(project.images, lang))}${gallery(forLang(project.images, lang), name, lang, t.project, project.videos)}</div>
   ${project.result[lang] ? html`<section class="project-result"><h2>${t.project.resultTitle}</h2><p>${project.result[lang]}</p></section>` : ''}
   <nav class="project-pager" aria-label="${t.project.pagerLabel}">${
     previous ? html`<a href="${projectPath(previous, lang)}" rel="prev"${accentStyle(previous) ? html` style="${accentStyle(previous)}"` : ''}>${t.project.previous}<span>${projectName(previous, lang)}</span></a>` : html`<span></span>`

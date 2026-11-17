@@ -56,6 +56,7 @@ async function readProject(slug, media, projectsDir) {
       date: video.date,
       duration: Math.round(await videoDuration(path.join(ROOT, 'public', video.src))),
       aspect: video.aspect,
+      row: video.row ?? '',
       caption: bilingual(video.caption),
       title: video.title ? bilingual(video.title) : null,
       poster: media.images[data.images.findIndex(image => image.file === video.poster)],

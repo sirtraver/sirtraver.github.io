@@ -4,7 +4,8 @@
   "caption": {
    "es": "Logotipo y color.",
    "en": "Wordmark and colour."
-  }
+  },
+  "row": "identidad"
  },
  {
   "file": "imagenes/solfa-packshot-lata-fondo-blanco-tienda.webp",
@@ -96,42 +97,6 @@
    "es": "En el paseo.",
    "en": "On the promenade."
   },
-  "lang": "en"
- },
- {
-  "file": "imagenes/solfa-mupis-el-sol-sube-serie.webp",
-  "caption": {
-   "es": "El sol sube.",
-   "en": "The sun rises."
-  },
-  "row": "piezas",
-  "lang": "es"
- },
- {
-  "file": "imagenes/solfa-mupis-el-sol-sube-serie-en.webp",
-  "caption": {
-   "es": "El sol sube.",
-   "en": "The sun rises."
-  },
-  "row": "piezas",
-  "lang": "en"
- },
- {
-  "file": "imagenes/solfa-kit-terraza-posavasos-cartel-mesa.webp",
-  "caption": {
-   "es": "Kit de terraza.",
-   "en": "Terrace kit."
-  },
-  "row": "piezas",
-  "lang": "es"
- },
- {
-  "file": "imagenes/solfa-kit-terraza-posavasos-cartel-mesa-en.webp",
-  "caption": {
-   "es": "Kit de terraza.",
-   "en": "Terrace kit."
-  },
-  "row": "piezas",
   "lang": "en"
  },
  {

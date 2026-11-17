@@ -90,8 +90,11 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       assert.equal((html.match(/class="project-image"/g) || []).length, shown.length, path);
       assert.ok(!html.includes('class="is-full"') && !html.includes('class="gallery-pair"'), 'every image stays inside the page column');
       // Images grouped by "row" share one line; the number of rows matches the data.
-      const rows = new Set(shown.map((image, i) => image.row && (shown[i - 1]?.row === image.row || shown[i + 1]?.row === image.row) ? image.row : null).filter(Boolean));
-      assert.equal((html.match(/class="gallery-row"/g) || []).length, rows.size + (p.videos.length > 1 ? 1 : 0), path);
+      // A spot with "row" joins the images of that row; the other spots share one row when there are several.
+      const videoRows = new Set(p.videos.map((video) => video.row).filter((row) => row && shown.some((image) => image.row === row)));
+      const rows = new Set(shown.map((image, i) => image.row && (shown[i - 1]?.row === image.row || shown[i + 1]?.row === image.row || videoRows.has(image.row)) ? image.row : null).filter(Boolean));
+      const freeVideos = p.videos.filter((video) => !videoRows.has(video.row)).length;
+      assert.equal((html.match(/class="gallery-row"/g) || []).length, rows.size + (freeVideos > 1 ? 1 : 0), path);
       assert.ok(!html.includes('data-zoom-src') && !html.includes('gallery-zoom') && !html.includes('image-zoom.js'), 'images do not open a viewer or a separate file');
       assert.ok(html.includes('class="project-design"'), 'the formal design is explained independently of the concept');
       for (const section of p.designDetails) {

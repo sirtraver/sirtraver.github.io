@@ -1,9 +1,9 @@
 {
-  "version": "v83 — Flamenco Urbano: valla de portada rehecha",
+  "version": "v84 — Valla Flamenco a 2,3:1 y hover de OASIS",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "e3fc81eb31e1b0c3d552b3fea399caf2bdd9541fa424d215b711015d4f1e619e",
-    "/es/": "be04afa5260e4d1c5e1157df313ec1bd92bb7755683e61ff735ecce2a9f9cad8",
+    "/": "54f053d540b7652da78475890f93c4e33c73d09f8cdfe588201e3a65ba872057",
+    "/es/": "f4d1853a187074b65439de1e1c68c703d9a441627bac863d689fdaf2038a13a4",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 99009,
   "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "a9af4bf2d5180457d41a818483075c048ba24a83f6645217daffbe8665d1937b",
-    "/es/": "786bd6e4f7d9a2fc469b2feb9a03ae054f58dfaaa810deedaa00d4a1832a61c3"
+    "/": "9b3e6f57cb44c10148bc753b504eb1440b705fe24db30f525fdd7218159b428e",
+    "/es/": "d84a9762678a7961e684a766f10202a1a875fa7e848e3c295d9705d54d47ef13"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

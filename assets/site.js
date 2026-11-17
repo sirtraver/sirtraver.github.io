@@ -180,12 +180,8 @@
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const headings = document.querySelectorAll('.value-hero h1, .project-header h1, .about-copy h1, .project-result p, .project-pager a span');
   const GLYPHS = '<>*!&%$#@^+=/';
-  // Colours of the work itself: the palette on a case study, the project accents on the home page.
-  const colours = [...new Set([
-    ...[...document.querySelectorAll('.project-palette li')].map((item) => item.style.getPropertyValue('--swatch')),
-    ...[...document.querySelectorAll('.project-card[style], .project-pager a[style]')].map((item) => item.style.getPropertyValue('--accent')),
-  ].filter(Boolean))];
-  if (!colours.length) colours.push('#1F4FFF', '#FF5A2A', '#FFC21F', '#C61F2E');
+  // Process inks: cyan, magenta and yellow on every page.
+  const colours = ['#00AEEF', '#EC008C', '#FFE600'];
 
   const split = (heading) => {
     const size = parseFloat(getComputedStyle(heading).fontSize);

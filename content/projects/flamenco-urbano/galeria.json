@@ -2,67 +2,58 @@
  {
   "file": "imagenes/flamenco-urbano-identidad-visual-03.webp",
   "caption": {
-   "es": "La marca: FU, punto y katakana.",
-   "en": "The mark: FU, dot and katakana."
-  }
- },
- {
-  "file": "imagenes/flamenco-urbano-identidad-visual-06.webp",
-  "caption": {
-   "es": "Hueso, carbón y carmín.",
-   "en": "Bone, charcoal and carmine."
-  }
- },
- {
-  "file": "imagenes/flamenco-urbano-insight-flamenco-de-diario.webp",
-  "caption": {
-   "es": "El insight.",
-   "en": "The insight."
+   "es": "FU, punto y katakana.",
+   "en": "FU, dot and katakana."
   },
-  "lang": "es"
- },
- {
-  "file": "imagenes/flamenco-urbano-insight-flamenco-de-diario-en.webp",
-  "caption": {
-   "es": "El insight.",
-   "en": "The insight."
-  },
-  "lang": "en"
+  "row": "identidad"
  },
  {
   "file": "imagenes/flamenco-urbano-identidad-visual-09.webp",
   "caption": {
    "es": "El punto como sistema.",
    "en": "The dot as a system."
-  }
- },
- {
-  "file": "imagenes/flamenco-urbano-packaging-etiqueta-bolsa.webp",
-  "caption": {
-   "es": "Etiqueta y bolsa.",
-   "en": "Tag and bag."
-  }
+  },
+  "row": "identidad"
  },
  {
   "file": "imagenes/flamenco-urbano-lookbook-estudio-volante.webp",
   "caption": {
-   "es": "Lookbook: el volante.",
-   "en": "Lookbook: the ruffle."
-  }
+   "es": "El volante.",
+   "en": "The ruffle."
+  },
+  "row": "lookbook"
  },
  {
   "file": "imagenes/flamenco-urbano-lookbook-harajuku-abanico.webp",
   "caption": {
-   "es": "Lookbook: Harajuku.",
-   "en": "Lookbook: Harajuku."
-  }
+   "es": "Harajuku.",
+   "en": "Harajuku."
+  },
+  "row": "lookbook"
  },
  {
   "file": "imagenes/flamenco-urbano-detalle-gorra-abanico.webp",
   "caption": {
    "es": "Gorra y abanico.",
    "en": "Cap and fan."
-  }
+  },
+  "row": "lookbook"
+ },
+ {
+  "file": "imagenes/flamenco-urbano-detalle-merchandising.webp",
+  "caption": {
+   "es": "Drop 01.",
+   "en": "Drop 01."
+  },
+  "row": "drop"
+ },
+ {
+  "file": "imagenes/flamenco-urbano-packaging-etiqueta-bolsa.webp",
+  "caption": {
+   "es": "Etiqueta y bolsa.",
+   "en": "Label and bag."
+  },
+  "row": "drop"
  },
  {
   "file": "imagenes/flamenco-urbano-carteles-metro-tokio.webp",
@@ -74,38 +65,26 @@
  },
  {
   "file": "imagenes/flamenco-urbano-carteles-metro-tokio-en.webp",
-  "lang": "en",
   "caption": {
    "es": "Carteles B1 en el metro.",
    "en": "B1 posters in the subway."
-  }
+  },
+  "lang": "en"
  },
  {
   "file": "imagenes/flamenco-urbano-identidad-visual-11.webp",
   "caption": {
-   "es": "El pop-up de Harajuku.",
-   "en": "The Harajuku pop-up."
-  }
- },
- {
-  "file": "imagenes/flamenco-urbano-detalle-merchandising.webp",
-  "caption": {
-   "es": "Drop 01.",
-   "en": "Drop 01."
-  }
+   "es": "El pop-up.",
+   "en": "The pop-up."
+  },
+  "row": "tienda"
  },
  {
   "file": "imagenes/flamenco-urbano-pagina-producto-drop-01.webp",
   "caption": {
    "es": "Página de producto.",
    "en": "Product page."
-  }
- },
- {
-  "file": "imagenes/flamenco-urbano-identidad-visual-14.webp",
-  "caption": {
-   "es": "En la calle.",
-   "en": "In the street."
-  }
+  },
+  "row": "tienda"
  }
 ]

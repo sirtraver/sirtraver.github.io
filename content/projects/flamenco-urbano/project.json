@@ -13,29 +13,27 @@
   },
   "deliverables": {
     "es": [
-      "Estrategia y naming",
-      "Identidad bilingüe y manual",
+      "Naming e identidad bilingüe",
       "Etiquetas y bolsa",
-      "Campaña: carteles B1 y redes",
-      "Lookbook",
-      "Página de producto"
+      "Drop 01 y lookbook",
+      "Valla y carteles B1",
+      "Pop-up y página de producto"
     ],
     "en": [
-      "Strategy and naming",
-      "Bilingual identity and guidelines",
+      "Naming and bilingual identity",
       "Labels and bag",
-      "Campaign: B1 posters and social",
-      "Lookbook",
-      "Product page"
+      "Drop 01 and lookbook",
+      "Billboard and B1 posters",
+      "Pop-up and product page"
     ]
   },
   "intro": {
-    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento en Tokio de una marca de moda urbana de inspiración flamenca: estrategia, identidad bilingüe, etiquetas, campaña, lookbook y web.",
-    "en": "Spec work — not affiliated with any real brand. The Tokyo launch of a flamenco-inspired streetwear brand: strategy, bilingual identity, labels, campaign, lookbook and website."
+    "es": "Spec work. Una marca de moda urbana de inspiración flamenca, lanzada en Tokio.",
+    "en": "Spec work. A flamenco-inspired streetwear brand, launched in Tokyo."
   },
   "result": {
-    "es": "Proyecto conceptual: Flamenco Urbano es una marca inventada. El caso completo, con la estrategia, el manual y el plan de campaña, está disponible bajo petición.",
-    "en": "Concept project: Flamenco Urbano is an invented brand. The full case, with strategy, guidelines and campaign plan, is available on request."
+    "es": "Proyecto conceptual: Flamenco Urbano es una marca inventada. El caso completo está disponible bajo petición.",
+    "en": "Concept project: Flamenco Urbano is an invented brand. The full case is available on request."
   },
   "featured": false,
   "archived": false,
@@ -80,8 +78,8 @@
         "en": "The challenge"
       },
       "text": {
-        "es": "En Japón el flamenco tiene muchísima afición, pero vive en academias y tablaos. Lanzar allí una marca española de moda urbana sin caer en el disfraz ni en el souvenir.",
-        "en": "In Japan flamenco has a huge following, but it lives in dance studios and tablaos. The task: launch a Spanish streetwear brand there without becoming a costume or a souvenir."
+        "es": "En Japón el flamenco tiene mucha afición, pero vive en academias y tablaos. Había que lanzar moda española sin caer en el disfraz.",
+        "en": "Flamenco has a big following in Japan, but it lives in academies and tablaos. The task: launch Spanish streetwear without it looking like a costume."
       }
     },
     {
@@ -90,8 +88,8 @@
         "en": "The idea"
       },
       "text": {
-        "es": "Del tablao a la calle: el lunar, el volante y el abanico en ropa de diario. Un monograma FU, el nombre en katakana y un punto carmín que es a la vez lunar y sistema gráfico.",
-        "en": "From the tablao to the street: the polka dot, the ruffle and the fan in everyday clothes. An FU monogram, the name in katakana and a carmine dot that is both polka dot and graphic system."
+        "es": "Del tablao a la calle: lunar, volante y abanico en ropa de diario. Monograma FU, nombre en katakana y un punto carmín.",
+        "en": "From the tablao to the street: polka dot, ruffle and fan in everyday clothes. An FU monogram, the name in katakana and a carmine dot."
       }
     },
     {
@@ -100,45 +98,14 @@
         "en": "What was made"
       },
       "text": {
-        "es": "Estrategia, naming, identidad bilingüe y manual, etiquetas y bolsa, la campaña del Drop 01 con carteles B1 en el metro y pop-up en Harajuku, lookbook, redes y página de producto.",
-        "en": "Strategy, naming, bilingual identity and guidelines, labels and bag, the Drop 01 campaign with B1 posters in the subway and a Harajuku pop-up, lookbook, social and product page."
+        "es": "Naming, identidad bilingüe, etiquetas y bolsa, Drop 01, lookbook, valla y carteles B1, pop-up en Harajuku y página de producto.",
+        "en": "Naming, bilingual identity, labels and bag, Drop 01, lookbook, billboard and B1 posters, a Harajuku pop-up and product page."
       }
     }
   ],
-  "designDetails": [
-    {
-      "title": {
-        "es": "Tipografía",
-        "en": "Typography"
-      },
-      "text": {
-        "es": "Didot para la firma editorial y M PLUS Rounded para el japonés y los textos de apoyo.",
-        "en": "Didot for the editorial signature and M PLUS Rounded for Japanese and supporting text."
-      }
-    },
-    {
-      "title": {
-        "es": "Monograma y recursos gráficos",
-        "en": "Monogram and graphic devices"
-      },
-      "text": {
-        "es": "FU superpuestas y un punto carmín que se repite como lunar, patrón o acento.",
-        "en": "Overlapping FU and a carmine dot that repeats as polka dot, pattern or accent."
-      }
-    },
-    {
-      "title": {
-        "es": "Dirección de imagen",
-        "en": "Art direction"
-      },
-      "text": {
-        "es": "Volumen en las prendas, luz cálida y escenas urbanas de noche.",
-        "en": "Volume in the garments, warm light and night-time urban scenes."
-      }
-    }
-  ],
+  "designDetails": [],
   "paletteNote": {
-    "es": "Hueso y carbón de base; el carmín, solo en el punto y los acentos.",
-    "en": "Bone and charcoal as the base; carmine only on the dot and accents."
+    "es": "",
+    "en": ""
   }
 }

@@ -74,6 +74,8 @@ export async function readProjectDefinition(slug, projectsDir = PROJECTS_DIR) {
     if (!image.file) fail('cada imagen debe ser un archivo local: {"file": "imagenes/01.webp"}');
     projectFile(folder, image.file);
     if (image.layout !== undefined && !['full', 'pair'].includes(image.layout)) fail(`${image.file}: layout debe ser "full" o "pair"`);
+    // Optional: consecutive images with the same row name share one line at the same height.
+    if (image.row !== undefined && !/^[a-z0-9-]{1,30}$/.test(image.row)) fail(`${image.file}: row debe ser un nombre corto (a-z, 0-9, -)`);
     // Optional: an image shown only on the Spanish or English page (e.g. a board with text in that language).
     if (image.lang !== undefined && !['es', 'en'].includes(image.lang)) fail(`${image.file}: lang debe ser "es" o "en"`);
   }

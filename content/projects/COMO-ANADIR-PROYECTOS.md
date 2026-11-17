@@ -55,16 +55,28 @@ La descripción se edita en `intro.es` e `intro.en`, dentro de cada `project.jso
 
 ## Composición de la página del proyecto
 
-La portada (`portada.*`) y las imágenes de galería comparten la misma columna. Conservan sus proporciones y se leen en la página, sin abrir un visor. Usa originales de calidad suficiente para unos 1120 px de ancho en escritorio; el build crea las versiones adaptativas sin ampliar el original.
+**Plantilla v2 (sintética y horizontal).** Las reglas completas están en `_MASTER/PROCESO-MASTER.md` §5.1. Resumen:
+- La portada va en **horizontal 3:2** (2400 × 1600). Es la cabecera del caso y la tarjeta de la home.
+- La intro es una frase. El relato tiene tres bloques de una o dos frases.
+- Solo se muestra la paleta: no hay `designDetails`.
+- La galería tiene entre 10 y 13 imágenes con pies de 1–3 palabras.
 
-Los valores históricos `"layout": "full"` y `"layout": "pair"` se conservan como datos de origen, pero ya no cambian la presentación: cada imagen ocupa su propia fila con el mismo ancho. Añade pies bilingües descriptivos en `caption`; también se utilizan como alternativas de imagen.
+**Filas de galería.** En `galeria.json`, las imágenes **consecutivas** con el mismo `"row"` comparten fila a la misma altura en escritorio; en el móvil se apilan. Así una pieza vertical nunca ocupa una pantalla entera:
+
+```json
+{ "file": "imagenes/marca-mesa.webp", "row": "redes", "caption": { "es": "En la mesa.", "en": "At the table." } },
+{ "file": "imagenes/marca-post.webp", "row": "redes", "caption": { "es": "Post.", "en": "Post." } },
+{ "file": "imagenes/marca-story.webp", "row": "redes", "caption": { "es": "Story.", "en": "Story." } }
+```
+
+El nombre de la fila es libre (a-z, 0-9, guiones). Lo normal son dos o tres imágenes por fila. Si un proyecto tiene dos spots, se colocan solos en una misma fila. Los valores antiguos `"layout"` no cambian la presentación. Los pies bilingües de `caption` también sirven como texto alternativo.
 
 No incluyas las láminas de portada, de texto o de «Gracias» de la presentación en PDF: el título, el relato y los créditos ya están en HTML. Los recortes de detalle se guardan en `imagenes/` como cualquier otra imagen.
 
 En `project.json`:
 
-- `"designDetails"`: secciones bilingües con `title` y `text`, igual que `caseStudy`, para desarrollar el diseño formal. Explica qué función cumplen la tipografía, la composición, los recursos gráficos, la imagen o la forma del producto. Nombra fuentes solo cuando estén documentadas. No es necesario usar los mismos apartados en una identidad y en una serie fotográfica.
-- `"paletteNote"`: un texto `{ "es": "...", "en": "..." }` que explica cómo funciona el color; acompaña a las muestras de la paleta.
+- `"designDetails"` (opcional; en la plantilla v2 va vacío): secciones bilingües con `title` y `text`, igual que `caseStudy`, para desarrollar el diseño formal. Explica qué función cumplen la tipografía, la composición, los recursos gráficos, la imagen o la forma del producto. Nombra fuentes solo cuando estén documentadas. No es necesario usar los mismos apartados en una identidad y en una serie fotográfica.
+- `"paletteNote"` (opcional; en la plantilla v2 va vacío): un texto `{ "es": "...", "en": "..." }` que explica cómo funciona el color; acompaña a las muestras de la paleta.
 - `"palette"`: los colores de la marca como muestras en HTML. `share` (opcional) es el porcentaje de uso y ajusta el ancho de cada muestra:
   ```json
   "palette": [{ "name": { "es": "Carmín", "en": "Carmine" }, "hex": "#C61F2E", "share": 15 }]

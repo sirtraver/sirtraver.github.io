@@ -69,7 +69,7 @@
 // Anything already on screen stays as rendered, so there is no flash on load.
 (() => {
   if (typeof IntersectionObserver !== 'function' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const items = [...document.querySelectorAll('.project-grid > .project-card, .project-story > div, .project-palette, .project-gallery > figure, .gallery-pair > figure, .project-result, .project-enquiry, .resume-section')];
+  const items = [...document.querySelectorAll('.project-grid > .project-card, .project-story > div, .project-palette, .project-gallery > figure, .gallery-pair > figure, .gallery-row > figure, .project-result, .project-enquiry, .resume-section')];
   const observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;

@@ -88,7 +88,10 @@ test('case study pages: facts, captioned gallery and structured data', async () 
       assert.equal((html.match(/<figure[\s>]/g) || []).length, shown.length + p.videos.length, path);
       for (const video of p.videos) assert.ok(html.includes('<video controls playsinline preload="none"') && html.includes(`<source src="${video.src}`), 'each spot loads only on play');
       assert.equal((html.match(/class="project-image"/g) || []).length, shown.length, path);
-      assert.ok(!html.includes('class="is-full"') && !html.includes('class="gallery-pair"'), 'every image uses the same page column');
+      assert.ok(!html.includes('class="is-full"') && !html.includes('class="gallery-pair"'), 'every image stays inside the page column');
+      // Images grouped by "row" share one line; the number of rows matches the data.
+      const rows = new Set(shown.map((image, i) => image.row && (shown[i - 1]?.row === image.row || shown[i + 1]?.row === image.row) ? image.row : null).filter(Boolean));
+      assert.equal((html.match(/class="gallery-row"/g) || []).length, rows.size + (p.videos.length > 1 ? 1 : 0), path);
       assert.ok(!html.includes('data-zoom-src') && !html.includes('gallery-zoom') && !html.includes('image-zoom.js'), 'images do not open a viewer or a separate file');
       assert.ok(html.includes('class="project-design"'), 'the formal design is explained independently of the concept');
       for (const section of p.designDetails) {

@@ -25,30 +25,42 @@ function facts(project, lang, t) {
   return html`<dl class="project-facts">${rows.map(([label, value]) => html`<div><dt>${label}</dt><dd>${value}</dd></div>`)}</dl>`;
 }
 
-function figure(image, index, total, name, lang, t) {
+function figure(image, index, total, name, lang, t, inRow = false) {
   const caption = image.caption[lang];
-  return html`<figure><div class="project-image">${picture(image, {
+  return html`<figure${inRow ? html` style="--r:${(image.width / image.height).toFixed(3)}"` : ''}><div class="project-image">${picture(image, {
     alt: caption || t.imageAlt(name, index + 1, total),
     sizes: PROJECT_IMAGE_SIZES,
   })}</div>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
 }
 
 // The spot plays only when the visitor presses play (preload="none"): nothing heavy loads before.
+// Several spots share one row (a vertical and a horizontal cut sit side by side at the same height).
 function spots(project, lang) {
-  return project.videos.map((video) => spot(video, lang));
+  const items = project.videos.map((video) => spot(video, lang, project.videos.length > 1));
+  return items.length > 1 ? html`<div class="gallery-row">${items}</div>` : items;
 }
 
-function spot(video, lang) {
+function spot(video, lang, inRow = false) {
   const [w, h] = video.aspect.split(':');
   const caption = video.caption[lang];
-  return html`<figure class="project-video" style="--video-ratio: ${w} / ${h}"><video controls playsinline preload="none" poster="${largestUrl(video.poster)}" aria-label="${caption}"><source src="${assetUrl(video.src)}" type="video/mp4"></video>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
+  return html`<figure class="project-video" style="--video-ratio: ${w} / ${h}${inRow ? `;--r:${(w / h).toFixed(3)}` : ''}"><video controls playsinline preload="none" poster="${largestUrl(video.poster)}" aria-label="${caption}"><source src="${assetUrl(video.src)}" type="video/mp4"></video>${caption ? html`<figcaption>${caption}</figcaption>` : ''}</figure>`;
 }
 
 // Images marked with a language (lang: 'es' | 'en') only appear on that language's page.
 export const forLang = (images, lang) => images.filter((image) => !image.lang || image.lang === lang);
 
+// Consecutive images with the same "row" share one line at the same height (horizontal reading on desktop).
 function gallery(images, name, lang, t) {
-  return images.map((image, index) => figure(image, index, images.length, name, lang, t));
+  const out = [];
+  for (let i = 0; i < images.length;) {
+    const row = images[i].row;
+    let j = i + 1;
+    while (row && j < images.length && images[j].row === row) j++;
+    const group = images.slice(i, j).map((image, k) => figure(image, i + k, images.length, name, lang, t, j - i > 1));
+    out.push(j - i > 1 ? html`<div class="gallery-row">${group}</div>` : group[0]);
+    i = j;
+  }
+  return out;
 }
 
 function palette(project, lang, t) {

@@ -2,53 +2,41 @@
  {
   "file": "imagenes/brasa-gama-tres-salsas-picantes-chispa-llama-incendio.webp",
   "caption": {
-   "es": "La gama: CHISPA, LLAMA, INCENDIO.",
-   "en": "The range: CHISPA, LLAMA, INCENDIO."
+   "es": "La gama.",
+   "en": "The range."
   }
  },
  {
   "file": "imagenes/brasa-identidad-construccion-logotipo-colores-tipografia.webp",
   "caption": {
-   "es": "Logotipo, color y tipografía.",
-   "en": "Wordmark, colour and type."
-  }
+   "es": "Logotipo y color.",
+   "en": "Wordmark and colour."
+  },
+  "row": "identidad"
  },
  {
   "file": "imagenes/brasa-identidad-logotipo-niveles-etiquetas.webp",
   "caption": {
-   "es": "Sistema de niveles y etiquetas.",
-   "en": "Level system and labels."
-  }
- },
- {
-  "file": "imagenes/brasa-insight-saber-cuanto-pica.webp",
-  "caption": {
-   "es": "El insight.",
-   "en": "The insight."
+   "es": "Niveles y etiquetas.",
+   "en": "Levels and labels."
   },
-  "lang": "es"
- },
- {
-  "file": "imagenes/brasa-insight-saber-cuanto-pica-en.webp",
-  "caption": {
-   "es": "El insight.",
-   "en": "The insight."
-  },
-  "lang": "en"
+  "row": "identidad"
  },
  {
   "file": "imagenes/brasa-packshot-salsa-llama-fondo-blanco-tienda.webp",
   "caption": {
-   "es": "Packshot para tienda online.",
-   "en": "E-commerce packshot."
-  }
+   "es": "Packshot.",
+   "en": "Packshot."
+  },
+  "row": "producto"
  },
  {
   "file": "imagenes/brasa-caja-regalo-tres-salsas-picantes.webp",
   "caption": {
-   "es": "Caja regalo «La escala completa».",
-   "en": "“The full scale” gift box."
-  }
+   "es": "Caja regalo.",
+   "en": "Gift box."
+  },
+  "row": "producto"
  },
  {
   "file": "imagenes/brasa-carteles-pica-pero-poco-pero-bien-punto.webp",
@@ -61,49 +49,56 @@
   "file": "imagenes/brasa-carteles-muro-calle-exterior.webp",
   "caption": {
    "es": "En la calle.",
-   "en": "In the street."
-  }
+   "en": "On the street."
+  },
+  "row": "calle"
  },
  {
   "file": "imagenes/brasa-mupis-calle-tres-niveles-pica.webp",
   "caption": {
-   "es": "Mupis, uno por nivel.",
-   "en": "Street panels, one per level."
-  }
+   "es": "Mupis.",
+   "en": "Street panels."
+  },
+  "row": "calle"
  },
  {
   "file": "imagenes/brasa-mesa-tacos-huevos-fritos-tres-salsas.webp",
   "caption": {
-   "es": "Para la mesa.",
+   "es": "En la mesa.",
    "en": "At the table."
-  }
+  },
+  "row": "redes"
  },
  {
   "file": "imagenes/brasa-post-luego-no-llores-gota-huevo-frito.webp",
   "caption": {
-   "es": "«Luego no llores.»",
-   "en": "“You were warned.”"
-  }
+   "es": "Post.",
+   "en": "Post."
+  },
+  "row": "redes"
  },
  {
   "file": "imagenes/brasa-story-pica-punto-incendio.webp",
   "caption": {
-   "es": "Story «Pica. Punto.»",
-   "en": "“Hot. Full stop.” story."
-  }
+   "es": "Story.",
+   "en": "Story."
+  },
+  "row": "redes"
  },
  {
   "file": "imagenes/brasa-pagina-producto-web-elige-tu-nivel.webp",
   "caption": {
-   "es": "Página de producto.",
-   "en": "Product page."
-  }
+   "es": "Web.",
+   "en": "Website."
+  },
+  "row": "web"
  },
  {
   "file": "imagenes/brasa-email-lanzamiento-banners-display.webp",
   "caption": {
    "es": "Email y banners.",
    "en": "Email and banners."
-  }
+  },
+  "row": "web"
  }
 ]

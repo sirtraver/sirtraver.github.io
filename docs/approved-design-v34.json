@@ -1,19 +1,19 @@
 {
-  "version": "v77 — BRASA: fotos nuevas (ChatGPT) en portada y caso",
+  "version": "v78 — Plantilla de caso sintética y horizontal: portada 3:2, filas de galería (row), BRASA reducido",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "60df4ab41f4eb41508d09abfa1b27be2d22f472e2cf785ccef93c2bc6aeb2f26",
-    "/es/": "edf7ee813b1e719bc12f932c90488a825264f10ae46e8620dab0c02ce2fe3508",
+    "/": "6d30eff31c6c7e35f9f38a152f13189d79f530573d3d98e9d6f21748fe77ce25",
+    "/es/": "576d79ea478912cbc722d1a96d35e9df2a060b1412095f87accd9faa95784d6a",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
     "/es/resources/": "b16bcb204c720cd7b9b8ab98d3915d637d6abf4b103fa1d24f7d2985d1fcb81f"
   },
-  "cssPrefixBytes": 98516,
-  "cssPrefixHash": "8e6cc333e169d5819003d8fd91b262d24214c0960a042e6f57948ed3509eb931",
+  "cssPrefixBytes": 99009,
+  "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "09bc1f9a4be59c251b91a68800ec62e48b7d97de8cb7ba01ab9b49cb4286044c",
-    "/es/": "06f44ddd35db2c38344b07c5696b39c8c44dae04ede9727d5345bbe7bb6c9789"
+    "/": "91acece0a68ab93acda77bfb149cc71ccf3b69f12a38755419c14d69746cfe6f",
+    "/es/": "5455a76645b080677cbf4799f80e3f1df50ba735703e62539b8e1f4155c7e40d"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

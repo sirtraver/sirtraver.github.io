@@ -6,8 +6,8 @@
   "conceptual": true,
   "draft": false,
   "intro": {
-    "es": "Spec work — sin relación con ninguna marca real. Lanzamiento completo de una marca inventada de salsas picantes en tres niveles: de la estrategia y el nombre a las etiquetas, la campaña, la web y dos spots.",
-    "en": "Spec work — not affiliated with any real brand. A full launch for an invented hot sauce brand in three heat levels: from strategy and naming to labels, campaign, website and two spots."
+    "es": "Spec work. Una marca inventada de salsas picantes con tres niveles, del nombre a la campaña.",
+    "en": "Spec work. An invented hot sauce brand with three heat levels, from the name to the campaign."
   },
   "client": "",
   "role": {
@@ -16,20 +16,18 @@
   },
   "deliverables": {
     "es": [
-      "Estrategia y naming",
-      "Identidad y manual",
+      "Naming e identidad",
       "Etiquetas y caja",
-      "Campaña: carteles, mupis y redes",
+      "Campaña y redes",
       "Web, email y banners",
-      "Dos spots de 10 s"
+      "Dos spots"
     ],
     "en": [
-      "Strategy and naming",
-      "Identity and guidelines",
+      "Naming and identity",
       "Labels and box",
-      "Campaign: posters, street panels and social",
+      "Campaign and social",
       "Web, email and banners",
-      "Two 10-second spots"
+      "Two spots"
     ]
   },
   "tools": [
@@ -51,8 +49,8 @@
       "aspect": "9:16",
       "date": "2026-11-13",
       "caption": {
-        "es": "Spot vertical de 10 s para Reels y TikTok: una mano agita la botella, cae una gota sobre un huevo frito, la salsa llega al taco y al final rueda una lágrima. «Luego no llores».",
-        "en": "10-second vertical spot for Reels and TikTok: a hand shakes the bottle, a drop lands on a fried egg, the sauce reaches the taco and a tear rolls at the end. “You were warned”."
+        "es": "Spot vertical · 10 s",
+        "en": "Vertical spot · 10 s"
       }
     },
     {
@@ -61,8 +59,8 @@
       "aspect": "16:9",
       "date": "2026-11-13",
       "caption": {
-        "es": "Spot horizontal de 10 s para web y YouTube: los tres niveles en escalada. Una chispa junto a CHISPA, una llama detrás de LLAMA, un incendio detrás de INCENDIO, y cierre con las tres botellas.",
-        "en": "10-second horizontal spot for web and YouTube: the three levels escalate. A spark next to CHISPA, a flame behind LLAMA, a blaze behind INCENDIO, closing on the three bottles."
+        "es": "Spot horizontal · 10 s",
+        "en": "Horizontal spot · 10 s"
       }
     }
   ],
@@ -73,8 +71,8 @@
         "en": "The challenge"
       },
       "text": {
-        "es": "Un obrador de salsas picantes quiere salir del mercado de productores. En el lineal, las salsas o son tradicionales y no explican nada, o son extremas y asustan. Y nadie dice lo que el comprador quiere saber: cuánto pica.",
-        "en": "A small hot sauce kitchen wants to move beyond farmers’ markets. On the shelf, sauces are either traditional and explain nothing, or extreme and scary. None of them says what the buyer wants to know: how hot it is."
+        "es": "En el lineal, ninguna salsa dice lo que el comprador quiere saber: cuánto pica.",
+        "en": "On the shelf, no sauce says what buyers want to know: how hot it is."
       }
     },
     {
@@ -83,8 +81,8 @@
         "en": "The idea"
       },
       "text": {
-        "es": "Hacer del picante el sistema de la marca: tres nombres que suben (CHISPA, LLAMA, INCENDIO), tres puntos y tres colores. La campaña habla igual de claro: «Pica, pero poco», «Pica, pero bien», «Pica. Punto». Y avisa una vez: «Luego no llores».",
-        "en": "Make heat the brand system: three names that climb (CHISPA, LLAMA, INCENDIO: spark, flame, blaze), three dots and three colours. The campaign is just as plain: “Hot, just a bit”, “Hot, properly”, “Hot. Full stop”. And it warns once: “You were warned”."
+        "es": "El picante como sistema: tres nombres que suben (CHISPA, LLAMA, INCENDIO), tres puntos y tres colores. Y un solo aviso: «Luego no llores».",
+        "en": "Heat as the system: three names that climb (CHISPA, LLAMA, INCENDIO: spark, flame, blaze), three dots and three colours. And one warning: “You were warned”."
       }
     },
     {
@@ -93,43 +91,12 @@
         "en": "What was made"
       },
       "text": {
-        "es": "Estrategia, naming de la gama, identidad y manual, etiquetas, caja regalo, carteles y mupis, redes, web, email, banners y dos spots de 10 segundos. Las etiquetas se diseñaron primero y la IA las usó como referencia, así que el producto es el mismo en todas las piezas.",
-        "en": "Strategy, range naming, identity and guidelines, labels, gift box, posters and street panels, social, web, email, banners and two 10-second spots. The labels were designed first and used as the AI reference, so the product is identical in every piece."
+        "es": "Naming, identidad, etiquetas, caja regalo, carteles, mupis, redes, web, email, banners y dos spots.",
+        "en": "Naming, identity, labels, gift box, posters, street panels, social, web, email, banners and two spots."
       }
     }
   ],
-  "designDetails": [
-    {
-      "title": {
-        "es": "El logotipo",
-        "en": "The wordmark"
-      },
-      "text": {
-        "es": "BRASA en vertical, a toda la altura de la etiqueta: en una botella estrecha es la forma de que el nombre sea lo más grande del lineal.",
-        "en": "BRASA runs vertically, full height: on a narrow bottle it is how the name becomes the biggest thing on the shelf."
-      }
-    },
-    {
-      "title": {
-        "es": "Tres niveles",
-        "en": "Three levels"
-      },
-      "text": {
-        "es": "Un color de fondo y tres puntos que se rellenan según el nivel: el picante se lee de lejos, sin leer.",
-        "en": "One background colour and three dots that fill with the level: the heat reads from a distance, without reading."
-      }
-    },
-    {
-      "title": {
-        "es": "Sistema de campaña",
-        "en": "Campaign system"
-      },
-      "text": {
-        "es": "Misma retícula en todo: frase arriba, producto sobre su color y «Luego no llores» abajo a la derecha.",
-        "en": "The same grid everywhere: the line on top, the product on its colour and “You were warned” bottom right."
-      }
-    }
-  ],
+  "designDetails": [],
   "palette": [
     {
       "name": {
@@ -165,11 +132,11 @@
     }
   ],
   "paletteNote": {
-    "es": "Rojo para la marca; amarillo y carbón para los otros dos niveles; crema como papel.",
-    "en": "Red for the brand; yellow and charcoal for the other two levels; cream as the paper."
+    "es": "",
+    "en": ""
   },
   "result": {
-    "es": "Proyecto conceptual. Spec work: BRASA es una marca inventada. El caso completo, con la estrategia, el manual y el plan de campaña, está disponible bajo petición.",
-    "en": "Concept project. Spec work: BRASA is an invented brand. The full case, with strategy, guidelines and campaign plan, is available on request."
+    "es": "Proyecto conceptual: BRASA es una marca inventada. El caso completo está disponible bajo petición.",
+    "en": "Concept project: BRASA is an invented brand. The full case is available on request."
   }
 }

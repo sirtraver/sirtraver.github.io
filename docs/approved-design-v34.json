@@ -1,9 +1,9 @@
 {
-  "version": "v78 — Plantilla de caso sintética y horizontal: portada 3:2, filas de galería (row), BRASA reducido",
+  "version": "v79 — OYE: fotos nuevas y plantilla v2",
   "commit": "see git log",
   "bodyHashes": {
-    "/": "6d30eff31c6c7e35f9f38a152f13189d79f530573d3d98e9d6f21748fe77ce25",
-    "/es/": "576d79ea478912cbc722d1a96d35e9df2a060b1412095f87accd9faa95784d6a",
+    "/": "54625fdda201f0e76810aa1b931f0c018b746a4cae78fa81563e4b4a036dbe95",
+    "/es/": "50dd4617f79321276dd6a77e732dd04bf56fff275823b56ed46d8003114da63a",
     "/about/": "70d7f3fe8efa32001dbf4e91785144cd8135477389149e22600f69065bae414a",
     "/es/about/": "dc6d45af8e9ee8035cb5b28a3d54de391bf254092405e9b6c6f01ad8fc458387",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
@@ -12,8 +12,8 @@
   "cssPrefixBytes": 99009,
   "cssPrefixHash": "1684cedbe31c5b073d4dfc3ae1265c06b253894157377ec5a1825d87c0130871",
   "homeShellHashes": {
-    "/": "91acece0a68ab93acda77bfb149cc71ccf3b69f12a38755419c14d69746cfe6f",
-    "/es/": "5455a76645b080677cbf4799f80e3f1df50ba735703e62539b8e1f4155c7e40d"
+    "/": "8ef6900dd6eb31ffe19b0c03db9f2cf5fc556a42d1d1770320c719278a3c892c",
+    "/es/": "838dedf433d39505e85644ca812c22447dcdd45c5ec021027b1daa13a8acf5df"
   },
   "resourcesShellHashes": {
     "/resources/": "bf304c6e6146c0d52e1ef4da3c3c46d6e279f0f4ea43bb09005250e74f76d7d1",

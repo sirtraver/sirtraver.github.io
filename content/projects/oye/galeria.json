@@ -1,38 +1,94 @@
 [
  {
-  "file": "imagenes/oye-packshot-altavoz-fondo-blanco-tienda.webp",
-  "caption": {
-   "es": "El altavoz.",
-   "en": "The speaker."
-  }
- },
- {
-  "file": "imagenes/oye-banner-horizontal-colores-piedra-ultramar.webp",
-  "caption": {
-   "es": "Tres colores.",
-   "en": "Three colourways."
-  }
- },
- {
   "file": "imagenes/oye-identidad-construccion-logotipo-colores-tipografia.webp",
   "caption": {
-   "es": "Logotipo, color y tipografía.",
-   "en": "Wordmark, colour and type."
+   "es": "Logotipo y color.",
+   "en": "Wordmark and colour."
   }
  },
  {
-  "file": "imagenes/oye-insight-altavoz-a-la-vista.webp",
+  "file": "imagenes/oye-packshot-altavoz-fondo-blanco-tienda.webp",
   "caption": {
-   "es": "El insight.",
-   "en": "The insight."
+   "es": "Packshot.",
+   "en": "Packshot."
+  },
+  "row": "producto"
+ },
+ {
+  "file": "imagenes/oye-caja-altavoz-faja-ultramar.webp",
+  "caption": {
+   "es": "La caja.",
+   "en": "The box."
+  },
+  "row": "producto"
+ },
+ {
+  "file": "imagenes/oye-key-visual-oye-esto-ondas.webp",
+  "caption": {
+   "es": "Key visual.",
+   "en": "Key visual."
+  },
+  "row": "campana",
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-key-visual-hear-this-ondas.webp",
+  "caption": {
+   "es": "Key visual.",
+   "en": "Key visual."
+  },
+  "row": "campana",
+  "lang": "en"
+ },
+ {
+  "file": "imagenes/oye-post-una-de-estas-piedras-suena.webp",
+  "caption": {
+   "es": "Post.",
+   "en": "Post."
+  },
+  "row": "campana",
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-post-one-of-these-stones-plays-music.webp",
+  "caption": {
+   "es": "Post.",
+   "en": "Post."
+  },
+  "row": "campana",
+  "lang": "en"
+ },
+ {
+  "file": "imagenes/oye-story-oye-esto-altavoz-roca-lago.webp",
+  "caption": {
+   "es": "Story.",
+   "en": "Story."
+  },
+  "row": "campana",
+  "lang": "es"
+ },
+ {
+  "file": "imagenes/oye-story-hear-this-lake.webp",
+  "caption": {
+   "es": "Story.",
+   "en": "Story."
+  },
+  "row": "campana",
+  "lang": "en"
+ },
+ {
+  "file": "imagenes/oye-mupis-metro-una-de-estas-piedras-suena.webp",
+  "caption": {
+   "es": "Mupis en el metro.",
+   "en": "Street panels in the subway."
   },
   "lang": "es"
  },
  {
-  "file": "imagenes/oye-insight-altavoz-a-la-vista-en.webp",
+  "file": "imagenes/oye-mupis-metro-one-of-these-stones-plays-music.webp",
   "caption": {
-   "es": "El insight.",
-   "en": "The insight."
+   "es": "Mupis en el metro.",
+   "en": "Street panels in the subway."
   },
   "lang": "en"
  },
@@ -41,62 +97,57 @@
   "caption": {
    "es": "En casa.",
    "en": "At home."
-  }
+  },
+  "row": "casa"
  },
  {
-  "file": "imagenes/oye-key-visual-hear-this-ondas.webp",
+  "file": "imagenes/oye-altavoz-escritorio-estudio.webp",
   "caption": {
-   "es": "Key visual «Hear this».",
-   "en": "“Hear this” key visual."
-  }
- },
- {
-  "file": "imagenes/oye-post-una-de-estas-piedras-suena.webp",
-  "caption": {
-   "es": "«Una de estas piedras suena.»",
-   "en": "“One of these stones plays music.”"
-  }
- },
- {
-  "file": "imagenes/oye-story-oye-esto-altavoz-roca-lago.webp",
-  "caption": {
-   "es": "Story «Oye esto.»",
-   "en": "“Hear this” story."
-  }
+   "es": "En el estudio.",
+   "en": "At the desk."
+  },
+  "row": "casa"
  },
  {
   "file": "imagenes/oye-post-un-boton-y-todo-lo-demas.webp",
   "caption": {
    "es": "Un botón.",
    "en": "One button."
-  }
+  },
+  "row": "detalle",
+  "lang": "es"
  },
  {
-  "file": "imagenes/oye-caja-altavoz-faja-ultramar.webp",
+  "file": "imagenes/oye-post-one-button.webp",
   "caption": {
-   "es": "La caja.",
-   "en": "The box."
-  }
+   "es": "Un botón.",
+   "en": "One button."
+  },
+  "row": "detalle",
+  "lang": "en"
  },
  {
-  "file": "imagenes/oye-mupis-calle-una-de-estas-piedras-suena.webp",
+  "file": "imagenes/oye-desempaquetado-caja-altavoz-cable-guia.webp",
   "caption": {
-   "es": "En la calle.",
-   "en": "In the street."
-  }
+   "es": "Lo que trae la caja.",
+   "en": "What’s in the box."
+  },
+  "row": "detalle"
  },
  {
   "file": "imagenes/oye-pagina-producto-web-elige-tu-piedra.webp",
   "caption": {
-   "es": "Página de producto.",
-   "en": "Product page."
-  }
+   "es": "Web.",
+   "en": "Website."
+  },
+  "row": "web"
  },
  {
   "file": "imagenes/oye-email-lanzamiento-banners-display.webp",
   "caption": {
    "es": "Email y banners.",
    "en": "Email and banners."
-  }
+  },
+  "row": "web"
  }
 ]

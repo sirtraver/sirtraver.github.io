@@ -1,16 +1,16 @@
 {
-  "version": "v87-sobre-mi-cmy — Glitch CMY, sin franja freelance en portada, Sobre mí solo con Cómo trabajo",
+  "version": "v92 — Behance icon in the About social row",
   "commit": "see git log",
   "bodyHashes": {
     "/": "48a294cc0c070da22dc11a57fbd12db77d10fff13699601697826b81999b8698",
     "/es/": "3734f5e1fc03a3d9a1c58531207840a09b6a8ddf18fac70d4602fb419938d3cf",
-    "/about/": "bf117e6e344990415ce76a99b35577c1d7d0bfd120a5fc93f92f24529bc430d1",
-    "/es/about/": "2ae1c616e4b79b5f4675d19470ad84e870ea9eb4798380cbd9c5ac63941ece1d",
+    "/about/": "eb0999e5bcf1d5fad836293b8027d66aaced4300e3fa4414851cd4ae867b0a86",
+    "/es/about/": "e8bdf46c5a7405389fd03fe85fc201fbe97877bdf0950c35af929638fc1e09b4",
     "/resources/": "a9a6e0c3e711202f4578c7bbc5c6533c3137d6f5d44b519520507ae757e9cee0",
     "/es/resources/": "b16bcb204c720cd7b9b8ab98d3915d637d6abf4b103fa1d24f7d2985d1fcb81f"
   },
-  "cssPrefixBytes": 100107,
-  "cssPrefixHash": "710da01b5e8096db5ab596448f44c3fe43f3941374f3e92d6e517b063a83b27b",
+  "cssPrefixBytes": 100152,
+  "cssPrefixHash": "a1429cee0a014e3790df782329abe858b1211f1bbe00ec6ebb7be32999e47c5a",
   "homeShellHashes": {
     "/": "86423b958a3654f6cefaea16273c029bbaffc7997c552ae0b3b93c039af372a2",
     "/es/": "7952e643dd015d19b9960c961d66334fc67a56b8d38c5e64ab79212565b3eb10"

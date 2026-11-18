@@ -3,8 +3,8 @@ import { CONTENT } from '../content.js';
 import { html } from '../lib/html.js';
 import { ICONS } from './icons.js';
 
-const NETWORKS = ['threads', 'instagram', 'linkedin', 'mail'];
-const LABELS = { threads: 'Threads', instagram: 'Instagram', linkedin: 'LinkedIn' };
+const NETWORKS = ['threads', 'instagram', 'linkedin', 'behance', 'mail'];
+const LABELS = { threads: 'Threads', instagram: 'Instagram', linkedin: 'LinkedIn', behance: 'Behance' };
 
 // Native icon links live in the About profile card.
 export function socialIcons(lang, className = '') {

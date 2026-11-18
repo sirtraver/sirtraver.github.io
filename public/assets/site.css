@@ -303,6 +303,10 @@ button:focus-visible {
   color: #0a66c2;
 }
 
+.social-behance:hover {
+  color: #1769ff;
+}
+
 .social-mail svg {
   fill: none;
   stroke: currentColor;
